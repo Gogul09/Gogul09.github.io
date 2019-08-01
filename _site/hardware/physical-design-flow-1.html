@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VLSI Physical Design Flow – Gogul Ilango </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400|Roboto:300" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="VLSI Physical Design Flow" />
+    <meta name="description" content="Understand the fundamentals in VLSI Physical Design Flow such as Floorplanning, Partitioning, Placement, Clock Tree Synthesis, Routing, Timing Verification, Power Verification, Formal Verification and Physical Verification." />
+    <meta property="og:description" content="Understand the fundamentals in VLSI Physical Design Flow such as Floorplanning, Partitioning, Placement, Clock Tree Synthesis, Routing, Timing Verification, Power Verification, Formal Verification and Physical Verification." />
+    <meta property="twitter:title" content="VLSI Physical Design Flow" />
+
+    <meta property="og:image" content="images/icons/logo.png"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="VLSI Physical Design Flow">
+    <meta name="twitter:description" content="Understand the fundamentals in VLSI Physical Design Flow such as Floorplanning, Partitioning, Placement, Clock Tree Synthesis, Routing, Timing Verification, Power Verification, Formal Verification and Physical Verification.">
+    <meta name="twitter:image" content="images/icons/logo.png">
+  <!-- Begin Jekyll SEO tag v2.2.2 -->
+<title>VLSI Physical Design Flow | Gogul Ilango</title>
+<meta property="og:title" content="VLSI Physical Design Flow" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Understand the fundamentals in VLSI Physical Design Flow such as Floorplanning, Partitioning, Placement, Clock Tree Synthesis, Routing, Timing Verification, Power Verification, Formal Verification and Physical Verification." />
+<meta property="og:description" content="Understand the fundamentals in VLSI Physical Design Flow such as Floorplanning, Partitioning, Placement, Clock Tree Synthesis, Routing, Timing Verification, Power Verification, Formal Verification and Physical Verification." />
+<link rel="canonical" href="http://localhost:4000/hardware/physical-design-flow-1" />
+<meta property="og:url" content="http://localhost:4000/hardware/physical-design-flow-1" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1amQI_tQSrnTqYAXhraVpNc1NpJVgPNTE" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-26T00:00:00+05:30" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"VLSI Physical Design Flow","author":{"@type":"Person","name":"Gogul Ilango"},"image":"https://drive.google.com/uc?id=1amQI_tQSrnTqYAXhraVpNc1NpJVgPNTE","datePublished":"2018-12-26T00:00:00+05:30","dateModified":"2018-12-26T00:00:00+05:30","description":"Understand the fundamentals in VLSI Physical Design Flow such as Floorplanning, Partitioning, Placement, Clock Tree Synthesis, Routing, Timing Verification, Power Verification, Formal Verification and Physical Verification.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/hardware/physical-design-flow-1"},"url":"http://localhost:4000/hardware/physical-design-flow-1"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#1f0021" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="header-left">
+            <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
+          </div>
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"></a>
+            <a title="blog" id = "nav_blog" href="/blog"></a>
+            <a title="creations" id = "nav_creations" href="/creations"></a>
+            <a title="music" id = "nav_music" href="/music"></a>
+            <a title="photography" id = "nav_photography" href="/photography"></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>VLSI Physical Design Flow</h1>
+		<div class="post-subheading">
+			<p>PD Concepts | 26 December 2018</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/hardware/physical-design-flow-1"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/hardware/physical-design-flow-1" data-action="share/whatsapp/share"><img src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/physical-design-flow-1" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=VLSI Physical Design Flow&url=http://localhost:4000/hardware/physical-design-flow-1" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/physical-design-flow-1&title=VLSI Physical Design Flow&summary=Understand the fundamentals in VLSI Physical Design Flow such as Floorplanning, Partitioning, Placement, Clock Tree Synthesis, Routing, Timing Verification, Power Verification, Formal Verification and Physical Verification.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/hardware/physical-design-flow-1" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/physical-design-flow-1" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=VLSI Physical Design Flow&url=http://localhost:4000/hardware/physical-design-flow-1" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/physical-design-flow-1&title=VLSI Physical Design Flow&summary=Understand the fundamentals in VLSI Physical Design Flow such as Floorplanning, Partitioning, Placement, Clock Tree Synthesis, Routing, Timing Verification, Power Verification, Formal Verification and Physical Verification.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#what-is-vlsi-physical-design">What is VLSI Physical Design?</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#why-vlsi-physical-design-flow">Why VLSI Physical Design Flow?</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#vlsi-physical-design-flow">VLSI Physical Design Flow</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#importing-inputs">Importing Inputs</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#floorplanning-and-partitioning">Floorplanning &amp; Partitioning</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#power-planning">Power Planning</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#placement">Placement</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#clock-tree-synthesis">Clock Tree Synthesis</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#routing">Routing</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#static-timing-analysis">Static Timing Analysis</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#power-verification">Power Verification</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_12" href="#physical-verification">Physical Verification</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_13" href="#references">References</a></li>
+  </ul>
+</div>
+
+<p>When I was a kid, I used to spend time with playstation and computers. At that time, I always wondered how those tiny components inside rectangular black boxes entertain me by making me play cool games and watch movies. When I grew up, I realized its the combination of <a href="https://www.britannica.com/technology/logic-design" target="_blank">logic design</a> and <a href="https://en.wikipedia.org/wiki/Physical_design_(electronics)" target="_blank">physical design</a> that makes an Integrated Circuit that is sitting inside the device you currently hold in your hand.</p>
+
+<p>In this blog post, we will learn the basics of VLSI physical design or VLSI backend design that is used to create modern Integrated Circuits (ICs) that power up numerous electronic applications such as desktop, laptop, tablet, smartphone etc.</p>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=19X_ir_iqjaZjwyd7TOUbWucIo7M9juXC" />
+    <figcaption>Logic Design (Frontend) vs Physical Design (Backend)</figcaption>
+</figure>
+
+<h3 id="what-is-vlsi-physical-design">What is VLSI Physical Design?</h3>
+
+<p>The final output of a frontend design or circuit design or logic design is a <a href="https://en.wikipedia.org/wiki/Netlist" target="_blank">netlist</a>. Netlist is a text file (ending with <span class="coding">.v</span> or <span class="coding">.vhdl</span>) that contains the logical functionality of your chip. This netlist could be viewed as a plethora of instances (standard cells, macros, io pads etc.,) with interconnections (nets) between them based on the functionality you wish to implement.</p>
+
+<p>Typically, there are two types of netlist when designing a chip.</p>
+<ul>
+  <li>RTL netlist</li>
+  <li>Gate-level netlist</li>
+</ul>
+
+<p>RTL netlist is the high-level abstraction of the design using which logic design engineers write code in <span class="coding">.v</span> or <span class="coding">.vhdl</span>. This netlist is created with logic functionality of the design as its primary goal.</p>
+
+<p>Gate-level netlist is the output of a design stage called <a href="https://en.wikipedia.org/wiki/Logic_synthesis" target="_blank">logic synthesis</a> which takes in RTL netlist, design constraints and technology files, and generates a netlist that has standard cells and interconnections (nets) between them.</p>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=1oXRFkLyBL1DbIMJPxffVHpSrxLc8QSi6" class="typical-image" />
+    <figcaption>Figure 1. Logic Synthesis - RTL netlist to Gate-level netlist</figcaption>
+</figure>
+
+<p>This connectivity information in a gate-level netlist is a layer of abstraction of your hardware which must be converted to a physically realizable format (having geometric shapes) that is manufacturable.</p>
+
+<blockquote>
+  <p>The process of converting a gate-level netlist into a physically realizable format (GDSII) which finally becomes the hardware (chip) is called <strong>Physical Design</strong>.</p>
+</blockquote>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=1UukCMvCLe6YCEXghL6pVpr8TOzkaYE-D" />
+    <figcaption>Figure 2. Circuit to Layout</figcaption>
+</figure>
+
+<p>Actually, Physical Design contains a lot more steps to be done than the above simplified definition. Figure 2 shows the conversion of a simple transistor level circuit to a physically realizable layout. It would be a dream come true for any hardware engineer if there is a tool that takes in a gate-level netlist and constructs a physical layout that is optimized for performance, power and area at lower technology nodes!</p>
+
+<p>The <a href="https://en.wikipedia.org/wiki/GDSII" target="_blank">GDSII</a> layout format is a binary file format that represents your IC layout using geometric shapes, text labels and additional foundry specific information in a hierarchical form. You will understand what this means by looking at the video below which shows a GDSII layout file in 3D (created by IC Design Group at University of Twente).</p>
+
+<div class="youtube-video-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/F4EArOqNNSU?start=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+
+<p>In VLSI, Physical Design is the only domain where you can see circuits in a Graphical User Interface (GUI) with geometric shapes and colors as shown in Figure 3. It is an excellent career choice for engineering minds with an <em>artistic</em> background because you will be drawing layout specific geometries either manually or using code!</p>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=13C4Wv7XlTi9WUdiC7q_EBHD1jxPjsGcD" />
+    <figcaption>Figure 3. A typical chip when looked from a physical design perspective</figcaption>
+</figure>
+
+<p>By this time, you might be overwhelmed by the complexity of the layout artwork (which finally becomes your hardware IC) that you have just seen in the above video and image. But, don’t worry. This is where automation becomes your friend!</p>
+
+<p>Physical Design involves dedicated automation flows and methodologies for each and every step in the design process with the help of Electronic Design Automation (EDA) tools and scripts written in languages such as Tcl, Perl or Python.</p>
+
+<p>A design will never function as expected if it is not verified and validated 100% before manufacturing. Hence, Physical Design involves robust verification flows (or the so-called <a href="https://en.wikipedia.org/wiki/Signoff_(electronic_design_automation)" target="_blank">signoff</a> flows) to verify and validate the design in terms of timing, power, area and functionality.</p>
+
+<hr />
+
+<h3 id="why-vlsi-physical-design-flow">Why VLSI Physical Design Flow?</h3>
+
+<p>Physical design is all about placing instances defined in the netlist and connecting them by routing through metal layer stack to satisfy design specifications such as performance, power and area (PPA). Current IC designs have <em>multi-million instances</em> that are interconnected with <em>several stack of metal layers</em> that connect these instances. Manually performing each step in the design process is not feasible, takes huge amount of time and is error prone.</p>
+
+<p>The complexity in designing a multi-million instance based IC is huge and hence we need dedicated automation flows that complete specific tasks needed to be performed at each step in the design which reduces design time and errors. These flows require knowledge and understanding of <a href="https://en.wikipedia.org/wiki/Electronic_design_automation" target="_blank">EDA tools</a> and <a href="https://en.wikipedia.org/wiki/Scripting_language" target="_blank">scripting languages</a> such as Tcl, Perl or Python.</p>
+
+<p>In addition to complexity, as time to market for chips is decreasing, reuse of IP (Intellectual Property) blocks is highly preferred in each design.</p>
+
+<hr />
+
+<h3 id="vlsi-physical-design-flow">VLSI Physical Design Flow</h3>
+
+<p>Typical VLSI Physical Design (PD) flow is shown in Figure 4. This is a standard flow that is followed in modern IC design. Each step in the PD flow has sub flows or further steps that are needed to be performed.</p>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=116LfKvpnRinjDT7uVDttK7q2WTqWiqh7" class="typical-image" />
+    <figcaption>Figure 4. VLSI Physical Design Flow</figcaption>
+</figure>
+
+<p>Major steps involved in Physical Design are</p>
+<ul>
+  <li>Importing Inputs</li>
+  <li>Floorplanning &amp; Partitioning</li>
+  <li>Power Planning</li>
+  <li>Placement</li>
+  <li>Clock Tree Synthesis (CTS)</li>
+  <li>Routing</li>
+</ul>
+
+<p>Major verification (signoff) steps involved in Physical Design are</p>
+<ul>
+  <li>Static Timing Analysis (STA)</li>
+  <li>Power Distribution Network Analysis (PDN)</li>
+  <li>Physical Verification (PV)</li>
+  <li>Formal Verification (FV)</li>
+  <li>Conformal Low Power Verification (CLP)</li>
+</ul>
+
+<p>Commonly used EDA tools for Floorplanning, Place and Route are</p>
+<ul>
+  <li><a href="https://www.cadence.com/content/cadence-www/global/en_US/home/tools/digital-design-and-signoff/hierarchical-design-and-floorplanning/innovus-implementation-system.html">Cadence Innovus</a></li>
+  <li><a href="https://www.cadence.com/content/cadence-www/global/en_US/home/tools/digital-design-and-signoff/block-implementation/first-encounter-design-exploration-and-prototyping.html" target="_blank">Cadence First Encounter</a></li>
+  <li><a href="https://www.synopsys.com/implementation-and-signoff/physical-implementation/ic-compiler-ii.html" target="_blank">Synopsys IC Compiler II</a></li>
+</ul>
+
+<p>Commonly used EDA tools for signoff checks are</p>
+<ul>
+  <li><a href="https://www.synopsys.com/implementation-and-signoff/signoff/starrc.html" target="_blank">Synopsys StarRC</a> for Parasitic Extraction</li>
+  <li><a href="https://www.synopsys.com/implementation-and-signoff/signoff/primetime.html" target="_blank">Synopsys PrimeTime</a> for Static Timing Analysis</li>
+  <li><a href="https://www.ansys.com/products/semiconductors/ansys-redhawk" target="_blank">Apache RedHawk</a> for Power Analysis and Debugging</li>
+  <li><a href="https://www.mentor.com/training/course_categories/calibre" target="_blank">Mentor Graphics Calibre</a> for Physical Verification</li>
+  <li><a href="https://www.cadence.com/content/cadence-www/global/en_US/home/tools/digital-design-and-signoff/logic-equivalence-checking.html" target="_blank">Cadence Logic Equivalence Checker</a> for Formal Verification</li>
+  <li><a href="https://www.cadence.com/content/cadence-www/global/en_US/home/tools/digital-design-and-signoff/low-power-validation/conformal-low-power.html" target="_blank">Cadence Conformal Low Power</a> for Conformal Low Power Verification</li>
+</ul>
+
+<hr />
+
+<h3 id="importing-inputs">Importing Inputs</h3>
+
+<div class="note">
+  <p><b>Goal</b>: Gather all the required inputs for physical design such as gate level netlist <span class="coding">.v</span> / <span class="coding">.vhdl</span>, Technology file <span class="coding">.tech</span>, UPF (Unified Power Format) files <span class="coding">.upf</span>, Library files that include LIBs <span class="coding">.lib</span>, LEFs <span class="coding">.lef</span>, DEFs <span class="coding">.def</span> and GDS <span class="coding">.gds</span> of standard cells and IPs and SDC (Synopsys Design Constraint) files <span class="coding">.sdc</span>. </p>
+</div>
+
+<p>Inputs to physical design are the most important files that you will need to start your design process. If the inputs are read in the EDA tools without any issues (warnings and errors), then your physical design flow goes smooth.</p>
+
+<p>Commonly required inputs to start physical design for an IC are</p>
+<ul>
+  <li>Gate-level Netlist <span class="coding">.v</span> or <span class="coding">.vhdl</span> (given by synthesis people)</li>
+  <li>Technology file <span class="coding">.tech</span> (given by fabrication people)</li>
+  <li>Logical libraries <span class="coding">.lib</span> (given by vendors)</li>
+  <li>Physical libraries <span class="coding">.lef</span> <span class="coding">.def</span> <span class="coding">.gds</span> (given by vendors)</li>
+  <li>UPF (Unified Power Format) files <span class="coding">.upf</span> (given by UPF people)</li>
+  <li>SDC (Synopsys Design Constraints) files <span class="coding">.sdc</span> (given by synthesis people)</li>
+</ul>
+
+<hr />
+
+<h3 id="floorplanning-and-partitioning">Floorplanning &amp; Partitioning</h3>
+
+<p><i>Related Terminologies: [<a href="https://gogul09.github.io/hardware/physical-design-terminologies#floorplanning" target="_blank">Floorplanning</a>]</i></p>
+
+<div class="note">
+  <p><b>Goal</b>: Calculate the die size, create IO ring, partition the design and calculate the size, shape and placement of partitions (HMs or blocks), figure out the position of custom macros such as analog macros and create PG grid.</p>
+</div>
+
+<p>In today’s IC design, because of huge design complexity, hierarchical design approach is followed. What this means is, the entire chip is divided into partitions or blocks that are interconnected at a <span class="coding">TOP_LEVEL</span> module.</p>
+
+<p>Figure 5 shows a typical <span class="coding">TOP_LEVEL</span> floorplan module of an IC with abutted blocks, non-abutted blocks and routing channels.</p>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=1OEMmPap64JbLTyrgeSCv-GoQ9xCGhzv5" />
+    <figcaption>Figure 5. A typical view of top-level floorplan of an IC</figcaption>
+</figure>
+
+<p>This <span class="coding">TOP_LEVEL</span> module of your chip contains hard blocks and soft blocks with or without glue logic (standard cells in <span class="coding">TOP_LEVEL</span>).</p>
+<ul>
+  <li><strong>Hard</strong> blocks are those sub-blocks whose shapes <em>cannot</em> be changed. These blocks are mostly IPs or <a href="https://gogul09.github.io/hardware/physical-design-terminologies#macro" target="_blank">macros</a> that are already designed and validated for that particular <a href="https://en.wikichip.org/wiki/technology_node" target="_blank">technology node</a>. Placement of these blocks are decided based on design understanding and package requirements in <span class="coding">TOP_LEVEL</span>.</li>
+  <li><strong>Soft</strong> blocks are those blocks whose shapes <em>can</em> be changed to meet predefined cost metrics such as chip area, wirelength and wire congestion. These are the blocks that are needed to be designed and validated for chip-level convergence. In industry terms, these <strong>soft</strong> blocks are called as <strong>Hard Macros</strong> or <strong>HMs</strong>.</li>
+</ul>
+
+<p>During floorplanning, one must ensure proper shapes for the Hard Macros (HMs) until convergence is reached in terms of cost metrics, timing, power and area.</p>
+
+<p>Due to design complexity and runtime of EDA tools, each Hard Macro (HM) or block is created using the same design steps such as floorplanning, placement and routing and then integrated at the <span class="coding">TOP_LEVEL</span> module.</p>
+
+<p>Dividing the entire design into smaller sub-designs (partitions) makes design convergence easier. This is because, the runtime of EDA tools for a single partition (block) will take lesser time for each step in the PD flow when compared to entire design.</p>
+
+<p>Physical Design is all about tradeoffs between <strong>area</strong>, <strong>speed</strong> and <strong>power</strong>. Thus, floorplanning is a <em>highly iterative process</em> which takes into account the hard blocks and soft blocks used, memories, IO pads and their placement in the design, routing possibilities between different blocks and inside the blocks, power grid structure for each macro and cell in the design, and also the aspect ratio and IO structure of the entire design.</p>
+
+<hr />
+
+<h3 id="power-planning">Power Planning</h3>
+
+<p><i>Related Terminologies: [<a href="https://gogul09.github.io/hardware/physical-design-terminologies#power-distribution" target="_blank">Power Distribution</a>]</i></p>
+
+<div class="note">
+  <p><b>Goal</b>: Decide on power dissipation number and construct power distribution network accordingly to power up blocks, IO pads, macros and standard cells.</p>
+</div>
+
+<p><span class="coding">VDD</span> and <span class="coding">VSS</span> that you see in the transistor level circuit in Figure 2 needs to be supplied to every transistor in a multi-million transistor design. Thus, power from a single battery source must be delivered to each cell in the design. To accomplish this, power planning is done.</p>
+
+<p>During floorplanning, power planning is a step that is done to construct the power distribution network to supply power to all blocks, macros and standard cells equally.</p>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=1ECjeWM7ftyeFnILkx4IPcm6sQDtPPlCT" />
+    <figcaption>Figure 6. Power Planning (or Power Distribution) in an IC</figcaption>
+</figure>
+
+<p>As shown in Figure 6, there are two types of power distribution strategies followed in chip design namely Wire Bonding and Flip-Chip <a href="https://gogul09.github.io/hardware/power-distribution-network-in-asic-physical-design" target="_blank">(read more)</a>. Using any one of these two power distribution strategies, we usually form power rings, stripes and rails through out the design.</p>
+
+<ol>
+  <li><strong>Rings</strong> - Supplies <span class="coding">VDD</span> and <span class="coding">VSS</span> around the chip.</li>
+  <li><strong>Stripes</strong> - Supplies <span class="coding">VDD</span> and <span class="coding">VSS</span> across/throughout the chip.</li>
+  <li><strong>Rails</strong> - Supplies <span class="coding">VDD</span> and <span class="coding">VSS</span> to the standard cells in the design.</li>
+</ol>
+
+<p>Main steps to be taken care during power planning are</p>
+<ul>
+  <li>Decision on width, pitch and offset of power stripes for each metal layer.</li>
+  <li>Block power hook up at <span class="coding">TOP_LEVEL</span>.</li>
+  <li>IO power hook up at <span class="coding">TOP_LEVEL</span>.</li>
+  <li>Standard cells power hook up inside block as well as <span class="coding">TOP_LEVEL</span>.</li>
+  <li>Shorts and Opens are to be checked and fixed.</li>
+</ul>
+
+<hr />
+
+<h3 id="placement">Placement</h3>
+
+<p><i>Related Terminologies: [<a href="https://gogul09.github.io/hardware/physical-design-terminologies#placement" target="_blank">Placement</a>]</i></p>
+
+<div class="note">
+  <p><b>Goal:</b> Place all the standard cells in the design to minimize total area, reduce interconnect cost, reduce congestion hotspots and improve timing. </p>
+</div>
+
+<p>After floorplanning the design, for each block, <a href="https://en.wikipedia.org/wiki/Standard_cell" target="_blank">standard cells</a> are placed inside the block. These standard cells are the functional cells that contain the necessary logic functionality for your chip that are provided to you by the <a href="https://en.wikipedia.org/wiki/Semiconductor_fabrication_plant" target="_blank">foundry</a>. Inside the standard cells, you could find the individual transistors that make up the logic functionality. <em>Ex: AND gate, OR gate, 2x1 multiplexer etc.</em></p>
+
+<blockquote>
+  <p>If you think of a <strong>chip</strong> as the <strong>house</strong>, then <strong>placement</strong> is the process of placing <strong>each individual brick</strong> (standard cell) that make up the house.</p>
+</blockquote>
+
+<p>In a multi-million instances design, placing these cells manually is not feasible. Hence, EDA tool place these cells in the standard cell rows (created during floorplanning) with conflicting goals of optimizing congestion, timing and power. Placement is carried out with the help of virtual route.</p>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=1mEe5AAlGsVv6Xt0llBfxpBA_nUcgs-uo" class="typical-image" />
+    <figcaption>Figure 7. Placement</figcaption>
+</figure>
+
+<p>Virtual route is a rough estimate for the EDA tool to measure the shortest <a href="https://www.quora.com/What-is-Manhattan-Distance" target="_blank">manhattan distance</a> from one standard cell pin to another. Based on this distance, timing is calculated roughly and these cells are placed accordingly.</p>
+
+<p>A good placement reduces the delay of interconnect wires, has shorter interconnect wire length and has lesser congestion hotspots. One key thing performed during placement is <strong>legalization</strong> which means placing standard cells at appropriate locations without any placement constraint violation or design rule violation. Placement greatly determines the routability of the design.</p>
+
+<p>Standard placement flow involves the following steps.</p>
+<ul>
+  <li>Pre-placement</li>
+  <li>Global placement</li>
+  <li>High Fanout Net (HFN) synthesis</li>
+  <li>Scan Chain Reordering</li>
+  <li>Detail Placement</li>
+  <li>Timing Optimization</li>
+  <li>Leakage/Area Recovery</li>
+  <li>Legalization</li>
+</ul>
+
+<hr />
+
+<h3 id="clock-tree-synthesis">Clock Tree Synthesis</h3>
+
+<p><i>Related Terminologies: [<a href="https://gogul09.github.io/hardware/physical-design-terminologies#clock-tree-synthesis" target="_blank">Clock Tree Synthesis</a>]</i></p>
+
+<div class="note">
+  <p><b>Goal:</b> Minimize skew, latency and insertion delay for clock signals reaching all the sequential elements in the design.</p>
+</div>
+
+<p>Clock is an important component in digital design as sequential circuits such as flipflops and registers require clock signal to function properly. Clock to a chip is generally provided by external circuitry (off-chip) consisting of crystal oscillator which is limited to generate frequencies around 100 MHz. This input frequency to the chip is multiplied to higher frequency ranges (say 1 GHz) using a <a href="https://en.wikipedia.org/wiki/Phase-locked_loop" target="_blank">phase locked loop (PLL)</a> sitting inside the chip.</p>
+
+<p>So, to deliver on-chip PLL generated clock to all the sequential elements scattered around the chip, we need some kind of planning to meet timing, power and area which takes us into a separate world called Clock Tree Synthesis (CTS).</p>
+
+<p>After placement and before CTS, the clock is considered as <span class="coding">ideal</span> i.e. right from the source it travels to all the clock pins (sinks) without any delay. But after CTS, the clock is <span class="coding">propagated</span> which means there is considerable amount of delay involved between the clock signal entering one flipflop and another flipflop in the design which is defined as <a href="https://en.wikipedia.org/wiki/Clock_skew" target="_blank">clock skew</a>.</p>
+
+<p>The goal of CTS is to reduce this clock skew, balance it and minimize insertion delay (propagation delay from clock source to sink) between millions of sequential elements. This is done with the help of constructing a clock tree using special cells such as <em>clock tree inverters</em> to maintain exact duty cycle (transition) and <em>clock tree buffers</em> to balance the skew and latency involved.</p>
+
+<blockquote>
+  <p>At fast speeds or long distances, because of <strong>clock skew</strong> serial interfaces (ex: USB) are preferred over parallel interfaces (ex: parallel SCSI).</p>
+</blockquote>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=1JjAhv0sz5kLsxhvrqA--QxHbMARUiFWa" />
+    <figcaption>Figure 8. Clock Tree Synthesis</figcaption>
+</figure>
+
+<p>Additionally, these clock tree inverters and buffers should be added carefully with area and power constraints in mind. Commonly used clock trees are <em>H-Tree, Fishbone Tree and Star Tree</em> as shown above.</p>
+
+<p>Main steps to be taken care during CTS are</p>
+<ul>
+  <li>Target minimum possible clock skew.</li>
+  <li>Target minimum possible latency.</li>
+  <li>Max Fanout, max transition and max capacitance limits must be met.</li>
+  <li>Apply Non-Default Routing (NDR) rules for clock nets to reduce crosstalk and noise (signal integrity).</li>
+  <li>Pre-route clock nets in higher metal layers as it offers less resistance.</li>
+</ul>
+
+<hr />
+
+<h3 id="routing">Routing</h3>
+
+<p><i>Related Terminologies: [<a href="https://gogul09.github.io/hardware/physical-design-terminologies#routing" target="_blank">Routing</a>]</i></p>
+
+<div class="note">
+  <p><b>Goal:</b> Physically connect all the interconnects (nets) in the design with physical constraints such as DRC, wire length, timing, noise and crosstalk to be taken care.</p>
+</div>
+
+<p>After placing all the standard cells in the design, interconnects (nets) must be routed physically using the metal layer stack with wires and vias. Routing is typically done in two steps.</p>
+
+<ol>
+  <li><strong>Global Routing</strong> - Generate a rough route (routing region, track assignment) for each net in the design without specifying the actual layout of wires (loosely routed).</li>
+  <li><strong>Detail Routing</strong> - Generate actual geometry layout for each net in the design using different metal layers.</li>
+</ol>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=1tdZgMBQiYny2fIaGO8PZUBKLu32pY1zF" />
+    <figcaption>Figure 9. Routing (cross-section, 2D and 3D view)</figcaption>
+</figure>
+
+<p>Each metal layer in the metal layer stack of your design has tracks, minimum width rule, minimum spacing rule, preferred routing direction and non-preferred routing direction defined by the technology node rules. For example, <span class="coding">M2</span> metal layer might have preferred routing direction as <em>horizontal</em> and non-preferred routing direction as <em>vertical</em>. Based on these routing constraints, 100% nets must be physically routed without any DRC violation.</p>
+
+<p>Main steps to be taken care during routing are</p>
+<ul>
+  <li>Wire length must be minimized and so, buffering is done for all nets greater than a threshold (normally 200 to 300um).</li>
+  <li>Congestion hotspots must be reduced.</li>
+  <li>Noise &amp; Crosstalk must be reduced using shielding and/or NDR techniques.</li>
+  <li>DRC rules (geometry rules) must be honored during detail routing.</li>
+  <li>Shorts must be very minimal.</li>
+</ul>
+
+<hr />
+
+<h3 id="static-timing-analysis">Static Timing Analysis</h3>
+
+<p><i>Related Terminologies: [<a href="https://gogul09.github.io/hardware/physical-design-terminologies#static-timing-analysis" target="_blank">Static Timing Analysis</a>]</i></p>
+
+<div class="note">
+  <p><b>Goal:</b> Validate the design with respect to timing and verify whether the design could operate at the specified clock frequency without any timing violations such as setup, hold, recovery, removal, max transition and max capacitance across different <a href="https://en.wikipedia.org/wiki/Process_corners" target="_blank">PVT corners</a>.</p>
+</div>
+
+<p>Once the design is placed and routed, it is validated for timing. STA involves checking whether the design meets the <em>specified clock frequency</em> and is free of <em>timing violations</em> such as setup, hold, recovery, removal, maximum fanout, maximum transition, maximum capacitance etc., across different <em>PVT corners</em> or <em>operating conditions</em>.</p>
+
+<p>STA largely depends on <a href="https://en.wikipedia.org/wiki/Parasitic_extraction" target="_blank">parasitic extraction</a> which is a process of extracting the R (resistance) and C (capacitance) of the interconnect metal traces in the design which are obtained only after detail routing. These RC parasitics causes propagation delay that is further added by the gate delay, resulting in timing degradation.</p>
+
+<p>You can read more about Static Timing Analysis in the below links.</p>
+
+<ul>
+  <li><a href="https://gogul09.github.io/hardware/sta-timing-paths-and-delays" target="_blank">STA Timing Paths and Delays</a></li>
+  <li><a href="https://gogul09.github.io/hardware/cmos-basics-for-sta-2" target="_blank">STA CMOS Basics (Part 2)</a></li>
+  <li><a href="https://gogul09.github.io/hardware/cmos-basics-for-sta-1" target="_blank">STA CMOS Basics (Part 1)</a></li>
+  <li><a href="https://gogul09.github.io/hardware/mosfet-fundamentals" target="_blank">STA MOSFET fundamentals</a></li>
+</ul>
+
+<hr />
+
+<h3 id="power-verification">Power Verification</h3>
+
+<p><i>Related Terminologies: [<a href="https://gogul09.github.io/hardware/physical-design-terminologies#power-verification" target="_blank">Power Verification</a>]</i></p>
+
+<div class="note">
+  <p><b>Goal:</b> Validate the design with respect to power and verify whether the design meets static and dynamic IR drop thresholds, and is free from electromagnetic effects.</p>
+</div>
+
+<p>Similar to timing validation, power analysis and debugging is done to ensure that the design is free from power related issues such as static IR drop, dynamic IR drop and electromagnetic issues.</p>
+
+<p>Only if the design meets power numbers specified in the design specifications, it can last longer. Hence, power is a primary concern for chip designers due to decreasing technology node and increasing metal layer stack.</p>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=1Q6rCJtnmjKuRQQZNgr2qOKMKFGGK7UWQ" />
+    <figcaption>Figure 10. Power Distribution Network Analaysis</figcaption>
+</figure>
+
+<p>You can read more about low power design in the below links.</p>
+<ul>
+  <li><a href="https://gogul09.github.io/hardware/power-distribution-network-in-asic-physical-design" target="_blank">Power Distribution Network in ASIC Physical Design</a></li>
+  <li><a href="https://gogul09.github.io/hardware/power-reduction-techniques-in-asic-design" target="_blank">Power Reduction Techniques in ASIC Design</a>.</li>
+</ul>
+
+<hr />
+
+<h3 id="physical-verification">Physical Verification</h3>
+
+<p><i>Related Terminologies: [<a href="https://gogul09.github.io/hardware/physical-design-terminologies#physical-verification" target="_blank">Physical Verification</a>]</i></p>
+
+<div class="note">
+  <p><b>Goal:</b> Validate the design layout with respect to physical geometries and technology rules for electrical correctness, logical correctness and manufacturability, and make sure the design passes DRC, LVS, ERC, Antenna check and XOR check.</p>
+</div>
+
+<p>This is the final signoff check that is done for your design before you tape-out your design for fabrication. Design must have zero shorts, zero opens, zero design rule violation, zero antenna violation, zero base violation and must be logically equivalent as the synthesized logic netlist.</p>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=1uYsv0Mr6sh65S0WNd6xeIJ-agfsh74rt" />
+    <figcaption>Figure 11. Physical Verification</figcaption>
+</figure>
+
+<p>You can read more about physical verification checks <a href="https://en.wikipedia.org/wiki/Physical_verification" target="_blank">here</a>.</p>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li><a href="http://www.aspdac.com/aspdac2014/technical_program/pdf/6B-3.pdf" target="_blank">Routability-Driven Bump Assignment for Chip-Package Co-Design</a></li>
+  <li><a href="https://www.youtube.com/playlist?list=PLZU5hLL_713x0_AV_rVbay0pWmED7992G" target="_blank">Digital VLSI Design - Dr.Adam Teman</a></li>
+  <li><a href="https://www.youtube.com/watch?v=z4zKJLfYZT0" target="_blank">Physical Design Training Overview (Demo Session) [Trainer #1]</a></li>
+  <li><a href="https://www.youtube.com/watch?v=_PQdoBXJPhk" target="_blank">VLSI Training &amp; Physical Design Training Overview [Trainer #2]</a></li>
+  <li><a href="https://www.youtube.com/watch?v=Y2PQzc9Gqsw" target="_blank">ASIC design flow</a></li>
+  <li><a href="https://www.youtube.com/playlist?list=PLCmoXVuSEVHlEJi3SwdyJ4EICffuyqpjk" target="_blank">VLSI Physical Design NPTEL</a></li>
+  <li><a href="https://gogul09.github.io/hardware/physical-design" target="_blank">Physical Design Resources</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/42525558" target="_blank">Cadence User Conference: Flexible H-Tree!</a></li>
+  <li><a href="http://www.techarena.it/trinity-adottera-le-maglie-di-distribuzione-in-luogo-dei-clock-tree-16715" target="_blank">Trinity will adopt the distribution links instead of clock-trees</a></li>
+  <li><a href="https://blog.dragonsector.pl/2017/10/pwn2win-2017-shift-register.html" target="_blank">Pwn2Win 2017 - Shift Register</a></li>
+  <li><a href="https://www.eetimes.com/document.asp?doc_id=1275854#" target="_blank">Power Distribution Planning</a></li>
+  <li><a href="https://slideplayer.com/slide/8436964/" target="_blank">Techniques for Test Power Reduction in Leading Edge IP Using Cadence Encounter Test -ATPG: By Praveen Venkataramani</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/c_149714285?group_id=933402740021956608" target="_blank">Digital IC back-end design engineer cultivation road</a></li>
+  <li><a href="https://www.design-reuse.com/articles/41504/design-rule-checks-drc-a-practical-view-for-28nm-technology.html" target="_blank">Design Rule Checks (DRC) - A Practical View for 28nm Technology</a></li>
+</ol>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/hardware/physical-design-flow-1"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				(function() {
+					var d = document, s = d.createElement('script');
+					s.src = '//gogul09.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2019 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+     
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/hardware/physical-design-flow-1',
+		  'title': 'VLSI Physical Design Flow'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+   </body>
+</html>

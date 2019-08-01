@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>C Shell Scripting Learning Notes – Gogul Ilango </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400|Roboto:300" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="C Shell Scripting Learning Notes" />
+    <meta name="description" content="Learn the syntax and how to's of C Shell Scripting which is used to automate repeated manual tasks in most of the industries." />
+    <meta property="og:description" content="Learn the syntax and how to's of C Shell Scripting which is used to automate repeated manual tasks in most of the industries." />
+    <meta property="twitter:title" content="C Shell Scripting Learning Notes" />
+
+    <meta property="og:image" content="images/icons/logo.png"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="C Shell Scripting Learning Notes">
+    <meta name="twitter:description" content="Learn the syntax and how to's of C Shell Scripting which is used to automate repeated manual tasks in most of the industries.">
+    <meta name="twitter:image" content="images/icons/logo.png">
+  <!-- Begin Jekyll SEO tag v2.2.2 -->
+<title>C Shell Scripting Learning Notes | Gogul Ilango</title>
+<meta property="og:title" content="C Shell Scripting Learning Notes" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Learn the syntax and how to’s of C Shell Scripting which is used to automate repeated manual tasks in most of the industries." />
+<meta property="og:description" content="Learn the syntax and how to’s of C Shell Scripting which is used to automate repeated manual tasks in most of the industries." />
+<link rel="canonical" href="http://localhost:4000/software/c-shell-scripting-learning-notes" />
+<meta property="og:url" content="http://localhost:4000/software/c-shell-scripting-learning-notes" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-14T00:00:00+05:30" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"C Shell Scripting Learning Notes","author":{"@type":"Person","name":"Gogul Ilango"},"datePublished":"2019-04-14T00:00:00+05:30","dateModified":"2019-04-14T00:00:00+05:30","description":"Learn the syntax and how to’s of C Shell Scripting which is used to automate repeated manual tasks in most of the industries.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/c-shell-scripting-learning-notes"},"url":"http://localhost:4000/software/c-shell-scripting-learning-notes"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-1792372637327333",
+            enable_page_level_ads: true
+       });
+  </script>
+  -->
+  
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#1f0021" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="menu-icon" onclick="openSideNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="header-left doc-header-left">
+            <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
+          </div>
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"></a>
+            <a title="creations" id = "nav_creations" href="/creations"></a>
+            <a title="music" id = "nav_music" href="/music"></a>
+            <a title="photography" id = "nav_photography" href="/photography"></a>
+            <a title="about" id = "nav_about" href="/about"></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9889;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="post-heading post-heading-wrapper post-image">
+  <div class="grad-post">
+    <h1>C Shell Scripting Learning Notes</h1>
+    <div class="post-subheading">
+      <p>Programming Languages | 14 April 2019</p>
+      <p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/software/c-shell-scripting-learning-notes"></a></p>
+    </div>
+  </div>
+</div>
+
+<div class="containing">
+  <div class="wrapping">
+
+    <!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/c-shell-scripting-learning-notes" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/c-shell-scripting-learning-notes" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=C Shell Scripting Learning Notes&url=http://localhost:4000/software/c-shell-scripting-learning-notes" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/c-shell-scripting-learning-notes&title=C Shell Scripting Learning Notes&summary=Learn the syntax and how to's of C Shell Scripting which is used to automate repeated manual tasks in most of the industries.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+    <div class="post-cover">
+      <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+      <article class="post">
+        <div class="entry">
+          <div id="awesomeSideNav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
+    <h3><a href="#basics">Basics</a></h3>
+    <ul>
+        <li><a href="#expressions">Expressions</a></li>
+        <li><a href="#control-structures">Control Structures</a></li>
+        <li><a href="#loops">Loops</a></li>
+        <li><a href="#break">break</a></li>
+        <li><a href="#continue">continue</a></li>
+        <li><a href="#goto">goto</a></li>
+        <li><a href="#switch">switch</a></li>
+        <li><a href="#interrupt-handling">Interrupt Handling</a></li>
+    </ul>
+    <h3><a href="#how-tos">How to's</a></h3>
+    <ul>
+        <li><a href="#how-to-store-the-output-of-a-command">How to store the output of a command?</a></li>
+        <li><a href="#how-to-read-user-input">How to read user input?</a></li>
+        <li><a href="#how-to-use-single-and-double-quotes">How to use single and double quotes?</a></li>
+    </ul>
+</div>
+
+<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#basics">Basics</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#how-tos">How To's</a></li>
+  </ul>
+</div>
+
+<p>In this page, you will find the <strong>syntax</strong> and <strong>most common how to’s</strong> of C Shell Scripting. This might be useful for beginners in programming or professionals in automation industries such as VLSI or Telecomm to find <span class="coding">csh</span> syntax and code quickly using this single page online reference material. Click on any of the contents in the sidebar to view the code.</p>
+
+<h3 class="centered-heading" id="basics"><span>Basics</span></h3>
+
+<h3 class="code-head" id="expressions">Expressions<span>code</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></td><td class="code"><pre><span class="c">#!/bin/csh</span>
+
+<span class="c"># declaring variables</span>
+<span class="nb">set </span>a <span class="o">=</span> 2
+<span class="nb">set </span>b <span class="o">=</span> 6
+
+<span class="c"># math operations (white space must taken care)</span>
+<span class="nb">set </span>c <span class="o">=</span> <span class="sb">`</span>expr <span class="nv">$a</span>+<span class="nv">$b</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="nv">$c</span> <span class="c"># prints 2+6</span>
+
+<span class="c"># add</span>
+<span class="nb">set </span>c <span class="o">=</span> <span class="sb">`</span>expr <span class="nv">$a</span> + <span class="nv">$b</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="nv">$c</span> <span class="c"># prints 8</span>
+
+<span class="c"># subtract</span>
+<span class="nb">set </span>c <span class="o">=</span> <span class="sb">`</span>expr <span class="nv">$b</span> - <span class="nv">$a</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="nv">$c</span> <span class="c"># prints 4</span>
+
+<span class="c"># divide</span>
+<span class="nb">set </span>c <span class="o">=</span> <span class="sb">`</span>expr <span class="nv">$b</span> / <span class="nv">$a</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="nv">$c</span> <span class="c"># prints 12</span>
+
+<span class="c"># remainder</span>
+<span class="nb">set </span>c <span class="o">=</span> <span class="sb">`</span>expr <span class="nv">$b</span> % <span class="nv">$a</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="nv">$c</span> <span class="c"># prints 12</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 class="code-head" id="control-structures">Control Structures<span>code</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></td><td class="code"><pre><span class="c"># check if file exist</span>
+<span class="k">if</span> <span class="o">(</span>-e filename<span class="o">)</span> <span class="nb">echo</span> <span class="s2">"File exist"</span>
+
+<span class="c">#-------------------------</span>
+<span class="c"># file status expressions</span>
+<span class="c">#-------------------------</span>
+<span class="c"># d - file is a directory</span>
+<span class="c"># e - file exists</span>
+<span class="c"># f - file is an ordinary file</span>
+<span class="c"># o - user owns the file</span>
+<span class="c"># r - user has read access to the file</span>
+<span class="c"># w - user has write access to the file</span>
+<span class="c"># x - user has execute access to the file</span>
+<span class="c"># z - file is zero bytes long</span>
+
+<span class="c"># if/then/else</span>
+<span class="nb">set </span>a <span class="o">=</span> 5
+<span class="nb">set </span>b <span class="o">=</span> 10
+
+<span class="k">if</span> <span class="o">(</span><span class="nv">$a</span> &gt; <span class="nv">$b</span><span class="o">)</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"a is greater than b"</span>
+<span class="k">else if</span> <span class="o">(</span><span class="nv">$a</span> &lt; <span class="nv">$b</span><span class="o">)</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"a is lesser than b"</span>
+<span class="k">else
+    </span><span class="nb">echo</span> <span class="s2">"a is equal to b"</span>
+endif
+
+<span class="c"># prints "a is lesser than b"</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 class="code-head" id="loops">loops<span>code</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></td><td class="code"><pre><span class="c">#----------------</span>
+<span class="c"># foreach loop</span>
+<span class="c">#----------------</span>
+<span class="c"># declare a word list</span>
+<span class="nb">set </span>colors <span class="o">=</span> <span class="s2">"white red black green blue"</span>
+
+<span class="c"># iterate over the word list (paranthesis is important)</span>
+foreach c <span class="o">(</span><span class="nv">$colors</span><span class="o">)</span>
+    <span class="nb">echo</span> <span class="nv">$c</span>
+end
+
+<span class="c">#----------------</span>
+<span class="c"># while loop</span>
+<span class="c">#----------------</span>
+<span class="nb">set </span>a <span class="o">=</span> 0
+<span class="k">while</span> <span class="o">(</span><span class="nv">$a</span> &lt; 4<span class="o">)</span>
+    <span class="nb">echo</span> <span class="s2">"a is </span><span class="nv">$a</span><span class="s2">"</span>
+    @ a++
+end
+
+<span class="c"># prints</span>
+<span class="c"># a is 0</span>
+<span class="c"># a is 1</span>
+<span class="c"># a is 2</span>
+<span class="c"># a is 3</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 class="code-head" id="break">break<span>code</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="nb">set </span>a <span class="o">=</span> 0
+<span class="k">while</span> <span class="o">(</span>1 &gt; 0<span class="o">)</span>
+    <span class="nb">echo</span> <span class="s2">"a is </span><span class="nv">$a</span><span class="s2">"</span>
+    @ a++
+    <span class="k">if</span> <span class="o">(</span><span class="nv">$a</span> <span class="o">==</span> 4<span class="o">)</span> <span class="nb">break
+</span>end
+<span class="nb">echo</span> <span class="s2">"breaked from while loop after a is </span><span class="nv">$a</span><span class="s2">"</span>
+
+<span class="c"># prints</span>
+<span class="c"># a is 1</span>
+<span class="c"># a is 2</span>
+<span class="c"># a is 3</span>
+<span class="c"># breaked from while loop after a is 4</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 class="code-head" id="continue">continue<span>code</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre></td><td class="code"><pre><span class="nb">set </span>colors <span class="o">=</span> <span class="s2">"white red black green blue"</span>
+foreach c <span class="o">(</span><span class="nv">$colors</span><span class="o">)</span>
+    <span class="k">if</span> <span class="o">(</span><span class="nv">$c</span> <span class="o">==</span> black<span class="o">)</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"as color is </span><span class="nv">$c</span><span class="s2">, continuing.."</span>
+        <span class="k">continue
+    </span>endif
+    <span class="nb">echo</span> <span class="s2">"color is </span><span class="nv">$c</span><span class="s2">"</span>
+end
+
+<span class="c"># prints</span>
+<span class="c"># color is white</span>
+<span class="c"># color is red</span>
+<span class="c"># as color is black, continuing..</span>
+<span class="c"># color is green</span>
+<span class="c"># color is blue</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 class="code-head" id="goto">goto<span>code</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></td><td class="code"><pre><span class="nb">set </span>a <span class="o">=</span> 20
+
+<span class="k">if</span> <span class="o">(</span><span class="nv">$a</span> <span class="o">==</span> 10<span class="o">)</span> <span class="k">then
+    </span>goto csk
+<span class="k">else if</span> <span class="o">(</span><span class="nv">$a</span> <span class="o">==</span> 20<span class="o">)</span> <span class="k">then
+    </span>goto rcb
+<span class="k">else
+    </span>goto kkr
+
+csk:
+    <span class="nb">echo</span> <span class="s2">"this is csk"</span>
+    <span class="nb">exit </span>1
+
+rcb:
+    <span class="nb">echo</span> <span class="s2">"this is rcb"</span>
+    <span class="nb">exit </span>1
+
+kkr:
+    <span class="nb">echo</span> <span class="s2">"this is kkr"</span>
+    <span class="nb">exit </span>1
+
+<span class="c"># prints </span>
+<span class="c"># this is rcb</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 class="code-head" id="switch">switch<span>code</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></td><td class="code"><pre><span class="k">if</span> <span class="o">(</span><span class="nv">$#argv</span> <span class="o">==</span> 0<span class="o">)</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"No arguments provided.."</span>
+    <span class="nb">exit </span>1
+<span class="k">else
+    </span>switch<span class="o">(</span><span class="nv">$argv</span><span class="o">[</span>1]<span class="o">)</span>
+    <span class="k">case</span> <span class="o">[</span>yY][eE][sS]:
+        <span class="nb">echo</span> <span class="s2">"Input is YES"</span>
+        breaksw
+    <span class="k">case</span> <span class="o">[</span>nN][oO]:
+        <span class="nb">echo</span> <span class="s2">"Input is NO"</span>
+    default:
+        <span class="nb">echo</span> <span class="s2">"Input is not YES/NO"</span>
+        breaksw
+    endsw
+endif
+
+<span class="c"># source test.csh yes</span>
+<span class="c"># print "Input is YES"</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 class="code-head" id="interrupt-handling">Interrupt Handling<span>code</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="c"># used to transfer control to onintr statement once CTRL+C is done to kill the script.</span>
+onintr close
+<span class="k">while</span> <span class="o">(</span>1 &gt; 0<span class="o">)</span>
+    <span class="nb">echo</span> <span class="s2">"Loading avengers...."</span>
+    sleep 2
+end
+
+close:
+<span class="nb">echo</span> <span class="s2">"Avengers killed.."</span>
+<span class="nb">echo</span> <span class="s2">"Yet Ironman is safe!"</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 class="centered-heading" id="how-tos"><span>How to's</span></h3>
+
+<h3 class="code-head" id="how-to-store-the-output-of-a-command">How to store the output of a command?<span>code</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></td><td class="code"><pre><span class="c"># backquotes is used to store command's output to a variable for further processing</span>
+<span class="nb">set </span>a <span class="o">=</span> <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="nv">$a</span> <span class="c"># prints /usr2/gilango/study</span>
+
+<span class="nb">set </span>b <span class="o">=</span> <span class="sb">`</span>date<span class="sb">`</span>
+
+<span class="nb">echo</span> <span class="nv">$b</span>    <span class="c"># Sun Apr 14 13:45:25 IST 2019</span>
+<span class="nb">echo</span> <span class="nv">$b</span><span class="o">[</span>1] <span class="c"># Sun </span>
+
+foreach f <span class="o">(</span><span class="nv">$b</span><span class="o">)</span>
+    <span class="nb">echo</span> <span class="nv">$f</span>
+end
+
+<span class="c"># prints</span>
+<span class="c"># Sun</span>
+<span class="c"># Apr</span>
+<span class="c"># 14</span>
+<span class="c"># 13:45:25</span>
+<span class="c"># IST</span>
+<span class="c"># 2019</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 class="code-head" id="how-to-read-user-input">How to read user input?<span>code</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></td><td class="code"><pre><span class="c"># two ways to read user input</span>
+
+
+<span class="c"># method 1: set a = $&lt;</span>
+<span class="nb">echo</span> -n <span class="s2">"Input a value for a: "</span>
+<span class="nb">set </span>a <span class="o">=</span> <span class="nv">$&lt;</span>
+<span class="nb">echo</span> <span class="s2">"You entered a as: </span><span class="nv">$a</span><span class="s2">"</span>
+
+<span class="c"># prints </span>
+<span class="c"># Input a value for a: 9</span>
+<span class="c"># You entered a as: 9</span>
+
+<span class="c"># method 2: set a = `head -1`</span>
+<span class="nb">echo</span> -n <span class="s2">"Input a value for a: "</span>
+<span class="nb">set </span>a <span class="o">=</span> <span class="sb">`</span>head -1<span class="sb">`</span>
+<span class="nb">echo</span> <span class="s2">"You entered a as: </span><span class="nv">$a</span><span class="s2">"</span>
+
+<span class="c"># prints </span>
+<span class="c"># Input a value for a: 21</span>
+<span class="c"># You entered a as: 21</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 class="code-head" id="how-to-use-single-and-double-quotes">How to use single and double quotes?<span>code</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="c"># single quotes</span>
+<span class="c">#   * allow inclusion of spaces</span>
+<span class="c">#   * prevent variable substitution</span>
+<span class="c">#   * allow filename generation</span>
+
+<span class="c"># double quotes</span>
+<span class="c">#   * allow inclusion of spaces</span>
+<span class="c">#   * allow variable substitution</span>
+<span class="c">#   * allow filename generation</span>
+
+<span class="nb">set </span>a <span class="o">=</span> -l
+<span class="nb">echo</span> <span class="s1">'ls $a'</span> <span class="c"># prints ls $a</span>
+<span class="nb">echo</span> <span class="s2">"ls </span><span class="nv">$a</span><span class="s2">"</span> <span class="c"># prints ls -l</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+        </div>
+        <div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+        
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/software/c-shell-scripting-learning-notes" data-action="share/whatsapp/share"><img src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/c-shell-scripting-learning-notes" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=C Shell Scripting Learning Notes&url=http://localhost:4000/software/c-shell-scripting-learning-notes" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/c-shell-scripting-learning-notes&title=C Shell Scripting Learning Notes&summary=Learn the syntax and how to's of C Shell Scripting which is used to automate repeated manual tasks in most of the industries.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+      </article>
+      
+      <div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/software/c-shell-scripting-learning-notes"></span></p></div>
+
+      <div id="disqus_thread"></div>
+      <script>
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//gogul09.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  
+  window.onscroll = function() {
+    sideBarScrollHandler();
+    windowScrollHandler();
+  };
+  
+  function sideBarScrollHandler() {
+    if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+      document.getElementById("sidebar_tracker").style.top = "20px";
+    } else {
+      document.getElementById("sidebar_tracker").style.top = "70px";
+    }
+  }
+  
+</script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2019 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+     
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/c-shell-scripting-learning-notes',
+		  'title': 'C Shell Scripting Learning Notes'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+   </body>
+   </html>

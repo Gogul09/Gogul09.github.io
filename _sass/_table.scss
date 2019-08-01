@@ -1,0 +1,67 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #edf0f2;
+    table-layout: fixed;
+    word-wrap: normal;
+    font-size: 13px;
+    @include mobile {
+      font-size: 10px;
+    }
+}
+
+thead {
+  border: 1px solid #edf0f2;
+  background-color: #f6f6f6;
+    color: $white;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+    @include mobile {
+      font-size: 11px;
+    }
+}
+
+tbody, tr, td {
+  border: 1px solid #ddd;
+  line-height: 1.5;
+}
+
+tbody, tr {
+  border: 1px solid #ddd;
+  background-color: $white;
+}
+
+th {
+  background: #1e1e1e;
+  color: #fbfbfb;
+  font-weight: bold;
+  font-family: "Roboto",sans-serif;
+  border: 1px solid #dbdbdb;
+  text-align: center;
+  padding: 10px;
+}
+
+tr:nth-child(even) td {
+  background-color: #fbfbfb;
+}
+
+.tg td {
+  overflow-x: scroll;
+  @include mobile {
+    padding: 4px;
+  }
+} 
+
+.tg th {
+  overflow-x: scroll;
+  @include mobile {
+    padding: 4px;
+  }
+}
+
+table p {
+  margin: 0px !important;
+}

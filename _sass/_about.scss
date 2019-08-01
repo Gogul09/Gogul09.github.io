@@ -1,0 +1,274 @@
+.about-container {
+  width: 100%;
+  background-image: url(/images/bg.png);
+}
+
+.about-wrapper {
+  width: 60% !important;
+  @include mobile {
+    width: 100% !important;
+  }
+}
+
+.about-category-tab ul {
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.about-category-box {
+  padding: 20px 50px !important;
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+  @include mobile {
+    padding: 0px !important;
+  }
+}
+
+.about_me_body {
+  width: 100%;
+  padding: 0px;
+  margin: 0px auto;
+  position: relative;
+  background-color: white;
+  @include mobile {
+    margin-top: 0px !important;
+    padding: 15px;
+    border: none;
+  }
+}
+
+.about_me_body a {
+  color: #cf2321 !important;
+  @include mobile {
+    font-size: 14px !important;
+  }
+}
+
+.about_me_body p span {
+  color: #cf2321;
+  padding: 3px 5px !important;
+  display: inline;
+}
+
+.about-quote {
+  padding: 0px 20px;
+  color: #bcbcbc;
+  width: 85%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 0 !important;
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.about_me_body p a {
+  color: #cf2321 !important;
+}
+
+.work-id-card {
+  padding: 10px 5px !important;
+  margin: 10px;
+  border-radius: 3px;
+  padding-bottom: 1px !important;
+  margin-bottom: 40px !important;
+  @include mobile {
+    margin: 0px;
+    border: 0px;
+  }
+}
+
+.work-id-card-header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  padding-bottom: 10px !important;
+}
+
+.work-id-card-header div {
+  width: 100%;
+  padding: 0px !important;
+}
+
+.work-id-card-header div:nth-child(1) {
+  text-align: left;
+}
+
+.work-id-card-header div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.work-id-card-header h1 {
+  font-size: 15px;
+  color: black;
+  margin: 0px !important;
+  padding: 0px !important;
+  text-align: right;
+}
+
+.work-id-card-header img {
+  width: 150px;
+  margin-left: -20px;
+}
+
+.work-id-card-content h5 {
+  text-align: left !important;
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
+  font-size: 17px !important;
+  font-family: "Roboto" !important;
+  @include mobile {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+
+.work-id-card-content h5:first-child {
+  padding-top: 0px !important;
+}
+
+.work-id-card-content p {
+  margin-bottom: 15px !important;
+  margin-top: -5px !important;
+}
+
+.work-id-card-content u {
+  padding-bottom: 2px;
+  text-decoration: none;
+  color: #e22525;
+}
+
+.work-id-card-footer {
+  text-align: center;
+  margin: 20px 0px !important;
+}
+
+.work-id-card-header p {
+  text-align: right;
+}
+
+.about-map-earth {
+  width: 100%;
+  height: 600px;
+  border: none;
+  padding: 0px !important;
+  box-shadow: 3px 4px 5px rgba(36, 36, 36, 0.23);
+}
+
+.about-map-earth iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.work-id-card-content ul {
+  margin: 10px auto;
+  padding: 0px !important;
+}
+
+.work-id-card-content ul li {
+  padding: 3px 6px;
+  font-size: 18px;
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.about_me_body h6 {
+    color: black;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.moocs_slides a {
+    margin: 20px auto;
+    background-color: #ff5757;
+    width: auto;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 4px;
+    color: white !important;
+
+    &:hover, &:active { 
+      background-color: #e24141;
+    }
+}
+
+.moocs_slides h4 {
+    margin: 20px auto !important;
+    @include mobile {
+      padding-top: 20px !important;
+      margin: 0px !important;
+    }
+}
+
+.moocs_btns {
+  display: flex;
+  justify-content: center;
+  padding: 20px !important;
+}
+
+.moocs_btns button {
+    margin: 10px;
+    background-color: white;
+    border: none;
+    padding: 5px 20px;
+    box-shadow: 2px 2px 4px #cccccc;
+    border-radius: 3px;
+    color: #615f5f;
+}
+
+.moocs_btns button:focus {
+    outline: none;
+}
+
+.moocs_slides figure {
+  margin: 20px auto;
+}
+
+.grad-about {
+  background-color: #1f0021;
+  background-image: url("/images/bg.png");
+  border-bottom: 3px dotted #90909085;
+  @include mobile {
+    border-bottom: 0px;
+  }
+}
+
+.grad-about h1 {
+  margin-bottom: 0px !important;
+}
+
+.qualstar {
+  background-color: #ffe886;
+  padding: 5px 7px;
+  border-radius: 4px;
+  background-image: url(/images/icons/qualstar.png);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position-y: 4px;
+  background-position-x: 8px;
+  padding-left: 35px;
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 14px;
+  @include mobile {
+    background-color: #ffe886;
+    padding: 5px 4px;
+    border-radius: 4px;
+    background-image: url(/images/icons/qualstar.png);
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position-y: 4px;
+    background-position-x: 4px;
+    padding-left: 28px;
+    font-family: "Poppins";
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}

@@ -1,0 +1,89 @@
+.gem-box {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gem-box div {
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid #e4e4e4;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  @include mobile {
+    width: 140px;
+    height: initial;
+    padding: 10px;
+  }
+}
+
+.gem-box div:hover {
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gem-box div h4 {
+  color: black;
+  font-size: 17px;
+  margin-top: 50px;
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.gem-box div p {
+  font-size: 16px;
+  line-height: 1.4em;
+  @include mobile {
+    font-size: 12px;
+  }
+}
+
+.gem-box div img {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: absolute;
+  top: 25px;
+  height: 30px;
+  @include mobile {
+    height: 20px;
+  }
+}
+
+.gem-box div:hover img {
+  top: -15px;
+}
+
+.home-follow-wrapper {
+  display: flex;
+  margin: 0px auto;
+}
+
+.home-follow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: auto !important;
+  margin: 20px auto;
+  justify-content: center;
+  margin-bottom: 0px;
+  padding: 15px;
+  border-radius: 5px;
+  @include mobile {
+    width: 100% !important;
+    padding-left: 5px;
+    justify-content: flex-start;
+  }
+}
+
+.home-follow iframe {
+  display: inline-block;
+  margin-right: 10px;
+}

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deep Learning Environment Setup for Linux – Gogul Ilango </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400|Roboto:300" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Deep Learning Environment Setup for Linux" />
+    <meta name="description" content="This tutorial is for beginners who need to setup environment for Deep Learning and Computer Vision in Linux." />
+    <meta property="og:description" content="This tutorial is for beginners who need to setup environment for Deep Learning and Computer Vision in Linux." />
+    <meta property="twitter:title" content="Deep Learning Environment Setup for Linux" />
+
+    <meta property="og:image" content="images/icons/logo.png"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Deep Learning Environment Setup for Linux">
+    <meta name="twitter:description" content="This tutorial is for beginners who need to setup environment for Deep Learning and Computer Vision in Linux.">
+    <meta name="twitter:image" content="images/icons/logo.png">
+  <!-- Begin Jekyll SEO tag v2.2.2 -->
+<title>Deep Learning Environment Setup for Linux | Gogul Ilango</title>
+<meta property="og:title" content="Deep Learning Environment Setup for Linux" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This tutorial is for beginners who need to setup environment for Deep Learning and Computer Vision in Linux." />
+<meta property="og:description" content="This tutorial is for beginners who need to setup environment for Deep Learning and Computer Vision in Linux." />
+<link rel="canonical" href="http://localhost:4000/software/deep-learning-linux" />
+<meta property="og:url" content="http://localhost:4000/software/deep-learning-linux" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1hgL8nz8un1Tx0HJqTZ018WhTru5sTf24" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-02-04T00:00:00+05:30" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"Deep Learning Environment Setup for Linux","author":{"@type":"Person","name":"Gogul Ilango"},"image":"https://drive.google.com/uc?id=1hgL8nz8un1Tx0HJqTZ018WhTru5sTf24","datePublished":"2017-02-04T00:00:00+05:30","dateModified":"2017-02-04T00:00:00+05:30","description":"This tutorial is for beginners who need to setup environment for Deep Learning and Computer Vision in Linux.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/deep-learning-linux"},"url":"http://localhost:4000/software/deep-learning-linux"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#1f0021" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="header-left">
+            <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
+          </div>
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"></a>
+            <a title="blog" id = "nav_blog" href="/blog"></a>
+            <a title="creations" id = "nav_creations" href="/creations"></a>
+            <a title="music" id = "nav_music" href="/music"></a>
+            <a title="photography" id = "nav_photography" href="/photography"></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>Deep Learning Environment Setup for Linux</h1>
+		<div class="post-subheading">
+			<p>Environment Setup | 04 February 2017</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/software/deep-learning-linux"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/software/deep-learning-linux" data-action="share/whatsapp/share"><img src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/deep-learning-linux" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=Deep Learning Environment Setup for Linux&url=http://localhost:4000/software/deep-learning-linux" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/deep-learning-linux&title=Deep Learning Environment Setup for Linux&summary=This tutorial is for beginners who need to setup environment for Deep Learning and Computer Vision in Linux.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/deep-learning-linux" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/deep-learning-linux" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Deep Learning Environment Setup for Linux&url=http://localhost:4000/software/deep-learning-linux" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/deep-learning-linux&title=Deep Learning Environment Setup for Linux&summary=This tutorial is for beginners who need to setup environment for Deep Learning and Computer Vision in Linux.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<p><b>In this tutorial, we will setup the environment for Deep Learning and Computer Vision in Linux. This tutorial assumes that you have knowledge about using Linux Environment such as Ubuntu and basic knowledge of <a href="https://gogul09.github.io/hardware/linux-helpers" target="_blank">Linux commands</a></b>.</p>
+
+<div class="note">
+<p>
+<b>Update</b>: If you use Windows, I would suggest you to download <a href="https://www.virtualbox.org/">Virtual Box</a> (which is open-source) and install <a href="http://releases.ubuntu.com/14.04/">Ubuntu</a> in it (which is also open-source). But if you really want to work in a Windows machine, then check out this <a href="https://gogul09.github.io/software/deep-learning-windows" target="_blank">post</a> for setting up Deep Learning environment in Windows 10.
+</p>
+</div>
+
+<ul>
+  <li>
+    <p>Install <strong>python</strong> (high-level programming language) <br />
+The first step is to download and install Python from <a href="https://www.python.org/downloads/" target="_blank">this</a> website. Download Python 2.7 version as it is the most stable release of Python. Python 3.0 and above versions are good to download, but there are some backwards-incompatible changes which might produce some errors. So, better use Python 2.7 version.</p>
+  </li>
+  <li>
+    <p>Install <strong>pip</strong> (python package manager) <br /></p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bootstrap</span><span class="o">.</span><span class="n">pypa</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">get</span><span class="o">-</span><span class="n">pip</span><span class="o">.</span><span class="n">py</span>
+<span class="n">sudo</span> <span class="n">python</span> <span class="n">get</span><span class="o">-</span><span class="n">pip</span><span class="o">.</span><span class="n">py</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>Install all the other necessary packages. <br /></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td><td class="code"><pre><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">scipy</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">tk</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">seaborn</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">librosa</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">tensorflow</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">theano</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">keras</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h2 id="dependencies-for-computer-vision">Dependencies for Computer Vision</h2>
+
+<ul>
+  <li>Developer tools</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">cmake</span> <span class="n">git</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>Image I/O packages</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libjpeg8</span><span class="o">-</span><span class="n">dev</span> <span class="n">libtiff4</span><span class="o">-</span><span class="n">dev</span> <span class="n">libjasper</span><span class="o">-</span><span class="n">dev</span> <span class="n">libpng12</span><span class="o">-</span><span class="n">dev</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>GTK Development Library</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libgtk2</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">dev</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>Accessing frames and video processing</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libavcodec</span><span class="o">-</span><span class="n">dev</span> <span class="n">libavformat</span><span class="o">-</span><span class="n">dev</span> <span class="n">libswscale</span><span class="o">-</span><span class="n">dev</span> <span class="n">libv4l</span><span class="o">-</span><span class="n">dev</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>Optimize routines in OpenCV</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libatlas</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">dev</span> <span class="n">gfortran</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>Install OpenCV 3.1</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="n">cd</span> <span class="o">~</span> 
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Itseez</span><span class="o">/</span><span class="n">opencv</span><span class="o">.</span><span class="n">git</span> 
+<span class="n">cd</span> <span class="n">opencv</span> 
+<span class="n">git</span> <span class="n">checkout</span> <span class="mf">3.1</span><span class="o">.</span><span class="mi">0</span> 
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>Install OpenCV contrib 3.1</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="n">cd</span> <span class="o">~</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Itseez</span><span class="o">/</span><span class="n">opencv_contrib</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">opencv_contrib</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="mf">3.1</span><span class="o">.</span><span class="mi">0</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>Build OpenCV</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="n">cd</span> <span class="o">~/</span><span class="n">opencv</span>
+<span class="n">mkdir</span> <span class="n">build</span>
+<span class="n">cd</span> <span class="n">build</span>
+<span class="n">cmake</span> <span class="o">-</span><span class="n">D</span> <span class="n">CMAKE_BUILD_TYPE</span><span class="o">=</span><span class="n">RELEASE</span> <span class="o">-</span><span class="n">D</span> <span class="n">CMAKE_INSTALL_PREFIX</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span> <span class="o">-</span><span class="n">D</span> <span class="n">INSTALL_C_EXAMPLES</span><span class="o">=</span><span class="n">OFF</span> <span class="o">-</span><span class="n">D</span> <span class="n">INSTALL_PYTHON_EXAMPLES</span><span class="o">=</span><span class="n">ON</span> <span class="o">-</span><span class="n">D</span> <span class="n">OPENCV_EXTRA_MODULES_PATH</span><span class="o">=~/</span><span class="n">opencv_contrib</span><span class="o">/</span><span class="n">modules</span> <span class="o">-</span><span class="n">D</span> <span class="n">BUILD_EXAMPLES</span><span class="o">=</span><span class="n">ON</span> <span class="o">..</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>Compile OpenCV</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">make</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>Install OpenCV</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span> 
+<span class="n">sudo</span> <span class="n">ldconfig</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<div class="note">
+<p><b>Note</b>: If you install librosa in Windows, you will need FFmpeg which could be downloaded <a href="https://ffmpeg.org/" target="_blank">here</a>. Extract the <span class="coding">.zip</span> file and add <span class="coding">bin</span> folder of FFmpeg to <span class="coding">PATH</span> in system environment variables.</p>
+</div>
+
+<p>After installing all these libraries, open up a terminal and type <span class="coding">python</span>. After that, import all the packages using <span class="coding">import (package-name)</span> (for example, <span class="coding">import numpy</span>) and verfiy the version of each package. In case if you get any error, <strong>uninstall</strong> that package using <span class="coding">sudo pip uninstall (package-name)</span>, and then <strong>reinstall</strong> that package again with pip. Sometimes I faced this issue and solved it using this simple method.</p>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/software/deep-learning-linux"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				(function() {
+					var d = document, s = d.createElement('script');
+					s.src = '//gogul09.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2019 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+     
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/deep-learning-linux',
+		  'title': 'Deep Learning Environment Setup for Linux'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+   </body>
+</html>

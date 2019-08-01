@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Python for Hardware Design – Gogul Ilango </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400|Roboto:300" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Python for Hardware Design" />
+    <meta name="description" content="How python programming language could be used in hardware design such as ASIC logic design or physical design. Come let's explore." />
+    <meta property="og:description" content="How python programming language could be used in hardware design such as ASIC logic design or physical design. Come let's explore." />
+    <meta property="twitter:title" content="Python for Hardware Design" />
+
+    <meta property="og:image" content="images/icons/logo.png"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Python for Hardware Design">
+    <meta name="twitter:description" content="How python programming language could be used in hardware design such as ASIC logic design or physical design. Come let's explore.">
+    <meta name="twitter:image" content="images/icons/logo.png">
+  <!-- Begin Jekyll SEO tag v2.2.2 -->
+<title>Python for Hardware Design | Gogul Ilango</title>
+<meta property="og:title" content="Python for Hardware Design" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How python programming language could be used in hardware design such as ASIC logic design or physical design. Come let’s explore." />
+<meta property="og:description" content="How python programming language could be used in hardware design such as ASIC logic design or physical design. Come let’s explore." />
+<link rel="canonical" href="http://localhost:4000/hardware/python-for-hardware-design" />
+<meta property="og:url" content="http://localhost:4000/hardware/python-for-hardware-design" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1XZNZ6xPx0UUCbnncmz_GBWpX7xhHJ6lo" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-05-26T00:00:00+05:30" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"Python for Hardware Design","author":{"@type":"Person","name":"Gogul Ilango"},"image":"https://drive.google.com/uc?id=1XZNZ6xPx0UUCbnncmz_GBWpX7xhHJ6lo","datePublished":"2019-05-26T00:00:00+05:30","dateModified":"2019-05-26T00:00:00+05:30","description":"How python programming language could be used in hardware design such as ASIC logic design or physical design. Come let’s explore.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/hardware/python-for-hardware-design"},"url":"http://localhost:4000/hardware/python-for-hardware-design"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#1f0021" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="header-left">
+            <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
+          </div>
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"></a>
+            <a title="blog" id = "nav_blog" href="/blog"></a>
+            <a title="creations" id = "nav_creations" href="/creations"></a>
+            <a title="music" id = "nav_music" href="/music"></a>
+            <a title="photography" id = "nav_photography" href="/photography"></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>Python for Hardware Design</h1>
+		<div class="post-subheading">
+			<p>PD Concepts | 26 May 2019</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/hardware/python-for-hardware-design"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/hardware/python-for-hardware-design" data-action="share/whatsapp/share"><img src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/python-for-hardware-design" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=Python for Hardware Design&url=http://localhost:4000/hardware/python-for-hardware-design" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/python-for-hardware-design&title=Python for Hardware Design&summary=How python programming language could be used in hardware design such as ASIC logic design or physical design. Come let's explore.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/hardware/python-for-hardware-design" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/python-for-hardware-design" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Python for Hardware Design&url=http://localhost:4000/hardware/python-for-hardware-design" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/python-for-hardware-design&title=Python for Hardware Design&summary=How python programming language could be used in hardware design such as ASIC logic design or physical design. Come let's explore.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+  	<li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#why-python-is-so-popular">Why Python is so popular?</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#how-to-learn-python-for-free">How to learn Python for free?</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#python-for-automation">Python for Automation</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#python-for-text-processing">Python for Text Processing</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#python-for-logic-design">Python for Logic Design</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#python-for-ml-dl-in-hardware">Python for ML/DL in Hardware</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#python-for-eda">Python for EDA</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#python-for-web-dashboards">Python for Web Dashboards</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#conclusion">Conclusion</a></li>
+  </ul>
+</div>
+
+<div class="objectives">
+<p>I always get questions from my coworkers as well as my readers like the ones below.</p>
+<ul>
+	<li>Where do I start learning python?</li> 
+	<li>Why/How should a hardware engineer learn python in 2019?</li> 
+	<li>How python could be used to eliminate manual tasks?</li>
+	<li>Why python is preferred over other scripting languages?</li>
+</ul>
+</div>
+
+<p>If you check out the link <a href="https://octoverse.github.com/2017/" target="_blank">here</a>, its pretty much obvious that <span class="coding">javascript</span> and <span class="coding">python</span> leads the programming languages race in 2017. Python has its root in almost any major tech domain such as web development, data analytics, machine learning, deep learning, computer vision, natural language processing, audio processing etc., as shown <a href="https://gogul09.github.io/software/python-programming" target="_blank">here</a>.</p>
+
+<p>But, what if we use python to design, simulate and implement hardware circuits in silicon? Is it possible to take the amazing advantages that python offer over other hardware related programming languages such as HDL (verilog or vhdl), Tcl, Perl or Shell? Come let’s explore!</p>
+
+<figure>
+  <img src="https://drive.google.com/uc?id=1z2Y6YEAYahJA_7TgcMESLuJIqtsApkal" />
+</figure>
+
+<h3 id="why-python-is-so-popular">Why Python is so popular?</h3>
+
+<p>If you are a beginner to the programming world, I would highly suggest you to learn <span class="coding">python</span> first. This is because of the following major reasons.</p>
+<ul>
+  <li><strong>Simple</strong>: Python is simple to learn because its very similar to how we humans think.</li>
+  <li><strong>More Productive</strong>: Python is highly productive when compared to other languages such as <span class="coding">c</span>, <span class="coding">c++</span> or <span class="coding">java</span> as it is much more readable, concise, expressive and takes lesser time and effort to write code.</li>
+  <li><strong>One-liners</strong>: Python has so many one-liners and english-like commands (keywords) that boosts programmers productivity a lot.</li>
+  <li><strong>Community</strong>: Python has a very big developer friendly community and its very easy to find python developers around the world in platforms such as GitHub or Stack Overflow.</li>
+  <li><strong>Libraries</strong>: Python has rich set of well documented libraries and frameworks for different tech domains as shown <a href="https://gogul09.github.io/software/python-programming" target="_blank">here</a>.</li>
+  <li><strong>Open-Source</strong>: Python ecosystem is so popular because most of the libraries and frameworks available online are open-source (meaning anyone can use it for their development purposes adhering to the licenses provided).</li>
+</ul>
+
+<p>Despite its advantages, python is much slower compared to languages such as <span class="coding">c++</span>. But wait! It’s not a big disadvantage. You can still use python for most of the tasks that require minimal execution time (not speed-intensive applications such as games). That’s why data-intensive domains such as deep learning libraries use python as a high-level wrapper for a human to code and beneath that wrapper, they use C++ for faster execution.</p>
+
+<hr />
+
+<h3 id="how-to-learn-python-for-free">How to learn python for free?</h3>
+
+<p>When I started learning python three years back, I used the following resources. I guess, these resources are more than enough to get you comfortable with python.</p>
+
+<ul>
+  <li><a href="https://www.hackerrank.com/domains/python" target="_blank">HackerRank</a> is the best learning platform for python. You have to learn and solve programs based on levels of difficulty. Once you solve programs here, you will get that confidence in using the language for your own purposes.</li>
+  <li><a href="https://www.youtube.com/playlist?list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-" target="_blank">Learn Python - Socratica</a> has an excellent playlist full of neatly made python tutorials in YouTube for free. If you love learning by videos, this is the best ever python tutorial playlist out there.</li>
+  <li>Corey Schafer is another awesome YouTube channel that delivers no-bullshit python tutorials.
+    <ul>
+      <li><a href="https://www.youtube.com/playlist?list=PL-osiE80TeTt66h8cVpmbayBKlMTuS55y" target="_blank">Python - Setting up a Python Environment</a></li>
+      <li><a href="https://www.youtube.com/playlist?list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7" target="_blank">Python Programming Beginner Tutorials</a></li>
+      <li><a href="https://www.youtube.com/playlist?list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU" target="_blank">Python Tutorials</a></li>
+      <li><a href="https://www.youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc" target="_blank">Python OOP Tutorials</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Other than these, you can check out some extensive list of learning resources that I collected for you <a href="https://gogul09.github.io/software/python-programming" target="_blank">here</a>.</p>
+
+<hr />
+
+<h3 id="python-for-automation">Python for Automation</h3>
+
+<p>The main use of python lies in automating repeated manual tasks that we perform daily. These manual tasks might include opening a terminal, going to a path, finding some file, parsing some values in that file, putting that parsed value in a csv file and sending a mail with that csv file attached. This is one of the classic examples where you can write a single python script to do all the steps that are mentioned.</p>
+
+<p>Other examples where python scripts can be used are organizing files in a particular path, manipulating strings, csv files, excel spreadsheets etc., sending email and text messages and much more. <a href="https://automatetheboringstuff.com/" target="_blank">Automate the boring stuff with python</a> is a great learning resource that you can read on how to do these.</p>
+
+<hr />
+
+<h3 id="python-for-text-processing">Python for Text Processing</h3>
+
+<p>Manipulating text files is a common task in any domain whether you are in VLSI, computer networking, image processing, signal processing etc., Python offers rich set of libraries and modules to do this.</p>
+
+<p>Some of the most commonly used text processing modules in python using which you can manipulate text files (such as CSV files, JSON files, YAML file, HTML files etc.,), perform shell operations, parse large text files, load/store very large text files and manipulate file formats are</p>
+<ul>
+  <li><span class="coding">string</span> module</li>
+  <li><span class="coding">os</span> module</li>
+  <li><span class="coding">sys</span> module</li>
+  <li><span class="coding">re</span> module</li>
+  <li><span class="coding">csv</span> module</li>
+  <li><span class="coding">json</span> module</li>
+  <li><span class="coding">yaml</span> module</li>
+  <li><span class="coding">h5py</span> module</li>
+  <li><span class="coding">bs4</span> module</li>
+</ul>
+
+<hr />
+
+<h3 id="python-for-logic-design">Python for Logic Design</h3>
+
+<p>Ok cool! Now you understood, python could be used to create automation utilities that involve text processing which reduces time involved in solving repeated manual tasks in your day-to-day work life.</p>
+
+<h4 id="myhdl">MyHDL</h4>
+
+<p>Can python be used in designing hardware circuits which typically need a HDL for writing code? Of course, there is a great open-source python project called <a href="http://www.myhdl.org/" target="_blank">MyHDL</a> that turns python into a hardware description and verification language, providing hardware engineers with the power of the python ecosystem.</p>
+
+<p>Moreover, MyHDL designs can be converted to verilog or VHDL automatically and implemented using a standard tool flow. Before getting too much excited about this library, please read <a href="http://www.myhdl.org/start/whatitisnot.html" target="_blank">What MyHDL is not?</a></p>
+
+<p>You can check out FPGA designs using MyHDL <a href="https://buildmedia.readthedocs.org/media/pdf/fpga-designs-with-myhdl/latest/fpga-designs-with-myhdl.pdf" target="_blank">here</a>. You can check out MyHDL manual <a href="https://buildmedia.readthedocs.org/media/pdf/myhdl/stable/myhdl.pdf" target="_blank">here</a>. Also, do read <a href="https://www.quora.com/How-can-Python-be-used-in-hardware-designing" target="_blank">this</a> quora answer.</p>
+
+<h4 id="pymtl">PyMTL</h4>
+
+<p>Another python based hardware modeling framework is <a href="https://github.com/cornell-brg/pymtl">PyMTL</a>. Following links provide training resources on using this library.</p>
+<ul>
+  <li><a href="http://www.csl.cornell.edu/courses/ece4750/handouts/ece4750-tut4-verilog.pdf" target="_blank">Verilog Hardware Description Language</a></li>
+  <li><a href="http://www.csl.cornell.edu/courses/ece4750/handouts/ece4750-tut3-pymtl.pdf" target="_blank">PyMTL Hardware Modeling Framework Tutorial</a></li>
+  <li><a href="https://github.com/cornell-ece5745/ece5745-sec-pymtl-cl/blob/master/README.md" target="_blank">PyMTL CL Modeling Tutorial</a></li>
+  <li><a href="https://github.com/cornell-brg/pymtl-tut-hls/blob/master/README.md" target="_blank">PyMTL/HLS Tutorial</a></li>
+  <li><a href="http://www.csl.cornell.edu/courses/ece5745/handouts/ece5745-tut-asic-new.pdf" target="_blank">PyMTL-Based ASIC Toolflow Tutorial</a></li>
+</ul>
+
+<hr />
+
+<h3 id="python-for-ml-dl-in-hardware">Python for ML/DL in Hardware</h3>
+
+<p>Apart from the hypes that machine learning (ML) and deep learning (DL) have created in the recent years, still VLSI domain isn’t deeply affected by ML or DL. This is because, VLSI industry is so complex because of conflicting goals to optimize hardware designs for timing, power and area with lesser time to market.</p>
+
+<p>This is definitely the time to use ML or DL in hardware design, particularly creating ML models for smaller tasks in a bigger design flow. I have documented some of the current research papers and articles related to using ML or DL in VLSI chip design <a href="https://gogul09.github.io/hardware/research-papers-vlsi-ml" target="_blank">here</a>.</p>
+
+<p>But, for a beginner who is interested to use ML or DL in hardware design, below are the python libraries needed to get started.</p>
+
+<p><strong>Scientific Computing Stack</strong></p>
+<ul>
+  <li><a href="https://www.numpy.org/" target="_blank">NumPy</a></li>
+  <li><a href="https://www.scipy.org/" target="_blank">SciPy</a></li>
+  <li><a href="https://matplotlib.org/" target="_blank">Matplotlib</a></li>
+  <li><a href="https://seaborn.pydata.org/" target="_blank">Seaborn</a></li>
+  <li><a href="https://pandas.pydata.org/" target="_blank">Pandas</a></li>
+</ul>
+
+<p><strong>Machine Learning</strong></p>
+<ul>
+  <li><a href="https://scikit-learn.org/" target="_blank">Scikit-learn</a></li>
+</ul>
+
+<p><strong>Deep Learning</strong></p>
+<ul>
+  <li><a href="https://keras.io/" target="_blank">Keras</a></li>
+  <li><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a></li>
+</ul>
+
+<hr />
+
+<h3 id="python-for-eda">Python for EDA</h3>
+
+<p>As far as technology node reduces, the need for electronic design automation tools increases. You can’t design a multi-million instances based design manually. You need EDA tools that helps in implementation.</p>
+
+<p>One particular python project that I found related to EDA was <a href="https://pyeda.readthedocs.io/en/latest/" target="_blank">PyEDA</a>. You can watch <a href="https://www.youtube.com/watch?v=cljDuK0ouRs" target="_blank">this</a> YouTube video to learn more about this hobby project by <a href="https://github.com/cjdrake" target="_blank">Chris Drake</a>.</p>
+
+<hr />
+
+<h3 id="python-for-web-dashboards">Python for Web Dashboards</h3>
+
+<p>To analyze your design data which has lots of files with millions of lines, you need a simpler way to look at important metrics, reports and status of your design in a nice looking web interface. Python provides cool libraries to create web dashboards that speeds up your productivity as well as reducing your analysis time.</p>
+
+<p>Using the python libraries given below, and with some HTML, CSS and JavaScript knowledge, you can create beautiful web dashboards to analyze your design data and reduce time to market a lot.</p>
+
+<ul>
+  <li><a href="https://www.djangoproject.com/" target="_blank">Django</a></li>
+  <li><a href="http://flask.pocoo.org/" target="_blank">Flask</a></li>
+  <li><a href="https://api.mongodb.com/python/current/" target="_blank">PyMongo</a></li>
+</ul>
+
+<hr />
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>As you can see, <span class="coding">python</span> can be used in multiple areas in hardware design. According to me, python has just started to find its place in hardware design. Also, I feel that it will be used by engineers around the world very soon due to its simpler nature. If you have found anything related to python that could be used for hardware design, please leave that in the comments below. Peace!</p>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/hardware/python-for-hardware-design"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				(function() {
+					var d = document, s = d.createElement('script');
+					s.src = '//gogul09.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2019 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+     
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/hardware/python-for-hardware-design',
+		  'title': 'Python for Hardware Design'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+   </body>
+</html>

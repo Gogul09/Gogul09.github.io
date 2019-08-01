@@ -1,0 +1,86 @@
+#carbonads {
+  display: block;
+  overflow: hidden;
+  font-family: "Roboto";
+  background: transparent;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 14px;
+  border: none;
+  padding: 0 15px;
+  margin: 0px !important;
+  height: 100% !important;
+}
+
+#carbonads:hover {
+  box-shadow: none !important;
+}
+
+#carbonads a {
+  color: #202124 !important;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: #202124 !important;
+  text-decoration: none !important;
+  border: none !important;
+}
+
+#carbonads span {
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin: 0 auto 8px;
+  line-height: 1;
+}
+
+.carbon-text {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  @include mobile {
+    font-size: 12px;
+  }
+}
+
+.carbon-poweredby {
+  text-transform: uppercase;
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  line-height: 1;
+  font-family: "Poppins";
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.carbon-wrap img {
+  position: initial !important;
+  height: auto !important;
+  border-radius: 3px;
+  @include mobile {
+    max-width: 110px !important;
+  }
+}
+
+.carbon_advertisement {
+  width: 50%;
+  margin: 0px auto;
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.carbon_advertisement_wrapper {
+  border: 1px solid #ececec;
+  margin: 20px;
+  padding: 25px 0px;
+  background-color: #fbfbfb;
+  border-radius: 3px;
+}

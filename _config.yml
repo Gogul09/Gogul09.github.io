@@ -1,0 +1,59 @@
+#
+# Website's configuration file.
+#
+
+name: Gogul Ilango
+description: This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources.
+avatar: /images/gogs.jpg
+subheading: Be awesome at VLSI Design and Machine Intelligence
+
+footer-links:
+  dribbble:
+  email: 
+  facebook:
+  flickr:
+  github: Gogul09
+  instagram:
+  linkedin: Gogulilango
+  pinterest:
+  rss:
+  twitter:
+  stackoverflow:
+  youtube: channel/UC_7qnwOlGBTjnt4TxPMureQ
+  googleplus: 
+
+disqus:
+google_analytics: UA-93019594-1
+url: https://gogul09.github.io/
+baseurl: ""
+
+permalink: /:title/
+version: v1.2.0
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span: 
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+sass:
+  style: :compressed
+
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+
+paginate: 4
+excerpt_separator: <!--more-->

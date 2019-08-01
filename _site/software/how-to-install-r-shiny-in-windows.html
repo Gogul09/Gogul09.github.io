@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>How to install R and Shiny in Ubuntu? – Gogul Ilango </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400|Roboto:300" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="How to install R and Shiny in Ubuntu?" />
+    <meta name="description" content="This tutorial is for beginners who need to install R, RStudio and Shiny in Ubuntu." />
+    <meta property="og:description" content="This tutorial is for beginners who need to install R, RStudio and Shiny in Ubuntu." />
+    <meta property="twitter:title" content="How to install R and Shiny in Ubuntu?" />
+
+    <meta property="og:image" content="images/icons/logo.png"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="How to install R and Shiny in Ubuntu?">
+    <meta name="twitter:description" content="This tutorial is for beginners who need to install R, RStudio and Shiny in Ubuntu.">
+    <meta name="twitter:image" content="images/icons/logo.png">
+  <!-- Begin Jekyll SEO tag v2.2.2 -->
+<title>How to install R and Shiny in Ubuntu? | Gogul Ilango</title>
+<meta property="og:title" content="How to install R and Shiny in Ubuntu?" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This tutorial is for beginners who need to install R, RStudio and Shiny in Ubuntu." />
+<meta property="og:description" content="This tutorial is for beginners who need to install R, RStudio and Shiny in Ubuntu." />
+<link rel="canonical" href="http://localhost:4000/software/how-to-install-r-shiny-in-windows" />
+<meta property="og:url" content="http://localhost:4000/software/how-to-install-r-shiny-in-windows" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1e9sx0mm7b763Zr6uM_16FgqjYWGDPYG3" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-02T00:00:00+05:30" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to install R and Shiny in Ubuntu?","author":{"@type":"Person","name":"Gogul Ilango"},"image":"https://drive.google.com/uc?id=1e9sx0mm7b763Zr6uM_16FgqjYWGDPYG3","datePublished":"2017-05-02T00:00:00+05:30","dateModified":"2017-05-02T00:00:00+05:30","description":"This tutorial is for beginners who need to install R, RStudio and Shiny in Ubuntu.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/how-to-install-r-shiny-in-windows"},"url":"http://localhost:4000/software/how-to-install-r-shiny-in-windows"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#1f0021" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="header-left">
+            <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
+          </div>
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"></a>
+            <a title="blog" id = "nav_blog" href="/blog"></a>
+            <a title="creations" id = "nav_creations" href="/creations"></a>
+            <a title="music" id = "nav_music" href="/music"></a>
+            <a title="photography" id = "nav_photography" href="/photography"></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>How to install R and Shiny in Ubuntu?</h1>
+		<div class="post-subheading">
+			<p>Tools | 02 May 2017</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/software/how-to-install-r-shiny-in-windows"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/software/how-to-install-r-shiny-in-windows" data-action="share/whatsapp/share"><img src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/how-to-install-r-shiny-in-windows" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=How to install R and Shiny in Ubuntu?&url=http://localhost:4000/software/how-to-install-r-shiny-in-windows" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/how-to-install-r-shiny-in-windows&title=How to install R and Shiny in Ubuntu?&summary=This tutorial is for beginners who need to install R, RStudio and Shiny in Ubuntu.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/how-to-install-r-shiny-in-windows" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/how-to-install-r-shiny-in-windows" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=How to install R and Shiny in Ubuntu?&url=http://localhost:4000/software/how-to-install-r-shiny-in-windows" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/how-to-install-r-shiny-in-windows&title=How to install R and Shiny in Ubuntu?&summary=This tutorial is for beginners who need to install R, RStudio and Shiny in Ubuntu.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<p>R is a great programming language to do Data Analysis and Statistical Operations on data. It has a easy-to-follow readable syntax (somewhat similar to Python) and provides rich source of libraries/packages to perform anything from Data Manipulation to Data Visualization. YOu can install these packages from CRAN (Comprehensive R Archive Network) which is a place where all the R packages/distributions exist. In this tutorial, we will learn how to install R, RStudio and Shiny (an R package to create interactive web apps) in Ubuntu 14.04.</p>
+
+<h3 id="installing-r">Installing R</h3>
+
+<p>Update the list of packages in the sources list</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>Install R using <span class="coding">apt-get</span></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">r</span><span class="o">-</span><span class="n">base</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>Check whether installation was successful.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">R</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>It must display something like this -</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></td><td class="code"><pre><span class="n">R</span> <span class="n">version</span> <span class="mf">3.4</span><span class="o">.</span><span class="mi">0</span> <span class="p">(</span><span class="mi">2017</span><span class="o">-</span><span class="mo">04</span><span class="o">-</span><span class="mi">21</span><span class="p">)</span> <span class="o">--</span> <span class="s">"You Stupid Darkness"</span>
+<span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="mi">2017</span> <span class="n">The</span> <span class="n">R</span> <span class="n">Foundation</span> <span class="k">for</span> <span class="n">Statistical</span> <span class="n">Computing</span>
+<span class="n">Platform</span><span class="p">:</span> <span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span> <span class="p">(</span><span class="mi">64</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span>
+
+<span class="n">R</span> <span class="ow">is</span> <span class="n">free</span> <span class="n">software</span> <span class="ow">and</span> <span class="n">comes</span> <span class="k">with</span> <span class="n">ABSOLUTELY</span> <span class="n">NO</span> <span class="n">WARRANTY</span><span class="o">.</span>
+<span class="n">You</span> <span class="n">are</span> <span class="n">welcome</span> <span class="n">to</span> <span class="n">redistribute</span> <span class="n">it</span> <span class="n">under</span> <span class="n">certain</span> <span class="n">conditions</span><span class="o">.</span>
+<span class="n">Type</span> <span class="s">'license()'</span> <span class="ow">or</span> <span class="s">'licence()'</span> <span class="k">for</span> <span class="n">distribution</span> <span class="n">details</span><span class="o">.</span>
+
+  <span class="n">Natural</span> <span class="n">language</span> <span class="n">support</span> <span class="n">but</span> <span class="n">running</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">English</span> <span class="n">locale</span>
+
+<span class="n">R</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">collaborative</span> <span class="n">project</span> <span class="k">with</span> <span class="n">many</span> <span class="n">contributors</span><span class="o">.</span>
+<span class="n">Type</span> <span class="s">'contributors()'</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span> <span class="ow">and</span>
+<span class="s">'citation()'</span> <span class="n">on</span> <span class="n">how</span> <span class="n">to</span> <span class="n">cite</span> <span class="n">R</span> <span class="ow">or</span> <span class="n">R</span> <span class="n">packages</span> <span class="ow">in</span> <span class="n">publications</span><span class="o">.</span>
+
+<span class="n">Type</span> <span class="s">'demo()'</span> <span class="k">for</span> <span class="n">some</span> <span class="n">demos</span><span class="p">,</span> <span class="s">'help()'</span> <span class="k">for</span> <span class="n">on</span><span class="o">-</span><span class="n">line</span> <span class="n">help</span><span class="p">,</span> <span class="ow">or</span>
+<span class="s">'help.start()'</span> <span class="k">for</span> <span class="n">an</span> <span class="n">HTML</span> <span class="n">browser</span> <span class="n">interface</span> <span class="n">to</span> <span class="n">help</span><span class="o">.</span>
+<span class="n">Type</span> <span class="s">'q()'</span> <span class="n">to</span> <span class="n">quit</span> <span class="n">R</span><span class="o">.</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>Now, you are inside the R interactive shell and you can easily quit the shell using -</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">q</span><span class="p">(</span><span class="n">save</span><span class="o">=</span><span class="s">"no"</span><span class="p">)</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>After setting up R, you need to install packages (which are similar to libraries). The common format to install any R package from CRAN is -</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s">"the_name_of_your_package"</span><span class="p">)</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="installing-shiny">Installing Shiny</h3>
+
+<p>Let’s install one of my favorite R packages, Shiny. Using this package, you can create an interactive webpages with zero HTML/CSS/Javascript knowledge.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s">"shiny"</span><span class="p">)</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="installing-rstudio">Installing RStudio</h3>
+<p>R provides an elegant IDE to work with called RStudio. It is easy to work with the IDE rather than using the interactive shell. You can download RStudio <a href="https://www.rstudio.com/products/rstudio/download2/">here</a>. An example of how RStudio looks is shown below. <em>(source: http://rprogramming.net/wp-content/uploads/2012/10/RStudio-Screenshot.png)</em></p>
+
+<p><img src="http://rprogramming.net/wp-content/uploads/2012/10/RStudio-Screenshot.png" alt="RStudio" /></p>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/software/how-to-install-r-shiny-in-windows"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				(function() {
+					var d = document, s = d.createElement('script');
+					s.src = '//gogul09.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2019 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+     
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/how-to-install-r-shiny-in-windows',
+		  'title': 'How to install R and Shiny in Ubuntu?'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+   </body>
+</html>

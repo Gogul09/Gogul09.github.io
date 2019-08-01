@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>STA Timing Paths and Delays – Gogul Ilango </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400|Roboto:300" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="STA Timing Paths and Delays" />
+    <meta name="description" content="Understand the basic concepts behind Static Timing Analysis in VLSI (ASIC design) such as Timing Paths and Delays." />
+    <meta property="og:description" content="Understand the basic concepts behind Static Timing Analysis in VLSI (ASIC design) such as Timing Paths and Delays." />
+    <meta property="twitter:title" content="STA Timing Paths and Delays" />
+
+    <meta property="og:image" content="images/icons/logo.png"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="STA Timing Paths and Delays">
+    <meta name="twitter:description" content="Understand the basic concepts behind Static Timing Analysis in VLSI (ASIC design) such as Timing Paths and Delays.">
+    <meta name="twitter:image" content="images/icons/logo.png">
+  <!-- Begin Jekyll SEO tag v2.2.2 -->
+<title>STA Timing Paths and Delays | Gogul Ilango</title>
+<meta property="og:title" content="STA Timing Paths and Delays" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Understand the basic concepts behind Static Timing Analysis in VLSI (ASIC design) such as Timing Paths and Delays." />
+<meta property="og:description" content="Understand the basic concepts behind Static Timing Analysis in VLSI (ASIC design) such as Timing Paths and Delays." />
+<link rel="canonical" href="http://localhost:4000/hardware/sta-timing-paths-and-delays" />
+<meta property="og:url" content="http://localhost:4000/hardware/sta-timing-paths-and-delays" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1wYh_TUV7UofhOqrHgBNe0J4NvrY0oH6l" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-28T00:00:00+05:30" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"STA Timing Paths and Delays","author":{"@type":"Person","name":"Gogul Ilango"},"image":"https://drive.google.com/uc?id=1wYh_TUV7UofhOqrHgBNe0J4NvrY0oH6l","datePublished":"2018-05-28T00:00:00+05:30","dateModified":"2018-05-28T00:00:00+05:30","description":"Understand the basic concepts behind Static Timing Analysis in VLSI (ASIC design) such as Timing Paths and Delays.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/hardware/sta-timing-paths-and-delays"},"url":"http://localhost:4000/hardware/sta-timing-paths-and-delays"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#1f0021" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="header-left">
+            <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
+          </div>
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"></a>
+            <a title="blog" id = "nav_blog" href="/blog"></a>
+            <a title="creations" id = "nav_creations" href="/creations"></a>
+            <a title="music" id = "nav_music" href="/music"></a>
+            <a title="photography" id = "nav_photography" href="/photography"></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>STA Timing Paths and Delays</h1>
+		<div class="post-subheading">
+			<p>STA Concepts | 28 May 2018</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/hardware/sta-timing-paths-and-delays"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/hardware/sta-timing-paths-and-delays" data-action="share/whatsapp/share"><img src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/sta-timing-paths-and-delays" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=STA Timing Paths and Delays&url=http://localhost:4000/hardware/sta-timing-paths-and-delays" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/sta-timing-paths-and-delays&title=STA Timing Paths and Delays&summary=Understand the basic concepts behind Static Timing Analysis in VLSI (ASIC design) such as Timing Paths and Delays.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/hardware/sta-timing-paths-and-delays" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/sta-timing-paths-and-delays" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=STA Timing Paths and Delays&url=http://localhost:4000/hardware/sta-timing-paths-and-delays" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/sta-timing-paths-and-delays&title=STA Timing Paths and Delays&summary=Understand the basic concepts behind Static Timing Analysis in VLSI (ASIC design) such as Timing Paths and Delays.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#static-timing-analysis">Static Timing Analysis</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#characteristics-of-sta">Characteristics of STA</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#timing-paths">Timing Paths</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#delays">Delays</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#min-and-max-timing-paths">Min and Max Timing Paths</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#references">References</a></li>
+  </ul>
+</div>
+
+<p><strong>In this blog post, we will learn the basic concepts involved in Static Timing Analysis and understand why it is highly preferred in practice to meet timing.</strong></p>
+
+<p>When designing a chip, performance is the number one concern for chip designers. The chip needs to meet timing to work properly else user experience suffers. To verify whether a design meets timing, there are different techniques such as Timing Simulation, Static Timing Analysis (STA) and Dynamic Timing Analysis (DTA).</p>
+
+<div class="obj-container">
+  <h3>Objectives</h3>
+  <p>After reading this tutorial, we will understand</p>
+  <ul>
+    <li>What is Static Timing Analysis (STA)?</li>
+    <li>Why STA is used?</li>
+    <li>What are timing paths?</li>
+    <li>What are the different types of delays?</li>
+  </ul>
+</div>
+
+<h3>Prerequisites</h3>
+<ul>
+	<li><a href="https://gogul09.github.io/hardware/cmos-basics-for-sta-1" target="_blank">CMOS basics for STA - Part 1</a></li>
+	<li><a href="https://gogul09.github.io/hardware/cmos-basics-for-sta-2" target="_blank">CMOS basics for STA - Part 2</a></li>
+</ul>
+
+<h3 id="static-timing-analysis">Static Timing Analysis</h3>
+<p>According to <a href="https://en.wikipedia.org/wiki/Static_timing_analysis" target="_blank">Wikipedia</a>, Static timing analysis (STA) is a simulation method of computing the expected timing of a digital circuit without requiring a simulation of the full circuit.</p>
+
+<p>In other words, STA is the method of summing up cell delays and net delays in a design (which equals path delays) and comparing the path delays to the constraints (timing specifications).</p>
+
+<p>STA is done at many stages in a typical ASIC design flow (Figure 1). Performing STA before detail routing only provides the approximations based on different factors. But the real picture of STA is obtained only after detail routing the entire design in the layout phase (physical design). This is because, only after detail routing the entire design, parasitics are extracted (Resistances and Capacitances) based on detailed routes which is an important input to perform STA.</p>
+
+<figure>
+  <img src="https://drive.google.com/uc?id=1P3jUkPKeLxuA_3LWQzY1IeUvgdusSMlQ" class="typical-image" />
+  <figcaption>Figure 1. How STA fits in the ASIC design flow?</figcaption>
+</figure>
+
+<p>As you might know, a smartphone or a laptop or a tablet runs by the clock frequency (which is given by the specifications). Due to this predefined clock frequency, it is necessary for the design to meet this frequency under different external environmental conditions which includes Process, Voltage and Temperature (PVT). Thus, the purpose of STA is to check if the design can operate at the desired speed (frequency) under different external environmental conditions.</p>
+
+<h3 id="characteristics-of-sta">Characteristics of STA</h3>
+<ul>
+  <li>STA is a complete and exhaustive technique of verifying the timing of a chip.</li>
+  <li>STA is fast and accurate measurement of circuit timing.</li>
+  <li>STA does not check for logical functionality in the design.</li>
+  <li>STA uses simplified timing models to check for violations in the design.</li>
+  <li>STA is all about analyzing the cell delays and net delays over millions of paths in a design and fixing if any violation arises in those paths by comparing with the timing constraints.</li>
+  <li>STA analyzes entire design once and the required timing checks are carried out for all possible paths and scenarios of the design.</li>
+  <li>STA is the mainstay of design over the last few decades.</li>
+  <li><span class="inline-note">STA = Delay calculation + Timing Checks</span></li>
+  <li>Types of timing checks performed in STA are
+    <ul>
+      <li>Setup check</li>
+      <li>Hold check</li>
+      <li>Recovery check</li>
+      <li>Removal check</li>
+      <li>Data-to-Data user-specified timing check</li>
+      <li>Clock-gating check</li>
+      <li>Minimum period check</li>
+      <li>Minimum pulse width check</li>
+      <li>Design rule checks (min/max transition time, capacitance, fanout)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="note">
+  <p><b>Did you know:</b> The word <span class="coding">Static</span> in STA is due to the fact that it does not depend on the data values being applied at the inputs and the whole timing analysis is based on simplified timing models and delays.</p>
+</div>
+
+<p>When a <span class="coding">gate-level</span> netlist is available, STA is done based on</p>
+<ul>
+  <li><strong>Interconnect modelling</strong> - ideal, wireload model, global routes (approximate RC values), detail routes (accurate RCs).</li>
+  <li><strong>Clock modelling</strong> - ideal clocks (zero delay) or propagated clocks (real delays).</li>
+  <li><strong>Crosstalk &amp; Noise</strong> - Coupling between signals (metal traces).</li>
+</ul>
+
+<h3 id="timing-paths">Timing Paths</h3>
+<p>For a typical design which includes 10-100 million gates, there exists huge number of timing paths. These timing paths are defined by timing arcs which we discussed in the <a href="https://gogul09.github.io/hardware/cmos-basics-for-sta-2" target="_blank">previous</a> tutorial.</p>
+
+<p>There are two types of timing arcs in a timing path.</p>
+<ul>
+  <li><strong>Cell timing arc</strong> - Timing arc between an input pin and the output pin of a cell.</li>
+  <li><strong>Net timing arc</strong> - Timing arc of a net (wire) that is between a driver (output pin) and a load (input pin).</li>
+</ul>
+
+<p>The basic measures of the above imaginary timing arcs are</p>
+<ul>
+  <li><strong>Delay</strong> - Provided in the cell library (for cell) and SPEF (for net).</li>
+  <li><strong>Unateness</strong> - Provided in the cell library (for cell) and always positive unate (for net).</li>
+  <li><strong>Transition time</strong> - Provided as slew thresholds in the cell library (for cell).</li>
+</ul>
+
+<p>A timing path has a start point and an end point.</p>
+<ul>
+  <li><strong>Start point</strong> - All input ports/pins or clock ports/pins of sequential cells are considered as start points.</li>
+  <li><strong>End points</strong> - All output ports/pins or D pin of sequential cells are considered as end points.</li>
+</ul>
+
+<figure>
+  <img src="https://drive.google.com/uc?id=1HQLd6MW-js-qz3QrWXXe-uGxGp_e3sX0" class="typical-image" />
+  <figcaption>Figure 2. Timing Paths and its types</figcaption>
+</figure>
+
+<p>Based on the above mentioned start point and end point, there are four types of timing paths (Figure 2) based on <span class="coding">direction</span>.</p>
+<ol>
+  <li><strong>Input to Register</strong> - Start point is an input pin/port and end point is the D pin/port of a register (flipflop). It might include both combinational and sequential cells.</li>
+  <li><strong>Register to Register</strong> - Start point is the CLK pin/port of a  register (flipflop) and end point is the D pin/port of next register (flipflop). Also, this type of path might include combinational and sequential cells.</li>
+  <li><strong>Register to Output</strong> - Start point is the CLK pin/port of a register (flipflop) and end point is an output pin/port. Both sequential and combinational cells are included here.</li>
+  <li><strong>Input to Output</strong> - Start point is an input pin/port and end point is an output pin/port. It includes combinational cells only.</li>
+</ol>
+
+<p>In addition to the above timing paths, based on <span class="coding">signal type</span>, there are two additional types of timing path categorization in a design.</p>
+
+<ol>
+  <li><strong>Clock path</strong> - The timing path which is fully traversed by clock signals is called as Clock path. In a clock path, there could only be clock inverters or clock buffers. Additionally, to save power, there could be presence of clock gating cells in this clock path (ex: AND gate). Such paths are called as “Gated clock paths”. Clock paths are further categorized into two types.
+    <ul>
+      <li><strong>Launch path</strong> - The timing path which is traversed by the clock signal from source pin to launch register (flipflop) CLK pin (FF1 in Figure 2).</li>
+      <li><strong>Capture path</strong> - The timing path which is traversed by the clock signal from source pin to capture register (flipflop) CLK pin (FF2 in Figure 2).</li>
+    </ul>
+  </li>
+  <li><strong>Data path</strong> - The timing path which is fully traversed by data signals is called as Data path. In a data path, there could be combinational cells, data buffers etc.,</li>
+</ol>
+
+<figure>
+  <img src="https://drive.google.com/uc?id=1TD1divTotq2wecmy0ieA6gsPwR7LZ--e" class="typical-image" />
+  <figcaption>Figure 3. Timing Paths Categories</figcaption>
+</figure>
+
+<h3 id="delays">Delays</h3>
+<p>In the real world, delays are what makes STA interesting! Due to delays, there arises timing violations and the job of a chip design engineer is to analyze and understand these delays, and fix the timing violations. There are two types of delays in STA.</p>
+
+<h4 id="1-cell-delay">1. Cell delay</h4>
+
+<p>CMOS transistors inside a standard cell takes finite amount of time to switch from one logic state to another. This time taken is called as the cell delay or the propagation delay of a cell which is typically specified in the cell timing library <span class="coding">.lib</span>.</p>
+
+<p>The propagation delay of a standard cell depends on three factors (Figure 4).</p>
+<ol>
+  <li><strong>Input Slew</strong> - The transition time at the input i.e. the time it takes for an input pin (input capacitance) to switch between logic states (low-high or high-low).</li>
+  <li><strong>Output Capacitance</strong> - The capacitance that needs to get charged/discharged at the output of a cell driving single or multiple loads. This capacitance introduces a finite amount of delay.</li>
+  <li><strong>Intrinsic Delay</strong> - The internal delay of a cell when a signal with zero transition time is applied to the input pin and no output load is present.</li>
+</ol>
+
+<figure>
+  <img src="https://drive.google.com/uc?id=1kOpu5gcJOriO969-nYHRLrHMje2u3M4k" class="typical-image" />
+  <figcaption>Figure 4. Cell Delay and its components</figcaption>
+</figure>
+
+<h4 id="2-net-delay">2. Net delay</h4>
+
+<p>Interconnect delay or net delay is due to the physical wire (metal traces having resistances and capacitances) of a logical net (i.e. between a driver and load/loads). All net timing arcs are positive unate. This is because there can be either rise-rise transition from driver to load or fall-fall transition from driver to load.</p>
+
+<p>Net delay is calculated using two methods depending on the design phase.</p>
+<ul>
+  <li><strong>Wire-load models</strong> (approximate - used in logic design) - Based on statistics and poisson distribution to calculate the resistance and capacitance values of the nets based on length, fanout and area.</li>
+  <li><strong>Actual physical layout estimate</strong> (accurate - used in physical design) - Uses backannotation i.e. the process of extracting the resistances and capacitances after detail routing all the nets in a design (also called as <a href="https://en.wikipedia.org/wiki/Parasitic_extraction" target="_blank">parasitic extraction</a>). There are three different file formats for representing parasitics in a design for timing analysis.
+    <ol>
+      <li>Detailed Standard Parasitic Format (DSPF)</li>
+      <li>Reduced Standard Parasitic Format (RSPF)</li>
+      <li>Standard Parasitic Exchange Format (SPEF)</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="note">
+<p><b>Did you know:</b> <a href="https://en.wikipedia.org/wiki/Standard_Parasitic_Exchange_Format" target="_blank">SPEF</a> is the industry standard file format of choice to represent parasitic values (resistances and capacitances) of a design.</p>
+</div>
+
+<h3 id="min-and-max-timing-paths">Min and Max Timing Paths</h3>
+
+<p>Apart from the functionality based timing paths, there exist two types of timing paths based on path delay. <span class="inline-note">Path delay = Cell delay + Net delay</span>. As there are multiple ways for the logic to propagate from one start point to an end point (Figure 5), the maximum and minimum timing paths can be calculated easily based on cell delay and net delay.</p>
+<ol>
+  <li><strong>Min path</strong>: The path between two points with shortest delay.</li>
+  <li><strong>Max path</strong>: The path between two points with largest delay.</li>
+</ol>
+
+<figure>
+  <img src="https://drive.google.com/uc?id=1o_TFqn9Hgs5m9CWSkTtJjXOxaCFAdgDM" class="typical-image" />
+  <figcaption>Figure 5. Min and Max Timing Paths</figcaption>
+</figure>
+
+<p>In the next post, we will see how process, voltage and temperature are important factors when designing a chip.</p>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li>Static Timing Analysis for Nanometer Designs: A Practical Approach, Jayaram Bhasker and Rakesh Chadha.</li>
+  <li>Digital Integrated Circuits: A Design Perspective, Jan Rabaey.</li>
+</ol>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/hardware/sta-timing-paths-and-delays"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				(function() {
+					var d = document, s = d.createElement('script');
+					s.src = '//gogul09.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2019 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+     
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/hardware/sta-timing-paths-and-delays',
+		  'title': 'STA Timing Paths and Delays'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+   </body>
+</html>

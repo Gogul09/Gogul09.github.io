@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>How to use ffmpeg in Windows? – Gogul Ilango </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400|Roboto:300" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="How to use ffmpeg in Windows?" />
+    <meta name="description" content="This tutorial is for beginners to get started with ffmpeg for any video related operation." />
+    <meta property="og:description" content="This tutorial is for beginners to get started with ffmpeg for any video related operation." />
+    <meta property="twitter:title" content="How to use ffmpeg in Windows?" />
+
+    <meta property="og:image" content="images/icons/logo.png"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="How to use ffmpeg in Windows?">
+    <meta name="twitter:description" content="This tutorial is for beginners to get started with ffmpeg for any video related operation.">
+    <meta name="twitter:image" content="images/icons/logo.png">
+  <!-- Begin Jekyll SEO tag v2.2.2 -->
+<title>How to use ffmpeg in Windows? | Gogul Ilango</title>
+<meta property="og:title" content="How to use ffmpeg in Windows?" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This tutorial is for beginners to get started with ffmpeg for any video related operation." />
+<meta property="og:description" content="This tutorial is for beginners to get started with ffmpeg for any video related operation." />
+<link rel="canonical" href="http://localhost:4000/software/ffmpeg-basics" />
+<meta property="og:url" content="http://localhost:4000/software/ffmpeg-basics" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1NrhTV8rczqhTdD8P_BY8Aj0i1e0EQ0MG" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-04T00:00:00+05:30" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to use ffmpeg in Windows?","author":{"@type":"Person","name":"Gogul Ilango"},"image":"https://drive.google.com/uc?id=1NrhTV8rczqhTdD8P_BY8Aj0i1e0EQ0MG","datePublished":"2017-05-04T00:00:00+05:30","dateModified":"2017-05-04T00:00:00+05:30","description":"This tutorial is for beginners to get started with ffmpeg for any video related operation.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/ffmpeg-basics"},"url":"http://localhost:4000/software/ffmpeg-basics"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#1f0021" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="header-left">
+            <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
+          </div>
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"></a>
+            <a title="blog" id = "nav_blog" href="/blog"></a>
+            <a title="creations" id = "nav_creations" href="/creations"></a>
+            <a title="music" id = "nav_music" href="/music"></a>
+            <a title="photography" id = "nav_photography" href="/photography"></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>How to use ffmpeg in Windows?</h1>
+		<div class="post-subheading">
+			<p>Tools | 04 May 2017</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/software/ffmpeg-basics"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/software/ffmpeg-basics" data-action="share/whatsapp/share"><img src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/ffmpeg-basics" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=How to use ffmpeg in Windows?&url=http://localhost:4000/software/ffmpeg-basics" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/ffmpeg-basics&title=How to use ffmpeg in Windows?&summary=This tutorial is for beginners to get started with ffmpeg for any video related operation.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/ffmpeg-basics" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/ffmpeg-basics" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=How to use ffmpeg in Windows?&url=http://localhost:4000/software/ffmpeg-basics" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/ffmpeg-basics&title=How to use ffmpeg in Windows?&summary=This tutorial is for beginners to get started with ffmpeg for any video related operation.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<p><span class="coding">ffmpeg</span> is the coolest application when it comes to playing with a video file. Instead of downloading so many useless converters to convert from one file format to another, <span class="coding">ffmpeg</span> completes any task using simple commands given to it. In this tutorial, I will list out the most useful commands one needs for video conversion and video-specific operations.</p>
+
+<h3 id="installation">Installation</h3>
+<p>You can easily install <span class="coding">ffmpeg</span> for Windows from <a href="http://ffmpeg.zeranoe.com/builds/">this</a> website.</p>
+
+<ul>
+  <li>Choose the correct architecture (64-bit/32-bit) and click on <span class="coding">Download FFmpeg</span>.</li>
+  <li>After downloading, unzip the file and rename it to <span class="coding">ffmpeg</span>.</li>
+  <li>Go into the folder where you will find a <span class="coding">bin</span> folder.</li>
+  <li>Copy the path of the <span class="coding">bin</span> folder (For me it was, <em>C:\Users\gogul\Downloads\ffmpeg\bin</em>).</li>
+  <li>Right-click <span class="coding">Computer</span> and click on <span class="coding">Properties</span>.</li>
+  <li>Then, click on <span class="coding">Advanced System Settings</span> and then, click the <span class="coding">Environmental Variables</span> button.</li>
+  <li>You will find two sections - User variables and System variables. Under User variables, there will be a variable named <span class="coding">path</span>. Click that and click on the <span class="coding">Edit</span> button. Add the <span class="coding">bin</span> path to the variable value after a “;”.</li>
+  <li>Now, click <span class="coding">Ok</span> and close all the windows.</li>
+  <li>Open up the command prompt and type <span class="coding">FFMPEG</span>. You should get the following output. It means that you have successfully installed <span class="coding">ffmpeg</span>.</li>
+</ul>
+
+<h3 id="convert-avi-to-mp4">Convert .avi to .mp4</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">avi</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">v</span> <span class="n">libx264</span> <span class="o">-</span><span class="n">crf</span> <span class="mi">19</span> <span class="o">-</span><span class="n">preset</span> <span class="n">slow</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">a</span> <span class="n">libfdk_aac</span> <span class="o">-</span><span class="n">b</span><span class="p">:</span><span class="n">a</span> <span class="mi">192</span><span class="n">k</span> <span class="o">-</span><span class="n">ac</span> <span class="mi">2</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>If <span class="coding">libfdk_aac</span> is not available, then use the following.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">avi</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">v</span> <span class="n">libx264</span> <span class="o">-</span><span class="n">crf</span> <span class="mi">19</span> <span class="o">-</span><span class="n">preset</span> <span class="n">slow</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">a</span> <span class="n">aac</span> <span class="o">-</span><span class="n">b</span><span class="p">:</span><span class="n">a</span> <span class="mi">192</span><span class="n">k</span> <span class="o">-</span><span class="n">ac</span> <span class="mi">2</span> <span class="n">out</span><span class="o">.</span><span class="n">mp4</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="convert-mp4-to-gif">Convert .mp4 to .gif</h3>
+
+<p>The below two commands skips first 11 seconds of the video (.mp4) and outputs a 10 second “.gif” which is 640 pixels wide with aspect ratio preserved.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">ss</span> <span class="mi">11</span> <span class="o">-</span><span class="n">t</span> <span class="mi">10</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">vf</span> <span class="n">fps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mi">640</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">flags</span><span class="o">=</span><span class="n">lanczos</span><span class="p">,</span><span class="n">palettegen</span> <span class="n">out</span><span class="o">.</span><span class="n">png</span>
+
+<span class="n">ffmpeg</span> <span class="o">-</span><span class="n">ss</span> <span class="mi">11</span> <span class="o">-</span><span class="n">t</span> <span class="mi">10</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">i</span> <span class="n">out</span><span class="o">.</span><span class="n">png</span> <span class="o">-</span><span class="n">filter_complex</span> <span class="s">"fps=10,scale=640:-1:flags=lanczos[x];[x][1:v]paletteuse"</span> <span class="n">out</span><span class="o">.</span><span class="n">gif</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/software/ffmpeg-basics"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				(function() {
+					var d = document, s = d.createElement('script');
+					s.src = '//gogul09.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2019 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+     
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/ffmpeg-basics',
+		  'title': 'How to use ffmpeg in Windows?'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+   </body>
+</html>

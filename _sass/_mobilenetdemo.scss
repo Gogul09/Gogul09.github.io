@@ -1,0 +1,181 @@
+.demo-container {
+  background-color: #ca3737;
+  border-radius: 5px;
+  margin: 20px auto;
+  position: relative;
+
+  .demo-banner {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #ca3737;
+    color: white;
+    z-index: 1;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .demo-wrapper {
+    display: table;
+    width: 100%;
+    padding: 20px;
+
+    @include tablet {
+      padding-bottom: 0px;
+    }
+
+    @include mobile {
+      padding: 0px;
+    }
+
+    div {
+      display: table-cell;
+      width: 60%;
+      @include mobile {
+        display: table-row;
+      }
+    }
+    div:nth-child(1) {
+      text-align: left;
+      @include mobile {
+        text-align: center;
+      }
+    }
+    div:nth-child(2) {
+      text-align: right;
+      @include mobile {
+        text-align: center;
+      }
+    }
+  }
+
+  h3 {
+    width: 100%;
+    font-size: 15px;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    margin: 0px;
+    border-bottom: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .input-button {
+    background-color: $accent_500;
+    color: black;
+    border-radius: 5px;
+    font-family: $font_body;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid $accent_700;
+    font-size: 12px;
+    margin: 20px 5px;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .input-button:hover {
+    box-shadow: 0 1px 8px rgba(0,0,0,0.3), 0 5px 10px rgba(0,0,0,0.22);
+  }
+
+  .input-button:focus {
+    outline: none;
+  }
+
+  .demo-output {
+    display: flex;
+    width: 100%;
+    background-color: #ca3737;
+    flex-wrap: wrap;
+  }
+
+  .out-box {
+    display: flex;
+    flex: 1;
+    width: 50%;
+    margin: 0px auto;
+    padding: 0px 10px 10px 10px;
+    background-color: #ca3737;
+    p {
+      color: white;
+      margin-top: 0px;
+      margin-bottom: 0px !important;
+    }
+    b {
+      color: #ffcc00;
+      font-size: 25px;
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  #predict-box {
+    background-color: transparent;
+  }
+
+  select {
+    @include mobile {
+      margin-top: 25px;
+    }
+  }
+
+  .predict-button {
+    background-color: #ffcc00;
+    border: 1px solid #ffcc00;
+    color: black;
+  }
+
+  .predict-button:hover {
+    background-color: #ffcc00;
+  }
+
+  #demo-progress {
+    width: 100%;
+    background-color: #ddd;
+  }
+
+  #results-box {
+    padding: 0px 10px !important;
+    width: 100% !important;
+  }
+
+  #load-button {
+    position: relative;
+  }
+
+  #load-button span {
+    display: block;
+    width: 22px;
+    font-size: 11px;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: #ebebeb;
+    color: black;
+    position: absolute;
+    top: -30px;
+    left: 35px;
+    font-weight: bold;
+  }
+
+  #progress-bar {
+    width: 1%;
+    height: 30px;
+    background-color: #4CAF50;
+  }
+
+  #predict-list {
+    margin: 0px;
+    color: white;
+    padding-bottom: 20px;
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Physical Design - Terminologies – Gogul Ilango </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400|Roboto:300" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Physical Design - Terminologies" />
+    <meta name="description" content="In VLSI Physical Design, there are lots of terminologies involved. In this page, you will find the description of mostly used terminologies which might be helpful for beginners." />
+    <meta property="og:description" content="In VLSI Physical Design, there are lots of terminologies involved. In this page, you will find the description of mostly used terminologies which might be helpful for beginners." />
+    <meta property="twitter:title" content="Physical Design - Terminologies" />
+
+    <meta property="og:image" content="images/icons/logo.png"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Physical Design - Terminologies">
+    <meta name="twitter:description" content="In VLSI Physical Design, there are lots of terminologies involved. In this page, you will find the description of mostly used terminologies which might be helpful for beginners.">
+    <meta name="twitter:image" content="images/icons/logo.png">
+  <!-- Begin Jekyll SEO tag v2.2.2 -->
+<title>Physical Design - Terminologies | Gogul Ilango</title>
+<meta property="og:title" content="Physical Design - Terminologies" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In VLSI Physical Design, there are lots of terminologies involved. In this page, you will find the description of mostly used terminologies which might be helpful for beginners." />
+<meta property="og:description" content="In VLSI Physical Design, there are lots of terminologies involved. In this page, you will find the description of mostly used terminologies which might be helpful for beginners." />
+<link rel="canonical" href="http://localhost:4000/hardware/physical-design-terminologies" />
+<meta property="og:url" content="http://localhost:4000/hardware/physical-design-terminologies" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1UoyhfdcF_Aj-NBU8WNzGz83SRp5Zhg3L" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-17T00:00:00+05:30" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"Physical Design - Terminologies","author":{"@type":"Person","name":"Gogul Ilango"},"image":"https://drive.google.com/uc?id=1UoyhfdcF_Aj-NBU8WNzGz83SRp5Zhg3L","datePublished":"2018-06-17T00:00:00+05:30","dateModified":"2018-06-17T00:00:00+05:30","description":"In VLSI Physical Design, there are lots of terminologies involved. In this page, you will find the description of mostly used terminologies which might be helpful for beginners.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/hardware/physical-design-terminologies"},"url":"http://localhost:4000/hardware/physical-design-terminologies"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#1f0021" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="header-left">
+            <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
+          </div>
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"></a>
+            <a title="blog" id = "nav_blog" href="/blog"></a>
+            <a title="creations" id = "nav_creations" href="/creations"></a>
+            <a title="music" id = "nav_music" href="/music"></a>
+            <a title="photography" id = "nav_photography" href="/photography"></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>Physical Design - Terminologies</h1>
+		<div class="post-subheading">
+			<p>PD Concepts | 17 June 2018</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/hardware/physical-design-terminologies"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/hardware/physical-design-terminologies" data-action="share/whatsapp/share"><img src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/physical-design-terminologies" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=Physical Design - Terminologies&url=http://localhost:4000/hardware/physical-design-terminologies" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/physical-design-terminologies&title=Physical Design - Terminologies&summary=In VLSI Physical Design, there are lots of terminologies involved. In this page, you will find the description of mostly used terminologies which might be helpful for beginners.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/hardware/physical-design-terminologies" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/physical-design-terminologies" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Physical Design - Terminologies&url=http://localhost:4000/hardware/physical-design-terminologies" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/physical-design-terminologies&title=Physical Design - Terminologies&summary=In VLSI Physical Design, there are lots of terminologies involved. In this page, you will find the description of mostly used terminologies which might be helpful for beginners.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+  	<li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#file-formats">File Formats</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#floorplanning">Floorplanning</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#placement">Placement</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#routing">Routing</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#sta">Static Timing Analysis</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#power-distribution">Power Distribution</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#physical-verification">Physical Verification</a></li>
+  </ul>
+</div>
+
+<p>In Physical Design (PD), there are so many terminologies involved. It could be daunting for a fresher to get acquainted with these terms at the beginning of his career. So, I thought of making a page with terminologies and its description. It might be helpful for a beginner or an experienced professional to quickly refer something related to PD.</p>
+
+<p>I will be regularly updating this page if I found some new terminology along with its description. Make sure you bookmark it. 😉</p>
+
+<div>
+	<h3><a href="#file-formats">File Formats</a></h3>
+	<div class="toc-box">
+		<ul>
+			<li><a href="#lef">LEF</a></li>
+			<li><a href="#technology-lef">Technology LEF</a></li>
+		</ul>
+	</div>
+	<br />
+	<h3><a href="#floorplanning">Floorplanning</a></h3>
+	<div class="toc-box">
+		<ul>
+			<li><a href="#aspect-ratio">Aspect Ratio</a></li>
+			<li><a href="#cell-orientation">Cell Orientation</a></li>
+			<li><a href="#core-boundary">Core Boundary</a></li>
+			<li><a href="#core-utilization">Core Utilization</a></li>
+			<li><a href="#flylines">Flylines</a></li>
+			<li><a href="#halo">Halo</a></li>
+			<li><a href="#instance">Instance</a></li>
+			<li><a href="#macro">Macro</a></li>
+			<li><a href="#manufacturing-grid">Manufacturing Grid</a></li>
+			<li><a href="#net">Net</a></li>
+			<li><a href="#physical-cells">Physical Cells</a></li>
+			<li><a href="#pin">Pin</a></li>
+			<li><a href="#placement-blockage">Placement Blockage</a></li>
+			<li><a href="#placement-grid">Placement Grid</a></li>
+			<li><a href="#port">Port</a></li>
+			<li><a href="#power-domain">Power Domain</a></li>
+			<li><a href="#row">Row</a></li>
+			<li><a href="#routing-blockage">Routing Blockage</a></li>
+			<li><a href="#site">Site</a></li>
+			<li><a href="#track">Track</a></li>
+			<li><a href="#voltage-island">Voltage Island</a></li>
+			<li><a href="#wire">Wire</a></li>
+		</ul>
+	</div>
+	<br />
+	<h3><a href="#placement">Placement</a></h3>
+	<div class="toc-box">
+		<ul>
+			<li><a href="#cell-legalization">Cell Legalization</a></li>
+			<li><a href="#cell-padding">Cell Padding</a></li>
+			<li><a href="#driver">Driver</a></li>
+			<li><a href="#fanin">Fanin</a></li>
+			<li><a href="#fanout">Fanout</a></li>
+			<li><a href="#load">Load</a></li>
+			<li><a href="#placement-density">Placement Density</a></li>
+			<li><a href="#standard-cells">Standard Cells</a></li>
+			<li><a href="#standard-cell-library">Standard Cell Library</a></li>
+		</ul>
+	</div>
+	<br />
+	<h3><a href="#routing">Routing</a></h3>
+	<div class="toc-box">
+		<ul>
+			<li><a href="#congestion">Congestion</a></li>
+			<li><a href="#detail-routing">Detail Routing</a></li>
+			<li><a href="#global-routing">Global Routing</a></li>
+			<li><a href="#metal-layers">Metal Layers</a></li>
+			<li><a href="#ndr">NDR</a></li>
+			<li><a href="#shorts">Shorts</a></li>
+			<li><a href="#via">VIA</a></li>
+		</ul>
+	</div>
+	<br />
+	<h3><a href="#sta">Static Timing Analysis</a></h3>
+	<div class="toc-box">
+		<ul>
+			<li><a href="#hold-time">Hold Time</a></li>
+			<li><a href="#max-delay">Max Delay</a></li>
+			<li><a href="#min-delay">Min Delay</a></li>
+			<li><a href="#setup-time">Setup Time</a></li>
+		</ul>
+	</div>
+	<br />
+	<h3><a href="#power-distribution">Power Distribution</a></h3>
+	<div class="toc-box">
+		<ul>
+			<li><a href="#pmic">PMIC</a></li>
+			<li><a href="#gridcheck">Gridcheck</a></li>
+			<li><a href="#static-ir-drop">Static IR Drop</a></li>
+			<li><a href="#dynamic-ir-drop">Dynamic IR Drop</a></li>
+			<li><a href="#esd-cell">ESD Cell</a></li>
+		</ul>
+	</div>
+	<br />
+	<h3><a href="#physical-verification">Physical Verification</a></h3>
+	<div class="toc-box">
+		<ul>
+			<li><a href="#antenna">Antenna</a></li>
+			<li><a href="#drc">DRC</a></li>
+			<li><a href="#erc">ERC</a></li>
+			<li><a href="#lvs">LVS</a></li>
+		</ul>
+	</div>
+</div>
+
+<h3 class="centered-heading" id="file-formats"><span>File Formats</span></h3>
+
+<p class="para-heading" id="lef">LEF</p>
+
+<p>LEF stands for Library Exchange Format. It is an abstract textual description of the layout of a standard cell or macro or IO for EDA tools. It is a readable ASCII format file that contains abstract information such as</p>
+<ul>
+  <li>Outline of the cell (size, shape, site etc.,)</li>
+  <li>Pin locations and layer</li>
+  <li>Metal layer blockages (areas in a cell where metal of a certain layer is being used but is not a pin)</li>
+</ul>
+
+<div class="code-head">sample lef<span>file</span></div>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></td><td class="code"><pre>MACRO IV
+  CLASS CORE ;
+  FOREIGN IV 0.000 0.000 ;
+  ORIGIN 0.00 0.00 ;
+  SIZE 3.00 BY 12.00 ;
+  SYMMETRY x y ;
+  SITE CORE ;
+  PIN A
+    DIRECTION INPUT ;
+    ANTENNASIZE 1.4 ;
+    PORT
+    LAYER metal1 ;
+    RECT 0.50 5.00 1.00 5.50 ;
+    END
+  END A
+  ...
+  ...
+  ...
+  ...
+  OBS
+    LAYER metal1 ;
+    RECT 1.90 6.50 2.60 7.20 ;
+    RECT 0.40 4.90 1.00 5.60 ;
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p class="para-heading" id="technology-lef">Technology LEF</p>
+
+<p>Technology LEF files contain simplified information about the technology which will be used by the EDA tools. It contains information about layer (name, type such as routing or cut (via), electrical properties (R, C), design rules, antenna data, preferred routing direction), site (x and y grid of the library), via definitions, units, grids for layout and routing. Below is an example of technology LEF.</p>
+
+<div class="code-head">sample tech lef<span>file</span></div>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></td><td class="code"><pre>SITE CORE
+  CLASS CORE;
+  SIZE 0.2 X 12.0;
+END CORE
+
+LAYER MET1
+  TYPE ROUTING ;
+  PITCH 3.5 ;
+  WIDTH 1.2 ; 
+  SPACING 1.4 ;
+  DIRECTION HORIZONTAL ;
+  RESISTANCE RPERSQ .7E-01 ;
+  CAPACITANCE CPERSQDIST .46E-04 ;
+END MET1
+
+LAYER VIA
+  TYPE CUT ;
+END VIA
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 class="centered-heading" id="floorplanning"><span>Floorplanning</span></h3>
+
+<p class="para-heading" id="aspect-ratio">Aspect Ratio</p>
+<p>It is the ratio between height and width of the core or a block. Routing resources, congestion, placement of standard cells, timing, clock-tree, placement of IO pads and packaging depends on the aspect ratio of the core or a block.</p>
+
+<div class="math-cover">
+$$
+aspect\;ratio = \frac{height\;of\;the\;core}{width\;of\;the\;core}
+$$
+</div>
+
+<p class="para-heading" id="cell-orientation">Cell Orientation</p>
+<p>Every instance in a design such as a block, a macro, an IO pad or a standard cell have orientation associated with them. Orientation is defined as the rotation and/or mirroring of that instance about x or y axis to make connections meaningful and easier. Different types of cell orientations are R0, MX, MY, R90, R180, R270, MX90, MY90.</p>
+<ul>
+  <li><span class="coding">R0</span> - No rotation.</li>
+  <li><span class="coding">MX</span> - Mirror through x-axis.</li>
+  <li><span class="coding">MY</span> - Mirror through y-axis.</li>
+  <li><span class="coding">R90</span> - Rotate 90 degrees counter-clockwise.</li>
+  <li><span class="coding">R180</span> - Rotate 180 degrees counter-clockwise.</li>
+  <li><span class="coding">R270</span> - Rotate 270 degrees counter-clockwise.</li>
+  <li><span class="coding">MX90</span> - Mirror through x-axis and rotate 90 degrees counter-clockwise.</li>
+  <li><span class="coding">MY90</span> - Mirror through y-axis and rotate 90 degrees counter-clockwise.</li>
+</ul>
+
+<p class="para-heading" id="core-boundary">Core Boundary</p>
+<p>It is the area or region within which standard cells and macros are placed in the design. From top-level of a design, core boundary will be rectangular or square shaped. From block-level of a design, core boundary may have rectangular or rectilinear shape.</p>
+
+<p class="para-heading" id="core-utilization">Core Utilization</p>
+<p>It defines the total area occupied by the standard cells and macros in the block or top-level design. Typically, 70-80% utilization is taken into account for blocks as timing optimization involves placement of buffers or inverters which requires area.</p>
+
+<div class="math-cover">
+$$
+core\;utilization = \frac{standard\;cell\;area\;\;+\;macro\;cells\;area}{total\;core\;area}
+$$
+</div>
+
+<p class="para-heading" id="flylines">Flylines</p>
+<p>These are virtual lines that shows logical connections from an instance (block or macro or cell or IO pad). Using flylines, one can understand different connections from a block or a macro or a cell or an IO pad with which floorplanning could be done easily.</p>
+
+<p class="para-heading" id="halo">Halo</p>
+<p>It is the area around the boundary of a block or a macro or a standard cell within which no other block or standard cell or macro is placed. If the blocks or standard cells or macros are moved, halos for those instances move along with it. It is also called as the <em>keepout region</em>. Halos of two adjacent instances can be overlapped.</p>
+
+<p class="para-heading" id="instance">Instance</p>
+<p>A single occurance or a single object of a standard cell type or a macro or a block defined with a unique instance name. <em>Ex: a 2-input AND gate could be instantiated as <span class="coding">CELL_AND_1</span> and a usb 2.0 macro could be instantiated as <span class="coding">USB_2_0_1</span>.</em></p>
+
+<p class="para-heading" id="macro">Macro</p>
+<p>A Macro is an Intellectual Property (IP) in a design that is owned by a company. These are reusable logic blocks used in a design without the necessity of building them from scratch. Two types of macro are Soft Macro and Hard Macro.</p>
+<ul>
+  <li><em>Soft Macro</em> is not specific to any technology node. Due to this, soft macros are unpredictable in terms of timing, area and power. But soft macros are more flexible in terms of reconfigurability and can be modified at the RTL level.</li>
+  <li><em>Hard Macro</em> is what we call as a <em>Block</em> in PD. It is designed specific to a technology node to meet timing, area and power.</li>
+</ul>
+
+<p class="para-heading" id="manufacturing-grid">Manufacturing Grid</p>
+<p>The smallest resolution of the technology node is called as the Manufacturing Grid. Any geometry (or shape) created in the design must be snapped (or aligned) with this grid to avoid DRC errors.</p>
+
+<p class="para-heading" id="net">Net</p>
+<p>A logical connection between two or more pins of different instances. Some of the different types of net in a design are single fanout net, multi-fanout net, power net, ground net, signal net, clock net etc.</p>
+
+<p class="para-heading" id="physical-cells">Physical Cells</p>
+<p>These cells do not have any logical functionality in the design. Some of the standard physical cells are tap cells, tie cells, endcap cells, decap cells, filler cells, spare cells.</p>
+
+<p class="para-heading" id="pin">Pin</p>
+<p>A pin is an IO terminal that is present in blocks or hard-macros or standard-cells of a design. <em>Ex: For a 2-input AND gate, <span class="coding">CELL_AND_1/a</span>, <span class="coding">CELL_AND_1/b</span> are the input pins and <span class="coding">CELL_AND_1/z</span> is the output pin.</em></p>
+
+<p class="para-heading" id="placement-blockage">Placement Blockage</p>
+<p>It is the area defined by the designer for the PnR tool to avoid placing, legalizing or overlapping standard cells in that particular area. If a block or standard cell or macro or IO pad is moved, placement blockages does not move along with it.</p>
+<ul>
+  <li><em>Hard placement blockage</em> means that the tool must not place, legalize or overlap any standard cell (including buffers and inverters) in the mentioned blockage area.</li>
+  <li><em>Non-buffer blockage</em> means that the tool can place, legalize or overlap any buffer or inverter in the mentioned blockage area except other standard cells in the design.</li>
+  <li><em>Partial blockage</em> means that the designer can adjust the percentage of blockage inside the blockage area and the tool should honor it. By default, 100% placement is blocked inside the blockage area.</li>
+</ul>
+
+<p class="para-heading" id="placement-grid">Placement Grid</p>
+<p>Placement grid is a multiple of the manufacturing grid in which all the standard cells are placed. Based on the placement grid, rows are formed and standard cells are placed.</p>
+
+<p class="para-heading" id="port">Port</p>
+<p>A port is an IO (Input/Output) terminal that is present in blocks or hard-macros of a design. From top-level, ports are pins in hard-macros or blocks. But from block-level, pins talking to top-level are celled as ports. Direction of ports can be input, output or in-out.</p>
+
+<p class="para-heading" id="power-domain">Power Domain</p>
+<p>It is the collection of instances or blocks that share the same supply voltage in a design. Each power domain has a separate library associated with it.</p>
+
+<p class="para-heading" id="routing-blockage">Routing Blockage</p>
+<p>It is the area defined by the designer for the PnR tool to block routing resources in single or multiple metal layers at a particular area. Routing blockages can be created and removed at any point in the design based on the requirements. It is possible to create routing blockages over a block or an instance using it’s cell type or instance name without the area numbers.</p>
+
+<p class="para-heading" id="row">Row</p>
+<p>Standard cell row is the area defined for placing standard cells in the design. Every standard cell in the design sits on the standard cell row. The row height is based on the standard cell height used in the design. Different types of rows are possible in a design based on sites or heights of standard cells used.</p>
+
+<p class="para-heading" id="site">Site</p>
+<p>The minimum <span class="coding">width</span> x <span class="coding">height</span> is called a <span class="coding">SITE</span>. All cells must fit into this predefined grid which must be a multiple of the minimum X-grid unit and row height. Cells can also be double or triple height too.</p>
+
+<p class="para-heading" id="track">Track</p>
+<p>Track is a virtual line (guideline) for the PnR tool in which routing of metal wires happen in the design. For each metal layer in the design, tracks are defined for preferred and non-preferred direction with specific pitch and offset. The PnR tool routes the metal wires by assuming the track at the center of metal piece.</p>
+
+<p>Additionally, cell height is measured in tracks. A track is one <span class="coding">M1</span> pitch i.e. an 8-track cell has room for 8 horizontal <span class="coding">M1</span> wires.</p>
+
+<p>More the number of tracks, the wider the transistors and hence, faster the standard cells.</p>
+<ul>
+  <li>7-8 low-track libraries for area efficiency.</li>
+  <li>11-12 tall-track libraries for performance, but have high leakage.</li>
+  <li>9-10 standard-track libraries for a reasonable area-performance tradeoff.</li>
+</ul>
+
+<p class="para-heading" id="voltage-island">Voltage Island</p>
+<p>It is a dedicated area in the design which has its own row, site, cells and power structure defined for better power consumption. Level-shifters are used to convert from one voltage level to another.</p>
+
+<p class="para-heading" id="wire">Wire</p>
+<p>A physically realized connection of a net which is routed by the router by having the center of metal piece in the track (on-track) using same or different metal layers and vias.</p>
+
+<h3 class="centered-heading" id="placement"><span>Placement</span></h3>
+
+<p class="para-heading" id="cell-legalization">Cell Legalization</p>
+<p>It means all standard cells must be placed on the standard cell rows (in placement grid) without any off-grid violations and overlaps. Only if all cells are legalized, the PnR tool will proceed with routing.</p>
+
+<p class="para-heading" id="cell-padding">Cell Padding</p>
+<p>It is a variable assigned to all standard cells or specific standard cell instances that belong to a cell-type in the design. Using this variable, the cell instances will have a padding associated with it around which other cells or blocks wont be placed. It’s like a breathing-space for a cell which is used to avoid congestion.</p>
+
+<p class="para-heading" id="driver">Driver</p>
+<p>Any pin (or output pin) that drives one or multiple pins is called as a driver pin and it’s corresponding instance is called as the driver. There can always be only one driver pin in a design.</p>
+
+<p class="para-heading" id="fanin">Fanin</p>
+<p>The maximum number of inputs that a standard cell (or a logic gate) can accept is termed as the fanin of that standard cell.</p>
+
+<p class="para-heading" id="fanout">Fanout</p>
+<p>The maximum number of inputs (loads) that the output of a single standard cell (driver) can drive is termed as the fanout of that standard cell.</p>
+
+<p class="para-heading" id="load">Load</p>
+<p>Any pin (or input pin) that acts as a load for a driver pin is called as a load pin. There can be one or more load pins for a single driver pin, hence the term <em>multi-fanout</em>.</p>
+
+<p class="para-heading" id="placement-density">Placement Density</p>
+<p>It is the amount of area utilized for placing cells (except filler cells) in the design. There is a golden equation that this placement density should be lesser than or equal to 70% so that the remaining 30% can be used for routing resources.</p>
+
+<p class="para-heading" id="standard-cells">Standard Cells</p>
+<p>Any complex chip is built using basic building blocks in digital design such as <span class="coding">and</span>, <span class="coding">or</span>, <span class="coding">not</span>, <span class="coding">nor</span>, <span class="coding">nand</span>, <span class="coding">flipflop</span>, <span class="coding">buffer</span> etc. Based on a technology node, these building blocks (called standard cells) are predesigned (i.e will have logical, symbol, abstract, layout and schematic views plus timing information for different scenarios) and given to the IC designer. Standard cells have fixed height and variable width. Height of these cells are same as the height of a standard cell row. In some cases, there might be double-height or triple-height cells that occupies two or three rows respectively.</p>
+
+<p class="para-heading" id="standard-cell-library">Standard Cell Library</p>
+<p>It is a collection of well defined and appropriately characterized logic gates that can be used to implement a digital design. Standard cells must meet predefined specifications to be flawlessly manipulated by synthesis, place and route algorithms. A standard cell library is delivered with a collection of files that provide all the information needed by the various EDA tools. Following are the files in a standard cell library</p>
+
+<p><em>Behavioral views</em></p>
+
+<p>Verilog description used for simulation, logic equivalence.</p>
+
+<p><em>Physical views</em></p>
+
+<p>Layout of the cells (GDSII format) for DRC, LVS, Custom Layout.
+Abstract of the cells (LEF format) for PnR, RC extraction.</p>
+
+<p><em>Transistor level</em></p>
+
+<p>Spice/Spectre netlist for LVS, transistor-level simulation.
+Often provided both with parasitics (post-layout) and without.</p>
+
+<p><em>Timing/Power</em></p>
+
+<p>Liberty files with characterization of timing and power for STA.</p>
+
+<p><em>Power Grid Views</em></p>
+
+<p>Needed for IR Drop analysis.</p>
+
+<p><em>Others</em></p>
+
+<p>Symbols for displaying the cells in various tools.</p>
+
+<h3 class="centered-heading" id="routing"><span>Routing</span></h3>
+
+<p class="para-heading" id="congestion">Congestion</p>
+<p>If the number of available routing tracks for routing in a particular area is lesser than the number of required routing tracks, then that particular area is said to be congested. Congestion creates shorts and DRCs which makes functionality fail in a design.</p>
+
+<p class="para-heading" id="detail-routing">Detailed Routing</p>
+<p>Detail routing determines the exact physical routing for all the logical nets in the design with the help of track assignment, wires and vias insertion at different metal layers. Real picture of congestion, metal DRCs and crosstalk issues are known only after detail routing the design.</p>
+
+<p class="para-heading" id="global-routing">Global Routing</p>
+<p>Global routing partitions the entire design into tiles or global routing cells or g-cells and then, the paths for various nets are computed. Global routing doesn’t necessarily assign specific tracks to each net, but assigns each net to specific g-cells. Congestion can be estimated earlier in the design using Global routing before starting detail routing.</p>
+
+<p class="para-heading" id="metal-layers">Metal Layers</p>
+<p>Based on technology node, there are different metal layers involved for routing. Each metal layer is designated with a name say M1 or M3 and each metal layer has preferred and non-preferred directions with well-defined width, pitch, offset and tracks. <em>Ex: M1 can have preferred direction as vertical and non-preferred direction as horizontal, while M4 can have preferred direction as horizontal and non-preferred direction as vertical.</em></p>
+
+<p class="para-heading" id="ndr">NDR</p>
+<p>Non-Default Rule is a routing rule applied for a single net or a group of nets that is not default. Default routing rule have defined width and spacing for each metal layer and via. Using Non-Default Rules, one can create an NDR rule with double or triple the width with double or triple the spacing. <em>Ex: 1W2S means single width and twice the default spacing</em>. NDRs are used for clock nets and critical nets (high-frequency nets) in a design to avoid Signal Integrity (SI) issues such as crosstalk and noise.</p>
+
+<p class="para-heading" id="shorts">Shorts</p>
+<p>When two or more wires or vias of different nets in the same metal layer cross each other, then it is termed as a short. Shorts are the number one concern after detail routing a block. These overlapping wire segments must be corrected for proper functioning of the design.</p>
+
+<p class="para-heading" id="via">VIA</p>
+<p>Vertical Interconnect Access (VIA) is the small vertical path (or opening) in an insulating oxide layer (cut-layer) that allows a conductive path (or connection) between different metal layers. Some types of VIA are single VIA, stacked VIA, VIA array etc.</p>
+
+<h3 class="centered-heading" id="sta"><span>Static Timing Analysis</span></h3>
+
+<p class="para-heading" id="hold-time">Hold Time</p>
+<p>Hold time \( t_{hold} \) is the time the data has to be stable after the clock to ensure correct sampling.</p>
+
+<p class="para-heading" id="max-delay">Max Delay</p>
+<p>The data doesn’t have enough time to pass from one register to the next before the next clock edge. Max delay violations are a result of a slow data path, including the register’s \(t_{setup}\), therefore it is often called the setup path.</p>
+
+<p class="para-heading" id="min-delay">Min Delay</p>
+<p>The data path is so short that it passes through several registers during the same clock cycle. Min delay violations are a result of a short data path, causing the data to change before the \( t_{hold} \) has passed, therefore it is often called a hold path.</p>
+
+<p class="para-heading" id="setup-time">Setup Time</p>
+<p>Setup time \( t_{setup} \) is the time the data has to arrive before the clock to ensure correct sampling.</p>
+
+<h3 class="centered-heading" id="power-distribution"><span>Power Distribution</span></h3>
+
+<p class="para-heading" id="pmic">PMIC</p>
+<p>PMIC or Power Management Integrated Circuit takes care of all possible supported external supplies and defines the power sequence for the board. It supplies power to different components inside the board. Also, it protects the board from unsupported overvoltage and undervoltage. It is usually software-controllable (often as an I2C device). Different voltage values such as VDD_1, VDD_2, VDD_3 etc., inside a chip are obtained using a PMIC.</p>
+
+<p class="para-heading" id="gridcheck">Gridcheck</p>
+<p>Gridcheck is a verification process that is performed to check for opens and shorts in the power distribution grid of a design. For a design to function properly, it must be free from opens and shorts. Before analyzing a design for static and dynamic IR drop, it must be free from opens and shorts (i.e. zero opens and zero shorts).</p>
+
+<p class="para-heading" id="static-ir-drop">Static IR Drop</p>
+<p>As the name suggests, even when the chip is off or quiescent (static), there exists some amount of power dissipation due to transistor’s leakage characteristics giving rise to leakage power. This is due to the characteristic of CMOS transistors itself, which is a function of power supply voltage \( V_{DD} \), threshold voltage \( V_{th} \) and transistor’s dimension (width \(W \) and length \( L \)). Static IR drop analysis is a  vectorless IR drop analysis with average current cycles. It is typically used for Electro-Migration (EM) analysis where current limit is checked for wires.</p>
+
+<p class="para-heading" id="dynamic-ir-drop">Dynamic IR Drop</p>
+<p>As the name suggests, dynamic power dissipation occurs when the transistors are switching from one logic state to another. There are two types of dynamic power dissipation in CMOS circuits namely switching power and short-circuit power. Dynamic IR drop analysis is a vectorless or VCD based IR drop analysis with worst-case switching currents. It is typically used to check voltage drop limit for switching instances.</p>
+
+<p class="para-heading" id="esd-cell">ESD Cell</p>
+<p>ESD or Electro-Static Discharge cells are clamp circuits that are placed at appropriate locations in the chip to provide a low impedance discharge path for the Electro-Static Discharge and clamp the signal voltage at a level that avoids dielectic breakdown. As technology node decreases in feature size, ESD cells are mandatory to avoid functional failure or burn out of the chip.</p>
+
+<h3 class="centered-heading" id="physical-verification"><span>Physical Verification</span></h3>
+
+<p class="para-heading" id="antenna">Antenna</p>
+<p>Antenna violation, commonly referred as the plasma induced gate oxide damage, occurs during manufacturing stage of a chip. It is a result of charge accumulation on metals and discharge to a transistor’s gate through gate oxide which ultimately damages the gate.</p>
+
+<p class="para-heading" id="drc">DRC</p>
+<p>Design Rule Checks are performed at the physical design stage to verify if the designed layout meets the design rules so that the design can be manufactured properly without any issues. These design rules are specific to a technology node and are provided to the designer by the foundry. Base and Metal are checked and verified completely with zero DRC error before tapeout. DRC include physical layout checks such as metal width, metal pitch, metal spacing, via spacing, via type, base (well connectivity).</p>
+
+<p class="para-heading" id="lvs">LVS</p>
+<p>Layout vs Schematic is another physical verification check that is performed at the physical design stage. This is to ensure that the designed layout is functionally the same as the schematic netlist so that there isn’t any deviation in functionality of the design. There must be zero opens and shorts without any DRC errors. Some other LVS errors are parameter mismatches and unbound pins.</p>
+
+<p class="para-heading" id="erc">ERC</p>
+<p>Electrical Rule Check is a physical verification check that reports any electrical connection that is potentially dangerous. It checks the design for accurate power and ground connections. Transistors with gate unconnected (floating gate), wrong transistor-level connections (such as shorted drain and source, connecting high voltage to thin gates), floating nets, floating pins, floating wells, antenna errors are some of the checks reported here.</p>
+
+<h3 id="references">References</h3>
+
+<ul>
+  <li><a href="https://www.youtube.com/playlist?list=PLZU5hLL_713x0_AV_rVbay0pWmED7992G" target="_blank">Digital VLSI Design - English by Adi Teman</a></li>
+  <li><a href="https://www.vlsisystemdesign.com/inception-content-vsd/" target="_blank">Introduction To Industrial Physical Design Flow</a></li>
+  <li><a href="https://www.slideshare.net/yayavaram/vlsi-physical-designnotes" target="_blank">VLSI - Physical Design Notes</a></li>
+  <li><a href="http://www.vlsi-expert.com/p/physical-design.html" target="_blank">VLSI Concepts - Physical Design</a></li>
+  <li><a href="https://www.vlsifacts.com/asic-physical-design-flow/" target="_blank">ASIC Physical Design Flow</a></li>
+  <li><a href="http://www.vlsijunction.com/" target="_blank">VLSI Physical Design</a></li>
+  <li><a href="https://vlsi.pro/tag/physical-design-flow/" target="_blank">VLSI Pro</a></li>
+</ul>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/hardware/physical-design-terminologies"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				(function() {
+					var d = document, s = d.createElement('script');
+					s.src = '//gogul09.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2019 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+     
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/hardware/physical-design-terminologies',
+		  'title': 'Physical Design - Terminologies'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+   </body>
+</html>
