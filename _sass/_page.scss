@@ -15,8 +15,7 @@
 }
 
 .post-heading-wrapper {
-  background-color: #1f0021;
-  background-image: url("/images/bg.png");
+  background-color: #000000;
   box-shadow: 0 8px 6px -6px #e9e9e9;
   margin-bottom: 10px !important;
   @include mobile {
@@ -118,11 +117,10 @@
   flex-direction: column;
   &:hover, &:active {
     box-shadow: 0 3px 3px -2px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
-    background-color: #1f0021;
-    border: 1px solid #1f0021;
-    background-image: url(/images/bg.png);
+    background-color: #000000;
+    border: 1px solid #000000;
     h2 {
-      background-color: #1f0021;
+      background-color: #000000;
       color: white;
       font-weight: 100;
     }

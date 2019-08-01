@@ -2,8 +2,8 @@
 layout: splash
 heading: gogul ilango
 title: Gogul Ilango
-subheading: digital ic design engineer
-description: Digital IC Design Engineer
+subheading: engineer | programmer | music producer
+description: Personal Website
 color: grad-about
 permalink: /
 ---
