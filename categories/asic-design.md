@@ -29,40 +29,6 @@ permalink: /asic-design
             {% endif %}
         {% endfor %}
         </ul>
-        <h3>timing analysis</h3>
-        <ul>
-        {% for post in site.posts %}
-          {% if post.categories contains 'hardware' %}
-            {% if post.class contains 'STA Concepts' %}
-                <li>
-                  <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">
-                    <div class="page-treasure">
-                      <h2>{{ post.title }}</h2>
-                      <p>{{ post.description }}</p>
-                    </div>
-                  </a>
-                </li>
-              {% endif %}
-            {% endif %}
-        {% endfor %}
-        </ul>
-        <h3>power analysis</h3>
-        <ul>
-        {% for post in site.posts %}
-          {% if post.categories contains 'hardware' %}
-            {% if post.class contains 'PDN Concepts' %}
-                <li>
-                  <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">
-                    <div class="page-treasure">
-                      <h2>{{ post.title }}</h2>
-                      <p>{{ post.description }}</p>
-                    </div>
-                  </a>
-                </li>
-              {% endif %}
-            {% endif %}
-        {% endfor %}
-        </ul>
         <h3>intelligence in chip design</h3>
         <ul>
         {% for post in site.posts %}
