@@ -1,6 +1,7 @@
 .outer-wrapping {
   width: 100%;
   background-color: #000000;
+  background-image: url("/images/bg.png");
   border: none;
   z-index: 2000;
   @include mobile {

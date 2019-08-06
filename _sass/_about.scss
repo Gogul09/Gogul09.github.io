@@ -1,6 +1,7 @@
 .about-container {
   width: 100%;
   background-color: #000000;
+  background-image: url("/images/bg.png");
 }
 
 .about-wrapper {
@@ -19,6 +20,7 @@
   padding: 20px 50px !important;
   border-top-right-radius: 0px !important;
   border-top-left-radius: 0px !important;
+  padding-bottom: 50px !important;
   @include mobile {
     padding: 0px !important;
   }
@@ -232,6 +234,7 @@
 
 .grad-about {
   background-color: #000000;
+  background-image: url("/images/bg.png");
   border-bottom: 3px dotted #90909085;
   @include mobile {
     border-bottom: 0px;
