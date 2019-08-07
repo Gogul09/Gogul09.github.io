@@ -1,451 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-06T21:56:06+05:30</updated><id>http://localhost:4000/</id><title type="html">Gogul Ilango</title><subtitle>This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources.</subtitle><entry><title type="html">Fundamental Laws in Physics</title><link href="http://localhost:4000/science/physics/fundamental-laws-in-physics" rel="alternate" type="text/html" title="Fundamental Laws in Physics" /><published>2019-07-13T00:00:00+05:30</published><updated>2019-07-13T00:00:00+05:30</updated><id>http://localhost:4000/science/physics/fundamental-laws-in-physics</id><content type="html" xml:base="http://localhost:4000/science/physics/fundamental-laws-in-physics">&lt;div class=&quot;sidebar_tracker&quot; id=&quot;sidebar_tracker&quot;&gt;
-  &lt;button onclick=&quot;closeSidebar('sidebar_tracker_content')&quot;&gt;X&lt;/button&gt;
-  &lt;p onclick=&quot;showSidebar('sidebar_tracker_content')&quot;&gt;Contents&lt;/p&gt;
-  &lt;ul id=&quot;sidebar_tracker_content&quot;&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_1&quot; href=&quot;#amperes-law&quot;&gt;Ampere's Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_2&quot; href=&quot;#archimedes-principle&quot;&gt;Archimedes' Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_3&quot; href=&quot;#avogadros-hypothesis&quot;&gt;Avogadro's Hypothesis&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_4&quot; href=&quot;#bernoullis-equation&quot;&gt;Bernoulli's Equation&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_5&quot; href=&quot;#biot-savart-law&quot;&gt;Biot-Savart Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_6&quot; href=&quot;#boyles-law-mariottes-law&quot;&gt;Boyle's Law; Mariotte's Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_7&quot; href=&quot;#braggs-law&quot;&gt;Bragg's Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_8&quot; href=&quot;#brownian-motion&quot;&gt;Brownian Motion&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_9&quot; href=&quot;#casimir-effect&quot;&gt;Casimir Effect&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_10&quot; href=&quot;#causality-principle&quot;&gt;Causality Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_11&quot; href=&quot;#centrifugal-pseudoforce&quot;&gt;Centrifugal Pseudoforce&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_12&quot; href=&quot;#charles-law&quot;&gt;Charles' Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_13&quot; href=&quot;#cherenkov-radiation&quot;&gt;Cherenkov Radiation&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_14&quot; href=&quot;#complementarity-principle&quot;&gt;Complementarity Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_15&quot; href=&quot;#compton-effect&quot;&gt;Compton Effect&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_16&quot; href=&quot;#conservation-of-mass-energy&quot;&gt;Conservation of mass-energy&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_17&quot; href=&quot;#conservation-of-electric-charge&quot;&gt;Conservation of electric charge&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_18&quot; href=&quot;#conservation-of-linear-momentum&quot;&gt;Conservation of linear momentum&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_19&quot; href=&quot;#conservation-of-angular-momentum&quot;&gt;Conservation of angular momentum&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_20&quot; href=&quot;#constancy-principle&quot;&gt;Constancy Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_21&quot; href=&quot;#continuity-equation&quot;&gt;Continuity Equation&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_22&quot; href=&quot;#copernican-principle&quot;&gt;Copernican Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_23&quot; href=&quot;#coriolis-pseudoforce&quot;&gt;Coriolis Pseudoforce&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_24&quot; href=&quot;#correspondence-principle&quot;&gt;Correspondence Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_25&quot; href=&quot;#coulombs-law&quot;&gt;Coulomb's Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_26&quot; href=&quot;#curies-law&quot;&gt;Curie's Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_27&quot; href=&quot;#curie-weiss-law&quot;&gt;Curie-Weiss Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_28&quot; href=&quot;#daltons-law-of-partial-pressures&quot;&gt;Dalton's Law of partial pressures&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_29&quot; href=&quot;#doppler-effect&quot;&gt;Doppler Effect&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_30&quot; href=&quot;#dulong-petit-law&quot;&gt;Dulong-Petit Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_31&quot; href=&quot;#einstein-field-equation&quot;&gt;Einstein Field Equation&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_32&quot; href=&quot;#einsteins-mass-energy-equation&quot;&gt;Einstein's Mass-Energy Equation&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_33&quot; href=&quot;#equivalence-principle&quot;&gt;Equivalence Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_34&quot; href=&quot;#faradays-law&quot;&gt;Faraday's Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_35&quot; href=&quot;#faradays-first-law-of-electrolysis&quot;&gt;Faraday's first law of electrolysis&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_36&quot; href=&quot;#faradays-second-law-of-electrolysis&quot;&gt;Faraday's second law of electrolysis&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_37&quot; href=&quot;#faradays-first-law-of-electromagnetic-induction&quot;&gt;Faraday's first law of electromagnetic induction&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_38&quot; href=&quot;#faradays-second-law-of-electromagnetic-induction&quot;&gt;Faraday's second law of electromagnetic induction&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_39&quot; href=&quot;#faradays-third-law-of-electromagnetic-induction&quot;&gt;Faraday's third law of electromagnetic induction&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_40&quot; href=&quot;#fermats-principle&quot;&gt;Fermat's Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_41&quot; href=&quot;#gauss-law&quot;&gt;Gauss Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_42&quot; href=&quot;#gauss-law-for-magnetic-fields&quot;&gt;Gauss Law for magnetic fields&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_43&quot; href=&quot;#hall-effect&quot;&gt;Hall Effect&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_44&quot; href=&quot;#hookes-law&quot;&gt;Hooke's Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_45&quot; href=&quot;#huygens-principle&quot;&gt;Huygens Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_46&quot; href=&quot;#ideal-gas-law&quot;&gt;Ideal Gas Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_47&quot; href=&quot;#joule-thomson-effect-joule-kelvin-effect&quot;&gt;Joule-Thomson Effect; Joule-Kelvin Effect&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_48&quot; href=&quot;#joules-first-law&quot;&gt;Joule's first law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_49&quot; href=&quot;#keplers-first-law&quot;&gt;Kepler's First Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_50&quot; href=&quot;#keplers-second-law&quot;&gt;Kepler's Second Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_51&quot; href=&quot;#keplers-third-law&quot;&gt;Kepler's Third Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_52&quot; href=&quot;#kirchhoffs-loop-rule&quot;&gt;Kirchhoff's Loop Rule&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_53&quot; href=&quot;#kirchhoffs-point-rule&quot;&gt;Kirchhoff's Point Rule&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_54&quot; href=&quot;#kohlrauschs-law&quot;&gt;Kohlrausch's Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_55&quot; href=&quot;#lamberts-first-law&quot;&gt;Lambert's first law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_56&quot; href=&quot;#lamberts-second-law&quot;&gt;Lambert's second law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_57&quot; href=&quot;#laplace-equation&quot;&gt;Laplace Equation&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_58&quot; href=&quot;#lenzs-law&quot;&gt;Lenz's Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_59&quot; href=&quot;#mach-number&quot;&gt;Mach Number&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_60&quot; href=&quot;#machs-principle&quot;&gt;Mach's Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_61&quot; href=&quot;#gauss-law&quot;&gt;Gauss law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_62&quot; href=&quot;#gauss-law-for-magnetic-fields&quot;&gt;Gauss Law for magnetic fields&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_63&quot; href=&quot;#faradays-law&quot;&gt;Faraday's law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_64&quot; href=&quot;#amperes-law-modified-form&quot;&gt;Ampere's law, modified form&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_65&quot; href=&quot;#murphys-law&quot;&gt;Murphy's Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_66&quot; href=&quot;#newtons-law-of-universal-gravitation&quot;&gt;Newton's Law of universal gravitation&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_67&quot; href=&quot;#newtons-first-law-of-motion&quot;&gt;Newton's first law of motion&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_68&quot; href=&quot;#newtons-second-law-of-motion&quot;&gt;Newton's second law of motion&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_69&quot; href=&quot;#newtons-third-law-of-motion&quot;&gt;Newton's third law of motion&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_70&quot; href=&quot;#occams-razor&quot;&gt;Occam's  Razor&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_71&quot; href=&quot;#ohms-law&quot;&gt;Ohm's Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_72&quot; href=&quot;#pascals-principle&quot;&gt;Pascal's Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_73&quot; href=&quot;#peter-principle&quot;&gt;Peter Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_74&quot; href=&quot;#planck-equation&quot;&gt;Planck Equation&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_75&quot; href=&quot;#refraction-law&quot;&gt;Refraction Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_76&quot; href=&quot;#relativity-principle&quot;&gt;Relativity Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_77&quot; href=&quot;#stefan-boltzmann-law&quot;&gt;Stefan-Boltzmann Law&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_78&quot; href=&quot;#superposition-principle&quot;&gt;Superposition Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_79&quot; href=&quot;#first-law-of-thermodynamics&quot;&gt;First law of thermodynamics&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_80&quot; href=&quot;#second-law-of-thermodynamics&quot;&gt;Second law of thermodynamics&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_81&quot; href=&quot;#third-law-of-thermodynamics&quot;&gt;Third law of thermodynamics&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_82&quot; href=&quot;#zeroth-law-of-thermodynamics&quot;&gt;Zeroth law of thermodynamics&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_83&quot; href=&quot;#uncertainty-principle&quot;&gt;Uncertainty Principle&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_84&quot; href=&quot;#van-der-waals-force&quot;&gt;van der Waals force&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_85&quot; href=&quot;#wave-particle-duality&quot;&gt;Wave-Particle Duality&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_86&quot; href=&quot;#wiedemann-franz-law&quot;&gt;Wiedemann-Franz Law&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As I love physics, here is a single page reference for all those beautiful laws using which we could explore the universe around us. Kindly check out &lt;a href=&quot;https://en.wikipedia.org/wiki/Outline_of_physics&quot; target=&quot;_blank&quot;&gt;this&lt;/a&gt; before reading here.&lt;/p&gt;
-
-&lt;h4 id=&quot;amperes-law&quot;&gt;Ampere’s Law&lt;/h4&gt;
-
-&lt;p&gt;The line integral of the magnetic flux around a closed curve is proportional to the algebraic sum of electric currents flowing through that closed curve; or, in differential form curl \(B = J\). This was later modified to add a second term when it was incorporated into Maxwell’s equations.&lt;/p&gt;
-
-&lt;h4 id=&quot;archimedes-principle&quot;&gt;Archimedes’ Principle&lt;/h4&gt;
-
-&lt;p&gt;A body that is submerged in a fluid is buoyed up by a force equal in magnitude to the weight of the fluid that is displaced, and directed upward along a line through the center of gravity of the displaced fluid.&lt;/p&gt;
-
-&lt;h4 id=&quot;avogadros-hypothesis&quot;&gt;Avogadro’s Hypothesis&lt;/h4&gt;
-
-&lt;p&gt;Equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules. It is, in fact, only true for ideal gases.&lt;/p&gt;
-
-&lt;h4 id=&quot;bernoullis-equation&quot;&gt;Bernoulli’s Equation&lt;/h4&gt;
-
-&lt;p&gt;In an irrotational fluid, the sum of the static pressure, the weight of the fluid per unit mass times the height, and half the density times the velocity squared is constant throughout the fluid.&lt;/p&gt;
-
-&lt;h4 id=&quot;biot-savart-law&quot;&gt;Biot-Savart Law&lt;/h4&gt;
-
-&lt;p&gt;A law which describes the contributions to a magnetic field by an electric current. It is analogous to Coulomb’s law.&lt;/p&gt;
-
-&lt;h4 id=&quot;boyles-law-mariottes-law&quot;&gt;Boyle’s Law; Mariotte’s Law&lt;/h4&gt;
-
-&lt;p&gt;The produce of the pressure and the volume of an ideal gas at constant temperature is constant.&lt;/p&gt;
-
-&lt;h4 id=&quot;braggs-law&quot;&gt;Bragg’s Law&lt;/h4&gt;
-
-&lt;p&gt;When a beam of X-rays strikes a crystal surface in which the layers of atoms or ions are regularly separated, the maximum intensity of the reflected ray occurs when the complement of the angle of incidence \(\theta\), the wavelength of the X-rays \(\lambda\), and the distance between layers of atoms or ions \(d\), are related by the equation \(2 d sin(\theta) = n \lambda\).&lt;/p&gt;
-
-&lt;h4 id=&quot;brownian-motion&quot;&gt;Brownian Motion&lt;/h4&gt;
-
-&lt;p&gt;The continuous random motion of solid microscopic particles when suspended in a fluid medium due to the consequence of ongoing bombardment by atoms and molecules.&lt;/p&gt;
-
-&lt;h4 id=&quot;casimir-effect&quot;&gt;Casimir Effect&lt;/h4&gt;
-
-&lt;p&gt;A quantum mechanical effect, where two very large plates placed close to each other will experience an attractive force, in the absense of other two forces. The cause is virtual particle-antiparticle pair creation in the vicinity of the plates. Also, the speed of light will be increased in the region between the two plates, in the direction perpendicular to them.&lt;/p&gt;
-
-&lt;h4 id=&quot;causality-principle&quot;&gt;Causality Principle&lt;/h4&gt;
-
-&lt;p&gt;The principle that cause must always precede effect. More formally, if an event A (the cause) somehow influences an event B (the effect) which occurs later in time, then event B cannot in turn have an influence on event A. That is, event B must occur at later time than event A, and further, all frames must agree upon this ordering.&lt;/p&gt;
-
-&lt;h4 id=&quot;centrifugal-pseudoforce&quot;&gt;Centrifugal Pseudoforce&lt;/h4&gt;
-
-&lt;p&gt;A pseudoforce on an object when it is moving in uniform circular motion. The force is directed outward from the center of motion.&lt;/p&gt;
-
-&lt;h4 id=&quot;charles-law&quot;&gt;Charles’ Law&lt;/h4&gt;
-
-&lt;p&gt;The volume of an ideal gas at constant pressure is proportional to the thermodynamic temperature of that gas.&lt;/p&gt;
-
-&lt;h4 id=&quot;cherenkov-radiation&quot;&gt;Cherenkov Radiation&lt;/h4&gt;
-
-&lt;p&gt;Radiation emitted by a massive particle which is moving faster than light in the medium through which it is traveling. No particle can travel faster than light in vacuum, but the speed of light in other media, such as water, glass, etc. are considerably slower. Cherenkov radiation is the electromagnetic analogue of the sonic boom, through Cherenkov radiation is a shockwave set up in the electromagnetic field.&lt;/p&gt;
-
-&lt;h4 id=&quot;complementarity-principle&quot;&gt;Complementarity Principle&lt;/h4&gt;
-
-&lt;p&gt;The principle that a given system cannot exhibit both wave-like behavior and particle-like behavior at the same time. That is, certain experiments will reveal the wave-like nature of a system, and certain experiments will reveal the particle-like nature of a system, but no experiment will reveal both simultaneously.&lt;/p&gt;
-
-&lt;h4 id=&quot;compton-effect&quot;&gt;Compton Effect&lt;/h4&gt;
-
-&lt;p&gt;An effect that demonstrates that photons (the quantum of electromagnetic radiation) have momentum. A photon fired at a stationary particle, such as an electron, will impart momentum to the electron and, since its energy has been decreased, will experience a corresponding decrease in frequency.&lt;/p&gt;
-
-&lt;h4 id=&quot;conservation-of-mass-energy&quot;&gt;Conservation of mass-energy&lt;/h4&gt;
-
-&lt;p&gt;The total mass-energy of a closed system remains constant.&lt;/p&gt;
-
-&lt;h4 id=&quot;conservation-of-electric-charge&quot;&gt;Conservation of electric charge&lt;/h4&gt;
-
-&lt;p&gt;The total electric charge of a closed system remains constant&lt;/p&gt;
-
-&lt;h4 id=&quot;conservation-of-linear-momentum&quot;&gt;Conservation of linear momentum&lt;/h4&gt;
-
-&lt;p&gt;The total linear momentum of a closed system remains constant&lt;/p&gt;
-
-&lt;h4 id=&quot;conservation-of-angular-momentum&quot;&gt;Conservation of angular momentum&lt;/h4&gt;
-
-&lt;p&gt;The total angular momentum of a closed system remains constant&lt;/p&gt;
-
-&lt;h4 id=&quot;constancy-principle&quot;&gt;Constancy Principle&lt;/h4&gt;
-
-&lt;p&gt;One of the postulates of A. Einstein’s special theory of relativity, which puts forth that the speed of light in vacuum is measured as the same speed to all observers, regardless of their relative motion.&lt;/p&gt;
-
-&lt;h4 id=&quot;continuity-equation&quot;&gt;Continuity Equation&lt;/h4&gt;
-
-&lt;p&gt;An equation which states that a fluid flowing through pipe flows at a rate which is inversely proportional to the cross-sectional area of the pipe. It is in essence a restatement of the conservation of mass during constant flow.&lt;/p&gt;
-
-&lt;h4 id=&quot;copernican-principle&quot;&gt;Copernican Principle&lt;/h4&gt;
-
-&lt;p&gt;The idea, suggested by Copernicus, that the Sun, not the Earth, is at the center of the Universe. We now know that neither idea is correct.&lt;/p&gt;
-
-&lt;h4 id=&quot;coriolis-pseudoforce&quot;&gt;Coriolis Pseudoforce&lt;/h4&gt;
-
-&lt;p&gt;A pseudoforce which arises because of motion relative to a frame of reference which is itself rotating relative to a second, inertial frame. The magnitude of the Coriolis “force” is dependent on the speed of the object relative to the noninertial frame, and the direction of the “force” is orthogonal to the object’s velocity.&lt;/p&gt;
-
-&lt;h4 id=&quot;correspondence-principle&quot;&gt;Correspondence Principle&lt;/h4&gt;
-
-&lt;p&gt;The principle that when a new, more general theory is put forth, it must reduce to the more specialized (and usually simpler) theory under normal circumstances. There are correspondence principles for general relativity to special relativity and special relativity to Newtonian mechanics, but the most widely known correspondence principle is that of quantum mechanics to classical mechanics.&lt;/p&gt;
-
-&lt;h4 id=&quot;coulombs-law&quot;&gt;Coulomb’s Law&lt;/h4&gt;
-
-&lt;p&gt;The primary law for electrostatics, analogous to Newton’s law of universal gravitation. It states that the force between two point charges is proportional to the algebraic product of their respective charges as well as proportional to the inverse square of the distance between them.&lt;/p&gt;
-
-&lt;h4 id=&quot;curies-law&quot;&gt;Curie’s Law&lt;/h4&gt;
-
-&lt;p&gt;The susceptibility of an isotropic paramagnetic substance \(\chi\) is related to its thermodynamic temperature \(T\) by the equation \(\chi = \frac{C}{T}\) where \(C\) is a material-specific Curie constant.&lt;/p&gt;
-
-&lt;h4 id=&quot;curie-weiss-law&quot;&gt;Curie-Weiss Law&lt;/h4&gt;
-
-&lt;p&gt;A more general form of Curie’s Law, which states that the susceptibility of a paramagnetic substance \(\chi\) is related to its thermodynamic temperature \(T\) by the equation \(\chi = \frac{C}{T - T_c}\) where \(C\) is a material-specific Curie constant, \(T\) is absolute temperature and \(T_c\) is the Curie temperature, both measured in kelvin.&lt;/p&gt;
-
-&lt;h4 id=&quot;daltons-law-of-partial-pressures&quot;&gt;Dalton’s Law of partial pressures&lt;/h4&gt;
-
-&lt;p&gt;The total pressure of a mixture of ideal gases is equal to the sum of the partial pressures of its components; that is, the sum of the pressures that each component would exert if it were present alone and occupied the same volume as the mixture.&lt;/p&gt;
-
-&lt;h4 id=&quot;doppler-effect&quot;&gt;Doppler Effect&lt;/h4&gt;
-
-&lt;p&gt;Waves emitted by a moving object as received by an observer will be blueshifted (compressed) if approaching, redshifted (elongated) if receding. It occurs both in sound as well as electromagnetic phenomena.&lt;/p&gt;
-
-&lt;h4 id=&quot;dulong-petit-law&quot;&gt;Dulong-Petit Law&lt;/h4&gt;
-
-&lt;p&gt;The molar heat capacity is approximately equal to the three times the ideal gas constant.&lt;/p&gt;
-
-&lt;h4 id=&quot;einstein-field-equation&quot;&gt;Einstein Field Equation&lt;/h4&gt;
-
-&lt;p&gt;The cornerstone of Einstein’s general theory of relativity, relating the gravitational tensor \(G\) to the 
-stress-energy tensor \(T\) by the simple equation \(G = 8 \pi T\).&lt;/p&gt;
-
-&lt;h4 id=&quot;einsteins-mass-energy-equation&quot;&gt;Einstein’s Mass-Energy Equation&lt;/h4&gt;
-
-&lt;p&gt;The energy \(E\) of a particle is equal to its mass \(M\) times the square of the speed of light \(c\), giving rise to the best known physics equation in the Universe: \( E = M c^2\)&lt;/p&gt;
-
-&lt;h4 id=&quot;equivalence-principle&quot;&gt;Equivalence Principle&lt;/h4&gt;
-
-&lt;p&gt;The basic postulate of A. Einstein’s general theory of relativity, which posits that an acceleration is fundamentally indistinguishable from a gravitational field.&lt;/p&gt;
-
-&lt;h4 id=&quot;faradays-law&quot;&gt;Faraday’s Law&lt;/h4&gt;
-
-&lt;p&gt;The line integral of the electric field around a closed curve is proportional to the instantaneous time rate of change of the magnetic flux through a surface bounded by that closed curve; in differential form curl \(E = -\frac{dB}{dt}\), where \(\frac{d}{dt}\) represents partial differentiation.&lt;/p&gt;
-
-&lt;h4 id=&quot;faradays-first-law-of-electrolysis&quot;&gt;Faraday’s first law of electrolysis&lt;/h4&gt;
-
-&lt;p&gt;The amount of chemical change during electrolysis is proportional to the charge passed.&lt;/p&gt;
-
-&lt;h4 id=&quot;faradays-second-law-of-electrolysis&quot;&gt;Faraday’s second law of electrolysis&lt;/h4&gt;
-
-&lt;p&gt;The charge \(Q\) required to deposit or liberate a mass \(m\) is proportional to the charge \(z\) of the ion, the mass, and inversely proportional to the relative ionic mass \(M\); mathematically \(Q = \frac{F m z}{M}\)&lt;/p&gt;
-
-&lt;h4 id=&quot;faradays-first-law-of-electromagnetic-induction&quot;&gt;Faraday’s first law of electromagnetic induction&lt;/h4&gt;
-
-&lt;p&gt;An electromotive force is induced in a conductor when the magnetic field surrounding it changes.&lt;/p&gt;
-
-&lt;h4 id=&quot;faradays-second-law-of-electromagnetic-induction&quot;&gt;Faraday’s second law of electromagnetic induction&lt;/h4&gt;
-
-&lt;p&gt;The magnitude of the electromotive force is proportional to the rate of change of the field.&lt;/p&gt;
-
-&lt;h4 id=&quot;faradays-third-law-of-electromagnetic-induction&quot;&gt;Faraday’s third law of electromagnetic induction&lt;/h4&gt;
-
-&lt;p&gt;The sense of the induced electromotive force depends on the direction of the rate of the change of the field.&lt;/p&gt;
-
-&lt;h4 id=&quot;fermats-principle&quot;&gt;Fermat’s Principle&lt;/h4&gt;
-
-&lt;p&gt;The principle states that the path taken by a ray of light between any two points in a system is always the path that takes the least time.&lt;/p&gt;
-
-&lt;h4 id=&quot;gauss-law&quot;&gt;Gauss Law&lt;/h4&gt;
-
-&lt;p&gt;The electric flux through a closed surface is proportional to the algebraic sum of electric charges contained within that closed surface; in differential form \(\nabla . E = \frac{\rho}{\epsilon_0}\), where \(\rho\) is the charge density.&lt;/p&gt;
-
-&lt;h4 id=&quot;gauss-law-for-magnetic-fields&quot;&gt;Gauss Law for magnetic fields&lt;/h4&gt;
-
-&lt;p&gt;The magnetic flux through a closed surface is zero; no magnetic charges exist. In differential form \(\nabla . B = 0\).&lt;/p&gt;
-
-&lt;h4 id=&quot;hall-effect&quot;&gt;Hall Effect&lt;/h4&gt;
-
-&lt;p&gt;When charged particles flow through a tube which has both an electric field and a magnetic field (perpendicular to the electric field) present in it, only certain velocities of the charged particles are preferred, and will make it un-deviated through the tube; the rest will be deflected into the sides.&lt;/p&gt;
-
-&lt;h4 id=&quot;hookes-law&quot;&gt;Hooke’s Law&lt;/h4&gt;
-
-&lt;p&gt;The stress applied to any solid is proportional to the strain it produces within the elastic limit for that solid. The constant of that proportionality is the Young modulus of elasticity for that substance.&lt;/p&gt;
-
-&lt;h4 id=&quot;huygens-principle&quot;&gt;Huygens’ Principle&lt;/h4&gt;
-
-&lt;p&gt;The mechanical propagation of a wave (specifically, of light) is equivalent to assuming that every point on the wavefront acts as point source of wave emission&lt;/p&gt;
-
-&lt;h4 id=&quot;ideal-gas-law&quot;&gt;Ideal Gas Law&lt;/h4&gt;
-
-&lt;p&gt;An equation which sums up the ideal gas laws in one simple equation \(P V = n R T\)&lt;/p&gt;
-
-&lt;h4 id=&quot;joule-thomson-effect-joule-kelvin-effect&quot;&gt;Joule-Thomson Effect; Joule-Kelvin Effect&lt;/h4&gt;
-
-&lt;p&gt;The change in temperature that occurs when a gas expands into a region of lower pressure.&lt;/p&gt;
-
-&lt;h4 id=&quot;joules-first-law&quot;&gt;Joule’s first law&lt;/h4&gt;
-
-&lt;p&gt;The heat \(Q\) produced when a current \(I\) flows through a resistance \(R\) for a specified time \(t\) is given by \(Q = I^2 R t\).&lt;/p&gt;
-
-&lt;h4 id=&quot;keplers-first-law&quot;&gt;Kepler’s First Law&lt;/h4&gt;
-
-&lt;p&gt;The orbit of a planet is an ellipse with the Sun at one of the two foci.&lt;/p&gt;
-
-&lt;h4 id=&quot;keplers-second-law&quot;&gt;Kepler’s Second Law&lt;/h4&gt;
-
-&lt;p&gt;A line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time.&lt;/p&gt;
-
-&lt;h4 id=&quot;keplers-third-law&quot;&gt;Kepler’s Third Law&lt;/h4&gt;
-
-&lt;p&gt;The square of the orbital period of a planet is directly proportional to the cube of the semi-major axis of its orbit.&lt;/p&gt;
-
-&lt;h4 id=&quot;kirchhoffs-loop-rule&quot;&gt;Kirchhoff’s Loop Rule&lt;/h4&gt;
-
-&lt;p&gt;The sum of the potential differences encountered in a round trip around any closed loop in a circuit is zero.&lt;/p&gt;
-
-&lt;h4 id=&quot;kirchhoffs-point-rule&quot;&gt;Kirchhoff’s Point Rule&lt;/h4&gt;
-
-&lt;p&gt;The sum of the currents toward a branch point is equal to the sum of the currents away from the same branch point.&lt;/p&gt;
-
-&lt;h4 id=&quot;kohlrauschs-law&quot;&gt;Kohlrausch’s Law&lt;/h4&gt;
-
-&lt;p&gt;If a salt is dissolved in water, the conductivity of the solution is the sum of two values – one depending on the positive ions and the other on the negative ions&lt;/p&gt;
-
-&lt;h4 id=&quot;lamberts-first-law&quot;&gt;Lambert’s first law&lt;/h4&gt;
-
-&lt;p&gt;The illuminance on a surface illuminated by light falling on it perpendicularly from a point source is proportional to the inverse square of the distance between the surface and the source.&lt;/p&gt;
-
-&lt;h4 id=&quot;lamberts-second-law&quot;&gt;Lambert’s second law&lt;/h4&gt;
-
-&lt;p&gt;If the rays meet the surface at an angle, then the illuminance is proportional to the cosine of the angle with the normal.
-Lambert’s third law
-The luminous intensity of light decreases exponentially with distance as it travels through an absorbing medium.&lt;/p&gt;
-
-&lt;h4 id=&quot;laplace-equation&quot;&gt;Laplace Equation&lt;/h4&gt;
-
-&lt;p&gt;For steady-state heat conduction in one dimension, the temperature distribution is the solution to Laplace’s equation, which states that the second derivative of temperature with respect to displacement is zero.&lt;/p&gt;
-
-&lt;h4 id=&quot;lenzs-law&quot;&gt;Lenz’s Law&lt;/h4&gt;
-
-&lt;p&gt;An induced electric current always flows in such a direction that it opposes the change producing it.&lt;/p&gt;
-
-&lt;h4 id=&quot;mach-number&quot;&gt;Mach Number&lt;/h4&gt;
-
-&lt;p&gt;The ratio of the speed of an object in a given medium to the speed of sound in that medium.&lt;/p&gt;
-
-&lt;h4 id=&quot;machs-principle&quot;&gt;Mach’s Principle&lt;/h4&gt;
-
-&lt;p&gt;The inertia of any particular particle or particles of matter is attributable to the interaction between that piece of matter and the rest of the Universe. Thus, a body in isolation would have no inertia.&lt;/p&gt;
-
-&lt;h3 id=&quot;maxwells-equations&quot;&gt;Maxwell’s Equations&lt;/h3&gt;
-
-&lt;h4 id=&quot;gauss-law-1&quot;&gt;Gauss law&lt;/h4&gt;
-
-&lt;p&gt;The electric flux through a closed surface is proportional to the algebraic sum of electric charges contained within that closed surface; in differential form \(\nabla . E = \frac{\rho}{\epsilon_0}\), where \(\rho\) is the charge density.&lt;/p&gt;
-
-&lt;h4 id=&quot;gauss-law-for-magnetic-fields-1&quot;&gt;Gauss law for magnetic fields&lt;/h4&gt;
-
-&lt;p&gt;The magnetic flux through a closed surface is zero; no magnetic charges exist. In differential form \(\nabla . B = 0\).&lt;/p&gt;
-
-&lt;h4 id=&quot;faradays-law-1&quot;&gt;Faraday’s law&lt;/h4&gt;
-
-&lt;p&gt;The line integral of the electric field around a closed curve is proportional to the instantaneous time rate of change of the magnetic flux through a surface bounded by that closed curve; in differential form \(\nabla X E = -\frac{\partial B}{\partial t}\)&lt;/p&gt;
-
-&lt;h4 id=&quot;amperes-law-modified-form&quot;&gt;Ampere’s law, modified form&lt;/h4&gt;
-
-&lt;p&gt;The line integral of the magnetic field around a closed curve is proportional to the sum of two terms: first, the algebraic sum of electric currents flowing through that closed curve; and second, the instantaneous time rate of change of the electric flux through a surface bounded by that closed curve; in differential form \(\nabla X B = \mu_0 ( J + \epsilon_0 \frac{\partial D}{\partial t} )\).
-In addition to describing electromagnetism, his equations also predict that waves can propagate through the electromagnetic field, and would always propagate at the the speed of light in vacuum.&lt;/p&gt;
-
-&lt;h4 id=&quot;murphys-law&quot;&gt;Murphy’s Law&lt;/h4&gt;
-
-&lt;p&gt;If anything can go wrong, it will.&lt;/p&gt;
-
-&lt;h4 id=&quot;newtons-law-of-universal-gravitation&quot;&gt;Newton’s Law of universal gravitation&lt;/h4&gt;
-
-&lt;p&gt;Two bodies attract each other with equal and opposite forces; the magnitude of this force is proportional to the product of the two masses and is also proportional to the inverse square of the distance between the centers of mass of the two bodies; \(F = (\frac{G m_1 m_2}{r^2}) e\), where \(m_1\) and \(m_2\) are the masses of the two bodies, \(r\) is the distance between the two, and \(e\) is a unit vector directed from the test mass to the second.&lt;/p&gt;
-
-&lt;h4 id=&quot;newtons-first-law-of-motion&quot;&gt;Newton’s first law of motion&lt;/h4&gt;
-
-&lt;p&gt;A body continues in its state of constant velocity (which may be zero) unless it is acted upon by an external force.&lt;/p&gt;
-
-&lt;h4 id=&quot;newtons-second-law-of-motion&quot;&gt;Newton’s second law of motion&lt;/h4&gt;
-
-&lt;p&gt;For an unbalanced force acting on a body, the acceleration produced is proportional to the force impressed; the constant of proportionality is the inertial mass of the body.&lt;/p&gt;
-
-&lt;h4 id=&quot;newtons-third-law-of-motion&quot;&gt;Newton’s third law of motion&lt;/h4&gt;
-
-&lt;p&gt;In a system where no external forces are present, every action force is always opposed by an equal and opposite reaction force.&lt;/p&gt;
-
-&lt;h4 id=&quot;occams--razor&quot;&gt;Occam’s  Razor&lt;/h4&gt;
-
-&lt;p&gt;If two theories predict phenomena to the same accuracy, then the one which is simpler is the better one. Moreover, additional aspects of a theory which do not lend it more powerful predicting ability are unnecessary and should be stripped away.&lt;/p&gt;
-
-&lt;h4 id=&quot;ohms-law&quot;&gt;Ohm’s Law&lt;/h4&gt;
-
-&lt;p&gt;The ratio of the potential difference between the ends of a conductor to the current flowing through it is constant; the constant of proportionality is called the resistance, and is different for different materials.&lt;/p&gt;
-
-&lt;h4 id=&quot;pascals-principle&quot;&gt;Pascal’s Principle&lt;/h4&gt;
-
-&lt;p&gt;Pressure applied to an enclosed incompressible static fluid is transmitted undiminished to all parts of the fluid.&lt;/p&gt;
-
-&lt;h4 id=&quot;peter-principle&quot;&gt;Peter Principle&lt;/h4&gt;
-
-&lt;p&gt;In a hierarchy, every employee tends to rise to his level of incompetence.&lt;/p&gt;
-
-&lt;h4 id=&quot;planck-equation&quot;&gt;Planck Equation&lt;/h4&gt;
-
-&lt;p&gt;The quantum mechanical equation relating the energy of a photon \(E\) to its frequency \(f\): \(E = h f\).&lt;/p&gt;
-
-&lt;h4 id=&quot;reflection-law-snells-law&quot;&gt;Reflection Law, Snell’s Law&lt;/h4&gt;
-
-&lt;p&gt;For a wavefront intersecting a reflecting surface, the angle of incidence is equal to the angle of reflection, in the same plane defined by the ray of incidence and the normal.&lt;/p&gt;
-
-&lt;h4 id=&quot;refraction-law&quot;&gt;Refraction Law&lt;/h4&gt;
-
-&lt;p&gt;For a wavefront traveling through a boundary between two media, the first with a refractive index of \(n1\), and the other with one of \(n2\), the angle of incidence \(\theta_1\) is related to the angle of refraction \(\theta_2\) by \(n1 sin(\theta_1) = n2 sin(\theta_2) \).&lt;/p&gt;
-
-&lt;h4 id=&quot;relativity-principle&quot;&gt;Relativity Principle&lt;/h4&gt;
-
-&lt;p&gt;The principle, employed by Einstein’s relativity theories, that the laws of physics are the same, at least qualitatively, in all frames. That is, there is no frame that is better (or qualitatively any different) from any other. This principle, along with the constancy principle, constitute the founding principles of special relativity.&lt;/p&gt;
-
-&lt;h4 id=&quot;stefan-boltzmann-law&quot;&gt;Stefan-Boltzmann Law&lt;/h4&gt;
-
-&lt;p&gt;The radiated power \(P\) (rate of emission of electromagnetic energy) of a hot body is proportional to the radiating surface area \(A\), and the fourth power of the thermodynamic temperature \(T\). The constant of proportionality is the Stefan-Boltzmann constant. Mathematically \(P = A \epsilon \sigma T^4\), where the efficiency rating \(\epsilon\) is called the emissivity of the object.&lt;/p&gt;
-
-&lt;h4 id=&quot;superposition-principle&quot;&gt;Superposition Principle&lt;/h4&gt;
-
-&lt;p&gt;The general idea that, when a number of influences are acting on a system, the total influence on that system is merely the sum of the individual influences; that is, influences governed by the superposition principle add linearly.&lt;/p&gt;
-
-&lt;h4 id=&quot;first-law-of-thermodynamics&quot;&gt;First law of thermodynamics&lt;/h4&gt;
-
-&lt;p&gt;The change in internal energy of a system is the sum of the heat transferred to or from the system and the work done on or by the system.&lt;/p&gt;
-
-&lt;h4 id=&quot;second-law-of-thermodynamics&quot;&gt;Second law of thermodynamics&lt;/h4&gt;
-
-&lt;p&gt;The entropy – a measure of the unavailability of a system’s energy to do useful work – of a closed system tends to increase with time.&lt;/p&gt;
-
-&lt;h4 id=&quot;third-law-of-thermodynamics&quot;&gt;Third law of thermodynamics&lt;/h4&gt;
-
-&lt;p&gt;For changes involving only perfect crystalline solids at absolute zero, the change of the total entropy is zero.&lt;/p&gt;
-
-&lt;h4 id=&quot;zeroth-law-of-thermodynamics&quot;&gt;Zeroth law of thermodynamics&lt;/h4&gt;
-
-&lt;p&gt;If two bodies are each in thermal equilibrium with a third body, then all three bodies are in thermal equilibrium with each other.&lt;/p&gt;
-
-&lt;h4 id=&quot;uncertainty-principle&quot;&gt;Uncertainty Principle&lt;/h4&gt;
-
-&lt;p&gt;A principle, central to quantum mechanics, which states that two complementary parameters (such as position and momentum, energy and time, or angular momentum and angular displacement) cannot both be known to infinite accuracy; the more you know about one, the less you know about the other.&lt;/p&gt;
-
-&lt;h4 id=&quot;van-der-waals-force&quot;&gt;van der Waals force&lt;/h4&gt;
-
-&lt;p&gt;Forces responsible for the non-ideal behavior of gases, and for the lattice energy of molecular crystals. There are three causes: dipole-dipole interaction; dipole-induced dipole moments; and dispersion forces arising because of small instantaneous dipoles in atoms.&lt;/p&gt;
-
-&lt;h4 id=&quot;wave-particle-duality&quot;&gt;Wave-Particle Duality&lt;/h4&gt;
-
-&lt;p&gt;The principle of quantum mechanics which implies that light (and, indeed, all other subatomic particles) sometimes act like a wave, and sometime act like a particle, depending on the experiment you are performing. For instance, low frequency electromagnetic radiation tends to act more like a wave than a particle; high frequency electromagnetic radiation tends to act more like a particle than a wave.&lt;/p&gt;
-
-&lt;h4 id=&quot;wiedemann-franz-law&quot;&gt;Wiedemann-Franz Law&lt;/h4&gt;
-
-&lt;p&gt;The ratio of the thermal conductivity of any pure metal to its electrical conductivity is approximately constant for any given temperature. This law holds fairly well except at low temperatures.&lt;/p&gt;</content><author><name>Gogul Ilango</name></author><category term="science" /><summary type="html">X Contents Ampere's Law Archimedes' Principle Avogadro's Hypothesis Bernoulli's Equation Biot-Savart Law Boyle's Law; Mariotte's Law Bragg's Law Brownian Motion Casimir Effect Causality Principle Centrifugal Pseudoforce Charles' Law Cherenkov Radiation Complementarity Principle Compton Effect Conservation of mass-energy Conservation of electric charge Conservation of linear momentum Conservation of angular momentum Constancy Principle Continuity Equation Copernican Principle Coriolis Pseudoforce Correspondence Principle Coulomb's Law Curie's Law Curie-Weiss Law Dalton's Law of partial pressures Doppler Effect Dulong-Petit Law Einstein Field Equation Einstein's Mass-Energy Equation Equivalence Principle Faraday's Law Faraday's first law of electrolysis Faraday's second law of electrolysis Faraday's first law of electromagnetic induction Faraday's second law of electromagnetic induction Faraday's third law of electromagnetic induction Fermat's Principle Gauss Law Gauss Law for magnetic fields Hall Effect Hooke's Law Huygens Principle Ideal Gas Law Joule-Thomson Effect; Joule-Kelvin Effect Joule's first law Kepler's First Law Kepler's Second Law Kepler's Third Law Kirchhoff's Loop Rule Kirchhoff's Point Rule Kohlrausch's Law Lambert's first law Lambert's second law Laplace Equation Lenz's Law Mach Number Mach's Principle Gauss law Gauss Law for magnetic fields Faraday's law Ampere's law, modified form Murphy's Law Newton's Law of universal gravitation Newton's first law of motion Newton's second law of motion Newton's third law of motion Occam's Razor Ohm's Law Pascal's Principle Peter Principle Planck Equation Refraction Law Relativity Principle Stefan-Boltzmann Law Superposition Principle First law of thermodynamics Second law of thermodynamics Third law of thermodynamics Zeroth law of thermodynamics Uncertainty Principle van der Waals force Wave-Particle Duality Wiedemann-Franz Law As I love physics, here is a single page reference for all those beautiful laws using which we could explore the universe around us. Kindly check out this before reading here. Ampere’s Law The line integral of the magnetic flux around a closed curve is proportional to the algebraic sum of electric currents flowing through that closed curve; or, in differential form curl \(B = J\). This was later modified to add a second term when it was incorporated into Maxwell’s equations. Archimedes’ Principle A body that is submerged in a fluid is buoyed up by a force equal in magnitude to the weight of the fluid that is displaced, and directed upward along a line through the center of gravity of the displaced fluid. Avogadro’s Hypothesis Equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules. It is, in fact, only true for ideal gases. Bernoulli’s Equation In an irrotational fluid, the sum of the static pressure, the weight of the fluid per unit mass times the height, and half the density times the velocity squared is constant throughout the fluid. Biot-Savart Law A law which describes the contributions to a magnetic field by an electric current. It is analogous to Coulomb’s law. Boyle’s Law; Mariotte’s Law The produce of the pressure and the volume of an ideal gas at constant temperature is constant. Bragg’s Law When a beam of X-rays strikes a crystal surface in which the layers of atoms or ions are regularly separated, the maximum intensity of the reflected ray occurs when the complement of the angle of incidence \(\theta\), the wavelength of the X-rays \(\lambda\), and the distance between layers of atoms or ions \(d\), are related by the equation \(2 d sin(\theta) = n \lambda\). Brownian Motion The continuous random motion of solid microscopic particles when suspended in a fluid medium due to the consequence of ongoing bombardment by atoms and molecules. Casimir Effect A quantum mechanical effect, where two very large plates placed close to each other will experience an attractive force, in the absense of other two forces. The cause is virtual particle-antiparticle pair creation in the vicinity of the plates. Also, the speed of light will be increased in the region between the two plates, in the direction perpendicular to them. Causality Principle The principle that cause must always precede effect. More formally, if an event A (the cause) somehow influences an event B (the effect) which occurs later in time, then event B cannot in turn have an influence on event A. That is, event B must occur at later time than event A, and further, all frames must agree upon this ordering. Centrifugal Pseudoforce A pseudoforce on an object when it is moving in uniform circular motion. The force is directed outward from the center of motion. Charles’ Law The volume of an ideal gas at constant pressure is proportional to the thermodynamic temperature of that gas. Cherenkov Radiation Radiation emitted by a massive particle which is moving faster than light in the medium through which it is traveling. No particle can travel faster than light in vacuum, but the speed of light in other media, such as water, glass, etc. are considerably slower. Cherenkov radiation is the electromagnetic analogue of the sonic boom, through Cherenkov radiation is a shockwave set up in the electromagnetic field. Complementarity Principle The principle that a given system cannot exhibit both wave-like behavior and particle-like behavior at the same time. That is, certain experiments will reveal the wave-like nature of a system, and certain experiments will reveal the particle-like nature of a system, but no experiment will reveal both simultaneously. Compton Effect An effect that demonstrates that photons (the quantum of electromagnetic radiation) have momentum. A photon fired at a stationary particle, such as an electron, will impart momentum to the electron and, since its energy has been decreased, will experience a corresponding decrease in frequency. Conservation of mass-energy The total mass-energy of a closed system remains constant. Conservation of electric charge The total electric charge of a closed system remains constant Conservation of linear momentum The total linear momentum of a closed system remains constant Conservation of angular momentum The total angular momentum of a closed system remains constant Constancy Principle One of the postulates of A. Einstein’s special theory of relativity, which puts forth that the speed of light in vacuum is measured as the same speed to all observers, regardless of their relative motion. Continuity Equation An equation which states that a fluid flowing through pipe flows at a rate which is inversely proportional to the cross-sectional area of the pipe. It is in essence a restatement of the conservation of mass during constant flow. Copernican Principle The idea, suggested by Copernicus, that the Sun, not the Earth, is at the center of the Universe. We now know that neither idea is correct. Coriolis Pseudoforce A pseudoforce which arises because of motion relative to a frame of reference which is itself rotating relative to a second, inertial frame. The magnitude of the Coriolis “force” is dependent on the speed of the object relative to the noninertial frame, and the direction of the “force” is orthogonal to the object’s velocity. Correspondence Principle The principle that when a new, more general theory is put forth, it must reduce to the more specialized (and usually simpler) theory under normal circumstances. There are correspondence principles for general relativity to special relativity and special relativity to Newtonian mechanics, but the most widely known correspondence principle is that of quantum mechanics to classical mechanics. Coulomb’s Law The primary law for electrostatics, analogous to Newton’s law of universal gravitation. It states that the force between two point charges is proportional to the algebraic product of their respective charges as well as proportional to the inverse square of the distance between them. Curie’s Law The susceptibility of an isotropic paramagnetic substance \(\chi\) is related to its thermodynamic temperature \(T\) by the equation \(\chi = \frac{C}{T}\) where \(C\) is a material-specific Curie constant. Curie-Weiss Law A more general form of Curie’s Law, which states that the susceptibility of a paramagnetic substance \(\chi\) is related to its thermodynamic temperature \(T\) by the equation \(\chi = \frac{C}{T - T_c}\) where \(C\) is a material-specific Curie constant, \(T\) is absolute temperature and \(T_c\) is the Curie temperature, both measured in kelvin. Dalton’s Law of partial pressures The total pressure of a mixture of ideal gases is equal to the sum of the partial pressures of its components; that is, the sum of the pressures that each component would exert if it were present alone and occupied the same volume as the mixture. Doppler Effect Waves emitted by a moving object as received by an observer will be blueshifted (compressed) if approaching, redshifted (elongated) if receding. It occurs both in sound as well as electromagnetic phenomena. Dulong-Petit Law The molar heat capacity is approximately equal to the three times the ideal gas constant. Einstein Field Equation The cornerstone of Einstein’s general theory of relativity, relating the gravitational tensor \(G\) to the stress-energy tensor \(T\) by the simple equation \(G = 8 \pi T\). Einstein’s Mass-Energy Equation The energy \(E\) of a particle is equal to its mass \(M\) times the square of the speed of light \(c\), giving rise to the best known physics equation in the Universe: \( E = M c^2\) Equivalence Principle The basic postulate of A. Einstein’s general theory of relativity, which posits that an acceleration is fundamentally indistinguishable from a gravitational field. Faraday’s Law The line integral of the electric field around a closed curve is proportional to the instantaneous time rate of change of the magnetic flux through a surface bounded by that closed curve; in differential form curl \(E = -\frac{dB}{dt}\), where \(\frac{d}{dt}\) represents partial differentiation. Faraday’s first law of electrolysis The amount of chemical change during electrolysis is proportional to the charge passed. Faraday’s second law of electrolysis The charge \(Q\) required to deposit or liberate a mass \(m\) is proportional to the charge \(z\) of the ion, the mass, and inversely proportional to the relative ionic mass \(M\); mathematically \(Q = \frac{F m z}{M}\) Faraday’s first law of electromagnetic induction An electromotive force is induced in a conductor when the magnetic field surrounding it changes. Faraday’s second law of electromagnetic induction The magnitude of the electromotive force is proportional to the rate of change of the field. Faraday’s third law of electromagnetic induction The sense of the induced electromotive force depends on the direction of the rate of the change of the field. Fermat’s Principle The principle states that the path taken by a ray of light between any two points in a system is always the path that takes the least time. Gauss Law The electric flux through a closed surface is proportional to the algebraic sum of electric charges contained within that closed surface; in differential form \(\nabla . E = \frac{\rho}{\epsilon_0}\), where \(\rho\) is the charge density. Gauss Law for magnetic fields The magnetic flux through a closed surface is zero; no magnetic charges exist. In differential form \(\nabla . B = 0\). Hall Effect When charged particles flow through a tube which has both an electric field and a magnetic field (perpendicular to the electric field) present in it, only certain velocities of the charged particles are preferred, and will make it un-deviated through the tube; the rest will be deflected into the sides. Hooke’s Law The stress applied to any solid is proportional to the strain it produces within the elastic limit for that solid. The constant of that proportionality is the Young modulus of elasticity for that substance. Huygens’ Principle The mechanical propagation of a wave (specifically, of light) is equivalent to assuming that every point on the wavefront acts as point source of wave emission Ideal Gas Law An equation which sums up the ideal gas laws in one simple equation \(P V = n R T\) Joule-Thomson Effect; Joule-Kelvin Effect The change in temperature that occurs when a gas expands into a region of lower pressure. Joule’s first law The heat \(Q\) produced when a current \(I\) flows through a resistance \(R\) for a specified time \(t\) is given by \(Q = I^2 R t\). Kepler’s First Law The orbit of a planet is an ellipse with the Sun at one of the two foci. Kepler’s Second Law A line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time. Kepler’s Third Law The square of the orbital period of a planet is directly proportional to the cube of the semi-major axis of its orbit. Kirchhoff’s Loop Rule The sum of the potential differences encountered in a round trip around any closed loop in a circuit is zero. Kirchhoff’s Point Rule The sum of the currents toward a branch point is equal to the sum of the currents away from the same branch point. Kohlrausch’s Law If a salt is dissolved in water, the conductivity of the solution is the sum of two values – one depending on the positive ions and the other on the negative ions Lambert’s first law The illuminance on a surface illuminated by light falling on it perpendicularly from a point source is proportional to the inverse square of the distance between the surface and the source. Lambert’s second law If the rays meet the surface at an angle, then the illuminance is proportional to the cosine of the angle with the normal. Lambert’s third law The luminous intensity of light decreases exponentially with distance as it travels through an absorbing medium. Laplace Equation For steady-state heat conduction in one dimension, the temperature distribution is the solution to Laplace’s equation, which states that the second derivative of temperature with respect to displacement is zero. Lenz’s Law An induced electric current always flows in such a direction that it opposes the change producing it. Mach Number The ratio of the speed of an object in a given medium to the speed of sound in that medium. Mach’s Principle The inertia of any particular particle or particles of matter is attributable to the interaction between that piece of matter and the rest of the Universe. Thus, a body in isolation would have no inertia. Maxwell’s Equations Gauss law The electric flux through a closed surface is proportional to the algebraic sum of electric charges contained within that closed surface; in differential form \(\nabla . E = \frac{\rho}{\epsilon_0}\), where \(\rho\) is the charge density. Gauss law for magnetic fields The magnetic flux through a closed surface is zero; no magnetic charges exist. In differential form \(\nabla . B = 0\). Faraday’s law The line integral of the electric field around a closed curve is proportional to the instantaneous time rate of change of the magnetic flux through a surface bounded by that closed curve; in differential form \(\nabla X E = -\frac{\partial B}{\partial t}\) Ampere’s law, modified form The line integral of the magnetic field around a closed curve is proportional to the sum of two terms: first, the algebraic sum of electric currents flowing through that closed curve; and second, the instantaneous time rate of change of the electric flux through a surface bounded by that closed curve; in differential form \(\nabla X B = \mu_0 ( J + \epsilon_0 \frac{\partial D}{\partial t} )\). In addition to describing electromagnetism, his equations also predict that waves can propagate through the electromagnetic field, and would always propagate at the the speed of light in vacuum. Murphy’s Law If anything can go wrong, it will. Newton’s Law of universal gravitation Two bodies attract each other with equal and opposite forces; the magnitude of this force is proportional to the product of the two masses and is also proportional to the inverse square of the distance between the centers of mass of the two bodies; \(F = (\frac{G m_1 m_2}{r^2}) e\), where \(m_1\) and \(m_2\) are the masses of the two bodies, \(r\) is the distance between the two, and \(e\) is a unit vector directed from the test mass to the second. Newton’s first law of motion A body continues in its state of constant velocity (which may be zero) unless it is acted upon by an external force. Newton’s second law of motion For an unbalanced force acting on a body, the acceleration produced is proportional to the force impressed; the constant of proportionality is the inertial mass of the body. Newton’s third law of motion In a system where no external forces are present, every action force is always opposed by an equal and opposite reaction force. Occam’s Razor If two theories predict phenomena to the same accuracy, then the one which is simpler is the better one. Moreover, additional aspects of a theory which do not lend it more powerful predicting ability are unnecessary and should be stripped away. Ohm’s Law The ratio of the potential difference between the ends of a conductor to the current flowing through it is constant; the constant of proportionality is called the resistance, and is different for different materials. Pascal’s Principle Pressure applied to an enclosed incompressible static fluid is transmitted undiminished to all parts of the fluid. Peter Principle In a hierarchy, every employee tends to rise to his level of incompetence. Planck Equation The quantum mechanical equation relating the energy of a photon \(E\) to its frequency \(f\): \(E = h f\). Reflection Law, Snell’s Law For a wavefront intersecting a reflecting surface, the angle of incidence is equal to the angle of reflection, in the same plane defined by the ray of incidence and the normal. Refraction Law For a wavefront traveling through a boundary between two media, the first with a refractive index of \(n1\), and the other with one of \(n2\), the angle of incidence \(\theta_1\) is related to the angle of refraction \(\theta_2\) by \(n1 sin(\theta_1) = n2 sin(\theta_2) \). Relativity Principle The principle, employed by Einstein’s relativity theories, that the laws of physics are the same, at least qualitatively, in all frames. That is, there is no frame that is better (or qualitatively any different) from any other. This principle, along with the constancy principle, constitute the founding principles of special relativity. Stefan-Boltzmann Law The radiated power \(P\) (rate of emission of electromagnetic energy) of a hot body is proportional to the radiating surface area \(A\), and the fourth power of the thermodynamic temperature \(T\). The constant of proportionality is the Stefan-Boltzmann constant. Mathematically \(P = A \epsilon \sigma T^4\), where the efficiency rating \(\epsilon\) is called the emissivity of the object. Superposition Principle The general idea that, when a number of influences are acting on a system, the total influence on that system is merely the sum of the individual influences; that is, influences governed by the superposition principle add linearly. First law of thermodynamics The change in internal energy of a system is the sum of the heat transferred to or from the system and the work done on or by the system. Second law of thermodynamics The entropy – a measure of the unavailability of a system’s energy to do useful work – of a closed system tends to increase with time. Third law of thermodynamics For changes involving only perfect crystalline solids at absolute zero, the change of the total entropy is zero. Zeroth law of thermodynamics If two bodies are each in thermal equilibrium with a third body, then all three bodies are in thermal equilibrium with each other. Uncertainty Principle A principle, central to quantum mechanics, which states that two complementary parameters (such as position and momentum, energy and time, or angular momentum and angular displacement) cannot both be known to infinite accuracy; the more you know about one, the less you know about the other. van der Waals force Forces responsible for the non-ideal behavior of gases, and for the lattice energy of molecular crystals. There are three causes: dipole-dipole interaction; dipole-induced dipole moments; and dispersion forces arising because of small instantaneous dipoles in atoms. Wave-Particle Duality The principle of quantum mechanics which implies that light (and, indeed, all other subatomic particles) sometimes act like a wave, and sometime act like a particle, depending on the experiment you are performing. For instance, low frequency electromagnetic radiation tends to act more like a wave than a particle; high frequency electromagnetic radiation tends to act more like a particle than a wave. Wiedemann-Franz Law The ratio of the thermal conductivity of any pure metal to its electrical conductivity is approximately constant for any given temperature. This law holds fairly well except at low temperatures.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://drive.google.com/uc?id=1cdKRbfeV4iVrFSybWnru3Q_hqWbWBUIX" /></entry><entry><title type="html">Deep Learning Meets Physics</title><link href="http://localhost:4000/software/deep-learning-meets-physics" rel="alternate" type="text/html" title="Deep Learning Meets Physics" /><published>2019-07-07T00:00:00+05:30</published><updated>2019-07-07T00:00:00+05:30</updated><id>http://localhost:4000/software/deep-learning-meets-physics</id><content type="html" xml:base="http://localhost:4000/software/deep-learning-meets-physics">&lt;div class=&quot;sidebar_tracker&quot; id=&quot;sidebar_tracker&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-07T20:31:46+05:30</updated><id>http://localhost:4000/</id><title type="html">Gogul Ilango</title><subtitle>This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources.</subtitle><entry><title type="html">Deep Learning Meets Physics</title><link href="http://localhost:4000/software/deep-learning-meets-physics" rel="alternate" type="text/html" title="Deep Learning Meets Physics" /><published>2019-07-07T00:00:00+05:30</published><updated>2019-07-07T00:00:00+05:30</updated><id>http://localhost:4000/software/deep-learning-meets-physics</id><content type="html" xml:base="http://localhost:4000/software/deep-learning-meets-physics">&lt;div class=&quot;sidebar_tracker&quot; id=&quot;sidebar_tracker&quot;&gt;
   &lt;button onclick=&quot;closeSidebar('sidebar_tracker_content')&quot;&gt;X&lt;/button&gt;
   &lt;p onclick=&quot;showSidebar('sidebar_tracker_content')&quot;&gt;Contents&lt;/p&gt;
   &lt;ul id=&quot;sidebar_tracker_content&quot;&gt;
@@ -1409,7 +962,208 @@ python manage.py startapp &amp;lt;app-name&amp;gt;
     &lt;td&gt;Desk Lamp&lt;/td&gt;
     &lt;td&gt;17&lt;/td&gt;
   &lt;/tr&gt;
-&lt;/table&gt;</content><author><name>Gogul Ilango</name></author><category term="software" /><summary type="html">I always wondered is there a way to create tables like the one shown below without using nested tables (i.e., table inside a table by hacking border property in CSS). Gender Average Red Eyes Height Weight Males 165 65 30% Females 150 50 45% If you want to create the above table using nested tables concept, you would give up on the width of your table’s td elements. Based on your td content, the width property will vary, and eventually you mess up with the borders and finally, you have a messy table with misaligned borders! One hack is to use a fixed width for your td elements and fill up the content based on that with overflow: auto enabled in CSS. But, that’s not the best solution to this problem. To solve this problem, we need to preserve the width of the td elements somehow. And the best solution is to take a pen and paper! Draw the table that you expect using a pen and paper to clearly understand the layout that you’re going to code. After figuring out the layout, use rowspan and colspan attributes for your td elements to bring that customized table (without any nested tables concept). It’s that simple 😊 You can look at the below code and output to understand rowspan and colspan better. index.htmlcode 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40&amp;lt;table&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td rowspan=&quot;3&quot;&amp;gt;Country&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td rowspan=&quot;2&quot;&amp;gt;Region&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;Product&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;Profit&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td rowspan=&quot;6&quot;&amp;gt;India&amp;lt;/td&amp;gt; &amp;lt;td rowspan=&quot;2&quot;&amp;gt;Western&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;Monitor&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;10&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;Desk Lamp&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;20&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td rowspan=&quot;2&quot;&amp;gt;Central&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;Monitor&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;30&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;Desk Lamp&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;25&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td rowspan=&quot;2&quot;&amp;gt;Eastern&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;Monitor&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;31&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;Desk Lamp&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;17&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/table&amp;gt; Country Region Product Profit India Western Monitor 10 Desk Lamp 20 Central Monitor 30 Desk Lamp 25 Eastern Monitor 31 Desk Lamp 17</summary></entry><entry><title type="html">C Shell Scripting Learning Notes</title><link href="http://localhost:4000/software/c-shell-scripting-learning-notes" rel="alternate" type="text/html" title="C Shell Scripting Learning Notes" /><published>2019-04-14T00:00:00+05:30</published><updated>2019-04-14T00:00:00+05:30</updated><id>http://localhost:4000/software/c-shell-scripting-learning-notes</id><content type="html" xml:base="http://localhost:4000/software/c-shell-scripting-learning-notes">&lt;div id=&quot;awesomeSideNav&quot; class=&quot;sidenav&quot;&gt;
+&lt;/table&gt;</content><author><name>Gogul Ilango</name></author><category term="software" /><summary type="html">I always wondered is there a way to create tables like the one shown below without using nested tables (i.e., table inside a table by hacking border property in CSS). Gender Average Red Eyes Height Weight Males 165 65 30% Females 150 50 45% If you want to create the above table using nested tables concept, you would give up on the width of your table’s td elements. Based on your td content, the width property will vary, and eventually you mess up with the borders and finally, you have a messy table with misaligned borders! One hack is to use a fixed width for your td elements and fill up the content based on that with overflow: auto enabled in CSS. But, that’s not the best solution to this problem. To solve this problem, we need to preserve the width of the td elements somehow. And the best solution is to take a pen and paper! Draw the table that you expect using a pen and paper to clearly understand the layout that you’re going to code. After figuring out the layout, use rowspan and colspan attributes for your td elements to bring that customized table (without any nested tables concept). It’s that simple 😊 You can look at the below code and output to understand rowspan and colspan better. index.htmlcode 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40&amp;lt;table&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td rowspan=&quot;3&quot;&amp;gt;Country&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td rowspan=&quot;2&quot;&amp;gt;Region&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;Product&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;Profit&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td rowspan=&quot;6&quot;&amp;gt;India&amp;lt;/td&amp;gt; &amp;lt;td rowspan=&quot;2&quot;&amp;gt;Western&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;Monitor&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;10&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;Desk Lamp&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;20&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td rowspan=&quot;2&quot;&amp;gt;Central&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;Monitor&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;30&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;Desk Lamp&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;25&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td rowspan=&quot;2&quot;&amp;gt;Eastern&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;Monitor&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;31&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;Desk Lamp&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;17&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/table&amp;gt; Country Region Product Profit India Western Monitor 10 Desk Lamp 20 Central Monitor 30 Desk Lamp 25 Eastern Monitor 31 Desk Lamp 17</summary></entry><entry><title type="html">My First International Trip to Singapore</title><link href="http://localhost:4000/random/my-first-international-trip-to-singapore" rel="alternate" type="text/html" title="My First International Trip to Singapore" /><published>2019-05-01T00:00:00+05:30</published><updated>2019-05-01T00:00:00+05:30</updated><id>http://localhost:4000/random/my-first-international-trip-to-singapore</id><content type="html" xml:base="http://localhost:4000/random/my-first-international-trip-to-singapore">&lt;div class=&quot;sidebar_tracker&quot; id=&quot;sidebar_tracker&quot;&gt;
+  &lt;button onclick=&quot;closeSidebar('sidebar_tracker_content')&quot;&gt;X&lt;/button&gt;
+  &lt;p onclick=&quot;showSidebar('sidebar_tracker_content')&quot;&gt;Contents&lt;/p&gt;
+  &lt;ul id=&quot;sidebar_tracker_content&quot;&gt;
+    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_1&quot; href=&quot;#flight-expenses&quot;&gt;Flight Expenses&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_2&quot; href=&quot;#experience-singapore&quot;&gt;Experience Singapore&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_3&quot; href=&quot;#places-that-i-visited&quot;&gt;Places that I visited&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_4&quot; href=&quot;#places-that-i-missed&quot;&gt;Places that I missed&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_5&quot; href=&quot;#my-photography-toolkit&quot;&gt;My Photography Toolkit&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;sidebar_links&quot; onclick=&quot;handleSideBarLinks(this.id)&quot; id=&quot;link_6&quot; href=&quot;#references&quot;&gt;References&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Being an Indian, this was my first ever international travel to another country. I never traveled alone so far in my life. But, this 10-day trip to Singapore was an unforgettable experience in my life.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is my first ever travelogue in this website. So, please pardon me if you find my writing vague. You’re cute!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In this travelogue, I will discuss about the overall expenses incurred for this 10-day trip, places I visited, places I missed, my photography toolkit and about the amazing Singapore city in general.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;flight-expenses&quot;&gt;Flight Expenses&lt;/h3&gt;
+&lt;p&gt;I planned and booked tickets well before four months of my journey. I chose &lt;a href=&quot;https://www.goindigo.in/&quot; target=&quot;_blank&quot;&gt;INDIGO&lt;/a&gt; flights as I have traveled before (domestic) and also, I’m a happy INDIGO customer. Below are the expenses incurred for departure and arrival of my travel.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Chennai to Singapore (17 April 2019) - INR 7,699 (Economy)&lt;/li&gt;
+  &lt;li&gt;Singapore to Chennai (28 April 2019) - INR 10,725 (Economy)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These do not include any meal and I wasn’t choosy about my seat number either. If you need these, then your fare amount increases as per your liking.&lt;/p&gt;
+
+&lt;p&gt;Things you need to carry during these flight travel are&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Your Passport (must)&lt;/li&gt;
+  &lt;li&gt;Your Visa to Singapore (must)&lt;/li&gt;
+  &lt;li&gt;Any of your Identity Card (not mandatory, but good to keep)&lt;/li&gt;
+  &lt;li&gt;A black pen (as you will be filling immigration form at Singapore; hence, good to keep a pen with you)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Documents you need to get Singapore Visa are&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Your Passport&lt;/li&gt;
+  &lt;li&gt;Bank payslips for past 3 months&lt;/li&gt;
+  &lt;li&gt;Bank statement for past 90 days&lt;/li&gt;
+  &lt;li&gt;Passport of someone you know in Singapore&lt;/li&gt;
+  &lt;li&gt;V39A form from someone you know in Singapore&lt;/li&gt;
+  &lt;li&gt;Office ID card&lt;/li&gt;
+  &lt;li&gt;Minimum Bank Balance (INR 80,000)&lt;/li&gt;
+  &lt;li&gt;Passport Size Photo of You (Singapore specific)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;experience-singapore&quot;&gt;Experience Singapore&lt;/h3&gt;
+
+&lt;p&gt;I literally had no words to express when I looked out the small rectangular window in my flight at 4.30 AM when I reached Singapore. If you travel in a flight during night to Singapore, you will be seeing a land that has colorful stars fallen from the sky which reflects the comely architecture of this country.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.jewelchangiairport.com/&quot; target=&quot;_blank&quot;&gt;Changi International Airport&lt;/a&gt; which welcomes you is a stunning architectural marvel where you will find numerous shopping centers, dinings, the world famous &lt;a href=&quot;https://www.youtube.com/watch?v=4YcrLLEtdkc&quot; target=&quot;_blank&quot;&gt;Jewel&lt;/a&gt; and much more that reflects the country’s modern as well as natural beauty.&lt;/p&gt;
+
+&lt;p&gt;I was fortunate enough to walk around some beautiful natural trails around the country where I experienced a divine feeling, fresh oxygen and pure drinking water that comes out of the taps. In contrast to the lush gardens, forests and woods, Singapore has lots of impressive shopping malls, astoundingly amazing sky-kissing buildings and many popular tourist places that will make you think that you have landed on a futuristic world.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;places-that-i-visited&quot;&gt;Places that I visited&lt;/h3&gt;
+
+&lt;p&gt;You can know a lot about all those stunning places and neighbourhoods at Singapore &lt;a href=&quot;https://www.visitsingapore.com/en_in/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. Nevertheless, I will list down all those breathtaking places that I visited at Singapore.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Singapore Merlion&lt;/li&gt;
+  &lt;li&gt;Marina Bay Sands&lt;/li&gt;
+  &lt;li&gt;Gardens by the Bay&lt;/li&gt;
+  &lt;li&gt;Singapore Zoo&lt;/li&gt;
+  &lt;li&gt;Windsor Nature Park&lt;/li&gt;
+  &lt;li&gt;Woodlands Waterfront&lt;/li&gt;
+  &lt;li&gt;Lower Peirce Reservoir&lt;/li&gt;
+  &lt;li&gt;Sungei Buloh Wetland Reserve&lt;/li&gt;
+  &lt;li&gt;Orchard Road&lt;/li&gt;
+  &lt;li&gt;Takashimaya&lt;/li&gt;
+  &lt;li&gt;Harbourfront (VivoCity)&lt;/li&gt;
+  &lt;li&gt;Little India&lt;/li&gt;
+  &lt;li&gt;Mustafa Centre&lt;/li&gt;
+  &lt;li&gt;Jurong Point Boon Lay&lt;/li&gt;
+  &lt;li&gt;Sentosa
+    &lt;ul&gt;
+      &lt;li&gt;Tanjong Beach&lt;/li&gt;
+      &lt;li&gt;Palawan Beach&lt;/li&gt;
+      &lt;li&gt;S.E.A Aquarium&lt;/li&gt;
+      &lt;li&gt;Maritime Experimental Museum&lt;/li&gt;
+      &lt;li&gt;Skyline Luge &amp;amp; Skyride&lt;/li&gt;
+      &lt;li&gt;Sentosa Merlion&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Each place listed above has different feel and ambience attached to it. To visit all these places, one can easily use Singapore’s &lt;a href=&quot;https://en.wikipedia.org/wiki/Mass_Rapid_Transit_(Singapore)&quot; target=&quot;_blank&quot;&gt;MRT&lt;/a&gt; (Mass Rapid Transit) or &lt;a href=&quot;https://en.wikipedia.org/wiki/Light_Rail_Transit_(Singapore)&quot; target=&quot;_blank&quot;&gt;LRT&lt;/a&gt; (Light Rail Transit). It is cheap to go from one location to another inside Singapore if you understand it’s MRT/LRT map shown below. Only the first ride in an MRT/LRT will be anxious. After your first ride, you will understand how simple it is to move around the city using this cool commute system.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://drive.google.com/uc?id=1SLdxEURv0BxHEl9PvMrIjDH5GvzZdUVI&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Some of the android apps that helped me move around Singapore are&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=streetdirectory.mobile&amp;amp;hl=en&quot; target=&quot;_blank&quot;&gt;Singapore Map&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=originally.us.buses&amp;amp;hl=en&quot; target=&quot;_blank&quot;&gt;SG BusLeh: Award Winning&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you are a nature lover (peace lover) like me, Singapore has got numerous breathtaking trails where you can get fresh oxygen (if you love walking or running) as well as capture beautiful pictures. You will fall in love again and again with nature’s beauty while walking along those amazing natural trails. Some of the natural trails that I walked are&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Windsor Nature Park&lt;/li&gt;
+  &lt;li&gt;Sungei Buloh Wetland Reserve&lt;/li&gt;
+  &lt;li&gt;Lower Peirce Reservoir&lt;/li&gt;
+  &lt;li&gt;Singapore Zoo&lt;/li&gt;
+  &lt;li&gt;Woodlands Waterfront&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some of the clicks that I have captured at Singapore are shown below. You can also visit my &lt;a href=&quot;https://gogul09.github.io/photography/&quot; target=&quot;_blank&quot;&gt;photography&lt;/a&gt; page to see more such clicks of mine.&lt;/p&gt;
+
+&lt;figure class=&quot;black-figcaption&quot;&gt;
+  &lt;img src=&quot;https://drive.google.com/uc?id=15sAzInvyqi5hV0noFPOvopwpbN_d0wTL&quot; /&gt;
+  &lt;figcaption&gt;Singapore - Marina Bay Sands &amp;amp; Gardens by the Bay&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class=&quot;black-figcaption&quot;&gt;
+  &lt;img src=&quot;https://drive.google.com/uc?id=10E1G7xcLq64IehM57ajGumivJUYqEY5k&quot; /&gt;
+  &lt;figcaption&gt;Singapore - Flyer&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class=&quot;black-figcaption&quot;&gt;
+  &lt;img src=&quot;https://drive.google.com/uc?id=1xDNWI0svCZbbBuAx2xNx6r0psmARuQkY&quot; /&gt;
+  &lt;figcaption&gt;Singapore - Sentosa Universal Studios&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class=&quot;black-figcaption&quot;&gt;
+  &lt;img src=&quot;https://drive.google.com/uc?id=1katmWLNXsapHPukgFXox6zw_TDIVs03S&quot; /&gt;
+  &lt;figcaption&gt;Singapore - Sentosa S.E.A Aquarium&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class=&quot;black-figcaption&quot;&gt;
+  &lt;img src=&quot;https://drive.google.com/uc?id=183X2iR92fusrudm_6ReOb93Q9YpSOKO2&quot; /&gt;
+  &lt;figcaption&gt;Singapore - Sungei Buloh Wetland Reserve&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class=&quot;black-figcaption&quot;&gt;
+  &lt;img src=&quot;https://drive.google.com/uc?id=1zydehMd9arcX7mi-pw4qkiUB4oqucesc&quot; /&gt;
+  &lt;figcaption&gt;Singapore - Zoo&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;places-that-i-missed&quot;&gt;Places that I missed&lt;/h3&gt;
+
+&lt;p&gt;Due to time constraints, I was not able to visit some places at Singapore. But, I hope to see these places during my next visit.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Hort Park&lt;/li&gt;
+  &lt;li&gt;Henderson Waves&lt;/li&gt;
+  &lt;li&gt;National University of Singapore&lt;/li&gt;
+  &lt;li&gt;Nanyang Technological University&lt;/li&gt;
+  &lt;li&gt;Chinatown&lt;/li&gt;
+  &lt;li&gt;Botanic Gardens&lt;/li&gt;
+  &lt;li&gt;Pulau Ubin&lt;/li&gt;
+  &lt;li&gt;Night Safari&lt;/li&gt;
+  &lt;li&gt;River Safari&lt;/li&gt;
+  &lt;li&gt;Universal Studios&lt;/li&gt;
+  &lt;li&gt;Buddha Tooth Relic Temple&lt;/li&gt;
+  &lt;li&gt;Clarke Quay&lt;/li&gt;
+  &lt;li&gt;Jurong Bird Park&lt;/li&gt;
+  &lt;li&gt;Kusu Island&lt;/li&gt;
+  &lt;li&gt;F1 Track&lt;/li&gt;
+  &lt;li&gt;Butterfly Park And Insect Kingdom&lt;/li&gt;
+  &lt;li&gt;Siloso Beach&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;my-photography-toolkit&quot;&gt;My Photography Toolkit&lt;/h3&gt;
+
+&lt;p&gt;If you love photography like me, Singapore has got numerous photographic locations in this planet. It is rich in dense forests with neat trails at day and rich in beautiful lights and colors shining throughout the country at night. My photography toolkit comprises the below stuff.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Canon EOS 700D&lt;/li&gt;
+  &lt;li&gt;Canon EF-S55-250mm f/4-5.6 IS STM lens&lt;/li&gt;
+  &lt;li&gt;Canon EF50mm F/1.8 STM lens&lt;/li&gt;
+  &lt;li&gt;Canon EF-S 18–55mm lens&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you are planning to visit Singapore Zoo or Night Safari or River Safari, make sure you carry a telephoto zoom lens such as &lt;a href=&quot;https://www.amazon.in/EF-S-55-250mm-f-4-5-6-STM/dp/B00EP71ETU&quot; target=&quot;_blank&quot;&gt;Canon EF-S55-250mm f/4-5.6 IS STM lens&lt;/a&gt; with you.&lt;/p&gt;
+
+&lt;figure class=&quot;black-figcaption&quot;&gt;
+  &lt;img src=&quot;https://drive.google.com/uc?id=1mnGI4RzzzQHeaMaSlOh4Ch9LzCqGv65K&quot; /&gt;
+  &lt;figcaption&gt;Singapore - Near Durian Building&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tourmyindia.com/blog/top-must-visit-attractions-singapore/&quot; target=&quot;_blank&quot;&gt;Top 15 Must-Visit Attractions in Singapore 2019&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.singapore-guide.com/attractions/10mustsee.htm&quot; target=&quot;_blank&quot;&gt;18 Best Things to Do in Singapore&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.quora.com/What-are-the-must-see-places-in-Singapore&quot; target=&quot;_blank&quot;&gt;What are the must-see places in Singapore?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://traveltriangle.com/blog/singapore-tourist-attractions/&quot; target=&quot;_blank&quot;&gt;47 Remarkable Places To Visit In Singapore In 2019 Where A Wandering Heart Finds Peace&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Gogul Ilango</name></author><category term="travel" /><summary type="html">X Contents Flight Expenses Experience Singapore Places that I visited Places that I missed My Photography Toolkit References Being an Indian, this was my first ever international travel to another country. I never traveled alone so far in my life. But, this 10-day trip to Singapore was an unforgettable experience in my life. This is my first ever travelogue in this website. So, please pardon me if you find my writing vague. You’re cute! In this travelogue, I will discuss about the overall expenses incurred for this 10-day trip, places I visited, places I missed, my photography toolkit and about the amazing Singapore city in general. Flight Expenses I planned and booked tickets well before four months of my journey. I chose INDIGO flights as I have traveled before (domestic) and also, I’m a happy INDIGO customer. Below are the expenses incurred for departure and arrival of my travel. Chennai to Singapore (17 April 2019) - INR 7,699 (Economy) Singapore to Chennai (28 April 2019) - INR 10,725 (Economy) These do not include any meal and I wasn’t choosy about my seat number either. If you need these, then your fare amount increases as per your liking. Things you need to carry during these flight travel are Your Passport (must) Your Visa to Singapore (must) Any of your Identity Card (not mandatory, but good to keep) A black pen (as you will be filling immigration form at Singapore; hence, good to keep a pen with you) Documents you need to get Singapore Visa are Your Passport Bank payslips for past 3 months Bank statement for past 90 days Passport of someone you know in Singapore V39A form from someone you know in Singapore Office ID card Minimum Bank Balance (INR 80,000) Passport Size Photo of You (Singapore specific) Experience Singapore I literally had no words to express when I looked out the small rectangular window in my flight at 4.30 AM when I reached Singapore. If you travel in a flight during night to Singapore, you will be seeing a land that has colorful stars fallen from the sky which reflects the comely architecture of this country. Changi International Airport which welcomes you is a stunning architectural marvel where you will find numerous shopping centers, dinings, the world famous Jewel and much more that reflects the country’s modern as well as natural beauty. I was fortunate enough to walk around some beautiful natural trails around the country where I experienced a divine feeling, fresh oxygen and pure drinking water that comes out of the taps. In contrast to the lush gardens, forests and woods, Singapore has lots of impressive shopping malls, astoundingly amazing sky-kissing buildings and many popular tourist places that will make you think that you have landed on a futuristic world. Places that I visited You can know a lot about all those stunning places and neighbourhoods at Singapore here. Nevertheless, I will list down all those breathtaking places that I visited at Singapore. Singapore Merlion Marina Bay Sands Gardens by the Bay Singapore Zoo Windsor Nature Park Woodlands Waterfront Lower Peirce Reservoir Sungei Buloh Wetland Reserve Orchard Road Takashimaya Harbourfront (VivoCity) Little India Mustafa Centre Jurong Point Boon Lay Sentosa Tanjong Beach Palawan Beach S.E.A Aquarium Maritime Experimental Museum Skyline Luge &amp;amp; Skyride Sentosa Merlion Each place listed above has different feel and ambience attached to it. To visit all these places, one can easily use Singapore’s MRT (Mass Rapid Transit) or LRT (Light Rail Transit). It is cheap to go from one location to another inside Singapore if you understand it’s MRT/LRT map shown below. Only the first ride in an MRT/LRT will be anxious. After your first ride, you will understand how simple it is to move around the city using this cool commute system. Some of the android apps that helped me move around Singapore are Singapore Map SG BusLeh: Award Winning If you are a nature lover (peace lover) like me, Singapore has got numerous breathtaking trails where you can get fresh oxygen (if you love walking or running) as well as capture beautiful pictures. You will fall in love again and again with nature’s beauty while walking along those amazing natural trails. Some of the natural trails that I walked are Windsor Nature Park Sungei Buloh Wetland Reserve Lower Peirce Reservoir Singapore Zoo Woodlands Waterfront Some of the clicks that I have captured at Singapore are shown below. You can also visit my photography page to see more such clicks of mine. Singapore - Marina Bay Sands &amp;amp; Gardens by the Bay Singapore - Flyer Singapore - Sentosa Universal Studios Singapore - Sentosa S.E.A Aquarium Singapore - Sungei Buloh Wetland Reserve Singapore - Zoo Places that I missed Due to time constraints, I was not able to visit some places at Singapore. But, I hope to see these places during my next visit. Hort Park Henderson Waves National University of Singapore Nanyang Technological University Chinatown Botanic Gardens Pulau Ubin Night Safari River Safari Universal Studios Buddha Tooth Relic Temple Clarke Quay Jurong Bird Park Kusu Island F1 Track Butterfly Park And Insect Kingdom Siloso Beach My Photography Toolkit If you love photography like me, Singapore has got numerous photographic locations in this planet. It is rich in dense forests with neat trails at day and rich in beautiful lights and colors shining throughout the country at night. My photography toolkit comprises the below stuff. Canon EOS 700D Canon EF-S55-250mm f/4-5.6 IS STM lens Canon EF50mm F/1.8 STM lens Canon EF-S 18–55mm lens If you are planning to visit Singapore Zoo or Night Safari or River Safari, make sure you carry a telephoto zoom lens such as Canon EF-S55-250mm f/4-5.6 IS STM lens with you. Singapore - Near Durian Building References Top 15 Must-Visit Attractions in Singapore 2019 18 Best Things to Do in Singapore What are the must-see places in Singapore? 47 Remarkable Places To Visit In Singapore In 2019 Where A Wandering Heart Finds Peace</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://drive.google.com/uc?id=15sAzInvyqi5hV0noFPOvopwpbN_d0wTL" /></entry><entry><title type="html">C Shell Scripting Learning Notes</title><link href="http://localhost:4000/software/c-shell-scripting-learning-notes" rel="alternate" type="text/html" title="C Shell Scripting Learning Notes" /><published>2019-04-14T00:00:00+05:30</published><updated>2019-04-14T00:00:00+05:30</updated><id>http://localhost:4000/software/c-shell-scripting-learning-notes</id><content type="html" xml:base="http://localhost:4000/software/c-shell-scripting-learning-notes">&lt;div id=&quot;awesomeSideNav&quot; class=&quot;sidenav&quot;&gt;
     &lt;a href=&quot;javascript:void(0)&quot; class=&quot;closebtn&quot; onclick=&quot;closeSideNav()&quot;&gt;&amp;times;&lt;/a&gt;
     &lt;h3&gt;&lt;a href=&quot;#basics&quot;&gt;Basics&lt;/a&gt;&lt;/h3&gt;
     &lt;ul&gt;

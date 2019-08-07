@@ -141,6 +141,10 @@
 <lastmod>2019-04-14T00:00:00+05:30</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/random/my-first-international-trip-to-singapore</loc>
+<lastmod>2019-05-01T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/software/how-to-create-custom-tables-in-html</loc>
 <lastmod>2019-05-14T00:00:00+05:30</lastmod>
 </url>
@@ -159,10 +163,6 @@
 <url>
 <loc>http://localhost:4000/software/deep-learning-meets-physics</loc>
 <lastmod>2019-07-07T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/science/physics/fundamental-laws-in-physics</loc>
-<lastmod>2019-07-13T00:00:00+05:30</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/404/</loc>
@@ -199,5 +199,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/resources</loc>
+</url>
+<url>
+<loc>http://localhost:4000/travel</loc>
 </url>
 </urlset>

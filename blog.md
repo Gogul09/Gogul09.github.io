@@ -14,7 +14,6 @@ permalink: /blog
 <div class="home-container">
   <div class="home-articles">
     <div class="home-wrapper">
-      
       <div class="gem-box">
         <div class="carbon_advertisement">
           <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
@@ -96,6 +95,17 @@ permalink: /blog
             {% endif %}
           {% endfor %}
           <p class="no_of_posts">{{ resources_count }} posts</p>
+        </div>
+        <div class="travel" onclick="location.href='{{ site.baseurl }}/travel';">
+          <img src="https://drive.google.com/uc?id=13ujc6Gh87Kd0sBZqNYltN19yJQ3ioLZz" />
+          <h4>Travel</h4>
+          <p>Learn how traveling creates peace within you.</p>
+          {% for post in site.posts %}
+            {% if post.categories contains 'travel' %}
+                {% capture travel_count %} {{ travel_count | plus: 1 }} {% endcapture %}
+            {% endif %}
+          {% endfor %}
+          <p class="no_of_posts">{{ travel_count }} posts</p>
         </div>
       </div>
     </div>
