@@ -61,7 +61,17 @@ I literally had no words to express when I looked out the small rectangular wind
 
 [Changi International Airport](https://www.jewelchangiairport.com/){:target="_blank"} which welcomes you is a stunning architectural marvel where you will find numerous shopping centers, dinings, the world famous [Jewel](https://www.youtube.com/watch?v=4YcrLLEtdkc){:target="_blank"} and much more that reflects the country's modern as well as natural beauty. 
 
+<figure class="black-figcaption">
+  <img src="https://drive.google.com/uc?id=1ouaXzeEdR7KbKb7MQjK6r7k9UcxGIFIe" />
+  <figcaption>Singapore - Jewel Changi International Airport</figcaption>
+</figure>
+
 I was fortunate enough to walk around some beautiful natural trails around the country where I experienced a divine feeling, fresh oxygen and pure drinking water that comes out of the taps. In contrast to the lush gardens, forests and woods, Singapore has lots of impressive shopping malls, astoundingly amazing sky-kissing buildings and many popular tourist places that will make you think that you have landed on a futuristic world. 
+
+<figure class="black-figcaption">
+  <img src="https://drive.google.com/uc?id=1pEKe5A0aX6HW1wF0kIt93Jk_iomW83lb" />
+  <figcaption>Singapore - Marina Bay Sands</figcaption>
+</figure>
 
 ---
 
