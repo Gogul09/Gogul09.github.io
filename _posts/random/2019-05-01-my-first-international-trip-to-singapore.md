@@ -5,7 +5,7 @@ class: Travel
 title: My First International Trip to Singapore
 description: Experience fresh oxygen, green trees, forests with woods, animals, birds, colorful lights at night and much more!
 author: Gogul Ilango
-permalink: random/my-first-international-trip-to-singapore
+permalink: travel/my-first-international-trip-to-singapore
 image: https://drive.google.com/uc?id=15sAzInvyqi5hV0noFPOvopwpbN_d0wTL
 ---
 
@@ -18,7 +18,7 @@ image: https://drive.google.com/uc?id=15sAzInvyqi5hV0noFPOvopwpbN_d0wTL
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#places-that-i-visited">Places that I visited</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#places-that-i-missed">Places that I missed</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#my-photography-toolkit">My Photography Toolkit</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#references">References</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#you-can-also-read">You can also read</a></li>
   </ul>
 </div>
 
@@ -27,8 +27,6 @@ Being an Indian, this was my first ever international travel to another country.
 > This is my first ever travelogue in this website. So, please pardon me if you find my writing vague. You're cute!
 
 In this travelogue, I will discuss about the overall expenses incurred for this 10-day trip, places I visited, places I missed, my photography toolkit and about the amazing Singapore city in general.
-
----
 
 ### Flight Expenses
 I planned and booked tickets well before four months of my journey. I chose [INDIGO](https://www.goindigo.in/){:target="_blank"} flights as I have traveled before (domestic) and also, I'm a happy INDIGO customer. Below are the expenses incurred for departure and arrival of my travel.
@@ -53,8 +51,6 @@ Documents you need to get Singapore Visa are
 * Minimum Bank Balance (INR 80,000)
 * Passport Size Photo of You (Singapore specific)
 
----
-
 <h3 id="experience-singapore">Experience Singapore</h3>
 
 I literally had no words to express when I looked out the small rectangular window in my flight at 4.30 AM when I reached Singapore. If you travel in a flight during night to Singapore, you will be seeing a land that has colorful stars fallen from the sky which reflects the comely architecture of this country. 
@@ -66,14 +62,19 @@ I literally had no words to express when I looked out the small rectangular wind
   <figcaption>Singapore - Jewel Changi International Airport</figcaption>
 </figure>
 
-I was fortunate enough to walk around some beautiful natural trails around the country where I experienced a divine feeling, fresh oxygen and pure drinking water that comes out of the taps. In contrast to the lush gardens, forests and woods, Singapore has lots of impressive shopping malls, astoundingly amazing sky-kissing buildings and many popular tourist places that will make you think that you have landed on a futuristic world. 
+I was fortunate enough to walk around some beautiful natural trails around the country where I experienced a divine feeling, fresh oxygen and pure drinking water that comes out of the taps. 
+
+<figure class="black-figcaption">
+  <img src="https://drive.google.com/uc?id=1nx8_HJiGhdISLIjweY4PbrXMchJroijE" />
+  <figcaption>Singapore - Gardens by the Bay</figcaption>
+</figure>
+
+In contrast to the lush gardens, forests and woods, Singapore has lots of impressive shopping malls, astoundingly amazing sky-kissing buildings and many popular tourist places that will make you think that you have landed on a futuristic world. 
 
 <figure class="black-figcaption">
   <img src="https://drive.google.com/uc?id=1pEKe5A0aX6HW1wF0kIt93Jk_iomW83lb" />
   <figcaption>Singapore - Marina Bay Sands</figcaption>
 </figure>
-
----
 
 <h3 id="places-that-i-visited">Places that I visited</h3>
 
@@ -150,7 +151,15 @@ Some of the clicks that I have captured at Singapore are shown below. You can al
   <figcaption>Singapore - Zoo</figcaption>
 </figure>
 
----
+<figure class="black-figcaption">
+  <img src="https://drive.google.com/uc?id=1fSxZBN8l-38zmjO186MzYjoXbK61gfnx" />
+  <figcaption>Singapore - Lower Peirce Reservoir</figcaption>
+</figure>
+
+<figure class="black-figcaption">
+  <img src="https://drive.google.com/uc?id=1uFXVR1ezEyWhjj1PP5pbDIbvi-RwgRjw" />
+  <figcaption>Singapore - Harbourfront</figcaption>
+</figure>
 
 <h3 id="places-that-i-missed">Places that I missed</h3>
 
@@ -173,8 +182,6 @@ Due to time constraints, I was not able to visit some places at Singapore. But, 
 * Butterfly Park And Insect Kingdom
 * Siloso Beach
 
----
-
 <h3 id="my-photography-toolkit">My Photography Toolkit</h3>
 
 If you love photography like me, Singapore has got numerous photographic locations in this planet. It is rich in dense forests with neat trails at day and rich in beautiful lights and colors shining throughout the country at night. My photography toolkit comprises the below stuff.
@@ -183,16 +190,14 @@ If you love photography like me, Singapore has got numerous photographic locatio
 * Canon EF50mm F/1.8 STM lens
 * Canon EF-S 18–55mm lens
 
-If you are planning to visit Singapore Zoo or Night Safari or River Safari, make sure you carry a telephoto zoom lens such as [Canon EF-S55-250mm f/4-5.6 IS STM lens](https://www.amazon.in/EF-S-55-250mm-f-4-5-6-STM/dp/B00EP71ETU){:target="_blank"} with you.
+If you are planning to visit Singapore Zoo or Night Safari or River Safari, make sure you carry a telephoto zoom lens such as [Canon EF-S55-250mm f/4-5.6 IS STM lens](https://www.amazon.in/EF-S-55-250mm-f-4-5-6-STM/dp/B00EP71ETU){:target="_blank"}.
 
 <figure class="black-figcaption">
-  <img src="https://drive.google.com/uc?id=1mnGI4RzzzQHeaMaSlOh4Ch9LzCqGv65K" />
-  <figcaption>Singapore - Near Durian Building</figcaption>
+  <img src="https://drive.google.com/uc?id=1GOGcc6BI-dpLlB2_gvaZQp3g2mqlSA6e" />
+  <figcaption>Singapore Zoo - My favorite place</figcaption>
 </figure>
 
----
-
-<h3 id="references">References</h3>
+<h3 id="you-can-also-read">You can also read</h3>
 
 * [Top 15 Must-Visit Attractions in Singapore 2019](https://www.tourmyindia.com/blog/top-must-visit-attractions-singapore/){:target="_blank"}
 * [18 Best Things to Do in Singapore](http://www.singapore-guide.com/attractions/10mustsee.htm){:target="_blank"}

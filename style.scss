@@ -224,6 +224,7 @@
 .post {
   blockquote {
     margin: 20px 0px;
+    padding: 20px 0px;
     font-size: 22px;
     border-radius: 3px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -249,34 +250,16 @@ blockquote {
   position: relative;
 }
 
-blockquote:before {
-    content: "\"";
-    position: absolute;
-    left: 5px;
-    top: 6px;
-    font-size: 35px;
-    font-family: Arial;
-    color: #dedede;
-}
-
-blockquote::after {
-  content: '';
-}
-
 blockquote p {
   margin-bottom: 10px !important;
   font-weight: 300;
+  background-color: lavenderblush;
   font-style: normal !important;
   font-family: "Roboto",sans-serif;
-  border-top: 1px solid #cccccc;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #cccccc;
-  color: #a6a6a6;
-  font-size: 25px;
-  @include mobile {
-    font-size: 18px;
-  }
+  border: 1px solid #ffbbd1;
+  padding: 15px;
+  color: #cd3769;
+  border-radius: 3px;
 }
 
 .twitter_font {
