@@ -4,7 +4,7 @@ title: ASIC Design
 subheading: Learn how to design a chip using which you could create electronics applications.
 description: Learn how to design a chip using which you could create electronics applications.
 color: grad-blog
-image: https://drive.google.com/uc?id=1Zte3kdk2gCs6-euVEE4UrYzHn__s19WG
+image: https://drive.google.com/uc?id=1CxWWpzbp529wp0BqXOmc5NwOimC6j9nS
 permalink: /asic-design
 ---
 

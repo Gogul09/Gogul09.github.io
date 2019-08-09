@@ -19,7 +19,7 @@ permalink: /blog
           <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
         </div>
         <div class="asic-design" onclick="location.href='{{ site.baseurl }}/asic-design';">
-          <img src="https://drive.google.com/uc?id=1Zte3kdk2gCs6-euVEE4UrYzHn__s19WG" />
+          <img src="https://drive.google.com/uc?id=1CxWWpzbp529wp0BqXOmc5NwOimC6j9nS" />
           <h4>ASIC Design</h4>
           <p>Learn how to design a chip using which you could create electronics applications.</p>
           {% for post in site.posts %}
@@ -32,7 +32,7 @@ permalink: /blog
           <p class="no_of_posts">{{ asic_design_count }} posts</p>
         </div>
         <div class="deep-learning" onclick="location.href='{{ site.baseurl }}/deep-learning';">
-            <img src="https://drive.google.com/uc?id=1pWZbfob5C4N06StzEhgQ1loPAo982w4N" />
+            <img src="https://drive.google.com/uc?id=1MeJ0SD7Ci8TxQPOXHuEU1YvGqU03mhlq" />
             <h4>Deep Learning</h4>
             <p>Learn how to create deep neural networks to solve challenging problems.</p>
             {% for post in site.posts %}
@@ -45,7 +45,7 @@ permalink: /blog
           <p class="no_of_posts">{{ deep_learning_count }} posts</p>
         </div>
         <div class="machine-learning" onclick="location.href='{{ site.baseurl }}/machine-learning';">
-            <img src="https://drive.google.com/uc?id=1NUs6UggicDf0XqPj6PavX2C1ZmoMJJzG" />
+            <img src="https://drive.google.com/uc?id=1yK8ZrZWN2-tPVzGJU3ENuGAZ8wKG16aT" />
             <h4>Machine Learning</h4>
             <p>Learn how to create algorithms that don't require you to write rules.</p>
             {% for post in site.posts %}
@@ -58,7 +58,7 @@ permalink: /blog
           <p class="no_of_posts">{{ machine_learning_count }} posts</p>
         </div>
         <div class="computer-vision" onclick="location.href='{{ site.baseurl }}/computer-vision';">
-          <img src="https://drive.google.com/uc?id=1f08__sg5JJCHdoeq6WB0Iq68WZCTiMao" />
+          <img src="https://drive.google.com/uc?id=1JlY2yLUGNofJjxc7r4zJIDrNQx6xNpxC" />
           <h4>Computer Vision</h4>
           <p>Learn how to make your USB webcam or camera to understand world's information.</p>
           {% for post in site.posts %}
@@ -71,7 +71,7 @@ permalink: /blog
           <p class="no_of_posts">{{ computer_vision_count }} posts</p>
         </div>
         <div class="programming" onclick="location.href='{{ site.baseurl }}/programming';">
-          <img src="https://drive.google.com/uc?id=1GQpDt79Jb27N66IDU-V-83_rdNUJjDzp" />
+          <img src="https://drive.google.com/uc?id=1GOnjjWwADtDChznNwR1JFYJ3Pee9c20_" />
           <h4>Programming</h4>
           <p>Learn how to make use of your brain to write code.</p>
           {% for post in site.posts %}
@@ -84,7 +84,7 @@ permalink: /blog
           <p class="no_of_posts">{{ programming_count }} posts</p>
         </div>
         <div class="resources" onclick="location.href='{{ site.baseurl }}/resources';">
-          <img src="https://drive.google.com/uc?id=1WbtqR0nNiS9plUrOWTq2tgQOqFrq0e3j" />
+          <img src="https://drive.google.com/uc?id=1UxhEh7-FyENdPesic-nsMj8qy7wFg-PL" />
           <h4>Resources</h4>
           <p>Learn how to make use of internet to learn anything free.</p>
           {% for post in site.posts %}
@@ -97,7 +97,7 @@ permalink: /blog
           <p class="no_of_posts">{{ resources_count }} posts</p>
         </div>
         <div class="travel" onclick="location.href='{{ site.baseurl }}/travel';">
-          <img src="https://drive.google.com/uc?id=13ujc6Gh87Kd0sBZqNYltN19yJQ3ioLZz" />
+          <img src="https://drive.google.com/uc?id=1VC73N1GZyp2tsxFzuRj4mMvJg0wcauLl" />
           <h4>Travel</h4>
           <p>Learn how traveling creates peace within you.</p>
           {% for post in site.posts %}

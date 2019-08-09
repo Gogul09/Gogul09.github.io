@@ -4,7 +4,7 @@ title: Resources
 subheading: Learn how to make use of internet to learn anything free.
 description: Learn how to make use of internet to learn anything free.
 color: grad-blog
-image: https://drive.google.com/uc?id=1WbtqR0nNiS9plUrOWTq2tgQOqFrq0e3j
+image: https://drive.google.com/uc?id=1UxhEh7-FyENdPesic-nsMj8qy7wFg-PL
 permalink: /resources
 ---
 

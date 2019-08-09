@@ -267,41 +267,37 @@ blockquote p {
 }
 
 .wrapper-footer {
-  background-color: #fff47d;
+  background-image: linear-gradient(-225deg, #65379B 0%, #886AEA 53%, #6457C6 100%);
   height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #e5d747;
 }
 
 .page-footer {
-  background-color: #fff47d;
+  background-image: linear-gradient(-225deg, #65379B 0%, #886AEA 53%, #6457C6 100%);
   height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #e5d747;
   @include mobile {
     position: relative;
   }
 }
 
 footer {
-    padding: 10px;
+    padding: 15px;
     text-align: center;
     color: rgba(255,255,255,0.6);
     
     p  {
       text-align: center;
-      color: #90873c !important;
+      color: #ffffff !important;
       text-shadow: none;
-      font-weight: bold;
       margin-bottom: 0px !important;
       margin-top: 0px !important;
-      
       span {
         font-size: 12px;
       }

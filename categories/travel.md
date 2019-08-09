@@ -4,7 +4,7 @@ title: Travel
 subheading: Learn how traveling creates peace within you.
 description: Learn how traveling creates peace within you.
 color: grad-blog
-image: https://drive.google.com/uc?id=13ujc6Gh87Kd0sBZqNYltN19yJQ3ioLZz
+image: https://drive.google.com/uc?id=1VC73N1GZyp2tsxFzuRj4mMvJg0wcauLl
 permalink: /travel
 ---
 

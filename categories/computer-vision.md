@@ -4,7 +4,7 @@ title: Computer Vision
 subheading: Learn how to make your USB webcam or camera to understand world's information.
 description: Learn how to make your USB webcam or camera to understand world's information.
 color: grad-blog
-image: https://drive.google.com/uc?id=1f08__sg5JJCHdoeq6WB0Iq68WZCTiMao
+image: https://drive.google.com/uc?id=1JlY2yLUGNofJjxc7r4zJIDrNQx6xNpxC
 permalink: /computer-vision
 ---
 

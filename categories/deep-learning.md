@@ -4,7 +4,7 @@ title: Deep Learning
 subheading: Learn how to create deep neural networks to solve challenging problems.
 description: Learn how to create deep neural networks to solve challenging problems.
 color: grad-blog
-image: https://drive.google.com/uc?id=1pWZbfob5C4N06StzEhgQ1loPAo982w4N
+image: https://drive.google.com/uc?id=1MeJ0SD7Ci8TxQPOXHuEU1YvGqU03mhlq
 permalink: /deep-learning
 ---
 

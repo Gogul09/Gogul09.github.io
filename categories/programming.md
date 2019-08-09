@@ -4,7 +4,7 @@ title: Programming
 subheading: Learn how to make use of your brain to write code.
 description: Learn how to make use of your brain to write code.
 color: grad-blog
-image: https://drive.google.com/uc?id=1GQpDt79Jb27N66IDU-V-83_rdNUJjDzp
+image: https://drive.google.com/uc?id=1GOnjjWwADtDChznNwR1JFYJ3Pee9c20_
 permalink: /programming
 ---
 

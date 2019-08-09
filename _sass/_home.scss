@@ -34,8 +34,9 @@
 .gem-box div h4 {
   color: black;
   font-size: 17px;
-  margin-top: 50px;
+  margin-top: 65px;
   @include mobile {
+    margin-top: 70px;
     font-size: 14px;
   }
 }
@@ -52,9 +53,9 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: absolute;
   top: 25px;
-  height: 30px;
+  height: 40px;
   @include mobile {
-    height: 20px;
+    height: 35px;
   }
 }
 
