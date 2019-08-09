@@ -17,7 +17,7 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform .3s;
   position: relative;
   @include mobile {
     width: 140px;
@@ -27,7 +27,8 @@
 }
 
 .gem-box div:hover {
-  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 14px rgba(0,0,0,.12);
+  transform: scale(1.025);
 }
 
 .gem-box div h4 {

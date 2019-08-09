@@ -267,22 +267,23 @@ blockquote p {
 }
 
 .wrapper-footer {
-  background-color: #000000;
-  height: 100px;
+  background-color: #fff47d;
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #ebebeb;
+  border-top: 1px solid #e5d747;
 }
 
 .page-footer {
-  background-color: #000000;
-  height: 100px;
+  background-color: #fff47d;
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid #e5d747;
   @include mobile {
     position: relative;
   }
@@ -295,9 +296,9 @@ footer {
     
     p  {
       text-align: center;
-      color: #ffffff !important;
+      color: #90873c !important;
       text-shadow: none;
-      font-weight: 100;
+      font-weight: bold;
       margin-bottom: 0px !important;
       margin-top: 0px !important;
       
