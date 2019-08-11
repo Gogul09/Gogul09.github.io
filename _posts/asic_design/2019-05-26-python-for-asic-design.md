@@ -1,7 +1,7 @@
 ---
 layout: post
 category: hardware
-class: PD Concepts
+class: ASIC Design
 title: Python for Hardware Design
 description: How python programming language could be used in hardware design such as ASIC logic design or physical design. Come let's explore.
 author: Gogul Ilango

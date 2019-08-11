@@ -12,37 +12,19 @@ permalink: /asic-design
   <div class="home-articles">
     <div class="home-wrapper">
       <div class="page-holder">
-        <h3>physical design</h3>
         <ul>
         {% for post in site.posts %}
           {% if post.categories contains 'hardware' %}
-            {% if post.class contains 'PD Concepts' %}
-                <li>
-                  <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">
-                    <div class="page-treasure">
-                      <h2>{{ post.title }}</h2>
-                      <p>{{ post.description }}</p>
-                    </div>
-                  </a>
-                </li>
-              {% endif %}
-            {% endif %}
-        {% endfor %}
-        </ul>
-        <h3>intelligence in chip design</h3>
-        <ul>
-        {% for post in site.posts %}
-          {% if post.categories contains 'hardware' %}
-            {% if post.class contains 'ML for PD' %}
-                <li>
-                  <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">
-                    <div class="page-treasure">
-                      <h2>{{ post.title }}</h2>
-                      <p>{{ post.description }}</p>
-                    </div>
-                  </a>
-                </li>
-              {% endif %}
+          		{% if post.class contains 'ASIC Design' %}
+		            <li>
+		              <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">
+		                <div class="page-treasure">
+		                  <h2>{{ post.title }}</h2>
+		                  <p>{{ post.description }}</p>
+		                </div>
+		              </a>
+		            </li>
+            	{% endif %}
             {% endif %}
         {% endfor %}
         </ul>

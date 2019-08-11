@@ -1,13 +1,13 @@
 ---
 layout: post
 category: hardware
-class: ML for PD
+class: ASIC Design
 title: Applying Machine Learning in VLSI Chip Design
 description: Collection of research papers, books, articles and courses that solve challenging hardware VLSI chip design problems using Machine Learning.
 author: Gogul Ilango
 permalink: /hardware/research-papers-vlsi-ml
-image: https://drive.google.com/uc?id=1AmyPMWgXjKgT5IAsk6RW91Gslk8_SCe7
-cardimage: https://drive.google.com/uc?id=1-iJi0BvWhofSEiaJjla8HPpOCCL0hVbG
+image: https://drive.google.com/uc?id=1PBm-VTAKv4hMD1j-VaDCgmVEayb3BeLf
+cardimage: https://drive.google.com/uc?id=1PBm-VTAKv4hMD1j-VaDCgmVEayb3BeLf
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">

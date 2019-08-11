@@ -1,6 +1,6 @@
 ---
 layout: post
-category: hardware
+category: software
 class: Resources
 title: Web Development
 description: Resources that would be helpful for someone who's interested in front-end and back-end web development. 

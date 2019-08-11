@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CMOS Basics (Part 2) – Gogul Ilango </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400|Roboto:300" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="CMOS Basics (Part 2)" />
+    <meta name="description" content="Understand the fundamental concepts of Static Timing Analysis in VLSI (ASIC design) such as Switching Activity, Propagation Delay, Slew and Skew." />
+    <meta property="og:description" content="Understand the fundamental concepts of Static Timing Analysis in VLSI (ASIC design) such as Switching Activity, Propagation Delay, Slew and Skew." />
+    <meta property="twitter:title" content="CMOS Basics (Part 2)" />
+
+    <meta property="og:image" content="images/icons/logo.png"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="CMOS Basics (Part 2)">
+    <meta name="twitter:description" content="Understand the fundamental concepts of Static Timing Analysis in VLSI (ASIC design) such as Switching Activity, Propagation Delay, Slew and Skew.">
+    <meta name="twitter:image" content="images/icons/logo.png">
+  <!-- Begin Jekyll SEO tag v2.2.2 -->
+<title>CMOS Basics (Part 2) | Gogul Ilango</title>
+<meta property="og:title" content="CMOS Basics (Part 2)" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Understand the fundamental concepts of Static Timing Analysis in VLSI (ASIC design) such as Switching Activity, Propagation Delay, Slew and Skew." />
+<meta property="og:description" content="Understand the fundamental concepts of Static Timing Analysis in VLSI (ASIC design) such as Switching Activity, Propagation Delay, Slew and Skew." />
+<link rel="canonical" href="http://localhost:4000/hardware/cmos-basics-for-sta-2" />
+<meta property="og:url" content="http://localhost:4000/hardware/cmos-basics-for-sta-2" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1CnSrVBXlTp_0fg1XFO3uikvjItR1sEJQ" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-21T00:00:00+05:30" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"CMOS Basics (Part 2)","author":{"@type":"Person","name":"Gogul Ilango"},"image":"https://drive.google.com/uc?id=1CnSrVBXlTp_0fg1XFO3uikvjItR1sEJQ","datePublished":"2018-05-21T00:00:00+05:30","dateModified":"2018-05-21T00:00:00+05:30","description":"Understand the fundamental concepts of Static Timing Analysis in VLSI (ASIC design) such as Switching Activity, Propagation Delay, Slew and Skew.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/hardware/cmos-basics-for-sta-2"},"url":"http://localhost:4000/hardware/cmos-basics-for-sta-2"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="header-left">
+            <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
+          </div>
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"></a>
+            <a title="blog" id = "nav_blog" href="/blog"></a>
+            <a title="creations" id = "nav_creations" href="/creations"></a>
+            <a title="music" id = "nav_music" href="/music"></a>
+            <a title="photography" id = "nav_photography" href="/photography"></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>CMOS Basics (Part 2)</h1>
+		<div class="post-subheading">
+			<p>ASIC Design | 21 May 2018</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/hardware/cmos-basics-for-sta-2"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/hardware/cmos-basics-for-sta-2" data-action="share/whatsapp/share"><img src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/cmos-basics-for-sta-2" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=CMOS Basics (Part 2)&url=http://localhost:4000/hardware/cmos-basics-for-sta-2" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/cmos-basics-for-sta-2&title=CMOS Basics (Part 2)&summary=Understand the fundamental concepts of Static Timing Analysis in VLSI (ASIC design) such as Switching Activity, Propagation Delay, Slew and Skew.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/hardware/cmos-basics-for-sta-2" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/cmos-basics-for-sta-2" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=CMOS Basics (Part 2)&url=http://localhost:4000/hardware/cmos-basics-for-sta-2" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/cmos-basics-for-sta-2&title=CMOS Basics (Part 2)&summary=Understand the fundamental concepts of Static Timing Analysis in VLSI (ASIC design) such as Switching Activity, Propagation Delay, Slew and Skew.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#switching-activity">Switching Activity</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#propagation-delay">Propagation Delay</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#slew">Slew</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#timing-arcs-and-unateness">Timing Arcs and Unateness</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#references">References</a></li>
+  </ul>
+</div>
+
+<p>In the <a href="https://gogul09.github.io/hardware/cmos-basics-for-sta-1" target="_blank">previous blog post</a>, we learnt about the basics of CMOS from a timing perspective and understood what standard cells, logic levels and time constant are, and how resistances and capacitances affects timing of a design.</p>
+
+<p>In this blog post, we will utilize that knowledge and look into some more concepts such as switching activity, propagation delay, slew and timing arcs.</p>
+
+<div class="objectives">
+  <h3>Objectives</h3>
+  <p>After reading this tutorial, we will understand</p>
+  <ul>
+    <li>What is switching activity in a standard cell?</li>
+    <li>What is propagation delay and why it occurs?</li>
+    <li>Why slew exists for a waveform?</li>
+    <li>What is Intrinsic Delay?</li>
+    <li>What are Timing Arcs and Unateness?</li>
+  </ul>
+</div>
+
+<h3 id="switching-activity">Switching Activity</h3>
+<p>Let’s consider the CMOS inverter example for this blog post and the same is applicable for larger circuits as we build up.</p>
+
+<p>As we know that both PMOS and NMOS act like switches that either allow VDD or VSS at a particular time instant, we could model a simple CMOS inverter analogous to an RC network as shown in Figure 1.</p>
+
+<figure>
+  <img src="https://drive.google.com/uc?id=1JBkfQvOEoSVROErqERkVwQEv6AC49QcF" />
+  <figcaption>Figure 1. Switching Activity in CMOS inverter + Charging and Discharging waveforms</figcaption>
+</figure>
+
+<ul>
+  <li><strong>Pull-up</strong>: When the input is logic 0, SW0 (PMOS) is turned ON and SW1 (NMOS) is turned OFF. Output is pulled to VDD and becomes logic 1. Before the activation of SW0, if output is at logic 0, then the voltage transition (charging) at the output is given by the equation</li>
+</ul>
+
+<div class="math-cover">
+$$
+V = Vdd * [1 - e^{(\frac{-t}{Rdh*Cload})}]
+$$
+</div>
+
+<ul>
+  <li><strong>Pull-down</strong>: When the input is logic 1, SW0 (PMOS) is turned OFF and SW1 (NMOS) is turned ON. Output is pulled to VSS and becomes logic 0. Before the activation of SW1, if output is at logic 1, then the voltage transition (discharging) at the output is given by the equation</li>
+</ul>
+
+<div class="math-cover">
+$$
+V = Vdd * e^{(\frac{-t}{Rdl*Cload})}
+$$
+</div>
+
+<p>The above two equations are valid for the RC network we considered. When it comes to standard cells (CMOS cells), during the transition from one logic state to another (i.e charging or discharging of capacitor), for a definite amount of time, current flows from VDD to VSS which give rise to <a href="http://nptel.ac.in/courses/117101058/downloads/Lec-26.pdf" target="_blank">short-circuit power dissipation</a>.</p>
+
+<div class="note">
+  <p><b>Concept 1:</b> The time taken at the output when there is a signal transition from one logic state to another (due to which both pull-up and pull-down structures are turned ON) is called as the Transition Time.</p>
+</div>
+
+<p>It is important to analyze this transition time because it is responsible for the propagation delay and slew of a standard cell.</p>
+
+<h3 id="propagation-delay">Propagation Delay</h3>
+<p>Due to the transition time that arises during the switching activity in a standard cell, we will not be able to get the output <i>instantly</i> as soon as the input changes. There is a <i>finite delay</i> involved during this transition called as the Propagation Delay. Let’s quickly understand what propagation delay mean.</p>
+
+<figure>
+  <img src="https://drive.google.com/uc?id=1mPghFF9RutGLCXFSGo3CPutuw2x-gvwa" />
+  <figcaption>Figure 2. Propagation Delay of a CMOS inverter</figcaption>
+</figure>
+
+<p>Look at the waveform in Figure 2[a] which shows propagation delays of an ideal inverter. In the ideal case, there is no transition time (zero short-circuit current) and hence the delay corresponds to the intrinsic delay associated with the CMOS cell only.</p>
+
+<h4 id="quick-facts-about-intrinsic-delay">Quick facts about Intrinsic Delay</h4>
+<ul>
+  <li>It is the internal delay associated within a standard cell.</li>
+  <li>It is the delay from input pin of the cell to the output pin of the cell.</li>
+  <li>This is due to the internal capacitance associated with the CMOS transistors present inside the cell.</li>
+  <li>It is highly dependent on the size of the CMOS transistors as capacitance increases if size increases.</li>
+</ul>
+
+<p>Now look at the waveform in Figure 2[b] which shows propagation delay of a real inverter. Two types of edges that appear here are</p>
+
+<ul>
+  <li><strong>Rising edge</strong>: Signal transition from logic 0 to logic 1.</li>
+  <li><strong>Falling edge</strong>: Signal transition from logic 1 to logic 0.</li>
+</ul>
+
+<p>Due to these two edges, there are typically four propagation delay threshold points that are being measured (shown as red circle in Figure 2[b]) which are in terms of the percentage of VDD.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td><td class="code"><pre><span class="c"># threshold of an input rising edge</span>
+<span class="n">input_threshold_pct_rise</span> <span class="p">:</span> <span class="mf">50.0</span><span class="p">;</span>
+
+<span class="c"># threshold of an input falling edge</span>
+<span class="n">input_threshold_pct_fall</span> <span class="p">:</span> <span class="mf">50.0</span><span class="p">;</span>
+
+<span class="c"># threshold of an output rising edge</span>
+<span class="n">output_threshold_pct_rise</span> <span class="p">:</span> <span class="mf">50.0</span><span class="p">;</span>
+
+<span class="c"># threshold of an output falling edge</span>
+<span class="n">output_threshold_pct_fall</span> <span class="p">:</span> <span class="mf">50.0</span><span class="p">;</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>Mostly, 50% threshold (percent of VDD) is taken for delay measurement in standard cell libraries.</p>
+
+<div class="note">
+  <p><b>Concept 2:</b> Due to signal transition from one logic level to another, there comes a finite amount of delay (apart from intrinsic delay) at the output of a standard cell which corresponds to the propagation delay of the standard cell.</p>
+</div>
+
+<h3 id="slew">Slew</h3>
+<p>Another important factor to be considered in delay calculation is the slew. Slew rate corresponds to the rate of change of voltage of a rising or falling edge of a waveform (which is measured with respect to the transition time).</p>
+
+<p>Notice that, transition time is just the inverse of slew rate. Thus, larger the transition time, smaller is the slew rate and vice-versa.</p>
+
+<p>Similar to propagation delay threshold points, there are four slew threshold points (percent of VDD) for a single waveform as shown in Figure 3.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="c"># rising edge thresholds</span>
+<span class="n">slew_lower_threshold_pct_rise</span> <span class="p">:</span> <span class="mf">30.0</span><span class="p">;</span>
+<span class="n">slew_upper_threshold_pct_rise</span> <span class="p">:</span> <span class="mf">70.0</span><span class="p">;</span>
+
+<span class="c"># falling edge thresholds</span>
+<span class="n">slew_lower_threshold_pct_fall</span> <span class="p">:</span> <span class="mf">30.0</span><span class="p">;</span>
+<span class="n">slew_upper_threshold_pct_fall</span> <span class="p">:</span> <span class="mf">70.0</span><span class="p">;</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<figure>
+  <img src="https://drive.google.com/uc?id=1Z-ydhpgxeL-UrbXfMCsAmqR1d8mUxo-o" />
+  <figcaption>Figure 3. Slew rate of a waveform with 4 slew threshold points</figcaption>
+</figure>
+
+<ul>
+  <li><strong>Rise slew</strong> is the time difference between the rising edge reaching 70% and 30% of VDD.</li>
+  <li><strong>Fall slew</strong> is the time difference between the falling edge reaching 70% and 30% of VDD.</li>
+</ul>
+
+<blockquote>
+  <p>Did you know that slew is the reason behind <b>portamento</b> (glide or lag) feature in a music-synthesizer? - <a href="https://en.wikipedia.org/wiki/Slew_rate" target="_blank">Read more</a></p>
+</blockquote>
+
+<h3 id="timing-arcs-and-unateness">Timing Arcs and Unateness</h3>
+<p>Static Timing Analysis (STA) for the entire chip is performed by evaluating timing paths in the design. As STA is purely based on timing paths (not functionality), timing arc is one of the very important components of a timing path.</p>
+
+<p>Timing arc is described by something called as “Unateness”. Unateness is an important property of standard cells. Every standard cell has its associated multiple timing arcs that are specified in the cell library. Each timing arc specifies the unateness between an input pin and the output pin of the cell.</p>
+
+<div class="note">
+  <p><b>Concept 3</b>: Timing arc describes the relationship between an input pin and an output pin of a cell by means of unateness. This is specified as <span class="coding">timing_sense</span> in the cell library.</p>
+</div>
+
+<p>Typically, there are three types of timing arcs for a standard cell.</p>
+<ol>
+  <li>Positive Unate.</li>
+  <li>Negative Unate.</li>
+  <li>Non-Unate.</li>
+</ol>
+
+<h4 id="1-positive-unate">1. Positive Unate</h4>
+<p>If there is a rising transition at the input (source) that is causing a rising transition at the output (sink), or if there is a falling transition at the input (source) that is causing a falling transition at the output (sink), then it is called Positive Unate. Ex: OR, AND.</p>
+
+<h4 id="2-negative-unate">2. Negative Unate</h4>
+<p>If there is a rising transition at the input (source) that is causing a falling transition at the output (sink), or if there is a falling transition at the input (source) that is causing a rising transition at the output (sink), then it is called Negative Unate. Ex: NOR, NAND.</p>
+
+<h4 id="3-non-unate">3. Non-Unate</h4>
+<p>If the output transition cannot be found from a single input’s transition and depends on multiple input transitions, then it is called Non-Unate. Ex: XOR.</p>
+
+<figure>
+  <img src="https://drive.google.com/uc?id=14ZxXRmdEv8TYhrz88UEQie1u-v3AW7QH" />
+  <figcaption>Figure 4. Timing Arcs and Unateness</figcaption>
+</figure>
+
+<p>In addition to the timing arcs of a cell, there exists timing arcs for nets in the design as shown in Figure 4(d). Generally, such net timing arc is from output pin of a cell (driver or source) to the input pin of the cell (load or sink). Same unateness concept is applied here as well.</p>
+
+<p>For net timing arcs, the existence of such arcs is taken from the netlist and are calculated using the parasitic values given in SPEF (Standard Parasitics Exchange Format) file.</p>
+
+<p>In the next post, we will look into extending all these timing concepts for a larger circuit and understand various delays involved.</p>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li>Static Timing Analysis for Nanometer Designs: A Practical Approach, Jayaram Bhasker and Rakesh Chadha.</li>
+  <li>Digital Integrated Circuits: A Design Perspective, Jan Rabaey.</li>
+</ol>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/hardware/cmos-basics-for-sta-2"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				(function() {
+					var d = document, s = d.createElement('script');
+					s.src = '//gogul09.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2019 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+     
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/hardware/cmos-basics-for-sta-2',
+		  'title': 'CMOS Basics (Part 2)'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+   </body>
+</html>

@@ -267,7 +267,7 @@ blockquote p {
 }
 
 .wrapper-footer {
-  background-image: linear-gradient(-225deg, #65379B 0%, #886AEA 53%, #6457C6 100%);
+  background-color: #d22e2e;
   height: auto;
   width: 100%;
   display: flex;
@@ -276,7 +276,7 @@ blockquote p {
 }
 
 .page-footer {
-  background-image: linear-gradient(-225deg, #65379B 0%, #886AEA 53%, #6457C6 100%);
+  background-color: #d22e2e;
   height: auto;
   width: 100%;
   display: flex;
@@ -2001,7 +2001,7 @@ u {
 }
 
 .show-comments p {
-  background-color: #c7252c;
+  background-color: #ffc455;
   text-align: center;
   padding: 20px;
   width: 40%;
@@ -2009,11 +2009,14 @@ u {
   font-weight: bold;
   margin-top: 0px;
   border-radius: 5px;
-  color: #ffffff;
+  color: #2d2d2d;
   cursor: pointer;
   @include mobile {
     margin-top: 10px;
     width: 90%;
+  }
+  &:hover, &:active {
+    background-color: #ffbc3e;
   }
 }
 
