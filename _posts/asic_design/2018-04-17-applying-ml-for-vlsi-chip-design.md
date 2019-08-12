@@ -135,6 +135,8 @@ This blog post contains a collection of research papers, books, labs, conference
 
   <ul>
     <li><a href="https://patents.google.com/patent/US9147032" target="_blank">Machine Learning based Datapath Extraction</a></li>
+    
+    <li><a href="https://research.nvidia.com/publication/2019-03_Routability-Driven-Macro-Placement" target="_blank">Routability-Driven Macro Placement with Embedded CNN-Based Prediction Model</a></li>
 
     <li><a href="https://arxiv.org/ftp/arxiv/papers/1801/1801.02620.pdf" target="_blank">A Machine Learning Framework for Register Placement Optimization in Digital Circuit Design</a></li>
 
@@ -175,6 +177,8 @@ This blog post contains a collection of research papers, books, labs, conference
 
   <ul>
 
+  	<li><a href="https://research.nvidia.com/publication/2018-11_RouteNet%3A-routability-prediction" target="_blank">RouteNet: routability prediction for mixed-size designs using convolutional neural network</a></li>
+
     <li><a href="https://arxiv.org/pdf/1811.04151.pdf" target="_blank">Design Rule Violation Hotspot Prediction Based on Neural Network Ensembles</a></li>
 
     <li><a href="https://research.nvidia.com/sites/default/files/pubs/2018-11_RouteNet%3A-routability-prediction/a80-xie.pdf" target="_blank">RouteNet: Routability Prediction for Mixed-Size Designs Using Convolutional Neural Network</a></li>
@@ -192,6 +196,8 @@ This blog post contains a collection of research papers, books, labs, conference
   <h3 id="power">Power</h3>
 
   <ul>
+
+  	<li><a href="https://research.nvidia.com/publication/2019-06_PRIMAL%3A-Power-Inference" target="_blank">PRIMAL: Power Inference using Machine Learning</a></li>
 
     <li><a href="https://vlsicad.ucsd.edu/Publications/Conferences/338/c338.pdf" target="_blank">Learning-Based Prediction of Embedded Memory Timing Failures During Initial Floorplan Design</a></li>
 
@@ -274,10 +280,12 @@ This blog post contains a collection of research papers, books, labs, conference
   </ul>
 </div>
 
-<h3 id="resources">Resources</h3>
-
-If you wish to learn how to build a chip, I have collected these resources for you!
-
-* [ASIC Design](https://gogul09.github.io/asic-design){:target="_blank"}
-* [VLSI Design resources](https://gogul09.github.io/hardware/vlsi-design){:target="_blank"}
-* [Physical Design resources](https://gogul09.github.io/hardware/physical-design){:target="_blank"}
+<div class="material-box">
+	<h3 id="resources">Resources</h3>
+	<p>If you wish to learn how to build a chip, I have collected these resources for you!</p>
+	<ul>
+		<li><a href="https://gogul09.github.io/asic-design" target="blank">ASIC Design</a></li>
+		<li><a href="https://gogul09.github.io/hardware/vlsi-design" target="blank">VLSI Design resources</a></li>
+		<li><a href="https://gogul09.github.io/hardware/physical-design" target="blank">Physical Design resources</a></li>
+	</ul>
+</div>

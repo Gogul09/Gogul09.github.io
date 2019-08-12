@@ -3206,18 +3206,26 @@ del {
   padding: 10px 30px;
   border-radius: 4px;
   margin: 30px 0;
+  margin-left: -65px;
+  margin-right: -65px;
   @include mobile {
     padding: 10px 15px;
+    margin-left: -15px;
+    margin-right: -15px;
   }
 }
 
 .material-box {
-  background-color: #d6ffde;
+  background-color: #fafafa;
   padding: 10px 30px;
   border-radius: 4px;
   margin: 30px 0;
+  margin-left: -65px;
+  margin-right: -65px;
   @include mobile {
     padding: 10px 15px;
+    margin-left: -15px;
+    margin-right: -15px;
   }
 }
 
@@ -3327,13 +3335,16 @@ del {
 
 .highlight-box {
   background-color: #d7fffd;
-  padding: 10px 25px;
-  padding-bottom: 20px;
-  border-radius: 3px;
-  border: 1px solid #8bfcf6;
+  padding: 30px;
+  margin-left: -50px;
+  margin-right: -50px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   @include mobile {
-    padding: 10px;;
+    padding: 20px;;
     padding-bottom: 20px;
+    margin-left: -15px;
+    margin-right: -15px;
   }
 }
 
