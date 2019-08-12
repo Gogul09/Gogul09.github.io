@@ -1702,10 +1702,14 @@ figure {
   margin-right: -65px;
   text-align:center; 
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding-left: 30px;
+  padding-right: 30px;
   @include mobile {
     margin: 30px auto;
     margin-left: -15px;
     margin-right: -15px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -3354,9 +3358,14 @@ del {
 
 .objectives {
   background-color: #fff0bc;
-  padding: 5px 20px;
-  border-radius: 3px;
-  border: 1px solid #ffd647;
+  padding: 30px 60px;
+  margin-left: -65px;
+  margin-right: -65px;
+  @include mobile {
+    padding: 30px 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 }
 
 .btn-links {

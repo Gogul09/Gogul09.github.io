@@ -32,12 +32,12 @@ image: https://drive.google.com/uc?id=1_Ge8_Na4-OBRq58vgsbmFlMObMLb2Hdd
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#what-is-glcm">What is GLCM?</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#haralick-texture-feature-vector">Haralick Texture Feature Vector</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#implementing-texture-recognition">Implementing Texture Recognition</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#import-the-necessary-packages">1. Import the necessary packages</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#load-the-training-dataset">2. Load the training dataset</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#extract-features-function">3. Extract features function</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#extract-features-for-all-images">4. Extract features for all images</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#create-the-machine-learning-classifier">5. Create the machine learning classifier</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#test-the-classifier-on-testing-data">6. Test the classifier on testing data</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#import-the-necessary-packages">Import the necessary packages</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#load-the-training-dataset">Load the training dataset</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#extract-features-function">Extract features function</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#extract-features-for-all-images">Extract features for all images</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#create-the-machine-learning-classifier">Create the machine learning classifier</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#test-the-classifier-on-testing-data">Test the classifier on testing data</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_12" href="#training-images">Training images</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_13" href="#testing-images">Testing images</a></li>
   </ul>
@@ -45,18 +45,18 @@ image: https://drive.google.com/uc?id=1_Ge8_Na4-OBRq58vgsbmFlMObMLb2Hdd
 
 When it comes to Global Feature Descriptors (i.e feature vectors that quantifies the entire image), there are three major attributes to be considered - <span class="light">Color, Shape</span> and <span class="light">Texture</span>. All these three could be used separately or combined to quantify images. In this post, we will learn how to recognize texture in images. We will study a new type of global feature descriptor called Haralick Texture. Let's jump right into it!
 
-<div class="code-head">Objectives</div>
-
-```
-After reading this tutorial, we will understand -
-
-* How to label and organize our own dataset?
-* What is Haralick Texture and how it is computed?
-* How to use Haralick Texture module in mahotas library?
-* How to recognize textures in images?
-* How to use Linear SVM to train and classify images?
-* How to make predictions using the created model on an unseen data?
-```
+<div class="objectives">
+  <h3>Objectives</h3>
+  <p>After reading this tutorial, we will understand</p>
+  <ul>
+    <li>How to label and organize our own dataset?</li>
+    <li>What is Haralick Texture and how it is computed?</li>
+    <li>How to use Haralick Texture module in mahotas library?</li>
+    <li>How to recognize textures in images?</li>
+    <li>How to use Linear SVM to train and classify images?</li>
+    <li>How to make predictions using the created model on an unseen data?</li>
+  </ul>
+</div>
 
 ### What is a Texture?
 
@@ -71,7 +71,7 @@ Haralick Texture is used to quantify an image based on texture. It was invented 
 Gray Level Co-occurrence matrix (GLCM) uses adjacency concept in images. The basic idea is that it looks for pairs of adjacent pixel values that occur in an image and keeps recording it over the entire image. Below figure explains how a GLCM is constructed.
 
 <figure>
-  <img src="/images/software/haralick-texture/GLCM.jpg" class="typical-image">
+  <img src="/images/software/haralick-texture/GLCM.jpg" >
   <figcaption>Figure 1. Gray Level Co-occurance Matrix (GLCM)</figcaption>
 </figure>
 
@@ -259,7 +259,7 @@ These are the images from which we train our machine learning classifier to lear
 As a demonstration, I have included my own training and testing images. I took 3 classes of training images which holds 3 images per class. Training images with their corresponding class/label are shown below.
 
 <figure>
-  <img src="/images/software/haralick-texture/Training Data.jpg" class="typical-image">
+  <img src="/images/software/haralick-texture/Training Data.jpg" />
   <figcaption>Figure 2. Training Images</figcaption>
 </figure>
 
@@ -274,24 +274,24 @@ Some of the test images for which we need to predict the class/label are shown b
 </div>
 
 <figure>
-  <img src="/images/software/haralick-texture/Testing Data.jpg" class="typical-image">
+  <img src="/images/software/haralick-texture/Testing Data.jpg" />
   <figcaption >Figure 3. Testing Images</figcaption>
 </figure>
 
 After running the code, our model was able to correctly predict the labels for the testing data as shown below.
 
 <figure>
-	<img src="/images/software/haralick-texture/test_image_1.jpg" class="typical-image">
+	<img src="/images/software/haralick-texture/test_image_1.jpg" />
 	<figcaption>Figure 4. Test Image Prediction - 1</figcaption>
 </figure>
 
 <figure>
-	<img src="/images/software/haralick-texture/test_image_2.jpg" class="typical-image">
+	<img src="/images/software/haralick-texture/test_image_2.jpg" />
 	<figcaption>Figure 5. Test Image Prediction - 2</figcaption>
 </figure>
 
 <figure>
-	<img src="/images/software/haralick-texture/test_image_3.jpg" class="typical-image">
+	<img src="/images/software/haralick-texture/test_image_3.jpg" />
 	<figcaption>Figure 6. Test Image Prediction - 3</figcaption>
 </figure>
 
