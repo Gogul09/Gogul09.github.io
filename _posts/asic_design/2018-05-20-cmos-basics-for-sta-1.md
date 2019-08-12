@@ -2,7 +2,7 @@
 layout: post
 category: hardware
 class: ASIC Design
-title: CMOS Basics (Part 1)
+title: CMOS Basics - Part 1
 description: Understand the basics of CMOS and terminologies used to perform Static Timing Analysis in VLSI (ASIC design)
 author: Gogul Ilango
 permalink: /hardware/cmos-basics-for-sta-1
@@ -175,7 +175,7 @@ We can finally say that the output charging delay of a standard cell depends on 
 
 Thus, the output charging delay at driver pin G1 (for high or low) = \\(R_{out}\\) * \\(C_{out}\\)
 
-In the <a href="https://gogul09.github.io/hardware/cmos-basics-for-sta-2" target="_blank">next blog post</a>, we will understand how this delay impacts timing by introducting propagation delay and slew.
+In the <a href="https://gogul09.github.io/hardware/cmos-basics-for-sta-2" target="_blank">next blog post</a>, we will understand how this delay impacts timing by introducing propagation delay and slew.
 
 ### References 
 

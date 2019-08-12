@@ -47,12 +47,6 @@ In this blog post, I have collected some resources such as papers, libraries, de
 * [Deep Learning Techniques for Music Generation - A Survey](https://arxiv.org/abs/1709.01620){:target="_blank"}
 * [Generating Long Sequences with Sparse Transformers](https://arxiv.org/pdf/1904.10509.pdf){:target="_blank"}
 * [Enabling factorized piano music modeling and generation with the MAESTRO dataset](https://arxiv.org/pdf/1810.12247.pdf){:target="_blank"}
-* [](){:target="_blank"}
-* [](){:target="_blank"}
-* [](){:target="_blank"}
-* [](){:target="_blank"}
-* [](){:target="_blank"}
-* [](){:target="_blank"}
 
 <h3 id="libraries">Libraries</h3>
 
