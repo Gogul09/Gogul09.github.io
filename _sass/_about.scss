@@ -278,7 +278,7 @@
 
 .about-material-box {
   background-color: #fafafa;
-  padding: 10px 30px;
+  padding: 10px 50px;
   border-radius: 4px;
   margin: 30px 0;
   margin-left: -50px;
@@ -287,5 +287,12 @@
     padding: 20px;
     margin-left: -15px;
     margin-right: -15px;
+  }
+}
+
+.about-header-fix {
+  height: auto;
+  @include mobile {
+    height: auto;
   }
 }

@@ -13,6 +13,13 @@ permalink: /
     <h1>{{ page.heading }}</h1>
     <p>{{ page.subheading }}</p>
   </div>
+  <div class="home-follow-wrapper">
+    <div class="home-follow">
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+      <a href="https://twitter.com/gogul_ilango?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="true">Follow @gogul_ilango</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" data-size="large" aria-label="Follow @Gogul09 on GitHub">Follow</a>
+    </div>
+  </div>
 </div>
 
 <div class="about-container">
@@ -67,11 +74,10 @@ permalink: /
             <li>It provides me a chance to organize my technical interests so that I can refer to it later.</li>
             <li>It gives me a chance to share my knowledge with the world where it might help someone somewhere.</li>
           </ul>
-          <p>I also share resources to help students find useful information in the internet. If you like my <a href="https://gogul09.github.io/blog" target="_blank">posts</a>, kindly share it with people interested in these topics. It really mean so much to me. Hope you find useful content in my <a href="https://gogul09.github.io/blog" target="_blank">blog</a> 😉</p>
+          <p>I also share resources to help students find useful information in the internet. If you like my <a href="https://gogul09.github.io/blog" target="_blank">posts</a>, kindly share it with people interested in these topics. It really mean so much to me. Hope you find useful content in my <a href="https://gogul09.github.io/blog" target="_blank">blog</a>.</p>
           <br>
           <h4>Hobbies</h4>
-          <p>Apart from tech, I love music 🎵 and art 🎨. I like creating tunes, producing and arranging music using Digital Audio Workstations (DAW), playing keyboard 🎹, guitar 🎸, ukulele and writing lyrics 📝. You can listen to my music <a href="https://gogul09.github.io/music" target="_blank">here</a>.</p>
-          <p>To keep my mind and body healthy 🧘‍♂️, I do cycling 🚴‍♂️, play cricket 🏏 and foosball with colleagues and swim 🏊‍♂️ rarely.</p>
+          <p>Apart from tech, I love music and art. I like creating tunes, producing and arranging music using Digital Audio Workstations (DAWs), playing keyboard, guitar, ukulele and writing lyrics. You can listen to my music <a href="https://gogul09.github.io/music" target="_blank">here</a>.</p>
           <div class="highlight-box">
             <p>In case you're wondering, this site </p>
             <ul style="margin: 0px !important;">
@@ -335,7 +341,7 @@ permalink: /
   };
   
   var myInterestData = {
-    labels: ['Hardware Engineering', 'Software Engineering', 'Design', 'Music', "Science", "Sports"],
+    labels: ['Hardware', 'Software', 'Design', 'Music', "Science", "Sports"],
     datasets: [{
       backgroundColor: ["rgba(54,162,235,0.6)", "rgba(255,99,132,0.6)", "rgba(255,205,86,0.6)", "rgba(75,192,192,0.6)", "rgba(196,105,248,0.6)", "rgba(252,101,29,0.6)"],
       borderColor: ["rgba(54,162,235,1.0)", "rgba(255,99,132,1.0)", "rgba(255,205,86,1.0)", "rgba(75,192,192,1.0)", "rgba(196,105,248,1.0)", "rgba(252,101,29,1.0)"],
@@ -344,24 +350,22 @@ permalink: /
   };
 
   var chartOptions = {
-    scale: {
-      ticks: {
-        beginAtZero: true,
-        min: 0,
-        max: 100,
-        stepSize: 20
-      }
+    scales: {
+      yAxes: [{
+          ticks: {
+              beginAtZero: true
+          }
+      }]
     },
     legend: {
-      position: "top"
+      display: false
     },
     responsive: true,
     maintainAspectRatio: false
   };
 
   var myInterestChart = new Chart(ctx, {
-      plugins: [ChartDataLabels],
-      type: 'polarArea',
+      type: 'bar',
       data: myInterestData,
       options: chartOptions
   });

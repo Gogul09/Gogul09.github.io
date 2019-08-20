@@ -3335,7 +3335,7 @@ del {
 
 .highlight-box {
   background-color: #d7fffd;
-  padding: 30px;
+  padding: 50px;
   margin-left: -50px;
   margin-right: -50px;
   border-bottom-left-radius: 3px;
@@ -3357,13 +3357,6 @@ del {
   color: #ff3636 !important;
   &:hover, &:active {
     text-decoration: underline;
-  }
-}
-
-.about-header-fix {
-  height: 185px;
-  @include mobile {
-    height: auto;
   }
 }
 
