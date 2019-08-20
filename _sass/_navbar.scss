@@ -11,6 +11,9 @@
 }
 
 .outer-wrapping a span {
+  top: 15px;
+  position: relative;
+  font-size: 11px;
   @include mobile {
     top: 15px;
     position: relative;
@@ -127,7 +130,7 @@ nav {
 .topnav a {
   color: #d5d2cd !important;
   text-align: center;
-  padding: 14px 16px;
+  padding: 20px 16px;
   text-decoration: none;
   font-size: 14px;
   margin: 0px 12px;
