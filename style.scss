@@ -25,9 +25,6 @@
 
 #main {
   min-height: 100vh;
-  @include mobile {
-    margin-top: 50px;
-  }
 }
 
 .container {
@@ -291,6 +288,7 @@ blockquote p {
   align-items: center;
   @include mobile {
     position: relative;
+    margin-bottom: 63px;
   }
 }
 
@@ -3070,15 +3068,15 @@ del {
   background-image: url("/images/icons/home.png");
   background-repeat: no-repeat;
   background-size: 20px;
-  background-position: center;
+  background-position: center 15px;
 }
 
 #nav_home:hover {
-  background-color: #d4141e;
+  background-color: #292929;
   border-radius: 5px;
   @include mobile {
       border-radius: 0;
-      background-color: #d4141e;
+      background-color: #292929;
     }
 }
 
@@ -3086,15 +3084,15 @@ del {
   background-image: url("/images/icons/creations.png");
   background-repeat: no-repeat;
   background-size: 20px;
-  background-position: center;
+  background-position: center 15px;
 }
 
 #nav_creations:hover {
-    background-color: #d4141e;
+    background-color: #292929;
     border-radius: 5px;
     @include mobile {
       border-radius: 0;
-      background-color: #d4141e;
+      background-color: #292929;
     }
 }
 
@@ -3102,15 +3100,15 @@ del {
   background-image: url("/images/icons/music.png");
   background-repeat: no-repeat;
   background-size: 20px;
-  background-position: center;
+  background-position: center 15px;
 }
 
 #nav_music:hover {
-    background-color: #d4141e;
+    background-color: #292929;
     border-radius: 5px;
     @include mobile {
       border-radius: 0;
-      background-color: #d4141e;
+      background-color: #292929;
     }
 }
 
@@ -3118,15 +3116,15 @@ del {
   background-image: url("/images/icons/photography.png");
   background-repeat: no-repeat;
   background-size: 25px;
-  background-position: center;
+  background-position: center 13px;
 }
 
 #nav_photography:hover {
-    background-color: #d4141e;
+    background-color: #292929;
     border-radius: 5px;
     @include mobile {
       border-radius: 0;
-      background-color: #d4141e;
+      background-color: #292929;
     }
 }
 
@@ -3134,15 +3132,15 @@ del {
   background-image: url("/images/icons/blog.png");
   background-repeat: no-repeat;
   background-size: 17px;
-  background-position: center;
+  background-position: center 15px;
 }
 
 #nav_blog:hover {
-    background-color: #d4141e;
+    background-color: #292929;
     border-radius: 5px;
     @include mobile {
       border-radius: 0;
-      background-color: #d4141e;
+      background-color: #292929;
     }
 }
 

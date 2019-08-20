@@ -6,7 +6,26 @@
   z-index: 2000;
   @include mobile {
     position: fixed;
-    top: 0;
+    bottom: 0;
+  }
+}
+
+.outer-wrapping a span {
+  @include mobile {
+    top: 15px;
+    position: relative;
+    font-size: 11px;
+    &:hover, &:active {
+      color: white !important;
+    }
+  }
+}
+
+.outer-wrapping a {
+  @include mobile {
+    &:hover, &:active {
+      color: white !important;
+    }
   }
 }
 
