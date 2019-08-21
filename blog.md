@@ -24,7 +24,7 @@ permalink: /blog
           <p>Learn how to design a chip using which you could create electronics applications.</p>
           {% for post in site.posts %}
             {% if post.categories contains 'hardware' %}
-              {% if post.class contains 'PD Concepts' or post.class contains 'STA Concepts' or post.class contains 'PDN Concepts' or post.class contains 'ML for PD' %}
+              {% if post.class contains 'ASIC Design' %}
                 {% capture asic_design_count %} {{ asic_design_count | plus: 1 }} {% endcapture %}
               {% endif %}
             {% endif %}
