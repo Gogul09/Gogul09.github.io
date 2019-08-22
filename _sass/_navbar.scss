@@ -5,6 +5,8 @@
   border: none;
   z-index: 2000;
   @include mobile {
+    background-color: #ffffff;
+    background-image: none;
     position: fixed;
     bottom: 0;
   }
