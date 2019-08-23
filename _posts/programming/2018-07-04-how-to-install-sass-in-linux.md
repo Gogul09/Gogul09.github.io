@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Tools
+class: Programming
 title: How to install SASS in Linux?
 description: Learn how to install SASS in linux so that you could use it to write neat and clean CSS.
 author: Gogul Ilango

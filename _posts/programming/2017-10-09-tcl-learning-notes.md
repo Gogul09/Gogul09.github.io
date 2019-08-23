@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Programming Languages
+class: Programming
 title: Tcl Learning Notes
 description: Understand the syntax and how to's of Tcl programming language which is highly used in VLSI and Networking companies.
 author: Gogul Ilango

@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: TensorFlow.js
+class: Deep Learning
 title: Recognizing Digits using TensorFlow.js in Google Chrome
 description: Learn how to recognize handwritten digits based on user's drawing in Google Chrome using a Deep Neural Network (Convolutional Neural Network and Multi-Layer Perceptron)
 permalink: software/digit-recognizer-tf-js

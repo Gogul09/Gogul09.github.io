@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Programming Languages
+class: Programming
 title: Pandas Learning Notes
 description: Understand the syntax and how to's of Pandas python package which is highly used for scientific computing and data manipulation.
 author: Gogul Ilango

@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Tools
+class: Programming
 title: How to install R and Shiny in Ubuntu?
 description: This tutorial is for beginners who need to install R, RStudio and Shiny in Ubuntu.
 author: Gogul Ilango

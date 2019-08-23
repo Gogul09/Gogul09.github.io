@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Programming Languages
+class: Programming
 title: JavaScript Learning Notes
 description: Understand the syntax and how to's of JavaScript programming language which is highly used in Front-end Web Development and Machine Learning.
 author: Gogul Ilango

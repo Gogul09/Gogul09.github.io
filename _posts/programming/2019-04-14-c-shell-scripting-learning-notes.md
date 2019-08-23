@@ -1,7 +1,7 @@
 ---
 layout: post-doc
 category: software
-class: Programming Languages
+class: Programming
 title: C Shell Scripting Learning Notes
 description: Learn the syntax and how to's of C Shell Scripting which is used to automate repeated manual tasks in most of the industries.
 author: Gogul Ilango

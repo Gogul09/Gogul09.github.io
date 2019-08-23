@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Tools
+class: Programming
 title: How to create a website in 15 minutes using Jekyll?
 description: Learn how to create your first website using Jekyll and host it for free using GitHub pages.
 author: Gogul Ilango

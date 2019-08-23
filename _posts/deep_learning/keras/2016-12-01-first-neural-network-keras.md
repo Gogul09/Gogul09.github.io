@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Keras
+class: Deep Learning
 title: 6 Steps to Create Your First Deep Neural Network using Keras and Python
 description: Learn how to create your first Deep Neural Network in few lines of code using Keras and Python
 author: Gogul Ilango

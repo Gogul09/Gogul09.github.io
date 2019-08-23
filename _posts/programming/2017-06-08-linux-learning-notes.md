@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Programming Languages
+class: Programming
 title: Linux Learning Notes
 description: Understand the syntax, commands and how to's of Linux which is highly used in tech companies.
 author: Gogul Ilango

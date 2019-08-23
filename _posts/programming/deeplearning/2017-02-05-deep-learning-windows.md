@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Environment Setup
+class: Programming
 title: Deep Learning Environment Setup for Windows
 description: This tutorial is for beginners who need to setup environment for Deep Learning in Windows 10.
 author: Gogul Ilango

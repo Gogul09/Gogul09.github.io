@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Front-End Web
+class: Programming
 title: How to create custom tables in HTML?
 description: Learn how to code custom table in HTML using rowspan and colspan attributes.
 author: Gogul Ilango

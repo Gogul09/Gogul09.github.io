@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Physics
+class: Deep Learning
 title: Deep Learning Meets Physics
 description: Let's understand what our universe is made of using Deep Learning and Machine Learning algorithms.
 permalink: software/deep-learning-meets-physics

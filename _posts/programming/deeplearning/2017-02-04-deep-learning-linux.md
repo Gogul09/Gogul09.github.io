@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Environment Setup
+class: Programming
 title: Deep Learning Environment Setup for Linux
 description: This tutorial is for beginners who need to setup environment for Deep Learning and Computer Vision in Linux.
 author: Gogul Ilango

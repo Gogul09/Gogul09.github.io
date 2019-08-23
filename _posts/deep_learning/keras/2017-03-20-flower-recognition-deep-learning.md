@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Keras
+class: Deep Learning
 title: Using Keras Pre-trained Deep Learning models for your own dataset
 description: Learn how to use state-of-the-art Deep Learning neural network architectures trained on ImageNet such as VGG16, VGG19, Inception-V3, Xception, ResNet50 for your own dataset with/without GPU acceleration.
 permalink: software/flower-recognition-deep-learning

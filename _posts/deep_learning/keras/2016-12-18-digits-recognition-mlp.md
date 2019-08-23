@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Keras
+class: Deep Learning
 title: Handwritten Digit Recognition using Deep Learning, Keras and Python
 description: Learn how to recognize handwritten digit using a Deep Neural Network called Multi-layer Perceptron (MLP).
 author: Gogul Ilango

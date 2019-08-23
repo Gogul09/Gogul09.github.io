@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Music
+class: Deep Learning
 title: Deep Learning meets Music
 description: Let's understand how to create music using Deep Learning and Machine Learning algorithms.
 permalink: software/deep-learning-for-music

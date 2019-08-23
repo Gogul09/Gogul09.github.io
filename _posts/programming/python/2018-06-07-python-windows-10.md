@@ -1,7 +1,7 @@
 ---
 layout: post
 category: software
-class: Environment Setup
+class: Programming
 title: Python Setup for Windows 10
 description: This tutorial is for beginners who need to setup environment for Python and its libraries in Windows 10.
 author: Gogul Ilango
