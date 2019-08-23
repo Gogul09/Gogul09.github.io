@@ -29,8 +29,7 @@
 }
 
 .splash-header {
-	background-color: #000000 !important;
-	background-image: url("/images/bg.png") !important;
+	background-color: #1b1b1b !important;
 	@include mobile {
 		background-color: #ffffff !important;
 		background-image: none !important
