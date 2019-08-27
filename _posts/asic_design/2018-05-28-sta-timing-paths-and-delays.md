@@ -168,7 +168,7 @@ Apart from the functionality based timing paths, there exist two types of timing
   <figcaption>Figure 5. Min and Max Timing Paths.</figcaption>
 </figure>
 
-In the next post, we will see how process, voltage and temperature are important factors when designing a chip.
+In the next post, we will understand various concepts involved in STA such as setup time, hold time, max delay, min delay etc.,
 
 ### References 
 

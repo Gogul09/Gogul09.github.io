@@ -1,0 +1,505 @@
+I"cy<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#time-complexity">Time Complexity</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#complexity-classes">Complexity Classes</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#linked-list">Linked List</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#bubble-sort">Bubble Sort</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#merge-sort">Merge Sort</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#quick-sort">Quick Sort</a></li>
+  </ul>
+</div>
+
+<h3 id="time-complexity">Time Complexity</h3>
+
+<p>Instead of asking, <em>how much time does it take to run a function</em>, in time complexity’s language, we ask <em>how does the runtime of a function grow?</em> To learn more about Big O notation and Time Complexity, please watch <a href="https://www.youtube.com/watch?v=D6xkbGLQesk" target="_blank">this</a> excellent video.</p>
+
+<div class="note">
+    <p><b>Finding Time Complexity</b></p>
+    <ul>
+        <li>Find the fastest growing term</li>
+        <li>Take out the coefficient</li>
+    </ul>
+</div>
+
+<ul>
+  <li>\(O(1)\) - Swap two numbers.</li>
+  <li>\(O(logn)\) - Search in a sorted array with binary search.</li>
+  <li>\(O(n)\) - Search for a maximum element in an unsorted array.</li>
+  <li>\(O(n*logn)\) - Merge Sort, Quick Sort, Heap Sort.</li>
+  <li>\(O(n^2)\) - Bubble Sort.</li>
+  <li>\(O(2^n)\) - Travelling Salesman Problem with Dynamic Programming.</li>
+  <li>\(O(n!)\) - Travelling Salesman Problem with Brute Force Search.</li>
+</ul>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=1oIw8LnBDfmWtKmDsbAdXvRSxmHNOQXSr" class="typical-image" />
+    <figcaption>Big O &amp; Time Complexity</figcaption>
+</figure>
+
+<h3 id="complexity-classes">Complexity Classes</h3>
+
+<ul>
+  <li>\(\text{P}\) - Polynomial
+    <ul>
+      <li>One of the most fundamental complexity classes.</li>
+      <li>Contains all decision problems that can be solved by a deterministic Turing machine.</li>
+      <li>\(\text{P}\) is the class of computational problems that are efficiently solvable.</li>
+      <li>Ex: sorting algorithms.</li>
+    </ul>
+  </li>
+  <li>\(\text{NP}\) - Non-deterministic Polynomial
+    <ul>
+      <li>If we have a solution to a problem, we can verify this solution in polynomial time (by a deterministic Turing machine).</li>
+      <li>For instance where the answer in Yes, have efficiently verifiable proofs of the fact that the answer is indeed yes.</li>
+      <li>The complexity class \(\text{P}\) is contained in \(\text{NP}\).</li>
+      <li>Most important question is \(\text{N}\) = \(\text{NP}\) is it true?</li>
+      <li>Ex: Integer Factorization, Travelling Salesman Problem.</li>
+    </ul>
+  </li>
+  <li>\(\text{NP complete}\)
+    <ul>
+      <li>A decision problem is \(\text{NP complete}\) when it is both in \(\text{NP}\) and \(\text{NP hard}\).</li>
+      <li>Although any given solution to an \(\text{NP complete}\) problem can be verified in polynomial time, there is no known efficient way to locate a solution in the first place.</li>
+      <li>We ususually just look for an approximate solution.</li>
+      <li>Ex: Chinese Postman Problem, Graph Coloring, Hamiltonian Cycle.</li>
+    </ul>
+  </li>
+  <li>\(\text{NP hard}\)
+    <ul>
+      <li>This is a class of problems that are at least as hard as the hardest problems in \(\text{NP}\).</li>
+      <li>A problem H is \(\text{NP hard}\) when every problem L in \(\text{NP}\) can be reduced in polynomial time to H.</li>
+      <li>As a consequence, finding a polynomial algorithm to solve any \(\text{NP hard}\) problem would give polynomial algorithms for all the problems in \(\text{NP}\).</li>
+      <li>Ex: Halting problem.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="linked-list">Linked List</h3>
+
+<div class="code-head"><span>code</span>linked_list.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+</pre></td><td class="rouge-code"><pre><span class="c1"># class to create a node that has data and pointer
+</span><span class="k">class</span> <span class="nc">node</span><span class="p">:</span> 
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c1"># class to create a linked list of nodes
+</span><span class="k">class</span> <span class="nc">linked_list</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">node</span><span class="p">()</span> 
+
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">new_node</span> <span class="o">=</span> <span class="n">node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">cur</span><span class="o">.</span><span class="nb">next</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="nb">next</span>
+        <span class="n">cur</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">new_node</span>
+
+    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">cur</span><span class="o">.</span><span class="nb">next</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="nb">next</span>
+        <span class="k">return</span> <span class="n">total</span>
+
+    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">elems</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">cur_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">cur_node</span><span class="o">.</span><span class="nb">next</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">cur_node</span> <span class="o">=</span> <span class="n">cur_node</span><span class="o">.</span><span class="nb">next</span>
+            <span class="n">elems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_node</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">elems</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">():</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"ERROR: index out of range!"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="n">cur_idx</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">cur_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">cur_node</span> <span class="o">=</span> <span class="n">cur_node</span><span class="o">.</span><span class="nb">next</span>
+            <span class="k">if</span> <span class="n">cur_idx</span> <span class="o">==</span> <span class="n">index</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">cur_node</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">cur_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">erase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">():</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"ERROR: index out of range!"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="n">cur_idx</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">cur_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">last_node</span> <span class="o">=</span> <span class="n">cur_node</span>
+            <span class="n">cur_node</span> <span class="o">=</span> <span class="n">cur_node</span><span class="o">.</span><span class="nb">next</span>
+            <span class="k">if</span> <span class="n">cur_idx</span> <span class="o">==</span> <span class="n">index</span><span class="p">:</span>
+                <span class="n">last_node</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">cur_node</span><span class="o">.</span><span class="nb">next</span>
+                <span class="k">return</span>
+            <span class="n">cur_idx</span> <span class="o">+=</span> <span class="mi">1</span> 
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">my_list</span> <span class="o">=</span> <span class="n">linked_list</span><span class="p">()</span>
+    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">my_list</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Element at 2nd index: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">my_list</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="n">my_list</span><span class="o">.</span><span class="n">erase</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Elements after erasing element at index 2"</span><span class="p">)</span>
+    <span class="n">my_list</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>[1, 2, 3, 4]
+Element at 2nd index: 3
+Elements after erasing element at index 2
+[1, 2, 4]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="bubble-sort">Bubble Sort</h3>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=12AOX_kQQ9hypZxMf7ISz7yNcCmL2SrzH" class="typical-image" />
+    <figcaption>Bubble Sort</figcaption>
+</figure>
+
+<div class="code-head"><span>code</span>bubble_sort.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># create randomized array of length "length"
+# array integers are of range 0, maxint
+</span><span class="k">def</span> <span class="nf">create_array</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">maxint</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">new_arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxint</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">new_arr</span>
+
+<span class="c1">#-------------------------------------
+# bubble sort algorithm to input array
+#-------------------------------------
+</span><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">swapped</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">while</span> <span class="n">swapped</span><span class="p">:</span>
+        <span class="n">swapped</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">swapped</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="n">arr</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">create_array</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">bubble_sort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>[37, 36, 13, 12, 43, 4, 32, 14, 32, 4]
+[4, 4, 12, 13, 14, 32, 32, 36, 37, 43]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="merge-sort">Merge Sort</h3>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=13bP9IE_XhDD6dympWB5DqGIhKfgefEsT" class="typical-image" />
+    <figcaption>Merge Sort</figcaption>
+</figure>
+
+<div class="code-head"><span>code</span>merge_sort.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># create randomized array of length "length"m
+# array integers are of range 0, maxint
+</span><span class="k">def</span> <span class="nf">create_array</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">maxint</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">new_arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxint</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">new_arr</span>
+
+<span class="c1">#-------------------------------------
+# merge sort to combine two arrays
+#-------------------------------------
+</span><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="c1"># final output array
+</span>    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">a_idx</span><span class="p">,</span> <span class="n">b_idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">a_idx</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">and</span> <span class="n">b_idx</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">a_idx</span><span class="p">]</span><span class="o">&lt;</span><span class="n">b</span><span class="p">[</span><span class="n">b_idx</span><span class="p">]:</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a_idx</span><span class="p">])</span>
+            <span class="n">a_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">b_idx</span><span class="p">])</span>
+            <span class="n">b_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">a_idx</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">):</span> <span class="n">c</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">b_idx</span><span class="p">:])</span>
+    <span class="k">else</span><span class="p">:</span>               <span class="n">c</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a_idx</span><span class="p">:])</span>
+
+    <span class="k">return</span> <span class="n">c</span>
+
+<span class="c1">#-------------------------------------
+# merge sort algorithm to input array
+#-------------------------------------
+</span><span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+
+    <span class="c1"># a list of zero or one elements is sorted, by definition
+</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="n">a</span>
+
+    <span class="c1"># split the list in half and call merge sort recursively on each half
+</span>    <span class="n">mid</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">a</span><span class="p">[:</span><span class="n">mid</span><span class="p">]),</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">:])</span>
+
+    <span class="c1"># merge the now-sorted sublists
+</span>    <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">create_array</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>[45, 8, 25, 1, 32, 37, 34, 3, 4, 3]
+[1, 3, 3, 4, 8, 25, 32, 34, 37, 45]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="quick-sort">Quick Sort</h3>
+
+<figure>
+    <img src="https://drive.google.com/uc?id=15Gj4lbSkyka2zTIz2EwSkELfTWjOj-k9" class="typical-image" />
+    <figcaption>Quick Sort</figcaption>
+</figure>
+
+<div class="code-head"><span>code</span>quick_sort.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># create randomized array of length "length"m
+# array integers are of range 0, maxint
+</span><span class="k">def</span> <span class="nf">create_array</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">maxint</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">new_arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxint</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">new_arr</span>
+
+<span class="c1"># quick sort algorithm to input array
+</span><span class="k">def</span> <span class="nf">quick_sort</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+
+    <span class="c1"># a list of zero or one elements is sorted, by definition
+</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="n">a</span>
+
+    <span class="c1"># list to hold values based on pivot
+</span>    <span class="n">smaller</span><span class="p">,</span> <span class="n">equal</span><span class="p">,</span> <span class="n">larger</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+
+    <span class="c1"># choose a random pivot element
+</span>    <span class="n">pivot</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+
+    <span class="c1"># iterate over each element and compare with pivot  
+</span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">pivot</span><span class="p">:</span>     <span class="n">smaller</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">x</span><span class="o">==</span><span class="n">pivot</span><span class="p">:</span>  <span class="n">equal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>           <span class="n">larger</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="c1"># recursively quick sort sub list and concatenate
+</span>    <span class="k">return</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">smaller</span><span class="p">)</span> <span class="o">+</span> <span class="n">equal</span> <span class="o">+</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">larger</span><span class="p">)</span> 
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">create_array</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>[3, 27, 12, 8, 12, 39, 1, 2, 23, 8]
+[1, 2, 3, 8, 8, 12, 12, 23, 27, 39]
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

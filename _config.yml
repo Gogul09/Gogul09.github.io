@@ -55,5 +55,9 @@ exclude:
   - README.md
   - CNAME
 
+plugins: 
+  - jekyll-paginate
+  - jekyll-seo-tag
+
 paginate: 4
 excerpt_separator: <!--more-->
