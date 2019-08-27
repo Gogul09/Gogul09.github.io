@@ -1362,7 +1362,7 @@ figcaption {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   cursor: pointer;
-  background-color: #ffe6a2;
+  background-color: #fff4d6;
   margin-left: -65px;
   margin-right: -65px;
   @include mobile {
@@ -1370,7 +1370,7 @@ figcaption {
     margin-right: -15px;
   }
   &:hover, &:active {
-    background-color: #ffd381;
+    box-shadow: 2px 5px 6px rgba(72, 72, 72, 0.14);
   }
   p {
     margin: 0px !important;
