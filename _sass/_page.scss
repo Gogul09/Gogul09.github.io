@@ -78,6 +78,9 @@
 .post-heading img {
     height: 70px;
     margin: 20px auto;
+    @include mobile {
+      height: 50px;
+    }
 }
 
 .post-heading p {

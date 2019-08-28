@@ -13,7 +13,7 @@ image: https://drive.google.com/uc?id=1kpEvCKb6ETgknBQzIqPu3ihThz_FZ9uK
 
 In this page, you will find the **syntax** and **most common how to's** of Pandas in Python. This might be useful for python beginners to find syntax and code quickly online in a single page.
 
-<div class="math-cover">
+<div class="objectives">
     <h3>Contents</h3>
     <div class="toc-box">
         <ul>
