@@ -43,8 +43,6 @@ cardimage: https://drive.google.com/uc?id=1p_P1leDBQaVQqo4BmGwNywt9N_tAZpFD
   </ul>
 </div>
 
-<p class="hundred-days"><span>#100DaysOfMLCode</span></p>
-
 <p class="intro-para">
 In this blog post, we will quickly understand how to use state-of-the-art Deep Learning models in <a href="https://keras.io/" target="_blank">Keras</a> to solve a supervised image classification problem using our own dataset with/without GPU acceleration.
 </p>
@@ -95,12 +93,6 @@ The Deep Neural Net architectures that won the ImageNet challenge are made publi
 * InceptionV3
 * InceptionResNetV2
 * MobileNet
-
-<div class="note">
-<p>
-<b>Update (16/12/2017):</b> After installing Anaconda with Python 3.6 to work with TensorFlow in Windows 10, I found two additional pretrained models added to Keras applications module - <b>InceptionResNetV2</b> and <b>MobileNet</b>. I have updated my code accordingly to enable these models to work for our own dataset.
-</p>
-</div>
 
 The [applications](https://github.com/fchollet/keras/tree/master/keras/applications){:target="_blank"} module of Keras provides all the necessary functions needed to use these pre-trained models right away.
 
@@ -371,10 +363,6 @@ This is the configuration file or the settings file we will be using to provide 
 ```
 
 Here, I have decided to use <span class="coding">inceptionv3</span> architecture of GoogleNet pre-trained on <span class="coding">imagenet</span> including the top layers. You can extract features from any arbitrary layer using the layer name (eg: <span class="coding">flatten</span>), by checking the <span class="coding">.py</span> file of each of the model residing inside the <span class="coding">applications</span> directory of Keras.
-
-<div class="note">
-<p><b>Update (10/06/2018)</b>: If you use <a href="https://github.com/keras-team/keras/releases" target="_blank">Keras 2.2.0</a> version, then you will not find the <span class="coding">applications</span> module inside keras installed directory. Keras has externalized the <span class="coding">applications</span> module to a separate directory called <a href="https://github.com/keras-team/keras-applications" target="_blank">keras_applications</a> from where all the pre-trained models will now get imported. To make changes to any <b>&lt;pre-trained_model&gt;.py</b> file, simply go to the below directory where you will find all the pre-trained models <b>.py</b> files.</p>
-</div>
 
 <div class="code-head"><span>path</span>New applications module (Keras 2.2.0)</div>
 ```
@@ -723,12 +711,6 @@ The below tables shows the accuracies obtained for each pretrained model used to
 | Inception<br>ResNetV2     | 88.48%          | 99.51%          |
 
 Notice how InceptionV3 outperforms the other Deep Neural Net architectures. This could mainly be due to the presence of 9 network-in-a-network modules codenamed as Inception modules which applies different convolutional filter sizes parallely to an input volume and concatenates the result at output. More details about this can be found in this astounding paper by C. Szegedy et al. - [Going Deeper with Convolutions](https://arxiv.org/abs/1409.4842){:target="_blank"}.
-
-<div class="note">
-<p>
-<b>Update (16/12/2017):</b> You could also see the new MobileNet architecture achieves the best accuracy compared to other architectures. In addition, I found that MobileNet uses DepthwiseConvolution layers and has lesser number of parameters, reduced weights size and depth. More details about this can be found at - <a href="https://arxiv.org/pdf/1704.04861.pdf" target="_blank">MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications</a>.	
-</p>
-</div>
 
 Thus, we have built our own Flower Species Recognition System using Deep Neural Nets and Keras. Our system is able to obtain much higher accuracies than state-of-the-art accuracies (which mostly used hand-crafted features for shape, color and texture representations) in this FLOWERS17 dataset. Using this procedure, you could use these pretrained models for your own image dataset and reduce the time consumed to construct a deep neural net from scratch.
 

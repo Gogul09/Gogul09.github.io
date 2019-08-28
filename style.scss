@@ -224,8 +224,6 @@
     padding: 20px 0px;
     font-size: 22px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    margin-left: -65px;
-    margin-right: -65px;
     @include mobile {
       margin-left: -15px;
       margin-right: -15px;
@@ -1299,7 +1297,7 @@ figcaption {
 }
 
 .containing {
-  background-color: #fbfbfb;
+  background-color: #ffffff;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -1312,7 +1310,6 @@ figcaption {
 .post-cover {
   padding: 20px 40px;
   padding-bottom: 40px;
-  box-shadow: 1px 6px 16px rgba(164, 164, 164, 0.32);
   @include mobile {
     padding: 0px;
     padding-top: 1px;
@@ -1327,7 +1324,6 @@ figcaption {
   margin: 0px auto;
   background-color: white;
   border-radius: 5px;
-  margin-top: -70px;
 
   @include mobile {
     max-width: 680px;
@@ -1363,11 +1359,10 @@ figcaption {
   position: relative;
   cursor: pointer;
   background-color: #fff4d6;
-  margin-left: -65px;
-  margin-right: -65px;
   @include mobile {
     margin-left: -15px;
     margin-right: -15px;
+    padding: 30px 15px;
   }
   &:hover, &:active {
     box-shadow: 2px 5px 6px rgba(72, 72, 72, 0.14);
@@ -1696,8 +1691,6 @@ figure {
   border-radius: 3px;
   max-width: 900px;
   margin: 50px auto;
-  margin-left: -65px;
-  margin-right: -65px;
   text-align:center; 
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   padding-left: 30px;
@@ -1990,8 +1983,6 @@ figure {
   background-size: 50px;
   overflow-x: scroll;
   white-space: nowrap;
-  margin-left: -65px;
-  margin-right: -65px;
   margin-top: -25px;
   border-top: 0px !important;
   @include mobile {
@@ -2019,8 +2010,8 @@ u {
 .show-comments p {
   background-color: #ffc455;
   text-align: center;
-  padding: 20px;
-  width: 40%;
+  padding: 15px;
+  width: 200px;
   margin: 10px auto;
   font-weight: bold;
   margin-top: 0px;
@@ -2073,8 +2064,6 @@ u {
   font-size: 12px;
   font-family: monospace;
   font-weight: 100;
-  margin-left: -65px;
-  margin-right: -65px;
   margin-top: 20px !important;
   margin-bottom: 0px !important;
   padding: 10px;
@@ -2892,8 +2881,7 @@ del {
 }
 
 .music-top-container {
-  background-color: #000000;
-  background-image: url("/images/bg.png");
+  background-color: #222222;
   box-shadow: 0 8px 6px -6px #e9e9e9;
 }
 
@@ -3245,8 +3233,6 @@ del {
   padding: 10px 30px;
   border-radius: 4px;
   margin: 30px 0;
-  margin-left: -65px;
-  margin-right: -65px;
   @include mobile {
     padding: 10px 15px;
     margin-left: -15px;
@@ -3259,8 +3245,6 @@ del {
   padding: 10px 30px;
   border-radius: 4px;
   margin: 30px 0;
-  margin-left: -65px;
-  margin-right: -65px;
   @include mobile {
     padding: 10px 15px;
     margin-left: -15px;
@@ -3373,7 +3357,7 @@ del {
 }
 
 .highlight-box {
-  background-color: #d7fffd;
+  background-color: #eefffe;
   padding: 50px;
   margin-left: -50px;
   margin-right: -50px;
@@ -3401,9 +3385,7 @@ del {
 
 .objectives {
   background-color: #fbfbfb;
-  padding: 30px 60px;
-  margin-left: -65px;
-  margin-right: -65px;
+  padding: 30px;
   @include mobile {
     padding: 30px 15px;
     margin-left: -15px;

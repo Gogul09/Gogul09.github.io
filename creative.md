@@ -21,7 +21,6 @@ permalink: /creations/
       <!--Demo STARTS-->
       <div style="display: block !important;">
         <div class="category-box">
-          <h4 class="diamond-header">javascript</h4>
           <ul>
             {% for post in site.posts %}
               {% if post.category contains 'software' %}
@@ -39,7 +38,6 @@ permalink: /creations/
               {% endif %}
             {% endfor %}
           </ul>
-          <h4 class="diamond-header">android</h4>
           <ul>
             <li>
               <div class='demo_box'>
@@ -58,7 +56,6 @@ permalink: /creations/
               </div>
             </li>
           </ul>
-          <h4 class="diamond-header">teachings</h4>
           <ul>
             <li>
               <div class='demo_box'>
