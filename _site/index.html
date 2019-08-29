@@ -68,9 +68,12 @@
 
       <div class="splash-main">
         <div class="blog-intro grad-about about-header-fix">
-  <div>
-    <h1>gogul ilango</h1>
-    <p>engineer | programmer | music producer</p>
+  <div class="profile-wrapper">
+    <div class="profile-pic"><img src="/images/gogul.png" /></div>
+    <div class="profile-description">
+      <h1>gogul ilango</h1>
+      <p>engineer | programmer | music producer</p>
+    </div>
   </div>
   <div class="home-follow-wrapper">
     <div class="home-follow">
@@ -107,36 +110,17 @@
               <a href="https://www.youtube.com/c/GogulIlangoMusic" target="_blank"><img src="/images/icons/youtube.png" title="YouTube" /></a>
             </div>
           <p class="about-quote">"There are no constraints on the human mind, no walls around the human spirit, no barriers to our progress except those we ourselves erect" <br />Ronald Reagan</p>
-          <p style="margin-top: 0px !important;"><b class="hi">Hi!</b><br />I'm Gogul Ilango. I have strong passion towards creating useful products that make people's life better with focus on Aesthetic, Creative Design and Engineering. I always feel grateful for my existence in this vast mighty universe surrounded by billions of stars, trillions of planets and billions of human beings.</p>
-          <p>Currently, I work as a <a href="https://en.wikipedia.org/wiki/Integrated_circuit_design" target="_blank">Digital IC Design Engineer</a> + <a href="https://medium.com/udacity/what-is-a-full-stack-web-developer-and-why-should-i-become-one-6e93d0c774b6" target="_blank">Full Stack Web Developer</a>, who helps a team of intelligent minds at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a> in designing cutting-edge chipsets that millions of people around the world use it in their everyday life.</p>
-          <p>I am a life-long learner who constantly enrich his mind through knowledge acquired using free learning platforms such as <a href="https://www.coursera.org/" target="_blank">Coursera</a>, <a href="https://www.khanacademy.org" target="_blank">Khan Academy</a>, <a href="https://brilliant.org/" target="_blank">Brilliant</a>, <a href="https://www.udemy.com/" target="_blank">Udemy</a>, useful tech/science videos in <a href="https://www.youtube.com/" target="_blank">YouTube</a> and of course, using books.</p>
-          <br />
-          <div class="about-material-box">
-          <h4>Education</h4>
-            <p><b>Masters in VLSI Design and Embedded Systems</b>
-            <br />Anna University, MIT Campus, Chennai | Gold Medal | 9.96/10</p>
-            <p><b>Bachelors in Electronics and Communication Engineering</b>
-            <br />Thiagarajar College of Engineering, Madurai | First Class with Distinction | 9.05/10</p>
-          </div>
-          <br />
-          <h4>Interests</h4>
-          <div style="height: 300px">
-            <canvas id="interest-chart"></canvas>
-          </div>
-          <br />
-          <h4>This website</h4>
-          <p>Coming from a middle-class background, I always have the thirst to enrich my mind through knowledge and have an irresistible curiosity to explore the universe we live in.</p>
-          <p>During my masters, I thought of making a static website to improve my writing skills. In this website, you will find collection of my thoughts, notes, tutorials and resources based on my experience in technology. I still learn by myself about the technical topics that I write here so that I get a clear understanding of it.</p>
-          <p>I do this mainly during my free time because</p>
+          <p style="margin-top: 0px !important;"><b class="hi">Hi!</b><br />I'm Gogul Ilango. I work as a Physical Design Engineer at Qualcomm who helps a team of intelligent minds in designing cutting-edge chipsets that millions of people around the world use in their everyday life. Before joining Qualcomm, I was an intern at Nokia where I learnt about automation, web development, machine learning and deep learning.
+          </p>
+          <p>I completed my masters in VLSI design and embedded systems from Anna University, MIT Campus, Chennai with a gold medal and CGPA - 9.96/10. I completed my bachelors in electronics and communication engineering from Thiagarajar College of Engineering, Madurai with a CGPA - 9.05/10.</p>
+          <p>In this website, you will find collection of my thoughts, notes, tutorials and resources based on my experience in technology. I still learn by myself about the technical topics that I write here so that I get a clear understanding of it. I do this mainly during my free time because</p>
           <ul>
             <li>It helps me learn these topics better by making me read, write and evaluate myself first before sharing it here.</li>
             <li>It provides me a chance to organize my technical interests so that I can refer to it later.</li>
             <li>It gives me a chance to share my knowledge with the world where it might help someone somewhere.</li>
           </ul>
-          <p>I also share resources to help students find useful information in the internet. If you like my <a href="https://gogul09.github.io/blog" target="_blank">posts</a>, kindly share it with people interested in these topics. It really mean so much to me. Hope you find useful content in my <a href="https://gogul09.github.io/blog" target="_blank">blog</a>.</p>
-          <br />
-          <h4>Hobbies</h4>
-          <p>Apart from tech, I love music and art. I like creating tunes, producing and arranging music using Digital Audio Workstations (DAWs), playing keyboard, guitar, ukulele and writing lyrics. You can listen to my music <a href="https://gogul09.github.io/music" target="_blank">here</a>.</p>
+          <p>If you like my <a href="https://gogul09.github.io/blog" target="_blank">posts</a>, kindly share it with people interested in these topics. It really mean so much to me. Hope you find useful content in my <a href="https://gogul09.github.io/blog" target="_blank">blog</a>.</p>
+          <p>I love music and you can hear my contributions <a href="https://gogul09.github.io/music" target="_blank">here</a>.</p>
           <div class="highlight-box">
             <p>In case you're wondering, this site </p>
             <ul style="margin: 0px !important;">
@@ -395,42 +379,6 @@
   document.getElementById("box_summary").style.display = "block";
   document.getElementById("tab_summary").style.backgroundColor = "rgb(255, 234, 130)";
   document.getElementById("tab_summary").style.fontWeight = "bold";
-  
-  var ctx = document.getElementById('interest-chart').getContext('2d');
-
-  Chart.Legend.prototype.afterFit = function() {
-      this.height = this.height + 20;
-  };
-  
-  var myInterestData = {
-    labels: ['Hardware', 'Software', 'Design', 'Music', "Science", "Sports"],
-    datasets: [{
-      backgroundColor: ["rgba(54,162,235,0.6)", "rgba(255,99,132,0.6)", "rgba(255,205,86,0.6)", "rgba(75,192,192,0.6)", "rgba(196,105,248,0.6)", "rgba(252,101,29,0.6)"],
-      borderColor: ["rgba(54,162,235,1.0)", "rgba(255,99,132,1.0)", "rgba(255,205,86,1.0)", "rgba(75,192,192,1.0)", "rgba(196,105,248,1.0)", "rgba(252,101,29,1.0)"],
-      data: [70, 90, 100, 80, 60, 65]
-    }]
-  };
-
-  var chartOptions = {
-    scales: {
-      yAxes: [{
-          ticks: {
-              beginAtZero: true
-          }
-      }]
-    },
-    legend: {
-      display: false
-    },
-    responsive: true,
-    maintainAspectRatio: false
-  };
-
-  var myInterestChart = new Chart(ctx, {
-      type: 'bar',
-      data: myInterestData,
-      options: chartOptions
-  });
 </script>
 
 

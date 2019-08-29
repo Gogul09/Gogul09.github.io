@@ -233,7 +233,7 @@
 }
 
 .grad-about {
-  background-color: #222222;
+  background-color: $black;
   @include mobile {
     border-bottom: 0px;
   }

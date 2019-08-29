@@ -29,7 +29,7 @@
 }
 
 .splash-header {
-	background-color: #1b1b1b !important;
+	background-color: $black !important;
 	@include mobile {
 		background-color: #ffffff !important;
 		background-image: none !important
@@ -83,4 +83,36 @@
     width: 100%;
     text-align: center;
     align-items: center;
+}
+
+.profile-pic {
+	width: 30% !important;
+}
+
+.profile-wrapper {
+	display: flex;
+	flex-direction: column;
+	@include mobile {
+		flex-direction: row;
+	}
+}
+
+.profile-pic img {
+	height: 100px;
+	@include mobile {
+		height: 80px;
+	}
+}
+
+.profile-description {
+	flex: 1;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-description p {
+	@include mobile {
+    	font-size: 11px !important;
+	}
 }
