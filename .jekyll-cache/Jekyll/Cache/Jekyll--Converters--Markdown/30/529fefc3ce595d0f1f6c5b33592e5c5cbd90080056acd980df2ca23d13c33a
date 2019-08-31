@@ -1,25 +1,15 @@
----
-layout: splash
-heading: gogul ilango
-title: Gogul Ilango
-subheading: engineer | programmer | music producer
-description: Personal Website
-color: grad-about
-permalink: /
----
-
-<div class="blog-intro {{ page.color }} about-header-fix">
+I"»P<div class="blog-intro grad-about about-header-fix">
   <div class="profile-wrapper">
     <div class="profile-pic"><img src="/images/gogul.png" /></div>
     <div class="profile-description">
-      <h1>{{ page.heading }}</h1>
-      <p>{{ page.subheading }}</p>
+      <h1>gogul ilango</h1>
+      <p>engineer | programmer | music producer</p>
     </div>
   </div>
   <div class="home-follow-wrapper">
     <div class="home-follow">
-      <script async defer src="https://buttons.github.io/buttons.js"></script>
-      <a href="https://twitter.com/gogul_ilango?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="true">Follow @gogul_ilango</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+      <a href="https://twitter.com/gogul_ilango?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="true">Follow @gogul_ilango</a><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" data-size="large" aria-label="Follow @Gogul09 on GitHub">Follow</a>
     </div>
   </div>
@@ -50,16 +40,16 @@ permalink: /
               <a href="https://soundcloud.com/gogul" target="_blank"><img src="/images/icons/soundcloud.png" title="SoundCloud" /></a>
               <a href="https://www.youtube.com/c/GogulIlangoMusic" target="_blank"><img src="/images/icons/youtube.png" title="YouTube" /></a>
             </div>
-          <p class="about-quote">"There are no constraints on the human mind, no walls around the human spirit, no barriers to our progress except those we ourselves erect" <br>Ronald Reagan</p>
-          <p style="margin-top: 0px !important;"><b class='hi'>Hi!</b><br>I'm Gogul Ilango. I work as a Physical Design Engineer at Qualcomm who helps a team of intelligent minds in designing cutting-edge chipsets that millions of people around the world use in their everyday life.
+          <p class="about-quote">"There are no constraints on the human mind, no walls around the human spirit, no barriers to our progress except those we ourselves erect" <br />Ronald Reagan</p>
+          <p style="margin-top: 0px !important;"><b class="hi">Hi!</b><br />I'm Gogul Ilango. I work as a Physical Design Engineer at Qualcomm who helps a team of intelligent minds in designing cutting-edge chipsets that millions of people around the world use in their everyday life.
           </p>
           <h4>Timeline</h4>
           <ul>
-            <li><b>2017-now</b>  - Qualcomm, Chennai - ASIC Physical Design & Signoff, Full-stack Web Development & Machine Learning.</li>
-            <li><b>2016-2017</b> - Nokia, Chennai - Internship with focus on Automation, Python, Web Development & Machine Learning.</li>
-            <li><b>2015-2017</b> - Anna University, MIT Campus, Chennai - Master of Engineering in VLSI Design & Embedded Systems (CGPA 9.96/10) - Adviser <a href="https://www.sathieshkumar.com/" target="_blank">Dr.Sathiesh Kumar</a>.</li>
+            <li><b>2017-now</b>  - Qualcomm, Chennai - ASIC Physical Design &amp; Signoff, Full-stack Web Development &amp; Machine Learning.</li>
+            <li><b>2016-2017</b> - Nokia, Chennai - Internship with focus on Automation, Python, Web Development &amp; Machine Learning.</li>
+            <li><b>2015-2017</b> - Anna University, MIT Campus, Chennai - Master of Engineering in VLSI Design &amp; Embedded Systems (CGPA 9.96/10) - Adviser <a href="https://www.sathieshkumar.com/" target="_blank">Dr.Sathiesh Kumar</a>.</li>
             <li><b>2014-2015</b> - TATA Consultancy Services, Chennai - Front-end Web Development, Android Development.</li>
-            <li><b>2010-2014</b> - Thiagarajar College of Engineering, Madurai - Bachelor of Engineering in Electronics & Communication (CGPA 9.05/10).</li>
+            <li><b>2010-2014</b> - Thiagarajar College of Engineering, Madurai - Bachelor of Engineering in Electronics &amp; Communication (CGPA 9.05/10).</li>
           </ul>
           <p>In this website, you will find collection of my thoughts, notes, tutorials and resources based on my experience in technology. I still learn by myself about the technical topics that I write here so that I get a clear understanding of it. I do this mainly during my free time because</p>
           <ul>
@@ -119,8 +109,8 @@ permalink: /
               </div>
             </li>
           </ul>
-          <br>
-          <br>
+          <br />
+          <br />
         </div>
       </div>
       <!--Publications ENDS-->
@@ -130,42 +120,42 @@ permalink: /
           <div class="moocs_slides">
             <h4>Applied Machine Learning in Python</h4>
             <figure>
-              <img src="https://drive.google.com/uc?id=18zw5eUTcMejkAPtpoB9_OZ3SpRijg8v5">
+              <img src="https://drive.google.com/uc?id=18zw5eUTcMejkAPtpoB9_OZ3SpRijg8v5" />
             </figure>
             <a href="https://www.coursera.org/account/accomplishments/verify/KYMRAB63WF8Q" target="_blank">Credential</a>
           </div>
           <div class="moocs_slides">
             <h4>Neural Networks and Deep Learning</h4>
             <figure>
-              <img src="https://drive.google.com/uc?id=16fjEyxNIu6tHwgx5KLIegD-mxRWjkdmc">
+              <img src="https://drive.google.com/uc?id=16fjEyxNIu6tHwgx5KLIegD-mxRWjkdmc" />
             </figure>
             <a href="https://www.coursera.org/account/accomplishments/verify/8WBUXEEL363X" target="_blank">Credential</a>
           </div>
           <div class="moocs_slides">
             <h4>Sequence Models</h4>
             <figure>
-              <img src="https://drive.google.com/uc?id=16PQopAM83OWcaq8vnMH2FVlDSIqOAsmw">
+              <img src="https://drive.google.com/uc?id=16PQopAM83OWcaq8vnMH2FVlDSIqOAsmw" />
             </figure>
             <a href="https://www.coursera.org/account/accomplishments/verify/WJJGDMT2XKD4" target="_blank">Credential</a>
           </div>
           <div class="moocs_slides">
             <h4>Introduction to TensorFlow for Artificial Intelligence, Machine Learning and Deep Learning</h4>
             <figure>
-              <img src="https://drive.google.com/uc?id=1Sk6CuHLVqsRAa30c9stDtMnx3fi_cYTz">
+              <img src="https://drive.google.com/uc?id=1Sk6CuHLVqsRAa30c9stDtMnx3fi_cYTz" />
             </figure>
             <a href="https://www.coursera.org/account/accomplishments/verify/4VDRRPKYF9EG" target="_blank">Credential</a>
           </div>
           <div class="moocs_slides">
             <h4>Convolutional Neural Networks in TensorFlow</h4>
             <figure>
-              <img src="https://drive.google.com/uc?id=1eXRT4At8n16y8J0dyFFFiQwLBR5q0RG_">
+              <img src="https://drive.google.com/uc?id=1eXRT4At8n16y8J0dyFFFiQwLBR5q0RG_" />
             </figure>
             <a href="https://www.coursera.org/account/accomplishments/verify/XCW2KCHMWCDZ" target="_blank">Credential</a>
           </div>
           <div class="moocs_slides">
             <h4>Natural Language Processing in TensorFlow</h4>
             <figure>
-              <img src="https://drive.google.com/uc?id=1DlkXBG2Np7kz945EFmF4fT57oRkwXmXQ">
+              <img src="https://drive.google.com/uc?id=1DlkXBG2Np7kz945EFmF4fT57oRkwXmXQ" />
             </figure>
             <a href="https://www.coursera.org/account/accomplishments/verify/GEM478PB2SQ9" target="_blank">Credential</a>
           </div>
@@ -183,7 +173,7 @@ permalink: /
           <ul>
             <li>
               <div>
-                <h4>DeepDrum & DeepArp</h4>
+                <h4>DeepDrum &amp; DeepArp</h4>
                 <p>Used Google Magenta's DrumsRNN and ImprovRNN to generate drum patterns and arpeggio patterns based on user's seed pattern. Created timeline and multiple pattern generation in a single browser window using JavaScript.</p>
                 <p><i>Tools used: HTML5, CSS3, JavaScript, Magenta.js, TensorFlow.js, Tonal.js, jquery.</i></p>
                 <a href="https://gogul09.github.io/software/deep-drum" target="_blank">demo</a> | 
@@ -298,15 +288,15 @@ permalink: /
               </div>
             </li>
           </ul>
-          <br>
-            <br>
+          <br />
+            <br />
         </div>
       </div>
       <!--Projects ENDS-->
       <!--Earth STARTS-->
       <div class="blog-category-box work-category-box about-category-box" id="box_earth" style="box-shadow: none !important;">
         <div class="work-inner-box">
-          <div class='about-map-earth'>
+          <div class="about-map-earth">
             <iframe src="https://www.google.com/maps/d/u/2/embed?mid=1wWqeUbFThpB3hZgfNVjOB8JeEAFFLtvw"></iframe>
           </div>
         </div>
@@ -317,10 +307,15 @@ permalink: /
 </div>
 
 <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
+
 <script type="text/javascript">
   document.getElementById("box_summary").style.display = "block";
   document.getElementById("tab_summary").style.backgroundColor = "rgb(255, 234, 130)";
   document.getElementById("tab_summary").style.fontWeight = "bold";
 </script>
+
+:ET

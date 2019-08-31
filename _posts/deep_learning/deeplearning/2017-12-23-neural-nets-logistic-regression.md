@@ -43,7 +43,7 @@ cardimage: https://drive.google.com/uc?id=1lJRANugElZw2CAIJPTRUabWNqDNO_8ud
   </ul>
 </div>
 
-Before understanding the math behind a Deep Neural Network and implementing it in code, it is better to get a mindset of how Logistic Regression could be modelled as a simple Neural Network that actually learns from data.
+Before understanding the math behind a Deep Neural Network and implementing it in code, it is better to get a mindset of how Logistic Regression algorithm could be modelled as a simple Neural Network that actually learns from data. Implementing AI algorithms from scratch gives you that "ahha" moment and confidence to build your own algorithms in future.
 
 > **Update**: As Python2 faces [end of life](https://pythonclock.org/), the below code only supports **Python3**.
 
@@ -64,6 +64,16 @@ A look at what we will be building at the end of this tutorial is shown below. A
   <img src="/images/software/logistic-regression/out.gif">
   <figcaption>Figure 1. Binary Classification using Logistic Regression Neural Network model</figcaption>
 </figure>
+
+<h3 id="prerequisites">Prerequisites</h3> 
+
+Before reading this tutorial, you must have some basic understanding of the following.
+
+* Image processing
+* [Python](https://gogul09.github.io/software/python-learning-notes){:target="_blank"}
+* [Numpy](https://gogul09.github.io/software/numpy-learning-notes){:target="_blank"}
+* Linear algebra
+* Calculus
 
 <h3 id="image-as-a-vector">Image as a vector</h3> 
 
