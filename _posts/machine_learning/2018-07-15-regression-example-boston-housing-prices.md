@@ -879,13 +879,16 @@ plt.close()
 </figure>
 
 
-### References
-
-1. [Dataset exploration: Boston house pricing](http://www.neural.cz/dataset-exploration-boston-house-pricing.html){:target="_blank"}
-2. [A simple regression analysis on the Boston housing data](https://www.scipy-lectures.org/packages/scikit-learn/auto_examples/plot_boston_prediction.html){:target="_blank"}
-3. [Learning Data Science: Day 9 - Linear Regression on Boston Housing Dataset](https://medium.com/@haydar_ai/learning-data-science-day-9-linear-regression-on-boston-housing-dataset-cd62a80775ef){:target="_blank"}
-4. [sklearn.datasets.load_boston](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html){:target="_blank"}
-5. [Predicting Boston Housing Prices](https://www.ritchieng.com/machine-learning-project-boston-home-prices/){:target="_blank"}
-6. [Predicting House Prices with Machine Learning](https://www.kaggle.com/erick5/predicting-house-prices-with-machine-learning){:target="_blank"}
+<div class="references">
+<h3 id="references">References</h3>
+<ul>
+  <li><a href="http://www.neural.cz/dataset-exploration-boston-house-pricing.html" target="_blank">Dataset exploration: Boston house pricing</a></li>
+  <li><a href="https://www.scipy-lectures.org/packages/scikit-learn/auto_examples/plot_boston_prediction.html" target="_blank">A simple regression analysis on the Boston housing data</a></li>
+  <li><a href="https://medium.com/@haydar_ai/learning-data-science-day-9-linear-regression-on-boston-housing-dataset-cd62a80775ef" target="_blank">Learning Data Science: Day 9 - Linear Regression on Boston Housing Dataset</a></li>
+  <li><a href="http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html" target="_blank">sklearn.datasets.load_boston</a></li>
+  <li><a href="https://www.ritchieng.com/machine-learning-project-boston-home-prices/" target="_blank">Predicting Boston Housing Prices</a></li>
+  <li><a href="https://www.kaggle.com/erick5/predicting-house-prices-with-machine-learning" target="_blank">Predicting House Prices with Machine Learning</a></li>
+</ul>
+</div>
 
 <script type="text/javascript" src="/js/selectbox.js"></script>

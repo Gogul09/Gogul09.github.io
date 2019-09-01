@@ -40,7 +40,7 @@ image: https://drive.google.com/uc?id=1QMdxBIeMhIfMgBmyuod1aWNaIim54rba
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#training-classifiers">Training classifiers</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_12" href="#testing-the-best-classifier">Testing the best classifier</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_13" href="#improving-classifier-accuracy">Improving classifier accuracy</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_14" href="#resources">Resources</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_14" href="#references">References</a></li>
   </ul>
 </div>
 
@@ -787,33 +787,44 @@ Some of the state-of-the-art Deep Learning CNN models are mentioned below.
 
 But to apply CNN to this problem, the size of our dataset must be large enough and also to process those tremendous amount of data it is always recommended to use GPUs.
 
-### Resources
+<div class="references">
+<h3 id="references">References</h3>
 
-#### Research papers
-1. [A Visual Vocabulary for Flower Classification](http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback06.pdf){:target="_blank"}
-2. [Delving into the whorl of flower segmentation](http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback07.pdf){:target="_blank"}
-3. [Automated flower classification over a large number of classes](http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback08.pdf){:target="_blank"}
-4. [Fine-Grained Plant Classification Using Convolutional Neural Networks for Feature Extraction](http://ceur-ws.org/Vol-1180/CLEF2014wn-Life-SunderhaufEt2014.pdf){:target="_blank"}
-5. [Fine-tuning Deep Convolutional Networks for Plant Recognition](http://ceur-ws.org/Vol-1391/121-CR.pdf){:target="_blank"}
-6. [Plant species classification using deep convolutional neural network](http://www.sciencedirect.com/science/article/pii/S1537511016301465){:target="_blank"}
-7. [Plant classification using convolutional neural networks](http://ieeexplore.ieee.org/document/7577698/){:target="_blank"}
-8. [Deep-plant: Plant identification with convolutional neural networks](http://ieeexplore.ieee.org/document/7350839/){:target="_blank"}
-9. [Deep Neural Networks Based Recognition of Plant Diseases by Leaf Image Classification](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4934169/){:target="_blank"}
-10. [Plant Leaf Identification via A Growing Convolution Neural Network with Progressive Sample Learning](http://vigir.missouri.edu/~gdesouza/Research/Conference_CDs/ACCV_2014/pages/PDF/825.pdf){:target="_blank"}
+<h5>Research Papers</h5>
 
-#### Libraries and Tools
-1. [Jupyter Notebook](http://jupyter.readthedocs.io/en/latest/install.html){:target="_blank"}
-2. [OpenCV](http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html){:target="_blank"}
-3. [Scikit-learn](http://scikit-learn.org/stable/){:target="_blank"}
-4. [Mahotas](http://mahotas.readthedocs.io/en/latest/){:target="_blank"}
-5. [NumPy](http://www.numpy.org/){:target="_blank"}
-6. [SciPy](http://matplotlib.org/){:target="_blank"}
-7. [h5Py](http://www.h5py.org/){:target="_blank"}
+<ul>
+  <li><a href="http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback06.pdf" target="_blank">A Visual Vocabulary for Flower Classification</a></li>
+  <li><a href="http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback07.pdf" target="_blank">Delving into the whorl of flower segmentation</a></li>
+  <li><a href="http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback08.pdf" target="_blank">Automated flower classification over a large number of classes</a></li>
+  <li><a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Life-SunderhaufEt2014.pdf" target="_blank">Fine-Grained Plant Classification Using Convolutional Neural Networks for Feature Extraction</a></li>
+  <li><a href="http://ceur-ws.org/Vol-1391/121-CR.pdf" target="_blank">Fine-tuning Deep Convolutional Networks for Plant Recognition</a></li>
+  <li><a href="http://www.sciencedirect.com/science/article/pii/S1537511016301465" target="_blank">Plant species classification using deep convolutional neural network</a></li>
+  <li><a href="http://ieeexplore.ieee.org/document/7577698/" target="_blank">Plant classification using convolutional neural networks</a></li>
+  <li><a href="http://ieeexplore.ieee.org/document/7350839/" target="_blank">Deep-plant: Plant identification with convolutional neural networks</a></li>
+  <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4934169/" target="_blank">Deep Neural Networks Based Recognition of Plant Diseases by Leaf Image Classification</a></li>
+  <li><a href="http://vigir.missouri.edu/~gdesouza/Research/Conference_CDs/ACCV_2014/pages/PDF/825.pdf" target="_blank">Plant Leaf Identification via A Growing Convolution Neural Network with Progressive Sample Learning</a></li>
+</ul>
 
-#### Dataset
-1. [LeafSnap](http://leafsnap.com/dataset/){:target="_blank"}
-2. [ImageCLEF](http://www.imageclef.org/lifeclef/2016/plant){:target="_blank"}
-3. [PlantVillage](https://www.plantvillage.org/){:target="_blank"}
-4. [FLOWERS17](http://www.robots.ox.ac.uk/~vgg/data/flowers/17/){:target="_blank"}
-5. [FLOWERS102](http://www.robots.ox.ac.uk/~vgg/data/flowers/102/){:target="_blank"}{:target="_blank"}
-6. [Plant Image Analysis](http://www.plant-image-analysis.org/){:target="_blank"}
+<h5>Libraries and Tools</h5>
+
+<ul>
+  <li><a href="http://jupyter.readthedocs.io/en/latest/install.html" target="_blank">Jupyter Notebook</a></li>
+  <li><a href="http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html" target="_blank">OpenCV</a></li>
+  <li><a href="http://scikit-learn.org/stable/" target="_blank">Scikit-learn</a></li>
+  <li><a href="http://mahotas.readthedocs.io/en/latest/" target="_blank">Mahotas</a></li>
+  <li><a href="http://www.numpy.org/" target="_blank">NumPy</a></li>
+  <li><a href="http://matplotlib.org/" target="_blank">SciPy</a></li>
+  <li><a href="http://www.h5py.org/" target="_blank">h5Py</a></li>
+</ul>
+
+<h5>Datasets</h5>
+
+<ul>
+  <li><a href="http://leafsnap.com/dataset/" target="_blank">LeafSnap</a></li>
+  <li><a href="http://www.imageclef.org/lifeclef/2016/plant" target="_blank">ImageCLEF</a></li>
+  <li><a href="https://www.plantvillage.org/" target="_blank">PlantVillage</a></li>
+  <li><a href="http://www.robots.ox.ac.uk/~vgg/data/flowers/17/" target="_blank">FLOWERS17</a></li>
+  <li><a href="http://www.robots.ox.ac.uk/~vgg/data/flowers/102/" target="_blank">FLOWERS102</a></li>
+  <li><a href="http://www.plant-image-analysis.org/" target="_blank">Plant Image Analysis</a></li>
+</ul>
+</div>

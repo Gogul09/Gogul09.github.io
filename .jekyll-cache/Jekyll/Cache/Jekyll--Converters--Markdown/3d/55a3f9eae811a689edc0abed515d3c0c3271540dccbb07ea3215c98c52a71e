@@ -1,126 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Image Classification using Python and Scikit-learn – Gogul Ilango </title>
-
-  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400|Roboto:300|Nunito:700" rel="stylesheet">
-  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
-
-  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
-
-      <meta charset="utf-8" />
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-
-    <meta property="og:title" content="Image Classification using Python and Scikit-learn" />
-    <meta name="description" content="Learn how to use Global Feature Descriptors such as RGB Color Histograms, Hu Moments and Haralick Texture to classify Flower species using different Machine Learning classifiers available in scikit-learn." />
-    <meta property="og:description" content="Learn how to use Global Feature Descriptors such as RGB Color Histograms, Hu Moments and Haralick Texture to classify Flower species using different Machine Learning classifiers available in scikit-learn." />
-    <meta property="twitter:title" content="Image Classification using Python and Scikit-learn" />
-
-    <meta property="og:image" content="images/icons/logo.png"/>
-    <meta property="og:image:width" content="180" />
-    <meta property="og:image:height" content="110" />
-
-    <meta name="twitter:title" content="Image Classification using Python and Scikit-learn">
-    <meta name="twitter:description" content="Learn how to use Global Feature Descriptors such as RGB Color Histograms, Hu Moments and Haralick Texture to classify Flower species using different Machine Learning classifiers available in scikit-learn.">
-    <meta name="twitter:image" content="images/icons/logo.png">
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Image Classification using Python and Scikit-learn | Gogul Ilango</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Image Classification using Python and Scikit-learn" />
-<meta name="author" content="Gogul Ilango" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Learn how to use Global Feature Descriptors such as RGB Color Histograms, Hu Moments and Haralick Texture to classify Flower species using different Machine Learning classifiers available in scikit-learn." />
-<meta property="og:description" content="Learn how to use Global Feature Descriptors such as RGB Color Histograms, Hu Moments and Haralick Texture to classify Flower species using different Machine Learning classifiers available in scikit-learn." />
-<link rel="canonical" href="http://localhost:4000/software/image-classification-python" />
-<meta property="og:url" content="http://localhost:4000/software/image-classification-python" />
-<meta property="og:site_name" content="Gogul Ilango" />
-<meta property="og:image" content="https://drive.google.com/uc?id=1QMdxBIeMhIfMgBmyuod1aWNaIim54rba" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-01-28T00:00:00+05:30" />
-<script type="application/ld+json">
-{"url":"http://localhost:4000/software/image-classification-python","author":{"@type":"Person","name":"Gogul Ilango"},"headline":"Image Classification using Python and Scikit-learn","dateModified":"2017-01-28T00:00:00+05:30","datePublished":"2017-01-28T00:00:00+05:30","description":"Learn how to use Global Feature Descriptors such as RGB Color Histograms, Hu Moments and Haralick Texture to classify Flower species using different Machine Learning classifiers available in scikit-learn.","image":"https://drive.google.com/uc?id=1QMdxBIeMhIfMgBmyuod1aWNaIim54rba","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/image-classification-python"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-  
-  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
-    <meta name="theme-color" content="#000000" />
-    <link rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
-  </head>
-
-  <body>
-    <div class="outer-wrapping">
-      <div class="inner-container">
-          <div class="header-left">
-            <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
-          </div>
-          <div class="topnav header-right" id="top_navigator">
-            <a title="home" id = "nav_home" href="/"><span>home</span></a>
-            <a title="blog" id = "nav_blog" href="/blog"><span>blog</span></a>
-            <a title="creations" id = "nav_creations" href="/creations"><span>creations</span></a>
-            <a title="music" id = "nav_music" href="/music"><span>music</span></a>
-            <a title="photography" id = "nav_photography" href="/photography"><span>clicks</span></a>
-            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
-          </div>
-      </div>
-    </div>
-
-    <div id="main" role="main">
-      <div class="post-heading post-heading-wrapper post-image">
-	<div class="grad-post">
-		<h1>Image Classification using Python and Scikit-learn</h1>
-		<div class="post-subheading">
-			<p>Machine Learning | 28 January 2017</p>
-			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/software/image-classification-python"></a></p>
-		</div>
-		
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-<div class="share-it-box">
-<div id="share-box"> 
-		<a href="whatsapp://send?text=http://localhost:4000/software/image-classification-python" data-action="share/whatsapp/share"><img class="icon-whatsapp" src="/images/icons/whatsapp.png"/></a>
-
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/image-classification-python" onclick="window.open(this.href, 'mywin',
-'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-facebook" src="/images/icons/facebook.png"/></a>
-       
-        <a href="https://twitter.com/intent/tweet?text=Image Classification using Python and Scikit-learn&url=http://localhost:4000/software/image-classification-python" onclick="window.open(this.href, 'mywin',
-'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img class="icon-twitter" src="/images/icons/twitter.png"/></a>
-
-       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/image-classification-python&title=Image Classification using Python and Scikit-learn&summary=Learn how to use Global Feature Descriptors such as RGB Color Histograms, Hu Moments and Haralick Texture to classify Flower species using different Machine Learning classifiers available in scikit-learn.&source=webjeda" onclick="window.open(this.href, 'mywin',
-'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-linkedin" src="/images/icons/linkedin.png"/></a>                               
-</div>
-</div>
-	</div>
-</div>
-
-<div class="containing">
-	<div class="wrapping">
-
-		<!--<div class="share-box">
-	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
-	<div id="top-share-box" class="top-share-box">
-		<h5>Share</h5>
-		<ul>
-			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/image-classification-python" data-action="share/whatsapp/share">WhatsApp</a></li>
-			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/image-classification-python" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
-			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Image Classification using Python and Scikit-learn&url=http://localhost:4000/software/image-classification-python" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
-			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/image-classification-python&title=Image Classification using Python and Scikit-learn&summary=Learn how to use Global Feature Descriptors such as RGB Color Histograms, Hu Moments and Haralick Texture to classify Flower species using different Machine Learning classifiers available in scikit-learn.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
-		</ul>
-	</div>
-</div>-->
-
-		<div class="post-cover">
-			<div class="carbon_advertisement">
-				<div class="carbon_advertisement_wrapper">
-					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
-				</div>
-			</div>
-			<article class="post">
-				<div class="entry">
-					<div class="git-showcase">
+I"SU<div class="git-showcase">
   <div>
     <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
   </div>
@@ -1303,26 +1181,38 @@ SVM:  0.043343 (0.027239)
 <p>But to apply CNN to this problem, the size of our dataset must be large enough and also to process those tremendous amount of data it is always recommended to use GPUs.</p>
 
 <div class="references">
-<h3 id="references">References</h3>
-
-<h5>Research Papers</h5>
-
+<h3>References</h3>
 <ul>
-  <li><a href="http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback06.pdf" target="_blank">A Visual Vocabulary for Flower Classification</a></li>
-  <li><a href="http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback07.pdf" target="_blank">Delving into the whorl of flower segmentation</a></li>
-  <li><a href="http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback08.pdf" target="_blank">Automated flower classification over a large number of classes</a></li>
-  <li><a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Life-SunderhaufEt2014.pdf" target="_blank">Fine-Grained Plant Classification Using Convolutional Neural Networks for Feature Extraction</a></li>
-  <li><a href="http://ceur-ws.org/Vol-1391/121-CR.pdf" target="_blank">Fine-tuning Deep Convolutional Networks for Plant Recognition</a></li>
-  <li><a href="http://www.sciencedirect.com/science/article/pii/S1537511016301465" target="_blank">Plant species classification using deep convolutional neural network</a></li>
-  <li><a href="http://ieeexplore.ieee.org/document/7577698/" target="_blank">Plant classification using convolutional neural networks</a></li>
+  <li><a href="" target="_blank">A Visual Vocabulary for Flower Classification</a></li>
+  <li><a href="" target="_blank">Delving into the whorl of flower segmentation</a></li>
+  <li><a href="" target="_blank">Automated flower classification over a large number of classes</a></li>
+  <li><a href="" target="_blank">Fine-Grained Plant Classification Using Convolutional Neural Networks for Feature Extraction</a></li>
+  <li><a href="" target="_blank">Fine-tuning Deep Convolutional Networks for Plant Recognition</a></li>
+  <li><a href="" target="_blank">Plant species classification using deep convolutional neural network</a></li>
+  <li><a href="" target="_blank">Plant classification using convolutional neural networks</a></li>
+  <li><a href="" target="_blank"></a></li>
+  <li><a href="" target="_blank"></a></li>
+  <li><a href="" target="_blank"></a></li>
+  <li><a href="" target="_blank"></a></li>
+</ul>
+</div>
+
+<h4 id="research-papers">Research papers</h4>
+<ol>
+  <li><a href="http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback06.pdf" target="_blank"></a></li>
+  <li><a href="http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback07.pdf" target="_blank"></a></li>
+  <li><a href="http://www.robots.ox.ac.uk/~vgg/publications/papers/nilsback08.pdf" target="_blank"></a></li>
+  <li><a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Life-SunderhaufEt2014.pdf" target="_blank"></a></li>
+  <li><a href="http://ceur-ws.org/Vol-1391/121-CR.pdf" target="_blank"></a></li>
+  <li><a href="http://www.sciencedirect.com/science/article/pii/S1537511016301465" target="_blank"></a></li>
+  <li><a href="http://ieeexplore.ieee.org/document/7577698/" target="_blank"></a></li>
   <li><a href="http://ieeexplore.ieee.org/document/7350839/" target="_blank">Deep-plant: Plant identification with convolutional neural networks</a></li>
   <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4934169/" target="_blank">Deep Neural Networks Based Recognition of Plant Diseases by Leaf Image Classification</a></li>
   <li><a href="http://vigir.missouri.edu/~gdesouza/Research/Conference_CDs/ACCV_2014/pages/PDF/825.pdf" target="_blank">Plant Leaf Identification via A Growing Convolution Neural Network with Progressive Sample Learning</a></li>
-</ul>
+</ol>
 
-<h5>Libraries and Tools</h5>
-
-<ul>
+<h4 id="libraries-and-tools">Libraries and Tools</h4>
+<ol>
   <li><a href="http://jupyter.readthedocs.io/en/latest/install.html" target="_blank">Jupyter Notebook</a></li>
   <li><a href="http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html" target="_blank">OpenCV</a></li>
   <li><a href="http://scikit-learn.org/stable/" target="_blank">Scikit-learn</a></li>
@@ -1330,90 +1220,15 @@ SVM:  0.043343 (0.027239)
   <li><a href="http://www.numpy.org/" target="_blank">NumPy</a></li>
   <li><a href="http://matplotlib.org/" target="_blank">SciPy</a></li>
   <li><a href="http://www.h5py.org/" target="_blank">h5Py</a></li>
-</ul>
+</ol>
 
-<h5>Datasets</h5>
-
-<ul>
+<h4 id="dataset">Dataset</h4>
+<ol>
   <li><a href="http://leafsnap.com/dataset/" target="_blank">LeafSnap</a></li>
   <li><a href="http://www.imageclef.org/lifeclef/2016/plant" target="_blank">ImageCLEF</a></li>
   <li><a href="https://www.plantvillage.org/" target="_blank">PlantVillage</a></li>
   <li><a href="http://www.robots.ox.ac.uk/~vgg/data/flowers/17/" target="_blank">FLOWERS17</a></li>
   <li><a href="http://www.robots.ox.ac.uk/~vgg/data/flowers/102/" target="_blank">FLOWERS102</a></li>
   <li><a href="http://www.plant-image-analysis.org/" target="_blank">Plant Image Analysis</a></li>
-</ul>
-</div>
-
-				</div>
-				<div class="note closers">
-	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
-</div>
-			</article>
-			
-			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io/software/image-classification-python"></span></p></div>
-
-			<div id="disqus_thread"></div>
-			<script>
-				(function() {
-					var d = document, s = d.createElement('script');
-					s.src = '//gogul09.disqus.com/embed.js';
-					s.setAttribute('data-timestamp', +new Date());
-					(d.head || d.body).appendChild(s);
-				})();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		
-		</div>
-	</div>
-</div>
-
-<script type="text/javascript">
-	
-	window.onscroll = function() {
-		sideBarScrollHandler();
-		windowScrollHandler();
-	};
-	
-	function sideBarScrollHandler() {
-		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
-			document.getElementById("sidebar_tracker").style.top = "20px";
-		} else {
-			document.getElementById("sidebar_tracker").style.top = "70px";
-		}
-	}
-	
-</script>
-    </div>
-
-    <div class="wrapper-footer">
-      <footer class="footer">
-        <p><span>&copy; 2019 - gogul ilango | opinions are my own</span></p>
-       </footer>
-     </div>
-     
-     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
-
-     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-     <script src="https://apis.google.com/js/platform.js"></script>
-     <script async defer src="https://buttons.github.io/buttons.js"></script>
-     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
-     <script src="/js/custom.js"></script>
-     
-	<!-- Google Analytics -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-93019594-1', 'auto');
-		ga('send', 'pageview', {
-		  'page': '/software/image-classification-python',
-		  'title': 'Image Classification using Python and Scikit-learn'
-		});
-	</script>
-	<!-- End Google Analytics -->
-
-
-   </body>
-</html>
+</ol>
+:ET

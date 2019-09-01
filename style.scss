@@ -2007,6 +2007,9 @@ figure {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     padding: 5px;
+    padding-top: 20px;
+    background-position-y: 10px;
+    background-position-x: 98%;
   }
   p {
     font-size: 13px !important;
@@ -2034,7 +2037,7 @@ u {
 }
 
 .show-comments p {
-  background-color: #ffc455;
+  background-color: $white;
   text-align: center;
   padding: 15px;
   width: 200px;
@@ -2042,14 +2045,14 @@ u {
   font-weight: bold;
   margin-top: 0px;
   border-radius: 5px;
-  color: #2d2d2d;
+  color: #989898;
   cursor: pointer;
   @include mobile {
     margin-top: 10px;
     width: 90%;
   }
   &:hover, &:active {
-    background-color: #ffbc3e;
+    color: $black;
   }
 }
 
@@ -3499,5 +3502,32 @@ del {
   &:hover, &:active {
     content: url("/images/icons/linkedin-on.png");
     filter: invert(0) !important;
+  }
+}
+
+.references h5 {
+  color: #989898 !important;
+  font-weight: 100;
+  font-size: 18px;
+  @include mobile {
+    font-size: 13px;
+  }
+}
+
+.references li {
+  list-style-type: circle;
+  color: #989898 !important;
+  @include mobile {
+    font-size: 12px;
+  }
+}
+
+.references li a {
+  color: #989898 !important;
+  &:hover, &:active {
+    text-decoration: none;
+    color: $black !important;
+    border-bottom: 0px !important;
+    font-weight: bold;
   }
 }
