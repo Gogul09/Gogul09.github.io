@@ -186,6 +186,13 @@
   }
 }
 
+article img {
+  height: 400px;
+  @include mobile {
+    height: auto;
+  }
+}
+
 .posts > .post:last-child {
   padding-bottom: 1em;
   padding: 20px;
@@ -220,8 +227,8 @@
 
 .post {
   blockquote {
-    margin: 20px 0px;
-    padding: 20px 0px;
+    margin: 0px;
+    padding: 0px;
     font-size: 22px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     @include mobile {
@@ -244,7 +251,7 @@
 blockquote {
   margin: 50px auto;
   color: #000;
-  padding: 0.6em 1em;
+  padding-bottom: 20px !important;
   line-height: 1.6;
   position: relative;
   cursor: pointer;
@@ -259,12 +266,13 @@ blockquote p {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   padding: 30px;
   color: #cd3769;
-  border: 1px solid #ffbdd3;
+  border-radius: 10px;
   &:hover, &:active {
-    background-color: #ffe2ec;
+    box-shadow: 2px 5px 6px rgba(72,72,72,0.14);
   }
   @include mobile {
     border: 0px;
+    border-radius: 0px;
   }
 }
 
@@ -1363,10 +1371,12 @@ figcaption {
   position: relative;
   cursor: pointer;
   background-color: #fff4d6;
+  border-radius: 10px;
   @include mobile {
     margin-left: -15px;
     margin-right: -15px;
     padding: 30px 15px;
+    border-radius: 0px;
   }
   &:hover, &:active {
     box-shadow: 2px 5px 6px rgba(72, 72, 72, 0.14);
@@ -1973,27 +1983,41 @@ figure {
 
 .code-out {
   font-family: monospace;
-  font-size: 11px;
+  font-size: 13px !important;
   line-height: 20px;
-  border-bottom: 1px solid #e8e8e8 !important;
-  padding: 15px;
+  padding: 0px;
   padding-top: 25px;
-  background-color: #fff;
+  background-color: #191919;
   background-image: url('/images/code-output.png');
   background-repeat: no-repeat;
   background-position: 98% 10px;
   background-size: 50px;
   overflow-x: scroll;
   white-space: nowrap;
-  margin-top: -25px;
-  border-top: 0px !important;
+  margin-top: -35px;
+  border-top: 1px solid #3a3a3a !important;
+  margin-bottom: 20px !important;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #aeadad;
   @include mobile {
+    margin-top: -28px;
     margin-left: -15px;
     margin-right: -15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 5px;
   }
   p {
-    font-size: 1em !important;
+    font-size: 13px !important;
     margin-bottom: 0px !important;
+    color: #aeadad;
+  }
+  .highlight {
+    background-color: #191919 !important;
+  }
+  .rouge-gutter {
+    display: none !important;
   }
 }
 
@@ -2071,10 +2095,14 @@ u {
   padding: 10px;
   background-color: #191919;
   color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   @include mobile {
     font-size: 10px;
     margin-left: -15px;
     margin-right: -15px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
   }
   span {
     padding: 3px 5px;
@@ -2086,6 +2114,7 @@ u {
     font-weight: bold;
     border: 1px solid #d6d6d6;
     cursor: pointer;
+    border-radius: 5px;
   }
 }
 
@@ -2642,6 +2671,7 @@ input:checked + .slider:before {
 .youtube-showcase {
   width: 28px;
   display: inline-block;
+  height: auto !important;
 }
 
 .modal {
@@ -3388,7 +3418,6 @@ del {
 .objectives {
   background-color: #fbfbfb;
   padding: 30px;
-  border: 1px solid #e3e3e3;
   border-radius: 5px;
   @include mobile {
     border: 0px;
@@ -3445,3 +3474,30 @@ del {
   border-radius: 3px;
 }
 
+.icon-whatsapp {
+  &:hover, &:active {
+    content: url("/images/icons/whatsapp-on.png");
+    filter: invert(0) !important;
+  }
+}
+
+.icon-facebook {
+  &:hover, &:active {
+    content: url("/images/icons/facebook-on.png");
+    filter: invert(0) !important;
+  }
+}
+
+.icon-twitter {
+  &:hover, &:active {
+    content: url("/images/icons/twitter-on.png");
+    filter: invert(0) !important;
+  }
+}
+
+.icon-linkedin {
+  &:hover, &:active {
+    content: url("/images/icons/linkedin-on.png");
+    filter: invert(0) !important;
+  }
+}

@@ -40,8 +40,6 @@ cardimage: https://drive.google.com/uc?id=13W0uytLtG9tcGJHuMaGfNScvoOY5UMAq
   </ul>
 </div>
 
-<p class="hundred-days"><span>#100DaysOfMLCode</span></p>
-
 **In this blog post, we will create a simple web application that provides a canvas (mobile + desktop + laptop + tablet ready) for the user to draw a digit and uses a deep neural network (MLP or CNN) to predict what digit the user had drawn.**
 
 As we already know the capabilities offered by [TensorFlow.js](https://js.tensorflow.org/){:target="_blank"}, we will extend the ideas to create two Deep Neural Networks (MLP and CNN) in Keras Python environment to recognize digits and use TensorFlow.js to predict the user drawn digit on a canvas in a web browser. In this learning path, we will restrict the user to draw a single digit between [0, 9] and later we will extend the idea to multiple digits. 
@@ -180,7 +178,7 @@ tfjs.converters.save_keras_model(model, model_save_path)
 [INFO] test score - 0.16604800749952142
 [INFO] test accuracy - 0.9828
 ```
-{: .code-output}
+{: .code-out}
 
 Two important things to watch carefully here are **image size** and **input vector size** to MLP. Keras function <span class="coding">mnist.load_data()</span> loads images of size of **[28, 28]**. We flatten this image into a vector of size **784** for the MLP. We also scale the pixel values between **[0, 1]** for the algorithm to perform better. These are the image preprocessing operations that we will do in the front-end too using javascript.
 
@@ -276,7 +274,7 @@ tfjs.converters.save_keras_model(model, model_save_path)
 [INFO] test score - 0.03036247751080955
 [INFO] test accuracy - 0.9904
 ```
-{: .code-output}
+{: .code-out}
 
 Again, look carefully at the preprocessing steps that we do here for CNN and the input shape that we pass in to the <span class="coding">Convolution2D</span> layer. For this tutorial, we have used TensorFlow image ordering format.
 

@@ -404,7 +404,7 @@ Prediction - grass
 Prediction - bricks
 Prediction - rocks
 ```
-{: .code-output}
+{: .code-out}
 
 If you *copy-paste* the above code in any of your directory and run <span class="coding">python train_test.py</span>, you will get the following results.
 

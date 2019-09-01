@@ -263,7 +263,7 @@ train_y shape: (1, 1500)
 test_x shape : (12288, 100)
 test_y shape : (1, 100)
 ```
-{: .code-output}
+{: .code-out}
 
 <h3 id="logistic-regression-pipeline">Logistic Regression pipeline</h3>
 
@@ -589,7 +589,7 @@ cost after 1900 epochs: 0.024570
 train_accuracy: 99.66666666666667 %
 test_accuracy : 100.0 %
 ```
-{: .code-output}
+{: .code-out}
 
 <h3 id="testing-the-trained-model">Testing the trained model (optional)</h3>
 

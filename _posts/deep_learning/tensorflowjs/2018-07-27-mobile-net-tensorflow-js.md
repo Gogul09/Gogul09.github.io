@@ -37,8 +37,6 @@ cardimage: https://drive.google.com/uc?id=1I1FMMaBYsny0cckcCgCh8kRaOcX5UyQU
   </ul>
 </div>
 
-<p class="hundred-days"><span>#100DaysOfMLCode</span></p>
-
 **In this blog post, we will understand how to perform image classification using Keras MobileNet, deploy it in Google Chrome using TensorFlow.js and use it to make live predictions in the browser.**
 
 Being a Python developer with knowledge on Web Development is surely going to help you in the field of Artificial Intelligence in the long run. Because we now have the awesome capabilities of Keras and TensorFlow in a web browser using [TensorFlow.js](https://js.tensorflow.org/){:target="_blank"}.
@@ -185,7 +183,7 @@ if __name__ == '__main__':
   ('n01847000', 'drake', 1.1352683e-05), 
   ('n01795545', 'black_grouse', 1.0532762e-05)]]
 ```
-{: .code-output}
+{: .code-out}
 
 * Lines 2-5 imports all the necessary functions to work with.
 * Lines 8-13 is the special definition we use to process an image so that it becomes MobileNet friendly.

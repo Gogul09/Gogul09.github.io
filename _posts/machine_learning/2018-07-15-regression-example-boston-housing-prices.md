@@ -92,7 +92,7 @@ print("[INFO] keys : {}".format(dataset.keys()))
 ```
 [INFO] keys : dict_keys(['data', 'target', 'feature_names', 'DESCR', 'filename'])
 ```
-{: .code-output}
+{: .code-out}
 
 There are 13 features and 1 target that are accessed using <span class="coding">data</span> key and <span class="coding">target</span> key. We can easily access the shape of features and target using <span class="coding">shape</span>.
 
@@ -107,7 +107,7 @@ print("[INFO] target shape   : {}".format(dataset.target.shape))
 [INFO] features shape : (506, 13)
 [INFO] target shape   : (506,)
 ```
-{: .code-output}
+{: .code-out}
 
 The 13 column names are accessed using <span class="coding">feature_names</span> on the <span class="coding">dataset</span> which returns the unique attribute names. We can use these column names when we convert this dataset to a pandas dataframe later.
 
@@ -122,7 +122,7 @@ print(dataset.feature_names)
 [INFO] feature names
 ['CRIM' 'ZN' 'INDUS' 'CHAS' 'NOX' 'RM' 'AGE' 'DIS' 'RAD' 'TAX' 'PTRATIO' 'B' 'LSTAT']
 ```
-{: .code-output}
+{: .code-out}
 
 To know the description of each column name in this dataset, you can use <span class="coding">DESCR</span> to display the description of this dataset in a nutshell.
 
@@ -189,7 +189,7 @@ problems.
    - Quinlan,R. (1993). Combining Instance-Based and Model-Based Learning. In Proceedings on the Tenth International Conference of Machine Learning, 236-243, University of Massachusetts, Amherst. Morgan Kaufmann.
    - many more! (see http://archive.ics.uci.edu/ml/datasets/Housing)
 ```
-{: .code-output}
+{: .code-out}
 
 ### Analyze the dataset
 
@@ -214,7 +214,7 @@ print(df.head())
 3 0.03  0.00 2.18 0.00 0.46 7.00 45.80 6.06 3.00 222.00 18.70 394.63 2.94
 4 0.07  0.00 2.18 0.00 0.46 7.15 54.20 6.06 3.00 222.00 18.70 396.90 5.33
 ```
-{: .code-output}
+{: .code-out}
 
 We can also specify the column names <span class="coding">columns</span> of the dataframe using <span class="coding">feature_names</span> instead of the indexes shown above. 
 
@@ -233,7 +233,7 @@ print(df.head())
 3  0.03  0.00   2.18  0.00 0.46 7.00 45.80 6.06 3.00 222.00    18.70 394.63   2.94
 4  0.07  0.00   2.18  0.00 0.46 7.15 54.20 6.06 3.00 222.00    18.70 396.90   5.33
 ```
-{: .code-output}
+{: .code-out}
 
 We can also insert the <span class="coding">target</span> column in our main dataframe simply using the below code snippet.
 
@@ -252,7 +252,7 @@ print(df.head())
 3  0.03  0.00   2.18  0.00 0.46 7.00 45.80 6.06 3.00 222.00    18.70 394.63   2.94  33.40
 4  0.07  0.00   2.18  0.00 0.46 7.15 54.20 6.06 3.00 222.00    18.70 396.90   5.33  36.20
 ```
-{: .code-output}
+{: .code-out}
 
 We can check the datatype of each column using <span class="coding">dtypes</span> to make sure every column has numeric datatype. If a column has different datatype such as string or character, we need to map that column to a numeric datatype such as integer or float. For this dataset, luckily there is no such column. 
 
@@ -279,7 +279,7 @@ LSTAT      float64
 PRICE      float64
 dtype: object
 ```
-{: .code-output}
+{: .code-out}
 
 Now, we will understand the statistical summary of the dataset using the <span class="coding">describe()</span> function. Using this function, we can understand the count, min, max, mean and standard deviation for each attribute (column) in the dataset. Each of these can also be displayed individually using <span class="coding">df.count()</span>, <span class="coding">df.min()</span>, <span class="coding">df.max()</span>, <span class="coding">df.median()</span> and <span class="coding">df.quantile(q)</span>.
 
@@ -300,7 +300,7 @@ min     0.01   0.00   0.46   0.00   0.39   3.56   2.90   1.13   1.00 187.00    1
 75%     3.65  12.50  18.10   0.00   0.62   6.62  94.07   5.19  24.00 666.00    20.20 396.23  16.96  25.00
 max    88.98 100.00  27.74   1.00   0.87   8.78 100.00  12.13  24.00 711.00    22.00 396.90  37.97  50.00
 ```
-{: .code-output}
+{: .code-out}
 
 #### Correlation
 
@@ -389,7 +389,7 @@ B       -0.26  0.13  -0.19 -0.03 -0.20  0.03 -0.15  0.17 -0.21 -0.24    -0.04  1
 LSTAT    0.45 -0.39   0.47 -0.04  0.45 -0.47  0.49 -0.41  0.29  0.38     0.33 -0.15   1.00  -0.67
 PRICE   -0.40  0.34  -0.42  0.12 -0.39  0.48 -0.39  0.31 -0.25 -0.41    -0.40  0.13  -0.67   1.00
 ```
-{: .code-output}
+{: .code-out}
 
 <figure>
 	<select id="select_heatmap_plot" onchange="selectBoxHandler('heatmap', this.id,'/images/software/machine-learning/boston-housing-prices/correlation/', 'img_heatmap_plot')">
@@ -436,7 +436,7 @@ LSTAT      False
 PRICE      False 
 dtype: bool      
 ```
-{: .code-output}
+{: .code-out}
 
 Once a dataset is available to us, it is always good to generate a brief report that gives lots of statistical information about the dataset so that you get to know the structure or nature of the dataset. You can use the below code snippet to generate a report like [this](https://github.com/Gogul09/explore-machine-learning/blob/master/regression/boston_housing_prices/boston_housing.txt){:target="_blank"}.
 
@@ -684,7 +684,7 @@ print(Y.shape)
 (506, 13)
 (506,)
 ```
-{: .code-output}
+{: .code-out}
 
 As we see different data distributions, we will standardize the dataset using <span class="coding">StandardScaler</span> function in scikit-learn. This is a useful technique where the attributes are transformed to a standard gaussian distribution with a mean of 0 and a standard deviation of 1.
 
@@ -720,7 +720,7 @@ print(Y_test.shape)
 (404,)   
 (102,)    
 ```
-{: .code-output}
+{: .code-out}
 
 
 Let's dive into regression. We will use different regression models offered by scikit-learn to produce a baseline accuracy for this problem. We will use the <span class="coding">MSE</span> (Mean Squared Error) as the performance metric for the regression models.
@@ -796,7 +796,7 @@ GradientBoost : -10.247,  5.328
 RandomForest  : -12.418,  6.976
 ExtraTrees    : -11.568,  7.065
 ```
-{: .code-output}
+{: .code-out}
 
 <figure>
 	<img src="/images/software/machine-learning/boston-housing-prices/model_mse_scores.png">
@@ -822,7 +822,7 @@ print("[INFO] MSE : {}".format(round(mean_squared_error(Y_test, predictions), 3)
 ```
 [INFO] MSE : 9.961
 ```
-{: .code-output}
+{: .code-out}
 
 Finally, we can see that Gradient Boosting Regression model achieved a mean squared error of 9.961 which means our model is able to predict correct values on test data with MSE of 9.961. We can visualize the <span class="coding">predictions</span> made by our best model and the original targets <span class="coding">Y_test</span> using the below code.
 

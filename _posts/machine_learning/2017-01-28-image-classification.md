@@ -393,11 +393,10 @@ global_features = []
 labels          = []
 ```
 
-<div class="code-out">
-<p>
+```
 ['bluebell', 'buttercup', 'coltsfoot', 'cowslip', 'crocus', 'daffodil', 'daisy', 'dandelion', 'fritillary', 'iris', 'lilyvalley', 'pansy', 'snowdrop', 'sunflower', 'tigerlily', 'tulip', 'windflower']
-</p>
-</div>
+```
+{: .code-out}
 
 For each of the training label name, we iterate through the corresponding folder to get all the images inside it. For each image that we iterate, we first resize the image into a fixed size. Then, we extract the three global features and concatenate these three features using NumPy's <span class="coding">np.hstack()</span> function. We keep track of the feature with its label using those two lists we created above - <span class="coding">labels</span> and <span class="coding">global_features</span>. You could even use a dictionary here. Below is the code snippet to do these.
 
@@ -442,28 +441,27 @@ for training_name in train_labels:
 print("[STATUS] completed Global Feature Extraction...")
 ```
 
-<div class="code-out">
-<p>
-[STATUS] processed folder: bluebell<br>
-[STATUS] processed folder: buttercup<br>
-[STATUS] processed folder: coltsfoot<br>
-[STATUS] processed folder: cowslip<br>
-[STATUS] processed folder: crocus<br>
-[STATUS] processed folder: daffodil<br>
-[STATUS] processed folder: daisy<br>
-[STATUS] processed folder: dandelion<br>
-[STATUS] processed folder: fritillary<br>
-[STATUS] processed folder: iris<br>
-[STATUS] processed folder: lilyvalley<br>
-[STATUS] processed folder: pansy<br>
-[STATUS] processed folder: snowdrop<br>
-[STATUS] processed folder: sunflower<br>
-[STATUS] processed folder: tigerlily<br>
-[STATUS] processed folder: tulip<br>
-[STATUS] processed folder: windflower<br>
+```
+[STATUS] processed folder: bluebell
+[STATUS] processed folder: buttercup
+[STATUS] processed folder: coltsfoot
+[STATUS] processed folder: cowslip
+[STATUS] processed folder: crocus
+[STATUS] processed folder: daffodil
+[STATUS] processed folder: daisy
+[STATUS] processed folder: dandelion
+[STATUS] processed folder: fritillary
+[STATUS] processed folder: iris
+[STATUS] processed folder: lilyvalley
+[STATUS] processed folder: pansy
+[STATUS] processed folder: snowdrop
+[STATUS] processed folder: sunflower
+[STATUS] processed folder: tigerlily
+[STATUS] processed folder: tulip
+[STATUS] processed folder: windflower
 [STATUS] completed Global Feature Extraction...
-</p>
-</div>
+```
+{: .code-out}
 
 After extracting features and concatenating it, we need to save this data locally. Before saving this data, we use something called <span class="coding">LabelEncoder()</span> to encode our labels in a proper format. This is to make sure that the labels are represented as unique numbers. As we have used different global features, one feature might dominate the other with respect to it's value. In such scenarios, it is better to normalize everything within a range (say 0-1). Thus, we normalize the features using scikit-learn's <span class="coding">MinMaxScaler()</span> function. After doing these two steps, we use h5py to save our features and labels locally in <span class="coding">.h5</span> file format. Below is the code snippet to do these.
 
@@ -503,17 +501,16 @@ h5f_label.close()
 print("[STATUS] end of training..")
 ```
 
-<div class="code-out">
-<p>
-[STATUS] feature vector size (1360, 532)<br>
-[STATUS] training Labels (1360,)<br>
-[STATUS] training labels encoded...<br>
-[STATUS] feature vector normalized...<br>
-[STATUS] target labels: [ 0  0  0 ..., 16 16 16]<br>
-[STATUS] target labels shape: (1360,)<br>
+```
+[STATUS] feature vector size (1360, 532)
+[STATUS] training Labels (1360,)
+[STATUS] training labels encoded...
+[STATUS] feature vector normalized...
+[STATUS] target labels: [ 0  0  0 ..., 16 16 16]
+[STATUS] target labels shape: (1360,)
 [STATUS] end of training..
-</p>
-</div>
+```
+{: .code-out}
 
 Notice that there are 532 columns in the global feature vector which tells us that when we concatenate color histogram, haralick texture and hu moments, we get a single row with 532 columns. So, for 1360 images, we get a feature vector of size (1360, 532). Also, you could see that the target labels are encoded as integer values in the range (0-16) denoting the 17 classes of flower species.
 
@@ -611,13 +608,12 @@ print("[STATUS] labels shape: {}".format(global_labels.shape))
 print("[STATUS] training started...")
 ```
 
-<div class="code-out">
-<p>
-[STATUS] features shape: (1360, 532)<br>
-[STATUS] labels shape: (1360,)<br>
+```
+[STATUS] features shape: (1360, 532)
+[STATUS] labels shape: (1360,)
 [STATUS] training started...
-</p>
-</div>
+```
+{: .code-out}
 
 As I already mentioned, we will be splitting our training dataset into train_data as well as test_data. <span class="coding">train_test_split()</span> function does that for us and it returns four variables as shown below.
 
@@ -637,15 +633,14 @@ print("Train labels: {}".format(trainLabelsGlobal.shape))
 print("Test labels : {}".format(testLabelsGlobal.shape))
 ```
 
-<div class="code-out">
-<p>
-[STATUS] splitted train and test data...<br>
-Train data  : (1224, 532)<br>
-Test data   : (136, 532)<br>
-Train labels: (1224,)<br>
+```
+[STATUS] splitted train and test data...
+Train data  : (1224, 532)
+Test data   : (136, 532)
+Train labels: (1224,)
 Test labels : (136,)
-</p>
-</div>
+```
+{: .code-out}
 
 Notice we have decent amount of train_data and less test_data. We always want to train our model with more data so that our model generalizes well. So, we keep <span class="coding">test_size</span> variable to be in the range (0.10 - 0.30). Not more than that. 
 
@@ -672,17 +667,16 @@ ax.set_xticklabels(names)
 pyplot.show()
 ```
 
-<div class="code-out">
-<p>
-LR:   0.501719 (0.051735)<br>
-LDA:  0.441197 (0.034820)<br>
-KNN:  0.362742 (0.025958)<br>
-CART: 0.474690 (0.041314)<br>
-RF:   0.643809 (0.029491)<br>
-NB:   0.361102 (0.034966)<br>
+```
+LR:   0.501719 (0.051735)
+LDA:  0.441197 (0.034820)
+KNN:  0.362742 (0.025958)
+CART: 0.474690 (0.041314)
+RF:   0.643809 (0.029491)
+NB:   0.361102 (0.034966)
 SVM:  0.043343 (0.027239)
-</p>
-</div>    
+```
+{: .code-out}   
 
 <figure>
     <img src="/images/software/plants-species/classification.png">
