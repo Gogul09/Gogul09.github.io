@@ -6,7 +6,7 @@ title: Deep Learning
 description: Resources that would be helpful for someone who's interested in Deep Learning.
 author: Gogul Ilango
 permalink: /software/deep-learning
-image: https://drive.google.com/uc?id=1vrPLGsz-QQUsofCok5ncvnexJ5wpcN5n
+image: https://drive.google.com/uc?id=1HvkYwUk-htgsfyls_DrBg_WE4F8kL0lZ
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">

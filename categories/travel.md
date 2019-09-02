@@ -16,13 +16,18 @@ permalink: /travel
         {% for post in site.posts %}
           {% if post.category contains 'travel' %}
               <li>
-                <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">
-                  <div class="page-treasure">
-                    <h2>{{ post.title }}</h2>
-                    <p>{{ post.description }}</p>
-                  </div>
-                </a>
-              </li>
+                  <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">
+                    <div class="page-treasure-wrapper">
+                      <div class="page-treasure-image" >
+                        <div style="background-image: url('{{ post.image }}')"></div>
+                      </div>
+                      <div class="page-treasure">
+                        <h2>{{ post.title }}</h2>
+                        <p>{{ post.description }}</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
             {% endif %}
         {% endfor %}
         </ul>

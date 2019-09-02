@@ -6,7 +6,7 @@ title: Predicting Housing Prices using Regression Algorithms
 description: Understand how to approach a machine learning regression problem using the boston housing prices dataset
 author: Gogul Ilango
 permalink: /software/regression-example-boston-housing-prices
-image: https://drive.google.com/uc?id=105XY6kiRN6WUoWwPlLTUSH9jhfDmLM2v
+image: https://drive.google.com/uc?id=1J5BYkUjjeylaMlMpvlOrPfnPLrSNTf1N
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">

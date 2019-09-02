@@ -6,6 +6,7 @@ title: How to create custom tables in HTML?
 description: Learn how to code custom table in HTML using rowspan and colspan attributes.
 author: Gogul Ilango
 permalink: /software/how-to-create-custom-tables-in-html
+image: https://drive.google.com/uc?id=17ySgpuAWIZm5K_w4kxqdRndGZiJ_OZ4k
 ---
 
 I always wondered is there a way to create tables like the one shown below without using nested tables (i.e., table inside a table by hacking <span class="coding">border</span> property in CSS). 

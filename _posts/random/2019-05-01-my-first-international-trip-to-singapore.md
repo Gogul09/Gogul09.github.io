@@ -6,7 +6,7 @@ title: My First International Trip to Singapore
 description: Experience fresh oxygen, green trees, forests with woods, animals, birds, colorful lights at night and much more!
 author: Gogul Ilango
 permalink: travel/my-first-international-trip-to-singapore
-image: https://drive.google.com/uc?id=15sAzInvyqi5hV0noFPOvopwpbN_d0wTL
+image: https://drive.google.com/uc?id=1l0AamkkNlTopLpNRmunjYD5J2ZJuEV0B
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">

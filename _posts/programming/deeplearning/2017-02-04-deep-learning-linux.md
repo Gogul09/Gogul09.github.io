@@ -6,7 +6,7 @@ title: Deep Learning Environment Setup for Linux
 description: This tutorial is for beginners who need to setup environment for Deep Learning and Computer Vision in Linux.
 author: Gogul Ilango
 permalink: /software/deep-learning-linux
-image: https://drive.google.com/uc?id=1hgL8nz8un1Tx0HJqTZ018WhTru5sTf24
+image: https://drive.google.com/uc?id=15jbJeL0hYheQOOtd-kzf8mSUcuw14e2A
 ---
 
 <b>In this tutorial, we will setup the environment for Deep Learning and Computer Vision in Linux. This tutorial assumes that you have knowledge about using Linux Environment such as Ubuntu and basic knowledge of <a href="https://gogul09.github.io/hardware/linux-helpers" target="_blank">Linux commands</a></b>.

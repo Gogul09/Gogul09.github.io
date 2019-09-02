@@ -6,7 +6,7 @@ title: Hand Gesture Recognition using Python and OpenCV - Part 2
 description: Learn how to recognize hand gestures after applying background subtraction using OpenCV and Python.
 author: Gogul Ilango
 permalink: software/hand-gesture-recognition-p2
-image: https://drive.google.com/uc?id=1n1IwjE8eRpKnnlw1JJthbsVtT_m3DFSr
+image: https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh
 ---
 
 <div class="git-showcase">

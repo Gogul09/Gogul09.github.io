@@ -6,7 +6,7 @@ title: Deep Learning Environment Setup for Windows
 description: This tutorial is for beginners who need to setup environment for Deep Learning in Windows 10.
 author: Gogul Ilango
 permalink: /software/deep-learning-windows
-image: https://drive.google.com/uc?id=1i93OWSHxa497jukB4bE-hMGQj92R2qNS
+image: https://drive.google.com/uc?id=1Z3HkvxXkJ_lLRill7HtE4AetOD9YzXH6
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">

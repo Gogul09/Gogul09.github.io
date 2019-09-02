@@ -6,7 +6,7 @@ title: Data Structures & Algorithms in Python
 description: Understand Data Structures and Algorithms using Python Programming Language.
 author: Gogul Ilango
 permalink: /software/data-structures-and-algorithms-in-python
-image: https://drive.google.com/uc?id=1BmxJGJpdBOkiDG5cNaWfzFwA155PLRtp
+image: https://drive.google.com/uc?id=1r3ttMYAnyncZdSEYxEndtk0dLBLyktKP
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">

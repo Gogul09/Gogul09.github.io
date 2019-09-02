@@ -6,7 +6,7 @@ title: Texture Recognition using Haralick Texture and Python
 description: Learn how to quantify images globally using Haralick Textures and classify images based on Textures. Understand the concept of Gray-Level Co-occurance Matrix (GLCM) used when computing Haralick Textures in Python.
 author: Gogul Ilango
 permalink: software/texture-recognition
-image: https://drive.google.com/uc?id=1_Ge8_Na4-OBRq58vgsbmFlMObMLb2Hdd
+image: https://drive.google.com/uc?id=1Djo85y9-krezGfhitRC7ApjNSF5s-tgO
 ---
 
 <div class="git-showcase">

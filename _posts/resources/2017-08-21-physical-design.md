@@ -6,7 +6,7 @@ title: Physical Design
 description: Resources that would be helpful for someone who's starting his career as a Physical Design Engineer.
 author: Gogul Ilango
 permalink: /hardware/physical-design
-image: https://drive.google.com/uc?id=1x6zDQs3xVMqMAI_GuFjxBuLHwicUsWmN
+image: https://drive.google.com/uc?id=1wNjJ6DYBvguGqNkL6qUTMQ3VDY41nmkx
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">

@@ -6,7 +6,7 @@ title: Hand Gesture Recognition using Python and OpenCV - Part 1
 description: Learn how to segment hand regions from a video sequence to further recognize hand gestures using OpenCV and Python.
 author: Gogul Ilango
 permalink: software/hand-gesture-recognition-p1
-image: https://drive.google.com/uc?id=1EDp4icHsfqF-xWv0skOFQ-hDZY0eIk_7
+image: https://drive.google.com/uc?id=1H-AAPvyD3tfEUFKuXGM4AN1mtQ4aMJhn
 ---
 
 <div class="git-showcase">

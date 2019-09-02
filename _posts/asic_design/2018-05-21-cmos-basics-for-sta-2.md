@@ -6,7 +6,7 @@ title: CMOS Basics - Part 2
 description: Understand the fundamental concepts of Static Timing Analysis in VLSI (ASIC design) such as Switching Activity, Propagation Delay, Slew and Skew.
 author: Gogul Ilango
 permalink: /hardware/cmos-basics-for-sta-2
-image: https://drive.google.com/uc?id=1CnSrVBXlTp_0fg1XFO3uikvjItR1sEJQ
+image: https://drive.google.com/uc?id=1Bk2p60RLiz3AOcDDS0-11FfeJFC17Xjq
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">

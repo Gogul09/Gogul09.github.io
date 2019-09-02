@@ -6,7 +6,7 @@ title: Python Setup for Windows 10
 description: This tutorial is for beginners who need to setup environment for Python and its libraries in Windows 10.
 author: Gogul Ilango
 permalink: /software/python-windows-10
-image: https://drive.google.com/uc?id=1crAJHODHElM6acLc-WKgwU8VFn05lUOT
+image: https://drive.google.com/uc?id=1fcxj3ZuUBVQSGef8HqkVUIOi_6jO1utc
 ---
 
 In this blog post, we will setup the environment for Python and its libraries in Windows 10. This is useful for a beginner or a professional who quickly wants to setup Python in a Windows 10 machine.

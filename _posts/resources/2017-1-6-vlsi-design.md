@@ -6,7 +6,7 @@ title: VLSI Design
 description: Resources that would be helpful for someone who's interested in VLSI design. 
 author: Gogul Ilango
 permalink: /hardware/vlsi-design
-image: https://drive.google.com/uc?id=1COudkAKca4-bbb-WPce2AJmXXJeLEuyy
+image: https://drive.google.com/uc?id=19HGax5PxESQQcTnTPYQXjVts3s0_6JZo
 ---
 
 Very Large Scale Integrated Design is all about how to design, manufacture, test and deploy Integrated Circuits (ICs) for various electronic applications such as smartphone, television, laptop, desktop, cars, airplane etc. In this page, I will be updating resources related to VLSI design such as books, blogs, courses, videos etc.

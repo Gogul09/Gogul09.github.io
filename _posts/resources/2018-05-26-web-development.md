@@ -6,7 +6,7 @@ title: Web Development
 description: Resources that would be helpful for someone who's interested in front-end and back-end web development. 
 author: Gogul Ilango
 permalink: /software/web-development
-image: https://drive.google.com/uc?id=17Va0kso6wFY9v0w7K35iLzKTeaBn1ZAg
+image: https://drive.google.com/uc?id=1uzyaeoPyEa_rQ69N5K7t_JQlbaG1HE4V
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">

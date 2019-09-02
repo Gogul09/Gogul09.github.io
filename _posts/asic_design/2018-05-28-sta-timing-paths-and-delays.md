@@ -6,7 +6,7 @@ title: Static Timing Analysis - Timing Paths and Delays
 author: Gogul Ilango
 permalink: /hardware/sta-timing-paths-and-delays
 description: Understand the basic concepts behind Static Timing Analysis in VLSI (ASIC design) such as Timing Paths and Delays.
-image: https://drive.google.com/uc?id=1wYh_TUV7UofhOqrHgBNe0J4NvrY0oH6l
+image: https://drive.google.com/uc?id=1G5IufAyiH6rg0KGrmvTkDvjYBEwcLKV1
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">

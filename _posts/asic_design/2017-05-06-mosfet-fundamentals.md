@@ -6,7 +6,7 @@ title: MOSFET fundamentals
 description: Learn the fundamentals of Metal Oxide Semiconductor Field Effect Transistor (MOSFET)
 author: Gogul Ilango
 permalink: /hardware/mosfet-fundamentals
-image: https://drive.google.com/uc?id=1duoqegFum-VSsDvA6dZTw5auBYf1fJ_1
+image: https://drive.google.com/uc?id=1EnLLTeC5eWSy-TPQye-sg9aMndUISJyT
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">

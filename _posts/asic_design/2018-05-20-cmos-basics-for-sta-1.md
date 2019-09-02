@@ -6,7 +6,7 @@ title: CMOS Basics - Part 1
 description: Understand the basics of CMOS and terminologies used to perform Static Timing Analysis in VLSI (ASIC design)
 author: Gogul Ilango
 permalink: /hardware/cmos-basics-for-sta-1
-image: https://drive.google.com/uc?id=1_yBFpidi74bPHzLbyW9EWpdiu_t8weTG
+image: https://drive.google.com/uc?id=1cTetisIy4dJrwezQbVUyZOhslpVbWAI3
 ---
 
 <div class="sidebar_tracker" id="sidebar_tracker">
