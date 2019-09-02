@@ -128,25 +128,11 @@ permalink: /
       <div class="blog-category-box work-category-box about-category-box" id="box_moocs" style="box-shadow: none !important;">
         <div class="work-inner-box">
           <div class="moocs_slides">
-            <h4>Applied Machine Learning in Python</h4>
+            <h4>TensorFlow in Practice Specialization</h4>
             <figure>
-              <img src="https://drive.google.com/uc?id=18zw5eUTcMejkAPtpoB9_OZ3SpRijg8v5">
+              <img src="https://drive.google.com/uc?id=1Ndes3KgIc9Ow-WOL0Gne7_DIi8mEAaQq">
             </figure>
-            <a href="https://www.coursera.org/account/accomplishments/verify/KYMRAB63WF8Q" target="_blank">Credential</a>
-          </div>
-          <div class="moocs_slides">
-            <h4>Neural Networks and Deep Learning</h4>
-            <figure>
-              <img src="https://drive.google.com/uc?id=16fjEyxNIu6tHwgx5KLIegD-mxRWjkdmc">
-            </figure>
-            <a href="https://www.coursera.org/account/accomplishments/verify/8WBUXEEL363X" target="_blank">Credential</a>
-          </div>
-          <div class="moocs_slides">
-            <h4>Sequence Models</h4>
-            <figure>
-              <img src="https://drive.google.com/uc?id=16PQopAM83OWcaq8vnMH2FVlDSIqOAsmw">
-            </figure>
-            <a href="https://www.coursera.org/account/accomplishments/verify/WJJGDMT2XKD4" target="_blank">Credential</a>
+            <a href="https://www.coursera.org/account/accomplishments/specialization/A5TFAHFYTR98" target="_blank">Credential</a>
           </div>
           <div class="moocs_slides">
             <h4>Introduction to TensorFlow for Artificial Intelligence, Machine Learning and Deep Learning</h4>
@@ -168,6 +154,34 @@ permalink: /
               <img src="https://drive.google.com/uc?id=1DlkXBG2Np7kz945EFmF4fT57oRkwXmXQ">
             </figure>
             <a href="https://www.coursera.org/account/accomplishments/verify/GEM478PB2SQ9" target="_blank">Credential</a>
+          </div>
+          <div class="moocs_slides">
+            <h4>Sequences, Time Series and Prediction</h4>
+            <figure>
+              <img src="https://drive.google.com/uc?id=1o9PZrq0XMk-WgXqMqLzYQEakHYCJ5y0q">
+            </figure>
+            <a href="https://www.coursera.org/account/accomplishments/verify/88YCMHDBRFV9" target="_blank">Credential</a>
+          </div>
+          <div class="moocs_slides">
+            <h4>Neural Networks and Deep Learning</h4>
+            <figure>
+              <img src="https://drive.google.com/uc?id=16fjEyxNIu6tHwgx5KLIegD-mxRWjkdmc">
+            </figure>
+            <a href="https://www.coursera.org/account/accomplishments/verify/8WBUXEEL363X" target="_blank">Credential</a>
+          </div>
+          <div class="moocs_slides">
+            <h4>Sequence Models</h4>
+            <figure>
+              <img src="https://drive.google.com/uc?id=16PQopAM83OWcaq8vnMH2FVlDSIqOAsmw">
+            </figure>
+            <a href="https://www.coursera.org/account/accomplishments/verify/WJJGDMT2XKD4" target="_blank">Credential</a>
+          </div>
+          <div class="moocs_slides">
+            <h4>Applied Machine Learning in Python</h4>
+            <figure>
+              <img src="https://drive.google.com/uc?id=18zw5eUTcMejkAPtpoB9_OZ3SpRijg8v5">
+            </figure>
+            <a href="https://www.coursera.org/account/accomplishments/verify/KYMRAB63WF8Q" target="_blank">Credential</a>
           </div>
           <div class="moocs_btns">
             <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
