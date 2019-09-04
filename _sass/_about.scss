@@ -44,6 +44,21 @@
   @include mobile {
     font-size: 14px !important;
   }
+  &:hover, &:active { 
+    border-bottom: 1px solid #cf2321 !important;
+  }
+}
+
+.timeline b {
+  font-weight: 100;
+  font-family: $font_header;
+  color: #cf2321 !important;
+}
+
+.about_me_body p a, .about_me_body li a {
+  &:hover, &:active { 
+    border-bottom: 1px solid #cf2321 !important;
+  }
 }
 
 .about_me_body p span {
