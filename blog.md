@@ -5,7 +5,7 @@ title: Blog
 subheading: my journey as an engineer
 description: This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources.
 color: grad-blog
-image: images/gi-logo.jpg
+image: /images/icons/logo.png
 permalink: /blog
 ---
 

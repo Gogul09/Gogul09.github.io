@@ -5,24 +5,17 @@
 name: Gogul Ilango
 description: This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources.
 avatar: /images/gogs.jpg
-subheading: Be awesome at VLSI Design and Machine Intelligence
+subheading: Personal Website of Gogul Ilango
+image: /images/icons/logo.png
 
 footer-links:
-  dribbble:
-  email: 
-  facebook:
-  flickr:
+  email: gogulilangoswami@gmail.com
   github: Gogul09
-  instagram:
   linkedin: Gogulilango
-  pinterest:
-  rss:
-  twitter:
+  twitter: gogul_ilango
   stackoverflow:
   youtube: channel/UC_7qnwOlGBTjnt4TxPMureQ
-  googleplus: 
 
-disqus:
 google_analytics: UA-93019594-1
 url: https://gogul09.github.io/
 baseurl: ""
