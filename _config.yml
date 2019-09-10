@@ -17,7 +17,7 @@ footer-links:
   youtube: channel/UC_7qnwOlGBTjnt4TxPMureQ
 
 google_analytics: UA-93019594-1
-url: https://gogul09.github.io/
+url: "https://gogul.dev"
 baseurl: ""
 
 permalink: /:title/
@@ -51,6 +51,7 @@ exclude:
 plugins: 
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 paginate: 4
 excerpt_separator: <!--more-->
