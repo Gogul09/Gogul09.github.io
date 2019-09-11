@@ -1,0 +1,16 @@
+I"l<div class="sidebar_tracker" id="sidebar_tracker">
+   <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+   <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+   <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#project-idea">Project Idea</a></li>
+  </ul>
+</div>
+
+<p>If you are an absolute beginner with no idea about machine learning, but wish to learn this technology, this page is dedicated for you. Machine learning is one of the hottest topic in 21st century. And no wonder why every tech company in the world is searching for engineers with machine learning skill. My friends ask me this very important and confusing question of our time.</p>
+
+<blockquote>
+  <p>Where and how should I start learning machine learning?</p>
+</blockquote>
+
+<p>Let me say that machine learning is all about <em>data</em> and <em>computational power</em> before I get into any other jargon. The whole idea behind this learning thing is that we make use of past data and algorithmic thinking to solve prediction problems around our world.</p>
+:ET

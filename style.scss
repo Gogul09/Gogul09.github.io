@@ -186,12 +186,6 @@
   }
 }
 
-article img {
-  height: 400px;
-  @include mobile {
-    height: auto;
-  }
-}
 
 .posts > .post:last-child {
   padding-bottom: 1em;
