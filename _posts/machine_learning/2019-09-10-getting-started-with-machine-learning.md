@@ -29,6 +29,11 @@ If you are an absolute beginner with no idea about machine learning, but wish to
 
 This is because the number of tutorials, videos, lectures, infographics, slides etc., related to this topic has outnumbered recently with plethora of freely available learning materials for anyone willing to learn. Nevertheless, I want to breakdown this topic into pieces that I followed/following to learn more in this domain.
 
+<figure>
+    <img src="/images/infographics/ai-basics.png" />
+    <figcaption>Figure 1. Artificial Intelligence Basics</figcaption>
+</figure>
+
 <h3 id="demystifying-ml">Demystifying ML</h3>
 
 Before I get into any jargon, let me say that machine learning is all about **data** and **computational power**. The whole idea behind this learning thing is that we make use of past data and our algorithmic thinking to solve problems around our world.
@@ -81,6 +86,13 @@ Before taking the second course, you must be aware of [scikit-learn](https://sci
 from sklearn.linear_model import LogisticRegression
 model = LogisticRegression(random_state=9)
 ```
+
+<figure>
+    <img src="/images/infographics/supervised-learning.png" />
+    <figcaption>Figure 2. Supervised Machine Learning in a Nutshell</figcaption>
+</figure>
+
+As you see from the above figure, as a beginner, we will mostly focus on supervised machine learning which means we have *labeled data* using which we train an algorithm to predict label for unseen new data. Currently, majority of the applications fall under this category of machine learning.
 
 <h3 id="learn-from-scratch">Learn from scratch</h3>
 
