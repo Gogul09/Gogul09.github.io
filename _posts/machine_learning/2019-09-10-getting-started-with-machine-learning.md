@@ -20,6 +20,7 @@ image: https://drive.google.com/uc?id=1b5sC_T-CysvP_toHuolmcrI_i_UpN7R3
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#applying-everything">Applying everything</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#follow-blogs">Follow blogs</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#make-use-of-time">Make use of time</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#we-need-to-go-deep">We need to go deep</a></li>
   </ul>
 </div>
 
@@ -28,6 +29,8 @@ If you are an absolute beginner with no idea about machine learning, but wish to
 > Where and how should I start learning machine learning?
 
 This is because the number of tutorials, videos, lectures, infographics, slides etc., related to this topic has outnumbered recently with plethora of freely available learning materials for anyone willing to learn. Nevertheless, I want to breakdown this topic into pieces that I followed/following to learn more in this domain.
+
+> I want to promise you that you can learn and master machine learning and deep learning without spending any money (provided you have an internet connection). Yes. It's possible if you have the interest and will to learn this technology.
 
 <figure>
     <img src="/images/infographics/ai-basics.png" />
@@ -54,7 +57,7 @@ You must have learnt mathematics during your school/college days. As we are deal
 
 And you need to trust me here because, how do you think your machine learning algorithm predicts tomorrow's weather? Code? Nope. Its math translated to code! We need a firm grip on fundamental concepts in math to move forward in this fast distruptive technology. 
 
-You can take the courses mentioned above to familiarize yourself with math needed for machine learning. If you skip this step and think that you can write code without math, you will definitely revisit this line at some point in time.
+We can take the courses mentioned above to familiarize ourselves with math needed for machine learning. If you skip this step and think that you can write code without math, you will definitely revisit this line at some point in time.
 
 
 <h3 id="programming">Programming</h3>
