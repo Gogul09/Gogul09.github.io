@@ -59,12 +59,12 @@ You can take the courses mentioned above to familiarize yourself with math neede
 
 <h3 id="programming">Programming</h3>
 
-Python programming language is a no-brainer choice when it comes to machine learning. This is because it is easy to learn, highly readable by others and has larger community for help around the world. You need to learn python using freely available learning materials given below.
+Python programming language is a no-brainer choice when it comes to machine learning. This is because it is easy to learn, highly readable by others and has larger community for help around the world. We need to learn python using freely available learning materials given below.
 
 * [HackerRank](https://www.hackerrank.com/){:target="_blank"}
 * [Python Programming Resources](https://gogul.dev/software/python-programming){:target="_blank"}
 
-It will take some time to get a good grip on Python (say 1-2 months). After that, you could start learning python libraries that are used for machine learning such as 
+It will take some time to get a good grip on Python (say 1-2 months). After that, we could start learning python libraries that are used for machine learning such as 
 
 * [NumPy](https://numpy.org/){:target="_blank"}
 * [SciPy](https://www.scipy.org/){:target="_blank"}
@@ -73,12 +73,12 @@ It will take some time to get a good grip on Python (say 1-2 months). After that
 
 <h3 id="coursera-is-our-teacher">Coursera is our teacher</h3>
 
-The best place online to learn anything related to Artificial Intelligence is [Coursera](http://coursera.org){:target="_blank}. Once you get comfortable with math, you can take free (audit) coursera courses to learn about machine learning. Some of the useful courses that I completed are given below. I highly recommend you to take these courses instead of searching for some other content in the internet as these are structured courses taught by highly experienced people.
+The best place online to learn anything related to Artificial Intelligence is [Coursera](http://coursera.org){:target="_blank}. Once we get comfortable with math, we can take free (audit) coursera courses to learn about machine learning. Some of the useful courses that I completed are given below. I highly recommend you to take these courses instead of searching for some other content in the internet as these are structured courses taught by highly experienced people.
 
 * [Machine Learning](https://www.coursera.org/learn/machine-learning){:target="_blank"} by Stanford University - This is the defacto standard ML course taught by everyone's favorite Andrew NG sir. This course takes you from an ultimate beginner to a novice in ML.
-* [Applied Machine Learning in Python](https://www.coursera.org/learn/python-machine-learning){:target="_blank"} by University of Michigan -  This amazing course teaches you to apply ML using python and sciki-learn. This course is taught by Professor Kevyn Collins-Thompson and the assignments are pretty challenging.
+* [Applied Machine Learning in Python](https://www.coursera.org/learn/python-machine-learning){:target="_blank"} by University of Michigan -  This amazing course teaches us to apply ML using python and sciki-learn. This course is taught by Professor Kevyn Collins-Thompson and the assignments are pretty challenging.
 
-Before taking the second course, you must be aware of [scikit-learn](https://scikit-learn.org/){:target="_blank"} library which is used by majority of ML practitioners around the world. This library is written in python and has abstracted all the ML algorithms for you, so that you could concentrate on problem solving. Which means, making use of logistic regression algorithm for a problem would be as simple as the below two lines of code.
+Before taking the second course, we must be aware of [scikit-learn](https://scikit-learn.org/){:target="_blank"} library which is used by majority of ML practitioners around the world. This library is written in python and has abstracted all the ML algorithms for us, so that we could concentrate on problem solving. Which means, making use of logistic regression algorithm for a problem would be as simple as the below two lines of code.
 
 <div class="code-head">log_reg.py<span>code</span></div>
 
@@ -92,11 +92,13 @@ model = LogisticRegression(random_state=9)
     <figcaption>Figure 2. Supervised Machine Learning in a Nutshell</figcaption>
 </figure>
 
-As you see from the above figure, as a beginner, we will mostly focus on supervised machine learning which means we have *labeled data* using which we train an algorithm to predict label for unseen new data. Currently, majority of the applications fall under this category of machine learning.
+As you see from the above figure, as a beginner, we will mostly focus on supervised machine learning which means we have *labeled data* using which we train an algorithm to predict label of unseen new data. Currently, majority of the applications fall under this category of machine learning. 
+
+There are two other types of machine learning such as *Unsupervised Learning* and *Reinforcement Learning* which we will be learning once we get a good grip on *Supervised Learning*.
 
 <h3 id="learn-from-scratch">Learn from scratch</h3>
 
-Once you become familiar with python and its libraries + completing the above two coursera courses, you need to understand how to implement each machine learning algorithm from scratch using python without any library.
+Once we become familiar with python and its libraries + completing the above two coursera courses, we need to understand how to implement each machine learning algorithm from scratch using python without any library.
 
 This is very much needed to highlight us from others. Learning how each algorithm really works and trying to implement them from scratch requires patience and dedication. Below I have listed the majority of ML algorithms we need to learn implementing from scratch.
 
@@ -110,6 +112,7 @@ This is very much needed to highlight us from others. Learning how each algorith
 * Decision Trees
 * Random Forests
 * Gradient Boosted Decision Trees
+* Neural Nets Classifier
 
 #### Regression
 
@@ -122,17 +125,13 @@ This is very much needed to highlight us from others. Learning how each algorith
 * Ada boost regression
 * Extra trees regression
 * Gradient boosting regression
-
-#### Clustering
-
-* K-Means clustering
-* Mean Shift Clustering
+* Neural Nets regressor
 
 <h3 id="applying-everything">Applying everything</h3>
 
 Learning and understanding is just half the part. We need to apply what we have learnt so far. Solving ML problems is highly helpful for you as well as the community. That's why, we have a dedicated place called [Kaggle](http://kaggle.com){:target="_blank"}. 
 
-Using Kaggle, you can compete with ML practitioners worldwide and win prizes! Kaggle has integrated Jupyter notebook environment for you, so that you can work on a problem, code it, solve it and share it with the community online.
+Using Kaggle, we can compete with ML practitioners worldwide and win prizes! Kaggle has integrated Jupyter notebook environment for us, so that we can work on a problem, code it, solve it and share it with the community online.
 
 <h3 id="follow-blogs">Follow Blogs</h3>
 
@@ -152,5 +151,14 @@ Time is valuable. Once its lost, its lost forever. Hence, we need to utilize the
 * [Machine Learning Fundamentals](https://www.youtube.com/playlist?list=PL_onPhFCkVQhUzcTVgQiC8W2ShZKWlm0s){:target="_blank"}
 * [Machine Learning Tutorial Videos - Simplilearn](https://www.youtube.com/playlist?list=PLEiEAq2VkUULYYgj13YHUWmRePqiu8Ddy){:target="_blank"}
 * [Machine Learning Tutorial Python](https://www.youtube.com/playlist?list=PLeo1K3hjS3uvCeTYTeyfe0-rN5r8zn9rw){:target="_blank"}
+
+<h3 id="we-need-to-go-deep">We need to go deep</h3>
+
+Once we get comfortable with machine learning, we can move to deep learning. Deep Learning is a branch of machine learning where the primary algorithm used is a deep neural network. State-of-the-art problems such as image classification, speech recognition, machine translation, style transfer etc., are solved using flavors of deep neural networks such as Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), Long-Short Term Memory Networks (LSTM), Generative Adversarial Networks (GAN), Gated Recurrent Units (GRU) etc.,
+
+I followed the below courses to learn about these amazing concepts.
+
+* [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning){:target="_blank"}
+* [TensorFlow in Practice Specialization](https://www.coursera.org/specializations/tensorflow-in-practice){:target="_blank"}
 
 I still learn about everything discussed above and I find this field very interesting. Hope this article inspires you to get started with machine learning.

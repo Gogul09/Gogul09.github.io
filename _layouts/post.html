@@ -7,7 +7,7 @@ layout: post-default
 		<h1>{{ page.title }}</h1>
 		<div class="post-subheading">
 			<p>{{ page.class }} | {{ page.date | date_to_long_string }}</p>
-			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io{{ page.url }}"></a></p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul.dev{{ page.url }}"></a></p>
 		</div>
 		{% include share.html %}
 	</div>
@@ -31,7 +31,7 @@ layout: post-default
 				{% include closers.html %}
 			</article>
 			
-			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul09.github.io{{ page.url }}"></span></p></div>
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul.dev{{ page.url }}"></span></p></div>
 
 			<div id="disqus_thread"></div>
 			<script>

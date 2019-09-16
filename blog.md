@@ -76,7 +76,7 @@ permalink: /blog
           <p>Learn how to make use of your brain to write code.</p>
           {% for post in site.posts %}
             {% if post.categories contains 'software' %}
-              {% if post.class contains 'Front-End Web' or post.class contains 'Programming Languages' or post.class contains 'Tools' or post.class contains 'Environment Setup' %}
+              {% if post.class contains 'Programming' %}
                 {% capture programming_count %} {{ programming_count | plus: 1 }} {% endcapture %}
               {% endif %}
             {% endif %}
