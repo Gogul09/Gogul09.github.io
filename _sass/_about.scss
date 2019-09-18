@@ -1,6 +1,6 @@
 .about-container {
   width: 100%;
-  background-color: #ededed;
+  background-color: #fbfbfb;
 }
 
 .about-wrapper {
@@ -248,7 +248,7 @@
 }
 
 .grad-about {
-  background-color: $black;
+  background-color: $white;
   @include mobile {
     border-bottom: 0px;
   }

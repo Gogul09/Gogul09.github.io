@@ -29,15 +29,15 @@
 }
 
 .splash-header {
-	background-color: $black !important;
+	background-color: $white !important;
 	@include mobile {
-		background-color: #ffffff !important;
+		background-color: $white !important;
 		background-image: none !important
 	}
 }
 
 .splash-header a {
-	color: white !important;
+	color: $white !important;
 }
 
 .splash-wrapper h1 {
