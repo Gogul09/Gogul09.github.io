@@ -67,6 +67,12 @@
   }
 }
 
+.categories-wrapper h1 {
+  @include mobile {
+    text-align: center !important;
+  }
+}
+
 .post-subheading {
   text-align: center !important;
   margin: 0px auto;
