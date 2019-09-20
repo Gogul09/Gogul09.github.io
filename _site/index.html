@@ -89,11 +89,11 @@
     <div class="home-wrapper about-wrapper">
       <div class="category-tab about-category-tab" id="category-tab">
         <ul>
-          <li id="tab_summary" onclick="showTabBox(this.id)">summary</li>
-          <li id="tab_publications" onclick="showTabBox(this.id)">publications</li>
-          <li id="tab_moocs" onclick="showTabBox(this.id)">moocs</li>
-          <li id="tab_projects" onclick="showTabBox(this.id)">hobby projects</li>
-          <li id="tab_earth" onclick="showTabBox(this.id)">earth</li>
+          <li id="tab_summary" onclick="showAboutTabBox(this.id)">summary</li>
+          <li id="tab_publications" onclick="showAboutTabBox(this.id)">publications</li>
+          <li id="tab_moocs" onclick="showAboutTabBox(this.id)">moocs</li>
+          <li id="tab_projects" onclick="showAboutTabBox(this.id)">hobby projects</li>
+          <li id="tab_earth" onclick="showAboutTabBox(this.id)">earth</li>
         </ul>
       </div>
       <!--Summary STARTS-->
@@ -398,8 +398,8 @@
 
 <script type="text/javascript">
   document.getElementById("box_summary").style.display = "block";
-  document.getElementById("tab_summary").style.backgroundColor = "rgb(255, 234, 130)";
   document.getElementById("tab_summary").style.fontWeight = "bold";
+  document.getElementById("tab_summary").style.borderBottom = "1px solid black";
 </script>
 
 

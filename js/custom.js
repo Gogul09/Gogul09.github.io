@@ -135,6 +135,27 @@ function showTabBox(id) {
   tab.style.fontWeight = "bold";
 }
 
+function showAboutTabBox(id) {
+  var tab = document.getElementById(id);
+  var box = document.getElementById(id.replace("tab", "box"));
+
+  var boxes = document.getElementsByClassName("blog-category-box");
+  var tabs = document.getElementById("category-tab").getElementsByTagName("li");
+
+  for (var i = 0; i < boxes.length; i++) {
+    boxes[i].style.display = "none";
+  }
+
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].style.fontWeight = "100";
+    tabs[i].style.borderBottom = "0px";
+  }
+
+  box.style.display = "block";
+  tab.style.fontWeight = "bold";
+  tab.style.borderBottom = "1px solid black";
+}
+
 var modalBool = 0;
 function showHideModal(imgId) {
   // Get the modal
