@@ -18,15 +18,15 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
   </div>
 </div>
 
-<div class="home-container">
+<div class="home-container" style="background-color: white !important;">
   <div class="home-articles">
     <div class="home-wrapper music-wrapper">
-      <div class="category-tab" id="category-tab">
+      <div class="category-tab" id="category-tab" style="box-shadow: none !important;">
         <ul>
-          <li id="tab_comp_audio" onclick="showTabBox(this.id)">compositions<br>audio</li>
-          <li id="tab_cover_audio" onclick="showTabBox(this.id)">covers<br>audio</li>
-          <li id="tab_comp_video" onclick="showTabBox(this.id)">compositions<br>video</li>
-          <li id="tab_cover_video" onclick="showTabBox(this.id)">covers<br>video</li>
+          <li id="tab_comp_audio" onclick="showAboutTabBox(this.id)">compositions<br>audio</li>
+          <li id="tab_cover_audio" onclick="showAboutTabBox(this.id)">covers<br>audio</li>
+          <li id="tab_comp_video" onclick="showAboutTabBox(this.id)">compositions<br>video</li>
+          <li id="tab_cover_video" onclick="showAboutTabBox(this.id)">covers<br>video</li>
         </ul>
       </div>
       <div class="blog-category-box work-category-box music-category-box" id="box_comp_audio">
@@ -59,6 +59,6 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
 
 <script type="text/javascript">
   document.getElementById("box_comp_audio").style.display = "block";
-  document.getElementById("tab_comp_audio").style.backgroundColor = "rgb(255, 234, 130)";
+  document.getElementById("tab_comp_audio").style.borderBottom = "1px solid black";
   document.getElementById("tab_comp_audio").style.fontWeight = "bold";
 </script>
