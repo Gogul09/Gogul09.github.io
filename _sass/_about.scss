@@ -316,3 +316,20 @@
     height: auto;
   }
 }
+
+.book-shelf {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  margin-top: 20px;
+  padding: 0px !important;
+  justify-content: center;
+
+  img {
+    height: 200px;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+  }
+}

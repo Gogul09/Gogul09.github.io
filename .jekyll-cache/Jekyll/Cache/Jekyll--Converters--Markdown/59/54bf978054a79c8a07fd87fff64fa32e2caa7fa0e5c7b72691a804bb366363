@@ -1,4 +1,4 @@
-I"†T<div class="blog-intro grad-about about-header-fix">
+I"hX<div class="blog-intro grad-about about-header-fix">
   <div class="profile-wrapper">
     <div class="profile-pic"><img src="/images/gogul.png" /></div>
     <div class="profile-description">
@@ -20,11 +20,12 @@
     <div class="home-wrapper about-wrapper">
       <div class="category-tab about-category-tab" id="category-tab">
         <ul>
-          <li id="tab_summary" onclick="showTabBox(this.id)">summary</li>
-          <li id="tab_publications" onclick="showTabBox(this.id)">publications</li>
-          <li id="tab_moocs" onclick="showTabBox(this.id)">moocs</li>
-          <li id="tab_projects" onclick="showTabBox(this.id)">hobby projects</li>
-          <li id="tab_earth" onclick="showTabBox(this.id)">earth</li>
+          <li id="tab_summary" onclick="showAboutTabBox(this.id)">summary</li>
+          <li id="tab_publications" onclick="showAboutTabBox(this.id)">publications</li>
+          <li id="tab_moocs" onclick="showAboutTabBox(this.id)">moocs</li>
+          <li id="tab_projects" onclick="showAboutTabBox(this.id)">hobby projects</li>
+          <li id="tab_earth" onclick="showAboutTabBox(this.id)">earth</li>
+          <li id="tab_books" onclick="showAboutTabBox(this.id)">books</li>
         </ul>
       </div>
       <!--Summary STARTS-->
@@ -317,6 +318,26 @@
         </div>
       </div>
       <!--Earth ENDS-->
+      <!--Books STARTS-->
+      <div class="blog-category-box work-category-box about-category-box" id="box_books" style="box-shadow: none !important;">
+        <div class="work-inner-box">
+          <div class="book-shelf">
+            <div class="book-item">
+              <img src="https://drive.google.com/uc?id=13BnERyxqUr0ii4tZ1R_3HsxA3-iStItk" />
+            </div>
+            <div class="book-item">
+              <img src="https://drive.google.com/uc?id=1JnBAwPLw2Xp_ilK0so7KQS0hVJ_tq5Dr" />
+            </div>
+            <div class="book-item">
+              <img src="https://drive.google.com/uc?id=1a1CIeQI7qyOFF58mCodLAP0RuFgwMHNu" />
+            </div>
+            <div class="book-item">
+              <img src="https://drive.google.com/open?id=1avkjkBIUiSZ4ZVTvg6rDLNtIwi0KbetH" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Books ENDS-->
     </div>
   </div>
 </div>
@@ -330,7 +351,7 @@
 <script type="text/javascript">
   document.getElementById("box_summary").style.display = "block";
   document.getElementById("tab_summary").style.fontWeight = "bold";
-  document.getElementById("tab_summary").style.border = "1px solid black";
+  document.getElementById("tab_summary").style.borderBottom = "1px solid black";
 </script>
 
 :ET
