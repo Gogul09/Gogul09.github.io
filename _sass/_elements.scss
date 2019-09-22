@@ -111,6 +111,8 @@ h3 {
   font-size: 1.4rem;
   color: #222;
   position: relative;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
   @include mobile {
     font-size: 1.0rem;
   }
