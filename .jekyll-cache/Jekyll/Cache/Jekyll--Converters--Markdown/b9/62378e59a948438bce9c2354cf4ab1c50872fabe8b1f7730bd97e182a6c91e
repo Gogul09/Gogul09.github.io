@@ -1,125 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Logistic Regression from Scratch – Gogul Ilango </title>
-
-  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400|Roboto:300|Nunito:700" rel="stylesheet">
-  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
-
-  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
-
-      <meta charset="utf-8" />
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-
-    <meta property="og:title" content="Logistic Regression from Scratch" />
-    <meta name="description" content="Understand how to solve a classification problem using logistic regression from scratch using python and numpy." />
-    <meta property="og:description" content="Understand how to solve a classification problem using logistic regression from scratch using python and numpy." />
-    <meta property="twitter:title" content="Logistic Regression from Scratch" />
-
-    <meta property="og:image" content="https://drive.google.com/uc?id=1rjTumTjtBj7nRdADfGiXs22NcX8xBwe2"/>
-    <meta property="og:image:width" content="180" />
-    <meta property="og:image:height" content="110" />
-
-    <meta name="twitter:title" content="Logistic Regression from Scratch">
-    <meta name="twitter:description" content="Understand how to solve a classification problem using logistic regression from scratch using python and numpy.">
-    <meta name="twitter:image" content="https://drive.google.com/uc?id=1rjTumTjtBj7nRdADfGiXs22NcX8xBwe2">
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Logistic Regression from Scratch | Gogul Ilango</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Logistic Regression from Scratch" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Understand how to solve a classification problem using logistic regression from scratch using python and numpy." />
-<meta property="og:description" content="Understand how to solve a classification problem using logistic regression from scratch using python and numpy." />
-<link rel="canonical" href="http://localhost:4000/software/ml/logistic-regression-from-scratch" />
-<meta property="og:url" content="http://localhost:4000/software/ml/logistic-regression-from-scratch" />
-<meta property="og:site_name" content="Gogul Ilango" />
-<meta property="og:image" content="https://drive.google.com/uc?id=1rjTumTjtBj7nRdADfGiXs22NcX8xBwe2" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-09-28T00:00:00+05:30" />
-<script type="application/ld+json">
-{"url":"http://localhost:4000/software/ml/logistic-regression-from-scratch","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/ml/logistic-regression-from-scratch"},"description":"Understand how to solve a classification problem using logistic regression from scratch using python and numpy.","headline":"Logistic Regression from Scratch","dateModified":"2019-09-28T00:00:00+05:30","datePublished":"2019-09-28T00:00:00+05:30","@type":"BlogPosting","image":"https://drive.google.com/uc?id=1rjTumTjtBj7nRdADfGiXs22NcX8xBwe2","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-  
-  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
-  </head>
-
-  <body>
-    <div class="outer-wrapping">
-      <div class="inner-container">
-          <div class="header-left">
-            <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
-          </div>
-          <div class="topnav header-right" id="top_navigator">
-            <a title="home" id = "nav_home" href="/"><span>home</span></a>
-            <a title="blog" id = "nav_blog" href="/blog"><span>blog</span></a>
-            <a title="creations" id = "nav_creations" href="/creations"><span>creations</span></a>
-            <a title="music" id = "nav_music" href="/music"><span>music</span></a>
-            <a title="photography" id = "nav_photography" href="/photography"><span>clicks</span></a>
-            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
-          </div>
-      </div>
-    </div>
-
-    <div id="main" role="main">
-      <div class="post-heading post-heading-wrapper post-image">
-	<div class="grad-post">
-		<h1>Logistic Regression from Scratch</h1>
-		<div class="post-subheading">
-			<p>Machine Learning | 28 September 2019</p>
-			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogul.dev/software/ml/logistic-regression-from-scratch"></a></p>
-		</div>
-		
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-<div class="share-it-box">
-<div id="share-box"> 
-		<a href="whatsapp://send?text=http://localhost:4000/software/ml/logistic-regression-from-scratch" data-action="share/whatsapp/share"><img class="icon-whatsapp" src="/images/icons/whatsapp.png"/></a>
-
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/ml/logistic-regression-from-scratch" onclick="window.open(this.href, 'mywin',
-'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-facebook" src="/images/icons/facebook.png"/></a>
-       
-        <a href="https://twitter.com/intent/tweet?text=Logistic Regression from Scratch&url=http://localhost:4000/software/ml/logistic-regression-from-scratch" onclick="window.open(this.href, 'mywin',
-'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img class="icon-twitter" src="/images/icons/twitter.png"/></a>
-
-       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/ml/logistic-regression-from-scratch&title=Logistic Regression from Scratch&summary=Understand how to solve a classification problem using logistic regression from scratch using python and numpy.&source=webjeda" onclick="window.open(this.href, 'mywin',
-'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-linkedin" src="/images/icons/linkedin.png"/></a>                               
-</div>
-</div>
-	</div>
-</div>
-
-<div class="containing">
-	<div class="wrapping">
-
-		<!--<div class="share-box">
-	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
-	<div id="top-share-box" class="top-share-box">
-		<h5>Share</h5>
-		<ul>
-			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/ml/logistic-regression-from-scratch" data-action="share/whatsapp/share">WhatsApp</a></li>
-			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/ml/logistic-regression-from-scratch" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
-			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Logistic Regression from Scratch&url=http://localhost:4000/software/ml/logistic-regression-from-scratch" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
-			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/ml/logistic-regression-from-scratch&title=Logistic Regression from Scratch&summary=Understand how to solve a classification problem using logistic regression from scratch using python and numpy.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
-		</ul>
-	</div>
-</div>-->
-
-		<div class="post-cover">
-			<div class="carbon_advertisement">
-				<div class="carbon_advertisement_wrapper">
-					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
-				</div>
-			</div>
-			<article class="post">
-				<div class="entry">
-					<div class="sidebar_tracker" id="sidebar_tracker">
+I"&6<div class="sidebar_tracker" id="sidebar_tracker">
    <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
    <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
    <ul id="sidebar_tracker_content">
@@ -275,58 +154,17 @@ $$
   <span class="k">return</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>In the above code, <span class="coding">features</span>, <span class="coding">weights</span> and <span class="coding">score</span> correspond to the matrices shown below.</p>
+<p>In the above code, <span class="coding">features</span> and <span class="coding">weights</span> corresponds to <span class="coding">h(x_i)</span> and <span class="coding">w^T</span>.</p>
 
 <div class="math-cover">
 $$
 \begin{align}
 [features] = \begin{bmatrix}
-    h(x_1)^T \\
-    h(x_2)^T \\
-    . \\
-    . \\
-    . \\
-    h(x_{30})^T \\
-    \end{bmatrix}
-    = \begin{bmatrix}
-    h_0(x_1) &amp; h_1(x_1) &amp; . &amp; . &amp; . &amp; h_{30}(x_1) \\
-    h_0(x_2) &amp; h_1(x_2) &amp; . &amp; . &amp; . &amp; h_{30}(x_2) \\
-    . &amp; . &amp; . &amp; . &amp; . &amp; . \\
-    . &amp; . &amp; . &amp; . &amp; . &amp; . \\
-    . &amp; . &amp; . &amp; . &amp; . &amp; . \\
-    h_0(x_{30}) &amp; h_1(x_{30}) &amp; . &amp; . &amp; . &amp; h_{30}(x_{30}) \\
+    1 &amp; x &amp; x^2 \\
+    1 &amp; y &amp; y^2 \\
+    1 &amp; z &amp; z^2 \\
     \end{bmatrix}
 \end{align}
-$$
-</div>
-
-<div class="math-cover">
-$$
-[score] = [features] \mathbf w
-   = \begin{bmatrix}
-    h(x_1)^T \\
-    h(x_2)^T \\
-    . \\
-    . \\
-    . \\
-    h(x_{30})^T 
-    \end{bmatrix} \mathbf w
-    = \begin{bmatrix}
-    h(x_1)^T \mathbf w \\
-    h(x_2)^T \mathbf w \\
-    . \\
-    . \\
-    . \\
-    h(x_{30})^T \mathbf w
-    \end{bmatrix} 
-    = \begin{bmatrix}
-    \mathbf w^T h(x_1) \\
-    \mathbf w^T h(x_2) \\
-    . \\
-    . \\
-    . \\
-    \mathbf w^T h(x_{30})
-    \end{bmatrix}
 $$
 </div>
 
@@ -341,77 +179,4 @@ $$
 <p>For a binary classification problem, it turns out that we can easily use <a href="https://en.wikipedia.org/wiki/Likelihood_function#Log-likelihood" target="_blank">log-likelihood</a> function. Once we pick a likelihood function, we need to know it’s derivative with respect to the weights so that we can use gradient ascent to update the weights.</p>
 
 <p><em>To be continued…</em></p>
-
-				</div>
-				<div class="note closers">
-	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
-</div>
-			</article>
-			
-			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogul.dev/software/ml/logistic-regression-from-scratch"></span></p></div>
-
-			<div id="disqus_thread"></div>
-			<script>
-				(function() {
-					var d = document, s = d.createElement('script');
-					s.src = '//gogul09.disqus.com/embed.js';
-					s.setAttribute('data-timestamp', +new Date());
-					(d.head || d.body).appendChild(s);
-				})();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		
-		</div>
-	</div>
-</div>
-
-<script type="text/javascript">
-	
-	window.onscroll = function() {
-		sideBarScrollHandler();
-		windowScrollHandler();
-	};
-	
-	function sideBarScrollHandler() {
-		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
-			document.getElementById("sidebar_tracker").style.top = "20px";
-		} else {
-			document.getElementById("sidebar_tracker").style.top = "70px";
-		}
-	}
-	
-</script>
-    </div>
-
-    <div class="wrapper-footer">
-      <footer class="footer">
-        <p><span>&copy; 2019 - gogul ilango | opinions are my own</span></p>
-       </footer>
-     </div>
-     
-     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
-
-     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-     <script src="https://apis.google.com/js/platform.js"></script>
-     <script async defer src="https://buttons.github.io/buttons.js"></script>
-     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
-     <script src="/js/custom.js"></script>
-     
-	<!-- Google Analytics -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-93019594-1', 'auto');
-		ga('send', 'pageview', {
-		  'page': '/software/ml/logistic-regression-from-scratch',
-		  'title': 'Logistic Regression from Scratch'
-		});
-	</script>
-	<!-- End Google Analytics -->
-
-
-   </body>
-</html>
+:ET

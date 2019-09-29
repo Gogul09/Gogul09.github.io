@@ -136,11 +136,70 @@ Below code is used to find the sigmoid value for a given input score.
 ```python
 def sigmoid(score):
   return (1 / (1 + np.exp(-score)))
+
+def predict_probability(features, weights):
+  score = np.dot(features, weights)
+  return sigmoid(score)
 ```
+
+In the above code, <span class="coding">features</span>, <span class="coding">weights</span> and <span class="coding">score</span> correspond to the matrices shown below.
+
+<div class="math-cover">
+$$
+\begin{align}
+[features] = \begin{bmatrix}
+    h(x_1)^T \\
+    h(x_2)^T \\
+    . \\
+    . \\
+    . \\
+    h(x_{30})^T \\
+    \end{bmatrix}
+    = \begin{bmatrix}
+    h_0(x_1) & h_1(x_1) & . & . & . & h_{30}(x_1) \\
+    h_0(x_2) & h_1(x_2) & . & . & . & h_{30}(x_2) \\
+    . & . & . & . & . & . \\
+    . & . & . & . & . & . \\
+    . & . & . & . & . & . \\
+    h_0(x_{30}) & h_1(x_{30}) & . & . & . & h_{30}(x_{30}) \\
+    \end{bmatrix}
+\end{align}
+$$
+</div>
+
+<div class="math-cover">
+$$
+[score] = [features] \mathbf w
+   = \begin{bmatrix}
+    h(x_1)^T \\
+    h(x_2)^T \\
+    . \\
+    . \\
+    . \\
+    h(x_{30})^T 
+    \end{bmatrix} \mathbf w
+    = \begin{bmatrix}
+    h(x_1)^T \mathbf w \\
+    h(x_2)^T \mathbf w \\
+    . \\
+    . \\
+    . \\
+    h(x_{30})^T \mathbf w
+    \end{bmatrix} 
+    = \begin{bmatrix}
+    \mathbf w^T h(x_1) \\
+    \mathbf w^T h(x_2) \\
+    . \\
+    . \\
+    . \\
+    \mathbf w^T h(x_{30})
+    \end{bmatrix}
+$$
+</div>
 
 But wait! how will the output value of this link function be the same as the ground truth value for a particular data point? It can't be as we are randomizing the weights for the features which will throw out some random value as the prediction.
 
-The whole point in learning algorithm is to *adjust these weights* based on the training data to arrive at a *sweep spot* that makes the ML model have *low bias* and *low variance*.
+The whole point in learning algorithm is to *adjust these weights* based on the training data to arrive at a *sweet spot* that makes the ML model have *low bias* and *low variance*.
 
 How do we adjust these weights? We need to define a *quality metric* that compares the output prediction of the ML model with the original ground truth class value. After evaluating the quality metric, we use *gradient ascent algorithm* to update the weights in a way that the quality metric reaches a global optimum value.
 
