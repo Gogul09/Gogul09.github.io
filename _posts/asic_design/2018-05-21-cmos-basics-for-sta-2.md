@@ -25,17 +25,14 @@ In the <a href="https://gogul09.github.io/hardware/cmos-basics-for-sta-1" target
 
 In this blog post, we will utilize that knowledge and look into some more concepts such as switching activity, propagation delay, slew and timing arcs.
 
-<div class="objectives">
-  <h3>Objectives</h3>
-  <p>After reading this tutorial, we will understand</p>
-  <ul>
-    <li>What is switching activity in a standard cell?</li>
-    <li>What is propagation delay and why it occurs?</li>
-    <li>Why slew exists for a waveform?</li>
-    <li>What is Intrinsic Delay?</li>
-    <li>What are Timing Arcs and Unateness?</li>
-  </ul>
-</div>
+<div class="code-head">Objectives<span>goals</span></div>
+```
+What is switching activity in a standard cell?
+What is propagation delay and why it occurs?
+Why slew exists for a waveform?
+What is Intrinsic Delay?
+What are Timing Arcs and Unateness?
+```
 
 ### Switching Activity
 Let's consider the CMOS inverter example for this blog post and the same is applicable for larger circuits as we build up.

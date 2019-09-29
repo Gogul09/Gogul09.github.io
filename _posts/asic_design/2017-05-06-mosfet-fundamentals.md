@@ -30,15 +30,12 @@ image: https://drive.google.com/uc?id=1EnLLTeC5eWSy-TPQye-sg9aMndUISJyT
 
 Smartphone that you hold in your hand has billions of transistors embedded in a single tiny chip. Can you imagine how these tiny transistors are built and packed within a single chip? It is all because of a special component in Electronics called MOSFET (Metal Oxide Semiconductor Field Effect Transistor). What happens inside this tiny little device must be studied to understand how a chip (ASIC) work.
 
-<div class="objectives">
-  <h3>Objectives</h3>
-  <p>After reading this tutorial, we will understand</p>
-  <ul>
-    <li>The basic structure of a MOSFET.</li>
-    <li>The three main operating regions of a MOSFET.</li>
-    <li>How MOSFET behaves as a Voltage-Controlled Current Source?</li>
-  </ul>
-</div>
+<div class="code-head">Objectives<span>goals</span></div>
+```
+Understand the basic structure of a MOSFET.
+What are the three main operating regions of a MOSFET?
+How MOSFET behaves as a Voltage-Controlled Current Source?
+```
 
 ### MOSFET-Basic structure
 

@@ -26,16 +26,13 @@ image: https://drive.google.com/uc?id=1G5IufAyiH6rg0KGrmvTkDvjYBEwcLKV1
 
 When designing a chip, performance is the number one concern for chip designers. The chip needs to meet timing to work properly else user experience suffers. To verify whether a design meets timing, there are different techniques such as Timing Simulation, Static Timing Analysis (STA) and Dynamic Timing Analysis (DTA). 
 
-<div class="objectives">
-  <h3>Objectives</h3>
-  <p>After reading this tutorial, we will understand</p>
-  <ul>
-    <li>What is Static Timing Analysis (STA)?</li>
-    <li>Why STA is used?</li>
-    <li>What are timing paths?</li>
-    <li>What are the different types of delays?</li>
-  </ul>
-</div>
+<div class="code-head">Objectives<span>goals</span></div>
+```
+What is Static Timing Analysis (STA)?
+Why STA is used?
+What are timing paths?
+What are the different types of delays?
+```
 
 <h3>Prerequisites</h3>
 <ul>

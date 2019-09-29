@@ -1,0 +1,719 @@
+I"��<div class="git-showcase">
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
+  </div>
+
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09/deep-learning-fundamentals/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Gogul09/deep-learning-fundamentals on GitHub">Fork</a>
+  </div>
+
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09/deep-learning-fundamentals" data-icon="octicon-star" data-show-count="true" aria-label="Star Gogul09/deep-learning-fundamentals on GitHub">Star</a>
+  </div>  
+</div>
+
+<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#dependencies">Dependencies</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#pipeline">Pipeline</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#dataset-summary">Dataset summary</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#organize-imports">Organize imports</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#define-user-inputs">Define user inputs</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#prepare-the-dataset">Prepare the dataset</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#one-hot-encoding">One Hot Encoding</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#create-the-model">Create the model</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#compile-the-model">Compile the model</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#fit-the-model">Fit the model</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#evaluate-the-model">Evaluate the model</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_12" href="#results">Results</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_13" href="#complete-code">Complete code</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_14" href="#testing-the-model">Testing the model</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_15" href="#summary">Summary</a></li>
+  </ul>
+</div>
+
+<p><strong>In this tutorial, we will learn how to recognize handwritten digit using a simple Multi-Layer Perceptron (MLP) in Keras. We will also learn how to build a near state-of-the-art deep neural network model using Python and Keras. A quick Google search about this dataset will give you tons of information - <a href="https://en.wikipedia.org/wiki/MNIST_database" target="_blank">MNIST</a>.</strong></p>
+
+<blockquote>
+  <p><strong>Update</strong>: As Python2 faces <a href="https://pythonclock.org/">end of life</a>, the below code only supports <strong>Python3</strong>.</p>
+</blockquote>
+
+<p>This tutorial is intended for beginners exploring how to implement a neural network using Keras. We will strictly focus towards the implementation of a neural network without concentrating too much on the theory part. To learn more Deep Learning theory, please visit <a href="http://deeplearning.stanford.edu/tutorial/" target="_blank">this</a> awesome website.</p>
+
+<div class="note" style="margin-bottom: 0px !important">
+	<p><b>Note</b>: Before implementing anything in code, we need to setup our environment to do Deep Learning. Make sure you use the below links to do that and then come here.</p>
+	<ul style="margin-bottom: 0px !important">
+		<li><a href="https://gogul09.github.io/software/deep-learning-windows" target="_blank">Deep Learning Environment Setup (Windows)</a></li>
+		<li><a href="https://gogul09.github.io/software/deep-learning-linux" target="_blank">Deep Learning Environment Setup for (Linux)</a></li>
+	</ul>
+</div>
+
+<div class="code-head">Objectives<span>goals</span></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>* What is MNIST dataset?
+* How to load and pre-process MNIST dataset in Keras?
+* How to use one-hot encoding in Keras?
+* How to create a multi-layer perceptron in Keras?
+* How to perform Deep Learning on MNIST dataset using Keras?
+* How to save history of model and visualize metrics using Keras and matplotlib?
+* How to recognize digits in real-images by segmenting each digit and then classifying it?
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="dependencies">Dependencies</h3>
+
+<p>You will need the following software packages and libraries to follow this tutorial.</p>
+
+<ul>
+  <li>Python</li>
+  <li>NumPy</li>
+  <li>Matplotlib</li>
+  <li>Theano or TensorFlow</li>
+  <li>Keras</li>
+</ul>
+
+<h3 id="pipeline">Pipeline</h3>
+
+<p>Any deep learning implementation in Keras follows the below pipeline. It is highly recommended that you go through this first before writing any code so that you get a clear sense of what you are going to achieve through Deep Learning.</p>
+
+<figure>
+  <img src="/images/software/first-neural-network-keras/Deep Learning flow.jpg" class="typical-image" />
+  <figcaption>Figure 1. Pipeline for Deep Learning</figcaption>
+</figure>
+
+<h3 id="dataset-summary">Dataset summary</h3>
+<ul>
+  <li>MNIST - Mixed National Institute of Standards and Technology database.</li>
+  <li>Created by - Yaan LeCun, Corinna Cortes, Christopher Burges.</li>
+  <li>Image size - 28 x 28 pixel square (784 pixels in total).</li>
+  <li>Training images - 60,000</li>
+  <li>Testing images - 10,000</li>
+  <li>Top error rate - 0.21 (achieved by CNN)</li>
+  <li>Dataset size in Keras - 14.6 MB</li>
+</ul>
+
+<div class="note"><p>
+<b>Note:</b> To look at state-of-the-art accuracies on standard datasets such as MNIST, CIFAR-10 etc., please visit <a href="http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#4d4e495354" target="_blank">this</a> excellent website by Rodrigo Benenson.
+</p></div>
+
+<h3 id="organize-imports">Organize imports</h3>
+<p>We will need the following python libraries to build our neural network.</p>
+<ul>
+  <li><a href="http://www.numpy.org/" target="_blank">NumPy</a> - To perform matrix/vector operations as we are working with Images (3D data).</li>
+  <li><a href="https://matplotlib.org/" target="_blank">Matplotlib</a> - To visualize what’s happening with our neural network model.</li>
+  <li><a href="https://keras.io/" target="_blank">Keras</a> - To create the neural network model with neurons, layers and other utilities.</li>
+</ul>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c1"># organize imports
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers.core</span> <span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">Dropout</span>
+<span class="kn">from</span> <span class="nn">keras.datasets</span> <span class="kn">import</span> <span class="n">mnist</span>
+<span class="kn">from</span> <span class="nn">keras.utils</span> <span class="kn">import</span> <span class="n">np_utils</span>
+
+<span class="c1"># fix a random seed for reproducibility
+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="define-user-inputs">Define user inputs</h3>
+<p>In a neural network, there are some variables/parameters that could be tuned to obtain good results. These variables are indeed user inputs which needs some experience to pick up the right one. Such user-defined inputs are given below -</p>
+
+<ul>
+  <li><span class="coding">nb_epoch</span> - Number of iterations needed for the network to minimize the loss function, so that it learns the weights.</li>
+  <li><span class="coding">num_classes</span> - Total number of class labels or classes involved in the classification problem.</li>
+  <li><span class="coding">batch_size</span> - Number of images given to the model at a particular instance.</li>
+  <li><span class="coding">train_size</span> - Number of training images to train the model.</li>
+  <li><span class="coding">test_size</span> - Number of testing images to test the model.</li>
+  <li><span class="coding">v_length</span> - Dimension of flattened input image size i.e. if input image size is [28x28], then v_length = 784.</li>
+</ul>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1"># user inputs
+</span><span class="n">nb_epoch</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">num_classes</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">train_size</span> <span class="o">=</span> <span class="mi">60000</span>
+<span class="n">test_size</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">v_length</span> <span class="o">=</span> <span class="mi">784</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="prepare-the-dataset">Prepare the dataset</h3>
+
+<ul>
+  <li>Loading the MNIST dataset is done simply by calling <span class="coding">mnist.load_data()</span> function in Keras. It returns two tuples holding (train data and train label) in one tuple, and (test data and test label) in another tuple.</li>
+  <li>If you run this function for the first time, it will download the MNIST dataset to a local folder <span class="coding">~/.keras/datasets/mnist.pkl.gz</span> which is 14.6 MB in size.</li>
+  <li>After loading the dataset, we need to make it in a way that our model can understand. It means we need to analyze and pre-process the dataset.
+    <ul>
+      <li><strong>Reshaping</strong> - This is needed because, in Deep Learning, we provide the raw pixel intensities of images as inputs to the neural nets. If you check the shape of original data and label, you see that each image has the dimension of [28x28]. If we flatten it, we will get 28x28=784 pixel intensities. This is achieved by using NumPy’s reshape function.</li>
+      <li><strong>Data type</strong> - After reshaping, we need to change the pixel intensities to <span class="coding">float32</span> datatype so that we have a uniform representation throughout the solution. As grayscale image pixel intensities are integers in the range [0-255], we can convert them to floating point representations using <span class="coding">.astype</span> function provided by NumPy.</li>
+      <li><strong>Normalize</strong> - Also, we normalize these floating point values in the range (0-1) to improve computational efficiency as well as to follow the standards.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="c1"># split the mnist data into train and test
+</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> <span class="n">trainLabels</span><span class="p">),</span> <span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">testLabels</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train data shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainData</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test data shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testData</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train samples: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainData</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test samples: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testData</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-out">
+[INFO] train data shape: (60000L, 28L, 28L) <br />
+[INFO] test data shape: (10000L, 28L, 28L)  <br />
+[INFO] train samples: 60000  <br />
+[INFO] test samples: 10000 <br />
+</div>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="c1"># reshape the dataset
+</span><span class="n">trainData</span> <span class="o">=</span> <span class="n">trainData</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">train_size</span><span class="p">,</span> <span class="n">v_length</span><span class="p">)</span>
+<span class="n">testData</span> <span class="o">=</span> <span class="n">testData</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">test_size</span><span class="p">,</span> <span class="n">v_length</span><span class="p">)</span>
+<span class="n">trainData</span> <span class="o">=</span> <span class="n">trainData</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"float32"</span><span class="p">)</span>
+<span class="n">testData</span> <span class="o">=</span> <span class="n">testData</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"float32"</span><span class="p">)</span>
+<span class="n">trainData</span> <span class="o">/=</span> <span class="mi">255</span>
+<span class="n">testData</span> <span class="o">/=</span> <span class="mi">255</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train data shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainData</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test data shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testData</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train samples: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainData</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test samples: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testData</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-out">
+[INFO] train data shape: (60000L, 784L)  <br />
+[INFO] test data shape: (10000L, 784L)  <br />
+[INFO] train samples: 60000  <br />
+[INFO] test samples: 10000 <br />
+</div>
+
+<h3 id="one-hot-encoding">One Hot Encoding</h3>
+<p>The class labels for our neural network to predict are numeric digits ranging from (0-9). As this is a multi-label classification problem, we need to represent these numeric digits into a binary form representation called as one-hot encoding.</p>
+
+<p>It simply means that if we have a digit, say 8, then we form a table of 10 columns (as we have 10 digits), and make all the cells zero, except 8. In Keras, we can easily transform numeric value to one-hot encoded representation using <span class="coding">np_utils.to_categorical</span> function, which takes in labels and number of class labels as input.</p>
+
+<p>For better understanding, see the one-hot encoded representation of 5, 8 and 3 below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>d</th>
+      <th>b0</th>
+      <th>b1</th>
+      <th>b2</th>
+      <th>b3</th>
+      <th>b4</th>
+      <th>b5</th>
+      <th>b6</th>
+      <th>b7</th>
+      <th>b8</th>
+      <th>b9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c1"># convert class vectors to binary class matrices --&gt; one-hot encoding
+</span><span class="n">mTrainLabels</span> <span class="o">=</span> <span class="n">np_utils</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">(</span><span class="n">trainLabels</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+<span class="n">mTestLabels</span> <span class="o">=</span> <span class="n">np_utils</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">(</span><span class="n">testLabels</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="create-the-model">Create the model</h3>
+<p>We will use a simple Multi-Layer Perceptron (MLP) as our neural network model with 784 input neurons.</p>
+
+<p>Two hidden layers are used with 512 neurons in hidden layer 1 and 256 neurons in hidden layer 2, followed by a fully connected layer of 10 neurons for taking the probabilities of all the class labels.</p>
+
+<p>ReLU is used as the activation function for hidden layers and softmax is used as the activation function for output layer.</p>
+
+<p>After creating the model, a summary of the model is presented with different parameters involved.</p>
+
+<p>We are still allowed to tune these parameters (called as hyperparameters) based on the model’s performance. In fact, there are algorithms to get the best possible hyper-parameters for our model which could be read <a href="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)" target="_blank">here</a>.</p>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="c1"># create the model
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">784</span><span class="p">,)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s">"relu"</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">256</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s">"relu"</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s">"softmax"</span><span class="p">))</span>
+
+<span class="c1"># summarize the model
+</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="compile-the-model">Compile the model</h3>
+<p>After creating the model, we need to compile the model for optimization and learning. We will use <span class="coding">categorical_crossentropy</span> as the loss function (as this is a multi-label classification problem), <span class="coding">adam</span> (gradient descent algorithm) as the optimizer and <span class="coding">accuracy</span> as our performance metric.</p>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c1"># compile the model
+</span><span class="n">model</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s">"categorical_crossentropy"</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s">"adam"</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s">"accuracy"</span><span class="p">])</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="fit-the-model">Fit the model</h3>
+<p>After compiling the model, we need to fit the model with the MNIST dataset. Using <span class="coding">model.fit</span> function, we can easily fit the created model. This function requires some arguments that we created above. Train data and train labels goes into 1st and 2nd position, followed by the <span class="coding">validation_data/validation_split</span>. Then comes <span class="coding">nb_epoch, batch_size</span> and <span class="coding">verbose</span>. Verbose is for debugging purposes. To view the history of our model or to analyse how our model gets trained with the dataset, we can use history object provided by Keras.</p>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c1"># fit the model
+</span><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> <span class="n">mTrainLabels</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">mTestLabels</span><span class="p">),</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">nb_epoch</span><span class="o">=</span><span class="n">nb_epoch</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="evaluate-the-model">Evaluate the model</h3>
+<p>After fitting the model, the model can be evaluated on the unseen test data. Using <span class="coding">model.evaluate</span> function in Keras, we can give test data and test labels to the model and make predictions. We can also use matplotlib to visualize how our model reacts at different epochs on both training and testing data.</p>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="rouge-code"><pre><span class="c1"># print the history keys
+</span><span class="k">print</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="c1"># evaluate the model
+</span><span class="n">scores</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">mTestLabels</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># history plot for accuracy
+</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s">"acc"</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s">"val_acc"</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Model Accuracy"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Epoch"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Accuracy"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s">"train"</span><span class="p">,</span> <span class="s">"test"</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s">"upper left"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># history plot for accuracy
+</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s">"loss"</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s">"val_loss"</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Model Loss"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Epoch"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Loss"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s">"train"</span><span class="p">,</span> <span class="s">"test"</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s">"upper left"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># print the results
+</span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test score - {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test accuracy - {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-out">
+['acc', 'loss', 'val_acc', 'val_loss'] <br />
+[INFO] test score - 0.0850750412192 <br />
+[INFO] test accuracy - 0.9815 <br />
+</div>
+
+<h3 id="results">Results</h3>
+<p>As you can see, our simple MLP model with just two hidden layers achieves a test accuracy of 98.15%, which is a great thing to achieve on our first attempt. Normally, training accuracy reaches around 90%, but test accuracy determines how well your model generalizes. So, it is important that you get good test accuracies for your problem.</p>
+
+<figure>
+  <img src="/images/software/digits-recognition-mlp/results.jpg" class="typical-image" />
+  <figcaption>Figure 2 a) Model Accuracy b) Model Loss</figcaption>
+</figure>
+
+<h3 id="complete-code">Complete code</h3>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+</pre></td><td class="rouge-code"><pre><span class="c1"># organize imports
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers.core</span> <span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">Dropout</span>
+<span class="kn">from</span> <span class="nn">keras.datasets</span> <span class="kn">import</span> <span class="n">mnist</span>
+<span class="kn">from</span> <span class="nn">keras.utils</span> <span class="kn">import</span> <span class="n">np_utils</span>
+
+<span class="c1"># fix a random seed for reproducibility
+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># user inputs
+</span><span class="n">nb_epoch</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">num_classes</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">train_size</span> <span class="o">=</span> <span class="mi">60000</span>
+<span class="n">test_size</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">v_length</span> <span class="o">=</span> <span class="mi">784</span>
+
+<span class="c1"># split the mnist data into train and test
+</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> <span class="n">trainLabels</span><span class="p">),</span> <span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">testLabels</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train data shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainData</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test data shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testData</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train samples: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainData</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test samples: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testData</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># reshape the dataset
+</span><span class="n">trainData</span> <span class="o">=</span> <span class="n">trainData</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">train_size</span><span class="p">,</span> <span class="n">v_length</span><span class="p">)</span>
+<span class="n">testData</span> <span class="o">=</span> <span class="n">testData</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">test_size</span><span class="p">,</span> <span class="n">v_length</span><span class="p">)</span>
+<span class="n">trainData</span> <span class="o">=</span> <span class="n">trainData</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"float32"</span><span class="p">)</span>
+<span class="n">testData</span> <span class="o">=</span> <span class="n">testData</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"float32"</span><span class="p">)</span>
+<span class="n">trainData</span> <span class="o">/=</span> <span class="mi">255</span>
+<span class="n">testData</span> <span class="o">/=</span> <span class="mi">255</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train data shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainData</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test data shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testData</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train samples: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainData</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test samples: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testData</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># convert class vectors to binary class matrices --&gt; one-hot encoding
+</span><span class="n">mTrainLabels</span> <span class="o">=</span> <span class="n">np_utils</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">(</span><span class="n">trainLabels</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+<span class="n">mTestLabels</span> <span class="o">=</span> <span class="n">np_utils</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">(</span><span class="n">testLabels</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+
+<span class="c1"># create the model
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">784</span><span class="p">,)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s">"relu"</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">256</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s">"relu"</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s">"softmax"</span><span class="p">))</span>
+
+<span class="c1"># summarize the model
+</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+
+<span class="c1"># compile the model
+</span><span class="n">model</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s">"categorical_crossentropy"</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s">"adam"</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s">"accuracy"</span><span class="p">])</span>
+
+<span class="c1"># fit the model
+</span><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> <span class="n">mTrainLabels</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">mTestLabels</span><span class="p">),</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">nb_epoch</span><span class="o">=</span><span class="n">nb_epoch</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># print the history keys
+</span><span class="k">print</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="c1"># evaluate the model
+</span><span class="n">scores</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">mTestLabels</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># history plot for accuracy
+</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s">"acc"</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s">"val_acc"</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Model Accuracy"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Epoch"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Accuracy"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s">"train"</span><span class="p">,</span> <span class="s">"test"</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s">"upper left"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># history plot for accuracy
+</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s">"loss"</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s">"val_loss"</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Model Loss"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Epoch"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Loss"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s">"train"</span><span class="p">,</span> <span class="s">"test"</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s">"upper left"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># print the results
+</span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test score - {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test accuracy - {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="testing-the-model">Testing the model</h3>
+<p>In order to test the model, we can use some images from the testing dataset. These are taken from the testing dataset because these images are unknown to our model, so that we can test our model’s performance easily. We will grab few images from those 10,000 test images and make predictions using <span class="coding">model.predict_classes</span> function which takes in the flattened raw pixel intensities of the test image.</p>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># grab some test images from the test data
+</span><span class="n">test_images</span> <span class="o">=</span> <span class="n">testData</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># reshape the test images to standard 28x28 format
+</span><span class="n">test_images</span> <span class="o">=</span> <span class="n">test_images</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">test_images</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test images shape - {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">test_images</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+
+<span class="c1"># loop over each of the test images
+</span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">test_image</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">test_images</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+	<span class="c1"># grab a copy of test image for viewing
+</span>	<span class="n">org_image</span> <span class="o">=</span> <span class="n">test_image</span>
+	
+	<span class="c1"># reshape the test image to [1x784] format so that our model understands
+</span>	<span class="n">test_image</span> <span class="o">=</span> <span class="n">test_image</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">784</span><span class="p">)</span>
+	
+	<span class="c1"># make prediction on test image using our trained model
+</span>	<span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_classes</span><span class="p">(</span><span class="n">test_image</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+	
+	<span class="c1"># display the prediction and image
+</span>	<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] I think the digit is - {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">220</span><span class="o">+</span><span class="n">i</span><span class="p">)</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">org_image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">'gray'</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-out">
+[INFO] test images shape - (4L, 28L, 28L) <br />
+[INFO] I think the digit is - 2 <br />
+[INFO] I think the digit is - 1 <br />
+[INFO] I think the digit is - 0 <br />
+[INFO] I think the digit is - 4 <br />
+</div>
+
+<figure>
+  <img src="/images/software/digits-recognition-mlp/output.jpg" class="typical-image" />
+  <figcaption>Figure 3. Testing MLP model using random test images</figcaption>
+</figure>
+
+<h3 id="summary">Summary</h3>
+
+<p>Thus, we have built a simple Multi-Layer Perceptron (MLP) to recognize handwritten digit (using MNIST dataset). Note that we haven’t used Convolutional Neural Networks (CNN) yet. As I told earlier, this tutorial is to make us get started with Deep Learning.</p>
+
+<p>To build a system that is capable of recognizing our own hand-writing, we must take one step further to apply this approach i.e. we need to segment each digit in our hand-written image and then make our model to predict each segmented digit.</p>
+:ET

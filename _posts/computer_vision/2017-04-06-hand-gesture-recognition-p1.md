@@ -44,19 +44,16 @@ When I first started to experiment with OpenCV, all I found was codes that expla
 
 Hand gesture recognition is a cool project to start for a Computer Vision enthusiast as it involves an intuitive step-by-step procedure which could be easily understood, so that you could build more complex stuff on top of these concepts. 
 
-<div class="objectives">
-  <h3>Objectives</h3>
-  <p>After reading this tutorial, we will understand</p>
-  <ul>
-    <li>How to approach a Computer Vision problem step-by-step?</li>
-    <li>What is Background Subtraction?</li>
-    <li>What is Motion Detection?</li>
-    <li>What is Thresholding?</li>
-    <li>What are Contours?</li>
-    <li>How to implement the above concepts in code using OpenCV and Python?</li>
-    <li>How to segment hand-region effectively from a real-time video sequence?</li>
-  </ul>
-</div>
+<div class="code-head">Objectives<span>goals</span></div>
+```
+How to approach a Computer Vision problem step-by-step?
+What is Background Subtraction?
+What is Motion Detection?
+What is Thresholding?
+What are Contours?
+How to implement the above concepts in code using OpenCV and Python?
+How to segment hand-region effectively from a real-time video sequence?
+```
 
 ### Prerequisites
 I assume that you are familiar with basics of Python, NumPy and OpenCV as they are the prerequisites for this tutorial. If you want to quickly understand core concepts in Python and NumPy, check out my posts [here](https://gogul09.github.io/software/python-learning-notes){:target="_blank"} and [here](https://gogul09.github.io/software/numpy-learning-notes){:target="_blank"}. In addition to these, you must be familiar with Image basics (such as pixels, dimensions etc) and some basic operations with images such as Thresholding and Segmentation.

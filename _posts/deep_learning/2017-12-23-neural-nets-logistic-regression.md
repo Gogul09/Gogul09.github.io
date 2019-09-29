@@ -46,16 +46,13 @@ Before understanding the math behind a Deep Neural Network and implementing it i
 
 > **Update**: As Python2 faces [end of life](https://pythonclock.org/), the below code only supports **Python3**.
 
-<div class="objectives">
-  <h3>Objectives</h3>
-  <p>After reading this post, we will understand</p>
-  <ul>
-    <li>How to convert an image into a vector?</li>
-    <li>How to preprocess an existing image dataset to do Deep Learning?</li>
-    <li>How to represent images and labels as numpy arrays?</li>
-    <li>How to use just one for-loop to train a logistic regression model?</li>
-  </ul>
-</div>
+<div class="code-head">Objectives<span>goals</span></div>
+```
+How to convert an image into a vector?
+How to preprocess an existing image dataset to do Deep Learning?
+How to represent images and labels as numpy arrays?
+How to use just one for-loop to train a logistic regression model?
+```
 
 A look at what we will be building at the end of this tutorial is shown below. A binary classifier that will classify an image as either <span class="coding">airplane</span> or <span class="coding">bike</span>.
 

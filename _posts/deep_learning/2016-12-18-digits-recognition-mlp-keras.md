@@ -59,10 +59,8 @@ This tutorial is intended for beginners exploring how to implement a neural netw
 	</ul>
 </div>
 
-<div class="code-head">Objectives</div>
-
+<div class="code-head">Objectives<span>goals</span></div>
 ```
-After reading this post, we will understand
 * What is MNIST dataset?
 * How to load and pre-process MNIST dataset in Keras?
 * How to use one-hot encoding in Keras?

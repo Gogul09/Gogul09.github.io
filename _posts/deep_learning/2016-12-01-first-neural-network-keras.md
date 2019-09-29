@@ -48,11 +48,8 @@ To all those who want to actually write some code to build a Deep Neural Network
 
 In this post, we will learn the simple 6 steps with which we can create our first deep neural network using Keras and Python. Let's get started!
 
-<h3 class="code-head">Objectives</h3>
-
+<div class="code-head">Objectives<span>goals</span></div>
 ```
-After reading this post, we will understand
-
 * How to setup environment to create Deep Neural Nets?
 * How to analyze and understand a training dataset?
 * How to load and work with .csv file in Python?

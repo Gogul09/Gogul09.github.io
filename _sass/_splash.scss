@@ -99,6 +99,7 @@
 
 .profile-pic img {
 	height: 140px;
+	border-radius: 50%;
 	@include mobile {
 		height: 90px;
 	}

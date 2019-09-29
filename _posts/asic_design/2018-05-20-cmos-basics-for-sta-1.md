@@ -24,18 +24,15 @@ image: https://drive.google.com/uc?id=1cTetisIy4dJrwezQbVUyZOhslpVbWAI3
 
 To understand Static Timing Analysis (STA) which is responsible for the performance of state-of-the-art Integrated Circuts (ICs), we need to become stronger in CMOS fundamentals.
 
-<div class="objectives">
-  <h3>Objectives</h3>
-  <p>After reading this tutorial, we will understand</p>
-  <ul>
-    <li>What is the structure of CMOS?</li>
-    <li>What is a technology node?</li>
-    <li>What is a CMOS inverter?</li>
-    <li>What are standard cells?</li>
-    <li>What are logic levels?</li>
-    <li>How standard cells are modelled?</li>
-  </ul>
-</div>
+<div class="code-head">Objectives<span>goals</span></div>
+```
+What is the structure of CMOS?
+What is a technology node?
+What is a CMOS inverter?
+What are standard cells?
+What are logic levels?
+How standard cells are modelled?
+```
 
 ### Structure of CMOS
 CMOS, abbreviated as Complementary Metal Oxide Semiconductor is the reason behind the electronic gadgets that we use in our day-to-day lives. CMOS is a combination of PMOS and NMOS. To learn about MOSFET in general, please read [this](https://gogul09.github.io/hardware/mosfet-fundamentals){:target="_blank"} post and come back.

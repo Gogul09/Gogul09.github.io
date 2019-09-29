@@ -1,0 +1,111 @@
+I"�"<div class="sidebar_tracker" id="sidebar_tracker">
+   <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+   <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+   <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#demystifying-ml">Demystifying ML</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#math-is-god">Math is God</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#coursera-is-our-teacher">Coursera is our teacher</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#learn-from-scratch">Learn from scratch</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#applying-everything">Applying everything</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#follow-blogs">Follow blogs</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#make-use-of-time">Make use of time</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#we-need-to-go-deep">We need to go deep</a></li>
+  </ul>
+</div>
+
+<p>During my journey as a Machine Learning (ML) practitioner, I found it has become ultimately easy for any human with limited knowledge on algorithms to take advantage of free python libraries such as <a href="https://scikit-learn.org/" target="_blank">scikit-learn</a> to solve a ML problem. Truth be said, it’s easy and sometimes no brainer to achieve this, as there are so many codes available in GitHub, Medium, Kaggle etc., You just need some amount of time looking at these codes to arrive at a solution to a problem of your choice.</p>
+
+<p>But, what if we learn every algorithm or procedures behind each machine learning pipeline that does all the heavy lifting for us inside these amazing libraries. In this blog post and the series of blog posts to come, I will be focusing on implementing machine learning algorithms from scratch using python and numpy.</p>
+
+<div class="note">
+<p>Sure you might argue with me for the first paragraph. But learning how each algorithm work behind the scenes is very important to use these algorithms in any domain (say hardware design).</p>
+</div>
+
+<p>In this blog post, we will implement logistic regression from scratch using python and numpy to a binary classification problem.</p>
+
+<p>I assume that you have knowledge on python programming and scikit-learn, because at the end we will compare our implementation (from scratch) with scikit-learn’s implementation.</p>
+
+<h3 id="dataset">Dataset</h3>
+
+<p>We will use the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html" target="_blank">breast cancer dataset</a> from scikit-learn for this implementation. This is a binary classification problem i.e., each data point in the training data belong to one of two classes. Below code loads the dataset and prints out the important information we seek.</p>
+
+<div class="code-head">logistic_regression.py<span>code</span></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_breast_cancer</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">load_breast_cancer</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"No.of.data points (rows) : {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"No.of.features (columns) : {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"No.of.classes            : {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">target_names</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Class names              : {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">target_names</span><span class="p">)))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names', 'filename'])
+
+No.of.data points (rows) : 569
+No.of.features (columns) : 30
+No.of.classes            : 2
+Class names              : ['malignant', 'benign']
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>If you wish to know more about the dataset, use <span class="coding">data.DESCR</span> to print out the entire description of the dataset.</p>
+
+<p>As you can see, the dataset has <span class="coding">data</span> and <span class="coding">target</span> keys from which we can access the data in this dataset. There are 569 rows and 30 columns. To describe the dataset mathematically, we will use this notation \( [X_i, h(X_i), Y_i] \).</p>
+
+<p>where</p>
+
+<ul>
+  <li>\( X_i \) denotes a single data point in the dataset.</li>
+  <li>\( h(X_i) \) is th feature vector for that single data point.</li>
+  <li>\( Y_i \) is the target class for that single data point.</li>
+</ul>
+
+<h3 id="supervised-learning">Supervised Learning</h3>
+
+<p>In a nutshell, what we try to solve in this problem is -</p>
+<ul>
+  <li>We have some training data <span class="coding">X_train</span> along with its class names <span class="coding">y_train</span>.</li>
+  <li>We train a model (set of algorithms) with this training data (the magic happens here and we are yet to see it!)</li>
+  <li>We use the trained model to predict the class <span class="coding">y_test</span> of unseen data point <span class="coding">X_test</span>.</li>
+</ul>
+
+<p>This is called supervised learning problem (if you don’t know yet) because we use a training dataset with class names already made available to us (nicely).</p>
+
+<p>The flowchart that you could expect before diving into logistic regression implementation might look like the one shown below.</p>
+
+<figure>
+  <img src="https://drive.google.com/uc?id=1U0Jfye7G3zKZRAoHVpHYSrhj25_hnJl-" />
+  <figcaption>Figure 1. Supervised Learning using Logistic Regression.</figcaption>
+</figure>
+
+<p>Logistic regression is a type of <a href="https://en.wikipedia.org/wiki/Generalized_linear_model" target="_blank">generalized linear classification algorithm</a> which follows a beautiful procedure to learn from data. To learn means,</p>
+
+<ul>
+  <li><strong>Weight</strong>: We define a weight value for each feature (column) in the dataset.</li>
+  <li><strong>Linear Predictor (Score)</strong>: We compute weighted sum of each data point in the dataset.</li>
+  <li><strong>Link Function</strong>: We use a <a href="https://en.wikipedia.org/wiki/Generalized_linear_model#Link_function" target="_blank">link function</a> to transform that weighted sum to the probability range [0, 1].</li>
+  <li><strong>Likelihood</strong>: We use a likelihood function as the <em>quality metric</em> to evaluate the prediction of the model.</li>
+  <li><strong>Gradient Ascent</strong>: We use gradient ascent algorithm to <em>update the weights</em> by trying to maximize the likelihood.</li>
+  <li><strong>Prediction</strong>: We take these learned weights and make predictions when new data point is given to the model.</li>
+</ul>
+
+<h4 id="linear-predictor">Linear Predictor</h4>
+
+<p>First, we define a weight value for each column (feature) in our dataset. As we have 30 features (columns) in the breast cancer dataset, we will have 30 weights \( W_1, W_2 … W_{30}\)</p>
+:ET
