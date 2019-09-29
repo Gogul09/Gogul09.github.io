@@ -12,14 +12,11 @@ image: https://drive.google.com/uc?id=1rjTumTjtBj7nRdADfGiXs22NcX8xBwe2
    <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
    <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
    <ul id="sidebar_tracker_content">
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#demystifying-ml">Demystifying ML</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#math-is-god">Math is God</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#coursera-is-our-teacher">Coursera is our teacher</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#learn-from-scratch">Learn from scratch</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#applying-everything">Applying everything</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#follow-blogs">Follow blogs</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#make-use-of-time">Make use of time</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#we-need-to-go-deep">We need to go deep</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#dataset">Dataset</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#supervised-learning">Supervised Learning</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#linear-predictor">Linear Predictor (score)</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#link-function">Link Function</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#maximize-likelihood">Maximize Likelihood</a></li>
   </ul>
 </div>
 
