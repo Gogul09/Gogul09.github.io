@@ -21,7 +21,7 @@ code {
 }
 
 .highlight {
-  background-color: #252525;
+  background: radial-gradient(50% 80% at 80% 0%, rgb(61, 59, 98), rgb(40, 40, 75));
   padding: 10px;
   margin: 0px;
   overflow: auto;
@@ -48,7 +48,7 @@ code {
   border-collapse: none !important;
   width: auto !important;
   border: none;
-  font-size: 13px !important;
+  font-size: 15px !important;
   background-color: transparent !important;
   text-align: left;
   font-family: monospace;

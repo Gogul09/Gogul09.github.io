@@ -216,11 +216,11 @@ Class names              : ['malignant', 'benign']
 <p>Logistic regression is a type of <a href="https://en.wikipedia.org/wiki/Generalized_linear_model" target="_blank">generalized linear classification algorithm</a> which follows a beautiful procedure to learn from data. To learn means,</p>
 
 <ul>
-  <li><strong>Weight</strong>: We define a weight value for each feature (column) in the dataset.</li>
+  <li><strong>Weight</strong>: We define a weight value (parameter) for each feature (column) in the dataset.</li>
   <li><strong>Linear Predictor (score)</strong>: We compute weighted sum for each data point in the dataset.</li>
   <li><strong>Link Function</strong>: We use a <a href="https://en.wikipedia.org/wiki/Generalized_linear_model#Link_function" target="_blank">link function</a> to transform that weighted sum to the probability range \( [0, 1] \).</li>
-  <li><strong>Likelihood</strong>: We use a likelihood function as the <em>quality metric</em> to evaluate the prediction of the model i.e., how well the model has predicted <span class="coding">y_predict</span> when compared with ground truth <span class="coding">y_train</span>.</li>
-  <li><strong>Gradient Ascent</strong>: We use gradient ascent algorithm to <em>update the weights</em> by trying to maximize the likelihood.</li>
+  <li><strong>Log-Likelihood</strong>: We use the log-likelihood function as the <em>quality metric</em> to evaluate the prediction of the model i.e., how well the model has predicted <span class="coding">y_predict</span> when compared with ground truth <span class="coding">y_train</span>.</li>
+  <li><strong>Gradient Ascent</strong>: We use gradient ascent algorithm to <em>update the weights (parameters)</em> by trying to maximize the likelihood.</li>
   <li><strong>Prediction</strong>: We take these learned weights and make predictions when new data point is given to the model.</li>
 </ul>
 

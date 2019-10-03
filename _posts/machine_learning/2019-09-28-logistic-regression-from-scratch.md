@@ -89,11 +89,11 @@ The flowchart that you could expect before diving into logistic regression imple
 
 Logistic regression is a type of [generalized linear classification algorithm](https://en.wikipedia.org/wiki/Generalized_linear_model){:target="_blank"} which follows a beautiful procedure to learn from data. To learn means,
 
-* **Weight**: We define a weight value for each feature (column) in the dataset.
+* **Weight**: We define a weight value (parameter) for each feature (column) in the dataset.
 * **Linear Predictor (score)**: We compute weighted sum for each data point in the dataset. 
 * **Link Function**: We use a [link function](https://en.wikipedia.org/wiki/Generalized_linear_model#Link_function){:target="_blank"} to transform that weighted sum to the probability range \\( [0, 1] \\).
-* **Likelihood**: We use a likelihood function as the *quality metric* to evaluate the prediction of the model i.e., how well the model has predicted <span class="coding">y_predict</span> when compared with ground truth <span class="coding">y_train</span>.
-* **Gradient Ascent**: We use gradient ascent algorithm to *update the weights* by trying to maximize the likelihood.
+* **Log-Likelihood**: We use the log-likelihood function as the *quality metric* to evaluate the prediction of the model i.e., how well the model has predicted <span class="coding">y_predict</span> when compared with ground truth <span class="coding">y_train</span>.
+* **Gradient Ascent**: We use gradient ascent algorithm to *update the weights (parameters)* by trying to maximize the likelihood.
 * **Prediction**: We take these learned weights and make predictions when new data point is given to the model.
 
 <div class="note">

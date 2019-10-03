@@ -2019,6 +2019,7 @@ figure {
   }
   .highlight {
     background-color: #191919 !important;
+    background-image: none !important;
   }
   .rouge-gutter {
     display: none !important;
@@ -3561,5 +3562,17 @@ del {
     color: $black !important;
     border-bottom: 0px !important;
     font-weight: bold;
+  }
+}
+
+.coding-problem-head {
+  font-family: monospace;
+  font-size: 15px;
+  display: inline-block;
+  background-color: #fff0a0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  @include mobile {
+    font-size: 13px;
   }
 }

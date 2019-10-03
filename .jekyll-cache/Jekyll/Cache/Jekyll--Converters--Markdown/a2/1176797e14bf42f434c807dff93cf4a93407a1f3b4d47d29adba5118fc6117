@@ -1,0 +1,45 @@
+I"q<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#easy">Easy</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#medium">Medium</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#hard">Hard</a></li>
+  </ul>
+</div>
+
+<h3 id="easy">Easy</h3>
+
+<h5 class="coding-problem-head">problem 001</h5>
+<p>Given a list of numbers and a number k, return whether any two numbers from the list add up to k.</p>
+
+<p>For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.</p>
+
+<p>Bonus: Can you do this in one pass?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">prob_001</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+
+
+    <span class="k">return</span> <span class="n">res</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="medium">Medium</h3>
+
+<h5 class="coding-problem-head">problem 001</h5>
+
+<p>Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.</p>
+
+<p>For example,</p>
+<ul>
+  <li>If the input is [1, 2, 3, 4, 5], the expected output is [120, 60, 40, 30, 24]</li>
+  <li>If the input is [3, 2, 1], the expected output is [2, 3, 6]</li>
+</ul>
+
+<h3 id="hard">Hard</h3>
+:ET

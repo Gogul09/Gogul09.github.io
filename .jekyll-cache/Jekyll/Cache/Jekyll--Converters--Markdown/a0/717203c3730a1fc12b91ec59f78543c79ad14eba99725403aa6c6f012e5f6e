@@ -1,0 +1,14 @@
+I"m<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#easy"></a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#medium"></a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#hard"></a></li>
+  </ul>
+</div>
+
+<h3 id="easy"></h3>
+<h3 id="easy"></h3>
+<h3 id="easy"></h3>
+:ET
