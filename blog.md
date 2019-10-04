@@ -15,9 +15,6 @@ permalink: /blog
   <div class="home-articles">
     <div class="home-wrapper">
       <div class="gem-box">
-        <div class="carbon_advertisement">
-          <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
-        </div>
         <div class="asic-design" onclick="location.href='{{ site.baseurl }}/asic-design';">
           <img src="https://drive.google.com/uc?id=1CxWWpzbp529wp0BqXOmc5NwOimC6j9nS" />
           <h4>ASIC Design</h4>
