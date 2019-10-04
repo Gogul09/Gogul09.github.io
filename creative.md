@@ -1,8 +1,8 @@
 ---
 layout: page-default
-heading: creations
+heading: Creations
 title: Creations
-subheading: i used to create stuff that are visually neat and pleasing to our eyes, and you might guessed it right, i love pixel perfecting.
+subheading: I used to create stuff that are visually neat and pleasing to our eyes, and you might guessed it right, I love pixel perfecting.
 description: This page contains all the creative stuff such as interactive demos, infographics and my tutorial slides related to technology.
 color: grad-creations
 permalink: /creations/

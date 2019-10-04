@@ -1,9 +1,9 @@
 ---
 layout: music-default
-heading: music
+heading: Music
 title: Music
 subheading: my journey as a music producer
-description: you can find all my music that I composed/programmed/arranged/mixed/sung/penned at my home recording studio in this page. Kindly share with your family and friends if you like my music.
+description: You can find all my music that I composed/programmed/arranged/mixed/sung/penned at my home recording studio in this page. Kindly share with your family and friends if you like my music.
 color: grad-music
 permalink: /music
 image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
@@ -11,8 +11,8 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
 
 <div class="music-top-container">
   <div class="music-intro-wrapper">
-    <p><b>music</b></p>
-    <p>if you're here, then definitely you love music (like me) and wish to hear something new! you can find my music in this page. music that you hear in my songs are either composed or programmed and mixed by me at my small home recording studio.</p>
+    <p><b>Music</b></p>
+    <p>If you're here, then definitely you love music (like me) and wish to hear something new! you can find my music in this page. Music that you hear in my songs are either composed or programmed and mixed by me at my small home recording studio.</p>
     <script src="https://apis.google.com/js/platform.js"></script>
     <div class="youtube-cover"><div class="g-ytsubscribe" data-channelid="UCP_3K5AYFZpH_EzF2rIs1LQ" data-layout="default" data-count="default"></div></div>
   </div>

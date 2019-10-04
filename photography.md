@@ -1,9 +1,9 @@
 ---
 layout: page-default
-heading: photography
+heading: Photography
 title: Photography
-subheading: nature is the best medicine for any kind of disease. i love getting lost in nature and it gives me peace. i collect those memorable clicks that are pleasing to recollect using my canon 700D here.
-description: nature is the best medicine for any kind of disease. i love getting lost in nature and it gives me peace. i collect those memorable clicks that are pleasing to recollect using my canon 700D here.
+subheading: Nature is the best medicine for any kind of disease. I love getting lost in nature and it gives me peace. I collect those memorable clicks that are pleasing to recollect using my canon 700D here.
+description: Nature is the best medicine for any kind of disease. I love getting lost in nature and it gives me peace. I collect those memorable clicks that are pleasing to recollect using my canon 700D here.
 color: grad-photography
 permalink: /photography/
 ---

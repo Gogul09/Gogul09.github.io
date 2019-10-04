@@ -1,8 +1,8 @@
 ---
 layout: splash
-heading: gogul ilango
+heading: Gogul Ilango
 title: Gogul Ilango
-subheading: physical design engineer @ qualcomm <br> programmer | writer | music producer 
+subheading: Physical Design Engineer @ Qualcomm <br> Programmer | Writer | Music Producer 
 description: Personal Website
 color: grad-about
 permalink: /
