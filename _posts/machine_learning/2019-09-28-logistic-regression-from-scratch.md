@@ -16,7 +16,12 @@ image: https://drive.google.com/uc?id=1rjTumTjtBj7nRdADfGiXs22NcX8xBwe2
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#supervised-learning">Supervised Learning</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#linear-predictor">Linear Predictor (score)</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#link-function">Link Function</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#maximize-likelihood">Maximize Likelihood</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#compute-likelihood">Compute Likelihood</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#compute-derivative">Compute Derivative</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#gradient-ascent">Gradient Ascent</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#split-the-dataset">Split the Dataset</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#train-the-classifier">Train the Classifier</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#test-the-classifier">Test the Classifier</a></li>
   </ul>
 </div>
 
@@ -150,7 +155,7 @@ $$
     . \\
     . \\
     . \\
-    h(x_{30})^T \\
+    h(x_{569})^T \\
     \end{bmatrix}
     = \begin{bmatrix}
     h_0(x_1) & h_1(x_1) & . & . & . & h_{30}(x_1) \\
@@ -158,7 +163,7 @@ $$
     . & . & . & . & . & . \\
     . & . & . & . & . & . \\
     . & . & . & . & . & . \\
-    h_0(x_{30}) & h_1(x_{30}) & . & . & . & h_{30}(x_{30}) \\
+    h_0(x_{569}) & h_1(x_{569}) & . & . & . & h_{30}(x_{569}) \\
     \end{bmatrix}
 \end{align}
 $$
@@ -173,7 +178,7 @@ $$
     . \\
     . \\
     . \\
-    h(x_{30})^T 
+    h(x_{569})^T 
     \end{bmatrix} \mathbf w
     = \begin{bmatrix}
     h(x_1)^T \mathbf w \\
@@ -181,7 +186,7 @@ $$
     . \\
     . \\
     . \\
-    h(x_{30})^T \mathbf w
+    h(x_{569})^T \mathbf w
     \end{bmatrix} 
     = \begin{bmatrix}
     \mathbf w^T h(x_1) \\
@@ -189,7 +194,7 @@ $$
     . \\
     . \\
     . \\
-    \mathbf w^T h(x_{30})
+    \mathbf w^T h(x_{569})
     \end{bmatrix}
 $$
 </div>
@@ -198,10 +203,184 @@ But wait! how will the output value of this link function be the same as the gro
 
 The whole point in learning algorithm is to *adjust these weights* based on the training data to arrive at a *sweet spot* that makes the ML model have *low bias* and *low variance*.
 
-How do we adjust these weights? We need to define a *quality metric* that compares the output prediction of the ML model with the original ground truth class value. After evaluating the quality metric, we use *gradient ascent algorithm* to update the weights in a way that the quality metric reaches a global optimum value.
+<div class="note">
+  <p>Training the classifier = Learning the weight coefficients (with low bias and low variance).</p>
+</div>
 
-<h3 id="maximize-likelihood">Maximize Likelihood</h3>
+How do we adjust these weights? We need to define a *quality metric* that compares the output prediction of the ML model with the original ground truth class value. 
 
-For a binary classification problem, it turns out that we can easily use [log-likelihood](https://en.wikipedia.org/wiki/Likelihood_function#Log-likelihood){:target="_blank"} function. Once we pick a likelihood function, we need to know it's derivative with respect to the weights so that we can use gradient ascent to update the weights.
+After evaluating the quality metric, we use *gradient ascent algorithm* to update the weights in a way that the quality metric reaches a global optimum value. Interesting isn't it?
 
-*To be continued...*
+<h3 id="compute-likelihood">Compute Likelihood</h3>
+
+For a binary classification problem, it turns out that we can use [log-likelihood](https://en.wikipedia.org/wiki/Likelihood_function#Log-likelihood){:target="_blank"} as the quality metric. Once we pick a likelihood function, we must know it's derivative with respect to the weights so that we can use gradient ascent to update the weights.
+
+To make computations simpler and numerically stable, we use a special form of likelihood known as log-likelihood that can be calculated using the below formula. 
+
+<div class="math-cover">
+$$
+ll(\mathbf w) = \sum_{i=1}^N ((\mathbf 1[y_i = +1] - 1) \mathbf w^T h(\mathbf w_i) - ln(1 + exp(-\mathbf w^T h(x_i))))
+$$
+</div>
+
+We will understand the formation of this equation in some time. But for now, let us focus on implementing everything in code.
+
+We define the below function to compute log-likelihood. Notice that we sum over all the training examples.
+
+<div class="code-head">logistic_regression.py<span>code</span></div>
+
+```python
+def compute_log_likelihood(features, label, weights):
+  indicator = (label==+1)
+  scores    = np.dot(features, weights)
+  ll        = np.sum((np.transpose(np.array([indicator]))-1)*scores - np.log(1. + np.exp(-scores)))
+  return ll
+```
+
+<h3 id="compute-derivative">Compute Derivative</h3>
+
+Once we have the log-likelihood equation, we can compute its derivative with respect to a single weight coefficient using the below formula.
+
+<div class="math-cover">
+$$
+\frac{\partial l}{\partial w_j} = \sum_{i=1}^N h_j(\mathbf x_i) (\mathbf 1[y_i = +1] - P(y_i = +1|\mathbf x_i, \mathbf w))
+$$
+</div>
+
+The above equation might look scary. But its easy to write in code.
+
+* The term \\((\mathbf 1[y_i = +1] - P(y_i = +1\|\mathbf x_i, \mathbf w)\\) is nothing but the difference between <span class="coding">indicators</span> and <span class="coding">predictions</span> which is equal to <span class="coding">errors</span>.
+* \\(h_j(\mathbf x_i)\\) is the feature value of a training example \\(\mathbf x_i \\) for a single column \\(j\\).
+
+We find the derivative of log-likelihood with respect to each of the weight coefficient \\( \mathbf w \\) which in turn depends on its feature column. 
+
+Notice that we sum over all the training examples, and the derivative that we return is a single number.
+
+<div class="code-head">logistic_regression.py<span>code</span></div>
+
+```python
+def feature_derivative(errors, feature):
+  derivative = np.dot(np.transpose(errors), feature)
+  return derivative
+```
+
+<h3 id="gradient-ascent">Gradient Ascent</h3>
+
+Now, we have all the ingredients to perform gradient ascent. The magic of this tutorial happens here!
+
+Think of gradient ascent similar to hill-climbing. To reach the top of the hill (which is the global maximum), we choose a parameter called *learning-rate*. This defines the *step-size* that we need to take each iteration before we update the weight coefficients.
+
+The steps that we will perform in gradient ascent are as follows.
+
+1. Initialize weights vector \\( \mathbf w \\) to random values or zero using <span class="coding">np.zeros()</span>.
+2. Predict the class probability \\( P(y_i = +1\|\mathbf x_i, \mathbf w) \\) for all training examples using <span class="coding">predict_probability</span> function and save to a variable named <span class="coding">predictions</span>. The shape of this variable would be <span class="coding">y_train.shape</span>.
+3. Calculate the indicator value for all training examples by comparing the label against \\( +1 \\) and save it to a variable named <span class="coding">indicators</span>. The shape of this variable would also be <span class="coding">y_train.shape</span>.
+4. Calculate the errors as the difference between <span class="coding">indicators</span> and <span class="coding">predictions</span> and save it to a variable named <span class="coding">errors</span>.
+5. **Important step**: For each \\( j^{th} \\) weight coefficient, compute it's derivative using <span class="coding">feature_derivative</span> function with the \\( j^{th} \\) column of features. Increment the \\( j^{th} \\) coefficient using \\( lr * derivative\\) where \\( lr \\) is the learning rate for this algorithm which we handpick.
+6. Do steps 2 to 5 for <span class="coding">epochs</span> times (number of iterations) and return the learned weight coefficients.
+
+Below is the code to perform logistic regression using gradient ascent optimization algorithm.
+
+<div class="code-head">logistic_regression.py<span>code</span></div>
+
+```python
+def logistic_regression(features, labels, weights, lr, epochs):
+
+  # initialize the weight coefficients
+  weights = np.array(weights)
+
+  # loop over epochs times
+  for epoch in range(epochs):
+
+    # predict probability for each row in the dataset
+    predictions = predict_probability(features, weights)
+
+    # calculate the indicator value for all labels
+    indicators = (labels==+1)
+
+    # calculate the errors for each of the predictions made
+    errors = np.transpose(np.array([indicators])) - predictions
+
+    # loop over each weight coefficient
+    for j in range(len(weights)):
+
+      # calculate the derivative of jth weight cofficient
+      derivative = feature_derivative(errors, features[:,j])
+      weights[j] += learning_rate * derivative
+
+    # compute the log-likelihood
+    if epoch <= 15 or (epoch <= 100 and epoch % 10 == 0) or (epoch <= 1000 and epoch % 100 == 0) \
+        or (epoch <= 10000 and epoch % 1000 == 0) or epoch % 10000 == 0:
+      ll = compute_log_likelihood(features, label, weights)
+      print('iteration %*d: log likelihood of observed labels = %.8f' % \
+                (int(np.ceil(np.log10(epochs))), epoch, ll))
+  
+  return weights
+```
+
+<h3 id="split-the-dataset">Split the dataset</h3>
+
+To test our classifier's performance, we will split the original dataset into training and testing. We choose a <span class="coding">test_size</span> parameter value to split the dataset into <span class="coding">train</span> and <span class="coding">test</span> using scikit-learn's <span class="coding">train_test_split</span> function as shown below.
+
+
+<div class="code-head">logistic_regression.py<span>code</span></div>
+
+```python
+from sklearn.model_selection import train_test_split
+# split the dataset into training and testing 
+X_train, X_test, y_train, y_test = train_test_split(data.data, data.target, test_size=0.20, random_state=9)
+
+print("X_train : " + str(X_train.shape))
+print("y_train : " + str(y_train.shape))
+print("X_test : " + str(X_test.shape))
+print("y_test : " + str(y_test.shape))
+```
+
+```
+X_train : (455, 30)
+y_train : (455,)
+X_test : (114, 30)
+y_test : (114,)
+```
+{: .code-out}
+
+<h3 id="train-the-classifier">Train the classifier</h3>
+
+As I already mentioned, training the classifier means learning the weight coefficients. To train the classifier, we 
+* Initialize the weights to zeros.
+* Handpick the hyper-parameters *learning rate* and *epochs*.
+* Use <span class="coding">logistic_regression()</span> function that we have just built and pass in the ingredients.
+
+<div class="code-head">logistic_regression.py<span>code</span></div>
+
+```python
+init_weights  = np.zeros((len(data.feature_names),1))
+learning_rate = 1e-7
+epochs        = 500
+
+learned_weights = logistic_regression(X_train, y_train, init_weights, learning_rate, epochs)
+```
+
+<h3 id="test-the-classifier">Test the classifier</h3>
+
+To make predictions using the trained classifier, we use <span class="coding">X_test</span> data (testing data), <span class="coding">learned_weights</span> and <span class="coding">predict_probability()</span> function. 
+
+To find the accuracy between ground truth class values <span class="coding">y_test</span> and logistic regression predicted class values <span class="coding">predictions</span>, we use scikit-learn's <span class="coding">accuracy_score()</span> function as shown below.
+
+<div class="code-head">logistic_regression.py<span>code</span></div>
+
+```python
+from sklearn.metrics import accuracy_score
+predictions = predict_probability(X_test, learned_weights)
+class_predictions = (predictions.flatten()>0.5)
+print("Accuracy of our LR classifier: {}".format(accuracy_score(np.expand_dims(y_test, axis=1), (predictions.flatten())>0.5)))
+print("Ground truth class value            : {}".format(y_test[4]))
+print("LR classifier predicted class value : {}".format(str(int(class_predictions[4]))))
+```
+
+```
+Accuracy of our LR classifier: 0.9122807017543859
+Ground truth class value            : 1
+LR classifier predicted class value : 1
+```
+{: .code-out}

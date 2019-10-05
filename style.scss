@@ -3577,13 +3577,17 @@ del {
 }
 
 .readtime-progress {
-  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(251,60,147,1) 37%, rgba(255,186,90,1) 100%);
+  background-color: #c73131;
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 0%;
   height: 4px;
   z-index: 100000;
   border: 0px;
-  background-color: white;
+  @include mobile {
+    bottom: 60px;
+    top: initial;
+    height: 2px;
+  }
 }
