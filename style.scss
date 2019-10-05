@@ -2264,6 +2264,11 @@ u {
   padding: 3px 6px !important;
   color: #d2372a !important;
   border: 1px solid #fad1d1;
+
+  @include mobile {
+    font-size: 10px !important;
+    padding: 3px 4px !important;
+  }
 }
 
 code {
