@@ -3575,3 +3575,15 @@ del {
     font-size: 13px;
   }
 }
+
+.readtime-progress {
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(251,60,147,1) 37%, rgba(255,186,90,1) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  z-index: 100000;
+  border: 0px;
+  background-color: white;
+}
