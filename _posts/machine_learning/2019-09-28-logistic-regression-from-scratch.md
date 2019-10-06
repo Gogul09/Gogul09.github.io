@@ -124,18 +124,18 @@ Logistic regression is a type of [generalized linear classification algorithm](h
 
 <h3 id="linear-predictor">Linear Predictor (score)</h3>
 
-First, we define a weight value for each column (feature) in our dataset. As we have 30 features (columns) in the breast cancer dataset, we will have 30 weights [ \\( W_1, W_2 ... W_{30}\\) ]. We compute the score (weighted sum) for each data point as follows.
+First, we define a weight value for each column (feature) in our dataset. As we have 30 features (columns) in the breast cancer dataset, we will have 30 weights [ \\( \mathbf W_1, \mathbf W_2 ... \mathbf W_{30}\\) ]. We compute the score (weighted sum) for each data point as follows.
 
 <div class="math-cover">
 $$
 \begin{align}
-score & = W_0 + (W_1 * h_1(x_i)) + (W_2 * h_2(x_i)) + ... + (W_{30} * h_{30}(x_i)) \\
-& = W^T h(x_i)
+score & = \mathbf W_0 + (\mathbf W_1 * h_1(x_i)) + (\mathbf W_2 * h_2(x_i)) + ... + (\mathbf W_{30} * h_{30}(x_i)) \\
+& = \mathbf W^T h(x_i)
 \end{align}
 $$
 </div>
 
-Notice we have \\( W_0 \\) with no coefficient which is called the *bias* term. If you need to understand what bias is, please watch [this](https://www.youtube.com/watch?v=EuBBz3bI-aA){:target="_blank"} excellent video.
+Notice we have \\( \mathbf W_0 \\) with no coefficient which is called the *bias* or *intercept* which must be learnt from the training data. If you need to understand what bias is, please watch [this](https://www.youtube.com/watch?v=EuBBz3bI-aA){:target="_blank"} excellent video.
 
  As we have numeric values, the score for each data point might fall within a range \\( [-\infty, +\infty]\\). Recall that our aim is to predict *"given a new data point, tell me whether it's malignant (0) or benign (1)"*. This means, prediction from the ML model must be either 0 or 1. How are we going to achieve this? The answer is *link function*.
 
@@ -246,7 +246,7 @@ l(\mathbf w) = ln \prod_{i=1}^N P(y_i | \mathbf x_i, \mathbf w)
 $$
 </div>
 
-After picking the log-likelihood function, we must know it's derivative with respect to the weight coefficients so that we can use gradient ascent to update the weights.
+After picking the log-likelihood function, we must know it's derivative with respect to a weight coefficient so that we can use gradient ascent to update that weight.
 
 We use the below equation to calculate the log-likelihood for the classifier.
 
@@ -256,7 +256,7 @@ ll(\mathbf w) = \sum_{i=1}^N ((\mathbf 1[y_i = +1] - 1) \mathbf w^T h(\mathbf w_
 $$
 </div>
 
-We will understand the formation of this equation in some time. But for now, let us focus on implementing everything in code.
+We will understand the formation of these equations in a separate post. But for now, let us focus on implementing everything in code.
 
 We define the below function to compute log-likelihood. Notice that we sum over all the training examples.
 
@@ -317,10 +317,15 @@ Below is the code to perform logistic regression using gradient ascent optimizat
 <div class="code-head">logistic_regression.py<span>code</span></div>
 
 ```python
-def logistic_regression(features, labels, weights, lr, epochs):
+# logistic regression without L2 regularization
+def logistic_regression(features, labels, lr, epochs):
+
+  # add bias (intercept) with features matrix
+  bias      = np.ones((features.shape[0], 1))
+  features  = np.hstack((bias, features))
 
   # initialize the weight coefficients
-  weights = np.array(weights)
+  weights = np.zeros((features.shape[1], 1))
 
   # loop over epochs times
   for epoch in range(epochs):
@@ -328,10 +333,10 @@ def logistic_regression(features, labels, weights, lr, epochs):
     # predict probability for each row in the dataset
     predictions = predict_probability(features, weights)
 
-    # calculate the indicator value for all labels
+    # calculate the indicator value
     indicators = (labels==+1)
 
-    # calculate the errors for each of the predictions made
+    # calculate the errors
     errors = np.transpose(np.array([indicators])) - predictions
 
     # loop over each weight coefficient
@@ -339,15 +344,15 @@ def logistic_regression(features, labels, weights, lr, epochs):
 
       # calculate the derivative of jth weight cofficient
       derivative = feature_derivative(errors, features[:,j])
-      weights[j] += learning_rate * derivative
+      weights[j] += lr * derivative
 
     # compute the log-likelihood
     if epoch <= 15 or (epoch <= 100 and epoch % 10 == 0) or (epoch <= 1000 and epoch % 100 == 0) \
         or (epoch <= 10000 and epoch % 1000 == 0) or epoch % 10000 == 0:
-      ll = compute_log_likelihood(features, label, weights)
+      ll = compute_log_likelihood(features, labels, weights)
       print('iteration %*d: log likelihood of observed labels = %.8f' % \
                 (int(np.ceil(np.log10(epochs))), epoch, ll))
-  
+
   return weights
 ```
 
@@ -379,20 +384,60 @@ y_test : (114,)
 
 <h3 id="train-the-classifier">Train the classifier</h3>
 
-As I already mentioned, training the classifier means learning the weight coefficients. To train the classifier, we 
-* Initialize the weights to zeros.
+As we already learnt, training the classifier means learning the weight coefficients. To train the classifier, we
+* Add intercept or bias to the feature matrix. 
+* Initialize the weight coefficients to zeros.
 * Handpick the hyper-parameters *learning rate* and *epochs*.
 * Use <span class="coding">logistic_regression()</span> function that we have just built and pass in the ingredients.
 
 <div class="code-head">logistic_regression.py<span>code</span></div>
 
 ```python
-init_weights  = np.zeros((len(data.feature_names),1))
+# hyper-parameters
 learning_rate = 1e-7
-epochs        = 500
+epochs        = 1500
 
-learned_weights = logistic_regression(X_train, y_train, init_weights, learning_rate, epochs)
+# perform logistic regression
+learned_weights = logistic_regression(X_train, y_train, learning_rate, epochs)
 ```
+
+```
+iteration    0: log likelihood of observed labels = -917.84327823
+iteration    1: log likelihood of observed labels = -4639.03867640
+iteration    2: log likelihood of observed labels = -2909.83124565
+iteration    3: log likelihood of observed labels = -2016.07284994
+iteration    4: log likelihood of observed labels = -4677.09870285
+iteration    5: log likelihood of observed labels = -354.50022715
+iteration    6: log likelihood of observed labels = -3364.43919336
+iteration    7: log likelihood of observed labels = -3679.28040766
+iteration    8: log likelihood of observed labels = -770.98298984
+iteration    9: log likelihood of observed labels = -5054.17597070
+iteration   10: log likelihood of observed labels = -651.46116856
+iteration   11: log likelihood of observed labels = -4261.48204353
+iteration   12: log likelihood of observed labels = -2912.42427368
+iteration   13: log likelihood of observed labels = -1637.81724766
+iteration   14: log likelihood of observed labels = -4679.03180782
+iteration   15: log likelihood of observed labels = -355.12939979
+iteration   20: log likelihood of observed labels = -202.18519072
+iteration   30: log likelihood of observed labels = -1619.29530075
+iteration   40: log likelihood of observed labels = -2585.72829180
+iteration   50: log likelihood of observed labels = -3488.57156045
+iteration   60: log likelihood of observed labels = -1138.40610958
+iteration   70: log likelihood of observed labels = -2988.22993363
+iteration   80: log likelihood of observed labels = -1663.36381259
+iteration   90: log likelihood of observed labels = -2372.85275499
+iteration  100: log likelihood of observed labels = -1658.32786847
+iteration  200: log likelihood of observed labels = -156.06859878
+iteration  300: log likelihood of observed labels = -133.23381615
+iteration  400: log likelihood of observed labels = -121.92554479
+iteration  500: log likelihood of observed labels = -113.37561047
+iteration  600: log likelihood of observed labels = -107.23488828
+iteration  700: log likelihood of observed labels = -103.04673895
+iteration  800: log likelihood of observed labels = -100.26207215
+iteration  900: log likelihood of observed labels = -369.13923603
+iteration 1000: log likelihood of observed labels = -106.25232302
+```
+{: .code-out}
 
 <h3 id="test-the-classifier">Test the classifier</h3>
 
@@ -404,17 +449,21 @@ To find the accuracy between ground truth class values <span class="coding">y_te
 
 ```python
 from sklearn.metrics import accuracy_score
-predictions = predict_probability(X_test, learned_weights)
-class_predictions = (predictions.flatten()>0.5)
-print("Accuracy of our LR classifier: {}".format(accuracy_score(np.expand_dims(y_test, axis=1), (predictions.flatten())>0.5)))
-print("Ground truth class value            : {}".format(y_test[4]))
-print("LR classifier predicted class value : {}".format(str(int(class_predictions[4]))))
+# make predictions using learned weights on testing data
+bias_train     = np.ones((X_train.shape[0], 1))
+bias_test      = np.ones((X_test.shape[0], 1))
+features_train = np.hstack((bias_train, X_train))
+features_test  = np.hstack((bias_test, X_test))
+
+test_predictions  = (predict_probability(features_test, learned_weights).flatten()>0.5)
+train_predictions = (predict_probability(features_train, learned_weights).flatten()>0.5)
+print("Accuracy of our LR classifier on training data: {}".format(accuracy_score(np.expand_dims(y_train, axis=1), train_predictions)))
+print("Accuracy of our LR classifier on testing data: {}".format(accuracy_score(np.expand_dims(y_test, axis=1), test_predictions)))
 ```
 
 ```
-Accuracy of our LR classifier: 0.9122807017543859
-Ground truth class value            : 1
-LR classifier predicted class value : 1
+Accuracy of our LR classifier on training data: 0.9164835164835164
+Accuracy of our LR classifier on testing data: 0.9298245614035088
 ```
 {: .code-out}
 
@@ -486,8 +535,12 @@ def l2_compute_log_likelihood(features, labels, weights, l2_penalty):
 # logistic regression with L2 regularization
 def l2_logistic_regression(features, labels, weights, lr, epochs, l2_penalty):
 
+  # add bias (intercept) with features matrix
+  bias      = np.ones((features.shape[0], 1))
+  features  = np.hstack((bias, features))
+
   # initialize the weight coefficients
-  weights = np.array(weights)
+  weights = np.zeros((features.shape[1], 1))
 
   # loop over epochs times
   for epoch in range(epochs):
@@ -527,21 +580,22 @@ Now, we can perform logistic regression with L2 regularization on this dataset u
 ```python
 # logistic regression with regularization
 def lr_with_regularization():
-  # initialize weights to zero
-  init_weights  = np.zeros((len(data.feature_names),1))
-
   # hyper-parameters
   learning_rate = 1e-7
-  epochs        = 1000
-  l2_penalty    = 50
+  epochs        = 10000
+  l2_penalty    = 0.001
 
   # perform logistic regression and get the learned weights
-  learned_weights = l2_logistic_regression(X_train, y_train, init_weights, learning_rate, epochs, l2_penalty)
+  learned_weights = l2_logistic_regression(X_train, y_train, learning_rate, epochs, l2_penalty)
 
   # make predictions using learned weights on testing data
-  test_predictions  = (predict_probability(X_test, learned_weights).flatten()>0.5)
-  train_predictions = (predict_probability(X_train, learned_weights).flatten()>0.5)
-  print("------------------")
+  bias_train     = np.ones((X_train.shape[0], 1))
+  bias_test      = np.ones((X_test.shape[0], 1))
+  features_train = np.hstack((bias_train, X_train))
+  features_test  = np.hstack((bias_test, X_test))
+
+  test_predictions  = (predict_probability(features_test, learned_weights).flatten()>0.5)
+  train_predictions = (predict_probability(features_train, learned_weights).flatten()>0.5)
   print("Accuracy of our LR classifier on training data: {}".format(accuracy_score(np.expand_dims(y_train, axis=1), train_predictions)))
   print("Accuracy of our LR classifier on testing data: {}".format(accuracy_score(np.expand_dims(y_test, axis=1), test_predictions)))
 
@@ -553,54 +607,59 @@ def lr_with_regularization():
   print("Accuracy of scikit-learn's LR classifier on training data: {}".format(accuracy_score(y_train, sk_train_predictions)))
   print("Accuracy of scikit-learn's LR classifier on testing data: {}".format(accuracy_score(y_test, sk_test_predictions)))
 
-print("------------------")
-lr_with_regularization()
-print("------------------")
+lr_without_regularization()
 ```
 
 ```
-------------------
-iteration   0: log likelihood of observed labels = -917.84578690
-iteration   1: log likelihood of observed labels = -4639.06039294
-iteration   2: log likelihood of observed labels = -2909.86929821
-iteration   3: log likelihood of observed labels = -2016.07991509
-iteration   4: log likelihood of observed labels = -4677.14211048
-iteration   5: log likelihood of observed labels = -354.48913384
-iteration   6: log likelihood of observed labels = -3364.29795924
-iteration   7: log likelihood of observed labels = -3679.44637011
-iteration   8: log likelihood of observed labels = -770.86941011
-iteration   9: log likelihood of observed labels = -5054.14608150
-iteration  10: log likelihood of observed labels = -651.37217660
-iteration  11: log likelihood of observed labels = -4261.48597871
-iteration  12: log likelihood of observed labels = -2912.52773544
-iteration  13: log likelihood of observed labels = -1637.81898253
-iteration  14: log likelihood of observed labels = -4679.13877956
-iteration  15: log likelihood of observed labels = -355.16405033
-iteration  20: log likelihood of observed labels = -202.36492337
-iteration  30: log likelihood of observed labels = -1598.88543628
-iteration  40: log likelihood of observed labels = -154.70563815
-iteration  50: log likelihood of observed labels = -3560.95794001
-iteration  60: log likelihood of observed labels = -1622.08577860
-iteration  70: log likelihood of observed labels = -2989.01799562
-iteration  80: log likelihood of observed labels = -1649.69040187
-iteration  90: log likelihood of observed labels = -2386.26656899
-iteration 100: log likelihood of observed labels = -1660.42004751
-iteration 200: log likelihood of observed labels = -156.99278721
-iteration 300: log likelihood of observed labels = -134.63133409
-iteration 400: log likelihood of observed labels = -122.79056018
-iteration 500: log likelihood of observed labels = -114.16071963
-iteration 600: log likelihood of observed labels = -107.96563264
-iteration 700: log likelihood of observed labels = -103.74074413
-iteration 800: log likelihood of observed labels = -100.93101611
-iteration 900: log likelihood of observed labels = -114.20536202
-------------------
-Accuracy of our LR classifier on training data: 0.9208791208791208
-Accuracy of our LR classifier on testing data: 0.9210526315789473
+iteration    0: log likelihood of observed labels = -917.84327825
+iteration    1: log likelihood of observed labels = -4639.03867691
+iteration    2: log likelihood of observed labels = -2909.83124635
+iteration    3: log likelihood of observed labels = -2016.07285020
+iteration    4: log likelihood of observed labels = -4677.09870361
+iteration    5: log likelihood of observed labels = -354.50022676
+iteration    6: log likelihood of observed labels = -3364.43918924
+iteration    7: log likelihood of observed labels = -3679.28041176
+iteration    8: log likelihood of observed labels = -770.98298638
+iteration    9: log likelihood of observed labels = -5054.17596944
+iteration   10: log likelihood of observed labels = -651.46116606
+iteration   11: log likelihood of observed labels = -4261.48204270
+iteration   12: log likelihood of observed labels = -2912.42427612
+iteration   13: log likelihood of observed labels = -1637.81724682
+iteration   14: log likelihood of observed labels = -4679.03181026
+iteration   15: log likelihood of observed labels = -355.12940059
+iteration   20: log likelihood of observed labels = -202.18519449
+iteration   30: log likelihood of observed labels = -1619.29481304
+iteration   40: log likelihood of observed labels = -2585.63036307
+iteration   50: log likelihood of observed labels = -3490.83993374
+iteration   60: log likelihood of observed labels = -1159.25285555
+iteration   70: log likelihood of observed labels = -2985.91616350
+iteration   80: log likelihood of observed labels = -1662.05815862
+iteration   90: log likelihood of observed labels = -2373.17550543
+iteration  100: log likelihood of observed labels = -1658.38399047
+iteration  200: log likelihood of observed labels = -156.06969300
+iteration  300: log likelihood of observed labels = -133.18727728
+iteration  400: log likelihood of observed labels = -121.92529807
+iteration  500: log likelihood of observed labels = -113.37563662
+iteration  600: log likelihood of observed labels = -107.23512122
+iteration  700: log likelihood of observed labels = -103.04708691
+iteration  800: log likelihood of observed labels = -100.26245245
+iteration  900: log likelihood of observed labels = -403.21555979
+iteration 1000: log likelihood of observed labels = -106.28771802
+iteration 2000: log likelihood of observed labels = -100.07458446
+iteration 3000: log likelihood of observed labels = -98.09601395
+iteration 4000: log likelihood of observed labels = -96.98775388
+iteration 5000: log likelihood of observed labels = -95.96491498
+iteration 6000: log likelihood of observed labels = -95.27582770
+iteration 7000: log likelihood of observed labels = -677.47736660
+iteration 8000: log likelihood of observed labels = -87.04148265
+iteration 9000: log likelihood of observed labels = -86.43707686
+
+Accuracy of our LR classifier on training data: 0.9186813186813186
+Accuracy of our LR classifier on testing data: 0.9385964912280702
 Accuracy of scikit-learn's LR classifier on training data: 0.9648351648351648
 Accuracy of scikit-learn's LR classifier on testing data: 0.9385964912280702
-------------------
 ```
 {: .code-out}
 
 
-Wow! Let's take a deep breath. We have implemented our very own logistic regression classifier using python and numpy, and compared it with scikit-learn's implementation. Our accuracy looks very good, but still not closer to scikit-learn's classifier. This is because scikit-learn's machine learning algorithms are heavily optimized.
+Thus, we have implemented our very own logistic regression classifier using python and numpy with/without L2 regularization, and compared it with scikit-learn's implementation. Our accuracy looks very good, but still not closer to scikit-learns classifier's accuracy. This is because scikit-learn's machine learning algorithms are heavily optimized.

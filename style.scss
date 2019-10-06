@@ -889,7 +889,7 @@ figcaption {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     font-size: 18px;
     @include mobile {
-      font-size: 17px;
+      font-size: 13px !important;
     }
   }
   h4 a:hover, h4 a:active {
@@ -1842,22 +1842,22 @@ figure {
 }
 
 .grad-blog {
-  background-color: $white;
+  background-color: $bg_header;
   box-shadow: 0 8px 6px -6px #e9e9e9;
 }
 
 .grad-portfolio {
-  background-color: $white;
+  background-color: $bg_header;
   box-shadow: 0 8px 6px -6px #e9e9e9;
 }
 
 .grad-creations {
-  background-color: $white;
+  background-color: $bg_header;
   box-shadow: 0 8px 6px -6px #e9e9e9;
 }
 
 .grad-photography {
-  background-color: $white;
+  background-color: $bg_header;
   box-shadow: 0 8px 6px -6px #e9e9e9;
 }
 
@@ -1887,7 +1887,7 @@ figure {
   p {
     width: 50%;
     margin: 0px auto;
-    color: #7e7e7e !important;
+    color: $black !important;
     text-align: center;
     margin-bottom: 10px !important;
     font-size: 15px;
