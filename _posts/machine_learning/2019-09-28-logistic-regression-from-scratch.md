@@ -327,6 +327,8 @@ def logistic_regression(features, labels, lr, epochs):
   # initialize the weight coefficients
   weights = np.zeros((features.shape[1], 1))
 
+  logs = []
+
   # loop over epochs times
   for epoch in range(epochs):
 
@@ -347,11 +349,18 @@ def logistic_regression(features, labels, lr, epochs):
       weights[j] += lr * derivative
 
     # compute the log-likelihood
-    if epoch <= 15 or (epoch <= 100 and epoch % 10 == 0) or (epoch <= 1000 and epoch % 100 == 0) \
-        or (epoch <= 10000 and epoch % 1000 == 0) or epoch % 10000 == 0:
-      ll = compute_log_likelihood(features, labels, weights)
-      print('iteration %*d: log likelihood of observed labels = %.8f' % \
-                (int(np.ceil(np.log10(epochs))), epoch, ll))
+    ll = compute_log_likelihood(features, labels, weights)
+    logs.append(ll)
+
+  import matplotlib.pyplot as plt
+  x = np.linspace(0, len(logs), len(logs))
+  fig = plt.figure()
+  plt.plot(x, logs)
+  fig.suptitle('Training the classifier (without L2)')
+  plt.xlabel('Epoch')
+  plt.ylabel('Log-likelihood')
+  fig.savefig('train_without_l2.jpg')
+  plt.show()
 
   return weights
 ```
@@ -395,49 +404,16 @@ As we already learnt, training the classifier means learning the weight coeffici
 ```python
 # hyper-parameters
 learning_rate = 1e-7
-epochs        = 1500
+epochs        = 500
 
 # perform logistic regression
 learned_weights = logistic_regression(X_train, y_train, learning_rate, epochs)
 ```
 
-```
-iteration    0: log likelihood of observed labels = -917.84327823
-iteration    1: log likelihood of observed labels = -4639.03867640
-iteration    2: log likelihood of observed labels = -2909.83124565
-iteration    3: log likelihood of observed labels = -2016.07284994
-iteration    4: log likelihood of observed labels = -4677.09870285
-iteration    5: log likelihood of observed labels = -354.50022715
-iteration    6: log likelihood of observed labels = -3364.43919336
-iteration    7: log likelihood of observed labels = -3679.28040766
-iteration    8: log likelihood of observed labels = -770.98298984
-iteration    9: log likelihood of observed labels = -5054.17597070
-iteration   10: log likelihood of observed labels = -651.46116856
-iteration   11: log likelihood of observed labels = -4261.48204353
-iteration   12: log likelihood of observed labels = -2912.42427368
-iteration   13: log likelihood of observed labels = -1637.81724766
-iteration   14: log likelihood of observed labels = -4679.03180782
-iteration   15: log likelihood of observed labels = -355.12939979
-iteration   20: log likelihood of observed labels = -202.18519072
-iteration   30: log likelihood of observed labels = -1619.29530075
-iteration   40: log likelihood of observed labels = -2585.72829180
-iteration   50: log likelihood of observed labels = -3488.57156045
-iteration   60: log likelihood of observed labels = -1138.40610958
-iteration   70: log likelihood of observed labels = -2988.22993363
-iteration   80: log likelihood of observed labels = -1663.36381259
-iteration   90: log likelihood of observed labels = -2372.85275499
-iteration  100: log likelihood of observed labels = -1658.32786847
-iteration  200: log likelihood of observed labels = -156.06859878
-iteration  300: log likelihood of observed labels = -133.23381615
-iteration  400: log likelihood of observed labels = -121.92554479
-iteration  500: log likelihood of observed labels = -113.37561047
-iteration  600: log likelihood of observed labels = -107.23488828
-iteration  700: log likelihood of observed labels = -103.04673895
-iteration  800: log likelihood of observed labels = -100.26207215
-iteration  900: log likelihood of observed labels = -369.13923603
-iteration 1000: log likelihood of observed labels = -106.25232302
-```
-{: .code-out}
+<figure>
+  <img src="https://drive.google.com/uc?id=1e9REgzv_FIBdyW235udH9y-BUVfkxqvC">
+  <figcaption>Figure 3. Increasing log-likelihood during training (without L2 regularization).</figcaption>
+</figure>
 
 <h3 id="test-the-classifier">Test the classifier</h3>
 
@@ -533,7 +509,7 @@ def l2_compute_log_likelihood(features, labels, weights, l2_penalty):
   return ll
 
 # logistic regression with L2 regularization
-def l2_logistic_regression(features, labels, weights, lr, epochs, l2_penalty):
+def l2_logistic_regression(features, labels, lr, epochs, l2_penalty):
 
   # add bias (intercept) with features matrix
   bias      = np.ones((features.shape[0], 1))
@@ -541,6 +517,8 @@ def l2_logistic_regression(features, labels, weights, lr, epochs, l2_penalty):
 
   # initialize the weight coefficients
   weights = np.zeros((features.shape[1], 1))
+
+  logs = []
 
   # loop over epochs times
   for epoch in range(epochs):
@@ -564,11 +542,18 @@ def l2_logistic_regression(features, labels, weights, lr, epochs, l2_penalty):
       weights[j] += lr * derivative
 
     # compute the log-likelihood
-    if epoch <= 15 or (epoch <= 100 and epoch % 10 == 0) or (epoch <= 1000 and epoch % 100 == 0) \
-        or (epoch <= 10000 and epoch % 1000 == 0) or epoch % 10000 == 0:
-      ll = l2_compute_log_likelihood(features, labels, weights, l2_penalty)
-      print('iteration %*d: log likelihood of observed labels = %.8f' % \
-                (int(np.ceil(np.log10(epochs))), epoch, ll))
+    ll = l2_compute_log_likelihood(features, labels, weights, l2_penalty)
+    logs.append(ll)
+
+  import matplotlib.pyplot as plt
+  x = np.linspace(0, len(logs), len(logs))
+  fig = plt.figure()
+  plt.plot(x, logs)
+  fig.suptitle('Training the classifier (with L2)')
+  plt.xlabel('Epoch')
+  plt.ylabel('Log-likelihood')
+  fig.savefig('train_with_l2.jpg')
+  plt.show()
 
   return weights
 ```
@@ -582,7 +567,7 @@ Now, we can perform logistic regression with L2 regularization on this dataset u
 def lr_with_regularization():
   # hyper-parameters
   learning_rate = 1e-7
-  epochs        = 10000
+  epochs        = 500
   l2_penalty    = 0.001
 
   # perform logistic regression and get the learned weights
@@ -611,49 +596,6 @@ lr_without_regularization()
 ```
 
 ```
-iteration    0: log likelihood of observed labels = -917.84327825
-iteration    1: log likelihood of observed labels = -4639.03867691
-iteration    2: log likelihood of observed labels = -2909.83124635
-iteration    3: log likelihood of observed labels = -2016.07285020
-iteration    4: log likelihood of observed labels = -4677.09870361
-iteration    5: log likelihood of observed labels = -354.50022676
-iteration    6: log likelihood of observed labels = -3364.43918924
-iteration    7: log likelihood of observed labels = -3679.28041176
-iteration    8: log likelihood of observed labels = -770.98298638
-iteration    9: log likelihood of observed labels = -5054.17596944
-iteration   10: log likelihood of observed labels = -651.46116606
-iteration   11: log likelihood of observed labels = -4261.48204270
-iteration   12: log likelihood of observed labels = -2912.42427612
-iteration   13: log likelihood of observed labels = -1637.81724682
-iteration   14: log likelihood of observed labels = -4679.03181026
-iteration   15: log likelihood of observed labels = -355.12940059
-iteration   20: log likelihood of observed labels = -202.18519449
-iteration   30: log likelihood of observed labels = -1619.29481304
-iteration   40: log likelihood of observed labels = -2585.63036307
-iteration   50: log likelihood of observed labels = -3490.83993374
-iteration   60: log likelihood of observed labels = -1159.25285555
-iteration   70: log likelihood of observed labels = -2985.91616350
-iteration   80: log likelihood of observed labels = -1662.05815862
-iteration   90: log likelihood of observed labels = -2373.17550543
-iteration  100: log likelihood of observed labels = -1658.38399047
-iteration  200: log likelihood of observed labels = -156.06969300
-iteration  300: log likelihood of observed labels = -133.18727728
-iteration  400: log likelihood of observed labels = -121.92529807
-iteration  500: log likelihood of observed labels = -113.37563662
-iteration  600: log likelihood of observed labels = -107.23512122
-iteration  700: log likelihood of observed labels = -103.04708691
-iteration  800: log likelihood of observed labels = -100.26245245
-iteration  900: log likelihood of observed labels = -403.21555979
-iteration 1000: log likelihood of observed labels = -106.28771802
-iteration 2000: log likelihood of observed labels = -100.07458446
-iteration 3000: log likelihood of observed labels = -98.09601395
-iteration 4000: log likelihood of observed labels = -96.98775388
-iteration 5000: log likelihood of observed labels = -95.96491498
-iteration 6000: log likelihood of observed labels = -95.27582770
-iteration 7000: log likelihood of observed labels = -677.47736660
-iteration 8000: log likelihood of observed labels = -87.04148265
-iteration 9000: log likelihood of observed labels = -86.43707686
-
 Accuracy of our LR classifier on training data: 0.9186813186813186
 Accuracy of our LR classifier on testing data: 0.9385964912280702
 Accuracy of scikit-learn's LR classifier on training data: 0.9648351648351648
@@ -661,5 +603,9 @@ Accuracy of scikit-learn's LR classifier on testing data: 0.9385964912280702
 ```
 {: .code-out}
 
+<figure>
+  <img src="https://drive.google.com/uc?id=13-Zbsge3CVljC4p5nxAGiw6rqJFXk_lw">
+  <figcaption>Figure 4. Increasing log-likelihood during training (with L2 regularization).</figcaption>
+</figure>
 
 Thus, we have implemented our very own logistic regression classifier using python and numpy with/without L2 regularization, and compared it with scikit-learn's implementation. Our accuracy looks very good, but still not closer to scikit-learns classifier's accuracy. This is because scikit-learn's machine learning algorithms are heavily optimized.
