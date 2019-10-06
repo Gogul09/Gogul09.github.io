@@ -11,6 +11,10 @@
   background: white;
   margin: 20px auto;
   transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+  @include mobile {
+    margin-left: 30px;
+    margin-top: 10px;
+  }
 }
 
 #carbonads:hover {

@@ -347,8 +347,9 @@ footer {
   padding: 20px;
   border-radius: 3px;
   @include mobile {
-    padding: 20px 0;
-    margin-left: -5px;
+    padding: 10px 0;
+    margin-left: -10px;
+    padding-bottom: 0px;
   }
 }
 

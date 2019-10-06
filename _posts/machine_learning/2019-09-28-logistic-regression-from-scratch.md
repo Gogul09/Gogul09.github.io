@@ -22,7 +22,24 @@ image: https://drive.google.com/uc?id=1rjTumTjtBj7nRdADfGiXs22NcX8xBwe2
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#split-the-dataset">Split the Dataset</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#train-the-classifier">Train the Classifier</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#test-the-classifier">Test the Classifier</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#reduce-overfitting">Reduce Overfitting</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_12" href="#l2-regularization">L2 Regularization</a></li>
   </ul>
+</div>
+
+<div class="git-showcase">
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
+  </div>
+
+  <div>
+  <a class="github-button" href="https://github.com/Gogul09/explore-machine-learning/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Gogul09/explore-machine-learning on GitHub">Fork</a>
+
+  </div>
+
+  <div>
+  <a class="github-button" href="https://github.com/Gogul09/explore-machine-learning" data-icon="octicon-star" data-show-count="true" aria-label="Star Gogul09/explore-machine-learning on GitHub">Star</a>
+  </div>  
 </div>
 
 During my journey as a Machine Learning (ML) practitioner, I found it has become ultimately easy for any human with limited knowledge on algorithms to take advantage of free python libraries such as [scikit-learn](https://scikit-learn.org/){:target="_blank"} to solve a ML problem. Truth be said, it's easy and sometimes no brainer to achieve this, as there are so many codes available in GitHub, Medium, Kaggle etc., You just need some amount of time looking at these codes to arrive at a solution to a problem of your choice. 
@@ -213,9 +230,25 @@ After evaluating the quality metric, we use *gradient ascent algorithm* to updat
 
 <h3 id="compute-likelihood">Compute Likelihood</h3>
 
-For a binary classification problem, it turns out that we can use [log-likelihood](https://en.wikipedia.org/wiki/Likelihood_function#Log-likelihood){:target="_blank"} as the quality metric. Once we pick a likelihood function, we must know it's derivative with respect to the weights so that we can use gradient ascent to update the weights.
+How do we measure "how well the classifier fits the training data"? Using [likelihood](https://en.wikipedia.org/wiki/Likelihood_function){:target="_blank"}. We need to choose weight coefficients \\(\mathbf w\\) that maximizes likelihood given below.
 
-To make computations simpler and numerically stable, we use a special form of likelihood known as log-likelihood that can be calculated using the below formula. 
+<div class="math-cover">
+$$
+\prod_{i=1}^N P(y_i | \mathbf x_i, \mathbf w)
+$$
+</div>
+
+For a binary classification problem, it turns out that we can use [log-likelihood](https://en.wikipedia.org/wiki/Likelihood_function#Log-likelihood){:target="_blank"} as the quality metric which makes computations and derivatives simpler.
+
+<div class="math-cover">
+$$
+l(\mathbf w) = ln \prod_{i=1}^N P(y_i | \mathbf x_i, \mathbf w)
+$$
+</div>
+
+After picking the log-likelihood function, we must know it's derivative with respect to the weight coefficients so that we can use gradient ascent to update the weights.
+
+We use the below equation to calculate the log-likelihood for the classifier.
 
 <div class="math-cover">
 $$
@@ -384,3 +417,190 @@ Ground truth class value            : 1
 LR classifier predicted class value : 1
 ```
 {: .code-out}
+
+<h3 id="reduce-overfitting">Reduce Overfitting</h3>
+
+Overfitting is a mandatory problem that we need to solve when it comes to machine learning. After training, we have the learned weight coefficients which must not *overfit* the training dataset. 
+
+When the decision boundary traced by the learned weight coefficients fits the training data extremely well, we have this overfitting problem. Often, overfitting is associated with very large estimated weight coefficients. This leads to overconfident predictions which is not very good for a real-world classifier.
+
+To solve this, we need to measure the magnitude of weight coefficients. There are two approaches to measure it.
+
+**L1 norm**: Sum of absolute value 
+  
+\\(\lVert \mathbf w \rVert _1 = \|\mathbf w_0\| + \|\mathbf w_1\| + \|\mathbf w_2\| ... + \|\mathbf w_N\| \\)
+
+**L2 norm**: Sum of squares 
+  
+\\(\lVert \mathbf w \rVert _2^2 = \mathbf w_0^2 + \mathbf w_1^2 + \mathbf w_2^2 ... + \mathbf w_N^2 \\)
+
+<h3 id="l2-regularization">L2 Regularization</h3>
+
+We will use L2 norm (sum of squares) to reduce overshooting weight coefficients. It turns out that, instead of using likelihood function alone as the quality metric, what if we subtract \\(\lambda \lVert \mathbf w \rVert _2^2\\) from it, where \\(\lambda\\) is a hyper-parameter to control bias-variance tradeoff due to this regularization.
+
+So, our new quality metric with regularization to combat overconfidence problem would be
+
+<div class="math-cover">
+$$
+l(w) - \lambda \lVert \mathbf w \rVert _2^2
+$$
+</div>
+
+* Large \\(\lambda \\): High bias, low variance.
+* Small \\(\lambda \\): Low bias, high variance.
+
+Recall to perform gradient ascent, we need to know the derivative of quality metric to update the weight coefficients. Thus, the new derivative equation would be
+
+<div class="math-cover">
+$$
+\frac{\partial l(\mathbf w)}{\partial \mathbf w_j} - 2 \lambda \mathbf w_j
+$$
+</div>
+
+Let's understand the regularization impact on penalizing weight coefficients.
+
+* If \\( \mathbf w_j > 0\\), then \\(- 2 \lambda \mathbf w_j < 0\\), thus it decreases \\( \mathbf w_j > 0\\) resulting in \\( \mathbf w_j \\) closer to 0.
+* If \\( \mathbf w_j < 0\\), then \\(- 2 \lambda \mathbf w_j > 0\\), thus it increases \\( \mathbf w_j > 0\\) resulting in \\( \mathbf w_j \\) closer to 0.
+
+When it comes to code, we need to update <span class="coding">feature_derivative()</span> function, <span class="coding">compute_log_likelihood()</span> function and <span class="coding">logistic_regression()</span> function with whatever we have learnt so far about L2 regularization as shown below.
+
+<div class="code-head">logistic_regression.py<span>code</span></div>
+
+```python
+# feature derivative computation with L2 regularization
+def l2_feature_derivative(errors, feature, weight, l2_penalty, feature_is_constant):
+  derivative = np.dot(np.transpose(errors), feature)
+  
+  if not feature_is_constant:
+    derivative -= 2 * l2_penalty * weight
+
+  return derivative
+
+# log-likelihood computation with L2 regularization
+def l2_compute_log_likelihood(features, labels, weights, l2_penalty):
+  indicator = (label==+1)
+  scores    = np.dot(features, weights)
+  ll        = np.sum((np.transpose(np.array([indicator]))-1)*scores - np.log(1. + np.exp(-scores))) - (l2_penalty * np.sum(weights[1:]**2))
+  return ll
+
+# logistic regression with L2 regularization
+def l2_logistic_regression(features, labels, weights, lr, epochs, l2_penalty):
+
+  # initialize the weight coefficients
+  weights = np.array(weights)
+
+  # loop over epochs times
+  for epoch in range(epochs):
+
+    # predict probability for each row in the dataset
+    predictions = predict_probability(features, weights)
+
+    # calculate the indicator value
+    indicators = (labels==+1)
+
+    # calculate the errors
+    errors = np.transpose(np.array([indicators])) - predictions
+
+    # loop over each weight coefficient
+    for j in range(len(weights)):
+
+      isIntercept = (j==0)
+
+      # calculate the derivative of jth weight cofficient
+      derivative = l2_feature_derivative(errors, features[:,j], weights[j], l2_penalty, isIntercept)
+      weights[j] += lr * derivative
+
+    # compute the log-likelihood
+    if epoch <= 15 or (epoch <= 100 and epoch % 10 == 0) or (epoch <= 1000 and epoch % 100 == 0) \
+        or (epoch <= 10000 and epoch % 1000 == 0) or epoch % 10000 == 0:
+      ll = l2_compute_log_likelihood(features, labels, weights, l2_penalty)
+      print('iteration %*d: log likelihood of observed labels = %.8f' % \
+                (int(np.ceil(np.log10(epochs))), epoch, ll))
+
+  return weights
+```
+
+Now, we can perform logistic regression with L2 regularization on this dataset using the below code.
+
+<div class="code-head">logistic_regression.py<span>code</span></div>
+
+```python
+# logistic regression with regularization
+def lr_with_regularization():
+  # initialize weights to zero
+  init_weights  = np.zeros((len(data.feature_names),1))
+
+  # hyper-parameters
+  learning_rate = 1e-7
+  epochs        = 1000
+  l2_penalty    = 50
+
+  # perform logistic regression and get the learned weights
+  learned_weights = l2_logistic_regression(X_train, y_train, init_weights, learning_rate, epochs, l2_penalty)
+
+  # make predictions using learned weights on testing data
+  test_predictions  = (predict_probability(X_test, learned_weights).flatten()>0.5)
+  train_predictions = (predict_probability(X_train, learned_weights).flatten()>0.5)
+  print("------------------")
+  print("Accuracy of our LR classifier on training data: {}".format(accuracy_score(np.expand_dims(y_train, axis=1), train_predictions)))
+  print("Accuracy of our LR classifier on testing data: {}".format(accuracy_score(np.expand_dims(y_test, axis=1), test_predictions)))
+
+  # using scikit-learn's logistic regression classifier
+  model = LogisticRegression(random_state=9)
+  model.fit(X_train, y_train)
+  sk_test_predictions  = model.predict(X_test)
+  sk_train_predictions = model.predict(X_train)
+  print("Accuracy of scikit-learn's LR classifier on training data: {}".format(accuracy_score(y_train, sk_train_predictions)))
+  print("Accuracy of scikit-learn's LR classifier on testing data: {}".format(accuracy_score(y_test, sk_test_predictions)))
+
+print("------------------")
+lr_with_regularization()
+print("------------------")
+```
+
+```
+------------------
+iteration   0: log likelihood of observed labels = -917.84578690
+iteration   1: log likelihood of observed labels = -4639.06039294
+iteration   2: log likelihood of observed labels = -2909.86929821
+iteration   3: log likelihood of observed labels = -2016.07991509
+iteration   4: log likelihood of observed labels = -4677.14211048
+iteration   5: log likelihood of observed labels = -354.48913384
+iteration   6: log likelihood of observed labels = -3364.29795924
+iteration   7: log likelihood of observed labels = -3679.44637011
+iteration   8: log likelihood of observed labels = -770.86941011
+iteration   9: log likelihood of observed labels = -5054.14608150
+iteration  10: log likelihood of observed labels = -651.37217660
+iteration  11: log likelihood of observed labels = -4261.48597871
+iteration  12: log likelihood of observed labels = -2912.52773544
+iteration  13: log likelihood of observed labels = -1637.81898253
+iteration  14: log likelihood of observed labels = -4679.13877956
+iteration  15: log likelihood of observed labels = -355.16405033
+iteration  20: log likelihood of observed labels = -202.36492337
+iteration  30: log likelihood of observed labels = -1598.88543628
+iteration  40: log likelihood of observed labels = -154.70563815
+iteration  50: log likelihood of observed labels = -3560.95794001
+iteration  60: log likelihood of observed labels = -1622.08577860
+iteration  70: log likelihood of observed labels = -2989.01799562
+iteration  80: log likelihood of observed labels = -1649.69040187
+iteration  90: log likelihood of observed labels = -2386.26656899
+iteration 100: log likelihood of observed labels = -1660.42004751
+iteration 200: log likelihood of observed labels = -156.99278721
+iteration 300: log likelihood of observed labels = -134.63133409
+iteration 400: log likelihood of observed labels = -122.79056018
+iteration 500: log likelihood of observed labels = -114.16071963
+iteration 600: log likelihood of observed labels = -107.96563264
+iteration 700: log likelihood of observed labels = -103.74074413
+iteration 800: log likelihood of observed labels = -100.93101611
+iteration 900: log likelihood of observed labels = -114.20536202
+------------------
+Accuracy of our LR classifier on training data: 0.9208791208791208
+Accuracy of our LR classifier on testing data: 0.9210526315789473
+Accuracy of scikit-learn's LR classifier on training data: 0.9648351648351648
+Accuracy of scikit-learn's LR classifier on testing data: 0.9385964912280702
+------------------
+```
+{: .code-out}
+
+
+Wow! Let's take a deep breath. We have implemented our very own logistic regression classifier using python and numpy, and compared it with scikit-learn's implementation. Our accuracy looks very good, but still not closer to scikit-learn's classifier. This is because scikit-learn's machine learning algorithms are heavily optimized.
