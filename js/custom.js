@@ -205,7 +205,11 @@ function openSideNav() {
 }
 
 var slideIndex = 1;
-showDivs(slideIndex);
+try {
+  showDivs(slideIndex);
+} catch {
+  
+}
 
 function plusDivs(n) {
   showDivs(slideIndex += n);
@@ -220,4 +224,31 @@ function showDivs(n) {
     x[i].style.display = "none"; 
   }
   x[slideIndex-1].style.display = "block"; 
+}
+
+function switchTheme(mode) {
+  var sheet = document.getElementById("main-style-sheet");
+  var btnTheme = document.getElementById("nav_theme");
+
+  if (mode == 1) {
+    if(displayMode == "light") {
+      sheet.setAttribute("href", "/css/dark-theme.css");
+      displayMode = "dark";
+      sessionStorage.setItem("theme", "dark");
+      btnTheme.style.backgroundImage = "url('/images/icons/dark-theme.png')";
+    } else {
+      sheet.setAttribute("href", "/style.css");
+      displayMode = "light";
+      sessionStorage.setItem("theme", "light");
+      btnTheme.style.backgroundImage = "url('/images/icons/light-theme.png')";
+    }
+  } else {
+    if(displayMode == "light") {
+      sheet.setAttribute("href", "/style.css");
+      btnTheme.style.backgroundImage = "url('/images/icons/light-theme.png')";
+    } else {
+      sheet.setAttribute("href", "/css/dark-theme.css");
+      btnTheme.style.backgroundImage = "url('/images/icons/dark-theme.png')";
+    }
+  }
 }

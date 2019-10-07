@@ -24,7 +24,8 @@ image: https://drive.google.com/uc?id=1rjTumTjtBj7nRdADfGiXs22NcX8xBwe2
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#test-the-classifier">Test the Classifier</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#reduce-overfitting">Reduce Overfitting</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_12" href="#l2-regularization">L2 Regularization</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_13" href="#references">References</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_13" href="#conclusion">Conclusion</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_14" href="#references">References</a></li>
   </ul>
 </div>
 
@@ -676,7 +677,7 @@ Accuracy of scikit-learn's LR classifier on testing data: 0.9385964912280702
   <figcaption>Figure 5. Increasing log-likelihood during training (with L2 regularization).</figcaption>
 </figure>
 
-<h3 id="conclusion">Conculsion</h3>
+<h3 id="conclusion">Conclusion</h3>
 
 Thus, we have implemented our very own logistic regression classifier using python and numpy with/without L2 regularization, and compared it with scikit-learn's implementation.
 
