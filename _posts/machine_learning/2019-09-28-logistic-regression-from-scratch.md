@@ -24,6 +24,7 @@ image: https://drive.google.com/uc?id=1rjTumTjtBj7nRdADfGiXs22NcX8xBwe2
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#test-the-classifier">Test the Classifier</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#reduce-overfitting">Reduce Overfitting</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_12" href="#l2-regularization">L2 Regularization</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_13" href="#references">References</a></li>
   </ul>
 </div>
 
@@ -47,7 +48,7 @@ During my journey as a Machine Learning (ML) practitioner, I found it has become
 But, what if we learn every algorithm or procedures behind each machine learning pipeline that does all the heavy lifting for us inside these amazing libraries. In this blog post and the series of blog posts to come, I will be focusing on implementing machine learning algorithms from scratch using python and numpy.
 
 <div class="note">
-<p>Sure you might argue with me for the first paragraph. But learning how each algorithm work behind the scenes is very important to use these algorithms in any domain (say hardware design).</p>
+<p>Sure you might argue with me for the first paragraph. But learning how each algorithm work behind the scenes is very important to use these algorithms and bring in customized features in any domain (say hardware design).</p>
 </div>
 
 In this blog post, we will implement logistic regression from scratch using python and numpy to a binary classification problem.
@@ -675,8 +676,20 @@ Accuracy of scikit-learn's LR classifier on testing data: 0.9385964912280702
   <figcaption>Figure 5. Increasing log-likelihood during training (with L2 regularization).</figcaption>
 </figure>
 
+<h3 id="conclusion">Conculsion</h3>
+
 Thus, we have implemented our very own logistic regression classifier using python and numpy with/without L2 regularization, and compared it with scikit-learn's implementation.
 
 We have achieved the **same test accuracy as scikit-learn's implementation** and what a way to achieve it on our own!
 
 One key take away from this post is that, we still need to manually tune these hyper-parameters (<span class="coding">learning_rate</span>, <span class="coding">epochs</span> and <span class="coding">l2_penalty</span>) to reach the global maximum. If you found some approach to automate this task, please leave it out in the comments so that I as well as others can learn it.
+
+<div class="references">
+<h3 id="references">References</h3>
+
+<ul>
+  <li><a href="https://www.coursera.org/learn/ml-classification" target="_blank">Coursera's Machine Learning: Classification by Professor Carlos Guestrin</a></li>
+  <li><a href="http://www.cs.cmu.edu/~guestrin/Class/10701-S05/slides/LogRegress-1-24-05.pdf" target="_blank">Logistic Regression, Generative and Discriminative Classifiers</a></li>
+</ul>
+
+</div>
