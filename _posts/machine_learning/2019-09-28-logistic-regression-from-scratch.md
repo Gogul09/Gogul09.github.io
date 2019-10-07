@@ -93,6 +93,51 @@ where
 * \\( h(x_i) \\) is th feature vector for that single data point which has \\( [h_1(x_i), h_2(x_i) ... h_{30}(x_i)] \\).
 * \\( y_i \\) is the target class for that single data point.
 
+We can easily convert this dataset into a pandas dataframe for better data analysis. To view the datatype of each column, we use the below code. As every column is numeric (float64), we don't want to perform any data preprocessing here.
+
+<div class="code-head">logistic_regression.py<span>code</span></div>
+
+```python
+import pandas as pd
+df = pd.DataFrame(data.data)
+print(df.dtypes)
+```
+
+```
+0     float64
+1     float64
+2     float64
+3     float64
+4     float64
+5     float64
+6     float64
+7     float64
+8     float64
+9     float64
+10    float64
+11    float64
+12    float64
+13    float64
+14    float64
+15    float64
+16    float64
+17    float64
+18    float64
+19    float64
+20    float64
+21    float64
+22    float64
+23    float64
+24    float64
+25    float64
+26    float64
+27    float64
+28    float64
+29    float64
+dtype: object
+```
+{: .code-out}
+
 <h3 id="supervised-learning">Supervised Learning</h3>
 
 In a nutshell, what we try to solve in this problem is - 
@@ -567,7 +612,7 @@ Now, we can perform logistic regression with L2 regularization on this dataset u
 def lr_with_regularization():
   # hyper-parameters
   learning_rate = 1e-7
-  epochs        = 500
+  epochs        = 300000
   l2_penalty    = 0.001
 
   # perform logistic regression and get the learned weights
@@ -592,11 +637,28 @@ def lr_with_regularization():
   print("Accuracy of scikit-learn's LR classifier on training data: {}".format(accuracy_score(y_train, sk_train_predictions)))
   print("Accuracy of scikit-learn's LR classifier on testing data: {}".format(accuracy_score(y_test, sk_test_predictions)))
 
+  visualize_weights(np.squeeze(learned_weights), 'weights_with_l2.jpg')
+
+# visualize weight coefficients
+def visualize_weights(weights, title):
+  import matplotlib.pyplot as plt
+  x = np.linspace(0, len(weights), len(weights))
+
+  fig = plt.figure()
+  plt.bar(x, weights, align='center', alpha=0.5)
+  plt.xlabel("Weight Index (Feature Column Number)")
+  plt.ylabel("Weight Coefficient")
+  plt.title('Visualizing Weights')
+  plt.tight_layout()
+  fig.savefig(title)
+
+  plt.show()
+
 lr_without_regularization()
 ```
 
 ```
-Accuracy of our LR classifier on training data: 0.9186813186813186
+Accuracy of our LR classifier on training data: 0.9406593406593406
 Accuracy of our LR classifier on testing data: 0.9385964912280702
 Accuracy of scikit-learn's LR classifier on training data: 0.9648351648351648
 Accuracy of scikit-learn's LR classifier on testing data: 0.9385964912280702
@@ -604,8 +666,17 @@ Accuracy of scikit-learn's LR classifier on testing data: 0.9385964912280702
 {: .code-out}
 
 <figure>
-  <img src="https://drive.google.com/uc?id=13-Zbsge3CVljC4p5nxAGiw6rqJFXk_lw">
-  <figcaption>Figure 4. Increasing log-likelihood during training (with L2 regularization).</figcaption>
+  <img src="https://drive.google.com/uc?id=1NZq0sfCxxoiw7BIkldIZ8-EdxkixUtBm">
+  <figcaption>Figure 4. Visualizing learnt weight coefficients after training.</figcaption>
 </figure>
 
-Thus, we have implemented our very own logistic regression classifier using python and numpy with/without L2 regularization, and compared it with scikit-learn's implementation. Our accuracy looks very good, but still not closer to scikit-learns classifier's accuracy. This is because scikit-learn's machine learning algorithms are heavily optimized.
+<figure>
+  <img src="https://drive.google.com/uc?id=1HLvXeICcqJ2eaf21f4mLCkShGj1jOEWs">
+  <figcaption>Figure 5. Increasing log-likelihood during training (with L2 regularization).</figcaption>
+</figure>
+
+Thus, we have implemented our very own logistic regression classifier using python and numpy with/without L2 regularization, and compared it with scikit-learn's implementation.
+
+We have achieved the **same test accuracy as scikit-learn's implementation** and what a way to achieve it on our own!
+
+One key take away from this post is that, we still need to manually tune these hyper-parameters (<span class="coding">learning_rate</span>, <span class="coding">epochs</span> and <span class="coding">l2_penalty</span>) to reach the global maximum. If you found some approach to automate this task, please leave it out in the comments so that I as well as others can learn it.
