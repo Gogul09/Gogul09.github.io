@@ -229,6 +229,7 @@ function showDivs(n) {
 function switchTheme(mode) {
   var sheet = document.getElementById("main-style-sheet");
   var btnTheme = document.getElementById("nav_theme");
+  var metaTheme = document.querySelector('meta[name="theme-color"]');
 
   if (mode == 1) {
     if(displayMode == "light") {
@@ -236,19 +237,23 @@ function switchTheme(mode) {
       displayMode = "dark";
       sessionStorage.setItem("theme", "dark");
       btnTheme.style.backgroundImage = "url('/images/icons/dark-theme.png')";
+      metaTheme.setAttribute("content", "#000000");
     } else {
       sheet.setAttribute("href", "/style.css");
       displayMode = "light";
       sessionStorage.setItem("theme", "light");
       btnTheme.style.backgroundImage = "url('/images/icons/light-theme.png')";
+      metaTheme.setAttribute("content", "#ffffff");
     }
   } else {
     if(displayMode == "light") {
       sheet.setAttribute("href", "/style.css");
       btnTheme.style.backgroundImage = "url('/images/icons/light-theme.png')";
+      metaTheme.setAttribute("content", "#ffffff");
     } else {
       sheet.setAttribute("href", "/css/dark-theme.css");
       btnTheme.style.backgroundImage = "url('/images/icons/dark-theme.png')";
+      metaTheme.setAttribute("content", "#000000");
     }
   }
 }

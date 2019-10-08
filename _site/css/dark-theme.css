@@ -230,13 +230,6 @@ code {
     margin-bottom: 1.7em !important
 }
 
-@media screen and (max-width: 640px) {
-    .highlighter-rouge {
-        margin-left: -15px;
-        margin-right: -15px
-    }
-}
-
 .highlight table,
 .highlight td,
 .highlight tbody,
@@ -249,7 +242,8 @@ code {
     text-align: left;
     font-family: monospace;
     line-height: 1.4;
-    margin-bottom: 0px !important
+    margin-bottom: 0px !important;
+    color: #b3b9c5;
 }
 
 @media screen and (max-width: 640px) {
@@ -323,7 +317,7 @@ code {
 }
 
 .highlight .n {
-    color: #f3f3f3
+    color: #b3b9c5
 }
 
 .highlight .o {
@@ -469,7 +463,7 @@ code {
 }
 
 .highlight .nn {
-    color: #f3f3f3
+    color: #b3b9c5
 }
 
 .highlight .nx {
@@ -723,7 +717,8 @@ h5,
 h6 {
     font-family: "Poppins", sans-serif;
     font-weight: bold;
-    margin-top: 1em
+    margin-top: 1em;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.63);
 }
 
 article {
@@ -814,7 +809,7 @@ h3 {
     font-size: 1.4rem;
     color: #b3b9c5;
     position: relative;
-    padding-bottom: 10px
+    padding-bottom: 10px;
 }
 
 @media screen and (max-width: 640px) {
@@ -850,7 +845,7 @@ p {
 }
 
 a {
-    color: #cf2321 !important;
+    color: #f05f70 !important;
     text-decoration: none;
     cursor: pointer
 }
@@ -4582,7 +4577,7 @@ img.avengers-logo {
 
 .post-heading h1 {
     max-width: 580px;
-    color: #b3b9c5 !important;
+    color: #e5e5e5 !important;
     font-size: 1.8em;
     text-align: center;
     word-wrap: break-word;
@@ -4591,7 +4586,8 @@ img.avengers-logo {
     padding: 10px 10px 0px 0px;
     margin: 0px auto;
     font-weight: bold;
-    letter-spacing: 0.6px
+    letter-spacing: 0.6px;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.63);
 }
 
 @media screen and (max-width: 640px) {
@@ -4600,7 +4596,7 @@ img.avengers-logo {
         padding: 0px;
         max-width: auto;
         width: 100%;
-        text-align: left
+        text-align: left;
     }
 }
 
@@ -4651,9 +4647,16 @@ img.avengers-logo {
 
 .post-heading p {
     text-align: center;
-    color: #b3b9c5;
+    color: #adadad;
     font-weight: 100;
-    font-family: "Roboto"
+    font-family: "Roboto";
+    font-size: 15px;
+}
+
+@media screen and (max-width: 640px) {
+    .post-heading p {
+        font-size: 13px;
+    }
 }
 
 .page-holder ul {
@@ -5469,11 +5472,17 @@ footer p span {
 
 figcaption {
     padding: 20px;
-    font-size: 14px;
+    font-size: 16px;
     color: #b3b9c5;
     background-color: #0e0e0e;
     line-height: 20px;
     text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+    .figcaption {
+        font-size: 14px;
+    }
 }
 
 .reduced-width {
@@ -6393,16 +6402,14 @@ figcaption {
     position: relative;
     cursor: pointer;
     background-color: #0e0e0e;
-    border-radius: 10px;
+    border-radius: 3px;
     box-shadow: 3px 5px 4px rgba(0,0,0,0.9);
 }
 
 @media screen and (max-width: 640px) {
     .note {
-        margin-left: -15px;
-        margin-right: -15px;
         padding: 30px 15px;
-        border-radius: 0px;
+        border-radius: 3px;
         box-shadow: none;
     }
 }
@@ -6776,7 +6783,7 @@ figcaption {
 }
 
 figure {
-    background-color: #fff;
+    background-color: #000;
     border-radius: 3px;
     max-width: 900px;
     margin: 50px auto;
@@ -6787,8 +6794,6 @@ figure {
 @media screen and (max-width: 640px) {
     figure {
         margin: 30px auto;
-        margin-left: -15px;
-        margin-right: -15px;
     }
 }
 
@@ -7110,18 +7115,16 @@ figure {
     margin-top: -35px;
     border-top: 1px solid #3a3a3a !important;
     margin-bottom: 20px !important;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     color: #aeadad
 }
 
 @media screen and (max-width: 640px) {
     .code-out {
         margin-top: -28px;
-        margin-left: -15px;
-        margin-right: -15px;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
         padding: 5px;
         padding-top: 20px;
         background-position-y: 10px;
@@ -7225,7 +7228,7 @@ u {
 
 .code-head {
     position: relative;
-    font-size: 12px;
+    font-size: 15px !important;
     font-family: monospace;
     font-weight: 100;
     margin-top: 20px !important;
@@ -7233,17 +7236,15 @@ u {
     padding: 10px;
     background-color: #ae1b1b;
     color: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 @media screen and (max-width: 640px) {
     .code-head {
         font-size: 10px;
-        margin-left: -15px;
-        margin-right: -15px;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px
     }
 }
 
@@ -8365,8 +8366,8 @@ del {
 
 #nav_home:hover {
     background-color: #000000;
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+	-webkit-filter: invert(0%);
+	filter: invert(0%);
     border-radius: 5px
 }
 
@@ -8374,8 +8375,8 @@ del {
     #nav_home:hover {
         border-radius: 0;
         background-color: #000000;
-        -webkit-filter: invert(100%);
-        filter: invert(100%)
+		-webkit-filter: invert(0%);
+		filter: invert(0%);
     }
 }
 
@@ -8398,8 +8399,8 @@ del {
 
 #nav_creations:hover {
     background-color: #000000;
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+	-webkit-filter: invert(0%);
+	filter: invert(0%);
     border-radius: 5px
 }
 
@@ -8407,8 +8408,8 @@ del {
     #nav_creations:hover {
         border-radius: 0;
         background-color: #000000;
-        -webkit-filter: invert(100%);
-        filter: invert(100%)
+		-webkit-filter: invert(0%);
+		filter: invert(0%);
     }
 }
 
@@ -8431,8 +8432,8 @@ del {
 
 #nav_music:hover {
     background-color: #000000;
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+	-webkit-filter: invert(0%);
+	filter: invert(0%);
     border-radius: 5px
 }
 
@@ -8440,8 +8441,8 @@ del {
     #nav_music:hover {
         border-radius: 0;
         background-color: #000000;
-        -webkit-filter: invert(100%);
-        filter: invert(100%)
+		-webkit-filter: invert(0%);
+		filter: invert(0%);
     }
 }
 
@@ -8464,8 +8465,8 @@ del {
 
 #nav_photography:hover {
     background-color: #000000;
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+	-webkit-filter: invert(0%);
+	filter: invert(0%);
     border-radius: 5px
 }
 
@@ -8473,8 +8474,8 @@ del {
     #nav_photography:hover {
         border-radius: 0;
         background-color: #000000;
-        -webkit-filter: invert(100%);
-        filter: invert(100%)
+		-webkit-filter: invert(0%);
+		filter: invert(0%);
     }
 }
 
@@ -8497,8 +8498,8 @@ del {
 
 #nav_blog:hover {
     background-color: #000000;
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+	-webkit-filter: invert(0%);
+	filter: invert(0%);
     border-radius: 5px
 }
 
@@ -8506,8 +8507,8 @@ del {
     #nav_blog:hover {
         border-radius: 0;
         background-color: #000000;
-        -webkit-filter: invert(100%);
-        filter: invert(100%)
+		-webkit-filter: invert(0%);
+		filter: invert(0%);
     }
 }
 
@@ -8582,8 +8583,6 @@ del {
 @media screen and (max-width: 640px) {
     .box-highlight {
         padding: 10px 15px;
-        margin-left: -15px;
-        margin-right: -15px
     }
 }
 
@@ -8928,8 +8927,8 @@ del {
 
 #nav_theme:hover {
     background-color: #000000;
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+	-webkit-filter: invert(0%);
+	filter: invert(0%);
     border-radius: 5px
 }
 
@@ -8937,8 +8936,8 @@ del {
     #nav_theme:hover {
         border-radius: 0;
         background-color: #000000;
-        -webkit-filter: invert(100%);
-        filter: invert(100%)
+    	-webkit-filter: invert(0%);
+   	 	filter: invert(0%);
     }
 }
 
