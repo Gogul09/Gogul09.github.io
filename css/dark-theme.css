@@ -3956,27 +3956,27 @@ img.avengers-logo {
     line-height: 1.5;
     max-width: 300px;
     font-size: 12px;
-    background: #202020;
     margin: 20px auto;
-    transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1)
+    transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: #833ab4;
+    background: linear-gradient(90deg, #9e5ccb 0%, #fb3c93 100%);
 }
 
 @media screen and (max-width: 640px) {
     #carbonads {
-        margin-left: 30px;
+        margin-left: 15px;
         margin-top: 10px
     }
 }
 
 #carbonads:hover {
     transform: scale(1.1);
-    background: #833ab4;
-    background: linear-gradient(90deg, #833ab4 0%, #fb3c93 37%, #ffba5a 100%)
 }
 
 #carbonads a {
     text-decoration: none;
-    color: #b3b9c5 !important
+    color: #000000 !important;
+    font-weight: bold;
 }
 
 #carbonads a:hover {
@@ -4019,7 +4019,8 @@ img.avengers-logo {
     font-weight: 500;
     text-transform: uppercase;
     line-height: 1;
-    letter-spacing: 1px
+    letter-spacing: 1px;
+    font-family: "Poppins";
 }
 
 .about-container {
@@ -6915,7 +6916,7 @@ figure {
 
 @media screen and (max-width: 640px) {
     .grad-post {
-        padding: 30px;
+        padding: 15px;
         display: flex;
         flex-direction: column
     }

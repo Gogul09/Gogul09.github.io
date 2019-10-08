@@ -8,19 +8,18 @@
   line-height: 1.5;
   max-width: 300px;
   font-size: 12px;
-  background: white;
+  background: #833ab4;
+  background: linear-gradient(90deg, #9e5ccb 0%, #fb3c93 100%);
   margin: 20px auto;
   transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
   @include mobile {
-    margin-left: 30px;
+    margin-left: 15px;
     margin-top: 10px;
   }
 }
 
 #carbonads:hover {
   transform: scale(1.1);
-  background: rgb(131,58,180);
-  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(251,60,147,1) 37%, rgba(255,186,90,1) 100%);
 }
 
 #carbonads a {

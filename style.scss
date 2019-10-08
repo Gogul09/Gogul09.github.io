@@ -225,10 +225,6 @@
     padding: 0px;
     font-size: 22px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    @include mobile {
-      margin-left: -15px;
-      margin-right: -15px;
-    }
   }
 
   .comments {
@@ -1377,10 +1373,8 @@ figcaption {
   background-color: #fff4d6;
   border-radius: 10px;
   @include mobile {
-    margin-left: -15px;
-    margin-right: -15px;
     padding: 30px 15px;
-    border-radius: 0px;
+    border-radius: 3px;
   }
   &:hover, &:active {
     box-shadow: 2px 5px 6px rgba(72, 72, 72, 0.14);
@@ -1713,8 +1707,6 @@ figure {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   @include mobile {
     margin: 30px auto;
-    margin-left: -15px;
-    margin-right: -15px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -1834,7 +1826,7 @@ figure {
 .grad-post {
   padding: 120px 0;
   @include mobile {
-    padding: 30px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
   }
@@ -2003,10 +1995,8 @@ figure {
   color: #aeadad;
   @include mobile {
     margin-top: -28px;
-    margin-left: -15px;
-    margin-right: -15px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     padding: 5px;
     padding-top: 20px;
     background-position-y: 10px;
@@ -2107,10 +2097,8 @@ u {
   border-top-right-radius: 10px;
   @include mobile {
     font-size: 10px;
-    margin-left: -15px;
-    margin-right: -15px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
   }
   span {
     padding: 3px 5px;
@@ -3305,8 +3293,6 @@ del {
   margin: 30px 0;
   @include mobile {
     padding: 10px 15px;
-    margin-left: -15px;
-    margin-right: -15px;
   }
 }
 
@@ -3317,8 +3303,6 @@ del {
   margin: 30px 0;
   @include mobile {
     padding: 10px 15px;
-    margin-left: -15px;
-    margin-right: -15px;
   }
 }
 
@@ -3436,8 +3420,6 @@ del {
   @include mobile {
     padding: 20px;;
     padding-bottom: 20px;
-    margin-left: -15px;
-    margin-right: -15px;
     border-radius: 0px;
     box-shadow: none;
   }
@@ -3462,8 +3444,6 @@ del {
   @include mobile {
     border: 0px;
     padding: 30px 15px;
-    margin-left: -15px;
-    margin-right: -15px;
     border-radius: 0px;
   }
 }
