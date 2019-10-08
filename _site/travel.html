@@ -44,7 +44,7 @@
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
     <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
     <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
   </head>
 
@@ -60,6 +60,7 @@
             <a title="creations" id = "nav_creations" href="/creations"><span>creations</span></a>
             <a title="music" id = "nav_music" href="/music"><span>music</span></a>
             <a title="photography" id = "nav_photography" href="/photography"><span>clicks</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
             <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9889;</a>
           </div>
       </div>
@@ -227,6 +228,18 @@
 	</script>
 	<!-- End Google Analytics -->
 
+
+     <script type="text/javascript">
+      var displayMode = sessionStorage.getItem("theme");
+      if(displayMode == undefined || displayMode == "" || displayMode == null) {
+        sessionStorage.setItem("theme", "light");
+        displayMode = "light";
+        switchTheme(0);
+      } else {
+        sessionStorage.setItem("theme", sessionStorage.getItem("theme"));
+        switchTheme(0);
+      }
+    </script>
 
    </body>
    </html>

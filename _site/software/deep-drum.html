@@ -50,7 +50,7 @@
     
     <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" type="text/css" href="/externals/css/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
     <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
   </head>
 
@@ -405,6 +405,18 @@
 	</script>
 	<!-- End Google Analytics -->
 
+
+     <script type="text/javascript">
+      var displayMode = sessionStorage.getItem("theme");
+      if(displayMode == undefined || displayMode == "" || displayMode == null) {
+        sessionStorage.setItem("theme", "light");
+        displayMode = "light";
+        switchTheme(0);
+      } else {
+        sessionStorage.setItem("theme", sessionStorage.getItem("theme"));
+        switchTheme(0);
+      }
+    </script>
 
    </body>
    </html>

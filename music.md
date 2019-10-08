@@ -18,7 +18,7 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
   </div>
 </div>
 
-<div class="home-container" style="background-color: white !important;">
+<div class="home-container music-containing-wrapper">
   <div class="home-articles">
     <div class="home-wrapper music-wrapper">
       <div class="category-tab" id="category-tab" style="box-shadow: none !important;">

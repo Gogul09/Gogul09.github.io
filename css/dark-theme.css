@@ -924,7 +924,7 @@ select:focus {
     display: block;
     padding: 10px;
     text-align: center;
-    background-color: white;
+    background-color: #202020;
     margin: 0px auto
 }
 
@@ -941,7 +941,7 @@ select:focus {
     width: 20px;
     height: 18px;
     margin: 5px;
-    opacity: 0.5
+    filter: invert(50%);
 }
 
 .social img:hover,
@@ -3842,12 +3842,12 @@ img.avengers-logo {
 }
 
 .splash-header {
-    background-color: #fff !important
+    background-color: #202020 !important
 }
 
 @media screen and (max-width: 640px) {
     .splash-header {
-        background-color: #fff !important;
+        background-color: #202020 !important;
         background-image: none !important
     }
 }
@@ -4024,7 +4024,7 @@ img.avengers-logo {
 
 .about-container {
     width: 100%;
-    background-color: #fff;
+    background-color: #202020;
     padding-bottom: 100px
 }
 
@@ -4046,7 +4046,6 @@ img.avengers-logo {
 
 .about-wrapper .category-tab {
     box-shadow: none !important;
-    border-bottom: 1px solid #e9e6e6
 }
 
 .about-category-tab ul {
@@ -4072,7 +4071,7 @@ img.avengers-logo {
     padding: 0px;
     margin: 0px auto;
     position: relative;
-    background-color: white
+    background-color: #202020;
 }
 
 @media screen and (max-width: 640px) {
@@ -4085,7 +4084,7 @@ img.avengers-logo {
 }
 
 .about_me_body a {
-    color: #cf2321 !important
+    color: #ff495e !important
 }
 
 @media screen and (max-width: 640px) {
@@ -4102,7 +4101,7 @@ img.avengers-logo {
 .timeline b {
     font-weight: 100;
     font-family: "Poppins", sans-serif;
-    color: #cf2321 !important
+    color: #c671ff !important;
 }
 
 .about_me_body p a:hover,
@@ -4134,7 +4133,7 @@ img.avengers-logo {
 }
 
 .about_me_body p a {
-    color: #cf2321 !important
+    color: #ff495e !important
 }
 
 .work-id-card {
@@ -4315,7 +4314,7 @@ img.avengers-logo {
 }
 
 .grad-about {
-    background-color: #fff
+    background-color: #202020;
 }
 
 @media screen and (max-width: 640px) {
@@ -4415,10 +4414,10 @@ img.avengers-logo {
 .gem-box div {
     cursor: pointer;
     width: 200px;
-    border: 1px solid #e4e4e4;
+    border: 1px solid #0e0e0e;
     margin: 20px;
     border-radius: 5px;
-    background-color: white;
+    background-color: #0e0e0e;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -4442,9 +4441,10 @@ img.avengers-logo {
 }
 
 .gem-box div h4 {
-    color: black;
+    color: #f2f2f2;
     font-size: 17px;
-    margin-top: 65px
+    margin-top: 65px;
+    font-weight: 500;
 }
 
 @media screen and (max-width: 640px) {
@@ -4575,7 +4575,7 @@ img.avengers-logo {
 
 .post-heading h1 {
     max-width: 580px;
-    color: #e5e5e5 !important;
+    color: #f2f2f2 !important;
     font-size: 1.8em;
     text-align: center;
     word-wrap: break-word;
@@ -4689,11 +4689,10 @@ img.avengers-logo {
 
 .page-holder .page-treasure-wrapper {
     display: flex;
-    background-color: white;
+    background-color: #0e0e0e;
     margin: 10px;
     padding: 20px;
     border-radius: 5px;
-    border: 1px solid #ececec;
     flex-direction: row;
     transition: transform .3s
 }
@@ -4743,10 +4742,11 @@ img.avengers-logo {
 .page-holder .page-treasure h2 {
     font-size: 15px;
     line-height: initial;
-    color: black;
+    color: #f2f2f2;
     padding: 0;
     margin: 0;
-    height: initial
+    height: initial;
+    font-weight: 500;
 }
 
 @media screen and (max-width: 640px) {
@@ -5496,10 +5496,10 @@ figcaption {
 }
 
 .inline-note {
-    background-color: #ffedd7;
-    padding: 3px 5px;
+    background-color: #5e3d74;
+    padding: 3px 6px;
     border-radius: 5px;
-    font-weight: bold
+    color: white;
 }
 
 .typical-image {
@@ -5525,7 +5525,7 @@ figcaption {
 .home-container {
     width: 100%;
     margin: 0px auto;
-    background-color: #fbfbfb;
+    background-color: #202020;
     margin-bottom: 100px
 }
 
@@ -5627,7 +5627,7 @@ figcaption {
 
 .blog-category-box {
     display: none;
-    background-color: #ffffff;
+    background-color: #202020;
     border-radius: 3px;
     width: 100%;
     margin: 0px auto;
@@ -5745,7 +5745,7 @@ figcaption {
 }
 
 .work-inner-box {
-    background-color: white;
+    background-color: #202020;
     padding: 0px
 }
 
@@ -5773,7 +5773,6 @@ figcaption {
 
 .work-inner-box ul {
     margin-bottom: 0px !important;
-    background: white;
     padding: 0px 50px;
     border-radius: 5px;
     list-style-type: circle;
@@ -5797,7 +5796,7 @@ figcaption {
 
 .work-inner-box h4 {
     margin: 0px;
-    color: black;
+    color: #dddddd;
     font-family: "Poppins", sans-serif;
     line-height: 1.2;
     font-size: 18px
@@ -5805,7 +5804,7 @@ figcaption {
 
 @media screen and (max-width: 640px) {
     .work-inner-box h4 {
-        font-size: 17px
+        font-size: 13px;
     }
 }
 
@@ -5820,7 +5819,7 @@ figcaption {
 }
 
 .work-inner-box h4 a {
-    color: black !important;
+    color: #dddddd !important;
     font-weight: bold;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-size: 18px
@@ -5859,7 +5858,7 @@ figcaption {
 
 .category-tab ul {
     display: flex;
-    background-color: white;
+    background-color: #202020;
     list-style-type: none;
     padding: 0px !important;
     margin: 0px !important;
@@ -5887,7 +5886,7 @@ figcaption {
     align-items: center;
     justify-content: center;
     font-size: 15px;
-    background-color: white;
+    background-color: #202020;
     padding: 2px;
     height: 48px;
     text-align: center;
@@ -6050,7 +6049,7 @@ figcaption {
     height: auto;
     width: 250px;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #0e0e0e;
     margin: 20px;
     text-align: center;
     transition: 0.2s ease-in;
@@ -6082,7 +6081,7 @@ figcaption {
     margin-bottom: 10px !important;
     padding: 10px !important;
     font-size: 13px !important;
-    color: #2c2c2c !important;
+    color: #b3b9c5 !important;
     margin-top: 0px !important
 }
 
@@ -6182,13 +6181,8 @@ figcaption {
     vertical-align: middle;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
-    border: none !important;
-    border-left: 1px solid #efefef;
-    border-right: 1px solid #efefef;
-    border-top: 1px solid #efefef;
     padding: 10px 23px;
-    background-color: #fff;
-    color: #808080
+    color: #b3b9c5
 }
 
 @media screen and (max-width: 640px) {
@@ -6329,7 +6323,6 @@ figcaption {
 .containing {
     background-color: #202020;
     width: 100%;
-    padding-top: 20px;
     padding-bottom: 20px
 }
 
@@ -6344,6 +6337,7 @@ figcaption {
     padding: 20px 40px;
     padding-bottom: 40px;
     background-color: #202020;
+    padding-top: 0px;
 }
 
 @media screen and (max-width: 640px) {
@@ -6928,23 +6922,23 @@ figure {
 }
 
 .grad-blog {
-    background-color: #fff;
-    box-shadow: 0 8px 6px -6px #e9e9e9
+    background-color: #202020;
+    box-shadow: 0 8px 6px -6px #0e0e0e
 }
 
 .grad-portfolio {
-    background-color: #fff;
-    box-shadow: 0 8px 6px -6px #e9e9e9
+    background-color: #202020;
+    box-shadow: 0 8px 6px -6px #0e0e0e
 }
 
 .grad-creations {
-    background-color: #fff;
-    box-shadow: 0 8px 6px -6px #e9e9e9
+    background-color: #202020;
+    box-shadow: 0 8px 6px -6px #0e0e0e
 }
 
 .grad-photography {
-    background-color: #fff;
-    box-shadow: 0 8px 6px -6px #e9e9e9
+    background-color: #202020;
+    box-shadow: 0 8px 6px -6px #0e0e0e
 }
 
 .no_of_posts {
@@ -6979,7 +6973,7 @@ figure {
 .blog-intro p {
     width: 50%;
     margin: 0px auto;
-    color: #000 !important;
+    color: #b3b9c5 !important;
     text-align: center;
     margin-bottom: 10px !important;
     font-size: 15px
@@ -7007,7 +7001,7 @@ figure {
 }
 
 .blog-intro h1 {
-    color: #000 !important;
+    color: #f2f2f2 !important;
     margin-top: 0px !important;
     font-weight: bold;
     margin-bottom: 20px
@@ -7025,8 +7019,7 @@ figure {
 
 .photo-box {
     margin-top: 10px !important;
-    background-color: white;
-    box-shadow: 3px 4px 6px rgba(170, 170, 170, 0.3)
+    background-color: #202020;
 }
 
 @media screen and (max-width: 640px) {
@@ -7039,10 +7032,11 @@ figure {
 .photo-box h5 {
     font-size: 20px !important;
     padding: 10px 0px;
-    background-color: white;
+    background-color: #202020;
     text-shadow: none !important;
     text-align: left;
-    padding-top: 30px
+    padding-top: 30px;
+    color: #b3b9c5;
 }
 
 @media screen and (max-width: 640px) {
@@ -7054,7 +7048,7 @@ figure {
 }
 
 .photo-box p {
-    background-color: white;
+    background-color: #202020;
     margin: 0px !important;
     padding: 10px 0px !important;
     font-size: 15px !important;
@@ -7232,7 +7226,7 @@ u {
     margin-top: 20px !important;
     margin-bottom: 0px !important;
     padding: 10px;
-    background-color: #ae1b1b;
+    background-color: #2e2e2e;
     color: white;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
@@ -7576,7 +7570,7 @@ code {
 
 hr {
     border: none;
-    border-top: 1px solid #d5d5d5;
+    border-top: 1px solid #363636;
     margin: 20px 0
 }
 
@@ -8063,6 +8057,10 @@ del {
     padding-left: 15px
 }
 
+.music-containing-wrapper {
+    background-color: #202020 !important;
+}
+
 .music-box-wrapper {
     padding: 0 20px
 }
@@ -8070,7 +8068,7 @@ del {
 .music-box {
     border-radius: 4px;
     margin: 20px 0;
-    box-shadow: 0 3px 9px rgba(125, 125, 125, 0.4)
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5)
 }
 
 @media screen and (max-width: 640px) {
@@ -8138,7 +8136,7 @@ del {
 }
 
 .music-top-container {
-    background-color: #fff;
+    background-color: #202020;
     box-shadow: 0 8px 6px -6px #e9e9e9
 }
 
@@ -8159,7 +8157,7 @@ del {
 .music-intro-wrapper p {
     font-size: 15px;
     margin-top: 0px;
-    color: #000;
+    color: #b3b9c5;
     text-align: center
 }
 
@@ -8173,7 +8171,7 @@ del {
 .music-intro-wrapper p b {
     font-size: 30px;
     font-weight: bold;
-    color: #000;
+    color: #f2f2f2;
     font-family: "Poppins"
 }
 
@@ -8713,7 +8711,7 @@ del {
 }
 
 .highlight-box {
-    background-color: #ffffff;
+    background-color: #0e0e0e;
     padding: 50px;
     margin-left: -50px;
     margin-right: -50px;
@@ -8738,7 +8736,7 @@ del {
 }
 
 .highlight-box a {
-    color: #cf2321 !important
+    color: #ff495e !important
 }
 
 .highlight-box a:hover,
@@ -8747,7 +8745,7 @@ del {
 }
 
 .objectives {
-    background-color: #fbfbfb;
+    background-color: #0e0e0e;
     padding: 30px;
     border-radius: 5px
 }
