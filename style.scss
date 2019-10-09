@@ -3412,16 +3412,18 @@ del {
 
 .highlight-box {
   background-color: #ffffff;
-  padding: 50px;
-  margin-left: -50px;
-  margin-right: -50px;
+  padding: 50px;  
   box-shadow: 1px 4px 16px rgba(52, 52, 52, 0.2);
   border-radius: 10px;
+  margin-left: -50px;
+  margin-right: -50px;
   @include mobile {
     padding: 20px;;
     padding-bottom: 20px;
     border-radius: 0px;
     box-shadow: none;
+    margin-left: -15px;
+    margin-right: -15px;
   }
 }
 
