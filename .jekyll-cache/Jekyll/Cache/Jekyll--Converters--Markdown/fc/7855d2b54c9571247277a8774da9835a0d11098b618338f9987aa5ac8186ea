@@ -1,15 +1,4 @@
----
-layout: post
-category: hardware
-class: ASIC Design
-title: Applying Machine Learning in VLSI Chip Design
-description: Collection of research papers, books, articles and courses that solve challenging hardware VLSI chip design problems using Machine Learning.
-author: Gogul Ilango
-permalink: /hardware/research-papers-vlsi-ml
-image: https://drive.google.com/uc?id=1gubFOinfey2qN7OrHbsGkbQBlvJeQpFg
----
-
-<div class="sidebar_tracker" id="sidebar_tracker">
+I"JB<div class="sidebar_tracker" id="sidebar_tracker">
   <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
   <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
   <ul id="sidebar_tracker_content">
@@ -30,7 +19,7 @@ image: https://drive.google.com/uc?id=1gubFOinfey2qN7OrHbsGkbQBlvJeQpFg
   </ul>
 </div>
 
-This blog post contains a collection of research papers, books, labs, conferences and additional resources that solve problems related to Advanced VLSI (Chip) Logic Design, Physical Design, Synthesis and Verification using Machine Learning and Deep Learning. Feel free to add a paper or an article related to this domain by commenting below so that I will include it here 😊
+<p>This blog post contains a collection of research papers, books, labs, conferences and additional resources that solve problems related to Advanced VLSI (Chip) Logic Design, Physical Design, Synthesis and Verification using Machine Learning and Deep Learning. Feel free to add a paper or an article related to this domain by commenting below so that I will include it here 😊</p>
 
 <div class="box-highlight">
   <h3 id="caeml-research-topics"><a href="https://publish.illinois.edu/advancedelectronics/" target="_blank">CAEML</a> Research Topics</h3>
@@ -142,7 +131,7 @@ This blog post contains a collection of research papers, books, labs, conference
     <li><a href="http://www.sersc.org/journals/IJHIT/vol9_no1_2016/24.pdf" target="_blank">A Study of Floorplanning Challenges and Analysis of macro placement approaches in Physical Aware Synthesis</a></li>
 
 
-    <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.868.8981&rep=rep1&type=pdf" target="_blank">A Genetic Algorithm for Macro Cell Placement</a></li>
+    <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.868.8981&amp;rep=rep1&amp;type=pdf" target="_blank">A Genetic Algorithm for Macro Cell Placement</a></li>
 
 
     <li><a href="https://dl.acm.org/citation.cfm?id=2593206" target="_blank">Routability-Driven Blockage-Aware Macro Placement</a></li>
@@ -217,7 +206,7 @@ This blog post contains a collection of research papers, books, labs, conference
   <ul>
     <li><a href="https://ieeexplore.ieee.org/document/7470473/" target="_blank">VLSI Extreme Learning Machine: A Design Space Exploration</a></li>
     <li><a href="https://ieeexplore.ieee.org/document/7839313/" target="_blank">VLSI Implementation of Deep Neural Network Using Integral Stochastic Computing</a></li>
-    <li><a href="http://trace.tennessee.edu/cgi/viewcontent.cgi?article=4023&context=utk_graddiss" target="_blank">An Analog VLSI Deep Machine Learning
+    <li><a href="http://trace.tennessee.edu/cgi/viewcontent.cgi?article=4023&amp;context=utk_graddiss" target="_blank">An Analog VLSI Deep Machine Learning
   Implementation</a></li>
     <li><a href="https://stacks.stanford.edu/file/druid:qf934gh3708/EFFICIENT%20METHODS%20AND%20HARDWARE%20FOR%20DEEP%20LEARNING-augmented.pdf">Efficient Methods and Hardware for Deep Learning</a></li>
     <li><a href="https://arxiv.org/pdf/1712.01887.pdf">Deep Gradient Compression: Reducing the Compression Bandwidth for Distributed Training</a></li>
@@ -288,3 +277,4 @@ This blog post contains a collection of research papers, books, labs, conference
 		<li><a href="https://gogul.dev/hardware/physical-design" target="blank">Physical Design resources</a></li>
 	</ul>
 </div>
+:ET

@@ -1,4 +1,4 @@
-I"�8<div class="sidebar_tracker" id="sidebar_tracker">
+I"�8<div class="sidebar_tracker" id="sidebar_tracker">
   <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
   <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
   <ul id="sidebar_tracker_content">
@@ -29,7 +29,7 @@
 <p>But, what if we use python to design, simulate and implement hardware circuits in silicon? Is it possible to take the amazing advantages that python offer over other hardware related programming languages such as HDL (verilog or vhdl), Tcl, Perl or Shell? Come let’s explore!</p>
 
 <figure>
-  <img src="https://drive.google.com/uc?id=1z2Y6YEAYahJA_7TgcMESLuJIqtsApkal" />
+  <img src="https://drive.google.com/open?id=1FwZB-uMRS1CHJcb4DNV-fqkGUuX0xvIP" />
 </figure>
 
 <h3 id="why-python-is-so-popular">Why Python is so popular?</h3>
@@ -45,8 +45,6 @@
 </ul>
 
 <p>Despite its advantages, python is much slower compared to languages such as <span class="coding">c++</span>. But wait! It’s not a big disadvantage. You can still use python for most of the tasks that require minimal execution time (not speed-intensive applications such as games). That’s why data-intensive domains such as deep learning libraries use python as a high-level wrapper for a human to code and beneath that wrapper, they use C++ for faster execution.</p>
-
-<hr />
 
 <h3 id="how-to-learn-python-for-free">How to learn python for free?</h3>
 
@@ -67,15 +65,11 @@
 
 <p>Other than these, you can check out some extensive list of learning resources that I collected for you <a href="https://gogul09.github.io/software/python-programming" target="_blank">here</a>.</p>
 
-<hr />
-
 <h3 id="python-for-automation">Python for Automation</h3>
 
 <p>The main use of python lies in automating repeated manual tasks that we perform daily. These manual tasks might include opening a terminal, going to a path, finding some file, parsing some values in that file, putting that parsed value in a csv file and sending a mail with that csv file attached. This is one of the classic examples where you can write a single python script to do all the steps that are mentioned.</p>
 
 <p>Other examples where python scripts can be used are organizing files in a particular path, manipulating strings, csv files, excel spreadsheets etc., sending email and text messages and much more. <a href="https://automatetheboringstuff.com/" target="_blank">Automate the boring stuff with python</a> is a great learning resource that you can read on how to do these.</p>
-
-<hr />
 
 <h3 id="python-for-text-processing">Python for Text Processing</h3>
 
@@ -93,8 +87,6 @@
   <li><span class="coding">h5py</span> module</li>
   <li><span class="coding">bs4</span> module</li>
 </ul>
-
-<hr />
 
 <h3 id="python-for-logic-design">Python for Logic Design</h3>
 
@@ -118,8 +110,6 @@
   <li><a href="https://github.com/cornell-brg/pymtl-tut-hls/blob/master/README.md" target="_blank">PyMTL/HLS Tutorial</a></li>
   <li><a href="http://www.csl.cornell.edu/courses/ece5745/handouts/ece5745-tut-asic-new.pdf" target="_blank">PyMTL-Based ASIC Toolflow Tutorial</a></li>
 </ul>
-
-<hr />
 
 <h3 id="python-for-ml-dl-in-hardware">Python for ML/DL in Hardware</h3>
 
@@ -149,15 +139,11 @@
   <li><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a></li>
 </ul>
 
-<hr />
-
 <h3 id="python-for-eda">Python for EDA</h3>
 
 <p>As far as technology node reduces, the need for electronic design automation tools increases. You can’t design a multi-million instances based design manually. You need EDA tools that helps in implementation.</p>
 
 <p>One particular python project that I found related to EDA was <a href="https://pyeda.readthedocs.io/en/latest/" target="_blank">PyEDA</a>. You can watch <a href="https://www.youtube.com/watch?v=cljDuK0ouRs" target="_blank">this</a> YouTube video to learn more about this hobby project by <a href="https://github.com/cjdrake" target="_blank">Chris Drake</a>.</p>
-
-<hr />
 
 <h3 id="python-for-web-dashboards">Python for Web Dashboards</h3>
 
@@ -170,8 +156,6 @@
   <li><a href="http://flask.pocoo.org/" target="_blank">Flask</a></li>
   <li><a href="https://api.mongodb.com/python/current/" target="_blank">PyMongo</a></li>
 </ul>
-
-<hr />
 
 <h3 id="conclusion">Conclusion</h3>
 

@@ -40,7 +40,7 @@ If you check out the link [here](https://octoverse.github.com/2017/){:target="_b
 But, what if we use python to design, simulate and implement hardware circuits in silicon? Is it possible to take the amazing advantages that python offer over other hardware related programming languages such as HDL (verilog or vhdl), Tcl, Perl or Shell? Come let's explore! 
 
 <figure>
-  <img src="https://drive.google.com/uc?id=1z2Y6YEAYahJA_7TgcMESLuJIqtsApkal" />
+  <img src="https://drive.google.com/uc?id=1FwZB-uMRS1CHJcb4DNV-fqkGUuX0xvIP" />
 </figure>
 
 <h3 id="why-python-is-so-popular">Why Python is so popular?</h3>
@@ -54,8 +54,6 @@ If you are a beginner to the programming world, I would highly suggest you to le
 * **Open-Source**: Python ecosystem is so popular because most of the libraries and frameworks available online are open-source (meaning anyone can use it for their development purposes adhering to the licenses provided). 
 
 Despite its advantages, python is much slower compared to languages such as <span class="coding">c++</span>. But wait! It's not a big disadvantage. You can still use python for most of the tasks that require minimal execution time (not speed-intensive applications such as games). That's why data-intensive domains such as deep learning libraries use python as a high-level wrapper for a human to code and beneath that wrapper, they use C++ for faster execution.
-
----
 
 <h3 id="how-to-learn-python-for-free">How to learn python for free?</h3>
 
@@ -71,15 +69,11 @@ When I started learning python three years back, I used the following resources.
 
 Other than these, you can check out some extensive list of learning resources that I collected for you [here](https://gogul09.github.io/software/python-programming){:target="_blank"}.
 
----
-
 <h3 id="python-for-automation">Python for Automation</h3>
 
 The main use of python lies in automating repeated manual tasks that we perform daily. These manual tasks might include opening a terminal, going to a path, finding some file, parsing some values in that file, putting that parsed value in a csv file and sending a mail with that csv file attached. This is one of the classic examples where you can write a single python script to do all the steps that are mentioned.
 
 Other examples where python scripts can be used are organizing files in a particular path, manipulating strings, csv files, excel spreadsheets etc., sending email and text messages and much more. [Automate the boring stuff with python](https://automatetheboringstuff.com/){:target="_blank"} is a great learning resource that you can read on how to do these.
-
----
 
 <h3 id="python-for-text-processing">Python for Text Processing</h3>
 
@@ -95,8 +89,6 @@ Some of the most commonly used text processing modules in python using which you
 * <span class="coding">yaml</span> module
 * <span class="coding">h5py</span> module
 * <span class="coding">bs4</span> module
-
----
 
 <h3 id="python-for-logic-design">Python for Logic Design</h3>
 
@@ -118,9 +110,6 @@ Another python based hardware modeling framework is [PyMTL](https://github.com/c
 * [PyMTL CL Modeling Tutorial](https://github.com/cornell-ece5745/ece5745-sec-pymtl-cl/blob/master/README.md){:target="_blank"}
 * [PyMTL/HLS Tutorial](https://github.com/cornell-brg/pymtl-tut-hls/blob/master/README.md){:target="_blank"}
 * [PyMTL-Based ASIC Toolflow Tutorial](http://www.csl.cornell.edu/courses/ece5745/handouts/ece5745-tut-asic-new.pdf){:target="_blank"}
-
-
----
 
 <h3 id="python-for-ml-dl-in-hardware">Python for ML/DL in Hardware</h3>
 
@@ -144,15 +133,11 @@ But, for a beginner who is interested to use ML or DL in hardware design, below 
 * [Keras](https://keras.io/){:target="_blank"}
 * [TensorFlow](https://www.tensorflow.org/){:target="_blank"}
 
----
-
 <h3 id="python-for-eda">Python for EDA</h3>
 
 As far as technology node reduces, the need for electronic design automation tools increases. You can't design a multi-million instances based design manually. You need EDA tools that helps in implementation.
 
 One particular python project that I found related to EDA was [PyEDA](https://pyeda.readthedocs.io/en/latest/){:target="_blank"}. You can watch [this](https://www.youtube.com/watch?v=cljDuK0ouRs){:target="_blank"} YouTube video to learn more about this hobby project by [Chris Drake](https://github.com/cjdrake){:target="_blank"}.
-
----
 
 <h3 id="python-for-web-dashboards">Python for Web Dashboards</h3>
 
@@ -163,8 +148,6 @@ Using the python libraries given below, and with some HTML, CSS and JavaScript k
 * [Django](https://www.djangoproject.com/){:target="_blank"}
 * [Flask](http://flask.pocoo.org/){:target="_blank"}
 * [PyMongo](https://api.mongodb.com/python/current/){:target="_blank"}
-
----
 
 <h3 id="conclusion">Conclusion</h3>
 
