@@ -4100,9 +4100,8 @@ img.avengers-logo {
 }
 
 .timeline b {
-    font-weight: 100;
     font-family: "Poppins", sans-serif;
-    color: #c671ff !important;
+    color: #ffffff !important;
 }
 
 .about_me_body p a:hover,
@@ -8714,8 +8713,6 @@ del {
 .highlight-box {
     background-color: #0e0e0e;
     padding: 50px;
-    margin-left: -50px;
-    margin-right: -50px;
     box-shadow: 1px 4px 16px rgba(52, 52, 52, 0.2);
     border-radius: 10px
 }
