@@ -65,8 +65,7 @@ permalink: /
             <li><b>2010-2014</b> - Thiagarajar College of Engineering, Madurai - Bachelor of Engineering in Electronics & Communication (CGPA 9.05/10).</li>
           </ul>
           <figure>
-            <img src="https://drive.google.com/uc?id=1UlZS3Mh7ritMqoWN47Mn4Vdn43ncajf3" />
-            <figcaption>QBUZZ-2019, Qualcomm, 10th Edition - Best Paper Award for Physical Design Track</figcaption>
+            <img src="https://drive.google.com/uc?id=1EKzEKBBVY9DrGueHZ0DG88ohA-aU4CmS" />
           </figure>
           <p>In this website, you will find collection of my thoughts, notes, tutorials and resources based on my experience in technology. I still learn by myself about the technical topics that I write here so that I get a clear understanding of it. I do this mainly during my free time because</p>
           <ul>
