@@ -599,11 +599,15 @@ footer {
 
 figcaption {
   padding: 20px;
-  font-size: 14px;
+  font-size: 16px;
   color: #8b8b8b;
   background-color: #ffffff;
   line-height: 20px;
   text-align: center;
+  @include mobile {
+    padding: 10px;
+    font-size: 12px;
+  }
 }
 
 .reduced-width {

@@ -1198,7 +1198,6 @@ select:focus {
     	border-top: 1px solid #000000;
     	border-bottom: 1px solid #000000;
         padding: 20px 30px;
-        margin-top: 0px
     }
 }
 
@@ -5478,8 +5477,9 @@ figcaption {
 }
 
 @media screen and (max-width: 640px) {
-    .figcaption {
-        font-size: 14px;
+    figcaption {
+        font-size: 12px;
+        padding: 10px;
     }
 }
 
@@ -7250,7 +7250,8 @@ u {
     font-weight: bold;
     border: 1px solid #d6d6d6;
     cursor: pointer;
-    border-radius: 5px
+    border-radius: 5px;
+    text-shadow: none;
 }
 
 .code-head:before {
