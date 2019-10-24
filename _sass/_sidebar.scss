@@ -40,7 +40,7 @@
 		margin: 0px !important;
 		cursor: pointer;
 		color: black;
-		font-family: "Poppins";
+		font-family: $font_header;
 		font-weight: bold;
 		@include mobile {
 			margin-top: 1em !important;
