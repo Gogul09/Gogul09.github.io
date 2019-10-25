@@ -3962,8 +3962,7 @@ img.avengers-logo {
     font-size: 12px;
     margin: 20px auto;
     transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
-    background: #833ab4;
-    background: linear-gradient(90deg, #9e5ccb 0%, #fb3c93 100%);
+    background: #d42423;
 }
 
 @media screen and (max-width: 640px) {
@@ -3979,14 +3978,13 @@ img.avengers-logo {
 
 #carbonads a {
     text-decoration: none;
-    color: #000000 !important;
-    font-weight: bold;
+    color: #ffffff !important;
 }
 
 #carbonads a:hover {
     text-decoration: none !important;
     border-bottom: none !important;
-    color: #cf2321 !important
+    color: #ffffff !important
 }
 
 #carbonads span {
@@ -4002,7 +4000,8 @@ img.avengers-logo {
 
 .carbon-img img {
     display: block;
-    border-radius: 5px
+    border-radius: 5px;
+    border: 1px solid #ffffff1f;
 }
 
 .carbon-text {
@@ -5099,7 +5098,7 @@ blockquote p:active {
 }
 
 .wrapper-footer {
-    background-color: #d22e2e;
+    background-color: #000000;
     height: auto;
     width: 100%;
     display: flex;
@@ -5108,7 +5107,7 @@ blockquote p:active {
 }
 
 .page-footer {
-    background-color: #d22e2e;
+    background-color: #000000;
     height: auto;
     width: 100%;
     display: flex;
@@ -5131,10 +5130,12 @@ footer {
 
 footer p {
     text-align: center;
-    color: #ffffff !important;
+    color: #b3b9c5 !important;
     text-shadow: none;
     margin-bottom: 0px !important;
-    margin-top: 0px !important
+    margin-top: 0px !important;
+    font-weight: bold;
+    font-family: $font_header;
 }
 
 footer p span {
@@ -5899,6 +5900,7 @@ figcaption {
     text-align: center;
     padding: 0 15px;
     cursor: pointer;
+    font-family: "Quicksand";
     transition: color .28s ease, background-color .28s ease
 }
 
@@ -7665,7 +7667,7 @@ input:checked+.slider:before {
     z-index: 2000;
     border: none;
     outline: none;
-    background-color: #ae1b1b;
+    background-color: #d42423;
     background-image: url(/images/up.png);
     background-repeat: no-repeat;
     background-size: 15px;

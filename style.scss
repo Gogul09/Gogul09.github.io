@@ -271,7 +271,7 @@ blockquote p {
 }
 
 .wrapper-footer {
-  background-color: #d22e2e;
+  background-color: #fffe85;
   height: auto;
   width: 100%;
   display: flex;
@@ -280,7 +280,7 @@ blockquote p {
 }
 
 .page-footer {
-  background-color: #d22e2e;
+  background-color: #fffe85;
   height: auto;
   width: 100%;
   display: flex;
@@ -299,10 +299,12 @@ footer {
     
     p  {
       text-align: center;
-      color: #ffffff !important;
+      color: #000000 !important;
       text-shadow: none;
       margin-bottom: 0px !important;
       margin-top: 0px !important;
+      font-weight: bold;
+      font-family: $font_header;
       span {
         font-size: 12px;
       }
@@ -943,6 +945,7 @@ figcaption {
     text-align: center;
     padding: 0 15px;
     cursor: pointer;
+    font-family: $font_header;
     transition: color .28s ease, background-color .28s ease;
     @include mobile {
       font-size: 11px;
@@ -2503,7 +2506,7 @@ input:checked + .slider:before {
   z-index: 2000;
   border: none;
   outline: none;
-  background-color: #ae1b1b;
+  background-color: #d42423;
   background-image: url(/images/up.png);
   background-repeat: no-repeat;
   background-size: 15px;
@@ -2954,7 +2957,7 @@ del {
   font-size: 30px;
   font-weight: bold;
   color: $black;
-  font-family: "Poppins";
+  font-family: $font_header;
   @include mobile {
     font-size: 20px;
   }

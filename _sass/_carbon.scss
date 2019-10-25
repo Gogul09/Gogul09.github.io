@@ -8,8 +8,7 @@
   line-height: 1.5;
   max-width: 300px;
   font-size: 12px;
-  background: #833ab4;
-  background: linear-gradient(90deg, #9e5ccb 0%, #fb3c93 100%);
+  background: #d42423;
   margin: 20px auto;
   transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
   @include mobile {
@@ -24,13 +23,13 @@
 
 #carbonads a {
   text-decoration: none;
-  color: black !important;
+  color: #ffffff !important;
 }
 
 #carbonads a:hover {
   text-decoration: none !important;
   border-bottom: none !important;
-  color: #cf2321 !important;
+  color: #ffffff !important;
 }
 
 #carbonads span {
@@ -47,6 +46,7 @@
 .carbon-img img {
   display: block;
   border-radius: 5px;
+  border: 1px solid #ffffff1f;
 }
 
 .carbon-text {
