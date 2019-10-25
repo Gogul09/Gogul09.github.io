@@ -123,6 +123,11 @@ q:after {
     content: none
 }
 
+sup {
+    vertical-align: super;
+    font-size: 11px;
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0
@@ -5072,13 +5077,14 @@ blockquote p {
     font-family: "Roboto", sans-serif;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     padding: 30px;
-    color: #c46cff;
-    border-radius: 10px
+    color: #fed356 !important;
+    border-radius: 10px;
+    box-shadow: 3px 5px 4px rgba(0,0,0,0.9);
 }
 
 blockquote p:hover,
 blockquote p:active {
-    box-shadow: 2px 5px 6px rgba(72, 72, 72, 0.14)
+    box-shadow: none;
 }
 
 @media screen and (max-width: 640px) {
@@ -6409,7 +6415,7 @@ figcaption {
 
 .note:hover,
 .note:active {
-    box-shadow: 2px 5px 6px rgba(72, 72, 72, 0.14)
+    box-shadow: none;
 }
 
 .note p {

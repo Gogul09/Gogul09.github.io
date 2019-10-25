@@ -1,4 +1,4 @@
-I"�f<div class="git-showcase">
+I"[j<div class="git-showcase">
   <div>
     <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
   </div>
@@ -47,11 +47,15 @@
 
 <p>Although one might feel that browsers are light-weight apps that wont handle data intensive algorithms such as deep neural networks, by leveraging the capabilities of <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank">WebGL</a> in browsers such as Google Chrome, we could create, train and deploy deep neural net models right in the browser itself without any server requests.</p>
 
-<p>Another advantage of using browser to create AI applications is that you could easily send your creations to your friends or family using nothing more than a simple link!</p>
+<p>Another advantage of using browser to create AI applications is that you could easily send your creations to your friends or family using nothing more than a simple link (as given below)!</p>
+
+<div class="note">
+	<a href="https://gogul.dev/software/deep-drum" target="_blank">https://gogul.dev/software/deep-drum</a>
+</div>
 
 <h3 id="using-magentas-pre-trained-models">Using Magenta's Pre-trained Models</h3>
 
-<p>Magenta.js is a javascript library that is built on top of TensorFlow.js which provides music oriented abstraction for developers. Google’s Magenta Team research, create and train deep learning models such as Long-Short Term Memory nets (LSTMs), Variational Auto-Encoders (VAE) etc., for music generation, and serve those models as pre-trained models for an AI enthusiast like me to use it for free.</p>
+<p><a href="https://github.com/tensorflow/magenta-js" target="_blank">Magenta.js</a> is a javascript library that is built on top of TensorFlow.js which provides music-oriented abstractions for developers. Google’s <a href="https://magenta.tensorflow.org/" target="_blank">Magenta</a> Team research, create and train deep learning models such as Long-Short Term Memory nets (LSTMs), Variational Auto-Encoders (VAE) etc., for music generation, and serve those models as pre-trained models for an AI enthusiast like me to use it for free.</p>
 
 <p>By using a pre-trained magenta model, we could build creative music applications in the browser using deep learning. Some of the note-based music models that are provided by Magenta are MusicVAE, MelodyRNN, DrumsRNN and ImprovRNN. Using these pretrained models, we could use their <a href="https://github.com/tensorflow/magenta-js/" target="_blank">magenta.js</a> API to create cool music apps.</p>
 
@@ -61,7 +65,7 @@
 
 <h3 id="generating-drum-patterns-using-drumsrnn">Generating Drum Patterns using DrumsRNN</h3>
 
-<p>In this tutorial, I will show you how to create an intelligent music application that I call <a href="https://gogul09.github.io/software/deep-drum" target="_blank">DeepDrum &amp; DeepArp</a> using javascript and Google’s magenta.js in the browser. First, we will focus on generating drum patterns using magenta’s <a href="https://github.com/tensorflow/magenta/tree/master/magenta/models/drums_rnn" target="_blank">drums_rnn</a>. Similar approach is used to create arpeggio patterns using magenta’s <a href="https://github.com/tensorflow/magenta/tree/master/magenta/models/improv_rnn" target="_blank">improv_rnn</a>.</p>
+<p>In this tutorial, I will show you how to create an intelligent music application that I call <a href="https://gogul.dev/software/deep-drum" target="_blank">DeepDrum &amp; DeepArp</a> using javascript and Google’s magenta.js in the browser. First, we will focus on generating drum patterns using magenta’s <a href="https://github.com/tensorflow/magenta/tree/master/magenta/models/drums_rnn" target="_blank">drums_rnn</a>. Similar approach is used to create arpeggio patterns using magenta’s <a href="https://github.com/tensorflow/magenta/tree/master/magenta/models/improv_rnn" target="_blank">improv_rnn</a>.</p>
 
 <figure>
 	<img src="https://drive.google.com/uc?id=1f4GHFHGhE7htiJ4adyFr2wYScjfvIU1A" />
@@ -98,20 +102,33 @@
 </pre></td><td class="rouge-code"><pre><span class="nx">drums_rnn</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><strong>Step 4</strong>: Our drum pattern generator will work like this - You provide some random input seed pattern first and the deep neural network (DrumsRNN) will predict the next sequence of patterns.</p>
+<p><strong>Step 4</strong>: Our drum pattern generator will work like this - You provide some random input seed pattern first and the deep neural network (DrumsRNN) will generate (predict) the next sequence of patterns.</p>
 
-<p>We have 10 individual drumkit instrument such as <span class="coding">kick</span>, <span class="coding">snare</span>, <span class="coding">hihat closed</span>, <span class="coding">hihat open</span>, <span class="coding">tom low</span>, <span class="coding">tom mid</span>, <span class="coding">tom high</span>, <span class="coding">clap</span> and <span class="coding">ride</span>. Hence, we define an array named <span class="coding">seed_pattern</span> to hold the <strong>ON</strong> time step of each instrument (in an array) at every time step.</p>
+<p>Based on <a href="https://www.midi.org/specifications-old/item/gm-level-1-sound-set" target="_blank">General MIDI Level 1 Percussion Key Map</a>, we restrict our focus to have 9 individual drumkit instrument (as given below) to play the sequence generated by DrumsRNN.</p>
+<ol>
+  <li><span class="coding">kick</span></li>
+  <li><span class="coding">snare</span></li>
+  <li><span class="coding">hihat closed</span></li>
+  <li><span class="coding">hihat open</span></li>
+  <li><span class="coding">tom low</span></li>
+  <li><span class="coding">tom mid</span></li>
+  <li><span class="coding">tom high</span></li>
+  <li><span class="coding">clap</span></li>
+  <li><span class="coding">ride</span></li>
+</ol>
+
+<p>Hence, we define an array named <span class="coding">seed_pattern</span> to hold the <strong>ON</strong> time step of each instrument (in an array) at every time step.</p>
 
 <p>For example, I have initialized the <span class="coding">seed_pattern</span> as shown below. This means, for a <span class="coding">seed_limit</span> of 4 time steps, we assign the input pattern like this -</p>
 
 <ul>
-  <li><span class="coding">kick</span> should be <strong>ON</strong> at first and third time step.</li>
+  <li><span class="coding">kick</span> should be <strong>ON</strong> at 1<sup>st</sup> and 3<sup>rd</sup> time step.</li>
   <li><span class="coding">snare</span> shouldn’t be turned <strong>ON</strong> within <span class="coding">seed_limit</span>.</li>
-  <li><span class="coding">hihat closed</span> should be <strong>ON</strong> only at third time step.</li>
+  <li><span class="coding">hihat closed</span> should be <strong>ON</strong> only at 3<sup>rd</sup> time step.</li>
   <li>and so on..</li>
 </ul>
 
-<p>Notice we start first time step as 0 in code.</p>
+<p>Notice we start first time step as 0 in code. Also notice, the position of each drumkit instrument in this array. 0<sup>th</sup> position correspond to <span class="coding">kick</span>, 1<sup>st</sup> position correspond to <span class="coding">snare</span> and so on.</p>
 
 <div class="code-head"><span>code</span>app.js</div>
 
