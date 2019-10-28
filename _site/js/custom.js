@@ -243,13 +243,13 @@ function switchTheme(mode) {
       displayMode = "light";
       sessionStorage.setItem("theme", "light");
       btnTheme.style.backgroundImage = "url('/images/icons/light-theme.png')";
-      metaTheme.setAttribute("content", "#ffffff");
+      metaTheme.setAttribute("content", "#d42423");
     }
   } else {
     if(displayMode == "light") {
       sheet.setAttribute("href", "/style.css");
       btnTheme.style.backgroundImage = "url('/images/icons/light-theme.png')";
-      metaTheme.setAttribute("content", "#ffffff");
+      metaTheme.setAttribute("content", "#d42423");
     } else {
       sheet.setAttribute("href", "/css/dark-theme.css");
       btnTheme.style.backgroundImage = "url('/images/icons/dark-theme.png')";

@@ -5042,13 +5042,6 @@ img.avengers-logo {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)
 }
 
-@media screen and (max-width: 640px) {
-    .post blockquote {
-        margin-left: -15px;
-        margin-right: -15px
-    }
-}
-
 .post .comments {
     margin-top: 10px;
     padding: 10px
@@ -5812,7 +5805,7 @@ figcaption {
 
 @media screen and (max-width: 640px) {
     .work-inner-box h4 {
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 
@@ -5835,7 +5828,7 @@ figcaption {
 
 @media screen and (max-width: 640px) {
     .work-inner-box h4 a {
-        font-size: 13px !important
+        font-size: 14px !important
     }
 }
 
@@ -6104,7 +6097,8 @@ figcaption {
     margin: 0px !important;
     padding: 15px !important;
     padding-bottom: 5px !important;
-    line-height: 20px
+    line-height: 20px;
+    color: #cf2321;
 }
 
 .toc-box {
@@ -6191,7 +6185,7 @@ figcaption {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
     padding: 10px 23px;
-    color: #b3b9c5
+    color: #de2a25
 }
 
 @media screen and (max-width: 640px) {
