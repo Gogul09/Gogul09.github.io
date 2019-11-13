@@ -2,7 +2,7 @@
 layout: splash
 heading: Gogul Ilango
 title: Gogul Ilango
-subheading: Hardware Engineer @ Qualcomm <br> Programmer - Music Producer - Writer
+subheading: Senior Hardware Engineer @ Qualcomm <br> Programmer - Music Producer - Writer
 description: Personal Website
 color: grad-about
 permalink: /
