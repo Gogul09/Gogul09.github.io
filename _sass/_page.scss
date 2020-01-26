@@ -177,6 +177,17 @@
   border-radius: 50%;
 }
 
+.music-treasure-image div {
+  width: 125px !important;
+  height: 70px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px !important;
+}
+
 .page-holder .page-treasure h2 {
   font-size: 15px;
   line-height: initial;
@@ -233,4 +244,27 @@
   @include mobile {
     font-size: 12px;
   }
+}
+
+.music-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.music-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.music-links a:hover {
+    text-decoration: none !important;
+    border-bottom: 0px !important;
+}
+
+.google-play-music-icon {
+  height: 30px;
+  margin-right: 10px;
 }
