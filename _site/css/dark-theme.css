@@ -8991,6 +8991,10 @@ del {
     .home-follow > div:nth-child(3) {
         margin-left: 0px !important;
     }
+
+    .home-follow > div {
+    	margin: 4px 0 !important;
+  	}
 }
 
 /*# sourceMappingURL=style.css.map */
