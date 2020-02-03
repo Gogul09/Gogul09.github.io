@@ -75,10 +75,12 @@
   width: auto !important;
   margin: 20px auto;
   justify-content: center;
+  align-items: center;
   margin-bottom: 0px;
   padding: 15px;
   border-radius: 5px;
   @include mobile {
+    flex-direction: column;
     width: 100% !important;
     padding-left: 5px;
     justify-content: flex-start;
@@ -88,4 +90,18 @@
 .home-follow iframe {
   display: inline-block;
   margin-right: 10px;
+}
+
+.home-follow > div {
+  margin: 0 5px !important;
+  @include mobile {
+    margin: 4px 0 !important;
+  }
+}
+
+.home-follow > div:nth-child(3) {
+    margin-left: 15px !important;
+    @include mobile {
+      margin-left: 0px !important;
+    }
 }

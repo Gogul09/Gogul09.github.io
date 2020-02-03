@@ -18,9 +18,17 @@ permalink: /
   </div>
   <div class="home-follow-wrapper">
     <div class="home-follow">
-      <script async defer src="https://buttons.github.io/buttons.js"></script>
-      <a href="https://twitter.com/gogul_ilango?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="true">Follow @gogul_ilango</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" data-size="large" aria-label="Follow @Gogul09 on GitHub">Follow</a>
+      <div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <a href="https://twitter.com/gogul_ilango?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="true">Follow @gogul_ilango</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+      <div>
+        <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" data-size="large" aria-label="Follow @Gogul09 on GitHub">Follow</a>
+      </div>
+      <div>
+        <script src="https://apis.google.com/js/platform.js"></script>
+        <div class="youtube-cover"><div class="g-ytsubscribe" data-channelid="UCP_3K5AYFZpH_EzF2rIs1LQ" data-layout="default" data-count="default"></div></div>
+      </div>
     </div>
   </div>
 </div>
