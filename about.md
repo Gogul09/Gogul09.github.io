@@ -107,7 +107,7 @@ permalink: /
                   <h4><a href="https://www.packtpub.com/in/data/hands-on-music-generation-with-magenta" target="_blank">Hands-on Music Generation with Magenta</a></h4>
                     <p><b>Author</b> - <a href="https://alexandredubreuil.com/" target="_blank">Alexandre DuBreuil</a></p>
                     <p><b>Technical Reviewer</b> - Gogul Ilango</p>
-                    <p><b>Publisher</b> - Packt Publishing, United Kingdom</i></p>
+                    <p><b>Publisher</b> - Packt Publishing, United Kingdom</p>
                     <p><b>What's in?</b> - Design and use machine learning models for music generation using Google's Magenta and make them interact with existing music creation tools.</p>
                 </div>
               </li>
