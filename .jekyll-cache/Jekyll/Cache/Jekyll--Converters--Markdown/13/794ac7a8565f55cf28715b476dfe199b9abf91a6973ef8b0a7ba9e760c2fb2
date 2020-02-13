@@ -1,73 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Gogul Ilango - Personal Website</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Quicksand:500|Roboto:300,900|Nunito:700" rel="stylesheet">
-  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
-
-  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
-
-      <meta charset="utf-8" />
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-
-    <meta property="og:title" content="Gogul Ilango" />
-    <meta name="description" content="Personal Website" />
-    <meta property="og:description" content="Personal Website" />
-    <meta property="twitter:title" content="Gogul Ilango" />
-
-    <meta property="og:image" content="/images/icons/logo.png"/>
-    <meta property="og:image:width" content="180" />
-    <meta property="og:image:height" content="110" />
-
-    <meta name="twitter:title" content="Gogul Ilango">
-    <meta name="twitter:description" content="Personal Website">
-    <meta name="twitter:image" content="/images/icons/logo.png">
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Gogul Ilango | This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources.</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Gogul Ilango" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Personal Website" />
-<meta property="og:description" content="Personal Website" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="Gogul Ilango" />
-<script type="application/ld+json">
-{"url":"http://localhost:4000/","description":"Personal Website","name":"Gogul Ilango","headline":"Gogul Ilango","@type":"WebSite","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-  
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="theme-color" content="#d42423" />
-    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
-  </head>
-
-  <body>
-    <div class="splash-container">
-      <div class="outer-wrapping splash-header">
-        <div class="inner-container">
-            <div class="header-left">
-              <a class='logo' href="https://gogul09.github.io/"><img src="/images/icons/logo.png"/></a>
-            </div>
-            <div class="splashnav header-right" id="top_navigator">
-              <a title="home" id = "nav_home" href="/"><span>home</span></a>
-              <a title="blog" id = "nav_blog" href="/blog"><span>blog</span></a>
-              <a title="creations" id = "nav_creations" href="/creations"><span>creations</span></a>
-              <a title="music" id = "nav_music" href="/music"><span>music</span></a>
-              <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
-              <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_splash_navigation()">&#9776;</a>
-            </div>
-        </div>
-      </div>
-
-      <div class="splash-main">
-        <div class="blog-intro grad-about about-header-fix">
+I"‹_<div class="blog-intro grad-about about-header-fix">
   <div class="profile-wrapper">
     <div class="profile-pic"><img src="/images/gogul.png" /></div>
     <div class="profile-description">
@@ -164,13 +95,13 @@
               <li>
                 <div>
                   <h4><a href="https://www.packtpub.com/in/data/hands-on-music-generation-with-magenta" target="_blank">Hands-on Music Generation with Magenta</a></h4>
-                    <p><b>Author</b> - <a href="https://alexandredubreuil.com/" target="_blank">Alexandre DuBreuil</a></p>
-                    <p><b>Technical Reviewer</b> - Gogul Ilango</p>
-                    <p><b>Publisher</b> - Packt Publishing, United Kingdom&lt;/i&gt;</p>
-                    <p><b>What's in?</b> - Design and use machine learning models for music generation using Google's Magenta and make them interact with existing music creation tools.</p>
-                </div>
-              </li>
-          </ul>
+                    <p><b>Author - <a href="https://alexandredubreuil.com/" target="_blank">Alexandre DuBreuil</a>&lt;/p&gt;
+                    <p><b>Technical Reviewer - Gogul Ilango&lt;/p&gt;
+                    <p>Design and use machine learning models for music generation using Magenta and make them interact with existing music creation tools</p>
+                    <p><i>Packt Publishing - United Kingdom</i></p>
+                &lt;/div&gt;
+              &lt;/li&gt;
+          &lt;/ul&gt;
           <h1>Author</h1>
           <h2>2017</h2>
           <ul>
@@ -208,8 +139,8 @@
           </ul>
           <br />
           <br />
-        </div>
-      </div>
+        &lt;/div&gt;
+      &lt;/div&gt;
       <!--Publications ENDS-->
       <!--MOOCs STARTS-->
       <div class="blog-category-box work-category-box about-category-box" id="box_moocs" style="box-shadow: none !important;">
@@ -428,58 +359,17 @@
         </div>
       </div>
       <!--Books ENDS-->
-    </div>
-  </div>
-</div>
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
-
 <script type="text/javascript">
   document.getElementById("box_summary").style.display = "block";
   document.getElementById("tab_summary").style.fontWeight = "bold";
   document.getElementById("tab_summary").style.borderBottom = "1px solid black";
 </script>
-
-
-      </div>
-
-     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-     <script src="https://apis.google.com/js/platform.js"></script>
-     <script async defer src="https://buttons.github.io/buttons.js"></script>
-     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
-     <script src="/js/custom.js"></script>
-     
-	<!-- Google Analytics -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-93019594-1', 'auto');
-		ga('send', 'pageview', {
-		  'page': '/',
-		  'title': 'Gogul Ilango'
-		});
-	</script>
-	<!-- End Google Analytics -->
-
-
-     <script type="text/javascript">
-      var displayMode = sessionStorage.getItem("theme");
-      if(displayMode == undefined || displayMode == "" || displayMode == null) {
-        sessionStorage.setItem("theme", "light");
-        displayMode = "light";
-        switchTheme(0);
-      } else {
-        sessionStorage.setItem("theme", sessionStorage.getItem("theme"));
-        switchTheme(0);
-      }
-    </script>
-
-   </body>
-   </html>
+</b></p></b></p></div></li></ul></div></div></div></div></div>
+:ET

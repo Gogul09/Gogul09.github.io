@@ -639,11 +639,6 @@ figcaption {
   height: auto !important;
 }
 
-.MathJax_Display {
-  @include mobile {
-     font-size: 12px !important;
-  }
-}
 
 .home-container{
   width: 100%;
@@ -1472,8 +1467,12 @@ figcaption {
   font-size: 11px !important;
 }
 
-.MathJax_Display {
-  font-size: 11px !important;
+.MathJax_Display{
+   font-size: 11px !important;
+}
+
+.MathJax > span > span {
+  font-size: 100% !important;
 }
 
 ::-webkit-scrollbar {
@@ -2213,10 +2212,6 @@ u {
 
 .keep-centered {
    text-align: center;
-}
-
-.MathJax_Display{
-   font-size: 16px;
 }
 
 .front-date {
