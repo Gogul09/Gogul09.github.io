@@ -1,4 +1,4 @@
-I"‹_<div class="blog-intro grad-about about-header-fix">
+I"¤a<div class="blog-intro grad-about about-header-fix">
   <div class="profile-wrapper">
     <div class="profile-pic"><img src="/images/gogul.png" /></div>
     <div class="profile-description">
@@ -18,6 +18,12 @@
       <div>
         <script src="https://apis.google.com/js/platform.js"></script>
         <div class="youtube-cover"><div class="g-ytsubscribe" data-channelid="UCP_3K5AYFZpH_EzF2rIs1LQ" data-layout="default" data-count="default"></div></div>
+      </div>
+      <div>
+        <a style="display:inline-block;background-color:#FC5200;color:#fff !important;padding:5px 10px 5px 30px;font-size:11px;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:10px center;border-radius:3px;background-image:url('http://badges.strava.com/logo-strava-echelon.png')" href="http://strava.com/athletes/32217640/badge" target="_clean">
+        Follow me on
+        <img src="http://badges.strava.com/logo-strava.png" alt="Strava" style="margin-top:2px;margin-left:2px;vertical-align:text-bottom" height="13" width="51" />
+      </a>
       </div>
     </div>
   </div>
@@ -95,13 +101,13 @@
               <li>
                 <div>
                   <h4><a href="https://www.packtpub.com/in/data/hands-on-music-generation-with-magenta" target="_blank">Hands-on Music Generation with Magenta</a></h4>
-                    <p><b>Author - <a href="https://alexandredubreuil.com/" target="_blank">Alexandre DuBreuil</a>&lt;/p&gt;
-                    <p><b>Technical Reviewer - Gogul Ilango&lt;/p&gt;
-                    <p>Design and use machine learning models for music generation using Magenta and make them interact with existing music creation tools</p>
-                    <p><i>Packt Publishing - United Kingdom</i></p>
-                &lt;/div&gt;
-              &lt;/li&gt;
-          &lt;/ul&gt;
+                    <p><b>Author</b> - <a href="https://alexandredubreuil.com/" target="_blank">Alexandre DuBreuil</a></p>
+                    <p><b>Technical Reviewer</b> - Gogul Ilango</p>
+                    <p><b>Publisher</b> - Packt Publishing, United Kingdom</p>
+                    <p><b>What's in?</b> - Design and use machine learning models for music generation using Google's Magenta and make them interact with existing music creation tools.</p>
+                </div>
+              </li>
+          </ul>
           <h1>Author</h1>
           <h2>2017</h2>
           <ul>
@@ -139,8 +145,8 @@
           </ul>
           <br />
           <br />
-        &lt;/div&gt;
-      &lt;/div&gt;
+        </div>
+      </div>
       <!--Publications ENDS-->
       <!--MOOCs STARTS-->
       <div class="blog-category-box work-category-box about-category-box" id="box_moocs" style="box-shadow: none !important;">
@@ -359,17 +365,20 @@
         </div>
       </div>
       <!--Books ENDS-->
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+    </div>
+  </div>
+</div>
 
 <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
+
 <script type="text/javascript">
   document.getElementById("box_summary").style.display = "block";
   document.getElementById("tab_summary").style.fontWeight = "bold";
   document.getElementById("tab_summary").style.borderBottom = "1px solid black";
 </script>
-</b></p></b></p></div></li></ul></div></div></div></div></div>
+
 :ET
