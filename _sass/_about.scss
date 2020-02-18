@@ -8,8 +8,9 @@
 }
 
 .about-wrapper {
-  width: 60% !important;
+  max-width: 800px;
   @include mobile {
+    max-width: 100% !important;
     width: 100% !important;
   }
   .category-tab {

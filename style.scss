@@ -3415,8 +3415,9 @@ del {
 .highlight-box {
   background-color: #ffffff;
   padding: 50px;  
-  box-shadow: 1px 4px 16px rgba(52, 52, 52, 0.2);
+  box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(100,110,140,.4);
   border-radius: 10px;
+  background: radial-gradient(circle at 20% 20%,#5183f5 25%,#4640ff 100%);
   @include mobile {
     padding: 20px;;
     padding-bottom: 20px;
@@ -3428,14 +3429,20 @@ del {
 }
 
 .highlight-box p {
-  font-weight: bold;
   font-family: $font_header;
+  color: white;
 }
 
-.highlight-box a {
-  color: #cf2321 !important;
+.highlight-box ul {
+  font-family: $font_header;
+  color: white;
+}
+
+.highlight-box ul li a {
+  color: #ffda26 !important;
   &:hover, &:active {
-    text-decoration: none;
+    border-bottom: 1px solid #ffda26 !important;
+    text-decoration: none !important;
   }
 }
 

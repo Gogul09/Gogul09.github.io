@@ -1,9 +1,9 @@
-I"@b<div class="blog-intro grad-about about-header-fix">
+I":`<div class="blog-intro grad-about about-header-fix">
   <div class="profile-wrapper">
     <div class="profile-pic"><img src="/images/gogul.png" /></div>
     <div class="profile-description">
       <h1>Gogul Ilango</h1>
-      <p>Senior Hardware Engineer @ Qualcomm <br /> Programmer - Music Producer - Writer</p>
+      <p>Senior Hardware Engineer at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a> <br /> Programmer - Music Producer - Writer</p>
     </div>
   </div>
   <div class="home-follow-wrapper">
@@ -13,14 +13,11 @@
         <a href="https://twitter.com/gogul_ilango?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="true">Follow @gogul_ilango</a><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
       <div>
-        <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" data-size="large" aria-label="Follow @Gogul09 on GitHub">Follow</a>
+        <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" data-size="large" aria-label="Follow @Gogul09 on GitHub">Gogul09</a>
       </div>
       <div>
         <script src="https://apis.google.com/js/platform.js"></script>
         <div class="youtube-cover"><div class="g-ytsubscribe" data-channelid="UCP_3K5AYFZpH_EzF2rIs1LQ" data-layout="default" data-count="default"></div></div>
-      </div>
-      <div>
-        <a style="display:inline-block;background-color:#FC5200;color:#fff !important;padding:5px 10px 5px 30px;font-size:11px;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:10px center;border-radius:3px;background-image:url('http://badges.strava.com/logo-strava-echelon.png')" href="http://strava.com/athletes/32217640" target="_blank"><img src="http://badges.strava.com/logo-strava.png" alt="Strava" style="margin-top:2px;margin-left:0px;vertical-align:text-bottom" height="13" width="51" />Follow me on</a>
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 layout: splash
 heading: Gogul Ilango
 title: Gogul Ilango
-subheading: Senior Hardware Engineer @ Qualcomm <br> Programmer - Music Producer - Writer
+subheading: Senior Hardware Engineer at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a> <br> Programmer - Music Producer - Writer
 description: Personal Website
 color: grad-about
 permalink: /
@@ -23,7 +23,7 @@ permalink: /
         <a href="https://twitter.com/gogul_ilango?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="true">Follow @gogul_ilango</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
       <div>
-        <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" data-size="large" aria-label="Follow @Gogul09 on GitHub">Follow</a>
+        <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" data-size="large" aria-label="Follow @Gogul09 on GitHub">Gogul09</a>
       </div>
       <div>
         <script src="https://apis.google.com/js/platform.js"></script>
@@ -82,7 +82,7 @@ permalink: /
             <li>It gives me a chance to share my knowledge with the world where it might help someone somewhere.</li>
           </ul>
           <p>I love music and you can hear my contributions <a href="https://gogul09.github.io/music" target="_blank">here</a>.</p>
-          <p>I love cycling which really helps me steer adrenaline and endorphins. You can follow me on <a href="https://www.strava.com/athletes/32217640" target="_blank">STRAVA</a>.</p>
+          <p>I love cycling which really help me steer adrenaline and endorphins. You can follow me on <a href="https://www.strava.com/athletes/32217640" target="_blank">STRAVA</a>.</p>
           <div class="highlight-box">
             <p>In case you're wondering, this site </p>
             <ul style="margin: 0px !important;">
@@ -106,10 +106,10 @@ permalink: /
               <li>
                 <div>
                   <h4><a href="https://www.packtpub.com/in/data/hands-on-music-generation-with-magenta" target="_blank">Hands-on Music Generation with Magenta</a></h4>
-                    <p><b>Author</b> - <a href="https://alexandredubreuil.com/" target="_blank">Alexandre DuBreuil</a></p>
-                    <p><b>Technical Reviewer</b> - Gogul Ilango</p>
-                    <p><b>Publisher</b> - Packt Publishing, United Kingdom</p>
-                    <p><b>What's in?</b> - Design and use machine learning models for music generation using Google's Magenta and make them interact with existing music creation tools.</p>
+                    <p><i>Author</i> - <a href="https://alexandredubreuil.com/" target="_blank">Alexandre DuBreuil</a></p>
+                    <p><i>Technical Reviewer</i> - Gogul Ilango</p>
+                    <p><i>Publisher</i> - Packt Publishing, United Kingdom</p>
+                    <p><i>What's in?</i> - Design and use machine learning models for music generation using Google's Magenta and make them interact with existing music creation tools.</p>
                 </div>
               </li>
           </ul>

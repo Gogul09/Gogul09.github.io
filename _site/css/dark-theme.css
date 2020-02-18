@@ -8735,8 +8735,9 @@ del {
 .highlight-box {
     background-color: #0e0e0e;
     padding: 50px;
-    box-shadow: 1px 4px 16px rgba(52, 52, 52, 0.2);
-    border-radius: 10px
+     box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(100,110,140,.4);
+    border-radius: 10px;
+    background: radial-gradient(circle at 20% 20%,#5183f5 25%,#4640ff 100%);
 }
 
 @media screen and (max-width: 640px) {
@@ -8751,17 +8752,23 @@ del {
 }
 
 .highlight-box p {
-    font-weight: bold;
+    color: white;
     font-family: "Quicksand", sans-serif
 }
 
-.highlight-box a {
-    color: #ff495e !important
+.highlight-box ul {
+  font-family: "Quicksand", sans-serif;
+  color: white;
 }
 
-.highlight-box a:hover,
-.highlight-box a:active {
-    text-decoration: none
+.highlight-box ul li a {
+  color: #ffda26 !important;
+}
+
+.highlight-box ul li a:hover,
+.highlight-box ul li a:active {
+    border-bottom: 1px solid #ffda26 !important;
+    text-decoration: none !important;
 }
 
 .objectives {
