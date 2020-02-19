@@ -66,10 +66,10 @@ permalink: /
           <p>My technical interests include asic design, applying machine learning & deep learning in hardware design, web development, automation and computer vision. And I love coding using Python and JavaScript.</p>
           <h3>Timeline</h3>
           <ul class="timeline">
-            <li><b>2017-now</b>  - Qualcomm, Chennai - ASIC Physical Design & Signoff, Full-stack Web Development & Machine Learning.</li>
-            <li><b>2016-2017</b> - Nokia, Chennai - Internship with focus on Automation, Python, Web Development & Machine Learning.</li>
+            <li><b>2017-now</b>  - Qualcomm - ASIC Physical Design & Signoff, Full-stack Web Development & Machine Learning.</li>
+            <li><b>2016-2017</b> - Nokia - Internship with focus on Automation, Python, Web Development & Machine Learning.</li>
             <li><b>2015-2017</b> - Anna University, MIT Campus, Chennai - Master of Engineering in VLSI Design & Embedded Systems (CGPA 9.96/10 + Gold Medal) - Adviser <a href="https://www.sathieshkumar.com/" target="_blank">Dr.Sathiesh Kumar</a>.</li>
-            <li><b>2014-2015</b> - TATA Consultancy Services, Chennai - Front-end Web Development, Android Development.</li>
+            <li><b>2014-2015</b> - TATA Consultancy Services - Front-end Web Development, Android Development.</li>
             <li><b>2010-2014</b> - Thiagarajar College of Engineering, Madurai - Bachelor of Engineering in Electronics & Communication (CGPA 9.05/10).</li>
           </ul>
           <figure>
