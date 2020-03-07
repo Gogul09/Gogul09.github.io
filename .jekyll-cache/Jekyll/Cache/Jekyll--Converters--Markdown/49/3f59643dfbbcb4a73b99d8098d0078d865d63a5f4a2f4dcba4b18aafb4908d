@@ -1,9 +1,9 @@
-I"9`<div class="blog-intro grad-about about-header-fix">
+I"a<div class="blog-intro grad-about about-header-fix">
   <div class="profile-wrapper">
     <div class="profile-pic"><img src="/images/gogul.png" /></div>
     <div class="profile-description">
       <h1>Gogul Ilango</h1>
-      <p>Senior Hardware Engineer @ <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a> <br /> Programmer - Music Producer - Writer</p>
+      <p>Senior Hardware Engineer at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a> <br /> Programmer - Music Producer - Writer</p>
     </div>
   </div>
   <div class="home-follow-wrapper">
@@ -56,10 +56,10 @@
           <p>My technical interests include asic design, applying machine learning &amp; deep learning in hardware design, web development, automation and computer vision. And I love coding using Python and JavaScript.</p>
           <h3>Timeline</h3>
           <ul class="timeline">
-            <li><b>2017-now</b>  - Qualcomm, Chennai - ASIC Physical Design &amp; Signoff, Full-stack Web Development &amp; Machine Learning.</li>
-            <li><b>2016-2017</b> - Nokia, Chennai - Internship with focus on Automation, Python, Web Development &amp; Machine Learning.</li>
+            <li><b>2017-now</b>  - Qualcomm - ASIC Physical Design &amp; Signoff, Full-stack Web Development &amp; Machine Learning.</li>
+            <li><b>2016-2017</b> - Nokia - Internship with focus on Automation, Python, Web Development &amp; Machine Learning.</li>
             <li><b>2015-2017</b> - Anna University, MIT Campus, Chennai - Master of Engineering in VLSI Design &amp; Embedded Systems (CGPA 9.96/10 + Gold Medal) - Adviser <a href="https://www.sathieshkumar.com/" target="_blank">Dr.Sathiesh Kumar</a>.</li>
-            <li><b>2014-2015</b> - TATA Consultancy Services, Chennai - Front-end Web Development, Android Development.</li>
+            <li><b>2014-2015</b> - TATA Consultancy Services - Front-end Web Development, Android Development.</li>
             <li><b>2010-2014</b> - Thiagarajar College of Engineering, Madurai - Bachelor of Engineering in Electronics &amp; Communication (CGPA 9.05/10).</li>
           </ul>
           <figure>
@@ -72,7 +72,8 @@
             <li>It gives me a chance to share my knowledge with the world where it might help someone somewhere.</li>
           </ul>
           <p>I love music and you can hear my contributions <a href="https://gogul09.github.io/music" target="_blank">here</a>.</p>
-          <p>I love cycling which really helps me steer adrenaline and endorphins. You can follow me on <a href="https://www.strava.com/athletes/32217640" target="_blank">STRAVA</a>.</p>
+          <p>I love cycling which really help me steer adrenaline and endorphins. You can follow me on <a href="https://www.strava.com/athletes/32217640" target="_blank">STRAVA</a>.</p>
+          <div class="endorphins"><iframe height="160" width="300" frameborder="0" allowtransparency="true" scrolling="no" src="https://www.strava.com/athletes/32217640/activity-summary/70039de5f5b9ab52000f891863a2eac18394b88d"></iframe></div>
           <div class="highlight-box">
             <p>In case you're wondering, this site </p>
             <ul style="margin: 0px !important;">
@@ -96,10 +97,10 @@
               <li>
                 <div>
                   <h4><a href="https://www.packtpub.com/in/data/hands-on-music-generation-with-magenta" target="_blank">Hands-on Music Generation with Magenta</a></h4>
-                    <p><b>Author</b> - <a href="https://alexandredubreuil.com/" target="_blank">Alexandre DuBreuil</a></p>
-                    <p><b>Technical Reviewer</b> - Gogul Ilango</p>
-                    <p><b>Publisher</b> - Packt Publishing, United Kingdom</p>
-                    <p><b>What's in?</b> - Design and use machine learning models for music generation using Google's Magenta and make them interact with existing music creation tools.</p>
+                    <p><i>Author</i> - <a href="https://alexandredubreuil.com/" target="_blank">Alexandre DuBreuil</a></p>
+                    <p><i>Technical Reviewer</i> - Gogul Ilango</p>
+                    <p><i>Publisher</i> - Packt Publishing, United Kingdom</p>
+                    <p><i>What's in?</i> - Design and use machine learning models for music generation using Google's Magenta and make them interact with existing music creation tools.</p>
                 </div>
               </li>
           </ul>

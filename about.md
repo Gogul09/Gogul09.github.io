@@ -72,9 +72,6 @@ permalink: /
             <li><b>2014-2015</b> - TATA Consultancy Services - Front-end Web Development, Android Development.</li>
             <li><b>2010-2014</b> - Thiagarajar College of Engineering, Madurai - Bachelor of Engineering in Electronics & Communication (CGPA 9.05/10).</li>
           </ul>
-          <figure>
-            <img src="https://drive.google.com/uc?id=1EKzEKBBVY9DrGueHZ0DG88ohA-aU4CmS" />
-          </figure>
           <p>In this website, you will find collection of my thoughts, notes, tutorials and resources based on my experience in technology. I still learn by myself about the technical topics that I write here so that I get a clear understanding of it. I do this mainly during my free time because</p>
           <ul>
             <li>It helps me learn these topics better by making me read, write and evaluate myself first before sharing it here.</li>
@@ -82,7 +79,7 @@ permalink: /
             <li>It gives me a chance to share my knowledge with the world where it might help someone somewhere.</li>
           </ul>
           <p>I love music and you can hear my contributions <a href="https://gogul09.github.io/music" target="_blank">here</a>.</p>
-          <p>I love cycling which really help me steer adrenaline and endorphins. You can follow me on <a href="https://www.strava.com/athletes/32217640" target="_blank">STRAVA</a>.</p>
+          <div class="cycling"><iframe height='160' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/32217640/activity-summary/70039de5f5b9ab52000f891863a2eac18394b88d'></iframe></div>
           <div class="highlight-box">
             <p>In case you're wondering, this site </p>
             <ul style="margin: 0px !important;">

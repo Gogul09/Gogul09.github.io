@@ -1,4 +1,4 @@
-I"9`<div class="blog-intro grad-about about-header-fix">
+I"ç`<div class="blog-intro grad-about about-header-fix">
   <div class="profile-wrapper">
     <div class="profile-pic"><img src="/images/gogul.png" /></div>
     <div class="profile-description">
@@ -56,15 +56,12 @@
           <p>My technical interests include asic design, applying machine learning &amp; deep learning in hardware design, web development, automation and computer vision. And I love coding using Python and JavaScript.</p>
           <h3>Timeline</h3>
           <ul class="timeline">
-            <li><b>2017-now</b>  - Qualcomm, Chennai - ASIC Physical Design &amp; Signoff, Full-stack Web Development &amp; Machine Learning.</li>
-            <li><b>2016-2017</b> - Nokia, Chennai - Internship with focus on Automation, Python, Web Development &amp; Machine Learning.</li>
+            <li><b>2017-now</b>  - Qualcomm - ASIC Physical Design &amp; Signoff, Full-stack Web Development &amp; Machine Learning.</li>
+            <li><b>2016-2017</b> - Nokia - Internship with focus on Automation, Python, Web Development &amp; Machine Learning.</li>
             <li><b>2015-2017</b> - Anna University, MIT Campus, Chennai - Master of Engineering in VLSI Design &amp; Embedded Systems (CGPA 9.96/10 + Gold Medal) - Adviser <a href="https://www.sathieshkumar.com/" target="_blank">Dr.Sathiesh Kumar</a>.</li>
-            <li><b>2014-2015</b> - TATA Consultancy Services, Chennai - Front-end Web Development, Android Development.</li>
+            <li><b>2014-2015</b> - TATA Consultancy Services - Front-end Web Development, Android Development.</li>
             <li><b>2010-2014</b> - Thiagarajar College of Engineering, Madurai - Bachelor of Engineering in Electronics &amp; Communication (CGPA 9.05/10).</li>
           </ul>
-          <figure>
-            <img src="https://drive.google.com/uc?id=1EKzEKBBVY9DrGueHZ0DG88ohA-aU4CmS" />
-          </figure>
           <p>In this website, you will find collection of my thoughts, notes, tutorials and resources based on my experience in technology. I still learn by myself about the technical topics that I write here so that I get a clear understanding of it. I do this mainly during my free time because</p>
           <ul>
             <li>It helps me learn these topics better by making me read, write and evaluate myself first before sharing it here.</li>
@@ -73,6 +70,7 @@
           </ul>
           <p>I love music and you can hear my contributions <a href="https://gogul09.github.io/music" target="_blank">here</a>.</p>
           <p>I love cycling which really help me steer adrenaline and endorphins. You can follow me on <a href="https://www.strava.com/athletes/32217640" target="_blank">STRAVA</a>.</p>
+          <div class="cycling"><iframe height="160" width="300" frameborder="0" allowtransparency="true" scrolling="no" src="https://www.strava.com/athletes/32217640/activity-summary/70039de5f5b9ab52000f891863a2eac18394b88d"></iframe></div>
           <div class="highlight-box">
             <p>In case you're wondering, this site </p>
             <ul style="margin: 0px !important;">
