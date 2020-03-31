@@ -1,0 +1,68 @@
+I"<<div class="music-top-container">
+  <div class="music-intro-wrapper">
+    <p><b>Music</b></p>
+    <p>If you're here, then definitely you love music (like me) and wish to hear something new! You can find my music in this page. Music that you hear in my songs (cover or composition) are either composed or programmed, rearranged and mixed by me at my small home recording studio. Kindly subscribe to my YouTube channel if u like my creative content.</p>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <div class="youtube-cover"><div class="g-ytsubscribe" data-channelid="UCP_3K5AYFZpH_EzF2rIs1LQ" data-layout="default" data-count="default"></div></div>
+    <br /><br />
+    <p>If you're wondering what music gears I use, here is my list.</p>
+      <ul>
+        <li>Laptop - HP Pavilion Notebook, Intel Core i7 7th Gen, 16GB RAM, NVIDIA GeForce 940MX, Windows 10 Home</li>
+        <li>Monitor - LG 25-inch UltraWide</li>
+        <li>Digital Audio Workstation - Cubase Elements 10.5</li>
+        <li>Music Keyboard - Yamaha PSR E303</li>
+        <li>Synthesizer - Yamaha MOX6</li>
+        <li>Mixer - Yamaha MG10XU 10 Input Stereo</li>
+        <li>Studio Monitors - Yamaha HS50M</li>
+        <li>Condenser Microphone - Audio Technica AT2020</li>
+        <li>Headphone - Audio Technica Sonic Fuel ATH-AX1iS RD</li>
+      </ul>
+  </div>
+</div>
+
+<div class="home-container music-containing-wrapper">
+  <div class="home-articles">
+    <div class="home-wrapper music-wrapper">
+      <div class="category-tab" id="category-tab" style="box-shadow: none !important;">
+        <ul>
+          <li id="tab_comp_audio" onclick="showAboutTabBox(this.id)">compositions<br />audio</li>
+          <li id="tab_cover_audio" onclick="showAboutTabBox(this.id)">covers<br />audio</li>
+          <li id="tab_comp_video" onclick="showAboutTabBox(this.id)">compositions<br />video</li>
+          <li id="tab_cover_video" onclick="showAboutTabBox(this.id)">covers<br />video</li>
+        </ul>
+      </div>
+      <div class="blog-category-box work-category-box music-category-box" id="box_comp_audio">
+        <div class="music-box">
+          <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/358230850&amp;color=%23a43837&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+        </div>
+      </div>
+      <div class="blog-category-box work-category-box music-category-box" id="box_cover_audio">
+        <div class="music-box">
+          <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/358230735&amp;color=%23a43837&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+        </div>
+      </div>
+      <div class="blog-category-box work-category-box music-category-box" id="box_comp_video">
+        <div class="music-box">
+          <div class="music-video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL4GdHCdoUoLPmM7Bblzq8YmJLd1y6B9sq" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="blog-category-box work-category-box music-category-box" id="box_cover_video">
+        <div class="music-box">
+          <div class="music-video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL4GdHCdoUoLPG6BB-MqNRRtUTxX5Laut6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+          </div>
+        </div>
+      </div>
+   </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.getElementById("box_comp_audio").style.display = "block";
+  document.getElementById("tab_comp_audio").style.borderBottom = "1px solid black";
+  document.getElementById("tab_comp_audio").style.fontWeight = "bold";
+</script>
+
+:ET

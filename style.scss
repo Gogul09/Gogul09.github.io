@@ -936,7 +936,7 @@ figcaption {
     font-size: 15px;
     background-color: white;
     padding: 2px;
-    height: 48px;
+    height: 60px;
     text-align: center;
     padding: 0 15px;
     cursor: pointer;
@@ -2912,25 +2912,21 @@ del {
   }
 }
 
-.music-wrapper ul li {
-  position: relative;
-  height: 100%;
-}
-
 .music-wrapper ul {
-  height: 60px !important;
+  height: 70px !important;
 }
 
 .music-top-container {
-  background-color: $white;
+  background: #cf393a;
   box-shadow: 0 8px 6px -6px #e9e9e9;
 }
 
 .music-intro-wrapper {
   padding: 20px;
-  width: 50%;
+  max-width: 800px;
   margin: 0 auto;
   padding-bottom: 60px;
+  background: #cf393a;
   @include mobile {
     width: 100%;
     padding-bottom: 30px;
@@ -2940,7 +2936,7 @@ del {
 .music-intro-wrapper p {
   font-size: 15px;
   margin-top: 0px;
-  color: $black;
+  color: white;
   text-align: center;
   @include mobile {
     font-size: 13px;
@@ -2948,10 +2944,19 @@ del {
   }
 }
 
+.music-intro-wrapper ul li {
+  font-size: 15px;
+  margin-top: 0px;
+  color: white;
+  @include mobile {
+    font-size: 13px;
+  }
+}
+
 .music-intro-wrapper p b {
   font-size: 30px;
   font-weight: bold;
-  color: $black;
+  color: white;
   font-family: $font_header;
   @include mobile {
     font-size: 20px;
@@ -2995,10 +3000,11 @@ del {
 }
 
 .youtube-cover {
-  width: 100%;
-  margin: 0px auto;
-  display: flex;
-  justify-content: center;
+  margin: auto;
+  display: table;
+  border: 14px solid #bb3c3c;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #903232;
   @include mobile {
     margin: 0px;
     justify-content: flex-start;
