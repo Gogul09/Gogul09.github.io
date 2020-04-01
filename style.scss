@@ -3002,9 +3002,6 @@ del {
 .youtube-cover {
   margin: auto;
   display: table;
-  border: 14px solid #bb3c3c;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px #903232;
   @include mobile {
     margin: 0px;
     justify-content: flex-start;
