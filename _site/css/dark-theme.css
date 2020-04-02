@@ -8084,105 +8084,87 @@ del {
 }
 
 .music-box-wrapper {
-    padding: 0 20px
+  padding: 0 20px;
 }
 
 .music-box {
-    border-radius: 4px;
-    margin: 20px 0;
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5)
+  margin: 20px auto;
+  max-width: 800px;
 }
 
 @media screen and (max-width: 640px) {
     .music-box {
-        margin: 20px 10px
+        width: 100%;
     }
 }
 
 .music-container {
-    margin-bottom: 0px !important
+  margin-bottom: 0px !important;
 }
 
 .music-compositions {
-    background: #fff
+  background: #fff;
 }
 
 .music-cover {
-    background: #fff
+  background: #fff;
 }
 
 .music-compositions-video {
-    background: #fff
+  background: #fff;
 }
 
 .music-cover-video {
-    background: #fff
+  background: #fff;
 }
 
 .music-box h3 {
-    margin-bottom: 10px !important;
-    color: #000
-}
-
-.music-box p {
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
-    font-size: 15px
+  margin-bottom: 10px !important;
+  color: #000;
 }
 
 .music-wrapper {
-    width: 60% !important;
-    padding-bottom: 30px;
-    margin: 0 auto
+  width: 60%;
+  padding-bottom: 30px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 640px) {
     .music-wrapper {
-        width: 100% !important
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    .music-wrapper {
-        width: 80% !important
-    }
-}
-
-.music-wrapper ul {
-    height: 70px !important
+        width: 100% !important;
+    } 
 }
 
 .music-top-container {
-    background: #cf393a;
-    box-shadow: 0 8px 6px -6px #e9e9e9
+  background: #cf393a;
 }
 
 .music-intro-wrapper {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-bottom: 60px;
-    background: #cf393a;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  background: #cf393a;
 }
 
 @media screen and (max-width: 640px) {
     .music-intro-wrapper {
         width: 100%;
-        padding-bottom: 30px
+        padding-bottom: 30px;
     }
 }
 
 .music-intro-wrapper p {
-    font-size: 15px;
-    margin-top: 0px;
-    color: white;
-    text-align: center
+  font-size: 15px;
+  margin-top: 0px;
+  color: white;
+  text-align: center;
 }
 
 @media screen and (max-width: 640px) {
     .music-intro-wrapper p {
         font-size: 13px;
-        text-align: left
+        text-align: left;
     }
 }
 
@@ -8199,61 +8181,68 @@ del {
 }
 
 .music-intro-wrapper p b {
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    font-family: "Quicksand"
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  font-family: $font_header;
 }
 
 @media screen and (max-width: 640px) {
     .music-intro-wrapper p b {
-        font-size: 20px
+        font-size: 20px;
     }
 }
 
 .music-video-container {
-    width: 100%;
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
-    margin: 10px 0
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+  margin-bottom: 20px;
 }
 
-.music-video-container iframe,
-.music-video-container object,
-.music-video-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%
+@media screen and (max-width: 640px) {
+    .music-video-container {
+        justify-content: center;
+        align-items:center;
+    }
+}
+
+.music-video-container a {
+  width: 230px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 15px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.music-video-container a:hover {
+  transform: scale(1.2);
+  text-decoration: none;
+  border-bottom: 0px !important;
+}
+
+@media screen and (max-width: 640px) {
+    .music-video-container a {
+        width: 40%;
+    }
 }
 
 .youtube-video-container {
-    width: 100%;
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
-    margin: 20px 0
-}
-
-.youtube-video-container iframe,
-.youtube-video-container object,
-.youtube-video-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  margin: 20px 0;
 }
 
 .youtube-cover {
-    margin: auto;
-    display: table;
+  margin: auto;
+  display: table;
 }
 
 @media screen and (max-width: 640px) {
@@ -8741,14 +8730,14 @@ del {
 .highlight-box {
     background-color: #0e0e0e;
     padding: 50px;
-     box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(100,110,140,.4);
+    box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     background: radial-gradient(circle at 20% 20%,#5183f5 25%,#4640ff 100%);
 }
 
 @media screen and (max-width: 640px) {
     .highlight-box {
-        padding: 20px;
+        padding: 20px 40px;
         padding-bottom: 20px;
         margin-left: -15px;
         margin-right: -15px;

@@ -2861,11 +2861,10 @@ del {
 }
 
 .music-box {
-  border-radius: 4px;
-  margin: 20px 0;
-  box-shadow: 0 3px 9px rgba(125, 125, 125, 0.4);
+  margin: 20px auto;
+  max-width: 800px;
   @include mobile {
-    margin: 20px 10px;
+    width: 100%;
   }
 }
 
@@ -2894,26 +2893,16 @@ del {
   color: #000;
 }
 
-.music-box p {
-  margin-top: 0 !important;
-  margin-bottom: 20px !important;
-  font-size: 15px;
-}
-
 .music-wrapper {
-  width: 60% !important;
+  width: 60%;
   padding-bottom: 30px;
   margin: 0 auto;
   @include mobile {
     width: 100% !important;
   }
   @include tablet {
-    width: 80% !important;
+    width: 100% !important;
   }
-}
-
-.music-wrapper ul {
-  height: 70px !important;
 }
 
 .music-top-container {
@@ -2965,20 +2954,33 @@ del {
 
 .music-video-container {
   width: 100%;
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
   overflow: hidden;
-  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+  margin-bottom: 20px;
+  @include mobile {
+    justify-content: center;
+    align-items:center;
+  }
 }
 
-.music-video-container iframe, .music-video-container object, .music-video-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.music-video-container a {
+  width: 230px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 15px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  @include mobile {
+    width: 40%;
+  }
+}
+
+.music-video-container a:hover {
+  transform: scale(1.2);
+  text-decoration: none;
+  border-bottom: 0px !important;
 }
 
 .youtube-video-container {
@@ -2989,14 +2991,6 @@ del {
   height: 0;
   overflow: hidden;
   margin: 20px 0;
-}
-
-.youtube-video-container iframe, .youtube-video-container object, .youtube-video-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .youtube-cover {
@@ -3422,7 +3416,7 @@ del {
   border-radius: 10px;
   background: radial-gradient(circle at 20% 20%,#5183f5 25%,#4640ff 100%);
   @include mobile {
-    padding: 20px;;
+    padding: 20px 40px;
     padding-bottom: 20px;
     border-radius: 0px;
     box-shadow: none;
@@ -3617,5 +3611,5 @@ del {
 }
 
 .music-containing-wrapper {
-  background-color: white !important;
+  background-color: #fbfbfb !important;
 }

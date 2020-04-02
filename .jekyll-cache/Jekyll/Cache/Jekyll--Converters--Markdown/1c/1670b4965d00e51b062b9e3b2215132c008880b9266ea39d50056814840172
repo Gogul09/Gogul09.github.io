@@ -1,20 +1,22 @@
----
-layout: music-default
-heading: Music
-title: Music
-subheading: my journey as a music producer
-description: You can find all my music that I composed/programmed/arranged/mixed/sung/penned at my home recording studio in this page. Kindly share with your family and friends if you like my music.
-color: grad-music
-permalink: /music
-image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
----
-
-<div class="music-top-container">
+I";<div class="music-top-container">
   <div class="music-intro-wrapper">
     <p><b>Music</b></p>
     <p>If you're here, then definitely you love music (like me) and wish to hear something new! You can find my music in this page. Music that you hear in my songs (cover or composition) are either composed or programmed, rearranged and mixed by me at my small home recording studio. Kindly subscribe to my YouTube channel if u like my creative content.</p>
     <script src="https://apis.google.com/js/platform.js"></script>
     <div class="youtube-cover"><div class="g-ytsubscribe" data-channelid="UCP_3K5AYFZpH_EzF2rIs1LQ" data-layout="default" data-count="default"></div></div>
+    <br /><br />
+    <p>If you're wondering what music gears I use, here is my list.</p>
+      <ul>
+        <li>Laptop - HP Pavilion Notebook, Intel Core i7 7th Gen, 16GB RAM, NVIDIA GeForce 940MX, Windows 10 Home</li>
+        <li>Monitor - LG 25-inch UltraWide</li>
+        <li>Digital Audio Workstation - Cubase Elements 10.5</li>
+        <li>Music Keyboard - Yamaha PSR E303</li>
+        <li>Synthesizer - Yamaha MOX6</li>
+        <li>Mixer - Yamaha MG10XU 10 Input Stereo</li>
+        <li>Studio Monitors - Yamaha HS50M</li>
+        <li>Condenser Microphone - Audio Technica AT2020</li>
+        <li>Headphone - Audio Technica Sonic Fuel ATH-AX1iS RD</li>
+      </ul>
   </div>
 </div>
 
@@ -27,7 +29,7 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
               <a href="https://www.youtube.com/watch?v=PnL1GW7-b3A" target="_blank"><img src="https://drive.google.com/uc?id=1LLemlwZVYQLytcIJ-w7Yg92Wj3hnhIny" /></a>
               <!--BOX END -->
               <!--BOX START -->
-              <a href="https://www.youtube.com/watch?v=iH6lic8HhP8" target="_blank"><img src="https://drive.google.com/uc?id=1k6WiZhKFboKL-pTDwGy0LukF8nBpgVli" /></a>
+              <a href="https://www.youtube.com/watch?v=iH6lic8HhP8" target="_blank"><img src="https://drive.google.com/open?id=15R5vPOPPiUnWBPnumR5za3FH78In_3Vn" /></a>
               <!--BOX END -->
               <!--BOX START -->
               <a href="https://www.youtube.com/watch?v=i9eSUdhZcK0" target="_blank"><img src="https://drive.google.com/uc?id=1t-gOI5M-JojYk1Pm9JOKoNsRFarVnno8" /></a>
@@ -87,30 +89,20 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
               <a href="https://www.youtube.com/watch?v=eIcj30NFv04" target="_blank"><img src="https://drive.google.com/uc?id=1geldqcApWgr8Fo983AS-Ns9V7L97WCzz" /></a>
               <!--BOX END -->
               <!--BOX START -->
-              <a href="https://www.youtube.com/watch?v=pLQgHs2EBLM" target="_blank"><img src="https://drive.google.com/uc?id=1cZ4X3BfBMDO1mUx9q3SWbYiUJSFkBxkt" /></a>
+              <a href="https://www.youtube.com/watch?v=pLQgHs2EBLM" target="_blank"><img src="" /></a>
               <!--BOX END -->
               <!--BOX START -->
-              <a href="https://www.youtube.com/watch?v=JTcEduZiCGE" target="_blank"><img src="https://drive.google.com/uc?id=1p6-updCDHd-U73BlSoktyDzSX_XcynbQ" /></a>
+              <a href="" target="_blank"><img src="" /></a>
               <!--BOX END -->
               <!--BOX START -->
-              <a href="https://www.youtube.com/watch?v=S6Gt4rFnX2M" target="_blank"><img src="https://drive.google.com/uc?id=0B9HAdfOtN4tdd2NZT1dxbVJrcUk" /></a>
+              <a href="" target="_blank"><img src="" /></a>
               <!--BOX END -->
-          </div>
-          <div class="highlight-box">
-            <p>If you're wondering what music gears I use, here is my list.</p>
-            <ul>
-              <li>Laptop - HP Pavilion Notebook, Intel Core i7 7th Gen, 16GB RAM, NVIDIA GeForce 940MX, Windows 10 Home</li>
-              <li>Monitor - LG 25-inch UltraWide</li>
-              <li>Digital Audio Workstation - Cubase Elements 10.5</li>
-              <li>Music Keyboard - Yamaha PSR E303</li>
-              <li>Synthesizer - Yamaha MOX6</li>
-              <li>Mixer - Yamaha MG10XU 10 Input Stereo</li>
-              <li>Studio Monitors - Yamaha HS50M</li>
-              <li>Condenser Microphone - Audio Technica AT2020</li>
-              <li>Headphone - Audio Technica Sonic Fuel ATH-AX1iS RD</li>
-            </ul>
+              <!--BOX START -->
+              <a href="" target="_blank"><img src="" /></a>
+              <!--BOX END -->
           </div>
         </div>
     </div>
   </div>
 </div>
+:ET
