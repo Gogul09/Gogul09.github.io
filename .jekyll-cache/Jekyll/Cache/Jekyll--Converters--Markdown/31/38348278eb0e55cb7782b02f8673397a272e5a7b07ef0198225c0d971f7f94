@@ -1,15 +1,4 @@
----
-layout: music-default
-heading: Music
-title: Music
-subheading: my journey as a music producer
-description: You can find all my music that I composed/programmed/arranged/mixed/sung/penned at my home recording studio in this page. Kindly share with your family and friends if you like my music.
-color: grad-music
-permalink: /music
-image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
----
-
-<div class="music-top-container">
+I"E<div class="music-top-container">
   <div class="music-intro-wrapper">
     <p><b>Music</b></p>
     <p>If you're here, then definitely you love music (like me) and wish to hear something new! You can find my music in this page. Music that you hear in my songs (cover or composition) are either composed or programmed, rearranged and mixed by me at my small home recording studio. Kindly subscribe to my YouTube channel if u like my creative content.</p>
@@ -117,3 +106,4 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
     </div>
   </div>
 </div>
+:ET

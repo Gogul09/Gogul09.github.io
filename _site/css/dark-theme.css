@@ -9024,4 +9024,18 @@ del {
     }
 }
 
+.music-video-container a {
+  position: relative;
+}
+
+.music-video-container a span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: yellow;
+  padding: 5px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=style.css.map */
