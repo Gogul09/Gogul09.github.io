@@ -24,6 +24,9 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
         <div class="music-box">
           <div class="music-video-container">
               <!--BOX START -->
+              <a href="https://www.youtube.com/watch?v=DdEnnRKuyU8" target="_blank"><img src="https://drive.google.com/uc?id=1ForoXZJDTuTSsJf97rsuVH_kkBO0E2L8" /><span>NEW</span></a>
+              <!--BOX END -->
+              <!--BOX START -->
               <a href="https://www.youtube.com/watch?v=j_kTyuwN2e4" target="_blank"><img src="https://drive.google.com/uc?id=1gUsHLlD_0iOwRXWHcPAmeRMpLcTgEzLa" /><span>NEW</span></a>
               <!--BOX END -->
               <!--BOX START -->
