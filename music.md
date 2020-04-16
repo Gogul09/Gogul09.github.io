@@ -27,13 +27,13 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
               <a href="https://www.youtube.com/watch?v=qIYq5jvL1T8" target="_blank"><img src="https://drive.google.com/uc?id=1I0MOi9YlgaJcFJYDtQkM5ZMbM8tfXsuk" /><span>NEW</span></a>
               <!--BOX END -->
               <!--BOX START -->
-              <a href="https://www.youtube.com/watch?v=DdEnnRKuyU8" target="_blank"><img src="https://drive.google.com/uc?id=1ForoXZJDTuTSsJf97rsuVH_kkBO0E2L8" /><span></span></a>
+              <a href="https://www.youtube.com/watch?v=DdEnnRKuyU8" target="_blank"><img src="https://drive.google.com/uc?id=1ForoXZJDTuTSsJf97rsuVH_kkBO0E2L8" /></a>
               <!--BOX END -->
               <!--BOX START -->
-              <a href="https://www.youtube.com/watch?v=j_kTyuwN2e4" target="_blank"><img src="https://drive.google.com/uc?id=1gUsHLlD_0iOwRXWHcPAmeRMpLcTgEzLa" /><span></span></a>
+              <a href="https://www.youtube.com/watch?v=j_kTyuwN2e4" target="_blank"><img src="https://drive.google.com/uc?id=1gUsHLlD_0iOwRXWHcPAmeRMpLcTgEzLa" /></a>
               <!--BOX END -->
               <!--BOX START -->
-              <a href="https://www.youtube.com/watch?v=PnL1GW7-b3A" target="_blank"><img src="https://drive.google.com/uc?id=1LLemlwZVYQLytcIJ-w7Yg92Wj3hnhIny" /><span></span></a>
+              <a href="https://www.youtube.com/watch?v=PnL1GW7-b3A" target="_blank"><img src="https://drive.google.com/uc?id=1LLemlwZVYQLytcIJ-w7Yg92Wj3hnhIny" /></a>
               <!--BOX END -->
               <!--BOX START -->
               <a href="https://www.youtube.com/watch?v=iH6lic8HhP8" target="_blank"><img src="https://drive.google.com/uc?id=1k6WiZhKFboKL-pTDwGy0LukF8nBpgVli" /></a>

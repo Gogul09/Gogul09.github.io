@@ -1413,7 +1413,7 @@ nav a:active {
     flex: 1;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: flex-end
+    justify-content: center;
 }
 
 @media screen and (max-width: 640px) {
@@ -1589,7 +1589,7 @@ nav a:active {
     flex: 1;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: flex-end
+    justify-content: center;
 }
 
 @media screen and (max-width: 640px) {

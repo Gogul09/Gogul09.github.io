@@ -40,7 +40,7 @@ nav {
   flex: 1;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-end;
+  justify-content: center;
   @include mobile {
     flex: initial;
     width: 100%;
