@@ -9032,10 +9032,11 @@ del {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: yellow;
+  background-color: #cf393a;
   padding: 5px;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: bold;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
