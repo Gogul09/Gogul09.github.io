@@ -24,7 +24,10 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
         <div class="music-box">
           <div class="music-video-container">
               <!--BOX START -->
-              <a href="https://www.youtube.com/watch?v=SVpm2zclBEQ" target="_blank"><img src="https://drive.google.com/uc?id=1HRx3KGZb1sdslowq71n3n8i-sg98C1hq" /><span>NEW</span></a>
+              <a href="https://www.youtube.com/watch?v=ybtsqm7xwZI" target="_blank"><img src="https://drive.google.com/uc?id=1IP46-rLSKyOtQM4R50nu_Ff1Y6uDBgMA" /><span>NEW</span></a>
+              <!--BOX END -->
+              <!--BOX START -->
+              <a href="https://www.youtube.com/watch?v=a-0Ym2WqliM" target="_blank"><img src="https://drive.google.com/uc?id=1tUfjMOWEphiaALwzNiceT4zSRoQA-JH8" /><span>NEW</span></a>
               <!--BOX END -->
               <!--BOX START -->
               <a href="https://www.youtube.com/watch?v=SVpm2zclBEQ" target="_blank"><img src="https://drive.google.com/uc?id=1k6F4w7kWbtJO_N6RmMPjnyyIRqaQtjcE" /></a>
