@@ -24,10 +24,16 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
         <div class="music-box">
           <div class="music-video-container">
               <!--BOX START -->
-              <a href="https://www.youtube.com/watch?v=ybtsqm7xwZI" target="_blank"><img src="https://drive.google.com/uc?id=1IP46-rLSKyOtQM4R50nu_Ff1Y6uDBgMA" /><span>NEW</span></a>
+              <a href="https://www.youtube.com/watch?v=dqe71SPGgtU" target="_blank"><img src="https://drive.google.com/uc?id=1kzG5AiMe0a2cWdaRbcqQ5_Q0mGZ4MBwk" /><span>NEW</span></a>
               <!--BOX END -->
               <!--BOX START -->
-              <a href="https://www.youtube.com/watch?v=a-0Ym2WqliM" target="_blank"><img src="https://drive.google.com/uc?id=1tUfjMOWEphiaALwzNiceT4zSRoQA-JH8" /><span>NEW</span></a>
+              <a href="https://www.youtube.com/watch?v=fzqjGTbBVmU" target="_blank"><img src="https://drive.google.com/uc?id=1BIyquE5OtLNjZ9CaefvSA8AF4TbhB2pN" /><span>NEW</span></a>
+              <!--BOX END -->
+              <!--BOX START -->
+              <a href="https://www.youtube.com/watch?v=ybtsqm7xwZI" target="_blank"><img src="https://drive.google.com/uc?id=1IP46-rLSKyOtQM4R50nu_Ff1Y6uDBgMA" /></a>
+              <!--BOX END -->
+              <!--BOX START -->
+              <a href="https://www.youtube.com/watch?v=a-0Ym2WqliM" target="_blank"><img src="https://drive.google.com/uc?id=1tUfjMOWEphiaALwzNiceT4zSRoQA-JH8" /></a>
               <!--BOX END -->
               <!--BOX START -->
               <a href="https://www.youtube.com/watch?v=SVpm2zclBEQ" target="_blank"><img src="https://drive.google.com/uc?id=1k6F4w7kWbtJO_N6RmMPjnyyIRqaQtjcE" /></a>

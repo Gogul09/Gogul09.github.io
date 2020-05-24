@@ -9039,4 +9039,12 @@ del {
   color: white;
 }
 
+.music-video-container img {
+    filter: grayscale(1);
+}
+
+.music-video-container img:hover {
+    filter: grayscale(0);
+}
+
 /*# sourceMappingURL=style.css.map */
