@@ -8081,6 +8081,7 @@ del {
 
 .music-containing-wrapper {
     background-color: #202020 !important;
+    overflow: hidden;
 }
 
 .music-box-wrapper {
@@ -9045,6 +9046,29 @@ del {
 
 .music-video-container img:hover {
     filter: grayscale(0);
+}
+
+.music-latest-container {
+    padding: 25px;
+    margin-top: -20px;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    height: 480px;
+}
+
+.music-latest-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 640px) { 
+    .music-latest-container {
+        height: 250px;
+    }
 }
 
 /*# sourceMappingURL=style.css.map */

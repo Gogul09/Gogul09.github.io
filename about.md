@@ -79,7 +79,6 @@ permalink: /
             <li>It gives me a chance to share my knowledge with the world where it might help someone somewhere.</li>
           </ul>
           <p>I love music and you can hear my contributions <a href="https://gogul09.github.io/music" target="_blank">here</a>.</p>
-          <div class="cycling"><iframe height='160' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/32217640/activity-summary/70039de5f5b9ab52000f891863a2eac18394b88d'></iframe></div>
           <div class="highlight-box">
             <p>In case you're wondering, this site </p>
             <ul style="margin: 0px !important;">
