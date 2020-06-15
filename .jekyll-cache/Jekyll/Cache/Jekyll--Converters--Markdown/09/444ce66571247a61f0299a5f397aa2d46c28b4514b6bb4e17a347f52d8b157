@@ -1,22 +1,11 @@
----
-layout: music-default
-heading: Music
-title: Music
-subheading: my journey as a music producer
-description: You can find all my music that I composed/programmed/arranged/mixed/sung/penned at my home recording studio in this page. Kindly share with your family and friends if you like my music.
-color: grad-music
-permalink: /music
-image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
----
-
-<div class="music-top-container">
+I"�%<div class="music-top-container">
   <div class="music-intro-wrapper">
     <p><b>Music</b></p>
     <p>Checkout my latest music video 👇🏻</p>
     <div class="music-latest-container">
       <a href="https://www.youtube.com/watch?v=eyP0_CR0lVo" target="_blank"><img src="https://drive.google.com/uc?id=1-GLpdrXyeowLu7TTmQzUwNcdaqnySb25" /></a>
     </div>
-    <p>Please subscribe to my channel 😍</p>
+    <p>Checkout my latest music video 👇🏻</p>
     <script src="https://apis.google.com/js/platform.js"></script>
     <div class="youtube-cover"><div class="g-ytsubscribe" data-channelid="UCP_3K5AYFZpH_EzF2rIs1LQ" data-layout="default" data-count="default"></div></div>
   </div>
@@ -151,3 +140,4 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
     </div>
   </div>
 </div>
+:ET

@@ -2906,7 +2906,7 @@ del {
 }
 
 .music-top-container {
-  background: #cf393a;
+  background: #5c4abf;
   box-shadow: 0 8px 6px -6px #e9e9e9;
 }
 
@@ -2915,7 +2915,7 @@ del {
   max-width: 800px;
   margin: 0 auto;
   padding-bottom: 60px;
-  background: #cf393a;
+  background: #5c4abf;
   @include mobile {
     width: 100%;
     padding-bottom: 30px;
@@ -2929,7 +2929,6 @@ del {
   text-align: center;
   @include mobile {
     font-size: 13px;
-    text-align: left;
   }
 }
 
@@ -2998,7 +2997,8 @@ del {
   display: table;
   @include mobile {
     margin: 0px;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -3426,12 +3426,12 @@ del {
 }
 
 .highlight-box p {
-  font-family: $font_header;
+  font-family: $font_body;
   color: white;
 }
 
 .highlight-box ul {
-  font-family: $font_header;
+  font-family: $font_body;
   color: white;
 }
 
@@ -3645,6 +3645,7 @@ del {
     overflow: hidden;
     width: 100%;
     height: 480px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     @include mobile {
       height: 250px;
     }
@@ -3656,4 +3657,8 @@ del {
     object-fit: contain;
     border-radius: 15px;
     overflow: hidden;
+}
+
+.music-latest-container:hover {
+    transform: scale(1.1);
 }

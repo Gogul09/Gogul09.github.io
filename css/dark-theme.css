@@ -624,7 +624,7 @@ th {
     background: #1e1e1e;
     color: #fbfbfb;
     font-weight: bold;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     border: 1px solid #dbdbdb;
     text-align: center;
     padding: 10px
@@ -682,7 +682,7 @@ html {
 
 body {
     background-color: #202020;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #333;
     opacity: 1;
     transition: 0.1s opacity
@@ -720,7 +720,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Quicksand", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-weight: bold;
     margin-top: 1em;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.63);
@@ -916,7 +916,7 @@ img {
 
 select {
     padding: 5px;
-    font-family: Roboto;
+    font-family: Poppins;
     margin-top: 10px;
     border: 1px solid #e3e3e3;
     border-radius: 5px
@@ -1222,7 +1222,7 @@ select:focus {
     margin: 0px !important;
     cursor: pointer;
     color: #b3b9c5;
-    font-family: "Quicksand";
+    font-family: "Manrope";
     font-weight: bold
 }
 
@@ -1257,7 +1257,7 @@ select:focus {
     cursor: pointer;
     font-weight: bold;
     color: #000 !important;
-    font-family: "Quicksand", sans-serif
+    font-family: "Manrope", sans-serif
 }
 
 @media screen and (max-width: 640px) {
@@ -1364,7 +1364,7 @@ select:focus {
 }
 
 nav {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 13px;
     text-align: center;
     padding-bottom: 20px;
@@ -1388,7 +1388,7 @@ nav a {
     text-align: right;
     font-weight: 100;
     letter-spacing: 1px;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     text-transform: uppercase
 }
 
@@ -1542,7 +1542,7 @@ nav a:active {
 }
 
 nav {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 13px;
     text-align: center;
     padding-bottom: 20px;
@@ -1804,7 +1804,7 @@ nav a:active {
     background-color: #fc0;
     color: black;
     border-radius: 5px;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: bold;
     padding: 5px 10px;
     cursor: pointer;
@@ -1975,7 +1975,7 @@ nav a:active {
     height: 30px;
     color: black;
     display: block;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: bold;
     padding: 5px 10px;
     cursor: pointer;
@@ -2087,7 +2087,7 @@ nav a:active {
     padding: 0px;
     font-size: 20px;
     color: #d3131c;
-    font-family: "Quicksand";
+    font-family: "Manrope";
     background-color: #181818;
     padding: 5px;
     width: 25%;
@@ -2215,7 +2215,7 @@ nav a:active {
     display: block;
     color: lightgrey;
     font-size: 13px;
-    font-family: "Roboto", sans-serif
+    font-family: "Poppins", sans-serif
 }
 
 @media screen and (max-width: 640px) {
@@ -2331,7 +2331,7 @@ nav a:active {
     background-color: #d4141d;
     color: white;
     font-size: 15px;
-    font-family: Roboto;
+    font-family: Poppins;
     font-weight: bold;
     margin: 0 20px;
     cursor: pointer;
@@ -2667,7 +2667,7 @@ html {
 }
 
 .deepdrum-control-box .range-field {
-    font-family: "Roboto", sans-serif !important
+    font-family: "Poppins", sans-serif !important
 }
 
 .deepdrum-top-control-box {
@@ -2701,7 +2701,7 @@ html {
 }
 
 .deepdrum-top-control-box .range-field {
-    font-family: "Roboto", sans-serif !important
+    font-family: "Poppins", sans-serif !important
 }
 
 .deepdrum-playback {
@@ -3621,7 +3621,7 @@ html {
     font-size: 10px;
     width: 20px;
     height: 20px;
-    font-family: Roboto;
+    font-family: Poppins;
     color: black;
     border: none;
     background-color: #f62e2e;
@@ -3675,7 +3675,7 @@ html {
     color: #ffffff;
     flex: 1;
     text-align: left;
-    font-family: "Roboto"
+    font-family: "Poppins"
 }
 
 .text-settings-value {
@@ -3865,7 +3865,7 @@ img.avengers-logo {
     margin: 0 !important;
     font-size: 2em;
     color: #000;
-    font-family: 'Roboto', sans-serif
+    font-family: 'Poppins', sans-serif
 }
 
 @media screen and (max-width: 640px) {
@@ -3957,7 +3957,7 @@ img.avengers-logo {
     padding: 10px;
     box-shadow: -1px 3px 4px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     line-height: 1.5;
     max-width: 300px;
     font-size: 12px;
@@ -4024,7 +4024,7 @@ img.avengers-logo {
     text-transform: uppercase;
     line-height: 1;
     letter-spacing: 1px;
-    font-family: "Quicksand";
+    font-family: "Manrope";
 }
 
 .about-container {
@@ -4040,12 +4040,13 @@ img.avengers-logo {
 }
 
 .about-wrapper {
-    width: 60% !important
+    max-width: 800px;
 }
 
 @media screen and (max-width: 640px) {
     .about-wrapper {
-        width: 100% !important
+        max-width: 100% !important;
+        width: 100% !important;
     }
 }
 
@@ -4104,7 +4105,7 @@ img.avengers-logo {
 }
 
 .timeline b {
-    font-family: "Quicksand", sans-serif;
+    font-family: "Manrope", sans-serif;
     color: #ffffff !important;
 }
 
@@ -4196,7 +4197,7 @@ img.avengers-logo {
     padding-bottom: 15px !important;
     padding-top: 15px !important;
     font-size: 17px !important;
-    font-family: "Roboto" !important
+    font-family: "Poppins" !important
 }
 
 @media screen and (max-width: 640px) {
@@ -4341,7 +4342,7 @@ img.avengers-logo {
     background-position-y: 4px;
     background-position-x: 8px;
     padding-left: 35px;
-    font-family: "Quicksand";
+    font-family: "Manrope";
     font-weight: bold;
     font-size: 14px
 }
@@ -4357,7 +4358,7 @@ img.avengers-logo {
         background-position-y: 4px;
         background-position-x: 4px;
         padding-left: 28px;
-        font-family: "Quicksand";
+        font-family: "Manrope";
         font-weight: bold;
         font-size: 14px;
         margin: 0 5px
@@ -4590,7 +4591,7 @@ img.avengers-logo {
     text-align: center;
     word-wrap: break-word;
     line-height: 1.3em;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Manrope", sans-serif;
     padding: 10px 10px 0px 0px;
     margin: 0px auto;
     font-weight: bold;
@@ -4630,7 +4631,7 @@ img.avengers-logo {
 
 .post-subheading p {
     color: #ffffff80;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 12px;
     margin-bottom: 0px !important
 }
@@ -4657,7 +4658,7 @@ img.avengers-logo {
     text-align: center;
     color: #adadad;
     font-weight: 100;
-    font-family: "Roboto";
+    font-family: "Poppins";
     font-size: 15px;
 }
 
@@ -4862,7 +4863,7 @@ img.avengers-logo {
 
 .resources p b {
     color: #222222;
-    font-family: "Roboto", sans-serif
+    font-family: "Poppins", sans-serif
 }
 
 .clearfix:before,
@@ -5084,7 +5085,7 @@ blockquote p {
     font-weight: 300;
     background-color: #0e0e0e;
     font-style: normal !important;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     padding: 30px;
     color: #fed356 !important;
@@ -5105,7 +5106,7 @@ blockquote p:active {
 }
 
 .twitter_font {
-    font-family: "Roboto", sans-serif !important
+    font-family: "Poppins", sans-serif !important
 }
 
 .wrapper-footer {
@@ -5815,7 +5816,7 @@ figcaption {
 .work-inner-box h4 {
     margin: 0px;
     color: #dddddd;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Manrope", sans-serif;
     line-height: 1.2;
     font-size: 18px;
     font-weight: 100;
@@ -5911,7 +5912,7 @@ figcaption {
     text-align: center;
     padding: 0 15px;
     cursor: pointer;
-    font-family: "Quicksand";
+    font-family: "Manrope";
     transition: color .28s ease, background-color .28s ease
 }
 
@@ -6015,7 +6016,7 @@ figcaption {
 }
 
 .category-box h3 {
-    font-family: "Quicksand", sans-serif;
+    font-family: "Manrope", sans-serif;
     text-align: left;
     font-size: 14px !important;
     padding: 0px 25px;
@@ -6030,7 +6031,7 @@ figcaption {
 }
 
 .category-box p {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     text-align: left;
     font-size: 12px !important;
     padding: 0px 25px !important;
@@ -6141,7 +6142,7 @@ figcaption {
     margin-top: 0px;
     color: black !important;
     font-weight: bold;
-    font-family: "Roboto"
+    font-family: "Poppins"
 }
 
 .interest-cover div {
@@ -6184,7 +6185,7 @@ figcaption {
     text-shadow: 0 1px 0 #fff;
     color: #333;
     font-weight: 700;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Manrope", sans-serif;
     text-align: center;
     position: relative
 }
@@ -6579,7 +6580,7 @@ figcaption {
     margin: 0px auto;
     width: 90%;
     color: #333;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 27px
 }
 
@@ -6693,7 +6694,7 @@ figcaption {
     text-align: center;
     margin-right: 20px;
     cursor: pointer;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     overflow: hidden;
     box-shadow: 1px 1px 4px black
 }
@@ -6715,7 +6716,7 @@ figcaption {
     text-shadow: none;
     line-height: 35px;
     margin: 0px !important;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-weight: 200
 }
 
@@ -6836,7 +6837,7 @@ figure {
 .work-box li b {
     font-weight: bolder;
     font-size: 14px;
-    font-family: "Quicksand", sans-serif
+    font-family: "Manrope", sans-serif
 }
 
 .portfolio {
@@ -6885,7 +6886,7 @@ figure {
     background-color: #fbfbfb;
     text-align: left;
     font-size: 11px;
-    font-family: "Roboto", sans-serif
+    font-family: "Poppins", sans-serif
 }
 
 .portfolio p {
@@ -6913,7 +6914,7 @@ figure {
     font-size: 17px;
     padding: 0px;
     margin: 0px;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: white !important;
     margin-bottom: 20px;
     border: none !important;
@@ -7574,7 +7575,7 @@ code {
 .para-heading {
     margin-bottom: 0px !important;
     font-weight: bold;
-    font-family: "Quicksand"
+    font-family: "Manrope"
 }
 
 .centered-heading {
@@ -7720,7 +7721,7 @@ input:checked+.slider:before {
 
 .rule-box p {
     text-align: center;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Manrope", sans-serif;
     color: white !important;
     margin-bottom: 0px !important
 }
@@ -7876,7 +7877,7 @@ input:checked+.slider:before {
 }
 
 .downloads a {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: black !important;
     text-decoration: none !important;
     margin-left: 25px
@@ -8137,7 +8138,7 @@ del {
 }
 
 .music-top-container {
-  background: #cf393a;
+  background: #5c4abf;
 }
 
 .music-intro-wrapper {
@@ -8145,7 +8146,7 @@ del {
   max-width: 800px;
   margin: 0 auto;
   padding-bottom: 60px;
-  background: #cf393a;
+  background: #5c4abf;
 }
 
 @media screen and (max-width: 640px) {
@@ -8165,7 +8166,6 @@ del {
 @media screen and (max-width: 640px) {
     .music-intro-wrapper p {
         font-size: 13px;
-        text-align: left;
     }
 }
 
@@ -8249,7 +8249,8 @@ del {
 @media screen and (max-width: 640px) {
     .youtube-cover {
         margin: 0px;
-        justify-content: flex-start;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -8691,7 +8692,7 @@ del {
 .obj-container h3 {
     position: relative;
     font-size: 13px;
-    font-family: Quicksand;
+    font-family: Manrope;
     font-weight: 100;
     margin-left: 0px !important;
     margin-right: 0px !important;
@@ -8707,7 +8708,7 @@ del {
 
 .obj-container ul {
     color: #9a9a9a;
-    font-family: "Roboto";
+    font-family: "Poppins";
     padding: 0px 45px;
     font-weight: 100;
     font-size: 13px;
@@ -8716,7 +8717,7 @@ del {
 
 .obj-container p {
     color: #9a9a9a;
-    font-family: "Roboto";
+    font-family: "Poppins";
     padding: 10px 20px;
     font-weight: 100;
     font-size: 13px;
@@ -8749,11 +8750,11 @@ del {
 
 .highlight-box p {
     color: white;
-    font-family: "Quicksand", sans-serif
+    font-family: "Poppins", sans-serif
 }
 
 .highlight-box ul {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: white;
 }
 
@@ -9055,6 +9056,7 @@ del {
     overflow: hidden;
     width: 100%;
     height: 480px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .music-latest-container img {
@@ -9069,6 +9071,10 @@ del {
     .music-latest-container {
         height: 250px;
     }
+}
+
+.music-latest-container:hover {
+    transform: scale(1.1);
 }
 
 /*# sourceMappingURL=style.css.map */
