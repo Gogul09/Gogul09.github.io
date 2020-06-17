@@ -3927,14 +3927,21 @@ img.avengers-logo {
     }
 }
 
-.profile-pic img {
+.profile-pic div {
     height: 140px;
-    border-radius: 50%
+    border-radius: 50%;
+    width: 140px !important;
+    background-size: 189px;
+    background-position: -15px -1px;
 }
 
 @media screen and (max-width: 640px) {
-    .profile-pic img {
-        height: 90px
+    .profile-pic div {
+        height: 90px;
+        width: 90px !important;
+        background-size: 125px;
+        background-repeat: no-repeat;
+        background-position: -11px -1px;
     }
 }
 
@@ -5884,7 +5891,7 @@ figcaption {
     margin: 0px !important;
     overflow-x: auto;
     width: 100%;
-    height: 48px;
+    height: 60px;
     overflow-y: hidden;
     white-space: nowrap;
     border-radius: 5px
@@ -6995,7 +7002,7 @@ figure {
 .blog-intro p {
     width: 50%;
     margin: 0px auto;
-    color: #b3b9c5 !important;
+    color: #afafaf !important;
     text-align: center;
     margin-bottom: 10px !important;
     font-size: 15px
@@ -8241,6 +8248,13 @@ del {
   margin: 20px 0;
 }
 
+@media screen and (max-width: 640px) {
+    .music-top-container .youtube-cover {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 .youtube-cover {
   margin: auto;
   display: table;
@@ -8249,8 +8263,6 @@ del {
 @media screen and (max-width: 640px) {
     .youtube-cover {
         margin: 0px;
-        display: flex;
-        justify-content: center;
     }
 }
 
@@ -8739,8 +8751,8 @@ del {
 
 @media screen and (max-width: 640px) {
     .highlight-box {
-        padding: 20px 40px;
-        padding-bottom: 20px;
+        padding: 20px 15px;
+        padding-bottom: 30px;
         margin-left: -15px;
         margin-right: -15px;
         border-radius: 0px;

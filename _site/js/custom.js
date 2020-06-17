@@ -153,7 +153,7 @@ function showAboutTabBox(id) {
 
   box.style.display = "block";
   tab.style.fontWeight = "bold";
-  tab.style.borderBottom = "1px solid black";
+  tab.style.borderBottom = "2px solid #000";
 }
 
 var modalBool = 0;

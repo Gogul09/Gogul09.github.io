@@ -97,11 +97,18 @@
 	}
 }
 
-.profile-pic img {
-	height: 140px;
-	border-radius: 50%;
+.profile-pic div {
+    height: 140px;
+    border-radius: 50%;
+    width: 140px !important;
+    background-size: 189px;
+    background-position: -15px -1px;
 	@include mobile {
-		height: 90px;
+		    height: 90px;
+		    width: 90px !important;
+		    background-size: 125px;
+		    background-repeat: no-repeat;
+		    background-position: -11px -1px;
 	}
 }
 

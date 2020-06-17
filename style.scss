@@ -917,7 +917,7 @@ figcaption {
     margin: 0px !important;
     overflow-x: auto;
     width: 100%;
-    height: 48px;
+    height: 60px;
     overflow-y: hidden;
     white-space: nowrap;
     border-radius: 5px;
@@ -1885,7 +1885,7 @@ figure {
   p {
     width: 50%;
     margin: 0px auto;
-    color: $black !important;
+    color: #5f6368 !important;
     text-align: center;
     margin-bottom: 10px !important;
     font-size: 15px;
@@ -2997,8 +2997,13 @@ del {
   display: table;
   @include mobile {
     margin: 0px;
-    display: flex;
-    justify-content: center;
+  }
+}
+
+.music-top-container .youtube-cover {
+  @include mobile {
+        display: flex;
+        justify-content: center;
   }
 }
 
@@ -3416,8 +3421,8 @@ del {
   border-radius: 10px;
   background: radial-gradient(circle at 20% 20%,#5183f5 25%,#4640ff 100%);
   @include mobile {
-    padding: 20px 40px;
-    padding-bottom: 20px;
+    padding: 20px 15px;
+    padding-bottom: 30px;
     border-radius: 0px;
     box-shadow: none;
     margin-left: -15px;
