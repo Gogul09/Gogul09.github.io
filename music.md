@@ -14,7 +14,7 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
     <p><b>Music</b></p>
     <p>Checkout my latest music video 👇🏻</p>
     <div class="music-latest-container">
-      <a href="https://www.youtube.com/watch?v=rOFWDk14x20" target="_blank"><img src="https://drive.google.com/uc?id=19lZ1DJkDmMIWJ_70hRbZEGAYNhP4ptxe" /></a>
+      <a href="https://www.youtube.com/watch?v=K70ndcnL9X8" target="_blank"><img src="https://drive.google.com/uc?id=1noPrsT6NIMbjAPtDbkkOc1jVDxqXGaiA" /></a>
     </div>
     <p>Please subscribe to my channel 😍</p>
     <script src="https://apis.google.com/js/platform.js"></script>
@@ -27,6 +27,9 @@ image: https://drive.google.com/uc?id=1pg7R9OxRIWv6saDOjoPpgl9nMRB5F-Yd
     <div class="home-wrapper music-wrapper">
         <div class="music-box">
           <div class="music-video-container">
+              <!--BOX START -->
+              <a href="https://www.youtube.com/watch?v=rOFWDk14x20" target="_blank"><img src="https://drive.google.com/uc?id=19lZ1DJkDmMIWJ_70hRbZEGAYNhP4ptxe" /></a>
+              <!--BOX END -->
               <!--BOX START -->
               <a href="https://www.youtube.com/watch?v=qZ4ET8O2HB0" target="_blank"><img src="https://drive.google.com/uc?id=1yQWIgV2dcHgIQtDUFst8gboAtpewjBco" /></a>
               <!--BOX END -->
