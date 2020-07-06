@@ -76,7 +76,7 @@ permalink: /
             <li>It provides me a chance to organize my technical interests so that I can refer to it later.</li>
             <li>It gives me a chance to share my knowledge with the world where it might help someone somewhere.</li>
           </ul>
-          <p>I love music and you can hear my contributions <a href="https://gogul09.github.io/music" target="_blank">here</a>.</p>
+          <p>I love music and you can hear my contributions <a href="https://www.youtube.com/c/GogulIlangoMusic" target="_blank">here</a>.</p>
           <div class="highlight-box">
             <p>In case you're wondering, this site </p>
             <ul style="margin: 0px !important;">
