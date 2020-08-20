@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="https://drive.google.com/uc?id=1oZN0tSeBA91_XlyCmsOfLbJLeQ2_7wMi">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Logistic Regression with a Neural Network mindset using NumPy and Python | Gogul Ilango</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Logistic Regression with a Neural Network mindset using NumPy and Python" />
 <meta name="author" content="Gogul Ilango" />
 <meta property="og:locale" content="en_US" />
@@ -40,7 +40,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-12-23T00:00:00+05:30" />
 <script type="application/ld+json">
-{"headline":"Logistic Regression with a Neural Network mindset using NumPy and Python","url":"http://localhost:4000/software/neural-nets-logistic-regression","datePublished":"2017-12-23T00:00:00+05:30","dateModified":"2017-12-23T00:00:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/neural-nets-logistic-regression"},"image":"https://drive.google.com/uc?id=1oZN0tSeBA91_XlyCmsOfLbJLeQ2_7wMi","author":{"@type":"Person","name":"Gogul Ilango"},"description":"Build a binary classifier logistic regression model with a neural network mindset using numpy and python.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"dateModified":"2017-12-23T00:00:00+05:30","datePublished":"2017-12-23T00:00:00+05:30","url":"http://localhost:4000/software/neural-nets-logistic-regression","headline":"Logistic Regression with a Neural Network mindset using NumPy and Python","image":"https://drive.google.com/uc?id=1oZN0tSeBA91_XlyCmsOfLbJLeQ2_7wMi","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/neural-nets-logistic-regression"},"author":{"@type":"Person","name":"Gogul Ilango"},"description":"Build a binary classifier logistic regression model with a neural network mindset using numpy and python.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -160,7 +160,7 @@
 </blockquote>
 
 <div class="code-head">Objectives<span>goals</span></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -240,27 +240,27 @@ How to use just one for-loop to train a logistic regression model?
 <span class="o">|--|--</span><span class="n">dataset</span>
 <span class="o">|--|--|--</span><span class="n">train</span>
 <span class="o">|--|--|--|--</span><span class="n">airplane</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_1</span><span class="o">.</span><span class="n">jpg</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_2</span><span class="o">.</span><span class="n">jpg</span>
-<span class="o">|--|--|--|--|--....</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_750</span><span class="o">.</span><span class="n">jpg</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_1</span><span class="p">.</span><span class="n">jpg</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_2</span><span class="p">.</span><span class="n">jpg</span>
+<span class="o">|--|--|--|--|--</span><span class="p">....</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_750</span><span class="p">.</span><span class="n">jpg</span>
 <span class="o">|--|--|--|--</span><span class="n">bike</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_1</span><span class="o">.</span><span class="n">jpg</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_2</span><span class="o">.</span><span class="n">jpg</span>
-<span class="o">|--|--|--|--|--....</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_750</span><span class="o">.</span><span class="n">jpg</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_1</span><span class="p">.</span><span class="n">jpg</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_2</span><span class="p">.</span><span class="n">jpg</span>
+<span class="o">|--|--|--|--|--</span><span class="p">....</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_750</span><span class="p">.</span><span class="n">jpg</span>
 <span class="o">|--|--|--</span><span class="n">test</span>
 <span class="o">|--|--|--|--</span><span class="n">airplane</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_1</span><span class="o">.</span><span class="n">jpg</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_2</span><span class="o">.</span><span class="n">jpg</span>
-<span class="o">|--|--|--|--|--....</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_50</span><span class="o">.</span><span class="n">jpg</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_1</span><span class="p">.</span><span class="n">jpg</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_2</span><span class="p">.</span><span class="n">jpg</span>
+<span class="o">|--|--|--|--|--</span><span class="p">....</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_50</span><span class="p">.</span><span class="n">jpg</span>
 <span class="o">|--|--|--|--</span><span class="n">bike</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_1</span><span class="o">.</span><span class="n">jpg</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_2</span><span class="o">.</span><span class="n">jpg</span>
-<span class="o">|--|--|--|--|--....</span>
-<span class="o">|--|--|--|--|--</span><span class="n">image_50</span><span class="o">.</span><span class="n">jpg</span>
-<span class="o">|--|--</span><span class="n">train</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_1</span><span class="p">.</span><span class="n">jpg</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_2</span><span class="p">.</span><span class="n">jpg</span>
+<span class="o">|--|--|--|--|--</span><span class="p">....</span>
+<span class="o">|--|--|--|--|--</span><span class="n">image_50</span><span class="p">.</span><span class="n">jpg</span>
+<span class="o">|--|--</span><span class="n">train</span><span class="p">.</span><span class="n">py</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Inside the train folder, you need to create two sub-folders namely <span class="coding">airplane</span> and <span class="coding">bike</span>. You have to manually copy 750 images from <span class="coding">airplane</span> folder in “CALTECH-101” dataset to our <span class="coding">airplane</span> folder. Similarly, you have to manually copy 750 images from <span class="coding">motorbikes</span> folder in “CALTECH-101” dataset to our <span class="coding">bike</span> folder.</p>
@@ -412,8 +412,8 @@ How to use just one for-loop to train a logistic regression model?
 #------------------------
 </span><span class="n">train_path</span>   <span class="o">=</span> <span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">machine-intelligence</span><span class="se">\\</span><span class="s">deep-learning</span><span class="se">\\</span><span class="s">logistic-regression</span><span class="se">\\</span><span class="s">dataset</span><span class="se">\\</span><span class="s">train"</span>
 <span class="n">test_path</span>    <span class="o">=</span> <span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">machine-intelligence</span><span class="se">\\</span><span class="s">deep-learning</span><span class="se">\\</span><span class="s">logistic-regression</span><span class="se">\\</span><span class="s">dataset</span><span class="se">\\</span><span class="s">test"</span>
-<span class="n">train_labels</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
-<span class="n">test_labels</span>  <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">test_path</span><span class="p">)</span> 
+<span class="n">train_labels</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
+<span class="n">test_labels</span>  <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">test_path</span><span class="p">)</span> 
 
 <span class="c1"># tunable parameters
 </span><span class="n">image_size</span>       <span class="o">=</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
@@ -425,10 +425,10 @@ How to use just one for-loop to train a logistic regression model?
 # train_y dimension = {1, 1500}
 # test_x dimension  = {(64*64*3), 100}
 # test_y dimension  = {1, 100}
-</span><span class="n">train_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="n">image_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">image_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">num_channels</span><span class="p">),</span> <span class="n">num_train_images</span><span class="p">))</span>
-<span class="n">train_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_train_images</span><span class="p">))</span>
-<span class="n">test_x</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(((</span><span class="n">image_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">image_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">num_channels</span><span class="p">),</span> <span class="n">num_test_images</span><span class="p">))</span>
-<span class="n">test_y</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_test_images</span><span class="p">))</span>
+</span><span class="n">train_x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(((</span><span class="n">image_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">image_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">num_channels</span><span class="p">),</span> <span class="n">num_train_images</span><span class="p">))</span>
+<span class="n">train_y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_train_images</span><span class="p">))</span>
+<span class="n">test_x</span>  <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(((</span><span class="n">image_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">image_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">num_channels</span><span class="p">),</span> <span class="n">num_test_images</span><span class="p">))</span>
+<span class="n">test_y</span>  <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_test_images</span><span class="p">))</span>
 
 <span class="c1">#----------------
 # TRAIN dataset
@@ -437,11 +437,11 @@ How to use just one for-loop to train a logistic regression model?
 <span class="n">num_label</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_labels</span><span class="p">):</span>
 	<span class="n">cur_path</span> <span class="o">=</span> <span class="n">train_path</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">"</span> <span class="o">+</span> <span class="n">label</span>
-	<span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
-		<span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="n">image_size</span><span class="p">)</span>
-		<span class="n">x</span>   <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-		<span class="n">x</span>   <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-		<span class="n">x</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
+		<span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="n">image_size</span><span class="p">)</span>
+		<span class="n">x</span>   <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+		<span class="n">x</span>   <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">flatten</span><span class="p">()</span>
+		<span class="n">x</span>   <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 		<span class="n">train_x</span><span class="p">[:,</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
 		<span class="n">train_y</span><span class="p">[:,</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_label</span>
 		<span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -454,11 +454,11 @@ How to use just one for-loop to train a logistic regression model?
 <span class="n">num_label</span> <span class="o">=</span> <span class="mi">0</span> 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">test_labels</span><span class="p">):</span>
 	<span class="n">cur_path</span> <span class="o">=</span> <span class="n">test_path</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">"</span> <span class="o">+</span> <span class="n">label</span>
-	<span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
-		<span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="n">image_size</span><span class="p">)</span>
-		<span class="n">x</span>   <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-		<span class="n">x</span>   <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-		<span class="n">x</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
+		<span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="n">image_size</span><span class="p">)</span>
+		<span class="n">x</span>   <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+		<span class="n">x</span>   <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">flatten</span><span class="p">()</span>
+		<span class="n">x</span>   <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 		<span class="n">test_x</span><span class="p">[:,</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
 		<span class="n">test_y</span><span class="p">[:,</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_label</span>
 		<span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -471,24 +471,24 @@ How to use just one for-loop to train a logistic regression model?
 <span class="n">test_x</span>  <span class="o">=</span> <span class="n">test_x</span><span class="o">/</span><span class="mf">255.</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"train_labels : "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">train_labels</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"train_x shape: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">train_x</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"train_y shape: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">train_y</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"test_x shape : "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">test_x</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"test_y shape : "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">test_y</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"train_x shape: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">train_x</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"train_y shape: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">train_y</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"test_x shape : "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">test_x</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"test_y shape : "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">test_y</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
 
 <span class="c1">#-----------------
 # save using h5py
 #-----------------
-</span><span class="n">h5_train</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s">"train_x.h5"</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
-<span class="n">h5_train</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">"data_train"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_x</span><span class="p">))</span>
-<span class="n">h5_train</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class="n">h5_train</span> <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="n">File</span><span class="p">(</span><span class="s">"train_x.h5"</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+<span class="n">h5_train</span><span class="p">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">"data_train"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_x</span><span class="p">))</span>
+<span class="n">h5_train</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="n">h5_test</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s">"test_x.h5"</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
-<span class="n">h5_test</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">"data_test"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_x</span><span class="p">))</span>
-<span class="n">h5_test</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">h5_test</span> <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="n">File</span><span class="p">(</span><span class="s">"test_x.h5"</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+<span class="n">h5_test</span><span class="p">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">"data_test"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_x</span><span class="p">))</span>
+<span class="n">h5_test</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -656,7 +656,7 @@ $$
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
-	<span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)))</span>
+	<span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h5 id="2-init_params">2. <span class="coding">init_params()</span></h5>
@@ -672,7 +672,7 @@ $$
 3
 4
 </pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">init_params</span><span class="p">(</span><span class="n">dimension</span><span class="p">):</span>
-	<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">dimension</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+	<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">dimension</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 	<span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
 	<span class="k">return</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -705,17 +705,17 @@ $$
 18
 </pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">propagate</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
 	<span class="c1"># num of training samples
-</span>	<span class="n">m</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span>	<span class="n">m</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
 	<span class="c1"># forward pass
-</span>	<span class="n">A</span>    <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
-	<span class="n">cost</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">Y</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">A</span><span class="p">))))</span>
+</span>	<span class="n">A</span>    <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">.</span><span class="n">T</span><span class="p">,</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+	<span class="n">cost</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">multiply</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">Y</span><span class="p">),</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">A</span><span class="p">))))</span>
 
 	<span class="c1"># back propagation
-</span>	<span class="n">dw</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">Y</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
-	<span class="n">db</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">Y</span><span class="p">))</span>
+</span>	<span class="n">dw</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">Y</span><span class="p">).</span><span class="n">T</span><span class="p">))</span>
+	<span class="n">db</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">Y</span><span class="p">))</span>
 
-	<span class="n">cost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+	<span class="n">cost</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
 
 	<span class="c1"># gradient dictionary
 </span>	<span class="n">grads</span> <span class="o">=</span> <span class="p">{</span><span class="s">"dw"</span><span class="p">:</span> <span class="n">dw</span><span class="p">,</span> <span class="s">"db"</span><span class="p">:</span> <span class="n">db</span><span class="p">}</span>
@@ -771,8 +771,8 @@ $$
 		<span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="p">(</span><span class="n">lr</span><span class="o">*</span><span class="n">db</span><span class="p">)</span>
 
 		<span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-			<span class="n">costs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
-			<span class="k">print</span><span class="p">(</span><span class="s">"cost after </span><span class="si">%</span><span class="s">i epochs: </span><span class="si">%</span><span class="s">f"</span> <span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cost</span><span class="p">))</span>
+			<span class="n">costs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+			<span class="k">print</span><span class="p">(</span><span class="s">"cost after %i epochs: %f"</span> <span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cost</span><span class="p">))</span>
 
 	<span class="c1"># param dict
 </span>	<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s">"w"</span><span class="p">:</span> <span class="n">w</span><span class="p">,</span> <span class="s">"b"</span><span class="p">:</span> <span class="n">b</span><span class="p">}</span>
@@ -806,13 +806,13 @@ $$
 13
 14
 </pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-	<span class="n">m</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-	<span class="n">Y_predict</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">m</span><span class="p">))</span>
-	<span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+	<span class="n">m</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+	<span class="n">Y_predict</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">m</span><span class="p">))</span>
+	<span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
 
-	<span class="n">A</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+	<span class="n">A</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">.</span><span class="n">T</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
 
-	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
 		<span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.5</span><span class="p">:</span>
 			<span class="n">Y_predict</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 		<span class="k">else</span><span class="p">:</span>
@@ -842,9 +842,9 @@ $$
 11
 </pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">predict_image</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
 	<span class="n">Y_predict</span> <span class="o">=</span> <span class="bp">None</span>
-	<span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
-	<span class="n">A</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
-	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+	<span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+	<span class="n">A</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">.</span><span class="n">T</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
 		<span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.5</span><span class="p">:</span>
 			<span class="n">Y_predict</span> <span class="o">=</span> <span class="mi">0</span>
 		<span class="k">else</span><span class="p">:</span>
@@ -886,7 +886,7 @@ $$
 21
 22
 </pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">lr</span><span class="p">):</span>
-	<span class="n">w</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">init_params</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+	<span class="n">w</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">init_params</span><span class="p">(</span><span class="n">X_train</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 	<span class="n">params</span><span class="p">,</span> <span class="n">grads</span><span class="p">,</span> <span class="n">costs</span> <span class="o">=</span> <span class="n">optimize</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">lr</span><span class="p">)</span>
 
 	<span class="n">w</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s">"w"</span><span class="p">]</span>
@@ -895,8 +895,8 @@ $$
 	<span class="n">Y_predict_train</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">X_train</span><span class="p">)</span>
 	<span class="n">Y_predict_test</span>  <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
 
-	<span class="k">print</span><span class="p">(</span><span class="s">"train_accuracy: {} </span><span class="si">%</span><span class="s">"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">Y_predict_train</span> <span class="o">-</span> <span class="n">Y_train</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
-	<span class="k">print</span><span class="p">(</span><span class="s">"test_accuracy : {} </span><span class="si">%</span><span class="s">"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">Y_predict_test</span>  <span class="o">-</span> <span class="n">Y_test</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"train_accuracy: {} %"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">Y_predict_train</span> <span class="o">-</span> <span class="n">Y_train</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"test_accuracy : {} %"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">Y_predict_test</span>  <span class="o">-</span> <span class="n">Y_test</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
 
 	<span class="n">log_reg_model</span> <span class="o">=</span> <span class="p">{</span><span class="s">"costs"</span><span class="p">:</span> <span class="n">costs</span><span class="p">,</span>
 				     <span class="s">"Y_predict_test"</span><span class="p">:</span> <span class="n">Y_predict_test</span><span class="p">,</span> 
@@ -921,7 +921,7 @@ $$
 </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">train_x</span><span class="p">,</span> <span class="n">train_y</span><span class="p">,</span> <span class="n">test_x</span><span class="p">,</span> <span class="n">test_y</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">lr</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1018,11 +1018,11 @@ test_accuracy : 100.0 %
                   <span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">machine-intelligence</span><span class="se">\\</span><span class="s">deep-learning</span><span class="se">\\</span><span class="s">logistic-regression</span><span class="se">\\</span><span class="s">dataset</span><span class="se">\\</span><span class="s">test</span><span class="se">\\</span><span class="s">bike</span><span class="se">\\</span><span class="s">test_1.jpg"</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">test_img_path</span> <span class="ow">in</span> <span class="n">test_img_paths</span><span class="p">:</span>
-	<span class="n">img_to_show</span>    <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">test_img_path</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-	<span class="n">img</span>            <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">test_img_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="n">image_size</span><span class="p">)</span>
-	<span class="n">x</span>              <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-	<span class="n">x</span>              <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-	<span class="n">x</span>              <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+	<span class="n">img_to_show</span>    <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">imread</span><span class="p">(</span><span class="n">test_img_path</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+	<span class="n">img</span>            <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">test_img_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="n">image_size</span><span class="p">)</span>
+	<span class="n">x</span>              <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+	<span class="n">x</span>              <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">flatten</span><span class="p">()</span>
+	<span class="n">x</span>              <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 	<span class="n">predict</span>        <span class="o">=</span> <span class="n">predict_image</span><span class="p">(</span><span class="n">myModel</span><span class="p">[</span><span class="s">"w"</span><span class="p">],</span> <span class="n">myModel</span><span class="p">[</span><span class="s">"b"</span><span class="p">],</span> <span class="n">x</span><span class="p">)</span>
 	<span class="n">predict_label</span>  <span class="o">=</span> <span class="s">""</span>
 
@@ -1032,11 +1032,11 @@ test_accuracy : 100.0 %
 		<span class="n">predict_label</span> <span class="o">=</span> <span class="s">"bike"</span>
 
 	<span class="c1"># display the test image and the predicted label
-</span>	<span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">img_to_show</span><span class="p">,</span> <span class="n">predict_label</span><span class="p">,</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-	<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"test_image"</span><span class="p">,</span> <span class="n">img_to_show</span><span class="p">)</span>
-	<span class="n">key</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+</span>	<span class="n">cv2</span><span class="p">.</span><span class="n">putText</span><span class="p">(</span><span class="n">img_to_show</span><span class="p">,</span> <span class="n">predict_label</span><span class="p">,</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+	<span class="n">cv2</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"test_image"</span><span class="p">,</span> <span class="n">img_to_show</span><span class="p">)</span>
+	<span class="n">key</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
 	<span class="k">if</span> <span class="p">(</span><span class="n">key</span> <span class="o">==</span> <span class="mi">27</span><span class="p">):</span>
-		<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+		<span class="n">cv2</span><span class="p">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <figure>

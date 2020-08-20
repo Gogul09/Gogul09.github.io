@@ -1,4 +1,4 @@
-I"¡<div class="sidebar_tracker" id="sidebar_tracker">
+I"í<div class="sidebar_tracker" id="sidebar_tracker">
   <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
   <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
   <ul id="sidebar_tracker_content">
@@ -18,7 +18,7 @@
 
 <div class="code-head">Get Linux OS version<span>cmd</span></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>uname -m
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -31,7 +31,7 @@
 <p>Copy the path of the <span class="coding">dart-sass</span> directory and add it to <span class="coding">PATH</span>. To view <span class="coding">PATH</span> variables, you can use the below command.</p>
 
 <div class="code-head">View PATH variables<span>cmd</span></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>echo $PATH
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -39,7 +39,7 @@
 
 <div class="code-head">Add to PATH<span>cmd</span></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>setenv PATH "$PATH\:path_to_dart-sass"
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -54,7 +54,7 @@
 </div>
 
 <div class="code-head">Basic SASS usage<span>cmd</span></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>sass input.scss output.css
 </pre></td></tr></tbody></table></code></pre></div></div>
 :ET

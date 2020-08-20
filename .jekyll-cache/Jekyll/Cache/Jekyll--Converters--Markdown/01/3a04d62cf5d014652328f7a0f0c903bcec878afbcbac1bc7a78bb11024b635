@@ -1,4 +1,4 @@
-I"HS<div class="git-showcase">
+I"ÑR<div class="git-showcase">
   <div>
     <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
   </div>
@@ -307,22 +307,22 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 <span class="kn">import</span> <span class="nn">urllib.request</span>
 
 <span class="k">def</span> <span class="nf">download_dataset</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">work_dir</span><span class="p">):</span>
-  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"[INFO] Downloading flowers17 dataset...."</span><span class="p">)</span>
-    <span class="n">filename</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-    <span class="n">statinfo</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"[INFO] Succesfully downloaded "</span> <span class="o">+</span> <span class="n">filename</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">statinfo</span><span class="o">.</span><span class="n">st_size</span><span class="p">)</span> <span class="o">+</span> <span class="s">" bytes."</span><span class="p">)</span>
+    <span class="n">filename</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="n">statinfo</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">stat</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"[INFO] Succesfully downloaded "</span> <span class="o">+</span> <span class="n">filename</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">statinfo</span><span class="p">.</span><span class="n">st_size</span><span class="p">)</span> <span class="o">+</span> <span class="s">" bytes."</span><span class="p">)</span>
     <span class="n">untar</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">work_dir</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">jpg_files</span><span class="p">(</span><span class="n">members</span><span class="p">):</span>
   <span class="k">for</span> <span class="n">tarinfo</span> <span class="ow">in</span> <span class="n">members</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">tarinfo</span><span class="o">.</span><span class="n">name</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">".jpg"</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">tarinfo</span><span class="p">.</span><span class="n">name</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">".jpg"</span><span class="p">:</span>
       <span class="k">yield</span> <span class="n">tarinfo</span>
 
 <span class="k">def</span> <span class="nf">untar</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-  <span class="n">tar</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-  <span class="n">tar</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">members</span><span class="o">=</span><span class="n">jpg_files</span><span class="p">(</span><span class="n">tar</span><span class="p">))</span>
-  <span class="n">tar</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+  <span class="n">tar</span> <span class="o">=</span> <span class="n">tarfile</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+  <span class="n">tar</span><span class="p">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">members</span><span class="o">=</span><span class="n">jpg_files</span><span class="p">(</span><span class="n">tar</span><span class="p">))</span>
+  <span class="n">tar</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
   <span class="k">print</span><span class="p">(</span><span class="s">"[INFO] Dataset extracted successfully."</span><span class="p">)</span>
 
 <span class="c1">#-------------------------
@@ -333,19 +333,19 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
   <span class="n">flowers17_name</span> <span class="o">=</span> <span class="s">"17flowers.tgz"</span>
   <span class="n">train_dir</span>      <span class="o">=</span> <span class="s">"dataset"</span>
 
-  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">train_dir</span><span class="p">):</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">train_dir</span><span class="p">)</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="n">train_dir</span><span class="p">):</span>
+    <span class="n">os</span><span class="p">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">train_dir</span><span class="p">)</span>
 
   <span class="n">download_dataset</span><span class="p">(</span><span class="n">flowers17_name</span><span class="p">,</span> <span class="n">flowers17_url</span><span class="p">,</span> <span class="n">train_dir</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">train_dir</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">jpg"</span><span class="p">):</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">train_dir</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">jpg"</span><span class="p">,</span> <span class="n">train_dir</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">train"</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="n">train_dir</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">jpg"</span><span class="p">):</span>
+    <span class="n">os</span><span class="p">.</span><span class="n">rename</span><span class="p">(</span><span class="n">train_dir</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">jpg"</span><span class="p">,</span> <span class="n">train_dir</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">train"</span><span class="p">)</span>
 
 
   <span class="c1"># get the class label limit
 </span>  <span class="n">class_limit</span> <span class="o">=</span> <span class="mi">17</span>
 
   <span class="c1"># take all the images from the dataset
-</span>  <span class="n">image_paths</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">train_dir</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">train</span><span class="se">\\</span><span class="s">*.jpg"</span><span class="p">)</span>
+</span>  <span class="n">image_paths</span> <span class="o">=</span> <span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">train_dir</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">train</span><span class="se">\\</span><span class="s">*.jpg"</span><span class="p">)</span>
 
   <span class="c1"># variables to keep track
 </span>  <span class="n">label</span> <span class="o">=</span> <span class="mi">0</span>
@@ -361,7 +361,7 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
   <span class="c1"># loop over the class labels
 </span>  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">class_limit</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
     <span class="c1"># create a folder for that class
-</span>    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">train_dir</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">train</span><span class="se">\\</span><span class="s">"</span> <span class="o">+</span> <span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
+</span>    <span class="n">os</span><span class="p">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">train_dir</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">train</span><span class="se">\\</span><span class="s">"</span> <span class="o">+</span> <span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
     
     <span class="c1"># get the current path
 </span>    <span class="n">cur_path</span> <span class="o">=</span> <span class="n">train_dir</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">train</span><span class="se">\\</span><span class="s">"</span> <span class="o">+</span> <span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">"</span>
@@ -369,9 +369,9 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
     <span class="c1"># loop over the images in the dataset
 </span>    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">image_paths</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
       <span class="n">original_path</span>   <span class="o">=</span> <span class="n">image_path</span>
-      <span class="n">image_path</span>      <span class="o">=</span> <span class="n">image_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">"</span><span class="p">)</span>
+      <span class="n">image_path</span>      <span class="o">=</span> <span class="n">image_path</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">"</span><span class="p">)</span>
       <span class="n">image_file_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">+</span> <span class="s">".jpg"</span>
-      <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">original_path</span><span class="p">,</span> <span class="n">cur_path</span> <span class="o">+</span> <span class="n">image_file_name</span><span class="p">)</span>
+      <span class="n">os</span><span class="p">.</span><span class="n">rename</span><span class="p">(</span><span class="n">original_path</span><span class="p">,</span> <span class="n">cur_path</span> <span class="o">+</span> <span class="n">image_file_name</span><span class="p">)</span>
     
     <span class="n">i</span> <span class="o">+=</span> <span class="mi">80</span>
     <span class="n">j</span> <span class="o">+=</span> <span class="mi">80</span>
@@ -460,8 +460,8 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 5
 </pre></td><td class="rouge-code"><pre><span class="c1"># feature-descriptor-1: Hu Moments
 </span><span class="k">def</span> <span class="nf">fd_hu_moments</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
-    <span class="n">feature</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">HuMoments</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">moments</span><span class="p">(</span><span class="n">image</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+    <span class="n">feature</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">HuMoments</span><span class="p">(</span><span class="n">cv2</span><span class="p">.</span><span class="n">moments</span><span class="p">(</span><span class="n">image</span><span class="p">)).</span><span class="n">flatten</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">feature</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -480,9 +480,9 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 </pre></td><td class="rouge-code"><pre><span class="c1"># feature-descriptor-2: Haralick Texture
 </span><span class="k">def</span> <span class="nf">fd_haralick</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
     <span class="c1"># convert the image to grayscale
-</span>    <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+</span>    <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
     <span class="c1"># compute the haralick texture feature vector
-</span>    <span class="n">haralick</span> <span class="o">=</span> <span class="n">mahotas</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">haralick</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span>    <span class="n">haralick</span> <span class="o">=</span> <span class="n">mahotas</span><span class="p">.</span><span class="n">features</span><span class="p">.</span><span class="n">haralick</span><span class="p">(</span><span class="n">gray</span><span class="p">).</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="c1"># return the result
 </span>    <span class="k">return</span> <span class="n">haralick</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -504,13 +504,13 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 </pre></td><td class="rouge-code"><pre><span class="c1"># feature-descriptor-3: Color Histogram
 </span><span class="k">def</span> <span class="nf">fd_histogram</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="c1"># convert the image to HSV color-space
-</span>    <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2HSV</span><span class="p">)</span>
+</span>    <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2HSV</span><span class="p">)</span>
     <span class="c1"># compute the color histogram
-</span>    <span class="n">hist</span>  <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">calcHist</span><span class="p">([</span><span class="n">image</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="bp">None</span><span class="p">,</span> <span class="p">[</span><span class="n">bins</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">bins</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">])</span>
+</span>    <span class="n">hist</span>  <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">calcHist</span><span class="p">([</span><span class="n">image</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="bp">None</span><span class="p">,</span> <span class="p">[</span><span class="n">bins</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">bins</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">])</span>
     <span class="c1"># normalize the histogram
-</span>    <span class="n">cv2</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">hist</span><span class="p">,</span> <span class="n">hist</span><span class="p">)</span>
+</span>    <span class="n">cv2</span><span class="p">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">hist</span><span class="p">,</span> <span class="n">hist</span><span class="p">)</span>
     <span class="c1"># return the histogram
-</span>    <span class="k">return</span> <span class="n">hist</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+</span>    <span class="k">return</span> <span class="n">hist</span><span class="p">.</span><span class="n">flatten</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <div class="note"><p>
@@ -531,10 +531,10 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 9
 10
 </pre></td><td class="rouge-code"><pre><span class="c1"># get the training labels
-</span><span class="n">train_labels</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
+</span><span class="n">train_labels</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
 
 <span class="c1"># sort the training labels
-</span><span class="n">train_labels</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span class="n">train_labels</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span>
 
 <span class="c1"># empty lists to hold feature vectors and labels
@@ -542,7 +542,7 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 <span class="n">labels</span>          <span class="o">=</span> <span class="p">[]</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>['bluebell', 'buttercup', 'coltsfoot', 'cowslip', 'crocus', 'daffodil', 'daisy', 'dandelion', 'fritillary', 'iris', 'lilyvalley', 'pansy', 'snowdrop', 'sunflower', 'tigerlily', 'tulip', 'windflower']
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -589,7 +589,7 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 </pre></td><td class="rouge-code"><pre><span class="c1"># loop over the training data sub-folders
 </span><span class="k">for</span> <span class="n">training_name</span> <span class="ow">in</span> <span class="n">train_labels</span><span class="p">:</span>
     <span class="c1"># join the training data path and each species training folder
-</span>    <span class="nb">dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">train_path</span><span class="p">,</span> <span class="n">training_name</span><span class="p">)</span>
+</span>    <span class="nb">dir</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">train_path</span><span class="p">,</span> <span class="n">training_name</span><span class="p">)</span>
 
     <span class="c1"># get the current training label
 </span>    <span class="n">current_label</span> <span class="o">=</span> <span class="n">training_name</span>
@@ -600,8 +600,8 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 </span>        <span class="nb">file</span> <span class="o">=</span> <span class="nb">dir</span> <span class="o">+</span> <span class="s">"/"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s">".jpg"</span>
 
         <span class="c1"># read the image and resize it to a fixed-size
-</span>        <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
-        <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">fixed_size</span><span class="p">)</span>
+</span>        <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">fixed_size</span><span class="p">)</span>
 
         <span class="c1">####################################
 </span>        <span class="c1"># Global Feature extraction
@@ -613,18 +613,18 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
         <span class="c1">###################################
 </span>        <span class="c1"># Concatenate global features
 </span>        <span class="c1">###################################
-</span>        <span class="n">global_feature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">fv_histogram</span><span class="p">,</span> <span class="n">fv_haralick</span><span class="p">,</span> <span class="n">fv_hu_moments</span><span class="p">])</span>
+</span>        <span class="n">global_feature</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">fv_histogram</span><span class="p">,</span> <span class="n">fv_haralick</span><span class="p">,</span> <span class="n">fv_hu_moments</span><span class="p">])</span>
 
         <span class="c1"># update the list of labels and feature vectors
-</span>        <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_label</span><span class="p">)</span>
-        <span class="n">global_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">global_feature</span><span class="p">)</span>
+</span>        <span class="n">labels</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_label</span><span class="p">)</span>
+        <span class="n">global_features</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">global_feature</span><span class="p">)</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] processed folder: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">current_label</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] processed folder: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">current_label</span><span class="p">))</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] completed Global Feature Extraction..."</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -698,39 +698,39 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 30
 31
 </pre></td><td class="rouge-code"><pre><span class="c1"># get the overall feature vector size
-</span><span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] feature vector size {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">global_features</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] feature vector size {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">global_features</span><span class="p">).</span><span class="n">shape</span><span class="p">))</span>
 
 <span class="c1"># get the overall training label size
-</span><span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] training Labels {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] training Labels {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">labels</span><span class="p">).</span><span class="n">shape</span><span class="p">))</span>
 
 <span class="c1"># encode the target labels
-</span><span class="n">targetNames</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+</span><span class="n">targetNames</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
 <span class="n">le</span>          <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
-<span class="n">target</span>      <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">target</span>      <span class="o">=</span> <span class="n">le</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] training labels encoded..."</span><span class="p">)</span>
 
 <span class="c1"># scale features in the range (0-1)
 </span><span class="n">scaler</span>            <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">rescaled_features</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">global_features</span><span class="p">)</span>
+<span class="n">rescaled_features</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">global_features</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] feature vector normalized..."</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] target labels: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">target</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] target labels shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] target labels: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">target</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] target labels shape: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">target</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
 
 <span class="c1"># save the feature vector using HDF5
-</span><span class="n">h5f_data</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">h5_data</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
-<span class="n">h5f_data</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">'dataset_1'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rescaled_features</span><span class="p">))</span>
+</span><span class="n">h5f_data</span> <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="n">File</span><span class="p">(</span><span class="n">h5_data</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+<span class="n">h5f_data</span><span class="p">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">'dataset_1'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">rescaled_features</span><span class="p">))</span>
 
-<span class="n">h5f_label</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">h5_labels</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
-<span class="n">h5f_label</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">'dataset_1'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">target</span><span class="p">))</span>
+<span class="n">h5f_label</span> <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="n">File</span><span class="p">(</span><span class="n">h5_labels</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+<span class="n">h5f_label</span><span class="p">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">'dataset_1'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">target</span><span class="p">))</span>
 
-<span class="n">h5f_data</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">h5f_label</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">h5f_data</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">h5f_label</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] end of training.."</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -861,7 +861,7 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 <span class="kn">from</span> <span class="nn">sklearn.externals</span> <span class="kn">import</span> <span class="n">joblib</span>
 
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">'ignore'</span><span class="p">)</span>
+<span class="n">warnings</span><span class="p">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">'ignore'</span><span class="p">)</span>
 
 <span class="c1">#--------------------
 # tunable-parameters
@@ -876,49 +876,49 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 <span class="n">scoring</span>    <span class="o">=</span> <span class="s">"accuracy"</span>
 
 <span class="c1"># get the training labels
-</span><span class="n">train_labels</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
+</span><span class="n">train_labels</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
 
 <span class="c1"># sort the training labels
-</span><span class="n">train_labels</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span class="n">train_labels</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">test_path</span><span class="p">):</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">test_path</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="n">test_path</span><span class="p">):</span>
+    <span class="n">os</span><span class="p">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">test_path</span><span class="p">)</span>
 
 <span class="c1"># create all the machine learning models
 </span><span class="n">models</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">'LR'</span><span class="p">,</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)))</span>
-<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">'LDA'</span><span class="p">,</span> <span class="n">LinearDiscriminantAnalysis</span><span class="p">()))</span>
-<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">'KNN'</span><span class="p">,</span> <span class="n">KNeighborsClassifier</span><span class="p">()))</span>
-<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">'CART'</span><span class="p">,</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)))</span>
-<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">'RF'</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="n">num_trees</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)))</span>
-<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">'NB'</span><span class="p">,</span> <span class="n">GaussianNB</span><span class="p">()))</span>
-<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">'SVM'</span><span class="p">,</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)))</span>
+<span class="n">models</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="s">'LR'</span><span class="p">,</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)))</span>
+<span class="n">models</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="s">'LDA'</span><span class="p">,</span> <span class="n">LinearDiscriminantAnalysis</span><span class="p">()))</span>
+<span class="n">models</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="s">'KNN'</span><span class="p">,</span> <span class="n">KNeighborsClassifier</span><span class="p">()))</span>
+<span class="n">models</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="s">'CART'</span><span class="p">,</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)))</span>
+<span class="n">models</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="s">'RF'</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="n">num_trees</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)))</span>
+<span class="n">models</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="s">'NB'</span><span class="p">,</span> <span class="n">GaussianNB</span><span class="p">()))</span>
+<span class="n">models</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="s">'SVM'</span><span class="p">,</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)))</span>
 
 <span class="c1"># variables to hold the results and names
 </span><span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">names</span>   <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># import the feature vector and trained labels
-</span><span class="n">h5f_data</span>  <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">h5_data</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
-<span class="n">h5f_label</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">h5_labels</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+</span><span class="n">h5f_data</span>  <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="n">File</span><span class="p">(</span><span class="n">h5_data</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+<span class="n">h5f_label</span> <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="n">File</span><span class="p">(</span><span class="n">h5_labels</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
 
 <span class="n">global_features_string</span> <span class="o">=</span> <span class="n">h5f_data</span><span class="p">[</span><span class="s">'dataset_1'</span><span class="p">]</span>
 <span class="n">global_labels_string</span>   <span class="o">=</span> <span class="n">h5f_label</span><span class="p">[</span><span class="s">'dataset_1'</span><span class="p">]</span>
 
-<span class="n">global_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">global_features_string</span><span class="p">)</span>
-<span class="n">global_labels</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">global_labels_string</span><span class="p">)</span>
+<span class="n">global_features</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">global_features_string</span><span class="p">)</span>
+<span class="n">global_labels</span>   <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">global_labels_string</span><span class="p">)</span>
 
-<span class="n">h5f_data</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">h5f_label</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">h5f_data</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">h5f_label</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="c1"># verify the shape of the feature vector and labels
-</span><span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] features shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">global_features</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] labels shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">global_labels</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] features shape: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">global_features</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] labels shape: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">global_labels</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] training started..."</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre>[STATUS] features shape: (1360, 532)
@@ -942,19 +942,19 @@ Segmenting the plant/flower region from an image is a challenging task. This is 
 10
 11
 </pre></td><td class="rouge-code"><pre><span class="c1"># split the training and testing data
-</span><span class="p">(</span><span class="n">trainDataGlobal</span><span class="p">,</span> <span class="n">testDataGlobal</span><span class="p">,</span> <span class="n">trainLabelsGlobal</span><span class="p">,</span> <span class="n">testLabelsGlobal</span><span class="p">)</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">global_features</span><span class="p">),</span>
-                                                                                          <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">global_labels</span><span class="p">),</span>
+</span><span class="p">(</span><span class="n">trainDataGlobal</span><span class="p">,</span> <span class="n">testDataGlobal</span><span class="p">,</span> <span class="n">trainLabelsGlobal</span><span class="p">,</span> <span class="n">testLabelsGlobal</span><span class="p">)</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">global_features</span><span class="p">),</span>
+                                                                                          <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">global_labels</span><span class="p">),</span>
                                                                                           <span class="n">test_size</span><span class="o">=</span><span class="n">test_size</span><span class="p">,</span>
                                                                                           <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] splitted train and test data..."</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Train data  : {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainDataGlobal</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Test data   : {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testDataGlobal</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Train labels: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainLabelsGlobal</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Test labels : {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testLabelsGlobal</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Train data  : {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainDataGlobal</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Test data   : {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testDataGlobal</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Train labels: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainLabelsGlobal</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Test labels : {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testLabelsGlobal</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -992,21 +992,21 @@ Test labels : (136,)
 </span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
     <span class="n">kfold</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">cv_results</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">trainDataGlobal</span><span class="p">,</span> <span class="n">trainLabelsGlobal</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kfold</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
-    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cv_results</span><span class="p">)</span>
-    <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s">"</span><span class="si">%</span><span class="s">s: </span><span class="si">%</span><span class="s">f (</span><span class="si">%</span><span class="s">f)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">cv_results</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">cv_results</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+    <span class="n">results</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">cv_results</span><span class="p">)</span>
+    <span class="n">names</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s">"%s: %f (%f)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">cv_results</span><span class="p">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">cv_results</span><span class="p">.</span><span class="n">std</span><span class="p">())</span>
     <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
 <span class="c1"># boxplot algorithm comparison
-</span><span class="n">fig</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s">'Machine Learning algorithm comparison'</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
-<span class="n">pyplot</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
-<span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span><span class="n">fig</span> <span class="o">=</span> <span class="n">pyplot</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s">'Machine Learning algorithm comparison'</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="p">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1092,15 +1092,15 @@ SVM:  0.043343 (0.027239)
 </span><span class="n">clf</span>  <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="n">num_trees</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 
 <span class="c1"># fit the training data to the model
-</span><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainDataGlobal</span><span class="p">,</span> <span class="n">trainLabelsGlobal</span><span class="p">)</span>
+</span><span class="n">clf</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainDataGlobal</span><span class="p">,</span> <span class="n">trainLabelsGlobal</span><span class="p">)</span>
 
 <span class="c1"># loop through the test images
-</span><span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">test_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
+</span><span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">test_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
     <span class="c1"># read the image
-</span>    <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+</span>    <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
 
     <span class="c1"># resize the image
-</span>    <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">fixed_size</span><span class="p">)</span>
+</span>    <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">fixed_size</span><span class="p">)</span>
 
     <span class="c1">####################################
 </span>    <span class="c1"># Global Feature extraction
@@ -1112,21 +1112,21 @@ SVM:  0.043343 (0.027239)
     <span class="c1">###################################
 </span>    <span class="c1"># Concatenate global features
 </span>    <span class="c1">###################################
-</span>    <span class="n">global_feature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">fv_histogram</span><span class="p">,</span> <span class="n">fv_haralick</span><span class="p">,</span> <span class="n">fv_hu_moments</span><span class="p">])</span>
+</span>    <span class="n">global_feature</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">fv_histogram</span><span class="p">,</span> <span class="n">fv_haralick</span><span class="p">,</span> <span class="n">fv_hu_moments</span><span class="p">])</span>
 
     <span class="c1"># scale features in the range (0-1)
 </span>    <span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-    <span class="n">rescaled_feature</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">global_feature</span><span class="p">)</span>
+    <span class="n">rescaled_feature</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">global_feature</span><span class="p">)</span>
 
     <span class="c1"># predict label of test image
-</span>    <span class="n">prediction</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">rescaled_feature</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+</span>    <span class="n">prediction</span> <span class="o">=</span> <span class="n">clf</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">rescaled_feature</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="c1"># show predicted label on image
-</span>    <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">[</span><span class="n">prediction</span><span class="p">],</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+</span>    <span class="n">cv2</span><span class="p">.</span><span class="n">putText</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">[</span><span class="n">prediction</span><span class="p">],</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
 
     <span class="c1"># display the output image
-</span>    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span>    <span class="n">plt</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="p">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <figure>

@@ -1,4 +1,4 @@
-I"7<div class="sidebar_tracker" id="sidebar_tracker">
+I"7<div class="sidebar_tracker" id="sidebar_tracker">
   <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
   <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
   <ul id="sidebar_tracker_content">
@@ -16,7 +16,7 @@
 <p>When designing a chip, performance is the number one concern for chip designers. The chip needs to meet timing to work properly else user experience suffers. To verify whether a design meets timing, there are different techniques such as Timing Simulation, Static Timing Analysis (STA) and Dynamic Timing Analysis (DTA).</p>
 
 <div class="code-head">Objectives<span>goals</span></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4

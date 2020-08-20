@@ -1,4 +1,4 @@
-I"Ë(<div class="sidebar_tracker" id="sidebar_tracker">
+I"“(<div class="sidebar_tracker" id="sidebar_tracker">
   <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
   <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
   <ul id="sidebar_tracker_content">
@@ -33,15 +33,15 @@
     <span class="n">temp</span> <span class="o">=</span> <span class="n">k</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
       <span class="k">print</span><span class="p">(</span><span class="s">"Pair with sum "</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s">" is ("</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="o">+</span> <span class="s">")"</span><span class="p">)</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">prob_e001</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">7</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"--- </span><span class="si">%</span><span class="s">s micro seconds ---"</span> <span class="o">%</span> <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">*</span><span class="mi">1000000</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"--- %s micro seconds ---"</span> <span class="o">%</span> <span class="p">((</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">*</span><span class="mi">1000000</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>Pair with sum 7 is (6, 1)
 --- 314.95094299316406 micro seconds ---
@@ -108,12 +108,12 @@
   <span class="k">return</span> <span class="n">res</span>
 
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">prob_m001</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"--- </span><span class="si">%</span><span class="s">s micro seconds ---"</span> <span class="o">%</span> <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">*</span><span class="mi">1000000</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"--- %s micro seconds ---"</span> <span class="o">%</span> <span class="p">((</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">*</span><span class="mi">1000000</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>[120, 60, 40, 30, 24]
 --- 437.73651123046875 micro seconds ---

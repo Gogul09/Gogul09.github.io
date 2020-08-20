@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Hand Gesture Recognition using Python and OpenCV - Part 2 | Gogul Ilango</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Hand Gesture Recognition using Python and OpenCV - Part 2" />
 <meta name="author" content="Gogul Ilango" />
 <meta property="og:locale" content="en_US" />
@@ -40,7 +40,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-04-25T00:00:00+05:30" />
 <script type="application/ld+json">
-{"headline":"Hand Gesture Recognition using Python and OpenCV - Part 2","url":"http://localhost:4000/software/hand-gesture-recognition-p2","datePublished":"2017-04-25T00:00:00+05:30","dateModified":"2017-04-25T00:00:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/hand-gesture-recognition-p2"},"image":"https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh","author":{"@type":"Person","name":"Gogul Ilango"},"description":"Learn how to recognize hand gestures after applying background subtraction using OpenCV and Python.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"dateModified":"2017-04-25T00:00:00+05:30","datePublished":"2017-04-25T00:00:00+05:30","url":"http://localhost:4000/software/hand-gesture-recognition-p2","headline":"Hand Gesture Recognition using Python and OpenCV - Part 2","image":"https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/hand-gesture-recognition-p2"},"author":{"@type":"Person","name":"Gogul Ilango"},"description":"Learn how to recognize hand gestures after applying background subtraction using OpenCV and Python.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -146,6 +146,7 @@
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#convex-hull">Convex Hull</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#results">Results</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#summary">Summary</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#references">References</a></li>
   </ul>
 </div>
 
@@ -254,13 +255,13 @@
 #--------------------------------------------------------------
 </span><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">thresholded</span><span class="p">,</span> <span class="n">segmented</span><span class="p">):</span>
     <span class="c1"># find the convex hull of the segmented hand region
-</span>    <span class="n">chull</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convexHull</span><span class="p">(</span><span class="n">segmented</span><span class="p">)</span>
+</span>    <span class="n">chull</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">convexHull</span><span class="p">(</span><span class="n">segmented</span><span class="p">)</span>
 
     <span class="c1"># find the most extreme points in the convex hull
-</span>    <span class="n">extreme_top</span>    <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">argmin</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">extreme_bottom</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">extreme_left</span>   <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">argmin</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">extreme_right</span>  <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+</span>    <span class="n">extreme_top</span>    <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">].</span><span class="n">argmin</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">extreme_bottom</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">].</span><span class="n">argmax</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">extreme_left</span>   <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">].</span><span class="n">argmin</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">extreme_right</span>  <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">].</span><span class="n">argmax</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
 
     <span class="c1"># find the center of the palm
 </span>    <span class="n">cX</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">extreme_left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">extreme_right</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
@@ -268,28 +269,28 @@
 
     <span class="c1"># find the maximum euclidean distance between the center of the palm
 </span>    <span class="c1"># and the most extreme points of the convex hull
-</span>    <span class="n">distance</span> <span class="o">=</span> <span class="n">pairwise</span><span class="o">.</span><span class="n">euclidean_distances</span><span class="p">([(</span><span class="n">cX</span><span class="p">,</span> <span class="n">cY</span><span class="p">)],</span> <span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="n">extreme_left</span><span class="p">,</span> <span class="n">extreme_right</span><span class="p">,</span> <span class="n">extreme_top</span><span class="p">,</span> <span class="n">extreme_bottom</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">maximum_distance</span> <span class="o">=</span> <span class="n">distance</span><span class="p">[</span><span class="n">distance</span><span class="o">.</span><span class="n">argmax</span><span class="p">()]</span>
+</span>    <span class="n">distance</span> <span class="o">=</span> <span class="n">pairwise</span><span class="p">.</span><span class="n">euclidean_distances</span><span class="p">([(</span><span class="n">cX</span><span class="p">,</span> <span class="n">cY</span><span class="p">)],</span> <span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="n">extreme_left</span><span class="p">,</span> <span class="n">extreme_right</span><span class="p">,</span> <span class="n">extreme_top</span><span class="p">,</span> <span class="n">extreme_bottom</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">maximum_distance</span> <span class="o">=</span> <span class="n">distance</span><span class="p">[</span><span class="n">distance</span><span class="p">.</span><span class="n">argmax</span><span class="p">()]</span>
 
     <span class="c1"># calculate the radius of the circle with 80% of the max euclidean distance obtained
 </span>    <span class="n">radius</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="n">maximum_distance</span><span class="p">)</span>
 
     <span class="c1"># find the circumference of the circle
-</span>    <span class="n">circumference</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="p">)</span>
+</span>    <span class="n">circumference</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="p">)</span>
 
     <span class="c1"># take out the circular region of interest which has 
 </span>    <span class="c1"># the palm and the fingers
-</span>    <span class="n">circular_roi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">thresholded</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s">"uint8"</span><span class="p">)</span>
+</span>    <span class="n">circular_roi</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">thresholded</span><span class="p">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s">"uint8"</span><span class="p">)</span>
 	
     <span class="c1"># draw the circular ROI
-</span>    <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">circular_roi</span><span class="p">,</span> <span class="p">(</span><span class="n">cX</span><span class="p">,</span> <span class="n">cY</span><span class="p">),</span> <span class="n">radius</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span>    <span class="n">cv2</span><span class="p">.</span><span class="n">circle</span><span class="p">(</span><span class="n">circular_roi</span><span class="p">,</span> <span class="p">(</span><span class="n">cX</span><span class="p">,</span> <span class="n">cY</span><span class="p">),</span> <span class="n">radius</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
     <span class="c1"># take bit-wise AND between thresholded hand using the circular ROI as the mask
 </span>    <span class="c1"># which gives the cuts obtained using mask on the thresholded hand image
-</span>    <span class="n">circular_roi</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">thresholded</span><span class="p">,</span> <span class="n">thresholded</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">circular_roi</span><span class="p">)</span>
+</span>    <span class="n">circular_roi</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">thresholded</span><span class="p">,</span> <span class="n">thresholded</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">circular_roi</span><span class="p">)</span>
 
     <span class="c1"># compute the contours in the circular ROI
-</span>    <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">circular_roi</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_NONE</span><span class="p">)</span>
+</span>    <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">circular_roi</span><span class="p">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CHAIN_APPROX_NONE</span><span class="p">)</span>
 
     <span class="c1"># initalize the finger count
 </span>    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -297,13 +298,13 @@
     <span class="c1"># loop through the contours found
 </span>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnts</span><span class="p">:</span>
         <span class="c1"># compute the bounding box of the contour
-</span>        <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span>        <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 
         <span class="c1"># increment the count of fingers only if -
 </span>        <span class="c1"># 1. The contour region is not the wrist (bottom area)
 </span>        <span class="c1"># 2. The number of points along the contour does not exceed
 </span>        <span class="c1">#     25% of the circumference of the circular ROI
-</span>        <span class="k">if</span> <span class="p">((</span><span class="n">cY</span> <span class="o">+</span> <span class="p">(</span><span class="n">cY</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">))</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">))</span> <span class="ow">and</span> <span class="p">((</span><span class="n">circumference</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+</span>        <span class="k">if</span> <span class="p">((</span><span class="n">cY</span> <span class="o">+</span> <span class="p">(</span><span class="n">cY</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">))</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">))</span> <span class="ow">and</span> <span class="p">((</span><span class="n">circumference</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
             <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="k">return</span> <span class="n">count</span>
@@ -355,6 +356,16 @@
 <p>In this tutorial, we have learnt about recognizing hand gestures using Python and OpenCV. We have explored Background Subtraction, Thresholding, Segmentation, Contour Extraction, Convex Hull and Bitwise-AND operation on real-time video sequence. We have followed the methodology proposed by Malima et al. to quickly recognize hand gestures.</p>
 
 <p>You could extend this idea by using the count of fingers to instruct a robot to perform some task like picking up an object, go forward, move backward etc. using Arduino or Raspberry Pi platforms. I have also made a simple demo for you by using the count of fingers to control a servo motor’s rotation <a href="https://www.youtube.com/watch?v=4lCjQ84EkSk" target="_blank">here</a>.</p>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li><a href="https://docs.opencv.org/3.4/d1/dc5/tutorial_background_subtraction.html" target="_blank">How to Use Background Subtraction Methods</a></li>
+  <li><a href="https://www.youtube.com/watch?v=fn07iwCrvqQ" target="_blank">Background Subtraction</a></li>
+  <li><a href="http://pyimagesearch.com/" target="_blank">Pyimagesearch - Adrian Rosebrock</a></li>
+  <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.454.3689&amp;rep=rep1&amp;type=pdf" target="_blank">A Fast Algorithm for Vision-based Hand Gesture Recognition For Robot Control</a></li>
+  <li><a href="https://www.arduino.cc/" target="_blank">Arduino</a></li>
+</ol>
 
 				</div>
 				<div class="note closers">

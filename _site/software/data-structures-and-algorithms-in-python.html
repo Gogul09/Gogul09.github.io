@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="https://drive.google.com/uc?id=1r3ttMYAnyncZdSEYxEndtk0dLBLyktKP">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Data Structures &amp; Algorithms in Python | Gogul Ilango</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Data Structures &amp; Algorithms in Python" />
 <meta name="author" content="Gogul Ilango" />
 <meta property="og:locale" content="en_US" />
@@ -40,7 +40,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-12-28T00:00:00+05:30" />
 <script type="application/ld+json">
-{"headline":"Data Structures &amp; Algorithms in Python","url":"http://localhost:4000/software/data-structures-and-algorithms-in-python","datePublished":"2018-12-28T00:00:00+05:30","dateModified":"2018-12-28T00:00:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/data-structures-and-algorithms-in-python"},"image":"https://drive.google.com/uc?id=1r3ttMYAnyncZdSEYxEndtk0dLBLyktKP","author":{"@type":"Person","name":"Gogul Ilango"},"description":"Understand Data Structures and Algorithms using Python Programming Language.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"dateModified":"2018-12-28T00:00:00+05:30","datePublished":"2018-12-28T00:00:00+05:30","url":"http://localhost:4000/software/data-structures-and-algorithms-in-python","headline":"Data Structures &amp; Algorithms in Python","image":"https://drive.google.com/uc?id=1r3ttMYAnyncZdSEYxEndtk0dLBLyktKP","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/data-structures-and-algorithms-in-python"},"author":{"@type":"Person","name":"Gogul Ilango"},"description":"Understand Data Structures and Algorithms using Python Programming Language.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -276,77 +276,77 @@
 </pre></td><td class="rouge-code"><pre><span class="c1"># class to create a node that has data and pointer
 </span><span class="k">class</span> <span class="nc">node</span><span class="p">:</span> 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
-        <span class="bp">self</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
 
 <span class="c1"># class to create a linked list of nodes
 </span><span class="k">class</span> <span class="nc">linked_list</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">node</span><span class="p">()</span> 
+        <span class="bp">self</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">node</span><span class="p">()</span> 
 
     <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="n">new_node</span> <span class="o">=</span> <span class="n">node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        <span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
-        <span class="k">while</span> <span class="n">cur</span><span class="o">.</span><span class="nb">next</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="nb">next</span>
-        <span class="n">cur</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">new_node</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">cur</span><span class="p">.</span><span class="nb">next</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="p">.</span><span class="nb">next</span>
+        <span class="n">cur</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">new_node</span>
 
     <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
         <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">while</span> <span class="n">cur</span><span class="o">.</span><span class="nb">next</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">cur</span><span class="p">.</span><span class="nb">next</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="nb">next</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="p">.</span><span class="nb">next</span>
         <span class="k">return</span> <span class="n">total</span>
 
     <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">elems</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">cur_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
-        <span class="k">while</span> <span class="n">cur_node</span><span class="o">.</span><span class="nb">next</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="n">cur_node</span> <span class="o">=</span> <span class="n">cur_node</span><span class="o">.</span><span class="nb">next</span>
-            <span class="n">elems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_node</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">cur_node</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">cur_node</span><span class="p">.</span><span class="nb">next</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">cur_node</span> <span class="o">=</span> <span class="n">cur_node</span><span class="p">.</span><span class="nb">next</span>
+            <span class="n">elems</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_node</span><span class="p">.</span><span class="n">data</span><span class="p">)</span>
         <span class="k">print</span><span class="p">(</span><span class="n">elems</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="p">.</span><span class="n">length</span><span class="p">():</span>
             <span class="k">print</span><span class="p">(</span><span class="s">"ERROR: index out of range!"</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">None</span>
         <span class="n">cur_idx</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">cur_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">cur_node</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
         <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-            <span class="n">cur_node</span> <span class="o">=</span> <span class="n">cur_node</span><span class="o">.</span><span class="nb">next</span>
+            <span class="n">cur_node</span> <span class="o">=</span> <span class="n">cur_node</span><span class="p">.</span><span class="nb">next</span>
             <span class="k">if</span> <span class="n">cur_idx</span> <span class="o">==</span> <span class="n">index</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">cur_node</span><span class="o">.</span><span class="n">data</span>
+                <span class="k">return</span> <span class="n">cur_node</span><span class="p">.</span><span class="n">data</span>
             <span class="n">cur_idx</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">erase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="p">.</span><span class="n">length</span><span class="p">():</span>
             <span class="k">print</span><span class="p">(</span><span class="s">"ERROR: index out of range!"</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">None</span>
         <span class="n">cur_idx</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">cur_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">cur_node</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
         <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
             <span class="n">last_node</span> <span class="o">=</span> <span class="n">cur_node</span>
-            <span class="n">cur_node</span> <span class="o">=</span> <span class="n">cur_node</span><span class="o">.</span><span class="nb">next</span>
+            <span class="n">cur_node</span> <span class="o">=</span> <span class="n">cur_node</span><span class="p">.</span><span class="nb">next</span>
             <span class="k">if</span> <span class="n">cur_idx</span> <span class="o">==</span> <span class="n">index</span><span class="p">:</span>
-                <span class="n">last_node</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">cur_node</span><span class="o">.</span><span class="nb">next</span>
+                <span class="n">last_node</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">cur_node</span><span class="p">.</span><span class="nb">next</span>
                 <span class="k">return</span>
             <span class="n">cur_idx</span> <span class="o">+=</span> <span class="mi">1</span> 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
     <span class="n">my_list</span> <span class="o">=</span> <span class="n">linked_list</span><span class="p">()</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"Element at 2nd index: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">my_list</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">erase</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">my_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">my_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">my_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">my_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">my_list</span><span class="p">.</span><span class="n">display</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Element at 2nd index: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">my_list</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="n">my_list</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"Elements after erasing element at index 2"</span><span class="p">)</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+    <span class="n">my_list</span><span class="p">.</span><span class="n">display</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -419,7 +419,7 @@ Elements after erasing element at index 2
     <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>[37, 36, 13, 12, 43, 4, 32, 14, 32, 4]
 [4, 4, 12, 13, 14, 32, 32, 36, 37, 43]
@@ -501,14 +501,14 @@ Elements after erasing element at index 2
     <span class="n">a_idx</span><span class="p">,</span> <span class="n">b_idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="n">a_idx</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">and</span> <span class="n">b_idx</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">a_idx</span><span class="p">]</span><span class="o">&lt;</span><span class="n">b</span><span class="p">[</span><span class="n">b_idx</span><span class="p">]:</span>
-            <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a_idx</span><span class="p">])</span>
+            <span class="n">c</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a_idx</span><span class="p">])</span>
             <span class="n">a_idx</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">b_idx</span><span class="p">])</span>
+            <span class="n">c</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">b_idx</span><span class="p">])</span>
             <span class="n">b_idx</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="k">if</span> <span class="n">a_idx</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">):</span> <span class="n">c</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">b_idx</span><span class="p">:])</span>
-    <span class="k">else</span><span class="p">:</span>               <span class="n">c</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a_idx</span><span class="p">:])</span>
+    <span class="k">if</span> <span class="n">a_idx</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">):</span> <span class="n">c</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">b_idx</span><span class="p">:])</span>
+    <span class="k">else</span><span class="p">:</span>               <span class="n">c</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a_idx</span><span class="p">:])</span>
 
     <span class="k">return</span> <span class="n">c</span>
 
@@ -534,7 +534,7 @@ Elements after erasing element at index 2
     <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>[45, 8, 25, 1, 32, 37, 34, 3, 4, 3]
 [1, 3, 3, 4, 8, 25, 32, 34, 37, 45]
@@ -605,9 +605,9 @@ Elements after erasing element at index 2
 
     <span class="c1"># iterate over each element and compare with pivot  
 </span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">pivot</span><span class="p">:</span>     <span class="n">smaller</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">x</span><span class="o">==</span><span class="n">pivot</span><span class="p">:</span>  <span class="n">equal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>           <span class="n">larger</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">pivot</span><span class="p">:</span>     <span class="n">smaller</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">x</span><span class="o">==</span><span class="n">pivot</span><span class="p">:</span>  <span class="n">equal</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>           <span class="n">larger</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
     <span class="c1"># recursively quick sort sub list and concatenate
 </span>    <span class="k">return</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">smaller</span><span class="p">)</span> <span class="o">+</span> <span class="n">equal</span> <span class="o">+</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">larger</span><span class="p">)</span> 
@@ -619,7 +619,7 @@ Elements after erasing element at index 2
     <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>[3, 27, 12, 8, 12, 39, 1, 2, 23, 8]
 [1, 2, 3, 8, 8, 12, 12, 23, 27, 39]

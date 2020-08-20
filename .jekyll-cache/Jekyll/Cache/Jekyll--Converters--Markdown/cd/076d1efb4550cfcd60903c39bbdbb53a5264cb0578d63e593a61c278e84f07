@@ -1,4 +1,4 @@
-I"z³<div class="git-showcase">
+I"³<div class="git-showcase">
   <div>
   <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
   </div>
@@ -177,10 +177,10 @@
 
 <span class="c1"># process an image to be mobilenet friendly
 </span><span class="k">def</span> <span class="nf">process_image</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
-  <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">))</span>
-  <span class="n">img_array</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-  <span class="n">img_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-  <span class="n">pImg</span> <span class="o">=</span> <span class="n">mobilenet</span><span class="o">.</span><span class="n">preprocess_input</span><span class="p">(</span><span class="n">img_array</span><span class="p">)</span>
+  <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">))</span>
+  <span class="n">img_array</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+  <span class="n">img_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">pImg</span> <span class="o">=</span> <span class="n">mobilenet</span><span class="p">.</span><span class="n">preprocess_input</span><span class="p">(</span><span class="n">img_array</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">pImg</span>
 
 <span class="c1"># main function
@@ -193,22 +193,22 @@
 </span>  <span class="n">pImg</span> <span class="o">=</span> <span class="n">process_image</span><span class="p">(</span><span class="n">test_img_path</span><span class="p">)</span>
 
   <span class="c1"># define the mobilenet model
-</span>  <span class="n">mobilenet</span> <span class="o">=</span> <span class="n">mobilenet</span><span class="o">.</span><span class="n">MobileNet</span><span class="p">()</span>
+</span>  <span class="n">mobilenet</span> <span class="o">=</span> <span class="n">mobilenet</span><span class="p">.</span><span class="n">MobileNet</span><span class="p">()</span>
 
   <span class="c1"># make predictions on test image using mobilenet
-</span>  <span class="n">prediction</span> <span class="o">=</span> <span class="n">mobilenet</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">pImg</span><span class="p">)</span>
+</span>  <span class="n">prediction</span> <span class="o">=</span> <span class="n">mobilenet</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">pImg</span><span class="p">)</span>
 
   <span class="c1"># obtain the top-5 predictions
-</span>  <span class="n">results</span> <span class="o">=</span> <span class="n">imagenet_utils</span><span class="o">.</span><span class="n">decode_predictions</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
+</span>  <span class="n">results</span> <span class="o">=</span> <span class="n">imagenet_utils</span><span class="p">.</span><span class="n">decode_predictions</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
   <span class="k">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 
   <span class="c1"># convert the mobilenet model into tf.js model
 </span>  <span class="n">save_path</span> <span class="o">=</span> <span class="s">"output</span><span class="se">\\</span><span class="s">mobilenet"</span>
-  <span class="n">tfjs</span><span class="o">.</span><span class="n">converters</span><span class="o">.</span><span class="n">save_keras_model</span><span class="p">(</span><span class="n">mobilenet</span><span class="p">,</span> <span class="n">save_path</span><span class="p">)</span>
+  <span class="n">tfjs</span><span class="p">.</span><span class="n">converters</span><span class="p">.</span><span class="n">save_keras_model</span><span class="p">(</span><span class="n">mobilenet</span><span class="p">,</span> <span class="n">save_path</span><span class="p">)</span>
   <span class="k">print</span><span class="p">(</span><span class="s">"[INFO] saved tf.js mobilenet model to disk.."</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -261,7 +261,7 @@
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="n">tensorflowjs_converter</span> <span class="o">--</span><span class="n">input_format</span> <span class="n">keras</span> \
-                       <span class="n">path_to_keras_model</span><span class="o">.</span><span class="n">h5</span> \
+                       <span class="n">path_to_keras_model</span><span class="p">.</span><span class="n">h5</span> \
                        <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">tfjs_target_dir</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -277,12 +277,12 @@
 8
 </pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">tensorflowjs</span> <span class="k">as</span> <span class="n">tfjs</span>
 
-<span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span> <span class="c1"># for example
-</span>    <span class="o">...</span>
-    <span class="n">model</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-    <span class="n">tfjs</span><span class="o">.</span><span class="n">converters</span><span class="o">.</span><span class="n">save_keras_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tfjs_target_path</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">train</span><span class="p">(...):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">Sequential</span><span class="p">()</span> <span class="c1"># for example
+</span>    <span class="p">...</span>
+    <span class="n">model</span><span class="p">.</span><span class="nb">compile</span><span class="p">(...)</span>
+    <span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(...)</span>
+    <span class="n">tfjs</span><span class="p">.</span><span class="n">converters</span><span class="p">.</span><span class="n">save_keras_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tfjs_target_path</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>The <span class="coding">tfjs_target_path</span> or <span class="coding">save_path</span> (in our case) is a folder that contains <span class="coding">model.json</span> and a set of sharded weight binary files. If you take a look into <span class="coding">model.json</span> file, you will see the model architecture or graph (a description of layers and their connections) plus a manifest of the weight files.</p>

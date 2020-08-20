@@ -1,4 +1,4 @@
-I"rŠ<div class="git-showcase">
+I"<Š<div class="git-showcase">
   <div>
     <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
   </div>
@@ -35,7 +35,7 @@
 <p>When it comes to Global Feature Descriptors (i.e feature vectors that quantifies the entire image), there are three major attributes to be considered - <span class="light">Color, Shape</span> and <span class="light">Texture</span>. All these three could be used separately or combined to quantify images. In this post, we will learn how to recognize texture in images. We will study a new type of global feature descriptor called Haralick Texture. Letâ€™s jump right into it!</p>
 
 <div class="code-head">Objectives<span>goals</span></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -124,7 +124,7 @@ How to make predictions using the created model on an unseen data?
 7
 </pre></td><td class="rouge-code"><pre><span class="c1"># load the training dataset
 </span><span class="n">train_path</span> <span class="o">=</span> <span class="s">"dataset/train"</span>
-<span class="n">train_names</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
+<span class="n">train_names</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
 
 <span class="c1"># empty list to hold feature vectors and train labels
 </span><span class="n">train_features</span> <span class="o">=</span> <span class="p">[]</span>
@@ -150,10 +150,10 @@ How to make predictions using the created model on an unseen data?
 7
 </pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">extract_features</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
         <span class="c1"># calculate haralick texture features for 4 types of adjacency
-</span>        <span class="n">textures</span> <span class="o">=</span> <span class="n">mt</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">haralick</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span>        <span class="n">textures</span> <span class="o">=</span> <span class="n">mt</span><span class="p">.</span><span class="n">features</span><span class="p">.</span><span class="n">haralick</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
         <span class="c1"># take the mean of it and return it
-</span>        <span class="n">ht_mean</span> <span class="o">=</span> <span class="n">textures</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span>        <span class="n">ht_mean</span> <span class="o">=</span> <span class="n">textures</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ht_mean</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -197,20 +197,20 @@ How to make predictions using the created model on an unseen data?
         <span class="n">cur_path</span> <span class="o">=</span> <span class="n">train_path</span> <span class="o">+</span> <span class="s">"/"</span> <span class="o">+</span> <span class="n">train_name</span>
         <span class="n">cur_label</span> <span class="o">=</span> <span class="n">train_name</span>
         <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
-                <span class="k">print</span> <span class="s">"Processing Image - {} in {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cur_label</span><span class="p">)</span>
+        <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
+                <span class="k">print</span> <span class="s">"Processing Image - {} in {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cur_label</span><span class="p">)</span>
                 <span class="c1"># read the training image
-</span>                <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+</span>                <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
 
                 <span class="c1"># convert the image to grayscale
-</span>                <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+</span>                <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
 
                 <span class="c1"># extract haralick texture from the image
 </span>                <span class="n">features</span> <span class="o">=</span> <span class="n">extract_features</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
 
                 <span class="c1"># append the feature vector and label
-</span>                <span class="n">train_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-                <span class="n">train_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_label</span><span class="p">)</span>
+</span>                <span class="n">train_features</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+                <span class="n">train_labels</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_label</span><span class="p">)</span>
 
                 <span class="c1"># show loop update
 </span>                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -234,8 +234,8 @@ How to make predictions using the created model on an unseen data?
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="c1"># have a look at the size of our feature vector and labels
-</span><span class="k">print</span> <span class="s">"Training features: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_features</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">"Training labels: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</span><span class="k">print</span> <span class="s">"Training features: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_features</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">"Training labels: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_labels</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="create-the-machine-learning-classifier">Create the machine learning classifier</h3>
@@ -255,7 +255,7 @@ How to make predictions using the created model on an unseen data?
 
 <span class="c1"># fit the training data and labels
 </span><span class="k">print</span> <span class="s">"[STATUS] Fitting data/label to model.."</span>
-<span class="n">clf_svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
+<span class="n">clf_svm</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
@@ -290,25 +290,25 @@ How to make predictions using the created model on an unseen data?
 21
 </pre></td><td class="rouge-code"><pre><span class="c1"># loop over the test images
 </span><span class="n">test_path</span> <span class="o">=</span> <span class="s">"dataset/test"</span>
-<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">test_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
+<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">test_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
         <span class="c1"># read the input image
-</span>        <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+</span>        <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
 
         <span class="c1"># convert to grayscale
-</span>        <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+</span>        <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
 
         <span class="c1"># extract haralick texture from the image
 </span>        <span class="n">features</span> <span class="o">=</span> <span class="n">extract_features</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
 
         <span class="c1"># evaluate the model and predict label
-</span>        <span class="n">prediction</span> <span class="o">=</span> <span class="n">clf_svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+</span>        <span class="n">prediction</span> <span class="o">=</span> <span class="n">clf_svm</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
 
         <span class="c1"># show the label
-</span>        <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+</span>        <span class="n">cv2</span><span class="p">.</span><span class="n">putText</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
 
        <span class="c1"># display the output image
-</span>       <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Test_Image"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
-       <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span>       <span class="n">cv2</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Test_Image"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+       <span class="n">cv2</span><span class="p">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
@@ -462,15 +462,15 @@ How to make predictions using the created model on an unseen data?
 <span class="c1"># function to extract haralick textures from an image
 </span><span class="k">def</span> <span class="nf">extract_features</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
 	<span class="c1"># calculate haralick texture features for 4 types of adjacency
-</span>	<span class="n">textures</span> <span class="o">=</span> <span class="n">mt</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">haralick</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span>	<span class="n">textures</span> <span class="o">=</span> <span class="n">mt</span><span class="p">.</span><span class="n">features</span><span class="p">.</span><span class="n">haralick</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
 	<span class="c1"># take the mean of it and return it
-</span>	<span class="n">ht_mean</span>  <span class="o">=</span> <span class="n">textures</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span>	<span class="n">ht_mean</span>  <span class="o">=</span> <span class="n">textures</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 	<span class="k">return</span> <span class="n">ht_mean</span>
 
 <span class="c1"># load the training dataset
 </span><span class="n">train_path</span>  <span class="o">=</span> <span class="s">"dataset/train"</span>
-<span class="n">train_names</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
+<span class="n">train_names</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
 
 <span class="c1"># empty list to hold feature vectors and train labels
 </span><span class="n">train_features</span> <span class="o">=</span> <span class="p">[]</span>
@@ -483,27 +483,27 @@ How to make predictions using the created model on an unseen data?
 	<span class="n">cur_label</span> <span class="o">=</span> <span class="n">train_name</span>
 	<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 
-	<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
-		<span class="k">print</span> <span class="s">"Processing Image - {} in {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cur_label</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
+		<span class="k">print</span> <span class="s">"Processing Image - {} in {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cur_label</span><span class="p">)</span>
 		<span class="c1"># read the training image
-</span>		<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+</span>		<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
 
 		<span class="c1"># convert the image to grayscale
-</span>		<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+</span>		<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
 
 		<span class="c1"># extract haralick texture from the image
 </span>		<span class="n">features</span> <span class="o">=</span> <span class="n">extract_features</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
 
 		<span class="c1"># append the feature vector and label
-</span>		<span class="n">train_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-		<span class="n">train_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_label</span><span class="p">)</span>
+</span>		<span class="n">train_features</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+		<span class="n">train_labels</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_label</span><span class="p">)</span>
 
 		<span class="c1"># show loop update
 </span>		<span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="c1"># have a look at the size of our feature vector and labels
-</span><span class="k">print</span> <span class="s">"Training features: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_features</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">"Training labels: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</span><span class="k">print</span> <span class="s">"Training features: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_features</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">"Training labels: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_labels</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="c1"># create the classifier
 </span><span class="k">print</span> <span class="s">"[STATUS] Creating the classifier.."</span>
@@ -511,33 +511,33 @@ How to make predictions using the created model on an unseen data?
 
 <span class="c1"># fit the training data and labels
 </span><span class="k">print</span> <span class="s">"[STATUS] Fitting data/label to model.."</span>
-<span class="n">clf_svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
+<span class="n">clf_svm</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
 
 <span class="c1"># loop over the test images
 </span><span class="n">test_path</span> <span class="o">=</span> <span class="s">"dataset/test"</span>
-<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">test_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
+<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">test_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
 	<span class="c1"># read the input image
-</span>	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+</span>	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
 
 	<span class="c1"># convert to grayscale
-</span>	<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+</span>	<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
 
 	<span class="c1"># extract haralick texture from the image
 </span>	<span class="n">features</span> <span class="o">=</span> <span class="n">extract_features</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
 
 	<span class="c1"># evaluate the model and predict label
-</span>	<span class="n">prediction</span> <span class="o">=</span> <span class="n">clf_svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+</span>	<span class="n">prediction</span> <span class="o">=</span> <span class="n">clf_svm</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
 
 	<span class="c1"># show the label
-</span>	<span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
-	<span class="k">print</span> <span class="s">"Prediction - {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
+</span>	<span class="n">cv2</span><span class="p">.</span><span class="n">putText</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+	<span class="k">print</span> <span class="s">"Prediction - {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
 
 	<span class="c1"># display the output image
-</span>	<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Test_Image"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
-	<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span>	<span class="n">cv2</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Test_Image"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+	<span class="n">cv2</span><span class="p">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4

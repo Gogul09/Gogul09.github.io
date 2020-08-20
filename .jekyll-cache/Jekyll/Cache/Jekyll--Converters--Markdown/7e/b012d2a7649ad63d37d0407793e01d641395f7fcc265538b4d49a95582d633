@@ -1,4 +1,4 @@
-I":b<div class="git-showcase">
+I"ž_<div class="git-showcase">
   <div>
   <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
   </div>
@@ -252,49 +252,49 @@ In this blog post, we will quickly understand how to use state-of-the-art Deep L
 45
 </pre></td><td class="rouge-code"><pre><span class="o">|--</span><span class="n">flower_recognition</span>
 <span class="o">|--|--</span><span class="n">conf</span>
-<span class="o">|--|--|--</span><span class="n">conf</span><span class="o">.</span><span class="n">json</span>
+<span class="o">|--|--|--</span><span class="n">conf</span><span class="p">.</span><span class="n">json</span>
 <span class="o">|--|--</span><span class="n">dataset</span>
 <span class="o">|--|--|--</span><span class="n">train</span>
 <span class="o">|--|--|--</span><span class="n">test</span>
 <span class="o">|--|--</span><span class="n">output</span>
 <span class="o">|--|--|--</span><span class="n">flower_17</span>
 <span class="o">|--|--|--|--</span><span class="n">inceptionv3</span>
-<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="o">.</span><span class="n">cPickle</span>
-<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
 <span class="o">|--|--|--|--</span><span class="n">vgg16</span>
-<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="o">.</span><span class="n">cPickle</span>
-<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
 <span class="o">|--|--|--|--</span><span class="n">vgg19</span>
-<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="o">.</span><span class="n">cPickle</span>
-<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
 <span class="o">|--|--|--|--</span><span class="n">resnet50</span>
-<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="o">.</span><span class="n">cPickle</span>
-<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
 <span class="o">|--|--|--|--</span><span class="n">xception</span>
-<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="o">.</span><span class="n">cPickle</span>
-<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
 <span class="o">|--|--|--|--</span><span class="n">inceptionresnetv2</span>
-<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="o">.</span><span class="n">cPickle</span>
-<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
 <span class="o">|--|--|--|--</span><span class="n">mobilenet</span>
-<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="o">.</span><span class="n">cPickle</span>
-<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="o">.</span><span class="n">h5</span>
-<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="o">.</span><span class="n">txt</span>
-<span class="o">|--|--</span><span class="n">extract_features</span><span class="o">.</span><span class="n">py</span>
-<span class="o">|--|--</span><span class="n">train</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
+<span class="o">|--|--</span><span class="n">extract_features</span><span class="p">.</span><span class="n">py</span>
+<span class="o">|--|--</span><span class="n">train</span><span class="p">.</span><span class="n">py</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="training-dataset">Training dataset</h3>
@@ -370,7 +370,7 @@ In this blog post, we will quickly understand how to use state-of-the-art Deep L
 <span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="c1"># print start time
-</span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] program started on - "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] program started on - "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">))</span>
 
 <span class="c1"># get the input and output path
 </span><span class="n">input_path</span>  <span class="o">=</span> <span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">machine-intelligence</span><span class="se">\\</span><span class="s">deep-learning</span><span class="se">\\</span><span class="s">flower-recognition</span><span class="se">\\</span><span class="s">17flowers</span><span class="se">\\</span><span class="s">jpg"</span>
@@ -380,7 +380,7 @@ In this blog post, we will quickly understand how to use state-of-the-art Deep L
 </span><span class="n">class_limit</span> <span class="o">=</span> <span class="mi">17</span>
 
 <span class="c1"># take all the images from the dataset
-</span><span class="n">image_paths</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">input_path</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">*.jpg"</span><span class="p">)</span>
+</span><span class="n">image_paths</span> <span class="o">=</span> <span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">input_path</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">*.jpg"</span><span class="p">)</span>
 
 <span class="c1"># variables to keep track
 </span><span class="n">label</span> <span class="o">=</span> <span class="mi">0</span>
@@ -394,26 +394,26 @@ In this blog post, we will quickly understand how to use state-of-the-art Deep L
 			   <span class="s">"windflower"</span><span class="p">,</span> <span class="s">"pansy"</span><span class="p">]</span>
 
 <span class="c1"># change the current working directory
-</span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+</span><span class="n">os</span><span class="p">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
 
 <span class="c1"># loop over the class labels
 </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">class_limit</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
 	<span class="c1"># create a folder for that class
-</span>	<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">"mkdir "</span> <span class="o">+</span> <span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
+</span>	<span class="n">os</span><span class="p">.</span><span class="n">system</span><span class="p">(</span><span class="s">"mkdir "</span> <span class="o">+</span> <span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
 	<span class="c1"># get the current path
 </span>	<span class="n">cur_path</span> <span class="o">=</span> <span class="n">output_path</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">"</span> <span class="o">+</span> <span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">+</span> <span class="s">"</span><span class="se">\\</span><span class="s">"</span>
 	<span class="c1"># loop over the images in the dataset
 </span>	<span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">image_paths</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]:</span>
 		<span class="n">original_path</span> <span class="o">=</span> <span class="n">image_path</span>
-		<span class="n">image_path</span> <span class="o">=</span> <span class="n">image_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">"</span><span class="p">)</span>
+		<span class="n">image_path</span> <span class="o">=</span> <span class="n">image_path</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">"</span><span class="p">)</span>
 		<span class="n">image_path</span> <span class="o">=</span> <span class="n">image_path</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-		<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">"copy "</span> <span class="o">+</span> <span class="n">original_path</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">cur_path</span> <span class="o">+</span> <span class="n">image_path</span><span class="p">)</span>
+		<span class="n">os</span><span class="p">.</span><span class="n">system</span><span class="p">(</span><span class="s">"copy "</span> <span class="o">+</span> <span class="n">original_path</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">cur_path</span> <span class="o">+</span> <span class="n">image_path</span><span class="p">)</span>
 	<span class="n">i</span> <span class="o">+=</span> <span class="mi">80</span>
 	<span class="n">j</span> <span class="o">+=</span> <span class="mi">80</span>
 	<span class="n">label</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="c1"># print end time
-</span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] program ended on - "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] program ended on - "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="deep-learning-pipeline">Deep Learning pipeline</h3>
@@ -471,7 +471,7 @@ In this blog post, we will quickly understand how to use state-of-the-art Deep L
 <p>Here, I have decided to use <span class="coding">inceptionv3</span> architecture of GoogleNet pre-trained on <span class="coding">imagenet</span> including the top layers. You can extract features from any arbitrary layer using the layer name (eg: <span class="coding">flatten</span>), by checking the <span class="coding">.py</span> file of each of the model residing inside the <span class="coding">applications</span> directory of Keras.</p>
 
 <div class="code-head"><span>path</span>New applications module (Keras 2.2.0)</div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>"python_installation_directory" -&gt; "Lib" -&gt; "site-packages" -&gt; "keras_applications"
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -633,7 +633,7 @@ In this blog post, we will quickly understand how to use state-of-the-art Deep L
 145
 </pre></td><td class="rouge-code"><pre><span class="c1"># filter warnings
 </span><span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">FutureWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="p">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">FutureWarning</span><span class="p">)</span>
 
 <span class="c1"># keras imports
 </span><span class="kn">from</span> <span class="nn">keras.applications.vgg16</span> <span class="kn">import</span> <span class="n">VGG16</span><span class="p">,</span> <span class="n">preprocess_input</span>
@@ -661,7 +661,7 @@ In this blog post, we will quickly understand how to use state-of-the-art Deep L
 
 <span class="c1"># load the user configs
 </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'conf/conf.json'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>    
-  <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+  <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 <span class="c1"># config variables
 </span><span class="n">model_name</span>    <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">"model"</span><span class="p">]</span>
@@ -675,39 +675,39 @@ In this blog post, we will quickly understand how to use state-of-the-art Deep L
 <span class="n">model_path</span>    <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">"model_path"</span><span class="p">]</span>
 
 <span class="c1"># start time
-</span><span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] start time - {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">"</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M"</span><span class="p">)))</span>
-<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span><span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] start time - {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">().</span><span class="n">strftime</span><span class="p">(</span><span class="s">"%Y-%m-%d %H:%M"</span><span class="p">)))</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
 
 <span class="c1"># create the pretrained models
 # check for pretrained weight usage or not
 # check for top layers to be included or not
 </span><span class="k">if</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s">"vgg16"</span><span class="p">:</span>
   <span class="n">base_model</span> <span class="o">=</span> <span class="n">VGG16</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
-  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'fc1'</span><span class="p">)</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'fc1'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
   <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s">"vgg19"</span><span class="p">:</span>
   <span class="n">base_model</span> <span class="o">=</span> <span class="n">VGG19</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
-  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'fc1'</span><span class="p">)</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'fc1'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
   <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s">"resnet50"</span><span class="p">:</span>
   <span class="n">base_model</span> <span class="o">=</span> <span class="n">ResNet50</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
-  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'flatten'</span><span class="p">)</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'flatten'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
   <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s">"inceptionv3"</span><span class="p">:</span>
   <span class="n">base_model</span> <span class="o">=</span> <span class="n">InceptionV3</span><span class="p">(</span><span class="n">include_top</span><span class="o">=</span><span class="n">include_top</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">input_tensor</span><span class="o">=</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">299</span><span class="p">,</span><span class="mi">299</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
-  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'custom'</span><span class="p">)</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'custom'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
   <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">299</span><span class="p">,</span> <span class="mi">299</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s">"inceptionresnetv2"</span><span class="p">:</span>
   <span class="n">base_model</span> <span class="o">=</span> <span class="n">InceptionResNetV2</span><span class="p">(</span><span class="n">include_top</span><span class="o">=</span><span class="n">include_top</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">input_tensor</span><span class="o">=</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">299</span><span class="p">,</span><span class="mi">299</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
-  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'custom'</span><span class="p">)</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'custom'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
   <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">299</span><span class="p">,</span> <span class="mi">299</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s">"mobilenet"</span><span class="p">:</span>
   <span class="n">base_model</span> <span class="o">=</span> <span class="n">MobileNet</span><span class="p">(</span><span class="n">include_top</span><span class="o">=</span><span class="n">include_top</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">input_tensor</span><span class="o">=</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'custom'</span><span class="p">)</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'custom'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
   <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s">"xception"</span><span class="p">:</span>
   <span class="n">base_model</span> <span class="o">=</span> <span class="n">Xception</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
-  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'avg_pool'</span><span class="p">)</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">'avg_pool'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
   <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">299</span><span class="p">,</span> <span class="mi">299</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
   <span class="n">base_model</span> <span class="o">=</span> <span class="bp">None</span>
@@ -715,12 +715,12 @@ In this blog post, we will quickly understand how to use state-of-the-art Deep L
 <span class="k">print</span><span class="p">(</span><span class="s">"[INFO] successfully loaded base model and model..."</span><span class="p">)</span>
 
 <span class="c1"># path to training dataset
-</span><span class="n">train_labels</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
+</span><span class="n">train_labels</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
 
 <span class="c1"># encode the labels
 </span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] encoding labels..."</span><span class="p">)</span>
 <span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
-<span class="n">le</span><span class="o">.</span><span class="n">fit</span><span class="p">([</span><span class="n">tl</span> <span class="k">for</span> <span class="n">tl</span> <span class="ow">in</span> <span class="n">train_labels</span><span class="p">])</span>
+<span class="n">le</span><span class="p">.</span><span class="n">fit</span><span class="p">([</span><span class="n">tl</span> <span class="k">for</span> <span class="n">tl</span> <span class="ow">in</span> <span class="n">train_labels</span><span class="p">])</span>
 
 <span class="c1"># variables to hold features and labels
 </span><span class="n">features</span> <span class="o">=</span> <span class="p">[]</span>
@@ -731,51 +731,51 @@ In this blog post, we will quickly understand how to use state-of-the-art Deep L
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_labels</span><span class="p">):</span>
   <span class="n">cur_path</span> <span class="o">=</span> <span class="n">train_path</span> <span class="o">+</span> <span class="s">"/"</span> <span class="o">+</span> <span class="n">label</span>
   <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
-    <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="n">image_size</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="s">"/*.jpg"</span><span class="p">):</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="n">image_size</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">preprocess_input</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">feature</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">flat</span> <span class="o">=</span> <span class="n">feature</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-    <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flat</span><span class="p">)</span>
-    <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+    <span class="n">feature</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">flat</span> <span class="o">=</span> <span class="n">feature</span><span class="p">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">features</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">flat</span><span class="p">)</span>
+    <span class="n">labels</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"[INFO] processed - "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
   <span class="k">print</span><span class="p">(</span><span class="s">"[INFO] completed label - "</span> <span class="o">+</span> <span class="n">label</span><span class="p">)</span>
 
 <span class="c1"># encode the labels using LabelEncoder
 </span><span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
-<span class="n">le_labels</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">le_labels</span> <span class="o">=</span> <span class="n">le</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
 
 <span class="c1"># get the shape of training labels
-</span><span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] training labels: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">le_labels</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] training labels shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">le_labels</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] training labels: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">le_labels</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] training labels shape: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">le_labels</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
 
 <span class="c1"># save features and labels
-</span><span class="n">h5f_data</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">features_path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
-<span class="n">h5f_data</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">'dataset_1'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">features</span><span class="p">))</span>
+</span><span class="n">h5f_data</span> <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="n">File</span><span class="p">(</span><span class="n">features_path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+<span class="n">h5f_data</span><span class="p">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">'dataset_1'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">features</span><span class="p">))</span>
 
-<span class="n">h5f_label</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">labels_path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
-<span class="n">h5f_label</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">'dataset_1'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">le_labels</span><span class="p">))</span>
+<span class="n">h5f_label</span> <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="n">File</span><span class="p">(</span><span class="n">labels_path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+<span class="n">h5f_label</span><span class="p">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s">'dataset_1'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">le_labels</span><span class="p">))</span>
 
-<span class="n">h5f_data</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">h5f_label</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">h5f_data</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">h5f_label</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="c1"># save model and weights
-</span><span class="n">model_json</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+</span><span class="n">model_json</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">to_json</span><span class="p">()</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">model_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">test_size</span><span class="p">)</span> <span class="o">+</span> <span class="s">".json"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
-  <span class="n">json_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">model_json</span><span class="p">)</span>
+  <span class="n">json_file</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">model_json</span><span class="p">)</span>
 
 <span class="c1"># save weights
-</span><span class="n">model</span><span class="o">.</span><span class="n">save_weights</span><span class="p">(</span><span class="n">model_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">test_size</span><span class="p">)</span> <span class="o">+</span> <span class="s">".h5"</span><span class="p">)</span>
+</span><span class="n">model</span><span class="p">.</span><span class="n">save_weights</span><span class="p">(</span><span class="n">model_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">test_size</span><span class="p">)</span> <span class="o">+</span> <span class="s">".h5"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] saved model and weights to disk.."</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] features and labels saved.."</span><span class="p">)</span>
 
 <span class="c1"># end time
-</span><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] end time - {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">"</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M"</span><span class="p">)))</span>
+</span><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[STATUS] end time - {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">().</span><span class="n">strftime</span><span class="p">(</span><span class="s">"%Y-%m-%d %H:%M"</span><span class="p">)))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
@@ -968,7 +968,7 @@ The pre-trained models are loaded from the <span class="coding">application</spa
 
 <span class="c1"># load the user configs
 </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'conf/conf.json'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>    
-  <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+  <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 <span class="c1"># config variables
 </span><span class="n">test_size</span>     <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">"test_size"</span><span class="p">]</span>
@@ -982,39 +982,39 @@ The pre-trained models are loaded from the <span class="coding">application</spa
 <span class="n">classifier_path</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">"classifier_path"</span><span class="p">]</span>
 
 <span class="c1"># import features and labels
-</span><span class="n">h5f_data</span>  <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">features_path</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
-<span class="n">h5f_label</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">labels_path</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+</span><span class="n">h5f_data</span>  <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="n">File</span><span class="p">(</span><span class="n">features_path</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+<span class="n">h5f_label</span> <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="n">File</span><span class="p">(</span><span class="n">labels_path</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
 
 <span class="n">features_string</span> <span class="o">=</span> <span class="n">h5f_data</span><span class="p">[</span><span class="s">'dataset_1'</span><span class="p">]</span>
 <span class="n">labels_string</span>   <span class="o">=</span> <span class="n">h5f_label</span><span class="p">[</span><span class="s">'dataset_1'</span><span class="p">]</span>
 
-<span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">features_string</span><span class="p">)</span>
-<span class="n">labels</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">labels_string</span><span class="p">)</span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">features_string</span><span class="p">)</span>
+<span class="n">labels</span>   <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">labels_string</span><span class="p">)</span>
 
-<span class="n">h5f_data</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">h5f_label</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">h5f_data</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">h5f_label</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="c1"># verify the shape of features and labels
-</span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] features shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] labels shape: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] features shape: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">features</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] labels shape: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">labels</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"[INFO] training started..."</span><span class="p">)</span>
 <span class="c1"># split the training and testing data
-</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> <span class="n">testData</span><span class="p">,</span> <span class="n">trainLabels</span><span class="p">,</span> <span class="n">testLabels</span><span class="p">)</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">features</span><span class="p">),</span>
-                                                                  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span>
+</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> <span class="n">testData</span><span class="p">,</span> <span class="n">trainLabels</span><span class="p">,</span> <span class="n">testLabels</span><span class="p">)</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">features</span><span class="p">),</span>
+                                                                  <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span>
                                                                   <span class="n">test_size</span><span class="o">=</span><span class="n">test_size</span><span class="p">,</span>
                                                                   <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"[INFO] splitted train and test data..."</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train data  : {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainData</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test data   : {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testData</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train labels: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainLabels</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test labels : {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testLabels</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train data  : {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainData</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test data   : {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testData</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] train labels: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">trainLabels</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] test labels : {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">testLabels</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
 
 <span class="c1"># use logistic regression as the model
 </span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] creating model..."</span><span class="p">)</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> <span class="n">trainLabels</span><span class="p">)</span>
+<span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> <span class="n">trainLabels</span><span class="p">)</span>
 
 <span class="c1"># use rank-1 and rank-5 predictions
 </span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] evaluating model..."</span><span class="p">)</span>
@@ -1026,8 +1026,8 @@ The pre-trained models are loaded from the <span class="coding">application</spa
 </span><span class="k">for</span> <span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">testLabels</span><span class="p">,</span> <span class="n">testData</span><span class="p">):</span>
   <span class="c1"># predict the probability of each class label and
 </span>  <span class="c1"># take the top-5 class labels
-</span>  <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">features</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-  <span class="n">predictions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">predictions</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
+</span>  <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">features</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">predictions</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">predictions</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
 
   <span class="c1"># rank-1 prediction increment
 </span>  <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
@@ -1042,32 +1042,32 @@ The pre-trained models are loaded from the <span class="coding">application</spa
 <span class="n">rank_5</span> <span class="o">=</span> <span class="p">(</span><span class="n">rank_5</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">testLabels</span><span class="p">)))</span> <span class="o">*</span> <span class="mi">100</span>
 
 <span class="c1"># write the accuracies to file
-</span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"Rank-1: {:.2f}</span><span class="si">%</span><span class="se">\n</span><span class="s">"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">rank_1</span><span class="p">))</span>
-<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"Rank-5: {:.2f}</span><span class="si">%</span><span class="se">\n\n</span><span class="s">"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">rank_5</span><span class="p">))</span>
+</span><span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">"Rank-1: {:.2f}%</span><span class="se">\n</span><span class="s">"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">rank_1</span><span class="p">))</span>
+<span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">"Rank-5: {:.2f}%</span><span class="se">\n\n</span><span class="s">"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">rank_5</span><span class="p">))</span>
 
 <span class="c1"># evaluate the model of test data
-</span><span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testData</span><span class="p">)</span>
+</span><span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testData</span><span class="p">)</span>
 
 <span class="c1"># write the classification report to file
-</span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"{}</span><span class="se">\n</span><span class="s">"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">testLabels</span><span class="p">,</span> <span class="n">preds</span><span class="p">)))</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">"{}</span><span class="se">\n</span><span class="s">"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">testLabels</span><span class="p">,</span> <span class="n">preds</span><span class="p">)))</span>
+<span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="c1"># dump classifier to file
 </span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] saving model..."</span><span class="p">)</span>
-<span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">classifier_path</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">))</span>
+<span class="n">pickle</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">classifier_path</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">))</span>
 
 <span class="c1"># display the confusion matrix
 </span><span class="k">print</span><span class="p">(</span><span class="s">"[INFO] confusion matrix"</span><span class="p">)</span>
 
 <span class="c1"># get the list of training lables
-</span><span class="n">labels</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)))</span>
+</span><span class="n">labels</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)))</span>
 
 <span class="c1"># plot the confusion matrix
 </span><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">testLabels</span><span class="p">,</span> <span class="n">preds</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span>
             <span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
             <span class="n">cmap</span><span class="o">=</span><span class="s">"Set2"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
@@ -1249,8 +1249,8 @@ This error is the common one found when trying to add <span class="coding">Flatt
 12
 13
 14
-</pre></td><td class="rouge-code"><pre><span class="o">...</span>
-<span class="o">...</span>
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="p">...</span>
 <span class="k">if</span> <span class="n">include_top</span><span class="p">:</span>
         <span class="c1"># Classification block
 </span>        <span class="n">x</span> <span class="o">=</span> <span class="n">GlobalAveragePooling2D</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'avg_pool'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
@@ -1261,8 +1261,8 @@ This error is the common one found when trying to add <span class="coding">Flatt
         <span class="k">elif</span> <span class="n">pooling</span> <span class="o">==</span> <span class="s">'max'</span><span class="p">:</span>
             <span class="n">x</span> <span class="o">=</span> <span class="n">GlobalMaxPooling2D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">Flatten</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'custom'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="o">...</span>
+<span class="p">...</span>
+<span class="p">...</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
@@ -1271,7 +1271,7 @@ This issue is seen in <a href="https://github.com/keras-team/keras/releases" tar
 </ul>
 
 <div class="code-head"><span>path</span>New applications module</div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>"python_installation_directory" -&gt; "Lib" -&gt; "site-packages" -&gt; "keras_applications"
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -1283,7 +1283,7 @@ This issue is seen in <a href="https://github.com/keras-team/keras/releases" tar
 <p>In case if you want to keep the previous Keras version, simply do the following two commands.</p>
 
 <div class="code-head"><span>cmd</span>Reinstall Keras</div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>pip uninstall keras
 pip install keras==2.1.2

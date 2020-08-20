@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="https://drive.google.com/uc?id=1H-AAPvyD3tfEUFKuXGM4AN1mtQ4aMJhn">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Hand Gesture Recognition using Python and OpenCV - Part 1 | Gogul Ilango</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Hand Gesture Recognition using Python and OpenCV - Part 1" />
 <meta name="author" content="Gogul Ilango" />
 <meta property="og:locale" content="en_US" />
@@ -40,7 +40,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-04-06T00:00:00+05:30" />
 <script type="application/ld+json">
-{"headline":"Hand Gesture Recognition using Python and OpenCV - Part 1","url":"http://localhost:4000/software/hand-gesture-recognition-p1","datePublished":"2017-04-06T00:00:00+05:30","dateModified":"2017-04-06T00:00:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/hand-gesture-recognition-p1"},"image":"https://drive.google.com/uc?id=1H-AAPvyD3tfEUFKuXGM4AN1mtQ4aMJhn","author":{"@type":"Person","name":"Gogul Ilango"},"description":"Learn how to segment hand regions from a video sequence to further recognize hand gestures using OpenCV and Python.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"dateModified":"2017-04-06T00:00:00+05:30","datePublished":"2017-04-06T00:00:00+05:30","url":"http://localhost:4000/software/hand-gesture-recognition-p1","headline":"Hand Gesture Recognition using Python and OpenCV - Part 1","image":"https://drive.google.com/uc?id=1H-AAPvyD3tfEUFKuXGM4AN1mtQ4aMJhn","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/hand-gesture-recognition-p1"},"author":{"@type":"Person","name":"Gogul Ilango"},"description":"Learn how to segment hand regions from a video sequence to further recognize hand gestures using OpenCV and Python.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -148,6 +148,7 @@
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#implementation">Implementation</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#executing-code">Executing code</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#summary">Summary</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#references">References</a></li>
   </ul>
 </div>
 
@@ -156,7 +157,7 @@
 <p>Hand gesture recognition is a cool project to start for a Computer Vision enthusiast as it involves an intuitive step-by-step procedure which could be easily understood, so that you could build more complex stuff on top of these concepts.</p>
 
 <div class="code-head">Objectives<span>goals</span></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -288,16 +289,16 @@ How to segment hand-region effectively from a real-time video sequence?
     <span class="k">global</span> <span class="n">bg</span>
     <span class="c1"># initialize the background
 </span>    <span class="k">if</span> <span class="n">bg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="n">bg</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"float"</span><span class="p">)</span>
+        <span class="n">bg</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">copy</span><span class="p">().</span><span class="n">astype</span><span class="p">(</span><span class="s">"float"</span><span class="p">)</span>
         <span class="k">return</span>
 
     <span class="c1"># compute weighted average, accumulate it and update the background
-</span>    <span class="n">cv2</span><span class="o">.</span><span class="n">accumulateWeighted</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">bg</span><span class="p">,</span> <span class="n">aWeight</span><span class="p">)</span>
+</span>    <span class="n">cv2</span><span class="p">.</span><span class="n">accumulateWeighted</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">bg</span><span class="p">,</span> <span class="n">aWeight</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Next, we have our function that is used to compute the <span class="coding">running average</span> between the background model and the current frame. This function takes in two arguments - <span class="coding">current frame</span> and <span class="coding">aWeight</span>, which is like a threshold to perform running average over images. If the background model is <span class="coding">None</span> (i.e if it is the first frame), then initialize it with the current frame. Then, compute the running average over the background model and the current frame using <span class="coding">cv2.accumulateWeighted()</span> function. Running average is calculated using the formula given below -</p>
 
-<script type="math/tex; mode=display">dst(x,y) = (1-a).dst(x,y) + a.src(x,y)</script>
+\[dst(x,y) = (1-a).dst(x,y) + a.src(x,y)\]
 
 <ul>
   <li>\( src(x,y) \) - Source image or input image (1 or 3 channel, 8-bit or 32-bit floating point)</li>
@@ -336,20 +337,20 @@ How to segment hand-region effectively from a real-time video sequence?
 </span><span class="k">def</span> <span class="nf">segment</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">bg</span>
     <span class="c1"># find the absolute difference between background and current frame
-</span>    <span class="n">diff</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">absdiff</span><span class="p">(</span><span class="n">bg</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"uint8"</span><span class="p">),</span> <span class="n">image</span><span class="p">)</span>
+</span>    <span class="n">diff</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">absdiff</span><span class="p">(</span><span class="n">bg</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"uint8"</span><span class="p">),</span> <span class="n">image</span><span class="p">)</span>
 
     <span class="c1"># threshold the diff image so that we get the foreground
-</span>    <span class="n">thresholded</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span>    <span class="n">thresholded</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">THRESH_BINARY</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="c1"># get the contours in the thresholded image
-</span>    <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">thresholded</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+</span>    <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">thresholded</span><span class="p">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
 
     <span class="c1"># return None, if no contours detected
 </span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># based on contour area, get the maximum contour which is the hand
-</span>        <span class="n">segmented</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">cnts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">)</span>
+</span>        <span class="n">segmented</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">cnts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">cv2</span><span class="p">.</span><span class="n">contourArea</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">thresholded</span><span class="p">,</span> <span class="n">segmented</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -361,12 +362,11 @@ How to segment hand-region effectively from a real-time video sequence?
 
 <p>We return the thresholded image as well as the segmented image as a tuple. The math behind thresholding is pretty simple. If \( x(n) \) represents the pixel intensity of an input image at a particular pixel coordinate, then \( threshold \) decides how nicely we are going to segment/threshold the image into a binary image.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-x(n) =
+\[x(n) =
 \begin{cases}
-1,  & \text{if $n$ >= $threshold$} \\
-0, & \text{if $n$ < $threshold$}
-\end{cases} %]]></script>
+1,  &amp; \text{if $n$ &gt;= $threshold$} \\
+0, &amp; \text{if $n$ &lt; $threshold$}
+\end{cases}\]
 
 <h3 class="code-head">segment.py<span>code</span></h3>
 
@@ -455,7 +455,7 @@ x(n) =
 </span>    <span class="n">aWeight</span> <span class="o">=</span> <span class="mf">0.5</span>
 
     <span class="c1"># get the reference to the webcam
-</span>    <span class="n">camera</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span>    <span class="n">camera</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="c1"># region of interest (ROI) coordinates
 </span>    <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">590</span>
@@ -466,26 +466,26 @@ x(n) =
     <span class="c1"># keep looping, until interrupted
 </span>    <span class="k">while</span><span class="p">(</span><span class="bp">True</span><span class="p">):</span>
         <span class="c1"># get the current frame
-</span>        <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span>        <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
 
         <span class="c1"># resize the frame
-</span>        <span class="n">frame</span> <span class="o">=</span> <span class="n">imutils</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">)</span>
+</span>        <span class="n">frame</span> <span class="o">=</span> <span class="n">imutils</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">)</span>
 
         <span class="c1"># flip the frame so that it is not the mirror view
-</span>        <span class="n">frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span>        <span class="n">frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">flip</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
         <span class="c1"># clone the frame
-</span>        <span class="n">clone</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span>        <span class="n">clone</span> <span class="o">=</span> <span class="n">frame</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
 
         <span class="c1"># get the height and width of the frame
-</span>        <span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</span>        <span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span> <span class="o">=</span> <span class="n">frame</span><span class="p">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
 
         <span class="c1"># get the ROI
 </span>        <span class="n">roi</span> <span class="o">=</span> <span class="n">frame</span><span class="p">[</span><span class="n">top</span><span class="p">:</span><span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span><span class="n">left</span><span class="p">]</span>
 
         <span class="c1"># convert the roi to grayscale and blur it
-</span>        <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">roi</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
-        <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+</span>        <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">roi</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+        <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 
         <span class="c1"># to get the background, keep looking till a threshold is reached
 </span>        <span class="c1"># so that our running average model gets calibrated
@@ -502,28 +502,28 @@ x(n) =
 </span>                <span class="p">(</span><span class="n">thresholded</span><span class="p">,</span> <span class="n">segmented</span><span class="p">)</span> <span class="o">=</span> <span class="n">hand</span>
 
                 <span class="c1"># draw the segmented region and display the frame
-</span>                <span class="n">cv2</span><span class="o">.</span><span class="n">drawContours</span><span class="p">(</span><span class="n">clone</span><span class="p">,</span> <span class="p">[</span><span class="n">segmented</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">)],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
-                <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Thesholded"</span><span class="p">,</span> <span class="n">thresholded</span><span class="p">)</span>
+</span>                <span class="n">cv2</span><span class="p">.</span><span class="n">drawContours</span><span class="p">(</span><span class="n">clone</span><span class="p">,</span> <span class="p">[</span><span class="n">segmented</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">)],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+                <span class="n">cv2</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Thesholded"</span><span class="p">,</span> <span class="n">thresholded</span><span class="p">)</span>
 
         <span class="c1"># draw the segmented hand
-</span>        <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">clone</span><span class="p">,</span> <span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">),</span> <span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+</span>        <span class="n">cv2</span><span class="p">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">clone</span><span class="p">,</span> <span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">),</span> <span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
 
         <span class="c1"># increment the number of frames
 </span>        <span class="n">num_frames</span> <span class="o">+=</span> <span class="mi">1</span>
 
         <span class="c1"># display the frame with segmented hand
-</span>        <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Video Feed"</span><span class="p">,</span> <span class="n">clone</span><span class="p">)</span>
+</span>        <span class="n">cv2</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Video Feed"</span><span class="p">,</span> <span class="n">clone</span><span class="p">)</span>
 
         <span class="c1"># observe the keypress by the user
-</span>        <span class="n">keypress</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+</span>        <span class="n">keypress</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
 
         <span class="c1"># if the user pressed "q", then stop looping
 </span>        <span class="k">if</span> <span class="n">keypress</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s">"q"</span><span class="p">):</span>
             <span class="k">break</span>
 
 <span class="c1"># free up memory
-</span><span class="n">camera</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
-<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</span><span class="n">camera</span><span class="p">.</span><span class="n">release</span><span class="p">()</span>
+<span class="n">cv2</span><span class="p">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>The above code sample is the <span class="coding">main</span> function of our program. We initialize the <span class="coding">aWeight</span> to 0.5. As shown eariler in the running average equation, this threshold means that if you set a lower value for this variable, running average will be performed over larger amount of previous frames and vice-versa. We take a reference to our webcam using <span class="coding">cv2.VideoCapture(0)</span>, which means that we get the default webcam instance in our computer.</p>
@@ -552,6 +552,14 @@ x(n) =
 <h3 id="summary">Summary</h3>
 
 <p>In this tutorial, we have learnt about Background Subtraction, Motion Detection, Thresholding and Contour Extraction to nicely segment hand region from a real-time video sequence using OpenCV and Python. In the next part of the tutorial, we will extend this simple technique to make our system (intelligent enough) to recognize hand gestures by counting the fingers shown in the video sequence. Using this, you could build an intelligent robot that performs some operations based on your gesture commands.</p>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li><a href="https://docs.opencv.org/3.4/d1/dc5/tutorial_background_subtraction.html" target="_blank">How to Use Background Subtraction Methods</a></li>
+  <li><a href="https://www.youtube.com/watch?v=fn07iwCrvqQ" target="_blank">Background Subtraction</a></li>
+  <li><a href="http://pyimagesearch.com/" target="_blank">Pyimagesearch - Adrian Rosebrock</a></li>
+</ol>
 
 				</div>
 				<div class="note closers">

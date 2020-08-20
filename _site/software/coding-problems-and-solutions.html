@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="https://drive.google.com/uc?id=1VcOjbVA3yzQqEHMnFKpd5mHKTiAdWcsY">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Coding Problems and Solutions | Gogul Ilango</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Coding Problems and Solutions" />
 <meta name="author" content="Gogul Ilango" />
 <meta property="og:locale" content="en_US" />
@@ -40,7 +40,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-10-03T00:00:00+05:30" />
 <script type="application/ld+json">
-{"headline":"Coding Problems and Solutions","url":"http://localhost:4000/software/coding-problems-and-solutions","datePublished":"2019-10-03T00:00:00+05:30","dateModified":"2019-10-03T00:00:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/coding-problems-and-solutions"},"image":"https://drive.google.com/uc?id=1VcOjbVA3yzQqEHMnFKpd5mHKTiAdWcsY","author":{"@type":"Person","name":"Gogul Ilango"},"description":"Understand how to use python and logical thinking to solve coding problems asked by tech companies around the world.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"dateModified":"2019-10-03T00:00:00+05:30","datePublished":"2019-10-03T00:00:00+05:30","url":"http://localhost:4000/software/coding-problems-and-solutions","headline":"Coding Problems and Solutions","image":"https://drive.google.com/uc?id=1VcOjbVA3yzQqEHMnFKpd5mHKTiAdWcsY","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/coding-problems-and-solutions"},"author":{"@type":"Person","name":"Gogul Ilango"},"description":"Understand how to use python and logical thinking to solve coding problems asked by tech companies around the world.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -155,15 +155,15 @@
     <span class="n">temp</span> <span class="o">=</span> <span class="n">k</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
       <span class="k">print</span><span class="p">(</span><span class="s">"Pair with sum "</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s">" is ("</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="o">+</span> <span class="s">")"</span><span class="p">)</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">prob_e001</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">7</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"--- </span><span class="si">%</span><span class="s">s micro seconds ---"</span> <span class="o">%</span> <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">*</span><span class="mi">1000000</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"--- %s micro seconds ---"</span> <span class="o">%</span> <span class="p">((</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">*</span><span class="mi">1000000</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>Pair with sum 7 is (6, 1)
 --- 314.95094299316406 micro seconds ---
@@ -230,12 +230,12 @@
   <span class="k">return</span> <span class="n">res</span>
 
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">prob_m001</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"--- </span><span class="si">%</span><span class="s">s micro seconds ---"</span> <span class="o">%</span> <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">*</span><span class="mi">1000000</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"--- %s micro seconds ---"</span> <span class="o">%</span> <span class="p">((</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">*</span><span class="mi">1000000</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>[120, 60, 40, 30, 24]
 --- 437.73651123046875 micro seconds ---

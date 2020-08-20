@@ -1,4 +1,4 @@
-I"Š<div class="git-showcase">
+I"k‰<div class="git-showcase">
   <div>
     <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
   </div>
@@ -40,7 +40,7 @@
 <p>In this post, we will learn the simple 6 steps with which we can create our first deep neural network using Keras and Python. Letâ€™s get started!</p>
 
 <div class="code-head">Objectives<span>goals</span></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -61,7 +61,7 @@
 <p>Before getting into concept and code, we need some libraries to get started with Deep Learning in Python. Copy and paste the below commands line-by-line to install all the dependencies needed for Deep Learning using Keras in Linux. I used Ubuntu 14.04 LTS 64-bit architecture as my OS and I didnâ€™t use any GPU to speed up computations for this tutorial.</p>
 
 <div class="code-head"><span>cmd</span>dependencies</div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -150,8 +150,8 @@ sudo pip install keras
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="o">|--</span><span class="n">pima</span><span class="o">-</span><span class="n">indians</span><span class="o">-</span><span class="n">diabetes</span>
-<span class="o">|--|--</span><span class="n">dataset</span><span class="o">.</span><span class="n">csv</span>
-<span class="o">|--|--</span><span class="n">train</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|--|--</span><span class="n">dataset</span><span class="p">.</span><span class="n">csv</span>
+<span class="o">|--|--</span><span class="n">train</span><span class="p">.</span><span class="n">py</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="prepare-the-dataset">Prepare the dataset</h3>
@@ -195,10 +195,10 @@ sudo pip install keras
 
 <span class="c1"># seed for reproducing same results
 </span><span class="n">seed</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
 
 <span class="c1"># load pima indians dataset
-</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s">'dataset.csv'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s">'dataset.csv'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># split into input and output variables
 </span><span class="n">X</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
@@ -254,9 +254,9 @@ sudo pip install keras
 5
 </pre></td><td class="rouge-code"><pre><span class="c1"># create the model
 </span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'sigmoid'</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'sigmoid'</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
@@ -291,7 +291,7 @@ sudo pip install keras
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="c1"># compile the model
-</span><span class="n">model</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s">'binary_crossentropy'</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s">'adam'</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s">'accuracy'</span><span class="p">])</span>
+</span><span class="n">model</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s">'binary_crossentropy'</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s">'adam'</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s">'accuracy'</span><span class="p">])</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
@@ -315,7 +315,7 @@ sudo pip install keras
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="c1"># fit the model
-</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">),</span> <span class="n">nb_epoch</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</span><span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">),</span> <span class="n">nb_epoch</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
@@ -337,8 +337,8 @@ sudo pip install keras
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="c1"># evaluate the model
-</span><span class="n">scores</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Accuracy: </span><span class="si">%.2</span><span class="s">f</span><span class="si">%%</span><span class="s">"</span> <span class="o">%</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+</span><span class="n">scores</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Accuracy: %.2f%%"</span> <span class="o">%</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="complete-code">Complete code</h3>
@@ -389,10 +389,10 @@ sudo pip install keras
 
 <span class="c1"># seed for reproducing same results
 </span><span class="n">seed</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
 
 <span class="c1"># load pima indians dataset
-</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s">'dataset.csv'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s">'dataset.csv'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># split into input and output variables
 </span><span class="n">X</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
@@ -403,19 +403,19 @@ sudo pip install keras
 
 <span class="c1"># create the model
 </span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'sigmoid'</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s">'uniform'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'sigmoid'</span><span class="p">))</span>
 
 <span class="c1"># compile the model
-</span><span class="n">model</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s">'binary_crossentropy'</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s">'adam'</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s">'accuracy'</span><span class="p">])</span>
+</span><span class="n">model</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s">'binary_crossentropy'</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s">'adam'</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s">'accuracy'</span><span class="p">])</span>
 
 <span class="c1"># fit the model
-</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">),</span> <span class="n">nb_epoch</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">),</span> <span class="n">nb_epoch</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># evaluate the model
-</span><span class="n">scores</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Accuracy: </span><span class="si">%.2</span><span class="s">f</span><span class="si">%%</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+</span><span class="n">scores</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Accuracy: %.2f%%"</span> <span class="o">%</span> <span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>

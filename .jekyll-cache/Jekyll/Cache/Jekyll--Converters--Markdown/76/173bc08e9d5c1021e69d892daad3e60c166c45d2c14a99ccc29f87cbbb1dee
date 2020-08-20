@@ -1,4 +1,4 @@
-I"FÍ<div id="awesomeSideNav" class="sidenav">
+I"XÉ<div id="awesomeSideNav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
     <h3><a href="#basics">Basics</a></h3>
     <ul>
@@ -229,7 +229,7 @@ comment in python
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
 
 <span class="c1"># pick a random number from the list "a"
-</span><span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span><span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
 <span class="c1"># the conditionals
 </span><span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">):</span>
@@ -323,12 +323,12 @@ comment in python
 </span><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>                        <span class="c1"># prints "12"
 </span><span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>                         <span class="c1"># String concatenation: prints "Python is awesome!"
 </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>                          <span class="c1"># prints "Python  is awesome!"
-</span><span class="k">print</span><span class="p">(</span><span class="s">"{}{}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>          <span class="c1"># prints "Python is awesome!"
-</span><span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%</span><span class="s">s</span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>               <span class="c1"># sprintf style formatting: prints "Python is awesome!"
-</span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>                    <span class="c1"># converts all characters to uppercase: prints "PYTHON"
-</span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>                     <span class="c1"># converts all characters to lowercase: prints "python"
-</span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>                     <span class="c1"># removes trailing and leading whitespaces: prints "is awesome!"
-</span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"awesome"</span><span class="p">,</span> <span class="s">"great"</span><span class="p">))</span> <span class="c1"># replace a substring with a new string: prints " is great!"
+</span><span class="k">print</span><span class="p">(</span><span class="s">"{}{}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>          <span class="c1"># prints "Python is awesome!"
+</span><span class="k">print</span><span class="p">(</span><span class="s">"%s%s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>               <span class="c1"># sprintf style formatting: prints "Python is awesome!"
+</span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">upper</span><span class="p">())</span>                    <span class="c1"># converts all characters to uppercase: prints "PYTHON"
+</span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">lower</span><span class="p">())</span>                     <span class="c1"># converts all characters to lowercase: prints "python"
+</span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">strip</span><span class="p">())</span>                     <span class="c1"># removes trailing and leading whitespaces: prints "is awesome!"
+</span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"awesome"</span><span class="p">,</span> <span class="s">"great"</span><span class="p">))</span> <span class="c1"># replace a substring with a new string: prints " is great!"
 </span></pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 class="code-head" id="lists">Lists<span>code</span></h3>
@@ -410,13 +410,13 @@ comment in python
 </span><span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>       <span class="c1"># negative indexing: prints "5"
 </span>
 <span class="c1"># insert and remove
-</span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>        <span class="c1"># inserts "6" at last
+</span><span class="n">l</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>        <span class="c1"># inserts "6" at last
 </span><span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>            <span class="c1"># prints "[1,2,3,4,5,6]"
-</span><span class="n">item</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>     <span class="c1"># removes last element and returns that element
+</span><span class="n">item</span> <span class="o">=</span> <span class="n">l</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>     <span class="c1"># removes last element and returns that element
 </span><span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>         <span class="c1"># prints "6"
-</span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">"string"</span><span class="p">)</span> <span class="c1"># adds different data type too
+</span><span class="n">l</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"string"</span><span class="p">)</span> <span class="c1"># adds different data type too
 </span><span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>            <span class="c1"># prints "[1,2,3,4,5,'string']"
-</span><span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>            <span class="c1"># removes last string element
+</span><span class="n">l</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>            <span class="c1"># removes last string element
 </span>
 <span class="c1"># slicing list
 </span><span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>       <span class="c1"># prints "2"
@@ -431,7 +431,7 @@ comment in python
 </span>
 <span class="c1"># enumerate over the list
 </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"{}-{}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">item</span><span class="p">))</span> <span class="c1"># prints each item with its index
+    <span class="k">print</span><span class="p">(</span><span class="s">"{}-{}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">item</span><span class="p">))</span> <span class="c1"># prints each item with its index
 </span>
 
 <span class="c1"># squaring elements in a list
@@ -446,21 +446,21 @@ comment in python
 </span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 
 <span class="c1"># ascending order
-</span><span class="n">b</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span class="n">b</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># prints [2, 4, 5, 7, 9]
 </span>
 <span class="c1"># descending order
-</span><span class="n">b</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</span><span class="n">b</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># prints [9, 7, 5, 4, 2]
 </span>
 <span class="c1"># reverse the list (notice this is not descending order sort)
 </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">"dhoni"</span><span class="p">,</span> <span class="s">"sachin"</span><span class="p">,</span> <span class="s">"warner"</span><span class="p">,</span> <span class="s">"abd"</span><span class="p">]</span>
-<span class="n">a</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">a</span><span class="p">.</span><span class="n">reverse</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># prints ['abd', 'warner', 'sachin', 'dhoni']
 </span>
 <span class="c1"># count of object in list
 </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">66</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span> 
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">22</span><span class="p">))</span> <span class="c1"># prints 2
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="mi">22</span><span class="p">))</span> <span class="c1"># prints 2
 </span></pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 class="code-head" id="tuples">Tuples<span>code</span></h3>
@@ -580,10 +580,10 @@ thanos
     <span class="k">print</span><span class="p">(</span><span class="s">"endgame"</span><span class="p">)</span> <span class="c1"># prints 'endgame'
 </span>
 <span class="c1"># add a single item to a set using 'add'
-</span><span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">"rocket"</span><span class="p">)</span>
+</span><span class="n">s</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">"rocket"</span><span class="p">)</span>
 
 <span class="c1"># add multiple items to a set using 'update'
-</span><span class="n">s</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="s">"blackhood"</span><span class="p">,</span> <span class="s">"blackwidow"</span><span class="p">])</span>
+</span><span class="n">s</span><span class="p">.</span><span class="n">update</span><span class="p">([</span><span class="s">"blackhood"</span><span class="p">,</span> <span class="s">"blackwidow"</span><span class="p">])</span>
 
 <span class="c1"># get length of a set
 </span><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="c1"># prints 7
@@ -591,11 +591,11 @@ thanos
 <span class="c1"># 'remove' or 'discard' an item from the set
 # 'remove' raise an error if item to remove does not exist
 # 'discard' will not raise any error if item to remove does not exist
-</span><span class="n">s</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">"thanos"</span><span class="p">)</span>
-<span class="n">s</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="s">"blackwidow"</span><span class="p">)</span>
+</span><span class="n">s</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s">"thanos"</span><span class="p">)</span>
+<span class="n">s</span><span class="p">.</span><span class="n">discard</span><span class="p">(</span><span class="s">"blackwidow"</span><span class="p">)</span>
 
 <span class="c1"># clear the set
-</span><span class="n">s</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span><span class="n">s</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
 
 <span class="c1"># delete the set
 </span><span class="k">del</span> <span class="n">s</span>
@@ -664,7 +664,7 @@ thanos
 </span>
 <span class="c1"># change values in the dictionary
 </span><span class="n">d</span><span class="p">[</span><span class="s">"2"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Hulk"</span>
-<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s">" - "</span> <span class="o">+</span> <span class="n">value</span><span class="p">)</span>
 
 <span class="s">'''
@@ -686,13 +686,13 @@ prints
 </span><span class="n">d</span><span class="p">[</span><span class="s">"4"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Thanos"</span>
 
 <span class="c1"># remove a key-value pair from the dictionary
-</span><span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">"4"</span><span class="p">)</span>
+</span><span class="n">d</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">"4"</span><span class="p">)</span>
 
 <span class="c1"># same thing using 'del' keyword
 </span><span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="s">"2"</span><span class="p">]</span>
 
 <span class="c1"># clear a dictionary
-</span><span class="n">d</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span><span class="n">d</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 class="code-head" id="exception-handling">Exception Handling<span>code</span></h3>
@@ -813,7 +813,7 @@ prints
 <span class="c1"># traditional for loop
 </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
-    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">l</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="c1"># prints '[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]'
 </span>
 <span class="c1"># meet list comprehension
@@ -851,7 +851,7 @@ prints
 </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s">"ab"</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-        <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">letter</span><span class="p">,</span> <span class="n">num</span><span class="p">))</span>
+        <span class="n">l</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="n">letter</span><span class="p">,</span> <span class="n">num</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="c1"># prints '[('a', 0), ('a', 1), ('b', 0), ('b', 1)]'
 </span>
 <span class="c1"># same thing using list comp
@@ -965,7 +965,7 @@ Chris Evans - Captain America
 <span class="c1"># traditional set (list of unique elements)
 </span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># prints {1, 2, 3, 4, 5, 6, 7, 8, 9}
 </span>
 <span class="c1"># meet set comprehension
@@ -1143,34 +1143,34 @@ both prints
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">num_people</span><span class="p">):</span>
         <span class="n">person</span> <span class="o">=</span> <span class="p">{</span>
                    <span class="s">"id"</span>    <span class="p">:</span> <span class="n">i</span><span class="p">,</span>
-                   <span class="s">"name"</span>  <span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">names</span><span class="p">),</span>
-                   <span class="s">"major"</span> <span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">majors</span><span class="p">)</span> 
+                   <span class="s">"name"</span>  <span class="p">:</span> <span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">names</span><span class="p">),</span>
+                   <span class="s">"major"</span> <span class="p">:</span> <span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">majors</span><span class="p">)</span> 
                 <span class="p">}</span>
-        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span>
 
 <span class="k">def</span> <span class="nf">people_generator</span><span class="p">(</span><span class="n">num_people</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">num_people</span><span class="p">):</span>
         <span class="n">person</span> <span class="o">=</span> <span class="p">{</span>
                     <span class="s">"id"</span>    <span class="p">:</span> <span class="n">i</span><span class="p">,</span>
-                    <span class="s">"name"</span>  <span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">names</span><span class="p">),</span>
-                    <span class="s">"major"</span> <span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">majors</span><span class="p">)</span>
+                    <span class="s">"name"</span>  <span class="p">:</span> <span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">names</span><span class="p">),</span>
+                    <span class="s">"major"</span> <span class="p">:</span> <span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">majors</span><span class="p">)</span>
                   <span class="p">}</span>
         <span class="k">yield</span> <span class="n">person</span>
 
-<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">clock</span><span class="p">()</span>
 <span class="n">people</span> <span class="o">=</span> <span class="n">people_list</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
-<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">clock</span><span class="p">()</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] Took {} seconds"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] Took {} seconds"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">))</span>
 <span class="c1"># prints
 # [INFO] Took 1.2467856325541558 seconds
 </span>
-<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">clock</span><span class="p">()</span>
 <span class="n">people</span> <span class="o">=</span> <span class="n">people_generator</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
-<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">clock</span><span class="p">()</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] Took {} seconds"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"[INFO] Took {} seconds"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">))</span>
 <span class="c1"># prints
 # [INFO] Took 0.12330942238179077 seconds
 </span></pre></td></tr></tbody></table></code></pre></div></div>
@@ -1215,7 +1215,7 @@ both prints
 </span>
 <span class="c1"># **kwargs used to pass keyworded variable-length arguments to a function
 </span><span class="k">def</span> <span class="nf">my_fullname</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
         <span class="k">print</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s">" - "</span> <span class="o">+</span> <span class="n">value</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
 
@@ -1404,15 +1404,15 @@ Murali is 65, and his grandfather, Karthik, is 77.
 '''</span>
 
 <span class="c1"># findall()
-</span><span class="n">ages</span>  <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r'\d{1,3}'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-<span class="n">names</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r'[A-Z][a-z]*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> 
+</span><span class="n">ages</span>  <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r'\d{1,3}'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">names</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r'[A-Z][a-z]*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> 
 <span class="k">print</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>  <span class="c1"># prints ['19', '24', '65', '77']
 </span><span class="k">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="c1"># prints ['Rahul', 'Ashok', 'Murali', 'Karthik']
 </span>
 <span class="c1"># finditer()
-</span><span class="n">ages</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s">r'\d{1,3}'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</span><span class="n">ages</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">finditer</span><span class="p">(</span><span class="s">r'\d{1,3}'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ages</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">group</span><span class="p">())</span>
 
 <span class="c1"># prints 
 # 19
@@ -1422,24 +1422,24 @@ Murali is 65, and his grandfather, Karthik, is 77.
 </span>
 <span class="c1"># split()
 </span><span class="nb">str</span> <span class="o">=</span> <span class="s">"This is an example string"</span>
-<span class="n">splitted</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">r'\s*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">splitted</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">r'\s*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">splitted</span><span class="p">)</span> <span class="c1"># prints ['This', 'is', 'an', 'example', 'string']
 </span>
 <span class="c1"># match()
 </span><span class="nb">str</span> <span class="o">=</span> <span class="s">"Dogs are braver than Cats"</span>
-<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">r'[A-Z][a-z]*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">matches</span><span class="o">.</span><span class="n">group</span><span class="p">())</span> <span class="c1"># prints "Dogs"
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="s">r'[A-Z][a-z]*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">matches</span><span class="p">.</span><span class="n">group</span><span class="p">())</span> <span class="c1"># prints "Dogs"
 </span>
 <span class="c1"># search()
 </span><span class="nb">str</span> <span class="o">=</span> <span class="s">"For data science help, reach support@datacamp.com"</span>
-<span class="n">searches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r'([\w]+)@([\w\.]+)'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">searches</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>  <span class="c1"># prints support@datacamp.com
-</span><span class="k">print</span><span class="p">(</span><span class="n">searches</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># prints support
-</span><span class="k">print</span><span class="p">(</span><span class="n">searches</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># prints datacamp.com
+<span class="n">searches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="s">r'([\w]+)@([\w\.]+)'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">searches</span><span class="p">.</span><span class="n">group</span><span class="p">())</span>  <span class="c1"># prints support@datacamp.com
+</span><span class="k">print</span><span class="p">(</span><span class="n">searches</span><span class="p">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># prints support
+</span><span class="k">print</span><span class="p">(</span><span class="n">searches</span><span class="p">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># prints datacamp.com
 </span>
 <span class="c1"># sub()
 </span><span class="nb">str</span> <span class="o">=</span> <span class="s">"Ironman is the strongest avenger!"</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">'Ironman'</span><span class="p">,</span>  <span class="s">'Thor'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="s">'Ironman'</span><span class="p">,</span>  <span class="s">'Thor'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -1524,37 +1524,37 @@ Murali is 65, and his grandfather, Karthik, is 77.
 </span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="c1"># get current working directory
-</span><span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span> <span class="c1"># prints 'G:\\workspace\\Python'
+</span><span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">getcwd</span><span class="p">())</span> <span class="c1"># prints 'G:\\workspace\\Python'
 </span>
 <span class="c1"># change current working directory
-</span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">learning"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span> <span class="c1"># prints 'G:\\workspace\\python\\learning'
+</span><span class="n">os</span><span class="p">.</span><span class="n">chdir</span><span class="p">(</span><span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">learning"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">getcwd</span><span class="p">())</span> <span class="c1"># prints 'G:\\workspace\\python\\learning'
 </span>
 <span class="c1"># list directories in the current working directory
-</span><span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">())</span> <span class="c1"># prints ['built-ins', 'Lists', 'numpy', 'strings']
+</span><span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">())</span> <span class="c1"># prints ['built-ins', 'Lists', 'numpy', 'strings']
 </span>
 <span class="c1"># list only files in the current working directory
-</span><span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s">'.'</span><span class="p">)</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">f</span><span class="p">)]</span>
+</span><span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="p">.</span><span class="n">listdir</span><span class="p">(</span><span class="s">'.'</span><span class="p">)</span> <span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">f</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 <span class="c1"># create a directory in the current working directory
-</span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s">"dicts"</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s">"dicts/nested-dicts"</span><span class="p">)</span>
+</span><span class="n">os</span><span class="p">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s">"dicts"</span><span class="p">)</span>
+<span class="n">os</span><span class="p">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s">"dicts/nested-dicts"</span><span class="p">)</span>
 
 <span class="c1"># remove a directory in the current working directory
-</span><span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s">"dicts"</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">removedirs</span><span class="p">(</span><span class="s">"dicts/nested-dicts"</span><span class="p">)</span>
+</span><span class="n">os</span><span class="p">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s">"dicts"</span><span class="p">)</span>
+<span class="n">os</span><span class="p">.</span><span class="n">removedirs</span><span class="p">(</span><span class="s">"dicts/nested-dicts"</span><span class="p">)</span>
 
 <span class="c1"># rename a file or directory
-</span><span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s">"Lists"</span><span class="p">,</span> <span class="s">"lists"</span><span class="p">)</span>
+</span><span class="n">os</span><span class="p">.</span><span class="n">rename</span><span class="p">(</span><span class="s">"Lists"</span><span class="p">,</span> <span class="s">"lists"</span><span class="p">)</span>
 
 <span class="c1"># stats of a file or directory
-</span><span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s">"lists"</span><span class="p">)</span>
+</span><span class="n">os</span><span class="p">.</span><span class="n">stat</span><span class="p">(</span><span class="s">"lists"</span><span class="p">)</span>
 <span class="c1"># prints 'os.stat_result(st_mode=16895, st_ino=281474977861215, st_dev=4143122855, st_nlink=1, st_uid=0, st_gid=0, st_size=0, st_atime=1480252546, st_mtime=1480252546, st_ctime=1480252090)'
 </span>
 <span class="c1"># traverse a directory tree
-</span><span class="k">for</span> <span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">learning"</span><span class="p">):</span>
+</span><span class="k">for</span> <span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span> <span class="ow">in</span> <span class="n">os</span><span class="p">.</span><span class="n">walk</span><span class="p">(</span><span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">learning"</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"Current Path: "</span><span class="p">,</span> <span class="n">dirpath</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"Directories: "</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"Files: "</span><span class="p">,</span> <span class="n">filenames</span><span class="p">)</span>
@@ -1562,38 +1562,38 @@ Murali is 65, and his grandfather, Karthik, is 77.
 
 <span class="s">'''
 prints 
-Current Path:  G:</span><span class="err">\</span><span class="s">workspace</span><span class="err">\</span><span class="s">python</span><span class="err">\</span><span class="s">learning
+Current Path:  G:\workspace\python\learning
 Directories:  ['Built-ins', 'lists', 'NumPy', 'Strings']
 Files:  []
 
-Current Path:  G:</span><span class="err">\</span><span class="s">workspace</span><span class="err">\</span><span class="s">python</span><span class="err">\</span><span class="s">learning</span><span class="err">\</span><span class="s">Built-ins
+Current Path:  G:\workspace\python\learning\Built-ins
 Directories:  []
 Files:  ['evalu.py', 'input.py', 'zipped.py']
 
-Current Path:  G:</span><span class="err">\</span><span class="s">workspace</span><span class="err">\</span><span class="s">python</span><span class="err">\</span><span class="s">learning</span><span class="err">\</span><span class="s">lists
+Current Path:  G:\workspace\python\learning\lists
 Directories:  []
 Files:  ['list_01.py', 'tuple_01.py']
 
-Current Path:  G:</span><span class="err">\</span><span class="s">workspace</span><span class="err">\</span><span class="s">python</span><span class="err">\</span><span class="s">learning</span><span class="err">\</span><span class="s">NumPy
+Current Path:  G:\workspace\python\learning\NumPy
 Directories:  []
 Files:  ['ceilr.py', 'concatenate.py', 'eye_identity.py', 'flatten.py', 'math.py', 'mean_var_std.py', 'min_max.py', 'rev_array.py', 'sum_prod.py', 'zeros_ones.py']
 
-Current Path:  G:</span><span class="err">\</span><span class="s">workspace</span><span class="err">\</span><span class="s">python</span><span class="err">\</span><span class="s">learning</span><span class="err">\</span><span class="s">Strings
+Current Path:  G:\workspace\python\learning\Strings
 Directories:  []
 Files:  ['formatting.py']
 '''</span>
 
 <span class="c1"># check if a file exist
-</span><span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">learning</span><span class="se">\\</span><span class="s">Strings</span><span class="se">\\</span><span class="s">formatting.py"</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">isfile</span><span class="p">(</span><span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">learning</span><span class="se">\\</span><span class="s">Strings</span><span class="se">\\</span><span class="s">formatting.py"</span><span class="p">))</span>
 <span class="c1"># prints 'True'
 </span>
 <span class="c1"># check if a directory exist
-</span><span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">learning</span><span class="se">\\</span><span class="s">Strings"</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">learning</span><span class="se">\\</span><span class="s">Strings"</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">learning</span><span class="se">\\</span><span class="s">Strings"</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">isdir</span><span class="p">(</span><span class="s">"G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">learning</span><span class="se">\\</span><span class="s">Strings"</span><span class="p">))</span>
 <span class="c1"># both prints 'True'
 </span>
 <span class="c1"># accessing environment variable
-</span><span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"HOME"</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"HOME"</span><span class="p">))</span>
 <span class="c1"># prints 'C:\\Users\\Gogul Ilango'
 </span></pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -1625,8 +1625,8 @@ Files:  ['formatting.py']
 <span class="n">firstarg</span>  <span class="o">=</span> <span class="s">""</span>
 <span class="n">secondarg</span> <span class="o">=</span> <span class="s">""</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">firstarg</span>  <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">secondarg</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">firstarg</span>  <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">secondarg</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="k">except</span><span class="p">:</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">firstarg</span> <span class="o">==</span> <span class="s">""</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="s">"No first argument!"</span><span class="p">)</span>
@@ -1634,9 +1634,9 @@ Files:  ['formatting.py']
         <span class="k">print</span><span class="p">(</span><span class="s">"No second argument!"</span><span class="p">)</span>
 
 <span class="c1"># error text
-</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"This is stderr text</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"This is stdout text</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+</span><span class="n">sys</span><span class="p">.</span><span class="n">stderr</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">"This is stderr text</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">stderr</span><span class="p">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">"This is stdout text</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 class="code-head" id="shutil-module">shutil module<span>code</span></h3>
@@ -1656,13 +1656,13 @@ Files:  ['formatting.py']
 </span><span class="kn">import</span> <span class="nn">shutil</span> 
 
 <span class="c1"># copy file from one location to another
-</span><span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="s">"/path/to/file_source"</span><span class="p">,</span> <span class="s">"path/to/file_destination"</span><span class="p">)</span>
+</span><span class="n">shutil</span><span class="p">.</span><span class="n">copyfile</span><span class="p">(</span><span class="s">"/path/to/file_source"</span><span class="p">,</span> <span class="s">"path/to/file_destination"</span><span class="p">)</span>
 
 <span class="c1"># recursively copy entire directory tree from source to destination
-</span><span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="s">"source_dir"</span><span class="p">,</span> <span class="s">"destination_dir"</span><span class="p">)</span>
+</span><span class="n">shutil</span><span class="p">.</span><span class="n">copytree</span><span class="p">(</span><span class="s">"source_dir"</span><span class="p">,</span> <span class="s">"destination_dir"</span><span class="p">)</span>
 
 <span class="c1"># recursively delete a directory tree
-</span><span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="s">"/one/two/three"</span><span class="p">)</span>
+</span><span class="n">shutil</span><span class="p">.</span><span class="n">rmtree</span><span class="p">(</span><span class="s">"/one/two/three"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <!-- --------------------------------------------------------------------- -->
@@ -1709,16 +1709,16 @@ Files:  ['formatting.py']
 
     <span class="c1"># init method is a must
 </span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span>  <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">age</span>  <span class="o">=</span> <span class="n">age</span>
 
     <span class="c1"># a simple print method
 </span>    <span class="k">def</span> <span class="nf">print_customer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Customer: {}, Age: {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Customer: {}, Age: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">age</span><span class="p">))</span>
 
 <span class="c1"># define an instance
 </span><span class="n">a</span> <span class="o">=</span> <span class="n">Customer</span><span class="p">(</span><span class="s">"Gogul"</span><span class="p">,</span> <span class="s">"24"</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">print_customer</span><span class="p">()</span> <span class="c1"># prints "Customer: Gogul, Age: 24"
+<span class="n">a</span><span class="p">.</span><span class="n">print_customer</span><span class="p">()</span> <span class="c1"># prints "Customer: Gogul, Age: 24"
 </span></pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 class="code-head" id="class-variables">Class Variables<span>code</span></h3>
@@ -1761,30 +1761,30 @@ Files:  ['formatting.py']
     <span class="n">num_of_custs</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">pay</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span>  <span class="o">=</span> <span class="n">age</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pay</span>  <span class="o">=</span> <span class="n">pay</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">age</span>  <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">pay</span>  <span class="o">=</span> <span class="n">pay</span>
 
-        <span class="n">Customer</span><span class="o">.</span><span class="n">num_of_custs</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">Customer</span><span class="p">.</span><span class="n">num_of_custs</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">apply_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Customer {} new pay is {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pay</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">raise_amount</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Customer {} new pay is {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">pay</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">raise_amount</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
     <span class="c1"># class variable not updated
 </span>    <span class="n">a</span> <span class="o">=</span> <span class="n">Customer</span><span class="p">(</span><span class="s">"Gogul"</span><span class="p">,</span> <span class="s">"24"</span><span class="p">,</span> <span class="s">"5000"</span><span class="p">)</span>
-    <span class="n">a</span><span class="o">.</span><span class="n">apply_raise</span><span class="p">()</span> <span class="c1"># prints Customer Gogul new pay is 5250.0
+    <span class="n">a</span><span class="p">.</span><span class="n">apply_raise</span><span class="p">()</span> <span class="c1"># prints Customer Gogul new pay is 5250.0
 </span>
     <span class="c1"># class variable updated
 </span>    <span class="n">b</span> <span class="o">=</span> <span class="n">Customer</span><span class="p">(</span><span class="s">"Mahadevan"</span><span class="p">,</span> <span class="s">"25"</span><span class="p">,</span> <span class="s">"6000"</span><span class="p">)</span>
-    <span class="n">b</span><span class="o">.</span><span class="n">raise_amount</span> <span class="o">=</span> <span class="mf">2.05</span>
-    <span class="n">b</span><span class="o">.</span><span class="n">apply_raise</span><span class="p">()</span> <span class="c1"># Customer Mahadevan new pay is 12299.999999999998
+    <span class="n">b</span><span class="p">.</span><span class="n">raise_amount</span> <span class="o">=</span> <span class="mf">2.05</span>
+    <span class="n">b</span><span class="p">.</span><span class="n">apply_raise</span><span class="p">()</span> <span class="c1"># Customer Mahadevan new pay is 12299.999999999998
 </span>
     <span class="c1"># print dict of an instance
-</span>    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span> <span class="c1"># prints {'name': 'Gogul', 'age': '24', 'pay': '5000'}
+</span>    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">__dict__</span><span class="p">)</span> <span class="c1"># prints {'name': 'Gogul', 'age': '24', 'pay': '5000'}
 </span>
     <span class="c1"># There are 2 customers
-</span>    <span class="k">print</span><span class="p">(</span><span class="s">"There are {} customers"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">Customer</span><span class="o">.</span><span class="n">num_of_custs</span><span class="p">))</span>
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"There are {} customers"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">Customer</span><span class="p">.</span><span class="n">num_of_custs</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="inheritance">Inheritance</h3>
@@ -1838,7 +1838,7 @@ Files:  ['formatting.py']
 </span><span class="k">class</span> <span class="nc">Avenger</span><span class="p">:</span>
     <span class="c1"># initializer with instance attributes
 </span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 
     <span class="c1"># instance method
 </span>    <span class="k">def</span> <span class="nf">slogan</span><span class="p">():</span>
@@ -1847,29 +1847,29 @@ Files:  ['formatting.py']
 <span class="c1"># Child class inherited from Avenger class
 </span><span class="k">class</span> <span class="nc">Ironman</span><span class="p">(</span><span class="n">Avenger</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">change_suit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">suit</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">suit</span> <span class="o">=</span> <span class="n">suit</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">suit</span> <span class="o">=</span> <span class="n">suit</span>
 
     <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Sir! You are now flying at {} km/h with my favorite {} suit!"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">suit</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Sir! You are now flying at {} km/h with my favorite {} suit!"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">suit</span><span class="p">))</span>
 
 <span class="c1"># Child class inherited from Avenger class
 </span><span class="k">class</span> <span class="nc">Thor</span><span class="p">(</span><span class="n">Avenger</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">change_weapon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weapon</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weapon</span> <span class="o">=</span> <span class="n">weapon</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">weapon</span> <span class="o">=</span> <span class="n">weapon</span>
 
     <span class="k">def</span> <span class="nf">slam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"{} now use {}. {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weapon</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"{} now use {}. {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">weapon</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
 
 <span class="c1"># first object
 </span><span class="n">ironman</span> <span class="o">=</span> <span class="n">Ironman</span><span class="p">(</span><span class="s">"Robert Downey Jr"</span><span class="p">)</span>
-<span class="n">ironman</span><span class="o">.</span><span class="n">change_suit</span><span class="p">(</span><span class="s">"MARK XLVII"</span><span class="p">)</span>
-<span class="n">ironman</span><span class="o">.</span><span class="n">fly</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">ironman</span><span class="p">.</span><span class="n">change_suit</span><span class="p">(</span><span class="s">"MARK XLVII"</span><span class="p">)</span>
+<span class="n">ironman</span><span class="p">.</span><span class="n">fly</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
 <span class="c1"># prints "Sir! You are now flying at 300 km/h with my favorite MARK XLVII suit!"
 </span>
 <span class="c1"># second object
 </span><span class="n">thor</span> <span class="o">=</span> <span class="n">Thor</span><span class="p">(</span><span class="s">"Chris Hemsworth"</span><span class="p">)</span>
-<span class="n">thor</span><span class="o">.</span><span class="n">change_weapon</span><span class="p">(</span><span class="s">"StormBreaker"</span><span class="p">)</span>
-<span class="n">thor</span><span class="o">.</span><span class="n">slam</span><span class="p">(</span><span class="s">"Bring me Thanos!!!!!!!!!!"</span><span class="p">)</span>
+<span class="n">thor</span><span class="p">.</span><span class="n">change_weapon</span><span class="p">(</span><span class="s">"StormBreaker"</span><span class="p">)</span>
+<span class="n">thor</span><span class="p">.</span><span class="n">slam</span><span class="p">(</span><span class="s">"Bring me Thanos!!!!!!!!!!"</span><span class="p">)</span>
 <span class="c1"># print "Chris Hemsworth now use StormBreaker. Bring me Thanos!!!!!!!!!!"
 </span></pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -1921,18 +1921,18 @@ four different methods (modes) to open a file
 </pre></td><td class="rouge-code"><pre><span class="c1"># not the memory efficient way
 </span><span class="n">filename</span> <span class="o">=</span> <span class="s">"entry_1.txt"</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">readlines</span><span class="p">()</span>
 <span class="c1"># remove whitespaces at end of each line
-</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span> 
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span> 
 
 <span class="c1"># memory efficient way
 </span><span class="n">filename</span> <span class="o">=</span> <span class="s">"entry_1.txt"</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 <span class="c1"># remove whitespaces at end of each line
-</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 class="code-head" id="how-to-write-file-line-by-line">How to write file line-by-line?<span>code</span></h3>
@@ -1945,8 +1945,8 @@ four different methods (modes) to open a file
 </pre></td><td class="rouge-code"><pre><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s">"pikachu"</span><span class="p">,</span> <span class="s">"charmander"</span><span class="p">,</span> <span class="s">"pidgeotto"</span><span class="p">]</span>
 <span class="n">fout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">"entry2.txt"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
-    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">fout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">fout</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 class="code-head" id="how-to-load-json-file">How to load json file?<span>code</span></h3>
@@ -1960,7 +1960,7 @@ four different methods (modes) to open a file
 
 <span class="n">file_input</span> <span class="o">=</span> <span class="s">"data.json"</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_input</span><span class="p">)</span> <span class="k">as</span> <span class="n">data_file</span><span class="p">:</span>    
-    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 class="code-head" id="how-to-check-if-list-is-empty">How to check if list is empty?<span>code</span></h3>
@@ -2047,8 +2047,8 @@ four different methods (modes) to open a file
 <span class="n">a</span><span class="p">[</span><span class="s">"Australia"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Smith"</span>
 
 <span class="c1"># sort dictionary based on 'key' alphabetically
-</span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"{0} - {1}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
+</span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">.</span><span class="n">lower</span><span class="p">()):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"{0} - {1}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
 
 <span class="c1"># prints 
 # Australia - Smith
@@ -2056,8 +2056,8 @@ four different methods (modes) to open a file
 # SouthAfrica - ABD
 </span>
 <span class="c1"># sort dictionary based on 'value' alphabetically
-</span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">]):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"{0} - {1}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
+</span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">]):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"{0} - {1}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
 
 <span class="c1"># prints 
 # SouthAfrica - ABD
@@ -2092,9 +2092,9 @@ proc sum <span class="p">{</span>a b<span class="p">}</span> <span class="p">{</
 9
 </pre></td><td class="rouge-code"><pre><span class="c1"># to call a tcl proc in python, we need 'tkinter' library which comes with python usually.
 </span><span class="kn">import</span> <span class="nn">tkinter</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
-<span class="n">r</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="nb">eval</span><span class="p">(</span><span class="s">"source test.tcl"</span><span class="p">)</span>
-<span class="n">r</span><span class="o">.</span><span class="n">tk</span><span class="o">.</span><span class="nb">eval</span><span class="p">(</span><span class="s">"sum 10 20"</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">tkinter</span><span class="p">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">r</span><span class="p">.</span><span class="n">tk</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="s">"source test.tcl"</span><span class="p">)</span>
+<span class="n">r</span><span class="p">.</span><span class="n">tk</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="s">"sum 10 20"</span><span class="p">)</span>
 
 <span class="c1"># prints 
 # Hello

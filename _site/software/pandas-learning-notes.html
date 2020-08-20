@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="https://drive.google.com/uc?id=1v0MjK_UD9-V3rESPgvQf7KT-yP7l92GC">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Pandas Learning Notes | Gogul Ilango</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Pandas Learning Notes" />
 <meta name="author" content="Gogul Ilango" />
 <meta property="og:locale" content="en_US" />
@@ -40,7 +40,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-06-26T00:00:00+05:30" />
 <script type="application/ld+json">
-{"headline":"Pandas Learning Notes","url":"http://localhost:4000/software/pandas-learning-notes","datePublished":"2019-06-26T00:00:00+05:30","dateModified":"2019-06-26T00:00:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/pandas-learning-notes"},"image":"https://drive.google.com/uc?id=1v0MjK_UD9-V3rESPgvQf7KT-yP7l92GC","author":{"@type":"Person","name":"Gogul Ilango"},"description":"Understand the syntax and how to’s of Pandas python package which is highly used for scientific computing and data manipulation.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"dateModified":"2019-06-26T00:00:00+05:30","datePublished":"2019-06-26T00:00:00+05:30","url":"http://localhost:4000/software/pandas-learning-notes","headline":"Pandas Learning Notes","image":"https://drive.google.com/uc?id=1v0MjK_UD9-V3rESPgvQf7KT-yP7l92GC","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/pandas-learning-notes"},"author":{"@type":"Person","name":"Gogul Ilango"},"description":"Understand the syntax and how to’s of Pandas python package which is highly used for scientific computing and data manipulation.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -147,10 +147,10 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span> 
-<span class="k">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>'0.24.2'
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -163,10 +163,10 @@
 </pre></td><td class="rouge-code"><pre><span class="c1"># please install scikit-learn - https://scikit-learn.org/ to use this dataset
 </span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_breast_cancer</span>
 <span class="n">cancer</span> <span class="o">=</span> <span class="n">load_breast_cancer</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cancer</span><span class="o">.</span><span class="n">DESCR</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cancer</span><span class="p">.</span><span class="n">DESCR</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -422,7 +422,7 @@ References
 14
 15
 </pre></td><td class="rouge-code"><pre><span class="n">X</span> <span class="o">=</span> <span class="n">cancer</span><span class="p">[</span><span class="s">"data"</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">cancer</span><span class="p">[</span><span class="s">"target"</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">cancer</span><span class="p">[</span><span class="s">"target"</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">index</span>   <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">569</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span> <span class="s">'mean radius'</span><span class="p">,</span> <span class="s">'mean texture'</span><span class="p">,</span> <span class="s">'mean perimeter'</span><span class="p">,</span> <span class="s">'mean area'</span><span class="p">,</span>
             <span class="s">'mean smoothness'</span><span class="p">,</span> <span class="s">'mean compactness'</span><span class="p">,</span> <span class="s">'mean concavity'</span><span class="p">,</span>
@@ -434,21 +434,21 @@ References
             <span class="s">'worst smoothness'</span><span class="p">,</span> <span class="s">'worst compactness'</span><span class="p">,</span> <span class="s">'worst concavity'</span><span class="p">,</span>
             <span class="s">'worst concave points'</span><span class="p">,</span> <span class="s">'worst symmetry'</span><span class="p">,</span> <span class="s">'worst fractal dimension'</span><span class="p">,</span>
             <span class="s">'target'</span> <span class="p">]</span>
-<span class="n">cancerdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cancerdf</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">cancerdf</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cancerdf</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>(569, 31)
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 class="code-head" id="how-to-view-head-of-a-dataframe">How to view head of a DataFrame?<span>code</span></h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="n">cancerdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></td><td class="rouge-code"><pre><span class="n">cancerdf</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -474,15 +474,15 @@ References
 4
 5
 6
-</pre></td><td class="rouge-code"><pre><span class="n">count_malignant</span> <span class="o">=</span> <span class="n">cancerdf</span><span class="p">[</span><span class="s">"target"</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cancerdf</span><span class="p">[</span><span class="s">"target"</span><span class="p">]</span><span class="o">==</span><span class="mf">0.0</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">count_benign</span>    <span class="o">=</span> <span class="n">cancerdf</span><span class="p">[</span><span class="s">"target"</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cancerdf</span><span class="p">[</span><span class="s">"target"</span><span class="p">]</span><span class="o">==</span><span class="mf">1.0</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></td><td class="rouge-code"><pre><span class="n">count_malignant</span> <span class="o">=</span> <span class="n">cancerdf</span><span class="p">[</span><span class="s">"target"</span><span class="p">].</span><span class="n">loc</span><span class="p">[</span><span class="n">cancerdf</span><span class="p">[</span><span class="s">"target"</span><span class="p">]</span><span class="o">==</span><span class="mf">0.0</span><span class="p">].</span><span class="n">count</span><span class="p">()</span>
+<span class="n">count_benign</span>    <span class="o">=</span> <span class="n">cancerdf</span><span class="p">[</span><span class="s">"target"</span><span class="p">].</span><span class="n">loc</span><span class="p">[</span><span class="n">cancerdf</span><span class="p">[</span><span class="s">"target"</span><span class="p">]</span><span class="o">==</span><span class="mf">1.0</span><span class="p">].</span><span class="n">count</span><span class="p">()</span>
 
 <span class="c1"># create a pandas series
-</span><span class="n">target</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">count_malignant</span><span class="p">,</span> <span class="n">count_benign</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">"malignant"</span><span class="p">,</span> <span class="s">"benign"</span><span class="p">])</span>
+</span><span class="n">target</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="n">count_malignant</span><span class="p">,</span> <span class="n">count_benign</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">"malignant"</span><span class="p">,</span> <span class="s">"benign"</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre>malignant    212
@@ -496,13 +496,13 @@ dtype: int64
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="n">X</span> <span class="o">=</span> <span class="n">cancerdf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="n">cancerdf</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">cancerdf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span>  <span class="n">cancerdf</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="n">X</span> <span class="o">=</span> <span class="n">cancerdf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="n">cancerdf</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">cancerdf</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span>  <span class="n">cancerdf</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext code-output highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>(569, 30)
 (569,)
