@@ -41,7 +41,7 @@ image: https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh
 
 This is a follow-up post of my tutorial on Hand Gesture Recognition using OpenCV and Python. Please read the first part of the tutorial <a href="https://gogul09.github.io/software/hand-gesture-recognition-p1" target="_blank">here</a> and then come back. 
 
-In the previous tutorial, we have used Background Subtraction, Motion Detection and Thresholding to segment our hand region from a live video sequence. In this tutorial, we will take one step further to recognize the number of fingers shown in a live video sequence.
+In the previous tutorial, we have used Background Subtraction, Motion Detection and Thresholding to segment our hand region from a live video sequence. In this tutorial, we will take one step further to recognize the fingers as well as predict the number of fingers (count) in the live video sequence.
 
 <div class="note"><p>
 <b>Note</b>: This tutorial assumes that you have knowledge in using OpenCV, Python, NumPy and some basics of Computer Vision and Image Processing. If you need to setup environment on your system, please follow the instructions posted <a href="https://gogul09.github.io/software/deep-learning-windows" target="_blank">here</a> and <a href="https://gogul09.github.io/software/deep-learning-linux" target="_blank">here</a>.</p></div>
@@ -65,9 +65,9 @@ There are various approaches that could be used to count the fingers, but we are
 As you can see from the above image, there are four intermediate steps to count the fingers, given a segmented hand region. All these steps are shown with a corresponding output image (shown in the left) which we get, after performing that particular step.
 
 ### Four Intermediate Steps
-1. Find the convex hull of the segmented hand region (which is a contour) and compute the most extreme points in the convex hull (Extreme Top, Extreme Bottom, Extreme Left, Extreme Right).
+1. Find the [convex hull](https://docs.opencv.org/3.4/d7/d1d/tutorial_hull.html){:target="_blank"} of the segmented hand region (which is a contour) and compute the most extreme points in the convex hull (Extreme Top, Extreme Bottom, Extreme Left, Extreme Right).
 2. Find the center of palm using these extremes points in the convex hull.
-3. Using the palm's center, construct a circle with the maximum Euclidean distance (between the palm's center and the extreme points) as radius.
+3. Using the palm's center, construct a circle with the maximum [Euclidean Distance](https://en.wikipedia.org/wiki/Euclidean_distance){:target="_blank"} (between the palm's center and the extreme points) as radius.
 4. Perform bitwise AND operation between the thresholded hand image (frame) and the circular ROI (mask). This reveals the finger slices, which could further be used to calcualate the number of fingers shown. 
 
 Below you could see the entire function used to perform the above four steps.
@@ -150,7 +150,7 @@ Performs bit-wise logical AND between two objects. You could visually think of t
 This is the distance between two points given by the equation shown [here](https://bigsnarf.files.wordpress.com/2012/03/distance.jpg){:target="_blank"}. Scikit-learn provides a function called <span class="coding">pairwise.euclidean_distances()</span> to calculate the Euclidean distance from *one point* to *multiple points* in a single line of code - [Pairwise Euclidean Distance](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.euclidean_distances.html){:target="_blank"}. After that, we take the *maximum* of all these distances using NumPy's <span class="coding">argmax()</span> function.
 
 ### Convex Hull 
-You can think of convex hull as a dynamic, stretchable envelope that wraps around the object of interest. To read more about it, visit [this](http://docs.opencv.org/trunk/dd/d49/tutorial_py_contour_features.html){:target="_blank"} link.
+You can think of convex hull as a dynamic, stretchable envelope that wraps around the object of interest. To read more about it, please visit [this](http://docs.opencv.org/trunk/dd/d49/tutorial_py_contour_features.html){:target="_blank"} link.
 
 
 ### Results
@@ -182,9 +182,11 @@ After that, you can use bring in your hand into the bounding box, show gestures 
 </figure>
 
 ### Summary
-In this tutorial, we have learnt about recognizing hand gestures using Python and OpenCV. We have explored Background Subtraction, Thresholding, Segmentation, Contour Extraction, Convex Hull and Bitwise-AND operation on real-time video sequence. We have followed the methodology proposed by Malima et al. to quickly recognize hand gestures. 
+In this tutorial, we have learnt about recognizing hand gestures using Python and OpenCV. We have explored Background Subtraction, Thresholding, Segmentation, Contour Extraction, Convex Hull and Bitwise-AND operation on real-time video sequence. We have followed the methodology proposed by Malima et al. to quickly recognize hand gestures.
 
 You could extend this idea by using the count of fingers to instruct a robot to perform some task like picking up an object, go forward, move backward etc. using Arduino or Raspberry Pi platforms. I have also made a simple demo for you by using the count of fingers to control a servo motor's rotation [here](https://www.youtube.com/watch?v=4lCjQ84EkSk){:target="_blank"}.
+
+The entire algorithm assumes that the background is static i.e. the background does not change. If the background changes and new objects are brought into the frame, the algorithm will not perform well. Kindly let me know in the comments if there are ways to solve this limitation.
 
 ### References
 
@@ -193,3 +195,9 @@ You could extend this idea by using the count of fingers to instruct a robot to 
 3. [Pyimagesearch - Adrian Rosebrock](http://pyimagesearch.com/){:target="_blank"}
 4. [A Fast Algorithm for Vision-based Hand Gesture Recognition For Robot Control](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.454.3689&rep=rep1&type=pdf){:target="_blank"}
 5. [Arduino](https://www.arduino.cc/){:target="_blank"}
+6. [Convex Hull using OpenCV in Python and C++](https://www.learnopencv.com/convex-hull-using-opencv-in-python-and-c/){:target="_blank"}
+7. [Convex Hull - Set 1 (Jarvis’s Algorithm or Wrapping)](https://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/){:target="_blank"}
+8. [Convex Hull - Brilliant](https://brilliant.org/wiki/convex-hull/){:target="_blank"}
+9. [ConvexHull Documentation: OpenCV Docs](https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html#ga014b28e56cb8854c0de4a211cb2be656){:target="_blank"}
+10. [Euclidean Distance](https://en.wikipedia.org/wiki/Euclidean_distance){:target="_blank"}
+11. [Bitwise Operations - OpenCV](https://docs.opencv.org/trunk/d0/d86/tutorial_py_image_arithmetics.html){:target="_blank"}
