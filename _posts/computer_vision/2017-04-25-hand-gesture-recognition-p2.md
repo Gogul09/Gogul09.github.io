@@ -35,6 +35,7 @@ image: https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#convex-hull">Convex Hull</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#results">Results</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#summary">Summary</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#references">References</a></li>
   </ul>
 </div>
 
@@ -184,3 +185,11 @@ After that, you can use bring in your hand into the bounding box, show gestures 
 In this tutorial, we have learnt about recognizing hand gestures using Python and OpenCV. We have explored Background Subtraction, Thresholding, Segmentation, Contour Extraction, Convex Hull and Bitwise-AND operation on real-time video sequence. We have followed the methodology proposed by Malima et al. to quickly recognize hand gestures. 
 
 You could extend this idea by using the count of fingers to instruct a robot to perform some task like picking up an object, go forward, move backward etc. using Arduino or Raspberry Pi platforms. I have also made a simple demo for you by using the count of fingers to control a servo motor's rotation [here](https://www.youtube.com/watch?v=4lCjQ84EkSk){:target="_blank"}.
+
+### References
+
+1. [How to Use Background Subtraction Methods](https://docs.opencv.org/3.4/d1/dc5/tutorial_background_subtraction.html){:target="_blank"}
+2. [Background Subtraction](https://www.youtube.com/watch?v=fn07iwCrvqQ){:target="_blank"}
+3. [Pyimagesearch - Adrian Rosebrock](http://pyimagesearch.com/){:target="_blank"}
+4. [A Fast Algorithm for Vision-based Hand Gesture Recognition For Robot Control](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.454.3689&rep=rep1&type=pdf){:target="_blank"}
+5. [Arduino](https://www.arduino.cc/){:target="_blank"}

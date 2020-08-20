@@ -37,6 +37,7 @@ image: https://drive.google.com/uc?id=1H-AAPvyD3tfEUFKuXGM4AN1mtQ4aMJhn
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#implementation">Implementation</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#executing-code">Executing code</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#summary">Summary</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#references">References</a></li>
   </ul>
 </div>
 
@@ -317,3 +318,9 @@ Note: Remember to update the background model by keeping the camera static witho
 ### Summary
 
 In this tutorial, we have learnt about Background Subtraction, Motion Detection, Thresholding and Contour Extraction to nicely segment hand region from a real-time video sequence using OpenCV and Python. In the next part of the tutorial, we will extend this simple technique to make our system (intelligent enough) to recognize hand gestures by counting the fingers shown in the video sequence. Using this, you could build an intelligent robot that performs some operations based on your gesture commands.
+
+### References
+
+1. [How to Use Background Subtraction Methods](https://docs.opencv.org/3.4/d1/dc5/tutorial_background_subtraction.html){:target="_blank"}
+2. [Background Subtraction](https://www.youtube.com/watch?v=fn07iwCrvqQ){:target="_blank"}
+3. [Pyimagesearch - Adrian Rosebrock](http://pyimagesearch.com/){:target="_blank"}
