@@ -5,12 +5,12 @@
   box-shadow: -1px 3px 4px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   font-family: $font_body;
-  line-height: 1.5;
+  line-height: 1.4;
   max-width: 300px;
   font-size: 12px;
-  background: #d42423;
+  background: var(--primary500);
   margin: 20px auto;
-  transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
   @include mobile {
     margin-left: 15px;
     margin-top: 10px;

@@ -1,6 +1,6 @@
 .out_disp {
   background-color: #fff;
-  font-family: monospace;
+  font-family: $font_code;
   color: #111;
   text-align: justify;
   line-height: 25px;
@@ -8,7 +8,7 @@
 
 .out_label {
   font-weight: bold;
-  font-family: monospace;
+  font-family: $font_code;
   color: #6798ae;
 }
 
@@ -16,18 +16,18 @@ code {
   font-size: 1em !important;
   tab-size: 2;
   line-height: 20px;
-  font-family: monospace;
+  font-family: $font_code;
   color: #ddd;
 }
 
 .highlight {
-  background: #252525;
+  background: var(--bgcode);
   padding: 10px;
   margin: 0px;
   overflow: auto;
   font-size: 11px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   @include mobile {
     padding: 5px;
     font-size: 11px;
@@ -38,6 +38,8 @@ code {
 
 .highlighter-rouge {
   margin-bottom: 1.7em !important;
+  border: 1px solid var(--bordercode);
+  border-top: 0;
 }
 
 .highlight table, .highlight td, .highlight tbody, .highlight tr {
@@ -47,7 +49,7 @@ code {
   font-size: 13px !important;
   background-color: transparent !important;
   text-align: left;
-  font-family: monospace;
+  font-family: $font_code;
   line-height: 1.4;
   margin-bottom: 0px !important;
   @include mobile {
@@ -61,6 +63,10 @@ code {
 
 code {
   line-height: 16px !important;
+}
+
+pre {
+  font-family: $font_code;
 }
 
 .code-class .code pre {

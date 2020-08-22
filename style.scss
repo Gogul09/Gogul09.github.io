@@ -389,10 +389,6 @@ footer {
     }
 }
 
-.light {
-  color: $primary_500;
-}
-
 .toc ol {
   margin-top: 0px;
 }
@@ -1107,11 +1103,11 @@ figcaption {
   position: relative;
   cursor: pointer;
   background-color: var(--bgnote2);
-  border-radius: 10px;
+  border-radius: 4px;
   border: 1px solid var(--bordernote2);
   @include mobile {
     padding: 30px 15px;
-    border-radius: 3px;
+    border-radius: 4px;
   }
   &:hover, &:active {
     box-shadow: 2px 5px 6px rgba(72, 72, 72, 0.14);
@@ -1626,7 +1622,7 @@ figure {
   line-height: 20px;
   padding: 0px;
   padding-top: 25px;
-  background-color: #191919;
+  background-color: var(--bgcode);
   background-image: url('/images/code-output.png');
   background-repeat: no-repeat;
   background-position: 98% 10px;
@@ -1634,7 +1630,7 @@ figure {
   overflow-x: scroll;
   white-space: nowrap;
   margin-top: -35px;
-  border-top: 1px solid #3a3a3a !important;
+  border-top: 1px solid var(--bordercode) !important;
   margin-bottom: 20px !important;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -1654,7 +1650,7 @@ figure {
     color: #aeadad;
   }
   .highlight {
-    background-color: #191919 !important;
+    background-color: var(--bgcode) !important;
     background-image: none !important;
   }
   .rouge-gutter {
@@ -1732,15 +1728,15 @@ u {
 .code-head {
   position: relative;
   font-size: 12px;
-  font-family: monospace;
+  font-family: $font_code;
   font-weight: 100;
   margin-top: 20px !important;
   margin-bottom: 0px !important;
   padding: 10px;
-  background-color: #191919;
-  color: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  background-color: var(--bgcode);
+  color: var(--textcode);
+  border: 1px solid var(--bordercode);
+  border-bottom: 0;
   @include mobile {
     font-size: 10px;
     border-top-left-radius: 3px;
@@ -1748,13 +1744,13 @@ u {
   }
   span {
     padding: 3px 5px;
-    background-color: #ffffff;
+    background-color: var(--bgnote2);
     position: absolute;
     top: 5px;
     right: 10px;
-    color: #fb4c4c;
+    color: var(--textnote2);
     font-weight: bold;
-    border: 1px solid #d6d6d6;
+    border: 1px solid var(--bordernote2);
     cursor: pointer;
     border-radius: 5px;
   }
@@ -1886,14 +1882,14 @@ u {
 }
 
 .coding {
-  background-color: #ffefef !important;
+  background-color: var(--bgnote2) !important;
   font-size: 12px !important;
-  font-family: monospace !important;
+  font-family: $font_code !important;
   line-height: 25px;
   border-radius: 4px !important;
   padding: 3px 6px !important;
-  color: #d2372a !important;
-  border: 1px solid #fad1d1;
+  color: var(--textnote2) !important;
+  border: 1px solid var(--bordernote2);
 
   @include mobile {
     font-size: 10px !important;
