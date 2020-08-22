@@ -1,0 +1,586 @@
+I"y�<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#hardware">Hardware</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#directory-structure">Directory structure</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#environment-variables">Environment variables</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#visual-studio-2015-community-edition">Visual Studio 2015 Community Edition</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#anaconda">Anaconda (64-bit)</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#cuda">CUDA 8.0.44 (64-bit)</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#mingw">MinGW-w64 (5.4.0)</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#theano">Theano</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#openblas">OpenBLAS 0.2.14</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#enabling-cpu-or-gpu">Enabling CPU or GPU</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#keras">Keras</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_12" href="#intermediate-check">Intermediate check</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_13" href="#opencv">OpenCV 3.1.0</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_14" href="#final-check">Final check</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_15" href="#installing-additional-libraries">Installing additional libraries</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_16" href="#cudnn">Installing cuDNN (optional)</a></li>
+  </ul>
+</div>
+
+<p>In this blog post, we will setup the environment for Deep Learning in Windows 10. At the end of this post, we will have a machine that is ready to run latest Deep Learning libraries such as Theano, TensorFlow and Keras. We will also learn how to enable GPU to speed up training Deep Neural Networks using CUDA. Let’s jump right in!</p>
+
+<h3 id="hardware">Hardware</h3>
+
+<p>All the following steps are performed and checked with my hardware. 
+My hardware specs are given below.</p>
+
+<ul>
+  <li><strong>CPU</strong>: Intel i7-7500U CPU @ 2.70GHz, 16 GB RAM</li>
+  <li><strong>OS</strong>:  Windows 10 (64-bit)</li>
+  <li><strong>GPU</strong>: NVIDIA GeForce 940MX, 4 GB RAM</li>
+</ul>
+
+<h3 id="directory-structure">Directory structure</h3>
+<p>Let’s start with the directory structure which we will follow in this entire post. This is a mandatory step else it becomes more difficult later. 
+Create a folder named “deeplearning” in C drive.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>This is the master folder inside which we will keep all the dependencies listed above except Visual Studio 2015 Community Edition.</p>
+
+<h3 id="environment-variables">Environment variables</h3>
+
+<p>Before getting into installing dependencies, please become familiar with “Environment variables” and “path”. If you are not familiar with these two terms in Windows, it is highly recommended to read this. Else go to the next section.</p>
+
+<ul>
+  <li>Go to “This PC” (or Computer) -&gt; Right click it -&gt; Select “Properties”.</li>
+  <li>Select “Advanced System Settings”</li>
+  <li>Select “Environment Variables”</li>
+  <li>After that you will see a window having “User Variables” and “System Variables”.</li>
+  <li>We will be highly using the “System Variables” for this post. Before getting into the next step, have a look at this System Variables and find “path” variable in that.</li>
+  <li>We can create a new system variable, edit it, assign a value to it (normally a path) and delete it.</li>
+  <li>We will be using “System Variables” a lot in this post. So, please become familiar with this before getting further.</li>
+</ul>
+
+<p>The following are the software, libraries and tools needed to setup Deep Learning environment in Windows 10 (64-bit).</p>
+
+<h3 id="visual-studio-2015-community-edition">Visual Studio 2015 Community Edition </h3>
+
+<ul>
+  <li>Go to <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48146" target="_blank">this website</a> and click on Download”. You will be taken to the page as shown below.</li>
+</ul>
+
+<div class="note">
+<p>
+  <b>Update: </b>At the time of writing this post, the above URL worked. In case, if it doesn't, check out <a href="https://stackoverflow.com/questions/44290672/how-to-download-visual-studio-community-edition-2015-not-2017" target="_blank">this</a> link.
+</p>
+</div>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/VS1.png" class="typical-image" />
+</figure>
+
+<ul>
+  <li>Check “vs_community.exe” and choose next. The download will start. After download finishes, run the setup and choose the config settings as shown below.</li>
+</ul>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/VS11.png" class="typical-image" />
+</figure>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/VS2.png" class="typical-image" />
+</figure>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/VS3.png" class="typical-image" />
+</figure>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/VS4.png" class="typical-image" />
+</figure>
+
+<h4 id="adding-environment-variables">Adding environment variables</h4>
+
+<ul>
+  <li>Add “C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin” to “path” in System Variables.</li>
+  <li>Create a system variable named “INCLUDE” with the value “C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt”</li>
+  <li>Create a system variable named “LIB” with the value “C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10240.0\um\x64;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10240.0\ucrt\x64”</li>
+</ul>
+
+<h3 id="anaconda">Anaconda (64-bit)</h3>
+
+<p>I have installed Anaconda 64-bit installer to get Python 2.7. This worked without any error!</p>
+
+<ul>
+  <li>Go to <a href="https://www.continuum.io/downloads" target="_blank">this website</a> and select “Anaconda 64-bit installer” under Python 2.7.</li>
+</ul>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/Anaconda.png" class="typical-image" />
+</figure>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/Anaconda2.png" class="typical-image" /> 
+</figure>
+
+<p><br /></p>
+<div class="note"><p>
+<b>Update (13/12/2017)</b>: If you need TensorFlow as the backend for Keras in Windows 10, you can now do that by installing <a href="https://www.anaconda.com/download/#windows" target="_blank">Anaconda Python 3.6 (64-bit) installer</a>. Choose Python 3.6 64-bit Graphical Installer from that link and download it.
+</p>
+</div>
+
+<ul>
+  <li>Run the setup and follow the installation.</li>
+  <li>Choose the installation directory as -</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span>\<span class="n">anaconda</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>In the next screen, check the two options to add anaconda and python 2.7 to “path”.</li>
+</ul>
+
+<h4 id="adding-environment-variables-1">Adding environment variables</h4>
+
+<ul>
+  <li>Create a system variable named “PYTHON_HOME” with the value “C:\deeplearning\anaconda”</li>
+  <li>Add the following in “path” under System Variables. (Add all these one by one by double clicking the value of “path” and clicking “New”)
+    <ul>
+      <li>%PYTHON_HOME%</li>
+      <li>%PYTHON_HOME%\Scripts</li>
+      <li>%PYTHON_HOME%\Library\bin</li>
+    </ul>
+  </li>
+  <li>After adding the variables in path, open up a command prompt as administrator and execute the following command.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">conda</span> <span class="n">install</span> <span class="n">libpython</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="cuda">CUDA 8.0 (64-bit)</h3>
+
+<p>To enable GPU to speed up training neural networks for Deep Learning, we need to install CUDA.</p>
+
+<ul>
+  <li>Go to <a href="https://developer.nvidia.com/cuda-downloads" target="_blank">this website</a> and choose the options of your need.</li>
+</ul>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/CUDA1.png" class="typical-image" /> 
+</figure>
+
+<ul>
+  <li>Run the setup and choose the installation directory as -</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span>\<span class="n">cuda</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>After completing the installation, the installer automatically creates “CUDA_PATH” in System Variables. Check this, else you need to add it for sure.</li>
+  <li>In case if you don’t find CUDA related environment variables, follow the steps below -</li>
+</ul>
+
+<h4 id="adding-environment-variables-2">Adding environment variables</h4>
+
+<ul>
+  <li>Create a system variable named “CUDA_PATH” with the value “C:\deeplearning\cuda”</li>
+  <li>Add the following in “path” under System Variables.
+    <ul>
+      <li>%CUDA_PATH%\libnvvp</li>
+      <li>%CUDA_PATH%\bin</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="mingw">MinGW-w64 (5.4.0)</h3>
+
+<ul>
+  <li>Go to <a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/" target="_blank">this website</a> and download the “mingw-w64-install.exe”.</li>
+  <li>After downloading, run the setup and choose the installation directory as -</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span>\<span class="n">mingw</span><span class="o">-</span><span class="n">w64</span><span class="o">-</span><span class="mf">5.4</span><span class="p">.</span><span class="mi">0</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Choose the config options as shown below -</li>
+</ul>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/mingw.png" width="400px" /> 
+</figure>
+
+<h4 id="adding-environment-variables-3">Adding environment variables</h4>
+
+<ul>
+  <li>Create a system variable named “MINGW_HOME” with the value “C:\deeplearning\mingw-w64-5.4.0”</li>
+  <li>Add the following in “path” under System Variables.
+    <ul>
+      <li>%MINGW_HOME%\mingw64\bin</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="theano">Theano</h3>
+<p>We will be installing Theano 0.8.2 using <em>git</em> from our command prompt.</p>
+
+<ul>
+  <li>Create a folder named “theano-0.8.2” in “C:\deeplearning”.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span>\<span class="n">theano</span><span class="o">-</span><span class="mf">0.8</span><span class="p">.</span><span class="mi">2</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Open command prompt as administrator and type the following -</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span>\ 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">Theano</span><span class="o">/</span><span class="n">Theano</span><span class="p">.</span><span class="n">git</span> <span class="n">theano</span><span class="o">-</span><span class="mf">0.8</span><span class="p">.</span><span class="mi">2</span> <span class="o">--</span><span class="n">branch</span> <span class="n">rel</span><span class="o">-</span><span class="mf">0.8</span><span class="p">.</span><span class="mi">2</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Wait for the repository to get cloned and checked out.</li>
+  <li>Enter into the theano folder and install it using the following commands</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span>\<span class="n">theano</span><span class="o">-</span><span class="mf">0.8</span><span class="p">.</span><span class="mi">2</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">install</span> <span class="o">--</span><span class="n">record</span> <span class="n">installed_files</span><span class="p">.</span><span class="n">txt</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="openblas">OpenBLAS 0.2.14</h3>
+
+<ul>
+  <li>Go to <a href="https://sourceforge.net/projects/openblas/files/v0.2.14/OpenBLAS-v0.2.14-Win64-int32.zip/download" target="_blank">this website</a> to download “OpenBLAS” which is needed to perform parallel computation by running both CPU and GPU together. For example, data augmentation could be performed by CPU while the GPU could be used to speed up training the neural network.</li>
+  <li>Download the .zip file and extract the files to the folder -</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span>\<span class="n">openblas</span><span class="o">-</span><span class="mf">0.2</span><span class="p">.</span><span class="mi">14</span><span class="o">-</span><span class="n">int32</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="adding-environment-variables-4">Adding environment variables</h4>
+
+<ul>
+  <li>Create a system variable named “OPENBLAS_HOME” with the value “C:\deeplearning\openblas-0.2.14-int32”</li>
+  <li>Add the following in “path” under System Variables.
+    <ul>
+      <li>%OPENBLAS_HOME%\bin</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="enabling-cpu-or-gpu">Enabling CPU or GPU</h3>
+
+<p>To switch between CPU and GPU, we can do a simple trick. Theano uses the processing unit by checking the variable “THEANO_FLAGS” in “path” under System Variables.</p>
+
+<ul>
+  <li>To use CPU, copy-paste the following as the value to “THEANO_FLAGS” in “path”.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">floatX</span><span class="o">=</span><span class="n">float32</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">,</span><span class="n">lib</span><span class="p">.</span><span class="n">cnmem</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">blas</span><span class="p">.</span><span class="n">ldflags</span><span class="o">=-</span><span class="n">LC</span><span class="p">:</span><span class="o">/</span><span class="n">deeplearning</span><span class="o">/</span><span class="n">openblas</span><span class="o">-</span><span class="mf">0.2</span><span class="p">.</span><span class="mi">14</span><span class="o">-</span><span class="n">int32</span><span class="o">/</span><span class="nb">bin</span> <span class="o">-</span><span class="n">lopenblas</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>To use GPU, copy-paste the following as the value to “THEANO_FLAGS” in “path”.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">floatX</span><span class="o">=</span><span class="n">float32</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="n">gpu</span><span class="p">,</span><span class="n">dnn</span><span class="p">.</span><span class="n">enabled</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">lib</span><span class="p">.</span><span class="n">cnmem</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">blas</span><span class="p">.</span><span class="n">ldflags</span><span class="o">=-</span><span class="n">LC</span><span class="p">:</span><span class="o">/</span><span class="n">deeplearning</span><span class="o">/</span><span class="n">openblas</span><span class="o">-</span><span class="mf">0.2</span><span class="p">.</span><span class="mi">14</span><span class="o">-</span><span class="n">int32</span><span class="o">/</span><span class="nb">bin</span> <span class="o">-</span><span class="n">lopenblas</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="opencv">OpenCV 3.1.0</h3>
+
+<p><b>For Python 2.7</b><br />
+Forget searching Google like “How to install OpenCV in Windows 10”. You will find more complicated procedures and techniques to install it, which fails the most. The simplest solution is to use Anaconda. This is the 100% working solution in my case. I tried a lot fighting with CMAKE, git, compiler issues etc.. and found this as the best solution. In case if you find any other method, kindly let me know.</p>
+
+<ul>
+  <li>Open up a command prompt and enter the following command.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">conda</span><span class="p">.</span><span class="n">anaconda</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">menpo</span> <span class="n">opencv3</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><b>For Python 3.6</b><br /></p>
+<ul>
+  <li>Open up a command prompt and enter the following command.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">opencv</span><span class="o">-</span><span class="n">python</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">opencv</span><span class="o">-</span><span class="n">contrib</span><span class="o">-</span><span class="n">python</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>After installing it, type the following command.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>&gt;&gt;&gt; python 
+&gt;&gt;&gt; import cv2 
+&gt;&gt;&gt; cv2.__version__ 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>You should get something like this.</p>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/opencv.png" /> 
+</figure>
+
+<h3 id="intermediate-check">Intermediate check</h3>
+
+<p>If you followed this post carefully till here, you should end up with your “System Variables” as shown below.</p>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/path.png" /> 
+</figure>
+
+<h3 id="keras">Keras</h3>
+
+<div class="note">
+<p>
+<b>Update (13/12/2017):</b> You can now install Keras and TensorFlow using pip in Windows 10, if you have installed <a href="https://www.anaconda.com/download/#windows" target="_blank">Python 3.6</a> from Anaconda website. It is as simple as two pip commands given below.
+</p>  
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">tensorflow</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">keras</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><b>For Python 2.7</b><br />
+We will be installing Keras 1.1.0 using git from our command prompt.</p>
+
+<ul>
+  <li>Create a folder named “keras-1.1.0” in “C:\deeplearning”.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span>\<span class="n">keras</span><span class="o">-</span><span class="mf">1.1</span><span class="p">.</span><span class="mi">0</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Open command prompt as administrator and type the following -</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span>\ 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">fchollet</span><span class="o">/</span><span class="n">keras</span><span class="p">.</span><span class="n">git</span> <span class="n">keras</span><span class="o">-</span><span class="mf">1.1</span><span class="p">.</span><span class="mi">0</span> <span class="o">--</span><span class="n">branch</span> <span class="mf">1.1</span><span class="p">.</span><span class="mi">0</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Wait for the repository to get cloned and checked out.</li>
+  <li>Enter into the keras folder and install it using the following commands.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span>\<span class="n">keras</span><span class="o">-</span><span class="mf">1.1</span><span class="p">.</span><span class="mi">0</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">install</span> <span class="o">--</span><span class="n">record</span> <span class="n">installed_files</span><span class="p">.</span><span class="n">txt</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Since, we are using Theano, we don’t need TensorFlow as the backend for Keras. But Keras comes in default with TensorFlow as its backend. To change this, navigate to the folder -</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">username</span>\<span class="p">.</span><span class="n">keras</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Here, username is your name. You will find “keras.json” file. Open it and change it like this.</p>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/keras.png" /> 
+</figure>
+<p><br /></p>
+<div class="note"><p>
+<b>Update (13/12/2017)</b>: If you want to use TensorFlow as the backend for Keras, you need to change "image_dim_ordering" to "tf" and "backend" to "tensorflow".
+</p>
+</div>
+
+<h3 id="final-check">Final check</h3>
+
+<p>If you followed all the steps correctly till here, you can execute the following final check to verify the installation of all the dependencies.</p>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/check1.png" /> 
+</figure>
+
+<div class="note" style="margin-top: 20px"><p>
+<b>Note</b>: I have installed CUDA 8.0 in a different folder. But it still worked. Make sure you assign "CUDA_PATH" variable in System Variables to the correct folder where it got installed. If it was automatically mapped to the correct path, leave it as it is. 
+</p></div>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/check 2.png" />
+</figure>
+
+<ul>
+  <li>Open up a text editor and copy-paste the following code.</li>
+  <li>Save it in “Desktop” as “test.py”.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">theano</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">shared</span><span class="p">,</span> <span class="n">sandbox</span>
+<span class="kn">import</span> <span class="nn">theano.tensor</span> <span class="k">as</span> <span class="n">T</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">vlen</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">768</span>  <span class="c1"># 10 x #cores x # threads per core
+</span><span class="n">iters</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">shared</span><span class="p">(</span><span class="n">numpy</span><span class="p">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rng</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="n">vlen</span><span class="p">),</span> <span class="n">config</span><span class="p">.</span><span class="n">floatX</span><span class="p">))</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">function</span><span class="p">([],</span> <span class="n">T</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="n">maker</span><span class="p">.</span><span class="n">fgraph</span><span class="p">.</span><span class="n">toposort</span><span class="p">())</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iters</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Looping %d times took %f seconds"</span> <span class="o">%</span> <span class="p">(</span><span class="n">iters</span><span class="p">,</span> <span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Result is %s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">r</span><span class="p">,))</span>
+<span class="k">if</span> <span class="n">numpy</span><span class="p">.</span><span class="nb">any</span><span class="p">([</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">op</span><span class="p">,</span> <span class="n">T</span><span class="p">.</span><span class="n">Elemwise</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="p">.</span><span class="n">maker</span><span class="p">.</span><span class="n">fgraph</span><span class="p">.</span><span class="n">toposort</span><span class="p">()]):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Used the cpu'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Used the gpu'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>If you want to use CPU -</p>
+
+<ul>
+  <li>Open the “Environment Variables” and go to “System Variables” -&gt; “THEANO_FLAGS”</li>
+  <li>Double click the value of “THEANO_FLAGS” and change it to -</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">floatX</span><span class="o">=</span><span class="n">float32</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">,</span><span class="n">lib</span><span class="p">.</span><span class="n">cnmem</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">blas</span><span class="p">.</span><span class="n">ldflags</span><span class="o">=-</span><span class="n">LC</span><span class="p">:</span><span class="o">/</span><span class="n">deeplearning</span><span class="o">/</span><span class="n">openblas</span><span class="o">-</span><span class="mf">0.2</span><span class="p">.</span><span class="mi">14</span><span class="o">-</span><span class="n">int32</span><span class="o">/</span><span class="nb">bin</span> <span class="o">-</span><span class="n">lopenblas</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>If you want to use GPU -</p>
+
+<ul>
+  <li>Open the “Environment Variables” and go to “System Variables” -&gt; “THEANO_FLAGS”</li>
+  <li>Double click the value of “THEANO_FLAGS” and change it to -</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">floatX</span><span class="o">=</span><span class="n">float32</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="n">gpu</span><span class="p">,</span><span class="n">dnn</span><span class="p">.</span><span class="n">enabled</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">lib</span><span class="p">.</span><span class="n">cnmem</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">blas</span><span class="p">.</span><span class="n">ldflags</span><span class="o">=-</span><span class="n">LC</span><span class="p">:</span><span class="o">/</span><span class="n">deeplearning</span><span class="o">/</span><span class="n">openblas</span><span class="o">-</span><span class="mf">0.2</span><span class="p">.</span><span class="mi">14</span><span class="o">-</span><span class="n">int32</span><span class="o">/</span><span class="nb">bin</span> <span class="o">-</span><span class="n">lopenblas</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Open the command prompt and navigate to the “Desktop”. * Run the following command.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">username</span>\<span class="n">Desktop</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">python</span> <span class="n">test</span><span class="p">.</span><span class="n">py</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>I have enabled GPU and I got the following result.</li>
+</ul>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/out1.png" /> 
+</figure>
+
+<ul>
+  <li>In case if you meet any error, go to -</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">username</span>\<span class="n">AppData</span>\<span class="n">local</span>\<span class="n">Theano</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Select all folders, delete the contents and try again. It will work. Else, restart the system once and try again.</li>
+</ul>
+
+<h3 id="11-installing-additional-libraries">11. Installing additional libraries</h3>
+<p>If you installed pip for windows, it is much simpler to install some additional packages needed for development. Some are listed below. Open up command prompt as administrator and enter the commands listed.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">mahotas</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">imutils</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">librosa</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="cudnn">Installing cuDNN</h3>
+
+<ul>
+  <li>Go to <a href="https://developer.nvidia.com/cudnn" target="_blank">this</a> website, register and download cuDNN for CUDA 8.0 and Windows 10.</li>
+  <li>After downloading the file, unzip it.</li>
+  <li>Copy the contents from each of the folder (bin, include, lib) inside cuDNN folder and paste it in CUDA path having (bin, include, lib) respectively. That is -
+    <ul>
+      <li>Copy the contents inside “C:\Users&lt;username&gt;\Downloads\cuDNN\bin” folder to “C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin”</li>
+      <li>Copy the contents inside “C:\Users&lt;username&gt;\Downloads\cuDNN\include” folder to “C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include”</li>
+      <li>Copy the contents inside “C:\Users&lt;username&gt;\Downloads\cuDNN\lib\x64” folder to “C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\lib\x64”</li>
+    </ul>
+  </li>
+  <li>After performing the above steps, if you want to use cuDNN to speed up your Deep Learning process, you must change the THEANO_FLAGS as shown below.</li>
+</ul>
+
+<p>If you want to use cuDNN and GPU-</p>
+
+<ul>
+  <li>Open the “Environment Variables” and go to “System Variables” -&gt; “THEANO_FLAGS”</li>
+  <li>Double click the value of “THEANO_FLAGS” and change it to -</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">floatX</span><span class="o">=</span><span class="n">float32</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="n">gpu</span><span class="p">,</span><span class="n">optimizer_including</span><span class="o">=</span><span class="n">cudnn</span><span class="p">,</span><span class="n">lib</span><span class="p">.</span><span class="n">cnmem</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">dnn</span><span class="p">.</span><span class="n">conv</span><span class="p">.</span><span class="n">algo_bwd_filter</span><span class="o">=</span><span class="n">deterministic</span><span class="p">,</span><span class="n">dnn</span><span class="p">.</span><span class="n">conv</span><span class="p">.</span><span class="n">algo_bwd_data</span><span class="o">=</span><span class="n">deterministic</span><span class="p">,</span><span class="n">blas</span><span class="p">.</span><span class="n">ldflags</span><span class="o">=-</span><span class="n">LC</span><span class="p">:</span><span class="o">/</span><span class="n">deeplearning</span><span class="o">/</span><span class="n">openblas</span><span class="o">-</span><span class="mf">0.2</span><span class="p">.</span><span class="mi">14</span><span class="o">-</span><span class="n">int32</span><span class="o">/</span><span class="nb">bin</span> <span class="o">-</span><span class="n">lopenblas</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Once you have updated the path, open up command prompt and type the following.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">python</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">theano</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>You should get something like this.</p>
+
+<figure>
+  <img src="/images/software/deep-learning-windows/cuDNN.png" /> 
+</figure>
+
+<p>That’s it. You are all set to begin your journey in Deep Learning using Windows 10. Feel free to share this link to someone who is struggling to setup environment for Deep Learning and Computer Vision in Windows 10.</p>
+:ET

@@ -45,7 +45,7 @@
   <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
     <meta name="theme-color" content="#d42423" />
     <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog is a personal space of Gogul Ilango who writes about technology, travel, music production and programming." href="/feed.xml" />
   </head>
 
   <body>
@@ -56,7 +56,7 @@
             <a title="blog" id = "nav_blog" href="/blog"><span>blog</span></a>
             <a title="creations" id = "nav_creations" href="/creations"><span>creations</span></a>
             <a title="music" id = "nav_music" href="https://www.youtube.com/c/GogulIlangoMusic" target="_blank"><span>music</span></a>
-            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme()"><span>theme</span></a>
             <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9889;</a>
           </div>
       </div>
@@ -101,7 +101,7 @@
                         <div style="background-image: url('https://drive.google.com/uc?id=1l0AamkkNlTopLpNRmunjYD5J2ZJuEV0B')"></div>
                       </div>
                       <div class="page-treasure">
-                        <h2>My First International Trip to Singapore</h2>
+                        <h3>My First International Trip to Singapore</h3>
                         <p>Experience fresh oxygen, green trees, forests with woods, animals, birds, colorful lights at night and much more!</p>
                       </div>
                     </div>
@@ -225,19 +225,6 @@
 		});
 	</script>
 	<!-- End Google Analytics -->
-
-
-     <script type="text/javascript">
-      var displayMode = sessionStorage.getItem("theme");
-      if(displayMode == undefined || displayMode == "" || displayMode == null) {
-        sessionStorage.setItem("theme", "light");
-        displayMode = "light";
-        switchTheme(0);
-      } else {
-        sessionStorage.setItem("theme", sessionStorage.getItem("theme"));
-        switchTheme(0);
-      }
-    </script>
 
    </body>
    </html>

@@ -4,13 +4,6 @@
 	background-color: #ffffff !important;
 }
 
-.splash-main {
-    background-color: #ffffff;
-    @include mobile {
-    	margin-bottom: 64px !important;
-	}
-}
-
 .splash-wrapper {
 	width: 50%;
 	height: 100%;
@@ -26,18 +19,6 @@
 		padding: 20px;
 		width: 100%;
 	}
-}
-
-.splash-header {
-	background-color: $white !important;
-	@include mobile {
-		background-color: $white !important;
-		background-image: none !important
-	}
-}
-
-.splash-header a {
-	color: $white !important;
 }
 
 .splash-wrapper h1 {
@@ -85,30 +66,13 @@
     align-items: center;
 }
 
-.profile-pic {
-	width: 30% !important;
-}
+
 
 .profile-wrapper {
 	display: flex;
 	flex-direction: column;
 	@include mobile {
 		flex-direction: row;
-	}
-}
-
-.profile-pic div {
-    height: 140px;
-    border-radius: 50%;
-    width: 140px !important;
-    background-size: 189px;
-    background-position: -15px -1px;
-	@include mobile {
-		    height: 90px;
-		    width: 90px !important;
-		    background-size: 125px;
-		    background-repeat: no-repeat;
-		    background-position: -11px -1px;
 	}
 }
 

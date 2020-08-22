@@ -15,8 +15,8 @@
 }
 
 .post-heading-wrapper {
-  background-color: $bg_header;
-  box-shadow: 0 8px 6px -6px #e9e9e9;
+  background-color: var(--bgheader);
+  box-shadow: 0 8px 6px -6px var(--bgboxshadow);
   margin-bottom: 10px !important;
   @include mobile {
     padding: 0px;
@@ -48,7 +48,7 @@
 
 .post-heading h1 {
   max-width: 580px;
-  color: $black !important;
+  color: var(--texth1) !important;
   font-size: 1.8em;
   text-align: center;
   word-wrap: break-word;
@@ -77,13 +77,13 @@
   text-align: center !important;
   margin: 0px auto;
   opacity: 1;
-  color: #fff !important;
+  color: var(--textp) !important;
   @include mobile {
     margin: 0;
     text-align: left !important;
   }
   p {
-    color: #ffffff80;
+    color: var(--textp);
     font-family: $font_body;
     font-size: 12px;
     margin-bottom: 0px !important;
@@ -104,7 +104,7 @@
 
 .post-heading p {
     text-align: center;
-    color: $black;
+    color: var(--textp);
     font-weight: 100;
     font-family: $font_body;
 }
@@ -135,21 +135,21 @@
 
 .page-holder .page-treasure-wrapper {
   display: flex;
-  background-color: white;
+  background-color: var(--bggem);
   margin: 10px;
   padding: 20px;
   border-radius: 5px;
-  border: 1px solid #ececec;
+  border: 1px solid var(--bordergem);
   flex-direction: row;
   transition: transform .3s;
   &:hover, &:active {
     box-shadow: 0 0 14px rgba(0,0,0,.12);
     transform: scale(1.025);
     h2 {
-      color: #df2a25;
+      color: var(--texth2);
     }
     p {
-      color: #a5a5a5;
+      color: var(--textp);
     }
   }
   @include mobile {
@@ -191,7 +191,7 @@
 .page-holder .page-treasure h2 {
   font-size: 15px;
   line-height: initial;
-  color: black;
+  color: var(--texth2);
   padding: 0;
   margin: 0;
   height: initial;
@@ -202,31 +202,17 @@
 
 .page-holder h3 {
   display: inline-block;
-  text-shadow: #fff -2px 2px 0px, #aaf0ff -3px 4px 0px;
-  color: #d02c2a;
+  color: var(--texth3);
   padding: 5px 0px;
-  transition: color 0.3s ease 0s;
-  position: relative;
+  transition: color 0.1s ease 0s;
   z-index: 1;
   font-size: 18px;
+  margin: 0;
   @include mobile {
     font-size: 16px;
   }
 }
 
-.page-holder h3::before {
-  content: "";
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  bottom: 0px;
-  width: calc(30% + 40px);
-  margin-left: -25px;
-  z-index: -1;
-  background: linear-gradient(90deg, #b1ffec, #b597ff);
-  transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-  border-radius: 3px;
-}
 
 .page-holder {
   padding: 20px 0;

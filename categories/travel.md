@@ -22,7 +22,7 @@ permalink: /travel
                         <div style="background-image: url('{{ post.image }}')"></div>
                       </div>
                       <div class="page-treasure">
-                        <h2>{{ post.title }}</h2>
+                        <h3>{{ post.title }}</h3>
                         <p>{{ post.description }}</p>
                       </div>
                     </div>

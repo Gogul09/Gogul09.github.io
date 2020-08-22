@@ -45,18 +45,5 @@
     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
     <script src="/js/custom.js"></script>
     {% include analytics.html %}
-
-    <script type="text/javascript">
-      var displayMode = sessionStorage.getItem("theme");
-      if(displayMode == undefined || displayMode == "" || displayMode == null) {
-        sessionStorage.setItem("theme", "light");
-        displayMode = "light";
-        switchTheme(0);
-      } else {
-        sessionStorage.setItem("theme", sessionStorage.getItem("theme"));
-        switchTheme(0);
-      }
-    </script>
-
   </body>
   </html>

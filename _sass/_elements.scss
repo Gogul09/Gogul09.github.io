@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  background-color: #fbfbfb;
+  background-color: var(--bgmatgray);
   font-family: $font_body;
   color: $text_500;
   opacity: 1;
@@ -51,16 +51,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 article {
-    background: $white;
-    padding-bottom: 16px;
-    padding-left: 25px;
-    padding-right: 25px;
-    word-wrap: break-word;
-    font-size: 15px;
-    @include mobile {
-       padding: 0px 15px;
-       font-size: 14px;
-    }
+  background: var(--bgbody);
+  padding-bottom: 16px;
+  padding-left: 25px;
+  padding-right: 25px;
+  word-wrap: break-word;
+  font-size: 15px;
+  @include mobile {
+     padding: 0px 15px;
+     font-size: 14px;
+  }
 }
 
 h1, h2, h3, h4, h5 {
@@ -76,6 +76,45 @@ dl, form, hr, ol, p, table, ul {
   margin-bottom: 1.7em !important;
 }
 
+h1 {
+  font-size: 23px;
+  text-align: center;
+  color: var(--texth1);
+  a {
+    color: $white;
+  }
+}
+
+h2 {
+  font-size: 1.5em;
+  color: var(--texth2);
+  a {
+    color: $primary_500;
+  }
+  @include mobile {
+    border-bottom: none;
+    margin-bottom: 0px;
+  }
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: var(--texth3);
+  position: relative;
+  padding-bottom: 10px;
+  @include mobile {
+    font-size: 1.0rem;
+  }
+}
+
+h4 {
+  font-size: 21px;
+  color: var(--texth4);
+  @include mobile {
+    font-size: 15px;
+  }
+}
+
 h6 {
  color: #adadad;
  padding: 0;
@@ -86,48 +125,8 @@ h6 {
   }
 }
 
-h1 {
-  font-size: 23px;
-  text-align: center;
-  color: #000000;
-  a {
-    color: $white;
-  }
-}
-
-h2 {
-  font-size: 1.5em;
-  color: #222;
-  a {
-    color: $primary_500;
-  }
-  @include mobile {
-    border-bottom: none;
-    margin-bottom: 0px;
-  }
-}
- 
-h3 {
-  font-size: 1.4rem;
-  color: #222;
-  position: relative;
-  padding-bottom: 10px;
-  @include mobile {
-    font-size: 1.0rem;
-  }
-}
-
-
-h4 {
-  font-size: 21px;
-  color: #cf2321;
-  @include mobile {
-    font-size: 15px;
-  }
-}
-
 p {
-  color: #5f6368;
+  color: var(--textp);
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0.3px;
@@ -139,7 +138,7 @@ p {
 }
 
 a {
-  color: #cf2321 !important;
+  color: var(--link) !important;
   text-decoration: none;
   cursor: pointer;
   &:hover, &:active {
@@ -150,7 +149,7 @@ a {
 
 ul, ol {
   margin: 0px;
-  color: #5f6368;
+  color: var(--textul);
   padding-left: 15px;
   line-height: 1.625;
   font-size: 16px;

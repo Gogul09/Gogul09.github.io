@@ -26,7 +26,7 @@
             <a title="blog" id = "nav_blog" href="{{ site.baseurl }}/blog"><span>blog</span></a>
             <a title="creations" id = "nav_creations" href="{{ site.baseurl }}/creations"><span>creations</span></a>
             <a title="music" id = "nav_music" href="https://www.youtube.com/c/GogulIlangoMusic" target="_blank"><span>music</span></a>
-            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme()"><span>theme</span></a>
             <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9889;</a>
           </div>
       </div>
@@ -50,18 +50,5 @@
      <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
      <script src="/js/custom.js"></script>
      {% include analytics.html %}
-
-     <script type="text/javascript">
-      var displayMode = sessionStorage.getItem("theme");
-      if(displayMode == undefined || displayMode == "" || displayMode == null) {
-        sessionStorage.setItem("theme", "light");
-        displayMode = "light";
-        switchTheme(0);
-      } else {
-        sessionStorage.setItem("theme", sessionStorage.getItem("theme"));
-        switchTheme(0);
-      }
-    </script>
-
    </body>
    </html>

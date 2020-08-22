@@ -1,0 +1,89 @@
+I"Ÿ!<p>R is a great programming language to do Data Analysis and Statistical Operations on data. It has a easy-to-follow readable syntax (somewhat similar to Python) and provides rich source of libraries/packages to perform anything from Data Manipulation to Data Visualization. YOu can install these packages from CRAN (Comprehensive R Archive Network) which is a place where all the R packages/distributions exist. In this tutorial, we will learn how to install R, RStudio and Shiny (an R package to create interactive web apps) in Ubuntu 14.04.</p>
+
+<h3 id="installing-r">Installing R</h3>
+
+<p>Update the list of packages in the sources list</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Install R using <span class="coding">apt-get</span></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">r</span><span class="o">-</span><span class="n">base</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Check whether installation was successful.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">R</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>It must display something like this -</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="n">R</span> <span class="n">version</span> <span class="mf">3.4</span><span class="p">.</span><span class="mi">0</span> <span class="p">(</span><span class="mi">2017</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">21</span><span class="p">)</span> <span class="o">--</span> <span class="s">"You Stupid Darkness"</span>
+<span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="mi">2017</span> <span class="n">The</span> <span class="n">R</span> <span class="n">Foundation</span> <span class="k">for</span> <span class="n">Statistical</span> <span class="n">Computing</span>
+<span class="n">Platform</span><span class="p">:</span> <span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span> <span class="p">(</span><span class="mi">64</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span>
+
+<span class="n">R</span> <span class="ow">is</span> <span class="n">free</span> <span class="n">software</span> <span class="ow">and</span> <span class="n">comes</span> <span class="k">with</span> <span class="n">ABSOLUTELY</span> <span class="n">NO</span> <span class="n">WARRANTY</span><span class="p">.</span>
+<span class="n">You</span> <span class="n">are</span> <span class="n">welcome</span> <span class="n">to</span> <span class="n">redistribute</span> <span class="n">it</span> <span class="n">under</span> <span class="n">certain</span> <span class="n">conditions</span><span class="p">.</span>
+<span class="n">Type</span> <span class="s">'license()'</span> <span class="ow">or</span> <span class="s">'licence()'</span> <span class="k">for</span> <span class="n">distribution</span> <span class="n">details</span><span class="p">.</span>
+
+  <span class="n">Natural</span> <span class="n">language</span> <span class="n">support</span> <span class="n">but</span> <span class="n">running</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">English</span> <span class="n">locale</span>
+
+<span class="n">R</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">collaborative</span> <span class="n">project</span> <span class="k">with</span> <span class="n">many</span> <span class="n">contributors</span><span class="p">.</span>
+<span class="n">Type</span> <span class="s">'contributors()'</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span> <span class="ow">and</span>
+<span class="s">'citation()'</span> <span class="n">on</span> <span class="n">how</span> <span class="n">to</span> <span class="n">cite</span> <span class="n">R</span> <span class="ow">or</span> <span class="n">R</span> <span class="n">packages</span> <span class="ow">in</span> <span class="n">publications</span><span class="p">.</span>
+
+<span class="n">Type</span> <span class="s">'demo()'</span> <span class="k">for</span> <span class="n">some</span> <span class="n">demos</span><span class="p">,</span> <span class="s">'help()'</span> <span class="k">for</span> <span class="n">on</span><span class="o">-</span><span class="n">line</span> <span class="n">help</span><span class="p">,</span> <span class="ow">or</span>
+<span class="s">'help.start()'</span> <span class="k">for</span> <span class="n">an</span> <span class="n">HTML</span> <span class="n">browser</span> <span class="n">interface</span> <span class="n">to</span> <span class="n">help</span><span class="p">.</span>
+<span class="n">Type</span> <span class="s">'q()'</span> <span class="n">to</span> <span class="n">quit</span> <span class="n">R</span><span class="p">.</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Now, you are inside the R interactive shell and you can easily quit the shell using -</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">q</span><span class="p">(</span><span class="n">save</span><span class="o">=</span><span class="s">"no"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>After setting up R, you need to install packages (which are similar to libraries). The common format to install any R package from CRAN is -</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">install</span><span class="p">.</span><span class="n">packages</span><span class="p">(</span><span class="s">"the_name_of_your_package"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="installing-shiny">Installing Shiny</h3>
+
+<p>Letâ€™s install one of my favorite R packages, Shiny. Using this package, you can create an interactive webpages with zero HTML/CSS/Javascript knowledge.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">install</span><span class="p">.</span><span class="n">packages</span><span class="p">(</span><span class="s">"shiny"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="installing-rstudio">Installing RStudio</h3>
+<p>R provides an elegant IDE to work with called RStudio. It is easy to work with the IDE rather than using the interactive shell. You can download RStudio <a href="https://www.rstudio.com/products/rstudio/download2/">here</a>. An example of how RStudio looks is shown below. <em>(source: http://rprogramming.net/wp-content/uploads/2012/10/RStudio-Screenshot.png)</em></p>
+
+<p><img src="http://rprogramming.net/wp-content/uploads/2012/10/RStudio-Screenshot.png" alt="RStudio" /></p>
+:ET

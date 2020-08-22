@@ -45,7 +45,7 @@
   <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
     <meta name="theme-color" content="#d42423" />
     <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources." href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog is a personal space of Gogul Ilango who writes about technology, travel, music production and programming." href="/feed.xml" />
   </head>
 
   <body>
@@ -56,7 +56,7 @@
             <a title="blog" id = "nav_blog" href="/blog"><span>blog</span></a>
             <a title="creations" id = "nav_creations" href="/creations"><span>creations</span></a>
             <a title="music" id = "nav_music" href="https://www.youtube.com/c/GogulIlangoMusic" target="_blank"><span>music</span></a>
-            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme()"><span>theme</span></a>
             <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9889;</a>
           </div>
       </div>
@@ -90,7 +90,7 @@
                         <div style="background-image: url('https://drive.google.com/uc?id=1rjTumTjtBj7nRdADfGiXs22NcX8xBwe2')"></div>
                       </div>
                       <div class="page-treasure">
-                        <h2>Logistic Regression from Scratch</h2>
+                        <h3>Logistic Regression from Scratch</h3>
                         <p>Understand how to solve a classification problem using logistic regression from scratch using python and numpy.</p>
                       </div>
                     </div>
@@ -108,7 +108,7 @@
                         <div style="background-image: url('https://drive.google.com/uc?id=1b5sC_T-CysvP_toHuolmcrI_i_UpN7R3')"></div>
                       </div>
                       <div class="page-treasure">
-                        <h2>Getting Started with Machine Learning</h2>
+                        <h3>Getting Started with Machine Learning</h3>
                         <p>Understand how to get started with Machine Learning which has turned to be the hottest topic of 21st century.</p>
                       </div>
                     </div>
@@ -182,7 +182,7 @@
                         <div style="background-image: url('https://drive.google.com/uc?id=1J5BYkUjjeylaMlMpvlOrPfnPLrSNTf1N')"></div>
                       </div>
                       <div class="page-treasure">
-                        <h2>Predicting Housing Prices using Regression Algorithms</h2>
+                        <h3>Predicting Housing Prices using Regression Algorithms</h3>
                         <p>Understand how to approach a machine learning regression problem using the boston housing prices dataset</p>
                       </div>
                     </div>
@@ -276,7 +276,7 @@
                         <div style="background-image: url('https://drive.google.com/uc?id=1XF3KdLLnOrQ2ndwCBCZFdyGXZRM3EIHU')"></div>
                       </div>
                       <div class="page-treasure">
-                        <h2>Image Classification using Python and Scikit-learn</h2>
+                        <h3>Image Classification using Python and Scikit-learn</h3>
                         <p>Learn how to use Global Feature Descriptors such as RGB Color Histograms, Hu Moments and Haralick Texture to classify Flower species using different Machine Learning classifiers available in scikit-learn.</p>
                       </div>
                     </div>
@@ -345,19 +345,6 @@
 		});
 	</script>
 	<!-- End Google Analytics -->
-
-
-     <script type="text/javascript">
-      var displayMode = sessionStorage.getItem("theme");
-      if(displayMode == undefined || displayMode == "" || displayMode == null) {
-        sessionStorage.setItem("theme", "light");
-        displayMode = "light";
-        switchTheme(0);
-      } else {
-        sessionStorage.setItem("theme", sessionStorage.getItem("theme"));
-        switchTheme(0);
-      }
-    </script>
 
    </body>
    </html>

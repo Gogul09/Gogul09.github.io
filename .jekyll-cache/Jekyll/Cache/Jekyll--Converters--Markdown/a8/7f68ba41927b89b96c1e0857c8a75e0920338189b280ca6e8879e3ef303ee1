@@ -1,0 +1,210 @@
+I" <div class="home-container">
+  <div class="home-articles">
+    <div class="home-wrapper">
+      <div class="page-holder">
+        <ul>
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          		
+		            <li>
+                  <a class="post-link" href="/hardware/python-for-hardware-design">
+                    <div class="page-treasure-wrapper">
+                      <div class="page-treasure-image">
+                        <div style="background-image: url('https://drive.google.com/uc?id=1lqU2RXMUPxwM7088Swj0uHX3HwSIRbTP')"></div>
+                      </div>
+                      <div class="page-treasure">
+                        <h2>Python for Hardware Design</h2>
+                        <p>How python programming language could be used in hardware design such as ASIC logic design or physical design. Come let's explore.</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+            	
+            
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          		
+		            <li>
+                  <a class="post-link" href="/hardware/sta-timing-paths-and-delays">
+                    <div class="page-treasure-wrapper">
+                      <div class="page-treasure-image">
+                        <div style="background-image: url('https://drive.google.com/uc?id=1G5IufAyiH6rg0KGrmvTkDvjYBEwcLKV1')"></div>
+                      </div>
+                      <div class="page-treasure">
+                        <h2>Static Timing Analysis - Timing Paths and Delays</h2>
+                        <p>Understand the basic concepts behind Static Timing Analysis in VLSI (ASIC design) such as Timing Paths and Delays.</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+            	
+            
+        
+          
+        
+          
+          		
+		            <li>
+                  <a class="post-link" href="/hardware/cmos-basics-for-sta-2">
+                    <div class="page-treasure-wrapper">
+                      <div class="page-treasure-image">
+                        <div style="background-image: url('https://drive.google.com/uc?id=1Bk2p60RLiz3AOcDDS0-11FfeJFC17Xjq')"></div>
+                      </div>
+                      <div class="page-treasure">
+                        <h2>CMOS Basics - Part 2</h2>
+                        <p>Understand the fundamental concepts of Static Timing Analysis in VLSI (ASIC design) such as Switching Activity, Propagation Delay, Slew and Skew.</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+            	
+            
+        
+          
+          		
+		            <li>
+                  <a class="post-link" href="/hardware/cmos-basics-for-sta-1">
+                    <div class="page-treasure-wrapper">
+                      <div class="page-treasure-image">
+                        <div style="background-image: url('https://drive.google.com/uc?id=1cTetisIy4dJrwezQbVUyZOhslpVbWAI3')"></div>
+                      </div>
+                      <div class="page-treasure">
+                        <h2>CMOS Basics - Part 1</h2>
+                        <p>Understand the basics of CMOS and terminologies used to perform Static Timing Analysis in VLSI (ASIC design)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+            	
+            
+        
+          
+          		
+		            <li>
+                  <a class="post-link" href="/hardware/research-papers-vlsi-ml">
+                    <div class="page-treasure-wrapper">
+                      <div class="page-treasure-image">
+                        <div style="background-image: url('https://drive.google.com/uc?id=1gubFOinfey2qN7OrHbsGkbQBlvJeQpFg')"></div>
+                      </div>
+                      <div class="page-treasure">
+                        <h2>Applying Machine Learning in VLSI Chip Design</h2>
+                        <p>Collection of research papers, books, articles and courses that solve challenging hardware VLSI chip design problems using Machine Learning.</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+            	
+            
+        
+          
+        
+          
+        
+          
+          		
+            
+        
+          
+        
+          
+        
+          
+          		
+		            <li>
+                  <a class="post-link" href="/hardware/mosfet-fundamentals">
+                    <div class="page-treasure-wrapper">
+                      <div class="page-treasure-image">
+                        <div style="background-image: url('https://drive.google.com/uc?id=1EnLLTeC5eWSy-TPQye-sg9aMndUISJyT')"></div>
+                      </div>
+                      <div class="page-treasure">
+                        <h2>MOSFET fundamentals</h2>
+                        <p>Learn the fundamentals of Metal Oxide Semiconductor Field Effect Transistor (MOSFET)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+            	
+            
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          		
+            
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+:ET

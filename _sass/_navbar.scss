@@ -1,10 +1,10 @@
 .outer-wrapping {
   width: 100%;
-  background-color: $white;
+  background-color: var(--bgbody);
   border: none;
   z-index: 2000;
   @include mobile {
-    background-color: $white;
+    background-color: var(--bgbody);
     background-image: none;
     position: fixed;
     bottom: 0;

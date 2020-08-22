@@ -6,6 +6,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Poppins:wght@300&display=swap" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
   <link rel="stylesheet" href="https://use.typekit.net/mry7nes.css">
+
+  <script type="text/javascript" src="/js/theme.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
 
   {% include meta.html %}
@@ -51,18 +53,5 @@
      <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
      <script src="/js/custom.js"></script>
      {% include analytics.html %}
-
-    <script type="text/javascript">
-      var displayMode = sessionStorage.getItem("theme");
-      if(displayMode == undefined || displayMode == "" || displayMode == null) {
-        sessionStorage.setItem("theme", "light");
-        displayMode = "light";
-        switchTheme(0);
-      } else {
-        sessionStorage.setItem("theme", sessionStorage.getItem("theme"));
-        switchTheme(0);
-      }
-    </script>
-
    </body>
 </html>

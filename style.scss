@@ -13,15 +13,16 @@
 @import "sidebar";
 @import "navbar";
 @import "navbarsplash";
-@import "mobilenetdemo";
-@import "digitrecognizer";
-@import "emotionrecognizer";
-@import "deepdrum";
 @import "splash";
 @import "carbon";
 @import "about";
 @import "home";
 @import "page";
+
+@import "mobilenetdemo";
+@import "digitrecognizer";
+@import "emotionrecognizer";
+@import "deepdrum";
 
 #main {
   min-height: 100vh;
@@ -176,7 +177,7 @@
   background: white;
   border-radius: 5px;
   margin-top: 30px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover, &:active {
     box-shadow: 0 3px 3px -2px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
   }
@@ -192,7 +193,7 @@
   padding: 20px;
   background: white;
   border-radius: 5px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover, &:active {
     box-shadow: 0 3px 3px -2px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
   }
@@ -224,7 +225,7 @@
     margin: 0px;
     padding: 0px;
     font-size: 22px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
   .comments {
@@ -245,24 +246,21 @@ blockquote {
   line-height: 1.6;
   position: relative;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 blockquote p {
   margin-bottom: 10px !important;
   font-weight: 300;
-  background-color: lavenderblush;
+  background-color: var(--bgnote2);
   font-style: normal !important;
-  font-family: "Roboto",sans-serif;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
   padding: 30px;
-  color: #cd3769;
-  border-radius: 10px;
+  color:  var(--textnote2);
+  border-radius: 4px;
+  border: 1px solid var(--bordernote2);
   &:hover, &:active {
     box-shadow: 2px 5px 6px rgba(72,72,72,0.14);
-  }
-  @include mobile {
-    border: 0px;
-    border-radius: 0px;
   }
 }
 
@@ -271,7 +269,7 @@ blockquote p {
 }
 
 .wrapper-footer {
-  background-color: #fffe85;
+  background-color: var(--note1);
   height: auto;
   width: 100%;
   display: flex;
@@ -280,7 +278,7 @@ blockquote p {
 }
 
 .page-footer {
-  background-color: #fffe85;
+  background-color: var(--note1);
   height: auto;
   width: 100%;
   display: flex;
@@ -426,7 +424,7 @@ footer {
     width: 210px;
     height: auto;
     margin: 3px;
-    transition: 0.2s ease-in;
+    transition: 0.1s ease-in;
     position: relative;
     background-color: $white;
 }
@@ -446,7 +444,7 @@ footer {
     border-radius: 5px;
     text-align: center;
     margin: 20px;
-    transition: 0.2s ease-in;
+    transition: 0.1s ease-in;
     position: relative;
     background-color: $white;
     &:hover, &:active {
@@ -503,10 +501,10 @@ footer {
 .outer-image {
    height: 200px;
    background-size: 350px;
-   transition:all 0.5s ;
-  -webkit-transition:all 0.5s ;
-  -o-transition:all 0.5s ;
-  -moz-transition:all 0.5s ;
+   transition: all 0.1s ;
+  -webkit-transition:all 0.1s ;
+  -o-transition:all 0.1s ;
+  -moz-transition:all 0.1s ;
    border-radius: 10px;
    &:hover, &:active {
       background-size: 380px;
@@ -597,13 +595,11 @@ footer {
   border-radius: 5px;
 }
 
-
-
 figcaption {
   padding: 20px;
   font-size: 16px;
-  color: #8b8b8b;
-  background-color: #ffffff;
+  color: var(--textp);
+  background-color: var(--bgbody);
   line-height: 20px;
   text-align: center;
   @include mobile {
@@ -639,19 +635,6 @@ figcaption {
   height: auto !important;
 }
 
-
-.home-container{
-  width: 100%;
-  margin: 0px auto;
-  background-color: #fbfbfb;
-  margin-bottom: 100px;
-  @include mobile {
-    display: block;
-    margin-top: 0px !important;
-    margin-bottom: 10px;
-  }
-}
-
 .column-left {
   @include mobile {
     display: none;
@@ -682,7 +665,7 @@ figcaption {
   .profile-showcase {
     width: 90%;
     height: auto;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
     padding: 10px 20px;
     &:hover {
       box-shadow: 0 3px 3px -2px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
@@ -719,232 +702,6 @@ figcaption {
     width: 100%;
     border: 0px;
     padding-top: 0px;
-  }
-}
-
-.blog-category-box {
-  display: none;
-  background-color: #ffffff;
-  border-radius: 3px;
-  width: 100%;
-  margin: 0px auto;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 18px rgba(36,37,38,0.05) !important;
-  @include mobile {
-    width: 100%;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 10px;
-  }
-
-  span {
-    display: inline-block;
-    background-color: white;
-    color: black;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    font-size: 15px;
-    padding: 10px;
-    text-shadow: none;
-    text-align: center;
-    padding-left: 5px;
-    font-size: 18px;
-    @include mobile {
-      font-size: 12px;
-    }
-  }
-  a {
-    color: #333;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    font-size: 16px;
-    @include mobile {
-      font-size: 13px;
-    }
-  }
-  a:hover {
-    text-decoration: none;
-    border-bottom: none !important;
-  }
-}
-
-.blog-category-box table {
-  table-layout: initial;
-  background-color: white;
-  border: none !important;
-  width: auto;
-  margin-bottom: 0px !important;
-}
-
-.blog-category-box table tr td {
-  background-color: white !important;
-  border: none !important;
-  text-align: left;
-}
-
-.blog-category-box table tr:last-child td {
-  padding-bottom: 10px;
-}
-
-.blog-category-box table tr:hover td a {
-  background-color: rgb(255, 234, 130);
-  padding: 5px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.blog-category-box table tr {
-  background-color: white !important;
-  border: none !important;
-}
-
-.blog-category-box table tbody {
-  background-color: white !important;
-  border: none !important;
-}
-
-.blog-category-box table tr td b {
-  color: #d5151e;
-  font-weight: 100;
-  letter-spacing: 0.6px;
-  white-space: nowrap;
-  font-size: 15px;
-  @include mobile {
-    font-size: 12px;
-  }
-}
-
-.blog-category-box table tr td i {
-  font-style: normal;
-  color: #c4c4c4;
-  font-size: 15px;
-  @include mobile {
-    font-size: 13px;
-  }
-}
-
-.work-inner-box {
-  background-color: white;
-  padding: 0px;
-  div {
-    padding: 0 20px;
-  }
-  table tr td, table {
-    text-align: left;
-    border: 1px solid #e6e6e6 !important;
-    border-collapse: collapse;
-    font-size: 16px;
-    border-radius: 4px;
-    overflow: hidden;
-    color: #8d8d8d;
-    @include mobile {
-      font-size: 14px;
-    }
-  }
-  ul {
-    margin-bottom: 0px !important;
-    background: white;
-    padding: 0px 50px;
-    border-radius: 5px;
-    list-style-type: circle;
-    text-align: left;
-    @include mobile {
-      padding: 0px 40px;
-    }
-    li {
-        div {
-          padding: 0px;
-          padding-bottom: 40px;
-        }
-    }
-    li:last-child div {
-      padding-bottom: 0px;
-    }
-  }
-  h4 {
-    margin: 0px;
-    color: black;
-    font-family: $font_header;
-    line-height: 1.2;
-    font-size: 18px;
-    font-weight: bold;
-    @include mobile {
-      font-size: 14px;
-    }
-  }
-  h3 {
-    padding: 20px;
-    color: black;
-    margin: 0px;
-  }
-  p {
-    margin: 0px !important;
-  }
-  h4 a {
-    color: black !important;
-    font-weight: bold;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    font-size: 18px;
-    @include mobile {
-      font-size: 14px !important;
-    }
-  }
-  h4 a:hover, h4 a:active {
-    color: #db4437 !important;
-  }
-  i {
-    color: #ababab !important;
-    font-style: normal;
-  }
-}
-
-.category-tab {
-  text-align: center;
-  position: relative;
-  top: -25px;
-  z-index: 1;
-  box-shadow: 0 4px 18px rgba(36,37,38,0.05) !important;
-  @include mobile {
-    top: 0px;
-    border: none;
-  }
-  ul {
-    display: flex;
-    background-color: white;
-    list-style-type: none;
-    padding: 0px !important;
-    margin: 0px !important;
-    overflow-x: auto;
-    width: 100%;
-    height: 60px;
-    overflow-y: hidden;
-    white-space: nowrap;
-    border-radius: 5px;
-    @include mobile {
-      border-radius: 0px;
-    }
-  }
-  ul::-webkit-scrollbar {
-    display: none;
-  }
-  li {
-    flex: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    background-color: white;
-    padding: 2px;
-    height: 60px;
-    text-align: center;
-    padding: 0 15px;
-    cursor: pointer;
-    font-family: $font_header;
-    transition: color .28s ease, background-color .28s ease;
-    @include mobile {
-      font-size: 11px;
-    }
   }
 }
 
@@ -1003,7 +760,7 @@ figcaption {
     background-color: #fff;
     margin: 10px 20px;
     text-align: center;
-    transition: 0.2s ease-in;
+    transition: 0.1s ease-in;
     position: relative;
     overflow: hidden;
     padding-bottom: 10px;
@@ -1061,14 +818,15 @@ figcaption {
   height: auto;
   width: 250px;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: var(--bggem);
   margin: 20px;
   text-align: center;
-  transition: 0.2s ease-in;
+  transition: 0.1s ease-in;
   position: relative;
   overflow: hidden;
   cursor: pointer;
   padding: 12px 12px 0px 12px;
+  border: 1px solid var(--bordergem);
 
   &:hover, &:active {
     box-shadow: 0 3px 3px -2px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
@@ -1089,7 +847,7 @@ figcaption {
     margin-bottom: 10px !important;
     padding: 10px !important;
     font-size: 13px !important;
-    color: #2c2c2c !important;
+    color: var(--textp) !important;
     margin-top: 0px !important;
   }
 
@@ -1169,31 +927,6 @@ figcaption {
   @include mobile {
     position: initial;
     padding: 10px;
-  }
-}
-
-.home-wrapper h2 {
-  height: 80px;
-  line-height: 60px;
-  vertical-align: middle;
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-  border: none !important;
-  border-left: 1px solid #efefef;
-  border-right: 1px solid #efefef;
-  border-top: 1px solid #efefef;
-  padding: 10px 23px;
-  background-color: $white;
-  color: #de2a25;
-  @include mobile {
-    margin: 0px !important;
-  }
-}
-
-.home-wrapper h2 a {
-  color: #444444;
-  &:hover, &:active {
-    color: $primary_500;
   }
 }
 
@@ -1312,7 +1045,7 @@ figcaption {
 }
 
 .containing {
-  background-color: #ffffff;
+  background-color: var(--bgbody);
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -1337,7 +1070,7 @@ figcaption {
 .wrapping {
   max-width: 900px;
   margin: 0px auto;
-  background-color: white;
+  background-color: var(--bgbody);
   border-radius: 5px;
 
   @include mobile {
@@ -1370,11 +1103,12 @@ figcaption {
 .note {
   padding: 30px;
   margin-bottom: 1.7em !important;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   cursor: pointer;
-  background-color: #fff4d6;
+  background-color: var(--bgnote2);
   border-radius: 10px;
+  border: 1px solid var(--bordernote2);
   @include mobile {
     padding: 30px 15px;
     border-radius: 3px;
@@ -1384,12 +1118,12 @@ figcaption {
   }
   p {
     margin: 0px !important;
-    color: black !important;
+    color: var(--textnote2) !important;
   }
   
   ul {
     margin: 0px !important;
-    color: black !important;
+    color: var(--textnote2) !important;
   }
   
   center {
@@ -1402,7 +1136,7 @@ figcaption {
 
 .happy-learning {
   text-align: right;
-  color: #cf2321 !important;
+  color: var(--link) !important;
   margin-right: 25px !important;
 }
 
@@ -1706,12 +1440,12 @@ figcaption {
 }
 
 figure {
-  background-color: $white;
+  background-color: var(--bgbody);
   border-radius: 3px;
   max-width: 900px;
   margin: 50px auto;
   text-align:center; 
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
   @include mobile {
     margin: 30px auto;
     padding-left: 10px;
@@ -1728,7 +1462,7 @@ figure {
 .work-box {
   border: 1px solid #e1dddd;
   margin-bottom: 1.5em;
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.1s cubic-bezier(.25,.8,.25,1);
   border-radius: 5px;
   overflow: hidden;
   &:hover, &:active {
@@ -1840,23 +1574,18 @@ figure {
 }
 
 .grad-blog {
-  background-color: $bg_header;
-  box-shadow: 0 8px 6px -6px #e9e9e9;
+  background-color: var(--bgheader);
+  box-shadow: 0 8px 6px -6px var(--bgboxshadow);
 }
 
 .grad-portfolio {
-  background-color: $bg_header;
-  box-shadow: 0 8px 6px -6px #e9e9e9;
+  background-color: var(--bgheader);
+  box-shadow: 0 8px 6px -6px var(--bgboxshadow);
 }
 
 .grad-creations {
-  background-color: $bg_header;
-  box-shadow: 0 8px 6px -6px #e9e9e9;
-}
-
-.grad-photography {
-  background-color: $bg_header;
-  box-shadow: 0 8px 6px -6px #e9e9e9;
+  background-color: var(--bgheader);
+  box-shadow: 0 8px 6px -6px var(--bgboxshadow);
 }
 
 .no_of_posts {
@@ -1865,96 +1594,6 @@ figure {
   font-size: 11px !important;
   position: absolute;
   bottom: 10px;
-}
-
-.blog-intro {
-  position: relative;
-  padding: 40px;
-  overflow: hidden;
-  height: auto;
-  @include mobile {
-    height: auto;
-    padding: 15px;
-    margin: 0px auto;
-    border-radius: 0;
-  }
-  span {
-    font-weight: bold;
-    color: $primary_500;
-  }
-  p {
-    width: 50%;
-    margin: 0px auto;
-    color: #5f6368 !important;
-    text-align: center;
-    margin-bottom: 10px !important;
-    font-size: 15px;
-    @include mobile {
-      font-size: 13px;
-      width: 100%;
-      margin-bottom: 0px !important;
-      padding: 5px;
-      text-align: left;
-    }
-  }
-  div {
-    width: 70%;
-    margin: 0px auto;
-    @include mobile {
-      width: 100%;
-    }
-  }
-  h1 {
-    color: $black !important;
-    margin-top: 0px !important;
-    font-weight: bold;
-    margin-bottom: 20px;
-    @include mobile {
-      font-size: 20px;
-      text-align: left;
-      margin: 10px;
-      margin-left: 5px;
-      margin-bottom: 10px;
-    }
-  }
-}
-
-.photo-box {
-  margin-top: 10px !important;
-  background-color: white;
-  box-shadow: 3px 4px 6px rgba(170, 170, 170, 0.3);
-  @include mobile {
-    margin-top: 0px !important;
-    box-shadow: none;
-  }
-}
-
-.photo-box h5 {
-  font-size: 20px !important;
-  padding: 10px 0px;
-  background-color: white;
-  text-shadow: none !important;
-  text-align: left;
-  padding-top: 30px;
-  @include mobile {
-    font-size: 15px !important;
-    padding: 20px;
-    padding-top: 30px;
-  }
-}
-
-.photo-box p {
-  background-color: white;
-  margin: 0px !important;
-  padding: 10px 0px !important;
-  font-size: 15px !important;
-  padding-bottom: 20px !important;
-  max-width: 600px;
-  @include mobile {
-    font-size: 13px !important;
-    padding: 20px !important;
-    padding-top: 0px !important;
-  }
 }
 
 .category-box h6 {
@@ -2044,14 +1683,14 @@ u {
   font-weight: bold;
   margin-top: 0px;
   border-radius: 5px;
-  color: #989898;
+  color: var(--textp);
   cursor: pointer;
   @include mobile {
     margin-top: 10px;
     width: 90%;
   }
   &:hover, &:active {
-    color: $black;
+    color: var(--textp);
   }
 }
 
@@ -2446,8 +2085,8 @@ hr {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 .slider:before {
@@ -2458,8 +2097,8 @@ hr {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 input:checked + .slider {
@@ -2731,7 +2370,7 @@ input:checked + .slider:before {
     color: #f1f1f1;
     font-size: 30px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 .close:hover,
@@ -2756,7 +2395,7 @@ input:checked + .slider:before {
   border: 1px solid lightgray;
   border-radius: 5px;
   background-color: transparent;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
   padding: 5px 10px;
   cursor: pointer;
 }
@@ -2970,7 +2609,7 @@ del {
   border-radius: 4px;
   overflow: hidden;
   margin: 15px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
   @include mobile {
     width: 40%;
   }
@@ -3016,7 +2655,7 @@ del {
   left: 0;
   background-color: #111;
   padding-top: 60px;
-  transition: 0.5s;
+  transition: 0.1s;
   overflow-y: auto;
   padding: 15px;
 }
@@ -3253,7 +2892,7 @@ del {
   margin: 10px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.1s cubic-bezier(.25,.8,.25,1);
 }
 
 .flex-inner-box:hover {
@@ -3274,17 +2913,17 @@ del {
 }
 
 .closers {
-  background-color: #ffffff !important;
+  background-color: var(--bggem) !important;
   border: none;
-  border-top: 1px solid #f1f1f1 !important;
-  border-bottom: 1px solid #f1f1f1 !important;
+  border-top: 1px solid var(--bordergem) !important;
+  border-bottom: 1px solid var(--bordergem) !important;
   padding: 30px;
   margin: 50px 0px !important;
   &:hover, &:active {
     border: none;
   }
   p {
-    color: #989898 !important;
+    color: var(--textp) !important;
     @include mobile {
       font-size: 12px;
     }
@@ -3292,7 +2931,8 @@ del {
 }
 
 .box-highlight {
-  background-color: #ffffad;
+  background-color: var(--bggem);
+  border: 1px solid var(--bordergem);
   padding: 10px 30px;
   border-radius: 4px;
   margin: 30px 0;
@@ -3414,40 +3054,6 @@ del {
   color: white;
 }
 
-.highlight-box {
-  background-color: #ffffff;
-  padding: 50px;  
-  box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(100,110,140,.4);
-  border-radius: 10px;
-  background: radial-gradient(circle at 20% 20%,#5183f5 25%,#4640ff 100%);
-  @include mobile {
-    padding: 20px 15px;
-    padding-bottom: 30px;
-    border-radius: 0px;
-    box-shadow: none;
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-}
-
-.highlight-box p {
-  font-family: $font_body;
-  color: white;
-}
-
-.highlight-box ul {
-  font-family: $font_body;
-  color: white;
-}
-
-.highlight-box ul li a {
-  color: #ffda26 !important;
-  &:hover, &:active {
-    border-bottom: 1px solid #ffda26 !important;
-    text-decoration: none !important;
-  }
-}
-
 .objectives {
   background-color: #fbfbfb;
   padding: 30px;
@@ -3471,7 +3077,7 @@ del {
     border-bottom: none;
     text-decoration: none;
     background-color: #ffcd3e;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-weight: bold;
   }
 }
@@ -3481,7 +3087,7 @@ del {
   text-shadow: #fff -2px 2px 0px, #aaf0ff -3px 4px 0px;
   color: #d02c2a;
   padding: 5px 0px;
-  transition: color 0.3s ease 0s;
+  transition: color 0.1s ease 0s;
   position: relative;
   z-index: 1;
   font-size: 18px;
@@ -3501,7 +3107,7 @@ del {
   margin-left: -25px;
   z-index: -1;
   background: linear-gradient(90deg, #b1ffec, #b597ff);
-  transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+  transition: width 0.1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
   border-radius: 3px;
 }
 
@@ -3589,15 +3195,15 @@ del {
 }
 
 #nav_theme {
-  background-image: url("/images/icons/dark-theme.png");
+  background-image: url("/images/icons/light-theme.png");
   background-repeat: no-repeat;
   background-size: 20px;
   background-position: center 10px;
-  -webkit-filter: invert(50%); /* Safari */
+  -webkit-filter: invert(50%);
   filter: invert(50%);
   @include mobile {
     background-position: center 15px;
-    -webkit-filter: invert(50%); /* Safari */
+    -webkit-filter: invert(50%);
     filter: invert(50%);
   }
 }
@@ -3650,7 +3256,7 @@ del {
     overflow: hidden;
     width: 100%;
     height: 480px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
     @include mobile {
       height: 250px;
     }

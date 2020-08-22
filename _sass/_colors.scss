@@ -31,3 +31,153 @@ $logo_yellow: #f5ca4c;
 $logo_gray  : #e5e5e5;
 
 $bg_header: #ffffff;
+
+:root {
+    --red700: #AD0A0E; 
+    --red500: #DB3340;
+    --red200: #FF4755;
+
+    --pink200: #a27397;
+    --pink100: #ffc4f1;
+
+    --lightgray0: #4a4a4a;
+    --darkgray0: #9c9c9c;;
+    --darkgray1: #171316;
+
+    --lighth1: #000;
+    --lighth2: #DB3340;
+    --lighth3: #222;
+    --lighth4: #2f2f2f; 
+    --lighth5: #fff;
+    --lighth6: #fff;
+
+    --darkh1: #fff;
+    --darkh2: #DB3340;
+    --darkh3: #bdbdbd;
+    --darkh4: #bdbdbd;
+    --darkh5: #fff;
+    --darkh6: #fff;
+    
+    --lightb: #000000;
+    --lightp: #6b6b6b;
+    --lightul: #6b6b6b;
+
+    --darkb: #c7c7c7;
+    --darkp: #6b6b6b;
+    --darkul: #6b6b6b;
+
+    --lightline0: #e9e6e6;
+    --darkline0: #000000;
+
+    --lightbggray: #fbfbfb;
+    --darkbggray: #171316;
+
+    --lightbggem: #fff;
+    --lightbordergem: #e2e2e2;
+
+    --darkbggem: #100e10;
+    --darkbordergem: #292929;
+
+    --lightbgboxshadow: #e9e9e9;
+    --darkbgboxshadow: #0a0a0a;
+
+    --lightbgnote2: #eed5ff;
+    --lighttextnote2: #9b4ad2;
+    --lightbordernote2: #e1b4ff;
+    --darkbgnote2: #2b143a;
+    --darktextnote2: #9a78b1;
+    --darkbordernote2: #482c5a;
+
+    --gray5: #424242;
+    --gray6: #424242;
+    --white: #ffffff;
+    --black: #000000;
+
+    --lightboxborder: #e9e6e6;
+    --darkboxborder: #2f2f2f;
+}
+
+.light {
+    --primary700: var(--red700);
+    --primary500: var(--red500);
+    --primary200: var(--red200);
+
+    --note1: var(--pink100);
+    --bgnote2: var(--lightbgnote2);
+    --textnote2: var(--lighttextnote2);
+    --bordernote2: var(--lightbordernote2);
+
+    --textgray0: var(--lightgray0);
+    
+    --texth1: var(--lighth1);
+	--texth2: var(--lighth2);
+	--texth3: var(--lighth3);
+	--texth4: var(--lighth4);
+	--texth5: var(--lighth5);
+	--texth6: var(--lighth6);
+
+	--textb: var(--lightb);
+	--textp: var(--lightp);
+	--textul: var(--lightul);
+
+	--line0: var(--lightline0);
+
+    --texthead0: var(--red500);
+
+    --bgheader: var(--white);
+    --bgbody: var(--white);
+    --socialicons: invert(0);
+
+    --link: var(--primary500);
+    --linkhover: var(--primary500);
+
+    --bgmatgray: var(--lightbggray);
+    --bggem: var(--lightbggem);
+    --bordergem: var(--lightbordergem);
+    --bgboxshadow: var(--lightbgboxshadow);
+
+    --boxborder: var(--lightboxborder);
+
+}
+
+.dark {
+	--primary700: var(--red700);
+    --primary500: var(--red500);
+    --primary200: var(--red200);
+
+    --note1: var(--pink200);
+    --bgnote2: var(--darkbgnote2);
+    --textnote2: var(--darktextnote2);
+    --bordernote2: var(--darkbordernote2);
+
+	--textgray0: var(--darkgray0);
+
+	--texth1: var(--darkh1);
+	--texth2: var(--darkh2);
+	--texth3: var(--darkh3);
+	--texth4: var(--darkh4);
+	--texth5: var(--darkh5);
+	--texth6: var(--darkh6);
+
+	--textb: var(--darkb);
+	--textp: var(--darkp);
+	--textul: var(--darkul);
+
+	--texthead0: var(--red500);
+
+	--line0: var(--darkline0);
+
+	--bgheader: var(--darkgray1);
+	--bgbody: var(--darkgray1);
+	--socialicons: invert(1);
+
+	--link: var(--primary500);
+	--linkhover: var(--primary500);
+
+	--bgmatgray: var(--darkbggray);
+	--bggem: var(--darkbggem);
+	--bordergem: var(--darkbordergem);
+	--bgboxshadow: var(--darkbgboxshadow);
+
+	--boxborder: var(--darkboxborder);
+}

@@ -1,0 +1,41 @@
+I"E<p><span class="coding">ffmpeg</span> is the coolest application when it comes to playing with a video file. Instead of downloading so many useless converters to convert from one file format to another, <span class="coding">ffmpeg</span> completes any task using simple commands given to it. In this tutorial, I will list out the most useful commands one needs for video conversion and video-specific operations.</p>
+
+<h3 id="installation">Installation</h3>
+<p>You can easily install <span class="coding">ffmpeg</span> for Windows from <a href="http://ffmpeg.zeranoe.com/builds/">this</a> website.</p>
+
+<ul>
+  <li>Choose the correct architecture (64-bit/32-bit) and click on <span class="coding">Download FFmpeg</span>.</li>
+  <li>After downloading, unzip the file and rename it to <span class="coding">ffmpeg</span>.</li>
+  <li>Go into the folder where you will find a <span class="coding">bin</span> folder.</li>
+  <li>Copy the path of the <span class="coding">bin</span> folder (For me it was, <em>C:\Users\gogul\Downloads\ffmpeg\bin</em>).</li>
+  <li>Right-click <span class="coding">Computer</span> and click on <span class="coding">Properties</span>.</li>
+  <li>Then, click on <span class="coding">Advanced System Settings</span> and then, click the <span class="coding">Environmental Variables</span> button.</li>
+  <li>You will find two sections - User variables and System variables. Under User variables, there will be a variable named <span class="coding">path</span>. Click that and click on the <span class="coding">Edit</span> button. Add the <span class="coding">bin</span> path to the variable value after a “;”.</li>
+  <li>Now, click <span class="coding">Ok</span> and close all the windows.</li>
+  <li>Open up the command prompt and type <span class="coding">FFMPEG</span>. You should get the following output. It means that you have successfully installed <span class="coding">ffmpeg</span>.</li>
+</ul>
+
+<h3 id="convert-avi-to-mp4">Convert .avi to .mp4</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="p">.</span><span class="n">avi</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">v</span> <span class="n">libx264</span> <span class="o">-</span><span class="n">crf</span> <span class="mi">19</span> <span class="o">-</span><span class="n">preset</span> <span class="n">slow</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">a</span> <span class="n">libfdk_aac</span> <span class="o">-</span><span class="n">b</span><span class="p">:</span><span class="n">a</span> <span class="mi">192</span><span class="n">k</span> <span class="o">-</span><span class="n">ac</span> <span class="mi">2</span> <span class="n">output</span><span class="p">.</span><span class="n">mp4</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>If <span class="coding">libfdk_aac</span> is not available, then use the following.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="p">.</span><span class="n">avi</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">v</span> <span class="n">libx264</span> <span class="o">-</span><span class="n">crf</span> <span class="mi">19</span> <span class="o">-</span><span class="n">preset</span> <span class="n">slow</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">a</span> <span class="n">aac</span> <span class="o">-</span><span class="n">b</span><span class="p">:</span><span class="n">a</span> <span class="mi">192</span><span class="n">k</span> <span class="o">-</span><span class="n">ac</span> <span class="mi">2</span> <span class="n">out</span><span class="p">.</span><span class="n">mp4</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="convert-mp4-to-gif">Convert .mp4 to .gif</h3>
+
+<p>The below two commands skips first 11 seconds of the video (.mp4) and outputs a 10 second “.gif” which is 640 pixels wide with aspect ratio preserved.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">ss</span> <span class="mi">11</span> <span class="o">-</span><span class="n">t</span> <span class="mi">10</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="p">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">vf</span> <span class="n">fps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mi">640</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">flags</span><span class="o">=</span><span class="n">lanczos</span><span class="p">,</span><span class="n">palettegen</span> <span class="n">out</span><span class="p">.</span><span class="n">png</span>
+
+<span class="n">ffmpeg</span> <span class="o">-</span><span class="n">ss</span> <span class="mi">11</span> <span class="o">-</span><span class="n">t</span> <span class="mi">10</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="p">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">i</span> <span class="n">out</span><span class="p">.</span><span class="n">png</span> <span class="o">-</span><span class="n">filter_complex</span> <span class="s">"fps=10,scale=640:-1:flags=lanczos[x];[x][1:v]paletteuse"</span> <span class="n">out</span><span class="p">.</span><span class="n">gif</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

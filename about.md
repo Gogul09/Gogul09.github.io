@@ -1,5 +1,5 @@
 ---
-layout: splash
+layout: about
 heading: Gogul Ilango
 title: Gogul Ilango
 subheading: Senior Hardware Engineer at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a> <br> Programmer / Music Producer / Writer
@@ -16,21 +16,6 @@ permalink: /
       <p>{{ page.subheading }}</p>
     </div>
   </div>
-  <div class="home-follow-wrapper">
-    <div class="home-follow">
-      <div>
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <a href="https://twitter.com/gogul_ilango?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="true">Follow @gogul_ilango</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-      <div>
-        <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" data-size="large" aria-label="Follow @Gogul09 on GitHub">Gogul09</a>
-      </div>
-      <div>
-        <script src="https://apis.google.com/js/platform.js"></script>
-        <div class="youtube-cover"><div class="g-ytsubscribe" data-channelid="UCP_3K5AYFZpH_EzF2rIs1LQ" data-layout="default" data-count="default"></div></div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <div class="about-container">
@@ -41,7 +26,6 @@ permalink: /
           <li id="tab_summary" onclick="showAboutTabBox(this.id)">summary</li>
           <li id="tab_publications" onclick="showAboutTabBox(this.id)">publications</li>
           <li id="tab_projects" onclick="showAboutTabBox(this.id)">hobby projects</li>
-          <li id="tab_earth" onclick="showAboutTabBox(this.id)">earth</li>
         </ul>
       </div>
       <!--Summary STARTS-->
@@ -94,41 +78,45 @@ permalink: /
       <!--Publications STARTS-->
       <div class="blog-category-box work-category-box about-category-box" id="box_publications" style="box-shadow: none !important;">
         <div class="work-inner-box">
-          <h1>Technical Reviewer</h1>
           <h2>2019</h2>
           <ul>
               <li>
                 <div>
-                  <h4><a href="https://www.packtpub.com/in/data/hands-on-music-generation-with-magenta" target="_blank">Hands-on Music Generation with Magenta</a></h4>
+                  <h4>Hands-on Music Generation with Magenta</h4>
                     <p><i>Author</i> - <a href="https://alexandredubreuil.com/" target="_blank">Alexandre DuBreuil</a></p>
                     <p><i>Technical Reviewer</i> - Gogul Ilango</p>
                     <p><i>Publisher</i> - Packt Publishing, United Kingdom</p>
                     <p><i>What's in?</i> - Design and use machine learning models for music generation using Google's Magenta and make them interact with existing music creation tools.</p>
+                    <a href="https://www.packtpub.com/in/data/hands-on-music-generation-with-magenta" target="_blank">book</a>
                 </div>
               </li>
           </ul>
-          <h1>Author</h1>
           <h2>2017</h2>
           <ul>
             <li>
               <div>
-                <h4><a href="https://link.springer.com/chapter/10.1007/978-981-10-7895-8_25" target="_blank">Analyzing ConvNets Depth for Deep Face Recognition</a></h4>
+                <h4>Analyzing ConvNets Depth for Deep Face Recognition</h4>
                 <p>Mohan Raj, I. Gogul, M. Deepan Raj, V. Sathiesh Kumar, V. Vaidehi, S. Sibi Chakkaravarthy</p>
                 <p><i>CVIP-2017, Springer pp 317-330</i></p>
+                <a href="https://link.springer.com/chapter/10.1007/978-981-10-7895-8_25" target="_blank">paper</a>
               </div>
             </li>
+            <br>
             <li>
               <div>
-                <h4><a href="https://ieeexplore.ieee.org/document/8085675/" target="_blank">Flower species recognition system using convolution neural networks and transfer learning</a></h4>
+                <h4>Flower species recognition system using convolution neural networks and transfer learning</h4>
                 <p>I.Gogul, V. Sathiesh Kumar</p>
                 <p><i>ICSCN-2017, IEEE Xplore</i></p>
+                <a href="https://ieeexplore.ieee.org/document/8085675/" target="_blank">paper</a>
               </div>
             </li>
+            <br>
             <li>
               <div>
-                <h4><a href="https://ieeexplore.ieee.org/document/8064804/" target="_blank">Static gesture recognition based precise positioning of 5-DOF robotic arm using FPGA</a></h4>
+                <h4>Static gesture recognition based precise positioning of 5-DOF robotic arm using FPGA</h4>
                 <p>M. Deepan Raj, I. Gogul, M. Thangaraja, V. Sathiesh Kumar</p>
                 <p><i>TIMA-2017, IEEE Xplore</i></p>
+                <a href="https://ieeexplore.ieee.org/document/8064804/" target="_blank">paper</a>
               </div>
             </li>
           </ul>
@@ -136,9 +124,10 @@ permalink: /
           <ul>
             <li>
               <div>
-                <h4><a href="https://www.sciencedirect.com/science/article/pii/S1877050916315356" target="_blank">Smart Autonomous Gardening Rover with Plant Recognition using Neural Networks</a></h4>
+                <h4>Smart Autonomous Gardening Rover with Plant Recognition using Neural Networks</h4>
                 <p>V. Sathiesh Kumar, I.Gogul, M. Deepan Raj, S.K.Pragadesh, J. Sarathkumar Sebastin</p>
                 <p><i>ICACC-2016, Elsevier Procedia Computer Science Volume 93, 2016, Pages 975-981</i></p>
+                <a href="https://www.sciencedirect.com/science/article/pii/S1877050916315356" target="_blank">paper</a>
               </div>
             </li>
           </ul>
@@ -163,6 +152,7 @@ permalink: /
                 <a href="https://chnsoai.github.io/creating-intelligent-music-applications-in-the-browser/" target="_blank">tutorial</a>
               </div>
             </li>
+            <br>
             <li>
               <div>
                 <h4>Emotion Recognizer using Deep Neural Network</h4>
@@ -172,6 +162,7 @@ permalink: /
                 <a href="https://www.youtube.com/watch?v=WBi_PZ66z5E" target="_blank">video</a>
               </div>
             </li>
+            <br>
             <li>
               <div>
                 <h4>Recognizing Digits using Deep Neural Network in Google Chrome</h4>
@@ -182,6 +173,7 @@ permalink: /
                 <a href="https://gogul09.github.io/software/digit-recognizer-tf-js" target="_blank">tutorial</a>
               </div>
             </li>
+            <br>
             <li>
               <div>
                 <h4>Classifying images using Keras MobileNet in Google Chrome</h4>
@@ -205,6 +197,7 @@ permalink: /
                 <a href="https://gogul09.github.io/software/image-classification-python" target="_blank">tutorial 2</a>
               </div>
             </li>
+            <br>
             <li>
               <div>
                 <h4>Sound Classification using Neural Networks</h4>
@@ -226,6 +219,7 @@ permalink: /
                 <a href="https://www.youtube.com/watch?v=dMo3LrFdMKI" target="_blank">video</a>
               </div>
             </li>
+            <br>
             <li>
               <div>
                 <h4>SMART Home - Continuous Voice Recognition using Android</h4>
@@ -234,6 +228,7 @@ permalink: /
                 <a href="https://www.youtube.com/watch?v=Obnu7a-Tg48" target="_blank">video</a>
               </div>
             </li>
+            <br>
             <li>
               <div>
                 <h4>SLAMINOR - Parallel DC and Servo Control using Xilinx Zedboard</h4>
@@ -252,6 +247,7 @@ permalink: /
                 <a href="https://gogul09.github.io/software/hand-gesture-recognition-p2" target="_blank">tutorial 2</a>
               </div>
             </li>
+            <br>
             <li>
               <div>
                 <h4>Medical Quadcopter</h4>
@@ -260,6 +256,7 @@ permalink: /
                 <a href="https://www.youtube.com/watch?v=U06JP-1ZeeM" target="_blank">video</a>
               </div>
             </li>
+            <br>
             <li>
               <div>
                 <h4>Autonomous LOTA Robot</h4>
@@ -274,15 +271,6 @@ permalink: /
         </div>
       </div>
       <!--Projects ENDS-->
-      <!--Earth STARTS-->
-      <div class="blog-category-box work-category-box about-category-box" id="box_earth" style="box-shadow: none !important;">
-        <div class="work-inner-box">
-          <div class='about-map-earth'>
-            <iframe src="https://www.google.com/maps/d/u/2/embed?mid=1wWqeUbFThpB3hZgfNVjOB8JeEAFFLtvw"></iframe>
-          </div>
-        </div>
-      </div>
-      <!--Earth ENDS-->
     </div>
   </div>
 </div>

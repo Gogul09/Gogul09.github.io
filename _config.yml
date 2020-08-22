@@ -1,9 +1,5 @@
-#
-# Website's configuration file.
-#
-
 name: Gogul Ilango
-description: This blog on Deep Learning, VLSI Design and STA is written by Gogul Ilango. Master VLSI Design, Physical Design, Static Timing Analysis, Deep Learning through my articles, tutorials and resources.
+description: This blog is a personal space of Gogul Ilango who writes about technology, travel, music production and programming.
 avatar: /images/gogs.jpg
 subheading: Personal Website of Gogul Ilango
 image: /images/icons/logo.png
