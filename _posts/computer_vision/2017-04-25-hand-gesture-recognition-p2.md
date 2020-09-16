@@ -34,8 +34,10 @@ image: https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#euclidean-distance">Euclidean Distance</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#convex-hull">Convex Hull</a></li>
     <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#results">Results</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#summary">Summary</a></li>
-    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#references">References</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#segmenting-the-hand">Segmenting the hand</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#finding-the-count-of-fingers">Finding the count of fingers</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#summary">Summary</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#references">References</a></li>
   </ul>
 </div>
 
@@ -223,7 +225,7 @@ def segment(image, grayimage, threshold=75):
 
 Let's look at the following code snippets which is inside a python function that is used to count the number of fingers in the image (single frame).
 
-I have splitted the code snippet into smaller pieces so that we can understand this line by line. Make sure to check the complete function [here](){:target='_blank'}.
+I have splitted the code snippet into smaller pieces so that we can understand this line by line. Make sure to check the complete function [here](https://github.com/Gogul09/gesture-recognition/blob/master/recognize-image.py){:target='_blank'}.
 
 Firstly, we pass the <span class="coding">segmented</span> contour which is a numpy array that contains all the boundary points (x,y) coordinates. To understand this, let's print the type and shape of the <span class="coding">segmented</span> contour with first 5 boundary points inside it.
 
