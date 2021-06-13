@@ -1,15 +1,7 @@
 ## Code for Gogul Ilango's Personal Website
 
-You can visit this website at - https://gogul09.github.io
+This is my personal website which contains a mixture of blog, creations and music.
 
-This personal website is a mixture of blog, creations, music, photography and portfolio.
-
-* [My Blog](https://gogul09.github.io)
-* [My Creations](https://gogul09.github.io/creations)
-* [My Music](https://gogul09.github.io/music)
-* [My Photography](https://gogul09.github.io/photography)
-* [My Portfolio](https://gogul09.github.io/about)
+You can visit the website at - https://gogul09.github.io
 
 Handcrafted with love and passion ❤️
-
-![blog](/images/blog-screenshot.png)

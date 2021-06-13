@@ -2,7 +2,7 @@
 layout: about
 heading: Gogul Ilango
 title: Gogul Ilango
-subheading: Senior Hardware Engineer at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a> <br> Programmer / Music Producer / Writer
+subheading: Senior Hardware Engineer (SOC Physical Design) at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a> <br> Software Programmer / Music Producer / Writer
 description: Personal Website
 color: grad-about
 permalink: /
@@ -10,7 +10,7 @@ permalink: /
 
 <div class="blog-intro {{ page.color }} about-header-fix">
   <div class="profile-wrapper">
-    <div class="profile-pic"><div style="background-image: url('/images/gogul.jpg');" ></div></div>
+    <div class="profile-pic"><div style="background-image: url('/images/gogul.jpeg');" ></div></div>
     <div class="profile-description">
       <h1>{{ page.heading }}</h1>
       <p>{{ page.subheading }}</p>
@@ -33,7 +33,7 @@ permalink: /
         <div>
           <div class="about_me_body">
             <div class="social">
-              <a href="mailto:gogulilangoswami@gmail.com?Subject=Hello"><img src="/images/icons/mail.png" title="Shoot me a mail" /></a>
+              <a href="mailto:gogulilangoswami@gmail.com?Subject=Hello"><img src="/images/icons/mail.png" title="Send me a mail" /></a>
               <a href="https://github.com/Gogul09" target="_blank"><img src="/images/icons/github.png" title="GitHub" /></a>
               <a href="https://www.linkedin.com/in/gogulilango" target="_blank"><img src="/images/icons/linkedin.png" title="LinkedIn" /></a>
               <a href="https://www.quora.com/profile/Gogul-Ilango" target="_blank"><img src="/images/icons/quora.png" title="Quora" /></a>
@@ -44,11 +44,11 @@ permalink: /
             </div>
           <p class="about-quote">"There are no constraints on the human mind, no walls around the human spirit, no barriers to our progress except those we ourselves erect" <br>Ronald Reagan</p>
           <h3>Biography</h3>
-          <p style="margin-top: 0px !important;">I'm Gogul Ilango. I work as a Physical Design Engineer at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a> who helps a team of intelligent minds in designing cutting-edge chipsets that millions of people around the world use in their everyday life. I use my web development skills (particularly front-end) to solve day-to-day problems using data and visualization techniques.</p>
-          <p>My technical interests include asic design, applying machine learning & deep learning in hardware design, web development, automation and computer vision. And I love coding using Python and JavaScript.</p>
+          <p style="margin-top: 0px !important;">I'm Gogul Ilango. I work as a Senior Hardware Engineer (SOC Physical Design) at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a> who helps a team of intelligent minds in designing cutting-edge chipsets that millions of people around the world use in their everyday life. I use my web development skills (particularly front-end) to solve day-to-day problems using data and visualization techniques.</p>
+          <p>My technical interests include System on Chip (SOC) design, applying machine learning & deep learning in hardware design, web development, automation and computer vision. And I love coding using Python and JavaScript.</p>
           <h3>Timeline</h3>
           <ul class="timeline">
-            <li><b>2017-now</b>  - Qualcomm - ASIC Physical Design & Signoff, Full-stack Web Development & Machine Learning.</li>
+            <li><b>2017-now</b>  - Qualcomm - SOC Physical Design, Full-stack Web Development & Machine Learning.</li>
             <li><b>2016-2017</b> - Nokia - Internship with focus on Automation, Python, Web Development & Machine Learning.</li>
             <li><b>2015-2017</b> - Anna University, MIT Campus, Chennai - Master of Engineering in VLSI Design & Embedded Systems (CGPA 9.96/10 + Gold Medal) - Adviser <a href="https://www.sathieshkumar.com/" target="_blank">Dr.Sathiesh Kumar</a>.</li>
             <li><b>2014-2015</b> - TATA Consultancy Services - Front-end Web Development, Android Development.</li>
@@ -147,9 +147,7 @@ permalink: /
                 <p>Used Google Magenta's DrumsRNN and ImprovRNN to generate drum patterns and arpeggio patterns based on user's seed pattern. Created timeline and multiple pattern generation in a single browser window using JavaScript.</p>
                 <p><i>Tools used: HTML5, CSS3, JavaScript, Magenta.js, TensorFlow.js, Tonal.js, jquery.</i></p>
                 <a href="https://gogul09.github.io/software/deep-drum" target="_blank">demo</a> |
-                <a href="https://www.youtube.com/watch?v=sjo6UlQONLc" target="_blank">video</a> |
-                <a href="https://github.com/Gogul09/deep-drum" target="_blank">code</a> |
-                <a href="https://chnsoai.github.io/creating-intelligent-music-applications-in-the-browser/" target="_blank">tutorial</a>
+                <a href="https://github.com/Gogul09/deep-drum" target="_blank">code</a>
               </div>
             </li>
             <br>
@@ -158,8 +156,7 @@ permalink: /
                 <h4>Emotion Recognizer using Deep Neural Network</h4>
                 <p>A real-time implementation of emotion recognition using two deep neural networks (extractor and classifier) using Google's TensorFlow.js in the browser. Model is created, trained and inferred in real-time with data acquisition happening in client's device.</p>
                 <p><i>Tools used: TensorFlow.js, HTML5, CSS3, JavaScript, jQuery, Sass.</i></p>
-                <a href="https://gogul09.github.io/software/emotion-recognizer" target="_blank">demo</a> |
-                <a href="https://www.youtube.com/watch?v=WBi_PZ66z5E" target="_blank">video</a>
+                <a href="https://gogul09.github.io/software/emotion-recognizer" target="_blank">demo</a>
               </div>
             </li>
             <br>
@@ -169,7 +166,6 @@ permalink: /
                 <p>Recognize handwritten digits drawn by a user in a canvas in real-time using Deep Neural Network such as Multi-Layer Perceptron (MLP) or Convolutional Neural Network (CNN) in the browser (specifically Google Chrome).</p>
                 <p><i>Tools used: Keras, TensorFlow.js, HTML5, CSS3, JavaScript, jQuery, Sass, Python.</i></p>
                 <p><i>Dataset: MNIST Handwritten Digits</i></p>
-                <a href="https://www.youtube.com/watch?v=WTaXfYOhqmY" target="_blank">video</a> |
                 <a href="https://gogul09.github.io/software/digit-recognizer-tf-js" target="_blank">tutorial</a>
               </div>
             </li>
@@ -192,7 +188,6 @@ permalink: /
                 <p>Recognize different flower species using state-of-the-art Deep Neural Networks such as VGG16, VGG19, ResNet50, Inception-V3, Xception, MobileNet in Keras and Python. Also, a detailed comparison between Global Feature Descriptors and data-driven approach for this fine-grained classification problem was studied.</p>
                 <p><i>Tools used: Keras, Python.</i></p>
                 <p><i>Dataset: FLOWERS17 (University of Oxford)</i></p>
-                <a href="https://www.youtube.com/watch?v=_XHNPN1hzfk" target="_blank">video</a> |
                 <a href="https://gogul09.github.io/software/flower-recognition-deep-learning" target="_blank">tutorial 1</a> |
                 <a href="https://gogul09.github.io/software/image-classification-python" target="_blank">tutorial 2</a>
               </div>
@@ -204,7 +199,6 @@ permalink: /
                 <p>An environment sound classification example that shows how Deep Learning could be applied for audio samples.</p>
                 <p><i>Tools used: Keras, Python.</i></p>
                 <p><i>Dataset: ESC-50 - Environmental Sound Classification</i></p>
-                <a href="https://www.youtube.com/watch?v=FZHjQ16SJ6w" target="_blank">video</a>
               </div>
             </li>
           </ul>
@@ -216,7 +210,6 @@ permalink: /
                 <p>Feature based Monocular Visual Odometry using FAST corner detector, KLT Tracker, Nister's five point algorithm and RANSAC algorithm with the help of OpenCV and Python.</p>
                 <p><i>Tools used: OpenCV, Python.</i></p>
                 <p><i>Dataset: KITTI</i></p>
-                <a href="https://www.youtube.com/watch?v=dMo3LrFdMKI" target="_blank">video</a>
               </div>
             </li>
             <br>
@@ -225,7 +218,6 @@ permalink: /
                 <h4>SMART Home - Continuous Voice Recognition using Android</h4>
                 <p>A SMART Home automation system using off-the-shelf technologies such as Android and Arduino to control home appliances such as Fan, Light bulbs and other electronic appliances with the help of relay and your voice.</p>
                 <p><i>Tools used: Arduino Uno micro-controller, Android smartphone, 8-channel relay module, HC-05 Bluetooth module, Jumper wires, Batteries, Arduino IDE, Android Studio 2.2, Philips Wireless speaker.</i></p>
-                <a href="https://www.youtube.com/watch?v=Obnu7a-Tg48" target="_blank">video</a>
               </div>
             </li>
             <br>
@@ -234,7 +226,6 @@ permalink: /
                 <h4>SLAMINOR - Parallel DC and Servo Control using Xilinx Zedboard</h4>
                 <p>Parallel control of 2 DC motors and a servo motor using Xilinx Zedboard.</p>
                 <p><i>Tools used: FPGA - Xilinx Zedboard, IDE - Vivado Design Suite 2014.2, Clock Frequency - 50 MHz, DC motors - 500 RPM 12V, Servo motor - Futaba S3003, Battery - 12V 1.3A, Motor Driver - L293D.</i></p>
-                <a href="https://www.youtube.com/watch?v=NgRUCSsJTNw" target="_blank">video</a>
               </div>
             </li>
             <li>
@@ -242,7 +233,6 @@ permalink: /
                 <h4>Hand Gesture Recognition and Servo Control</h4>
                 <p>Recognize hand gestures using OpenCV and Python, and control a servo motor based on the gestures using Odroid-XU4 and Arduino Mega.</p>
                 <p><i>Tools used: Ardunio Mega, Odroid-XU4, Python, Arduino IDE, Servo motor - Futaba S3003, Battery - 12V 1.3A.</i></p>
-                <a href="https://www.youtube.com/watch?v=4lCjQ84EkSk" target="_blank">video</a> |
                 <a href="https://gogul09.github.io/software/hand-gesture-recognition-p1" target="_blank">tutorial 1</a> |
                 <a href="https://gogul09.github.io/software/hand-gesture-recognition-p2" target="_blank">tutorial 2</a>
               </div>
@@ -253,7 +243,6 @@ permalink: /
                 <h4>Medical Quadcopter</h4>
                 <p>A standard Quadcopter for medical applications.</p>
                 <p><i>Tools used: Flight Controller - APM 2.6, Electronic Speed Controllers - 30A, Brushless DC Motors - 1000KV, Power Source - Turnigy 3000 mAh 3S 20C LiPo battery, Quad Copter Frame - F450, Turnigy 6 channel FHSS 2.4Ghz Tx/Rx.</i></p>
-                <a href="https://www.youtube.com/watch?v=U06JP-1ZeeM" target="_blank">video</a>
               </div>
             </li>
             <br>
@@ -262,7 +251,6 @@ permalink: /
                 <h4>Autonomous LOTA Robot</h4>
                 <p>A small robotic vehicle that can follow a line, detect obstacles, manages to run on the top of a table without falling down and could control its speed with the help of sensors and ADC.</p>
                 <p><i>Tools used: Microcontroller - ATmega16, DC Motors - 100 RPM, Power source - 12V battery, Sensors - 4 Infrared sensors, Other parts - Potentiometer, NOT gate, chassis, wheels.</i></p>
-                <a href="https://www.youtube.com/watch?v=_jm56Q6XiWo" target="_blank">video</a>
               </div>
             </li>
           </ul>
@@ -275,9 +263,6 @@ permalink: /
   </div>
 </div>
 
-<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
 <script type="text/javascript">
   document.getElementById("box_summary").style.display = "block";
   document.getElementById("tab_summary").style.fontWeight = "bold";

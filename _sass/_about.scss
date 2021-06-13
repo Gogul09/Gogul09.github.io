@@ -3,7 +3,7 @@
   background-color: var(--bgbody);
   padding-bottom: 100px;
   @include mobile {
-    padding-bottom: 0px;
+    padding-bottom: 100px;
   }
 }
 
@@ -346,15 +346,18 @@
   height: 140px;
   border-radius: 50%;
   width: 140px !important;
-  background-size: 189px;
-  background-position: -15px -1px;
+  background-position: -8px -3px;
   filter: grayscale(1);
+  background-size: 150px;
+  background-repeat: no-repeat;
+  box-shadow: 3px 6px 14px var(--bgboxshadow);
+  margin-bottom: 20px !important;
   @include mobile {
     height: 90px;
     width: 90px !important;
-    background-size: 125px;
+    background-size: 90px;
     background-repeat: no-repeat;
-    background-position: -11px -1px;
+    background-position: -1px -1px;
   }
 }
 

@@ -2,7 +2,7 @@
 layout: page-default
 heading: Creations
 title: Creations
-subheading: I used to create stuff that are visually neat and pleasing to our eyes, and you might guessed it right, I love pixel perfecting.
+subheading: In technology, I used to create stuff that are visually neat and pleasing to our eyes, and you might guessed it right, I love pixel perfecting.
 description: This page contains all the creative stuff such as interactive demos, infographics and my tutorial slides related to technology.
 color: grad-creations
 permalink: /creations/
@@ -57,12 +57,6 @@ permalink: /creations/
             </li>
           </ul>
           <ul>
-            <li>
-              <div class='demo_box'>
-                <a href="https://docs.google.com/presentation/d/e/2PACX-1vR2c4s31uAiZpRumnZfXwZVC1WK-0WtOhatyQ44JhhZo3MdqByqzHkL37t92_thzUW2tOo_gVsRStbY/pub?start=false&loop=false&delayms=3000" target="_blank"><img alt="first-meetup.png" src="/images/school-of-ai/first-meetup.png" /></a>
-                <p>Chennai School of AI - First Meetup</p>
-              </div>
-            </li>
             <li>
               <div class='demo_box'>
                 <img id="infographics-1" alt="ai-basics.png" src="/images/infographics/ai-basics.png" onclick="showHideModal(this.id);" />

@@ -1,4 +1,4 @@
-I"X…<div id="awesomeSideNav" class="sidenav">
+I"Ë…<div id="awesomeSideNav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
     <h3><a href="#basics">Basics</a></h3>
     <ul>
@@ -1404,13 +1404,13 @@ Murali is 65, and his grandfather, Karthik, is 77.
 '''</span>
 
 <span class="c1"># findall()
-</span><span class="n">ages</span>  <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r'\d{1,3}'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-<span class="n">names</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r'[A-Z][a-z]*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> 
+</span><span class="n">ages</span>  <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s">'\d{1,3}'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">names</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s">'[A-Z][a-z]*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> 
 <span class="k">print</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>  <span class="c1"># prints ['19', '24', '65', '77']
 </span><span class="k">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="c1"># prints ['Rahul', 'Ashok', 'Murali', 'Karthik']
 </span>
 <span class="c1"># finditer()
-</span><span class="n">ages</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">finditer</span><span class="p">(</span><span class="s">r'\d{1,3}'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</span><span class="n">ages</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">finditer</span><span class="p">(</span><span class="sa">r</span><span class="s">'\d{1,3}'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ages</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">group</span><span class="p">())</span>
 
@@ -1422,17 +1422,17 @@ Murali is 65, and his grandfather, Karthik, is 77.
 </span>
 <span class="c1"># split()
 </span><span class="nb">str</span> <span class="o">=</span> <span class="s">"This is an example string"</span>
-<span class="n">splitted</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">r'\s*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">splitted</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s">'\s*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">splitted</span><span class="p">)</span> <span class="c1"># prints ['This', 'is', 'an', 'example', 'string']
 </span>
 <span class="c1"># match()
 </span><span class="nb">str</span> <span class="o">=</span> <span class="s">"Dogs are braver than Cats"</span>
-<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="s">r'[A-Z][a-z]*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s">'[A-Z][a-z]*'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">matches</span><span class="p">.</span><span class="n">group</span><span class="p">())</span> <span class="c1"># prints "Dogs"
 </span>
 <span class="c1"># search()
 </span><span class="nb">str</span> <span class="o">=</span> <span class="s">"For data science help, reach support@datacamp.com"</span>
-<span class="n">searches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="s">r'([\w]+)@([\w\.]+)'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">searches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s">'([\w]+)@([\w\.]+)'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">searches</span><span class="p">.</span><span class="n">group</span><span class="p">())</span>  <span class="c1"># prints support@datacamp.com
 </span><span class="k">print</span><span class="p">(</span><span class="n">searches</span><span class="p">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># prints support
 </span><span class="k">print</span><span class="p">(</span><span class="n">searches</span><span class="p">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># prints datacamp.com

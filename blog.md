@@ -104,17 +104,6 @@ permalink: /blog
           {% endfor %}
           <p class="no_of_posts">{{ travel_count }} posts</p>
         </div>
-        <div class="music-production" onclick="location.href='{{ site.baseurl }}/music-production';">
-          <img src="https://drive.google.com/uc?id=1U-j90IU_ElPxAaQChQrQv1wBLo9JpcFk" />
-          <h4>Music Production</h4>
-          <p>Music is the universal language that unites every human being.</p>
-          {% for post in site.posts %}
-            {% if post.categories contains 'music_production' %}
-                {% capture music_production_count %} {{ music_production_count | plus: 1 }} {% endcapture %}
-            {% endif %}
-          {% endfor %}
-          <p class="no_of_posts">{{ music_production_count }} posts</p>
-        </div>
       </div>
     </div>
   </div>
