@@ -1,0 +1,109 @@
+.sidebar_tracker {
+	max-width: 260px !important;
+    position: fixed;
+    right: 0;
+    padding: 20px 40px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: var(--bggem);
+    z-index: 1000;
+    min-width: 130px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    top: 70px;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.04), 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+    @include mobile {
+	    max-width: initial !important;
+	    display: block;
+	    right: 0;
+	    position: relative;
+	    top: 0px !important;
+	    padding-top: 13px;
+	    border-radius: 3px;
+	    box-shadow: none;
+	    background-color: var(--bggem);
+	    border: 1px solid var(--bordergem);
+	    padding: 20px 30px;
+	}
+	@include tablet {
+		display: block;
+		right: 0;
+	    position: relative;
+	    top: 0px !important;
+	    padding-top: 13px;
+	}
+	p {
+		font-weight: bold;
+		margin: 0px !important;
+		cursor: pointer;
+		color: var(--textp);
+		font-family: $font_header;
+		font-weight: bold;
+		@include mobile {
+			margin-top: 1em !important;
+		}
+	}
+
+	ul {
+		padding: 10px 0px;
+		margin: 0px !important;
+		list-style-type: circle;
+		font-size: 13px;
+		@include mobile {
+			font-size: 12px;
+		}
+	}
+	button {
+		border: none;
+	    position: absolute;
+	    top: 21px;
+	    right: 3px;
+	    font-size: 13px;
+	    background-color: transparent;
+	    border-radius: 5px;
+	    padding: 5px 10px;
+	    cursor: pointer;
+	    font-weight: bold;
+	    color: var(--textp) !important;
+	    font-family: $font_header;
+		@include mobile {
+			top: 25px;
+			right: 15px;
+		}
+	}
+	button:focus {
+		outline: none;
+	}
+	a {
+		color: var(--textp) !important;
+		padding: 5px;
+		border-bottom: 0;
+		font-size: 13px;
+		&:hover, &:active {
+			font-weight: bold !important;
+			color: var(--link) !important;
+			text-decoration: none;
+			border-bottom: none !important;
+		}
+		@include mobile {
+			font-size: 11px;
+		}
+	}
+	li {
+		color: var(--textul) !important;
+	}
+	ul {
+		color: var(--textul) !important;
+	}
+}
+
+.sidebar_active {
+	font-weight: bold;
+    text-decoration: none;
+    margin-left: -10px;
+    padding-left: 7px;
+}
+
