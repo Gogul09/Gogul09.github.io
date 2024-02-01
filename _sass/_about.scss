@@ -2,6 +2,7 @@
   width: 100%;
   background-color: var(--bgbody);
   padding-bottom: 100px;
+  
   @include mobile {
     padding-bottom: 100px;
   }
@@ -757,12 +758,12 @@ ul.timeline li {
     margin: 0;
   }
   @include mobile {
-    height: 345px;
+    height: 320px;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     margin: 0;
     border-bottom: 1px solid #e8e6e6;
-    background-position: -21px;
+    background-position: center;
   }
 }
 
