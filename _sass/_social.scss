@@ -1,7 +1,8 @@
 .social {
 	display: flex;
 	flex-direction: row;
-    
+    margin-top: 10px;
+	justify-content: center;
     @include mobile {
     	width: 100%;
     	position: initial;
@@ -205,18 +206,14 @@
     display: flex;
     flex-direction: row;
     text-align: left;
-	@include mobile {
-		flex-direction: column;
-	}
 }
 
 .social > div > a {
-    padding-right: 25px;
+    margin: 0 10px;
     color: var(--textdarkpgray1) !important;
     font-weight: 100;
     font-size: 15px;
 	&:hover, &:active {
-		padding-right: 20px;
 		color: var(--bordercode) !important;
 	}
 	@include mobile {
@@ -227,6 +224,10 @@
 
 .social>div>a>i {
     margin-right: 5px;
+	font-size: 15px;
+	&:hover, &:active {
+		color: var(--bordercode) !important;
+	}
 }
 
 .fa-twitter {

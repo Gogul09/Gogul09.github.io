@@ -15,7 +15,16 @@ permalink: /
       </div>
     <div class="profile-description">
       <h1>{{ page.heading }}</h1>
-      <p>Every morning we are born again.<br>What we do today is what matters most.<br><i>Buddha</i></p>
+      <p>Engineer  -  Music Producer  -  Writer</p>
+      <div class="social">
+        <div class="social-profession">
+          <a href="mailto:gogulilangoswami@gmail.com?Subject=Hello"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/Gogul09" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/gogulilango" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.quora.com/profile/Gogul-Ilango" target="_blank"><i class="fa-brands fa-quora"></i></a>
+          <a href="https://twitter.com/gogul_ilango" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -36,40 +45,33 @@ permalink: /
       <div class="blog-category-box work-category-box about-category-box" id="box_summary" style="box-shadow: none !important;">
         <div>
           <div class="about_me_body">
-            <p style="margin-top: 0px !important;">Gogul Ilango <a href="https://en.wikipedia.org/wiki/Bachelor_of_Engineering" target="_blank">B.E.,</a> <a href="https://en.wikipedia.org/wiki/Master_of_Engineering" target="_blank">M.E.,</a> is an Engineer, Music Producer and Writer. Currently, I work as a Principal Software Engineer at <a href="https://www.cadence.com/en_US/home.html" target="_blank">Cadence Design Systems</a>, Bangalore, Karnataka, India.</p>
-            <div class="social">
-              <div class="social-profession">
-                <a href="mailto:gogulilangoswami@gmail.com?Subject=Hello"><i class="fa-solid fa-envelope"></i>mail</a>
-                <a href="https://github.com/Gogul09" target="_blank"><i class="fa-brands fa-github"></i>github</a>
-                <a href="https://www.linkedin.com/in/gogulilango" target="_blank"><i class="fa-brands fa-linkedin"></i>linkedin</a>
-                <a href="https://www.quora.com/profile/Gogul-Ilango" target="_blank"><i class="fa-brands fa-quora"></i>quora</a>
-                <a href="https://twitter.com/gogul_ilango" target="_blank"><i class="fa-brands fa-twitter"></i>twitter</a>
-              </div>
-            </div>
+            <p style="margin-top: 0px !important;">Gogul Ilango <a href="https://en.wikipedia.org/wiki/Bachelor_of_Engineering" target="_blank">B.E.,</a> <a href="https://en.wikipedia.org/wiki/Master_of_Engineering" target="_blank">M.E.,</a> is an Engineer, Music Producer and Writer. Currently, I work as a Principal Software Engineer in the Cadence Cerebrus Intelligent Chip Explorer team at <a href="https://www.cadence.com/en_US/home.html" target="_blank">Cadence Design Systems</a>, Bangalore, Karnataka, India. Previously, I worked as a Senior Engineer, Hardware in System-On-Chip Physical Design and Verification team at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a>, Chennai, Tamil Nadu, India.</p>
             <hr>
             <p><b>Education/Research</b></p>
             <ul>
-              <li>Master of Engineering in VLSI Design & Embedded Systems (University Gold Medal), Madras Institute of Technology, Chennai.</li>
-              <li>Bachelor of Engineering in Electronics & Communication Engineering, Thiagarajar College of Engineering, Madurai.</li>
-              <li>Co-author of 5 top-conference publications (Elsevier, Springer, IEEE, Journal of Intelligent & Fuzzy Systems).</li>
-              <li>Technical Reviewer of the Book - "Hands-On Music Generation with Magenta".</li>
+              <li>Master of Engineering in VLSI Design & Embedded Systems (University Gold Medal), <a href="https://www.mitindia.edu/en/" target="_blank">Madras Institute of Technology</a>, Chennai, Tamil Nadu, India with a CGPA of 9.96/10.</li>
+              <li>Bachelor of Engineering in Electronics & Communication Engineering, <a href="https://www.tce.edu/" target="_blank">Thiagarajar College of Engineering</a>, Madurai with a CGPA of 9.06/10.</li>
+              <li>Completed Higher Secondary and Matriculation from <a href="https://mahatmaschools.com/" target="_blank">Mahatma Montessori Matriculation and Higher Secondary School</a>, Madurai, Tamil Nadu, India with a engineering cutoff mark of 197.5/200.</li>
+              <li>Co-author of <a href="https://scholar.google.co.in/citations?user=pO5gZVkAAAAJ&hl=en" target="_blank">5 top-conference publications</a> (Elsevier, Springer, IEEE, Journal of Intelligent & Fuzzy Systems).</li>
+              <li>Technical Reviewer of the Book - <a href="https://www.packtpub.com/product/hands-on-music-generation-with-magenta/9781838824419" target="_blank">Hands-On Music Generation with Magenta</a>.</li>
             </ul>
             <p><b>Industry Experience</b></p>
             <ul>
-              <li>5+ years of extensive industry experience in chip design, implementation and verification of cutting-edge audio, IoT and networking chips under stringent schedules, with collaboration across different engineering sites and with multiple cross-functional domain responsibilities.</li>
-              <li>Worked on 7 successful chip tape-outs by delivering design implementation databases ahead of deadlines at different exit milestones with best PPA quality.</li>
+              <li>Deep experience in Electronic Design Automation (EDA) for Digital Integrated Circuit Design of Complex System on Chip using Cadence tools (<a href="https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/synthesis/genus-synthesis-solution.html" target="_blank">Genus</a>, <a href="https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/innovus-implementation-system.html" target="_blank">Innovus</a> and <a href="https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/cerebrus-intelligent-chip-explorer.html" href="_blank">Cerebrus</a>), Synopsys tools (<a href="https://www.synopsys.com/implementation-and-signoff/physical-implementation/ic-compiler.html" target="_blank">IC Compiler II</a>, <a href="https://www.synopsys.com/implementation-and-signoff/signoff/starrc.html" target="_blank">StarRC</a>, <a href="https://www.synopsys.com/implementation-and-signoff/signoff/primetime.html" target="_blank">PrimeTime</a>, <a href="https://www.synopsys.com/implementation-and-signoff/signoff/tweaker.html" target="_blank">Tweaker</a>), Ansys tools (<a href="https://www.ansys.com/en-in/products/semiconductors/ansys-redhawk-sc" target="_blank">RedHawk</a>) and Siemens tools (<a href="https://eda.sw.siemens.com/en-US/ic/calibre-design/" target="_blank">Calibre</a>).</li>
+              <li>5+ years of extensive industry experience in System on Chip design, implementation and verification of cutting-edge audio, IoT and networking chips under stringent schedules, with collaboration across different engineering sites and with multiple cross-functional domain responsibilities (hardware and software).</li>
+              <li>Worked on 7 successful system on chip tape-outs by delivering design implementation databases ahead of deadlines at different exit milestones with best performance, power and area (PPA) quality.</li>
               <li>Experience in converging multi-million instances/multi-power domain designs in terms of best performance, power and area target in 28nm, 22nm, 14nm and 7nm tech nodes.</li>
               <li>Highly proficient in designing, developing, deploying and maintaining industry-standard software and automation tools for electronic design automation.</li>
             </ul>
             <p><b>Hobbies</b></p>
             <ul>
-              <li>Music - Programming, Arrangements, Composition</li>
-              <li>Art - Photography, Pencil Sketching, Water Color Painting</li>
-              <li>Sport - Cricket, Football, Cycling</li>
+              <li><b>Music</b> - Programming, Arrangements, Composition</li>
+              <li><b>Art</b> - Photography, Pencil Sketching, Water Color Painting</li>
+              <li><b>Sport</b> - Cricket, Football, Cycling</li>
             </ul>
             <div class="specialties">
               <div>
-              <p><b>Specialties</b></p>
+              <p><b>Core Interests</b></p>
               <ul>
                 <li>VLSI Synthesis and Implementation</li>
                 <li>Low Power VLSI Design</li>
@@ -599,6 +601,12 @@ permalink: /
           </div>
           <hr>
           <p>Below are the list of YouTube videos that I have released till now.</p>
+          <h2>2023</h2>
+           <div class='youtube-year-box'>
+            <table>
+              <tr><td>84</td><td>28 Oct 2023</td><td><a target="_blank" href="https://www.youtube.com/watch?v=IdGsd2zEiR0">Bloody Sweet Instrumental Cover | Leo | Thalapathy Vijay | Lokesh | Anirudh | Gogul Ilango</a></td></tr>
+            </table>
+          </div>
           <h2>2022</h2>
           <div class='youtube-year-box'>
             <table>
