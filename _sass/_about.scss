@@ -72,8 +72,8 @@
 }
 
 .course-category-box div div ul li {
-  line-height: 13px;
-  font-size: 13px;
+  line-height: 15px;
+  font-size: 15px;
   @include mobile {
     font-size: 11px;
   }
@@ -815,6 +815,11 @@ ul.timeline li {
   border-radius: 2px;
 }
 
+.button-courses:hover button, .button-courses:hover {
+  background-color: var(--bordernote2);
+  color: white;
+}
+
 .button-courses button {
   background-color: var(--bgnote2);
   padding: 10px;
@@ -842,6 +847,13 @@ ul.timeline li {
 
 .box-courses {
   display: none;
+}
+
+.box-courses h4 {
+  font-size: 18px;
+  color: var(--texth4);
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .mooc-courses table tr th {
@@ -1038,4 +1050,19 @@ ul.timeline li {
   width: 100%;
   overflow-x: scroll;
   white-space: pre;
+}
+
+.box-masters-courses, .box-bachelors-courses {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-masters-courses div, .box-bachelors-courses div {
+  width: 50%;
+  @include mobile {
+    width: 100%;
+  }
+  @include tablet {
+    width: 100%;
+  }
 }
