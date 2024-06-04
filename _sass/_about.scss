@@ -812,7 +812,8 @@ ul.timeline li {
 .button-courses {
   position: relative;
   background-color: var(--bgnote2);
-  border-radius: 2px;
+  border-radius: 0px;
+  border: 1px solid var(--bordernote2);
 }
 
 .button-courses:hover button, .button-courses:hover {
@@ -873,6 +874,7 @@ ul.timeline li {
 }
 
 .mooc-courses table tr td a {
+  font-size: 13px;
   &:hover, &:active {
     background-color: transparent !important;
     text-decoration: underline;
@@ -1005,12 +1007,12 @@ ul.timeline li {
 }
 
 .youtube-category-box table tr td a, .youtube-category-box table tr td {
-  font-size: 13px;
+  font-size: 13px !important;
   @include mobile {
-    font-size: 11px ;
+    font-size: 11px !important;
   }
   @include tablet {
-    font-size: 11px;
+    font-size: 11px !important;
   }
 }
 
