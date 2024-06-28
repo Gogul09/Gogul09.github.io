@@ -1068,3 +1068,20 @@ ul.timeline li {
     width: 100%;
   }
 }
+
+.credly-badges {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  justify-content: center;
+  @include tablet {
+    justify-content: flex-start;
+  }
+  @include mobile {
+    justify-content: flex-start;
+  }
+}
+
+.credly-badges iframe {
+  margin: 10px;
+}

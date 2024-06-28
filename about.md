@@ -46,7 +46,11 @@ permalink: /
         <div>
           <div class="about_me_body">
             <p style="margin-top: 0px !important;">Gogul Ilango <a href="https://en.wikipedia.org/wiki/Bachelor_of_Engineering" target="_blank">B.E.,</a> <a href="https://en.wikipedia.org/wiki/Master_of_Engineering" target="_blank">M.E.,</a> is an Engineer, Music Producer and Writer. Currently, I work as a Principal Software Engineer in the Cadence Cerebrus Intelligent Chip Explorer team at <a href="https://www.cadence.com/en_US/home.html" target="_blank">Cadence Design Systems</a>, Bangalore, Karnataka, India. Previously, I worked as a Senior Engineer, Hardware in System-On-Chip Physical Design and Verification team at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a>, Chennai, Tamil Nadu, India.</p>
-            <hr>
+            <div class="credly-badges">
+              <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="c444e1dd-cff0-4ded-af7c-b0b069eae202" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+              <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="3fe746e4-70f9-49ce-bd8e-4481e3bafcb2" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+              <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="bdc65ed5-a551-4004-b0d7-b584627b5160" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+            </div>
             <p><b>Education</b></p>
             <ul>
               <li><b>Master of Engineering (M.E)</b> in VLSI Design & Embedded Systems (University Gold Medal), <a href="https://www.mitindia.edu/en/" target="_blank">Madras Institute of Technology</a>, Chennai, Tamil Nadu, India with a CGPA of 9.96/10.</li>
@@ -89,9 +93,6 @@ permalink: /
                 <li>Full-Stack Web Development</li>
                 <li>Music Production, Music Composition, Music Technology</li>
               </ul>
-              </div>
-              <div>
-                <img src="/images/badges/cerebrus.png">
               </div>
             </div>
           <hr>
@@ -389,10 +390,24 @@ permalink: /
               </tr>
               <tr>
                 <td>10</td>
-                <td>Cadence Cerebrus Intelligent Chip Explorer v22.1 (Online)</td>
+                <td>Cerebrus Intelligent Chip Explorer v22.1 Exam</td>
                 <td>May 2023</td>
                 <td>Cadence Design Systems</td>
-                <td>-</td>
+                <td><a href='https://www.credly.com/badges/bdc65ed5-a551-4004-b0d7-b584627b5160' target='_blank'>credly</a></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>Semiconductor 101 v1.0 Exam</td>
+                <td>Jan 2024</td>
+                <td>Cadence Design Systems</td>
+                <td><a href='https://www.credly.com/badges/c444e1dd-cff0-4ded-af7c-b0b069eae202' target='_blank'>credly</a></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>Innovus Block Implementation with Stylus Common UI v23.1 Exam</td>
+                <td>Jun 2024</td>
+                <td>Cadence Design Systems</td>
+                <td><a href='https://www.credly.com/badges/3fe746e4-70f9-49ce-bd8e-4481e3bafcb2' target='_blank'>credly</a></td>
               </tr>
             </table>
           </div>

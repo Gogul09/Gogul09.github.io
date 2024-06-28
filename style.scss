@@ -24,6 +24,10 @@
 @import "emotionrecognizer";
 @import "deepdrum";
 
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
 #main {
   min-height: 100vh;
 }
