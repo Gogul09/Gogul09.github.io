@@ -56,7 +56,7 @@
   font-family: $font_header;
   padding: 10px 10px 0px 0px;
   margin: 0px auto;
-  font-weight: bold;
+  font-weight: 100;
   letter-spacing: 0.6px;
   @include mobile {
     font-size: 1.2rem;

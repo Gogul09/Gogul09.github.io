@@ -273,12 +273,13 @@ blockquote p {
 }
 
 .wrapper-footer {
-  background-color: var(--black);
+  background-color: var(--bggem);
   height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid var(--bordergem);
 }
 
 .page-footer {
@@ -306,7 +307,6 @@ footer {
       margin-bottom: 0px !important;
       margin-top: 0px !important;
       font-weight: 100;
-      font-family: 'Poppins';
       span {
         font-size: 12px;
       }
@@ -1569,7 +1569,7 @@ figure {
 .grad-post {
   padding: 120px 0;
   border-bottom: 1px solid var(--bordergem);
-  background-color: darkred;
+  background-color: #090909;
   @include mobile {
     padding: 15px;
     display: flex;
@@ -2784,8 +2784,7 @@ del {
 .closers {
   background-color: var(--bggem) !important;
   border: none;
-  border-top: 1px solid var(--bordergem) !important;
-  border-bottom: 1px solid var(--bordergem) !important;
+  border: 1px solid var(--bordergem) !important;
   padding: 30px;
   margin: 50px 0px !important;
   &:hover, &:active {

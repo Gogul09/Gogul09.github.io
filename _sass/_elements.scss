@@ -106,6 +106,7 @@ h3 {
   font-weight: bold;
   position: relative;
   padding-bottom: 10px;
+  color: var(--darkh3);
   @include mobile {
     font-size: 19px;
   }
