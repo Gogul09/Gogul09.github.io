@@ -33,6 +33,9 @@ $logo_gray  : #e5e5e5;
     --red500: #DB3340;
     --red200: #FF4755;
 
+    --yellow700: #ffb400;
+    --yellow500: #ffc948;
+
     --pink200: #a27397;
     --pink100: #ffc4f1;
 
@@ -49,7 +52,7 @@ $logo_gray  : #e5e5e5;
 
     --darkh1: rgb(205 205 205);
     --darkh2: #DB3340;
-    --darkh3: #090909;
+    --darkh3: #e0e0e0;
     --darkh4: #bdbdbd;
     --darkh5: #fff;
     --darkh6: #fff;
@@ -213,8 +216,8 @@ $logo_gray  : #e5e5e5;
 	--bgbody: var(--darkbg);
 	--socialicons: invert(1);
 
-	--link: var(--deepred);
-	--linkhover: var(--red700);
+	--link: var(--yellow700);
+	--linkhover: var(--yellow500);
 
 	--bgmatgray: var(--black);
 	--bggem: var(--darkbggem);

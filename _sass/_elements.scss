@@ -106,7 +106,7 @@ h3 {
   font-weight: bold;
   position: relative;
   padding-bottom: 10px;
-  color: var(--darkh3);
+  color: var(--texth3);
   @include mobile {
     font-size: 19px;
   }
@@ -120,6 +120,10 @@ h4 {
   @include mobile {
     font-size: 17px;
   }
+}
+
+h5 {
+  color: var(--texth5);
 }
 
 h6 {
