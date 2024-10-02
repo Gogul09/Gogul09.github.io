@@ -909,23 +909,6 @@ figcaption {
     color: $primary_500;
 }
 
-.home-wrapper h5 {
-  margin: 0px !important;
-  padding: 0px;
-  padding-bottom: 5px;
-  font-size: 17px;
-  text-shadow: 0 1px 0 rgba(255,255,255,1.0);
-  color: #333;
-  font-weight: 700;
-  font-family: $font_header;
-  text-align: center;
-  position: relative;
-  @include mobile {
-    position: initial;
-    padding: 10px;
-  }
-}
-
 .pic_circle{
     width: 130px;
     height: 130px;
