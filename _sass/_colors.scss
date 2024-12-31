@@ -1,0 +1,238 @@
+// classics
+$black: #000000;
+$white: #ffffff;
+
+// navigation colors
+$nav_500 : #21232c;
+$nav_700 : #1a1c22;
+
+// primary colors
+$primary_500 : #5e3d74;
+$primary_700 : #3e2a4a;
+
+// accent colors
+$accent_500 : #ffcc00;
+$accent_700 : #e8ba00;
+
+// text grays
+$darkerGray   : #222;
+$text_500     : #333;
+$gray         : #666;
+$lightGray    : #eee;
+$bgGray       : #f7f7fa;
+
+$logo_red   : #ec3b3b;
+$logo_blue  : #4387f9;
+$logo_green : #47af63;
+$logo_yellow: #f5ca4c;
+$logo_gray  : #e5e5e5;
+
+:root {
+    --deepred: rgb(218, 41, 28);
+    --red700: #AD0A0E; 
+    --red500: #DB3340;
+    --red200: #FF4755;
+
+    --yellow700: #ffb400;
+    --yellow500: #ffc948;
+
+    --pink200: #a27397;
+    --pink100: #ffc4f1;
+
+    --lightgray0: #4a4a4a;
+    --darkgray0: #9c9c9c;;
+    --darkgray1: #171316;
+
+    --lighth1: #000;
+    --lighth2: #DB3340;
+    --lighth3: #222;
+    --lighth4: #2f2f2f; 
+    --lighth5: #fff;
+    --lighth6: #fff;
+
+    --darkh1: rgb(205 205 205);
+    --darkh2: #DB3340;
+    --darkh3: #e0e0e0;
+    --darkh4: #bdbdbd;
+    --darkh5: #fff;
+    --darkh6: #fff;
+    
+    --lightb: #000000;
+    --lightp: #404040;
+    --lightul: #404040;
+
+    --darkb: #c7c7c7;
+    --darkp: #a1a1a6;
+    --darkul: #a1a1a6;
+
+    --lightline0: #e9e6e6;
+    --darkline0: #000000;
+
+    --lightbggray: #fbfbfb;
+    --darkbggray: #171316;
+
+    --lightbggem: #fff;
+    --lightbordergem: #e2e2e2;
+
+    --darkbggem: #101010;
+    --darkbordergem: #272727;
+
+    --lightbgboxshadow: #e9e9e9;
+    --darkbgboxshadow: #0a0a0a;
+
+    --lightbgnote2: #ffebeb;
+    --lighttextnote2: #db3340;
+    --lightbordernote2: #ff9898;
+    --darkbgnote2: #401616;
+    --darktextnote2: #f5c0c0;
+    --darkbordernote2: #8f2121;
+
+    --lightbgcode: #101010;
+    --darkbgcode: #101010;
+
+    --lightbordercode: #000000;
+    --darkbordercode: #2b2b2b;
+
+    --lighttextcode: #fff;
+    --darktextcode: #fff;
+
+    --linkdark: #ffaf77;
+
+    --gray5: #424242;
+    --gray6: #424242;
+    --white: #ffffff;
+    --black: #000000;
+
+    --textlightpgray1: #818181;
+    --textdarkpgray1: #878787;
+
+    --lightboxborder: #e9e6e6;
+    --darkboxborder: #2f2f2f;
+
+    --lightbg: #fff;
+    --darkbg: #000000;
+
+    --lightpurple: #842afb;
+    --darkpurple: #a362f9;
+
+    --flgreen500: #A6E22E;
+    --flgreen700: #72a30f;
+
+    --flblue500: #66D9EF;
+
+    --darkgray1: #232323;
+}
+
+.light {
+    --selectionfg: white;
+    --selectionbg: black;
+
+    --primary700: var(--red700);
+    --primary500: var(--red500);
+    --primary200: var(--red200);
+
+    --note1: var(--pink100);
+    --bgnote2: var(--lightbgnote2);
+    --textnote2: var(--lighttextnote2);
+    --bordernote2: var(--lightbordernote2);
+
+    --textgray0: var(--lightgray0);
+    
+    --texth1: var(--lighth1);
+	--texth2: var(--lighth2);
+	--texth3: var(--lighth3);
+	--texth4: var(--lighth4);
+	--texth5: var(--lighth5);
+	--texth6: var(--lighth6);
+
+	--textb: var(--lightb);
+	--textp: var(--lightp);
+	--textul: var(--lightp);
+    --textpg1: var(--textlightpgray1);
+    --texthp1: var(--lighth2);
+
+	--line0: var(--lightline0);
+
+    --texthead0: var(--lighth2);
+
+    --bgheader: var(--lightbg);
+    --bgbody: var(--lightbg);
+    --socialicons: invert(0);
+
+    --link: var(--deepred);
+    --linkhover: var(--red700);
+
+    --bgmatgray: var(--lightbggray);
+    --bggem: var(--lightbggem);
+    --bordergem: var(--lightbordergem);
+    --bgboxshadow: var(--lightbgboxshadow);
+
+    --bgcode: var(--lightbgcode);
+    --bordercode: var(--lightbordercode);
+    --textcode: var(--lighttextcode);
+
+    --boxborder: var(--lightboxborder);
+    --hrborder: #c5c5c5;
+
+    --bgtable: #fafafa;
+    --bgtableheader: #ebebeb;
+    --bordertable: rgb(236, 236, 236);
+    --texttable: black;
+}
+
+.dark {
+    --selectionfg: black;
+    --selectionbg: white;
+
+	--primary700: var(--red700);
+    --primary500: var(--red500);
+    --primary200: var(--red200);
+
+    --note1: var(--pink200);
+    --bgnote2: var(--darkgray1);
+    --textnote2: var(--white);
+    --bordernote2: var(--gray7);
+
+	--textgray0: var(--darkgray0);
+
+	--texth1: var(--darkh1);
+	--texth2: var(--darkh2);
+	--texth3: var(--darkh3);
+	--texth4: var(--darkh4);
+	--texth5: var(--darkh5);
+	--texth6: var(--darkh6);
+
+	--textb: var(--darkb);
+	--textp: var(--darkp);
+	--textul: var(--darkp);
+    --textpg1: var(--textdarkpgray1);
+    --texthp1: var(--darkpurple);
+
+	--texthead0: var(--darkh2);
+
+	--line0: var(--darkline0);
+
+	--bgheader: var(--darkbg);
+	--bgbody: var(--darkbg);
+	--socialicons: invert(1);
+
+	--link: var(--yellow700);
+	--linkhover: var(--yellow500);
+
+	--bgmatgray: var(--black);
+	--bggem: var(--darkbggem);
+	--bordergem: var(--darkbordergem);
+	--bgboxshadow: var(--darkbgboxshadow);
+
+	--bgcode: var(--darkbgcode);
+	--bordercode: var(--darkbordercode);
+	--textcode: var(--darktextcode);
+
+	--boxborder: var(--darkboxborder);
+    --hrborder: #2a2a2a;
+
+    --bgtable: #1F1F1F;
+    --bgtableheader: rgb(26, 26, 26);
+    --bordertable: rgb(38, 38, 38);
+    --texttable: rgb(147, 147, 147);
+}

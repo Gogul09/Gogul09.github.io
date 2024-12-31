@@ -1,0 +1,1090 @@
+.about-container {
+  width: 100%;
+  background-color: var(--bgbody);
+  padding-bottom: 100px;
+  
+  @include mobile {
+    padding-bottom: 100px;
+  }
+}
+
+.about-wrapper {
+  max-width: 1000px;
+  position: relative;
+  top: -30px;
+  @include mobile {
+    max-width: 100% !important;
+    width: 100% !important;
+    top: 0px;
+  }
+  .category-tab {
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--line0);
+  }
+}
+
+.about-category-tab ul {
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.about-category-box {
+  padding: 20px 50px !important;
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+  padding-bottom: 0px !important;
+  @include mobile {
+    padding: 0px !important;
+  }
+}
+
+.about_me_body {
+  width: 100%;
+  padding: 0px;
+  margin: 0px auto;
+  position: relative;
+  background-color: var(--bgbody);
+  @include mobile {
+    margin-top: 0px !important;
+    border: none;
+    padding-bottom: 0px;
+  }
+}
+
+.about_me_body p span {
+  color: #cf2321;
+  padding: 3px 5px !important;
+  display: inline;
+}
+
+.about-quote {
+  padding: 0px 20px;
+  color: #bcbcbc;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 0 !important;
+  color: var(--texth1);
+  font-style: bold;
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.course-category-box div div ul li {
+  line-height: 15px;
+  font-size: 15px;
+  @include mobile {
+    font-size: 11px;
+  }
+}
+
+.course-category-box div div ul li span {
+  font-family: monospace;
+  font-size: 10px;
+  padding: 0px 3px;
+  margin: 3px;
+  border-radius: 5px;
+  color: var(--textnote2);
+  background-color: var(--bgnote2);
+  border: 1px solid var(--bordernote2);
+}
+
+.work-id-card {
+  padding: 10px 5px !important;
+  margin: 10px;
+  border-radius: 3px;
+  padding-bottom: 1px !important;
+  margin-bottom: 40px !important;
+  @include mobile {
+    margin: 0px;
+    border: 0px;
+  }
+}
+
+.work-id-card-header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  padding-bottom: 10px !important;
+}
+
+.work-id-card-header div {
+  width: 100%;
+  padding: 0px !important;
+}
+
+.work-id-card-header div:nth-child(1) {
+  text-align: left;
+}
+
+.work-id-card-header div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.work-id-card-header h1 {
+  font-size: 15px;
+  color: black;
+  margin: 0px !important;
+  padding: 0px !important;
+  text-align: right;
+}
+
+.work-id-card-header img {
+  width: 150px;
+  margin-left: -20px;
+}
+
+.work-id-card-content h5 {
+  text-align: left !important;
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
+  font-size: 17px !important;
+  font-family: "Roboto" !important;
+  @include mobile {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+
+.work-id-card-content h5:first-child {
+  padding-top: 0px !important;
+}
+
+.work-id-card-content p {
+  margin-bottom: 15px !important;
+  margin-top: -5px !important;
+}
+
+.work-id-card-content u {
+  padding-bottom: 2px;
+  text-decoration: none;
+  color: #e22525;
+}
+
+.work-id-card-footer {
+  text-align: center;
+  margin: 20px 0px !important;
+}
+
+.work-id-card-header p {
+  text-align: right;
+}
+
+.about-map-earth {
+  width: 100%;
+  height: 600px;
+  border: none;
+  padding: 0px !important;
+  box-shadow: 3px 4px 5px rgba(36, 36, 36, 0.23);
+}
+
+.about-map-earth iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.work-id-card-content ul {
+  margin: 10px auto;
+  padding: 0px !important;
+}
+
+.work-id-card-content ul li {
+  padding: 3px 6px;
+  font-size: 18px;
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.about_me_body h6 {
+    color: black;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.moocs_slides a {
+    margin: 20px auto;
+    background-color: #ff5757;
+    width: auto;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 4px;
+    color: white !important;
+
+    &:hover, &:active { 
+      background-color: #e24141;
+    }
+}
+
+.moocs_slides h4 {
+    margin: 20px auto !important;
+    @include mobile {
+      padding-top: 20px !important;
+      margin: 0px !important;
+    }
+}
+
+.moocs_btns {
+  display: flex;
+  justify-content: center;
+  padding: 20px !important;
+}
+
+.moocs_btns button {
+    margin: 10px;
+    background-color: white;
+    border: none;
+    padding: 5px 20px;
+    box-shadow: 2px 2px 4px #cccccc;
+    border-radius: 3px;
+    color: #615f5f;
+}
+
+.moocs_btns button:focus {
+    outline: none;
+}
+
+.moocs_slides figure {
+  margin: 20px auto;
+}
+
+.grad-about {
+  background-color: var(--bgheader);
+  @include mobile {
+    border-bottom: 0px;
+  }
+}
+
+.grad-about h1 {
+  margin-bottom: 0px !important;
+}
+
+.about-material-box {
+  background-color: #fafafa;
+  padding: 10px 50px;
+  border-radius: 4px;
+  margin: 30px 0;
+  margin-left: -50px;
+  margin-right: -50px;
+  @include mobile {
+    padding: 20px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+.about-header-fix {
+  height: auto;
+  @include mobile {
+    height: auto;
+  }
+}
+
+.book-shelf {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  margin-top: 20px;
+  padding: 0px !important;
+  justify-content: center;
+
+  img {
+    height: 200px;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+  }
+}
+
+.highlight-box p {
+  font-family: $font_body;
+  color: var(--textp);
+}
+
+.highlight-box ul {
+  font-family: $font_body;
+  color: var(--textp);
+}
+
+.highlight-box ul li a {
+  color: var(--texthead0) !important;
+  &:hover, &:active {
+    text-decoration: none !important;
+  }
+}
+
+.social a {
+  border-bottom: 0;
+}
+
+.about-main {
+    background-color: var(--bgheader);
+    @include mobile {
+      margin-bottom: 64px !important;
+  }
+}
+
+.blog-category-box {
+  display: none;
+  background-color: var(--bgbody);
+  border-radius: 3px;
+  width: 100%;
+  margin: 0px auto;
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 18px rgba(36,37,38,0.05) !important;
+  @include mobile {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 20px !important;
+  }
+
+  span {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-size: 15px;
+    padding: 10px;
+    text-shadow: none;
+    text-align: center;
+    padding-left: 5px;
+    font-size: 18px;
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+}
+
+.blog-category-box table {
+  table-layout: initial;
+  background-color: white;
+  border: none !important;
+  width: auto;
+  margin-bottom: 0px !important;
+}
+
+.blog-category-box table tr td {
+  background-color: white !important;
+  border: none !important;
+  text-align: left;
+}
+
+.blog-category-box table tr:last-child td {
+  padding-bottom: 10px;
+}
+
+.blog-category-box table tr:hover td a {
+  background-color: rgb(255, 234, 130);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.blog-category-box table tr {
+  background-color: white !important;
+  border: none !important;
+}
+
+.blog-category-box table tbody {
+  background-color: white !important;
+  border: none !important;
+}
+
+.blog-category-box table tr td b {
+  color: #d5151e;
+  font-weight: 100;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+  font-size: 15px;
+  @include mobile {
+    font-size: 12px;
+  }
+}
+
+.blog-category-box table tr td i {
+  font-style: normal;
+  color: #c4c4c4;
+  font-size: 15px;
+  @include mobile {
+    font-size: 13px;
+  }
+}
+
+.work-inner-box {
+  background-color: var(--bgbody);
+  padding: 0px;
+  ul {
+    margin-bottom: 0px !important;
+    background: var(--bgbody);
+    padding: 0px;
+    border-radius: 5px;
+    list-style-type: none;
+    text-align: left;
+    @include mobile {
+      padding: 0px;
+    }
+  }
+  li {
+    margin: 0;
+    border-radius: 5px;
+    padding-bottom: 20px;
+  }
+  h4 {
+    margin: 0px;
+    color: var(--texth4);
+    font-family: $font_header;
+    line-height: 1.2;
+    font-size: 20px;
+    font-weight: 400;
+    @include mobile {
+      font-size: 15px;
+      margin-bottom: 5px;
+      line-height: 19px;
+    }
+  }
+  h3 {
+    padding: 20px;
+    color: var(--texth3);
+    margin: 0px;
+  }
+  p {
+    margin: 0px !important;
+    font-size: 15px;
+    @include mobile {
+      font-size: 11px;
+    }
+  }
+  h4 a {
+    color: var(--texth4) !important;
+    font-weight: bold;
+    transition: all 0.1s cubic-bezier(.25,.8,.25,1);
+    font-size: 18px;
+    @include mobile {
+      font-size: 14px !important;
+    }
+  }
+  h4 a:hover, h4 a:active {
+    border-bottom: 1px solid var(--linkhover);
+  }
+}
+
+.social-buttons > span {
+  margin-right: 20px;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  @include mobile {
+    margin-top: 15px !important;
+  }
+}
+
+.timeline {
+  margin: 0 !important;
+  padding: 5px !important;
+  @include mobile {
+    padding: 0px !important;
+  }
+}
+
+
+.timeline li {
+  position: relative;
+  list-style-type: none;
+  margin-bottom: 30px !important;
+  @include mobile {
+    padding: 0px;
+  }
+}
+
+.timeline li b {
+  font-size: 16px;
+  font-family: $font_header;
+  color: var(--textb) !important;
+  font-weight: 400;
+  @include mobile {
+    font-size: 11px;
+  }
+}
+
+.timeline li i {
+  display: block;
+  font-style: normal;
+  font-size: 14px;
+  color: var(--textp);
+  @include mobile {
+    font-size: 10px;
+  }
+}
+
+.timeline li h4 {
+  font-size: 18px;
+  margin-bottom: -5px !important;
+  margin-top: -5px;
+  color: var(--texth1);
+  margin-left: -5px;
+  font-weight: 400;
+  @include mobile {
+    font-size: 11px;
+    margin-top: 0px;
+    margin-bottom: 0px !important;
+  }
+}
+
+.timeline li p {
+  font-size: 15px;
+  margin-bottom: -5px !important;
+  margin-top: -2px;
+  color: var(--textp);
+  margin-left: -5px;
+  @include mobile {
+    font-size: 10px !important;
+    line-height: 1.4;
+    margin-bottom: 0px !important;
+  }
+}
+
+.timeline span {
+  width: 80%;
+  white-space: pre-line;
+  display: block;
+  font-size: 14px !important;
+  text-align: left !important;
+  color: var(--textpg1) !important;
+  font-weight: 100;
+  margin-left: -10px;
+  margin-top: -15px;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  background-color: transparent;
+  @include mobile {
+    width: 100%;
+    font-size: 13px !important;
+    line-height: 1.4;
+  }
+}
+
+ul.timeline li {
+  margin-bottom: 21px;
+}
+
+.timeline li h4 span {
+  font-size: 18px !important;
+  color: var(--texth2) !important;
+  padding-left: 10px;
+  font-weight: 400 !important;
+  @include mobile {
+    font-size: 16px !important;
+  }
+}
+
+.header-box span {
+  cursor: pointer;
+  font-size: 13px;
+  position: absolute;
+  top: 13px;
+  right: 0;
+  bottom: 6px;
+  color: #000;
+  background: var(--flgreen500);
+  border: 1px solid var(--flgreen700);
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: inline-table;
+  @include mobile {
+    top: 1px;
+    right: 0px;
+    font-size: 11px;
+  }
+  &:hover, &:active {
+    background-color: var(--flgreen700);
+  }
+}
+
+.profile-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 765px;
+  align-items: center;
+  @include mobile {
+    flex-direction: column;
+  }
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.about-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  background: linear-gradient(to bottom, #eaeaea 0%, #fafafa 100%);
+  @include mobile {
+    border-bottom: 1px solid #e8e6e6;
+  }
+  @include tablet {
+    padding: 20px;
+  }
+}
+
+.course-category-box p {
+  margin-bottom: 0px !important;
+}
+
+.profile-profession, .profile-passion {
+  background-color: rgba(0, 0, 0, 0.103);
+  padding: 20px;
+  border-radius: 5px;
+  width: 50%;
+  box-shadow: 2px 2px 6px #00000026;
+  height: 220px;
+  border: 1px solid #ffffff17;
+  @include mobile {
+    width: 100%;
+    padding: 10px;
+    height: fit-content;
+  }
+  @include tablet {
+    height: fit-content;
+  }
+}
+
+.profile-profession h6, .profile-passion h6 {
+  color: white;
+  font-size: 1.7em;
+  font-weight: 100;
+  text-align: center;
+  margin: 5px;
+  margin-bottom: 0px;
+  @include mobile {
+    color: white;
+    font-size: 1.5em;
+    font-family: 'League Spartan';
+    font-weight: 500;
+    text-align: center;
+    margin: 5px;
+  }
+}
+
+.profile-profession p, .profile-passion p {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+  font-size: 16px;
+  font-family: 'Gothic A1';
+}
+
+.profile-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-profession {
+  margin-left: -137px;
+  padding-left: 100px;
+  @include mobile {
+    margin-left: initial;
+    margin-bottom: 8%;
+    padding-left: initial;
+  }
+}
+
+.profile-passion {
+  margin-right: -139px;
+  padding-right: 100px;
+  @include mobile {
+    margin-right: initial;
+    margin-top: 8%;
+    padding-right: initial;
+  }
+}
+
+.profile-description {
+  flex: 1;
+  @include mobile {
+    padding: 25px;
+  }
+}
+
+.profile-description p {
+  text-align: center;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+  color: #333;
+}
+
+.profile-description h1 {
+  font-family: $font_header;
+  color: #333;
+  font-size: 3em;
+  margin: 0;
+  margin-top: -15px;
+  font-weight: 100;
+  @include mobile {
+    font-size: 2.0em;
+    margin-top: 0px;
+  }
+}
+
+.profile-pic-image {
+  height: 360px;
+  background-color: transparent;
+  background-image: url(/images/gogul_ilango.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 !important;
+  margin: 0;
+  margin-bottom: 20px;
+  @include tablet {
+    margin: 0;
+  }
+  @include mobile {
+    height: 320px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+    border-bottom: 1px solid #e8e6e6;
+    background-position: center;
+  }
+}
+
+.profile-pic-box {
+  flex: 1;
+  @include mobile {
+    flex: initial;
+    width: 100%;
+  }
+}
+
+.highlight-box {
+  border: 1px solid var(--boxborder);
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 5px;
+  background: var(--bgnote2);
+  @include mobile {
+    padding: 20px 15px;
+    padding-bottom: 30px;
+    border-radius: 0px;
+    box-shadow: none;
+    margin-left: -15px;
+    margin-right: -16px;
+  }
+}
+
+
+.profile-wrapper i {
+  color: #777;
+  text-align: center;
+  display: block;
+  font-style: normal;
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+.profile-wrapper i span {
+  border: 1px solid transparent;
+  padding: 4px 7px;
+  background-color: #00000094;
+  border-radius: 5px;
+  line-height: 30px;
+}
+
+.button-courses {
+  position: relative;
+  background-color: var(--bgnote2);
+  border-radius: 0px;
+  border: 1px solid var(--bordernote2);
+}
+
+.button-courses:hover button, .button-courses:hover {
+  background-color: var(--bordernote2);
+  color: white;
+}
+
+.button-courses button {
+  background-color: var(--bgnote2);
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  border: 0px;
+  color: var(--textnote2);
+  border-radius: 2px;
+  font-family: 'Rubik';
+}
+
+.button-courses span {
+  color: var(--textnote2);
+  position: absolute;
+  right: 0px;
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 0;
+  &:hover, &:active {
+    background-color: var(--bordernote2);
+    color: white;
+  }
+}
+
+.box-courses {
+  display: none;
+}
+
+.box-courses h4 {
+  font-size: 18px;
+  color: var(--texth4);
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.mooc-courses table tr th {
+  border: 1px solid var(--bordertable) !important;
+  background-color: var(--bgtableheader) !important;
+  color: var(--texttable) !important;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.mooc-courses table tr td {
+  border: 1px solid var(--bordertable) !important;
+  background-color: var(--bgtable) !important;
+  color: var(--texttable) !important;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.mooc-courses table tr td a {
+  font-size: 13px;
+  &:hover, &:active {
+    background-color: transparent !important;
+    text-decoration: underline;
+    border: 0;
+    padding: 0;
+  }
+}
+
+.mooc-courses table tr td:hover a {
+    background-color: transparent !important;
+    text-decoration: underline;
+    border: 0;
+    padding: 0;
+}
+
+.mooc-courses table tr:hover td a {
+  background-color: transparent !important;
+  text-decoration: underline;
+  border: 0;
+  padding: 0;
+}
+
+.box-engineering p {
+  text-align: center;
+  margin-bottom: 0px !important;
+}
+
+.box-engineering h1 {
+  cursor: pointer;
+  margin-top: 0px !important;
+}
+
+.logo-tce {
+  background-image: url('/images/logos/TCE.png');
+  background-size: 55px !important;
+  @include mobile {
+    background-size: 45px !important;
+  }
+}
+
+.logo-mit {
+  background-image: url('/images/logos/MIT.png');
+}
+
+.logo-cdns {
+  background-image: url('/images/logos/CDNS.png');
+}
+
+.logo-qcom {
+  background-image: url('/images/logos/QCOM.png');
+}
+
+.logo-packt {
+  background-image: url('/images/logos/PACKT.png');
+}
+
+.logo-nok {
+  background-image: url('/images/logos/NOK.png');
+}
+
+.logo-tcs {
+  background-image: url('/images/logos/TCS.png');
+}
+
+.timeline li div {
+  display: flex;
+}
+
+.timeline li div > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline li div > div:nth-child(1) {
+  width: 110px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid var(--bgboxshadow);
+  margin-right: 25px;
+  background-size: 70px;
+  background-color: white;
+  border-radius: 4px;
+  @include mobile {
+    width: 70px;
+    background-size: 50px;
+    margin-right: 10px;
+  }
+}
+
+.timeline li div>div:nth-child(3) {
+  align-items: self-end;
+  flex: 1;
+}
+
+.header-box {
+  position: relative;
+}
+
+.timeline li div>div a {
+  font-size: 15px !important;
+  @include mobile {
+    font-size: 10px !important;
+  }
+  &:hover, &:active {
+    text-decoration: none;
+    border-bottom: 0;
+    background-color: var(--link) !important;
+    color: white !important;
+    border-radius: 3px;
+    padding: 0 5px;
+  }
+}
+
+.youtube-category-box table {
+  width: 100%;
+  background-color: transparent;
+}
+
+.youtube-category-box table tr td {
+  border: 1px solid var(--bordertable) !important;
+  background-color: var(--bgtable) !important;
+  color: var(--texttable) !important;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.youtube-category-box table, .youtube-category-box table tr, .youtube-category-box table tr td {
+  border: 1px solid var(--bordergem) !important;
+  border-collapse: collapse;
+}
+
+.youtube-category-box table tr td a, .youtube-category-box table tr td {
+  font-size: 13px !important;
+  @include mobile {
+    font-size: 11px !important;
+  }
+  @include tablet {
+    font-size: 11px !important;
+  }
+}
+
+.youtube-category-box table tr td a {
+  &:hover, &:active {
+    background-color: transparent !important;
+    border-radius: none;
+    color: white !important;
+    border: 0px !important;
+    padding: 0px !important;
+  }
+}
+
+.youtube-category-box table tr td:hover a {
+  background-color: transparent !important;
+  border-radius: none;
+  color: white !important;
+  border: 0px !important;
+  padding: 0px !important;
+}
+
+.youtube-category-box table tr:hover td {
+  background-color: var(--link) !important;
+  color: white !important;
+  border-radius: 3px;
+}
+
+.youtube-category-box table tr:hover td a {
+  background-color: var(--link) !important;
+  color: white !important;
+  border-radius: 3px;
+  padding: 0px !important;
+  border: 0px !important;
+}
+
+.youtube-year-box {
+  width: 100%;
+  overflow-x: scroll;
+  white-space: pre;
+}
+
+.box-masters-courses, .box-bachelors-courses {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-masters-courses div, .box-bachelors-courses div {
+  width: 50%;
+  @include mobile {
+    width: 100%;
+  }
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.credly-badges {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  justify-content: center;
+  @include tablet {
+    justify-content: flex-start;
+  }
+  @include mobile {
+    justify-content: flex-start;
+  }
+}
+
+.credly-badges iframe {
+  margin: 10px;
+  background: white;
+  height: 240px !important;
+  border-radius: 3px;
+}

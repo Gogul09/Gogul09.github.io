@@ -1,0 +1,240 @@
+.home-container{
+  width: 100%;
+  margin: 0px auto;
+  background-color: var(--bgbody);
+  margin-bottom: 100px;
+  @include mobile {
+    display: block;
+    margin-top: 0px !important;
+    margin-bottom: 10px;
+  }
+}
+
+.gem-box {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gem-box div {
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid var(--bordergem);
+  margin: 20px;
+  border-radius: 5px;
+  background-color: var(--bggem);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  transition: transform .1s;
+  position: relative;
+  @include mobile {
+    width: 140px;
+    height: initial;
+    padding: 10px;
+  }
+}
+
+.gem-box div:hover {
+  box-shadow: 0 0 14px rgba(0,0,0,.12);
+  transform: scale(1.025);
+}
+
+.gem-box div h4 {
+  color: var(--texth4);
+  font-size: 17px;
+  margin-top: 65px;
+  @include mobile {
+    margin-top: 70px;
+    font-size: 14px;
+  }
+}
+
+.gem-box div p {
+  font-size: 16px;
+  line-height: 1.4em;
+  @include mobile {
+    font-size: 12px;
+  }
+}
+
+.gem-box div img {
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: absolute;
+  top: 25px;
+  height: 40px;
+  border: none;
+  @include mobile {
+    height: 35px;
+  }
+}
+
+.gem-box div:hover img {
+  top: -15px;
+}
+
+.home-follow-wrapper {
+  display: flex;
+  margin: 0px auto;
+}
+
+.home-follow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: auto !important;
+  margin: 20px auto;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+  padding: 15px;
+  border-radius: 5px;
+  @include mobile {
+    flex-direction: column;
+    width: 100% !important;
+    padding-left: 5px;
+    justify-content: flex-start;
+  }
+}
+
+.home-follow iframe {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.home-follow > div {
+  margin: 0 5px !important;
+  @include mobile {
+    margin: 4px 0 !important;
+  }
+}
+
+.home-follow > div:nth-child(3) {
+    margin-left: 15px !important;
+    @include mobile {
+      margin-left: 0px !important;
+    }
+}
+
+.category-tab {
+  text-align: center;
+  z-index: 1;
+  @include mobile {
+    border: none;
+  }
+  ul {
+    display: flex;
+    background-color: var(--bgheader);
+    list-style-type: none;
+    padding: 0px !important;
+    margin: 0px !important;
+    overflow-x: auto;
+    width: 100%;
+    height: 60px;
+    overflow-y: hidden;
+    white-space: nowrap;
+    border-radius: 5px;
+    @include mobile {
+      border-radius: 0px;
+    }
+  }
+  ul::-webkit-scrollbar {
+    display: none;
+  }
+  li {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-color: var(--bgheader);
+    color: var(--textul);
+    padding: 2px;
+    height: 60px;
+    text-align: center;
+    padding: 0 15px;
+    cursor: pointer;
+    font-family: $font_header;
+    transition: color .1s ease, background-color .1s ease;
+    @include mobile {
+      font-size: 13px;
+    }
+  }
+}
+
+.blog-intro {
+  position: relative;
+  padding: 40px;
+  overflow: hidden;
+  height: auto;
+  @include mobile {
+    height: auto;
+    padding: 15px;
+    margin: 0px auto;
+    border-radius: 0;
+  }
+  span {
+    font-weight: bold;
+    color: $primary_500;
+  }
+  p {
+    width: 100%;
+    margin: 0px auto;
+    color: var(--textgray0) !important;
+    text-align: center;
+    margin-bottom: 10px !important;
+    @include mobile {
+      width: 100%;
+      margin-bottom: 0px !important;
+      padding: 5px;
+      font-size: 16px;
+    }
+  }
+  div {
+    width: 70%;
+    margin: 0px auto;
+    @include mobile {
+      width: 100%;
+    }
+  }
+  h1 {
+    color: var(--texth1) !important;
+    margin-top: 0px !important;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+    @include mobile {
+      font-size: 25px;
+      margin: 10px;
+      margin-left: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.home-wrapper h2 {
+  font-size: 26px;
+  height: 80px;
+  line-height: 60px;
+  vertical-align: middle;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  border: none !important;
+  padding: 10px 0;
+  background-color: var(--bgbody);
+  color: var(--texth3);
+  @include mobile {
+    margin: 0px !important;
+    padding-left: 0px;
+  }
+}
+
+.home-wrapper h2 a {
+  color: #444444;
+  &:hover, &:active {
+    color: $primary_500;
+  }
+}

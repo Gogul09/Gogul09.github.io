@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Texture Recognition using Haralick Texture and Python – Gogul Ilango </title>
+  
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+  <link rel="stylesheet" href="https://use.typekit.net/mry7nes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Texture Recognition using Haralick Texture and Python" />
+    <meta name="description" content="Learn how to quantify images globally using Haralick Textures and classify images based on Textures. Understand the concept of Gray-Level Co-occurance Matrix (GLCM) used when computing Haralick Textures in Python." />
+    <meta property="og:description" content="Learn how to quantify images globally using Haralick Textures and classify images based on Textures. Understand the concept of Gray-Level Co-occurance Matrix (GLCM) used when computing Haralick Textures in Python." />
+    <meta property="twitter:title" content="Texture Recognition using Haralick Texture and Python" />
+
+    <meta property="og:image" content="https://drive.google.com/uc?id=1Djo85y9-krezGfhitRC7ApjNSF5s-tgO"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Texture Recognition using Haralick Texture and Python">
+    <meta name="twitter:description" content="Learn how to quantify images globally using Haralick Textures and classify images based on Textures. Understand the concept of Gray-Level Co-occurance Matrix (GLCM) used when computing Haralick Textures in Python.">
+    <meta name="twitter:image" content="https://drive.google.com/uc?id=1Djo85y9-krezGfhitRC7ApjNSF5s-tgO">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Texture Recognition using Haralick Texture and Python | Gogul Ilango</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Texture Recognition using Haralick Texture and Python" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Learn how to quantify images globally using Haralick Textures and classify images based on Textures. Understand the concept of Gray-Level Co-occurance Matrix (GLCM) used when computing Haralick Textures in Python." />
+<meta property="og:description" content="Learn how to quantify images globally using Haralick Textures and classify images based on Textures. Understand the concept of Gray-Level Co-occurance Matrix (GLCM) used when computing Haralick Textures in Python." />
+<link rel="canonical" href="http://localhost:4000/software/texture-recognition" />
+<meta property="og:url" content="http://localhost:4000/software/texture-recognition" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1Djo85y9-krezGfhitRC7ApjNSF5s-tgO" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-12-15T00:00:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://drive.google.com/uc?id=1Djo85y9-krezGfhitRC7ApjNSF5s-tgO" />
+<meta property="twitter:title" content="Texture Recognition using Haralick Texture and Python" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gogul Ilango"},"dateModified":"2016-12-15T00:00:00+05:30","datePublished":"2016-12-15T00:00:00+05:30","description":"Learn how to quantify images globally using Haralick Textures and classify images based on Textures. Understand the concept of Gray-Level Co-occurance Matrix (GLCM) used when computing Haralick Textures in Python.","headline":"Texture Recognition using Haralick Texture and Python","image":"https://drive.google.com/uc?id=1Djo85y9-krezGfhitRC7ApjNSF5s-tgO","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/texture-recognition"},"url":"http://localhost:4000/software/texture-recognition"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#000" />
+    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog is a personal space of Gogul Ilango who writes about technology, music production, programming and travel." href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"><span>home</span></a>
+            <a title="music" id = "nav_music" href="https://www.youtube.com/gogulilangomusic" target="_blank"><span>music</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="readtime-progress" id="readtime-progress"></div>
+
+<div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>Texture Recognition using Haralick Texture and Python</h1>
+		<div class="post-subheading">
+			<p>Computer Vision | 15 December 2016</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/texture-recognition"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/software/texture-recognition" data-action="share/whatsapp/share"><img class="icon-whatsapp" src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/texture-recognition" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-facebook" src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=Texture Recognition using Haralick Texture and Python&url=http://localhost:4000/software/texture-recognition" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img class="icon-twitter" src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/texture-recognition&title=Texture Recognition using Haralick Texture and Python&summary=Learn how to quantify images globally using Haralick Textures and classify images based on Textures. Understand the concept of Gray-Level Co-occurance Matrix (GLCM) used when computing Haralick Textures in Python.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-linkedin" src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/texture-recognition" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/texture-recognition" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Texture Recognition using Haralick Texture and Python&url=http://localhost:4000/software/texture-recognition" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/texture-recognition&title=Texture Recognition using Haralick Texture and Python&summary=Learn how to quantify images globally using Haralick Textures and classify images based on Textures. Understand the concept of Gray-Level Co-occurance Matrix (GLCM) used when computing Haralick Textures in Python.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="git-showcase">
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
+  </div>
+
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09/explore-computer-vision/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Gogul09/explore-computer-vision on GitHub">Fork</a>
+  </div>
+
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09/explore-computer-vision" data-icon="octicon-star" data-show-count="true" aria-label="Star Gogul09/explore-computer-vision on GitHub">Star</a>
+  </div>  
+</div>
+
+<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#what-is-a-texture">What is a Texture?</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#what-is-haralick-texture">What is Haralick Texture?</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#what-is-glcm">What is GLCM?</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#haralick-texture-feature-vector">Haralick Texture Feature Vector</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#implementing-texture-recognition">Implementing Texture Recognition</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#import-the-necessary-packages">Import the necessary packages</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#load-the-training-dataset">Load the training dataset</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#extract-features-function">Extract features function</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#extract-features-for-all-images">Extract features for all images</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#create-the-machine-learning-classifier">Create the machine learning classifier</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#test-the-classifier-on-testing-data">Test the classifier on testing data</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_12" href="#training-images">Training images</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_13" href="#testing-images">Testing images</a></li>
+  </ul>
+</div>
+
+<p>When it comes to Global Feature Descriptors (i.e feature vectors that quantifies the entire image), there are three major attributes to be considered - <span class="light">Color, Shape</span> and <span class="light">Texture</span>. All these three could be used separately or combined to quantify images. In this post, we will learn how to recognize texture in images. We will study a new type of global feature descriptor called Haralick Texture. Let’s jump right into it!</p>
+
+<div class="code-head">Objectives<span>goals</span></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>How to label and organize our own dataset?
+What is Haralick Texture and how it is computed?
+How to use Haralick Texture module in mahotas library?
+How to recognize textures in images?
+How to use Linear SVM to train and classify images?
+How to make predictions using the created model on an unseen data?
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="what-is-a-texture">What is a Texture?</h3>
+
+<p>Texture defines the consistency of patterns and colors in an object/image such as bricks, school uniforms, sand, rocks, grass etc. To classify objects in an image based on texture, we have to look for the consistent spread of patterns and colors in the object’s surface. Rough-Smooth, Hard-Soft, Fine-Coarse are some of the texture pairs one could think of, although there are many such pairs.</p>
+
+<h3 id="what-is-haralick-texture">What is Haralick Texture?</h3>
+
+<p>Haralick Texture is used to quantify an image based on texture. It was invented by Haralick in 1973 and you can read about it in detail <a href="http://haralick.org/journals/TexturalFeatures.pdf" target="_blank">here</a>. The fundamental concept involved in computing Haralick Texture features is the Gray Level Co-occurrence Matrix or GLCM.</p>
+
+<h3 id="what-is-glcm">What is GLCM?</h3>
+
+<p>Gray Level Co-occurrence matrix (GLCM) uses adjacency concept in images. The basic idea is that it looks for pairs of adjacent pixel values that occur in an image and keeps recording it over the entire image. Below figure explains how a GLCM is constructed.</p>
+
+<figure>
+  <img src="/images/software/haralick-texture/GLCM.jpg" />
+  <figcaption>Figure 1. Gray Level Co-occurance Matrix (GLCM)</figcaption>
+</figure>
+
+<p>As you can see from the above image, gray-level pixel value 1 and 2 occurs twice in the image and hence GLCM records it as two. But pixel value 1 and 3 occurs only once in the image and thus GLCM records it as one. Of course, I have assumed the adjacency calculation only from left-to-right. Actually, there are four types of adjacency and hence four GLCM matrices are constructed for a single image. Four types of adjacency are as follows.</p>
+
+<ul>
+  <li>Left-to-Right</li>
+  <li>Top-to-Bottom</li>
+  <li>Top Left-to-Bottom Right</li>
+  <li>Top Right-to-Bottom Left</li>
+</ul>
+
+<h3 id="haralick-texture-feature-vector">Haralick Texture Feature Vector</h3>
+
+<p>From the four GLCM matrices, 14 textural features are computed that are based on some statistical theory. All these 14 statistical features needs a separate blog post. So, you can read in detail about those <a href="http://haralick.org/journals/TexturalFeatures.pdf" target="_blank">here</a>. Normally, the feature vector is taken to be of 13-dim as computing 14th dim might increase the computational time.</p>
+
+<h3 id="implementing-texture-recognition">Implementing Texture Recognition</h3>
+
+<p>Ok, lets start with the code!</p>
+
+<p>Actually, it will take just 10-15 minutes to complete our texture recognition system using OpenCV, Python, sklearn and mahotas provided we have the training dataset.</p>
+
+<div class="note">
+<p><b>Note</b>: In case if you don't have these packages installed, feel free to install these using my environment setup posts given below.</p>
+<ul>
+	<li><a href="https://gogul09.github.io/software/deep-learning-windows" target="_blank">Deep Learning Environment Setup (Windows)</a></li>
+	<li><a href="https://gogul09.github.io/software/deep-learning-linux" target="_blank">Deep Learning Environment Setup (Linux)</a></li>
+</ul>
+</div>
+
+<h3 id="import-the-necessary-packages">Import the necessary packages</h3>
+
+<div class="code-head">train_test.py<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">os</span>
+<span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">import</span> <span class="n">mahotas</span> <span class="k">as</span> <span class="n">mt</span>
+<span class="kn">from</span> <span class="n">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="load-the-training-dataset">Load the training dataset</h3>
+
+<div class="code-head">train_test.py<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1"># load the training dataset
+</span><span class="n">train_path</span> <span class="o">=</span> <span class="sh">"</span><span class="s">dataset/train</span><span class="sh">"</span>
+<span class="n">train_names</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="nf">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
+
+<span class="c1"># empty list to hold feature vectors and train labels
+</span><span class="n">train_features</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">train_labels</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Line 2 is the path to training dataset.</li>
+  <li>Line 3 gets the class names of the training data.</li>
+  <li>Line 6-7 are empty lists to hold feature vectors and labels.</li>
+</ul>
+
+<h3 id="extract-features-function">Extract features function</h3>
+
+<div class="code-head">train_test.py<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">extract_features</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+        <span class="c1"># calculate haralick texture features for 4 types of adjacency
+</span>        <span class="n">textures</span> <span class="o">=</span> <span class="n">mt</span><span class="p">.</span><span class="n">features</span><span class="p">.</span><span class="nf">haralick</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+        <span class="c1"># take the mean of it and return it
+</span>        <span class="n">ht_mean</span> <span class="o">=</span> <span class="n">textures</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ht_mean</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Line 1 is a function that takes an input image to compute haralick texture.</li>
+  <li>Line 3 extracts the haralick features for all 4 types of adjacency.</li>
+  <li>Line 6 finds the mean of all 4 types of GLCM.</li>
+  <li>Line 7 returns the resulting feature vector for that image which describes the texture.</li>
+</ul>
+
+<h3 id="extract-features-for-all-images">Extract features for all images</h3>
+
+<div class="code-head">train_test.py<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="c1"># loop over the training dataset
+</span><span class="k">print</span> <span class="sh">"</span><span class="s">[STATUS] Started extracting haralick textures..</span><span class="sh">"</span>
+<span class="k">for</span> <span class="n">train_name</span> <span class="ow">in</span> <span class="n">train_names</span><span class="p">:</span>
+        <span class="n">cur_path</span> <span class="o">=</span> <span class="n">train_path</span> <span class="o">+</span> <span class="sh">"</span><span class="s">/</span><span class="sh">"</span> <span class="o">+</span> <span class="n">train_name</span>
+        <span class="n">cur_label</span> <span class="o">=</span> <span class="n">train_name</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="sh">"</span><span class="s">/*.jpg</span><span class="sh">"</span><span class="p">):</span>
+                <span class="k">print</span> <span class="sh">"</span><span class="s">Processing Image - {} in {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cur_label</span><span class="p">)</span>
+                <span class="c1"># read the training image
+</span>                <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+
+                <span class="c1"># convert the image to grayscale
+</span>                <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+                <span class="c1"># extract haralick texture from the image
+</span>                <span class="n">features</span> <span class="o">=</span> <span class="nf">extract_features</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
+
+                <span class="c1"># append the feature vector and label
+</span>                <span class="n">train_features</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+                <span class="n">train_labels</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">cur_label</span><span class="p">)</span>
+
+                <span class="c1"># show loop update
+</span>                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Line 4 loops over the training labels we have just included from training directory.</li>
+  <li>Line 5 is the path to current image class directory.</li>
+  <li>Line 6 holds the current image class label.</li>
+  <li>Line 8 takes all the files with .jpg as the extension and loops through each file one by one.</li>
+  <li>Line 11 reads the input image that corresponds to a file.</li>
+  <li>Line 14 converts the image to grayscale.</li>
+  <li>Line 17 extracts haralick features for the grayscale image.</li>
+  <li>Line 20 appends the 13-dim feature vector to the training features list.</li>
+  <li>Line 21 appends the class label to training classes list.</li>
+</ul>
+
+<div class="code-head">train_test.py<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c1"># have a look at the size of our feature vector and labels
+</span><span class="k">print</span> <span class="sh">"</span><span class="s">Training features: {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">train_features</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span> <span class="sh">"</span><span class="s">Training labels: {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">train_labels</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="create-the-machine-learning-classifier">Create the machine learning classifier</h3>
+
+<div class="code-head">train_test.py<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1"># create the classifier
+</span><span class="k">print</span> <span class="sh">"</span><span class="s">[STATUS] Creating the classifier..</span><span class="sh">"</span>
+<span class="n">clf_svm</span> <span class="o">=</span> <span class="nc">LinearSVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># fit the training data and labels
+</span><span class="k">print</span> <span class="sh">"</span><span class="s">[STATUS] Fitting data/label to model..</span><span class="sh">"</span>
+<span class="n">clf_svm</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Line 3 creates the Linear Support Vector Machine classifier.</li>
+  <li>Line 7 fits the training features and labels to the classifier.</li>
+</ul>
+
+<h3 id="test-the-classifier-on-testing-data">Test the classifier on testing data</h3>
+
+<div class="code-head">train_test.py<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="c1"># loop over the test images
+</span><span class="n">test_path</span> <span class="o">=</span> <span class="sh">"</span><span class="s">dataset/test</span><span class="sh">"</span>
+<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="n">test_path</span> <span class="o">+</span> <span class="sh">"</span><span class="s">/*.jpg</span><span class="sh">"</span><span class="p">):</span>
+        <span class="c1"># read the input image
+</span>        <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+
+        <span class="c1"># convert to grayscale
+</span>        <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+        <span class="c1"># extract haralick texture from the image
+</span>        <span class="n">features</span> <span class="o">=</span> <span class="nf">extract_features</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
+
+        <span class="c1"># evaluate the model and predict label
+</span>        <span class="n">prediction</span> <span class="o">=</span> <span class="n">clf_svm</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">features</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># show the label
+</span>        <span class="n">cv2</span><span class="p">.</span><span class="nf">putText</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+
+       <span class="c1"># display the output image
+</span>       <span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Test_Image</span><span class="sh">"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+       <span class="n">cv2</span><span class="p">.</span><span class="nf">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Line 2 gets the testing data path.</li>
+  <li>Line 3 takes all the files with the .jpg extension and loops through each file one by one.</li>
+  <li>Line 5 reads the input image.</li>
+  <li>Line 8 converts the input image into grayscale image.</li>
+  <li>Line 11 extract haralick features from grayscale image.</li>
+  <li>Line 14 predicts the output label for the test image.</li>
+  <li>Line 17 displays the output class label for the test image.</li>
+  <li>Finally, Line 20 displays the test image with predicted label.</li>
+</ul>
+
+<h3 id="training-images">Training images</h3>
+
+<p>These are the images from which we train our machine learning classifier to learn texture features. You can collect the images of your choice and include it under a label. For example, “Grass” images are collected and stored inside a folder named “grass”. These images could either be taken from a simple google search (easy to do; but our model won’t generalize well) or from your own camera/smart-phone (which is indeed time-consuming, but our model could generalize well due to real-world images).</p>
+
+<p>As a demonstration, I have included my own training and testing images. I took 3 classes of training images which holds 3 images per class. Training images with their corresponding class/label are shown below.</p>
+
+<figure>
+  <img src="/images/software/haralick-texture/Training Data.jpg" />
+  <figcaption>Figure 2. Training Images</figcaption>
+</figure>
+
+<h3 id="testing-images">Testing images</h3>
+
+<p>These could be images or a video sequence from a smartphone/camera. We can test our model with this test data so that our model performs feature extraction on this text data and tries to come up with the best possible label/class.</p>
+
+<p>Some of the test images for which we need to predict the class/label are shown below.</p>
+
+<div class="note">
+<p><b>Note</b>: These test images won't have any label associated with them. Our model's purpose is to predict the best possible label/class for the image it sees.</p>
+</div>
+
+<figure>
+  <img src="/images/software/haralick-texture/Testing Data.jpg" />
+  <figcaption>Figure 3. Testing Images</figcaption>
+</figure>
+
+<p>After running the code, our model was able to correctly predict the labels for the testing data as shown below.</p>
+
+<figure>
+	<img src="/images/software/haralick-texture/test_image_1.jpg" />
+	<figcaption>Figure 4. Test Image Prediction - 1</figcaption>
+</figure>
+
+<figure>
+	<img src="/images/software/haralick-texture/test_image_2.jpg" />
+	<figcaption>Figure 5. Test Image Prediction - 2</figcaption>
+</figure>
+
+<figure>
+	<img src="/images/software/haralick-texture/test_image_3.jpg" />
+	<figcaption>Figure 6. Test Image Prediction - 3</figcaption>
+</figure>
+
+<p>Here is the entire code to build our texture recognition system.</p>
+
+<div class="code-head">train_test.py<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">os</span>
+<span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">import</span> <span class="n">mahotas</span> <span class="k">as</span> <span class="n">mt</span>
+<span class="kn">from</span> <span class="n">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+
+<span class="c1"># function to extract haralick textures from an image
+</span><span class="k">def</span> <span class="nf">extract_features</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+	<span class="c1"># calculate haralick texture features for 4 types of adjacency
+</span>	<span class="n">textures</span> <span class="o">=</span> <span class="n">mt</span><span class="p">.</span><span class="n">features</span><span class="p">.</span><span class="nf">haralick</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+	<span class="c1"># take the mean of it and return it
+</span>	<span class="n">ht_mean</span>  <span class="o">=</span> <span class="n">textures</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">ht_mean</span>
+
+<span class="c1"># load the training dataset
+</span><span class="n">train_path</span>  <span class="o">=</span> <span class="sh">"</span><span class="s">dataset/train</span><span class="sh">"</span>
+<span class="n">train_names</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="nf">listdir</span><span class="p">(</span><span class="n">train_path</span><span class="p">)</span>
+
+<span class="c1"># empty list to hold feature vectors and train labels
+</span><span class="n">train_features</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">train_labels</span>   <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># loop over the training dataset
+</span><span class="k">print</span> <span class="sh">"</span><span class="s">[STATUS] Started extracting haralick textures..</span><span class="sh">"</span>
+<span class="k">for</span> <span class="n">train_name</span> <span class="ow">in</span> <span class="n">train_names</span><span class="p">:</span>
+	<span class="n">cur_path</span> <span class="o">=</span> <span class="n">train_path</span> <span class="o">+</span> <span class="sh">"</span><span class="s">/</span><span class="sh">"</span> <span class="o">+</span> <span class="n">train_name</span>
+	<span class="n">cur_label</span> <span class="o">=</span> <span class="n">train_name</span>
+	<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+
+	<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="n">cur_path</span> <span class="o">+</span> <span class="sh">"</span><span class="s">/*.jpg</span><span class="sh">"</span><span class="p">):</span>
+		<span class="k">print</span> <span class="sh">"</span><span class="s">Processing Image - {} in {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cur_label</span><span class="p">)</span>
+		<span class="c1"># read the training image
+</span>		<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+
+		<span class="c1"># convert the image to grayscale
+</span>		<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+		<span class="c1"># extract haralick texture from the image
+</span>		<span class="n">features</span> <span class="o">=</span> <span class="nf">extract_features</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
+
+		<span class="c1"># append the feature vector and label
+</span>		<span class="n">train_features</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+		<span class="n">train_labels</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">cur_label</span><span class="p">)</span>
+
+		<span class="c1"># show loop update
+</span>		<span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># have a look at the size of our feature vector and labels
+</span><span class="k">print</span> <span class="sh">"</span><span class="s">Training features: {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">train_features</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span> <span class="sh">"</span><span class="s">Training labels: {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">train_labels</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># create the classifier
+</span><span class="k">print</span> <span class="sh">"</span><span class="s">[STATUS] Creating the classifier..</span><span class="sh">"</span>
+<span class="n">clf_svm</span> <span class="o">=</span> <span class="nc">LinearSVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># fit the training data and labels
+</span><span class="k">print</span> <span class="sh">"</span><span class="s">[STATUS] Fitting data/label to model..</span><span class="sh">"</span>
+<span class="n">clf_svm</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
+
+<span class="c1"># loop over the test images
+</span><span class="n">test_path</span> <span class="o">=</span> <span class="sh">"</span><span class="s">dataset/test</span><span class="sh">"</span>
+<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="n">test_path</span> <span class="o">+</span> <span class="sh">"</span><span class="s">/*.jpg</span><span class="sh">"</span><span class="p">):</span>
+	<span class="c1"># read the input image
+</span>	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+
+	<span class="c1"># convert to grayscale
+</span>	<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+	<span class="c1"># extract haralick texture from the image
+</span>	<span class="n">features</span> <span class="o">=</span> <span class="nf">extract_features</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
+
+	<span class="c1"># evaluate the model and predict label
+</span>	<span class="n">prediction</span> <span class="o">=</span> <span class="n">clf_svm</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">features</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+	<span class="c1"># show the label
+</span>	<span class="n">cv2</span><span class="p">.</span><span class="nf">putText</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+	<span class="k">print</span> <span class="sh">"</span><span class="s">Prediction - {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
+
+	<span class="c1"># display the output image
+</span>	<span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Test_Image</span><span class="sh">"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+	<span class="n">cv2</span><span class="p">.</span><span class="nf">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre>[STATUS] Started extracting haralick textures..
+Processing Image - 1 in bricks
+Processing Image - 2 in bricks
+Processing Image - 3 in bricks
+Processing Image - 1 in grass
+Processing Image - 2 in grass
+Processing Image - 3 in grass
+Processing Image - 1 in rocks
+Processing Image - 2 in rocks
+Processing Image - 3 in rocks
+Training features: (9, 13)
+Training labels: (9,)
+[STATUS] Creating the classifier..
+[STATUS] Fitting data/label to model..
+Prediction - grass
+Prediction - bricks
+Prediction - rocks
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>If you <em>copy-paste</em> the above code in any of your directory and run <span class="coding">python train_test.py</span>, you will get the following results.</p>
+
+<p>Thus, we have implemented our very own Texture Recognition system using Haralick Textures, Python and OpenCV.</p>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/texture-recognition"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function () {
+				  this.page.url = 'http://localhost:4000/software/texture-recognition';
+				  this.page.identifier = 'http://localhost:4000/software/texture-recognition';
+				};
+
+				(function() {
+				  var d = document, s = d.createElement('script');
+				  s.src = 'https://gogul09.disqus.com/embed.js';
+				  s.setAttribute('data-timestamp', +new Date());
+				  (d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+
+<script type="text/javascript" src="/js/readtime.js"></script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2024 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/texture-recognition',
+		  'title': 'Texture Recognition using Haralick Texture and Python'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+   </body>
+</html>

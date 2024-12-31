@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Applying Machine Learning in VLSI Chip Design – Gogul Ilango </title>
+  
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+  <link rel="stylesheet" href="https://use.typekit.net/mry7nes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Applying Machine Learning in VLSI Chip Design" />
+    <meta name="description" content="Collection of research papers, books, articles and courses that solve challenging hardware VLSI chip design problems using Machine Learning." />
+    <meta property="og:description" content="Collection of research papers, books, articles and courses that solve challenging hardware VLSI chip design problems using Machine Learning." />
+    <meta property="twitter:title" content="Applying Machine Learning in VLSI Chip Design" />
+
+    <meta property="og:image" content="https://drive.google.com/uc?id=1gubFOinfey2qN7OrHbsGkbQBlvJeQpFg"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Applying Machine Learning in VLSI Chip Design">
+    <meta name="twitter:description" content="Collection of research papers, books, articles and courses that solve challenging hardware VLSI chip design problems using Machine Learning.">
+    <meta name="twitter:image" content="https://drive.google.com/uc?id=1gubFOinfey2qN7OrHbsGkbQBlvJeQpFg">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Applying Machine Learning in VLSI Chip Design | Gogul Ilango</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Applying Machine Learning in VLSI Chip Design" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Collection of research papers, books, articles and courses that solve challenging hardware VLSI chip design problems using Machine Learning." />
+<meta property="og:description" content="Collection of research papers, books, articles and courses that solve challenging hardware VLSI chip design problems using Machine Learning." />
+<link rel="canonical" href="http://localhost:4000/hardware/research-papers-vlsi-ml" />
+<meta property="og:url" content="http://localhost:4000/hardware/research-papers-vlsi-ml" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1gubFOinfey2qN7OrHbsGkbQBlvJeQpFg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-04-17T00:00:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://drive.google.com/uc?id=1gubFOinfey2qN7OrHbsGkbQBlvJeQpFg" />
+<meta property="twitter:title" content="Applying Machine Learning in VLSI Chip Design" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gogul Ilango"},"dateModified":"2018-04-17T00:00:00+05:30","datePublished":"2018-04-17T00:00:00+05:30","description":"Collection of research papers, books, articles and courses that solve challenging hardware VLSI chip design problems using Machine Learning.","headline":"Applying Machine Learning in VLSI Chip Design","image":"https://drive.google.com/uc?id=1gubFOinfey2qN7OrHbsGkbQBlvJeQpFg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/hardware/research-papers-vlsi-ml"},"url":"http://localhost:4000/hardware/research-papers-vlsi-ml"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#000" />
+    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog is a personal space of Gogul Ilango who writes about technology, music production, programming and travel." href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"><span>home</span></a>
+            <a title="music" id = "nav_music" href="https://www.youtube.com/gogulilangomusic" target="_blank"><span>music</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="readtime-progress" id="readtime-progress"></div>
+
+<div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>Applying Machine Learning in VLSI Chip Design</h1>
+		<div class="post-subheading">
+			<p>ASIC Design | 17 April 2018</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/hardware/research-papers-vlsi-ml"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/hardware/research-papers-vlsi-ml" data-action="share/whatsapp/share"><img class="icon-whatsapp" src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/research-papers-vlsi-ml" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-facebook" src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=Applying Machine Learning in VLSI Chip Design&url=http://localhost:4000/hardware/research-papers-vlsi-ml" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img class="icon-twitter" src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/research-papers-vlsi-ml&title=Applying Machine Learning in VLSI Chip Design&summary=Collection of research papers, books, articles and courses that solve challenging hardware VLSI chip design problems using Machine Learning.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-linkedin" src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/hardware/research-papers-vlsi-ml" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/hardware/research-papers-vlsi-ml" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Applying Machine Learning in VLSI Chip Design&url=http://localhost:4000/hardware/research-papers-vlsi-ml" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/hardware/research-papers-vlsi-ml&title=Applying Machine Learning in VLSI Chip Design&summary=Collection of research papers, books, articles and courses that solve challenging hardware VLSI chip design problems using Machine Learning.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#caeml-research-topics">CAEML Research Topics</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#books">Books</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#books">Reinforcement Learning</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#general">General</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#timing">Timing</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#macro-placement">Macro Placement</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#placement">Placement</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#routing">Routing</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#power">Power</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#hardware-implementation">Hardware Implementation</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#fpga">FPGA</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_12" href="#caeml">CAEML</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_13" href="#courses">Courses</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_14" href="#labs">Labs</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_15" href="#conferences">Conferences</a></li>
+  </ul>
+</div>
+
+<p>This blog post contains a collection of research papers, books, labs, conferences and additional resources that solve problems related to Advanced VLSI (Chip) Logic Design, Physical Design, Synthesis and Verification using Machine Learning and Deep Learning. Feel free to add a paper or an article related to this domain by commenting below so that I will include it here 😊</p>
+
+<div class="box-highlight">
+  <h3 id="caeml-research-topics"><a href="https://publish.illinois.edu/advancedelectronics/" target="_blank">CAEML</a> Research Topics</h3>
+  
+  <ul>
+    
+    <li><a href="https://publish.illinois.edu/advancedelectronics/modular-machine-learning-for-behavioral-modeling-of-microelectronic-circuits-and-systems/" target="_blank">Modular Machine Learning for Behavioral Modeling of Microelectronic Circuits and Systems</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/behavioral-model-development-for-high-speed-links/" target="_blank">Behavioral Model Development for High-Speed Links</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/design-rule-checking-with-deep-networks/" target="_blank">Design Rule Checking with Deep Networks</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/optimization-of-power-delivery-networks-for-maximizing-signal-integrity/" target="_blank">Optimization of Power Delivery Networks for Maximizing Signal Integrity</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/intellectual-property-reuse-through-machine-learning/" target="_blank">Intellectual Property Reuse Through Machine Learning</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/models-to-enable-system-level-electrostatic-discharge-analysis/" target="_blank">Models to Enable System-level Electrostatic Discharge Analysis</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/applying-machine-learning-to-back-end-ic-design/" target="_blank">Applying Machine Learning to Back End IC Design</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/models-to-enable-system-level-electrostatic-discharge-analysis/" target="_blank">Models to Enable System-level Electrostatic Discharge Analysis</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/causal-inference-for-early-detection-of-hardware-failure/" target="_blank">Causal Inference for Early Detection of Hardware Failure</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/nl2ppa-netlist%E2%80%90to%E2%80%90ppa-prediction-using-machine-learning/" target="_blank">NL2PPA: Netlist‐to‐PPA Prediction Using Machine Learning</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/fast-accurate-ppa-model%E2%80%90extraction/" target="_blank">Fast, Accurate PPA Model‐Extraction</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/design-space-exploration-using-dnn/" target="_blank">Design Space Exploration Using DNN</a></li>
+
+    <li><a href="https://publish.illinois.edu/advancedelectronics/high-speed-bus-physical-design-analysis-through-machine-learning/" target="_blank">High-Speed Bus Physical Design Analysis through Machine Learning</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="books">Books</h3>
+
+  <ul>
+
+    <li><a href="https://www.springer.com/us/book/9783030046651" target="_blank">Machine Learning in VLSI Computer-Aided Design</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="general">Reinforcement Learning</h3>
+
+  <ul>
+
+    <li><a href="https://ai.googleblog.com/2020/04/chip-design-with-deep-reinforcement.html" target="_blank">Chip Design with Deep Reinforcement Learning</a></li>
+
+    <li><a href="https://arxiv.org/abs/2004.10746" target="_blank">Chip Placement with Deep Reinforcement Learning</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="general">General</h3>
+
+  <ul>
+
+    <li><a href="https://vlsicad.ucsd.edu/Publications/Conferences/356/c356.pdf" target="_blank">Machine Learning Applications in Physical Design: Recent Results and Directions</a></li>
+
+    <li><a href="http://www.cse.cuhk.edu.hk/~byu/papers/C63-SOCC2017-ML.pdf" target="_blank">Accelerating chip design with machine learning: From pre-silicon to post-silicon</a></li>
+
+    <li><a href="https://woset-workshop.github.io/PDFs/a21.pdf" target="_blank">METRICS 2.0: A Machine-Learning Based Optimization System for IC Design</a></li>
+
+    <li><a href="https://vlsicad.ucsd.edu/Publications/Conferences/352/c352.pdf" target="_blank">New Directions for Learning-Based IC Design Tools and Methodologies</a></li>
+
+    <li><a href="https://ieeexplore.ieee.org/document/709400/" target="_blank">Machine learning-based VLSI cells shape function estimation</a></li>
+
+    <li><a href="https://cloudfront.escholarship.org/dist/prd/content/qt59z0584c/qt59z0584c.pdf" target="_blank">Improved Physical Design and Signoff Methodologies for Better Integrated Circuit Design Quality</a></li>
+
+    <li><a href="https://ieeexplore.ieee.org/document/7835438/" target="_blank">Machine learning in physical design</a></li>
+
+    <li><a href="https://ieeexplore.ieee.org/document/7059020/" target="_blank">Machine learning and pattern matching in physical design</a></li>
+    
+    <li><a href="https://pdfs.semanticscholar.org/e78d/a5cd108f6f469067f94ed7c63a11daec1bf4.pdf" target="_blank">The impact of AI technology on VLSI design </a></li>
+
+    <li><a href="http://cc.ee.ntu.edu.tw/~ywchang/Courses/PD/unit1p2.pdf" target="_blank">Physical Design for Nanometer ICs</a></li>
+
+    <li><a href="http://www.gtcad.gatech.edu/www/papers/sandeep-jicce-2017.pdf" target="_blank">Machine Learning Based Variation Modeling and Optimization for 3D ICs</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="timing">Timing</h3>
+
+  <ul>
+    <li><a href="https://vlsicad.ucsd.edu/Publications/Conferences/361/c361.pdf" target="_blank">Using Machine Learning to Predict Path-Based Slack from Graph-Based Timing Analysis</a></li>
+
+    <li><a href="https://ieeexplore.ieee.org/document/7171706/" target="_blank">SI for free: machine learning of interconnect coupling delay and transition effects</a></li>
+
+    <li><a href="https://ieeexplore.ieee.org/document/8060438/" target="_blank">LSTA: Learning-based static timing analysis for high-dimensional correlated on-chip variations</a></li>
+
+    <li><a href="https://www.date-conference.com/date16/files/proceedings/2014/pdffiles/09.7_4.pdf" target="_blank">A Deep Learning Methodology to Proliferate Golden Signoff Timing</a></li>
+
+    <li><a href="https://vlsicad.ucsd.edu/Publications/Conferences/299/c299.pdf" target="_blank">Learning-Based Approximation of Interconnect Delay and Slew in Signoff Timing Tools</a></li>
+
+    <li><a href="https://dl.acm.org/citation.cfm?id=2717771" target="_blank">Accelerated Path-Based Timing Analysis with MapReduce</a></li>
+
+    <li><a href="http://mesl.ucsd.edu/site/pubs/Xun_DATE17a.pdf" target="_blank">SLoT: A Supervised Learning Model to Predict Dynamic Timing Errors of Functional Units</a></li>
+
+    <li><a href="http://www.tauworkshop.com/2018/slides/TAU18_ML_panel.pdf" target="_blank">Machine Learning: Confluence with Timing/EDA</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="macro-placement">Macro Placement</h3>
+
+  <ul>
+    <li><a href="https://patents.google.com/patent/US9147032" target="_blank">Machine Learning based Datapath Extraction</a></li>
+    
+    <li><a href="https://research.nvidia.com/publication/2019-03_Routability-Driven-Macro-Placement" target="_blank">Routability-Driven Macro Placement with Embedded CNN-Based Prediction Model</a></li>
+
+    <li><a href="https://arxiv.org/ftp/arxiv/papers/1801/1801.02620.pdf" target="_blank">A Machine Learning Framework for Register Placement Optimization in Digital Circuit Design</a></li>
+
+    <li><a href="http://www.sersc.org/journals/IJHIT/vol9_no1_2016/24.pdf" target="_blank">A Study of Floorplanning Challenges and Analysis of macro placement approaches in Physical Aware Synthesis</a></li>
+
+
+    <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.868.8981&amp;rep=rep1&amp;type=pdf" target="_blank">A Genetic Algorithm for Macro Cell Placement</a></li>
+
+
+    <li><a href="https://dl.acm.org/citation.cfm?id=2593206" target="_blank">Routability-Driven Blockage-Aware Macro Placement</a></li>
+
+
+    <li><a href="https://www.sciencedirect.com/science/article/pii/016792609190042J" target="_blank">Macro-cell and module placement by genetic adaptive search with bitmap-represented chromosome</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="placement">Placement</h3>
+
+  <ul>
+
+    <li><a href="https://research.nvidia.com/publication/2019-06_DREAMPlace%3A-Deep-Learning" target="_blank">DREAMPlace: Deep Learning Toolkit-Enabled GPU Acceleration for Modern VLSI Placement</a> - [<a href="https://github.com/limbo018/DREAMPlace" target="_blank">Github</a>]</li>
+
+    <li><a href="https://web.eecs.umich.edu/~imarkov/pubs/conf/iccad12-procha.pdf" target="_blank">Progress and Challenges in VLSI Placement Research</a></li>
+
+    <li><a href="https://ieeexplore.ieee.org/document/8373272" target="_blank">A learning-based methodology for routability prediction in placement</a></li>
+
+    <li><a href="https://ieeexplore.ieee.org/document/7939657" target="_blank">Detailed routing violation prediction during placement using machine learning</a></li>
+
+    <li><a href="https://arxiv.org/pdf/1811.04151.pdf" target="_blank">Design Rule Violation Hotspot Prediction Based on Neural Network Ensembles</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="routing">Routing</h3>
+
+  <ul>
+
+  	<li><a href="https://research.nvidia.com/publication/2018-11_RouteNet%3A-routability-prediction" target="_blank">RouteNet: routability prediction for mixed-size designs using convolutional neural network</a></li>
+
+    <li><a href="https://arxiv.org/pdf/1811.04151.pdf" target="_blank">Design Rule Violation Hotspot Prediction Based on Neural Network Ensembles</a></li>
+
+    <li><a href="https://research.nvidia.com/sites/default/files/pubs/2018-11_RouteNet%3A-routability-prediction/a80-xie.pdf" target="_blank">RouteNet: Routability Prediction for Mixed-Size Designs Using Convolutional Neural Network</a></li>
+
+    <li><a href="https://arxiv.org/pdf/1706.08948.pdf" target="_blank">Training a Fully Convolutional Neural Network to Route Integrated Circuits</a></li>
+
+    <li><a href="http://cwcserv.ucsd.edu/~billlin/recent/esl10_power.pdf" target="_blank">Accurate Machine-Learning-Based On-Chip Router Modeling</a></li>
+
+    <li><a href="https://vlsicad.ucsd.edu/Publications/Conferences/348/c348.pdf" target="_blank">Routability Optimization for Industrial Designs at Sub-14nm Process Nodes Using Machine Learning</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="power">Power</h3>
+
+  <ul>
+
+  	<li><a href="https://research.nvidia.com/publication/2019-06_PRIMAL%3A-Power-Inference" target="_blank">PRIMAL: Power Inference using Machine Learning</a></li>
+
+    <li><a href="https://vlsicad.ucsd.edu/Publications/Conferences/338/c338.pdf" target="_blank">Learning-Based Prediction of Embedded Memory Timing Failures During Initial Floorplan Design</a></li>
+
+    <li><a href="https://ieeexplore.ieee.org/document/8297359/" target="_blank">Machine learning based generic violation waiver system with application on electromigration sign-off</a></li>
+
+    <li><a href="https://ieeexplore.ieee.org/document/8368657/" target="_blank">IR drop prediction of ECO-revised circuits using machine learning</a></li>
+
+    <li><a href="https://dl.acm.org/citation.cfm?id=3240823" target="_blank">Machine-learning-based dynamic IR drop prediction for ECO</a></li>
+
+    <li><a href="https://tel.archives-ouvertes.fr/tel-00998547/document" target="_blank">Modelling and Simulation of the IR-Drop phenomenon in integrated circuits</a></li><li><a href="https://digital-library.theiet.org/content/journals/10.1049/iet-cdt.2016.0032" target="_blank">PSN-aware circuit test timing prediction using machine learning</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="hardware-implementation">Hardware Implementation</h3>
+
+  <ul>
+    <li><a href="https://ieeexplore.ieee.org/document/7470473/" target="_blank">VLSI Extreme Learning Machine: A Design Space Exploration</a></li>
+    <li><a href="https://ieeexplore.ieee.org/document/7839313/" target="_blank">VLSI Implementation of Deep Neural Network Using Integral Stochastic Computing</a></li>
+    <li><a href="http://trace.tennessee.edu/cgi/viewcontent.cgi?article=4023&amp;context=utk_graddiss" target="_blank">An Analog VLSI Deep Machine Learning
+  Implementation</a></li>
+    <li><a href="https://stacks.stanford.edu/file/druid:qf934gh3708/EFFICIENT%20METHODS%20AND%20HARDWARE%20FOR%20DEEP%20LEARNING-augmented.pdf">Efficient Methods and Hardware for Deep Learning</a></li>
+    <li><a href="https://arxiv.org/pdf/1712.01887.pdf">Deep Gradient Compression: Reducing the Compression Bandwidth for Distributed Training</a></li>
+    <li><a href="https://ieeexplore.ieee.org/document/7939671/">Energy efficient VLSI circuits for machine learning on-chip</a></li>
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="fpga">FPGA</h3>
+
+  <ul>
+    
+    <li><a href="http://www.cse.iitm.ac.in/~ravi/papers/3drlCamera.pdf" target="_blank">Placement and Routing for 3D-FPGAs using Reinforcement Learning and Support Vector Machines</a></li>
+
+    <li><a href="https://fpga.socs.uoguelph.ca/file/3Ep7kp0m34vA9q3B2aTy5W.pdf" target="_blank">Machine-Learning Based Congestion Estimation for Modern FPGAs</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="caeml">CAEML</h3>
+  <ul>
+    <li><a href="https://publish.illinois.edu/advancedelectronics/" target="_blank">CAEML website</a></li>
+
+    <li><a href="http://publish.illinois.edu/advancedelectronics/files/2017/10/Franzon.pdf" target="_blank">Machine Learning for Next Generation EDA</a></li>
+
+    <li><a href="http://publish.illinois.edu/advancedelectronics/files/2017/10/Intro-Rosenbaum.pdf" target="_blank">Machine Learning for Hardware Design</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="courses">Courses</h3>
+
+  <ul>
+
+    <li><a href="https://www.udemy.com/vsd-machine-intelligence-in-eda-cad/" target="_blank">VSD - Machine Intelligence in EDA/CAD</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="labs">Labs</h3>
+
+  <ul>
+
+    <li><a href="https://www.ece.ucsb.edu/vlsicad/" target="_blank">VLSI CAD Lab</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+  <h3 id="conferences">Conferences</h3>
+
+  <ul>
+
+    <li><a href="https://www.dac.com/content/machine-learningai" target="_blank">Design Automation Conference - Machine Learning/AI</a></li>
+
+  </ul>
+</div>
+
+<div class="box-highlight">
+	<h3 id="resources">Resources</h3>
+	<p>If you wish to learn how to build a chip, I have collected these resources for you!</p>
+	<ul>
+		<li><a href="https://gogul.dev/asic-design" target="blank">ASIC Design</a></li>
+		<li><a href="https://gogul.dev/hardware/vlsi-design" target="blank">VLSI Design resources</a></li>
+		<li><a href="https://gogul.dev/hardware/physical-design" target="blank">Physical Design resources</a></li>
+	</ul>
+</div>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/hardware/research-papers-vlsi-ml"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function () {
+				  this.page.url = 'http://localhost:4000/hardware/research-papers-vlsi-ml';
+				  this.page.identifier = 'http://localhost:4000/hardware/research-papers-vlsi-ml';
+				};
+
+				(function() {
+				  var d = document, s = d.createElement('script');
+				  s.src = 'https://gogul09.disqus.com/embed.js';
+				  s.setAttribute('data-timestamp', +new Date());
+				  (d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+
+<script type="text/javascript" src="/js/readtime.js"></script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2024 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/hardware/research-papers-vlsi-ml',
+		  'title': 'Applying Machine Learning in VLSI Chip Design'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+   </body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creating Intelligent Music Applications in the Browser – Gogul Ilango </title>
+  
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+  <link rel="stylesheet" href="https://use.typekit.net/mry7nes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Creating Intelligent Music Applications in the Browser" />
+    <meta name="description" content="Let's learn and understand Google's TensorFlow.js and Magenta.js to create AI music applications in the browser." />
+    <meta property="og:description" content="Let's learn and understand Google's TensorFlow.js and Magenta.js to create AI music applications in the browser." />
+    <meta property="twitter:title" content="Creating Intelligent Music Applications in the Browser" />
+
+    <meta property="og:image" content="https://drive.google.com/uc?id=1r1XBlHVK8lJk8CvyEmF-W9fSobKWf_ww"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Creating Intelligent Music Applications in the Browser">
+    <meta name="twitter:description" content="Let's learn and understand Google's TensorFlow.js and Magenta.js to create AI music applications in the browser.">
+    <meta name="twitter:image" content="https://drive.google.com/uc?id=1r1XBlHVK8lJk8CvyEmF-W9fSobKWf_ww">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Creating Intelligent Music Applications in the Browser | Gogul Ilango</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Creating Intelligent Music Applications in the Browser" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Let’s learn and understand Google’s TensorFlow.js and Magenta.js to create AI music applications in the browser." />
+<meta property="og:description" content="Let’s learn and understand Google’s TensorFlow.js and Magenta.js to create AI music applications in the browser." />
+<link rel="canonical" href="http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser" />
+<meta property="og:url" content="http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1r1XBlHVK8lJk8CvyEmF-W9fSobKWf_ww" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-24T00:00:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://drive.google.com/uc?id=1r1XBlHVK8lJk8CvyEmF-W9fSobKWf_ww" />
+<meta property="twitter:title" content="Creating Intelligent Music Applications in the Browser" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gogul Ilango"},"dateModified":"2018-12-24T00:00:00+05:30","datePublished":"2018-12-24T00:00:00+05:30","description":"Let’s learn and understand Google’s TensorFlow.js and Magenta.js to create AI music applications in the browser.","headline":"Creating Intelligent Music Applications in the Browser","image":"https://drive.google.com/uc?id=1r1XBlHVK8lJk8CvyEmF-W9fSobKWf_ww","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser"},"url":"http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#000" />
+    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog is a personal space of Gogul Ilango who writes about technology, music production, programming and travel." href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"><span>home</span></a>
+            <a title="music" id = "nav_music" href="https://www.youtube.com/gogulilangomusic" target="_blank"><span>music</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="readtime-progress" id="readtime-progress"></div>
+
+<div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>Creating Intelligent Music Applications in the Browser</h1>
+		<div class="post-subheading">
+			<p>Deep Learning | 24 December 2018</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/creating-intelligent-music-applications-in-the-browser"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser" data-action="share/whatsapp/share"><img class="icon-whatsapp" src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-facebook" src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=Creating Intelligent Music Applications in the Browser&url=http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img class="icon-twitter" src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser&title=Creating Intelligent Music Applications in the Browser&summary=Let's learn and understand Google's TensorFlow.js and Magenta.js to create AI music applications in the browser.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-linkedin" src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Creating Intelligent Music Applications in the Browser&url=http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser&title=Creating Intelligent Music Applications in the Browser&summary=Let's learn and understand Google's TensorFlow.js and Magenta.js to create AI music applications in the browser.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="git-showcase">
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
+  </div>
+
+  <div>
+	<a class="github-button" href="https://github.com/Gogul09/deep-drum/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Gogul09/deep-drum on GitHub">Fork</a>
+  </div>
+
+  <div>
+	<a class="github-button" href="https://github.com/Gogul09/deep-drum" data-icon="octicon-star" data-show-count="true" aria-label="Star Gogul09/deep-drum on GitHub">Star</a>
+  </div>  
+</div>
+
+<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#why-music-and-ml">Why Music and ML?</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#why-browser-for-ml">Why browser for ML?</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#using-magentas-pre-trained-models">Using Magenta's Pre-trained Models</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#generating-drum-patterns-using-drumsrnn">Generating Drum Patterns using DrumsRNN</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#cool-demos">Cool Demos</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#resources">Resources</a></li>
+  </ul>
+</div>
+
+<p>After the introduction of Google’s <a href="https://js.tensorflow.org/" target="_blank">TensorFlow.js</a>, it has become a lot easier to make use of browser (client-side) to do Deep learning. There are handy approaches (as discussed <a href="https://js.tensorflow.org/tutorials/import-keras.html" target="_blank">here</a>) on deploying deep learning models using <a href="https://keras.io/" target="_blank">Keras</a> and TensorFlow.js.</p>
+
+<div class="note">
+	<p><b>Note</b>: To learn more about TensorFlow.js and its applications, kindly visit this <a href="https://github.com/tensorflow/tfjs/blob/master/GALLERY.md" target="_blank">link</a>.</p>
+</div>
+
+<h3 id="why-music-and-ml">Why Music and ML?</h3>
+
+<p>Music generation has already began to catch the eyes of machine learning devs and there are numerous projects that are getting pushed in <a href="https://github.com/search?q=music+generation" target="_blank">GitHub</a> every week. Although there exist a barrier between AI Researchers and AI Developers such as complex mathematics that involve derivations and jargons, there is still hope for an AI enthusiast to use code and some music knowledge to create exciting applications that was a dream few years back.</p>
+
+<p>Leveraging the capabilities of TensorFlow.js, we now have Google’s <a href="https://magenta.tensorflow.org/" target="_blank">Magenta.js</a> using which any developer with knowledge on javascript and music could create a music application that has intelligence built in to it.</p>
+
+<p>I loved the concept behind <a href="https://ai.google/research/teams/brain/magenta/" target="_blank">Google’s Magenta team</a>.</p>
+
+<blockquote>
+  <p>When a painter creates a work of art, she first blends and explores color options on an artist’s palette before applying them to the canvas. This process is a creative act in its own right and has a profound effect on the final work. Musicians and composers have mostly lacked a similar device for exploring and mixing musical ideas, but we are hoping to change that - <a href="https://magenta.tensorflow.org/music-vae" target="_blank">Read more</a></p>
+</blockquote>
+
+<h3 id="why-browser-for-ml">Why browser for ML?</h3>
+
+<p>Although one might feel that browsers are light-weight apps that wont handle data intensive algorithms such as deep neural networks, by leveraging the capabilities of <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank">WebGL</a> in browsers such as Google Chrome, we could create, train and deploy deep neural net models right in the browser itself without any server requests.</p>
+
+<p>Another advantage of using browser to create AI applications is that you could easily send your creations to your friends or family using nothing more than a simple link (as given below)!</p>
+
+<div class="note">
+	<a href="https://gogul09.github.io/software/deep-drum" target="_blank">https://gogul09.github.io/software/deep-drum</a>
+</div>
+
+<h3 id="using-magentas-pre-trained-models">Using Magenta's Pre-trained Models</h3>
+
+<p><a href="https://github.com/tensorflow/magenta-js" target="_blank">Magenta.js</a> is a javascript library that is built on top of TensorFlow.js which provides music-oriented abstractions for developers. Google’s <a href="https://magenta.tensorflow.org/" target="_blank">Magenta</a> Team research, create and train deep learning models such as Long-Short Term Memory nets (LSTMs), Variational Auto-Encoders (VAE) etc., for music generation, and serve those models as pre-trained models for an AI enthusiast like me to use it for free.</p>
+
+<p>By using a pre-trained magenta model, we could build creative music applications in the browser using deep learning. Some of the note-based music models that are provided by Magenta are MusicVAE, MelodyRNN, DrumsRNN and ImprovRNN. Using these pretrained models, we could use their <a href="https://github.com/tensorflow/magenta-js/" target="_blank">magenta.js</a> API to create cool music apps.</p>
+
+<div class="note">
+<p><b>Note</b>: The prerequisites for making an application using Magenta.js include knowledge on HTML, CSS and JavaScript.</p>
+</div>
+
+<h3 id="generating-drum-patterns-using-drumsrnn">Generating Drum Patterns using DrumsRNN</h3>
+
+<p>In this tutorial, I will show you how to create an intelligent music application that I call <a href="https://gogul.dev/software/deep-drum" target="_blank">DeepDrum &amp; DeepArp</a> using javascript and Google’s magenta.js in the browser. First, we will focus on generating drum patterns using magenta’s <a href="https://github.com/tensorflow/magenta/tree/master/magenta/models/drums_rnn" target="_blank">drums_rnn</a>. Similar approach is used to create arpeggio patterns using magenta’s <a href="https://github.com/tensorflow/magenta/tree/master/magenta/models/improv_rnn" target="_blank">improv_rnn</a>.</p>
+
+<figure>
+	<img src="https://drive.google.com/uc?id=1f4GHFHGhE7htiJ4adyFr2wYScjfvIU1A" />
+	<figcaption>DeepDrum &amp; DeepArp using Google Magenta's DrumsRnn &amp; ImprovRNN</figcaption>
+</figure>
+
+<p>The core algorithm behind these two models is the special type Recurrent Neural Network named Long-Short Term Memory network (LSTM). You can read more about the inner workings of an LSTM network in this excellent <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank">blog post</a> by Christopher Olah.</p>
+
+<h4 id="how-to-generate-drum-patterns">How to generate drum patterns</h4>
+
+<p><strong>Step 1</strong>: To include Magenta.js for your music application, you simply need to include the following script in your html <strong>head</strong> tag.</p>
+
+<div class="code-head"><span>code</span>index.html</div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/@magenta/music@1.4.2/dist/magentamusic.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Step 2</strong>: A pretrained magenta model can easily be loaded into a javascript environment using the <a href="https://github.com/tensorflow/magenta-js/blob/master/music/checkpoints/README.md" target="_blank">js-checkpoints</a> (that magenta team has made publicly available) which automatically loads the model along with config files in a single line of code.</p>
+
+<div class="code-head"><span>code</span>app.js</div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">drums_rnn</span> <span class="o">=</span> <span class="nx">mm</span><span class="p">.</span><span class="nc">MusicRNN</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://storage.googleapis.com/download.magenta.tensorflow.org/tfjs_checkpoints/music_rnn/drum_kit_rnn</span><span class="dl">"</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>There is a tradeoff between model package size and accuracy as inference of a pre-trained model is happening live in the browser (client-side).</p>
+
+<p><strong>Step 3</strong>: Next, we need to initialize the model to make use of its methods and attributes.</p>
+
+<div class="code-head"><span>code</span>app.js</div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">drums_rnn</span><span class="p">.</span><span class="nf">initialize</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Step 4</strong>: Our drum pattern generator will work like this - You provide some random input seed pattern first and the deep neural network (DrumsRNN) will generate (predict) the next sequence of patterns.</p>
+
+<p>Based on <a href="https://www.midi.org/specifications-old/item/gm-level-1-sound-set" target="_blank">General MIDI Level 1 Percussion Key Map</a>, we restrict our focus to have 9 individual drumkit instrument (as given below) to play the sequence generated by DrumsRNN.</p>
+
+<ol>
+  <li><span class="coding">kick</span></li>
+  <li><span class="coding">snare</span></li>
+  <li><span class="coding">hihat closed</span></li>
+  <li><span class="coding">hihat open</span></li>
+  <li><span class="coding">tom low</span></li>
+  <li><span class="coding">tom mid</span></li>
+  <li><span class="coding">tom high</span></li>
+  <li><span class="coding">clap</span></li>
+  <li><span class="coding">ride</span></li>
+</ol>
+
+<p>Hence, we define an array named <span class="coding">seed_pattern</span> to hold the <strong>ON</strong> time step of each instrument (in an array) at every time step.</p>
+
+<p>For example, I have initialized the <span class="coding">seed_pattern</span> as shown below. This means, for a <span class="coding">seed_limit</span> of 4 time steps, we assign the input pattern like this -</p>
+
+<ul>
+  <li><span class="coding">kick</span> should be <strong>ON</strong> at 1<sup>st</sup> and 3<sup>rd</sup> time step.</li>
+  <li><span class="coding">snare</span> shouldn’t be turned <strong>ON</strong> within <span class="coding">seed_limit</span>.</li>
+  <li><span class="coding">hihat closed</span> should be <strong>ON</strong> only at 3<sup>rd</sup> time step.</li>
+  <li>and so on..</li>
+</ul>
+
+<p>Notice we start first time step as 0 in code. Also notice, the position of each drumkit instrument in <span class="coding">seed_pattern</span> array. 0<sup>th</sup> position correspond to <span class="coding">kick</span>, 1<sup>st</sup> position correspond to <span class="coding">snare</span> and so on.</p>
+
+<div class="code-head"><span>code</span>app.js</div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">seed_pattern</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+	<span class="p">[],</span> 
+	<span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
+	<span class="p">[],</span> 
+	<span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
+	<span class="p">[],</span> 
+	<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+	<span class="p">[],</span> 
+	<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+	<span class="p">[]</span>
+<span class="p">];</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>With the input <span class="coding">seed_pattern</span> and <span class="coding">seed_limit</span> defined, we ask our <span class="coding">drums_rnn</span> to continue the sequence for us. Before doing that, we need to be aware of <a href="https://en.wikipedia.org/wiki/Quantization" target="_blank">quantization</a> of the input values as well as the generation limit <span class="coding">player_length</span>.</p>
+
+<p><strong>Step 5</strong>: To quantize the note sequence, we feed the input <span class="coding">seed_pattern</span> into a javascript object as shown below.</p>
+
+<div class="code-head"><span>code</span>app.js</div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">cur_seq</span> <span class="o">=</span> <span class="nf">drum_to_note_sequence</span><span class="p">(</span><span class="nx">seed_pattern</span><span class="p">);</span>
+
+<span class="c1">//---------------------------------</span>
+<span class="c1">// drum to note sequence formation</span>
+<span class="c1">//---------------------------------</span>
+<span class="kd">function</span> <span class="nf">drum_to_note_sequence</span><span class="p">(</span><span class="nx">quantize_tensor</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">notes_array</span> <span class="o">=</span> <span class="p">[];</span>
+	<span class="kd">var</span> <span class="nx">note_index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">quantize_tensor</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="kd">var</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">quantize_tensor</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">notes_array</span><span class="p">[</span><span class="nx">note_index</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span>
+				<span class="nx">notes_array</span><span class="p">[</span><span class="nx">note_index</span><span class="p">][</span><span class="dl">"</span><span class="s2">pitch</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">midiDrums</span><span class="p">[</span><span class="nx">notes</span><span class="p">[</span><span class="nx">j</span><span class="p">]];</span>
+				<span class="nx">notes_array</span><span class="p">[</span><span class="nx">note_index</span><span class="p">][</span><span class="dl">"</span><span class="s2">startTime</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">;</span>
+				<span class="nx">notes_array</span><span class="p">[</span><span class="nx">note_index</span><span class="p">][</span><span class="dl">"</span><span class="s2">endTime</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">;</span>
+				<span class="nx">note_index</span> <span class="o">=</span> <span class="nx">note_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="nx">mm</span><span class="p">.</span><span class="nx">sequences</span><span class="p">.</span><span class="nf">quantizeNoteSequence</span><span class="p">(</span>
+	  <span class="p">{</span>
+	    <span class="na">ticksPerQuarter</span><span class="p">:</span> <span class="mi">220</span><span class="p">,</span>
+	    <span class="na">totalTime</span><span class="p">:</span> <span class="nx">quantize_tensor</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+	    <span class="na">timeSignatures</span><span class="p">:</span> <span class="p">[</span>
+	      <span class="p">{</span>
+	        <span class="na">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+	        <span class="na">numerator</span><span class="p">:</span> <span class="nx">ts_num</span><span class="p">,</span>
+	        <span class="na">denominator</span><span class="p">:</span> <span class="nx">ts_den</span>
+	      <span class="p">}</span>
+	    <span class="p">],</span>
+	    <span class="na">tempos</span><span class="p">:</span> <span class="p">[</span>
+	      <span class="p">{</span>
+	        <span class="na">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+	        <span class="na">qpm</span><span class="p">:</span> <span class="nx">tempo</span>
+	      <span class="p">}</span>
+	    <span class="p">],</span>
+	    <span class="na">notes</span><span class="p">:</span> <span class="nx">notes_array</span>
+	   <span class="p">},</span>
+	  <span class="mi">1</span>
+	<span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The way I figured out what’s inside <span class="coding">mm.sequences.quantizeNoteSequence</span> is through the browser’s console and some help by looking at the code of few <a href="https://magenta.tensorflow.org/demos" target="_blank">demos</a> in Magenta’s website. Values like <span class="coding">timeSignatures</span>, <span class="coding">tempos</span> and <span class="coding">totalTime</span> need to be set according to one’s preferences. You could even assign these values dynamically.</p>
+
+<p>The main thing you need to take care here is the conversion of our input <span class="coding">seed_pattern</span> into musical quantization format that Magenta accepts which includes defining each drumkit instrument’s <span class="coding">pitch</span>, <span class="coding">startTime</span> and <span class="coding">endTime</span>.</p>
+
+<p><span class="coding">pitch</span> of a drumkit note is the MIDI value of that note which could be obtained from this <a href="https://github.com/Gogul09/deep-drum/blob/master/js/reverse_midi_map.js" target="_blank">mapping</a>. Remember we use the standard <a href="https://www.midi.org/specifications-old/item/gm-level-1-sound-set" target="_blank">General MIDI Level 1 Percussion Key Map</a>.</p>
+
+<p><span class="coding">startTime</span> and <span class="coding">endTime</span> are quantization values that defines the start and end time for a single note.</p>
+
+<p>For example, for our first time step, <span class="coding">kick</span> will have the following values.</p>
+<ul>
+  <li><span class="coding">pitch</span> - 36</li>
+  <li><span class="coding">startTime</span> - 0</li>
+  <li><span class="coding">endTime</span> - 0.5</li>
+</ul>
+
+<p><strong>Step 6</strong>: Once you have encoded the input <span class="coding">seed_pattern</span> to Magenta’s quantization format, you can ask <span class="coding">drums_rnn</span> to continue the sequence as shown below.</p>
+
+<div class="code-head"><span>code</span>app.js</div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">player_length</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">temperature_drum</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nx">predicted_sequence</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">drums_rnn</span>
+		<span class="p">.</span><span class="nf">continueSequence</span><span class="p">(</span><span class="nx">cur_seq</span><span class="p">,</span> <span class="nx">player_length</span><span class="p">,</span> <span class="nx">temperature_drum</span><span class="p">)</span>
+		<span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">r</span> <span class="o">=&gt;</span> <span class="nx">seed_pattern</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="nf">note_to_drum_sequence</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="nx">player_length</span><span class="p">)));</span>
+
+<span class="c1">//---------------------------------</span>
+<span class="c1">// note to drum sequence formation</span>
+<span class="c1">//---------------------------------</span>
+<span class="kd">function</span> <span class="nf">note_to_drum_sequence</span><span class="p">(</span><span class="nx">seq</span><span class="p">,</span> <span class="nx">pLength</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="p">[];</span>
+	<span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">pLength</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">empty_list</span> <span class="o">=</span> <span class="p">[];</span>
+		<span class="nx">res</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">empty_list</span><span class="p">);</span>
+	<span class="p">}</span>
+    <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="p">{</span> <span class="nx">pitch</span><span class="p">,</span> <span class="nx">quantizedStartStep</span> <span class="p">}</span> <span class="k">of</span> <span class="nx">seq</span><span class="p">.</span><span class="nx">notes</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">[</span><span class="nx">quantizedStartStep</span><span class="p">].</span><span class="nf">push</span><span class="p">(</span><span class="nx">reverseMidiMapping</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">pitch</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>First, we use <span class="coding">continueSequence()</span> function of <span class="coding">drums_rnn</span> to predict the next sequence values for all our drumkit instruments and store it in a variable named <span class="coding">predicted_sequence</span>.</p>
+
+<p>These predictions will be based on the same old magenta’s quantization format having MIDI-mapped pitch values, start time and end time. But when we need to convert the MIDI-mapped pitch values to real-time drumkit values, we use <span class="coding">reverseMidiMapping()</span> that is available <a href="https://github.com/Gogul09/deep-drum/blob/master/js/reverse_midi_map.js" target="_blank">here</a>. Notice how we map values from [35-81] range to [0-8].</p>
+
+<p>We define an array named <span class="coding">res</span> and store the predicted sequence values based on its <span class="coding">quantizedStartStep</span>. We then concatenate the predicted sequence with the input <span class="coding">seed_pattern</span> to generate a beat!</p>
+
+<h4>How to proceed from here?</h4>
+
+<p>These are the core steps involved in using Google Magenta’s pretrained model to generate sequences for music generation. You can use the same steps to generate arpeggio patterns using <a href="https://github.com/tensorflow/magenta/tree/master/magenta/models/improv_rnn" target="_blank">improv_rnn</a> pre-trained model.</p>
+
+<p>You can check the entire code that I have used to build this music application <a href="https://github.com/Gogul09/deep-drum" target="_blank">here</a>.</p>
+
+<div class="note">
+<p><b>Note</b>: If you still don't understand the steps mentioned here, I highly encourage you to do <span class="coding">console.log()</span> at each step of the code and understand the steps completely.</p>
+</div>
+
+<h3 id="cool-demos">Cool Demos</h3>
+
+<p>People working in this domain are musicians, artists, creative coders, programmers and researchers who have built extremely amazing demos that you can find <a href="https://magenta.tensorflow.org/demos" target="_blank">here</a> and <a href="https://aijs.rocks/" target="_blank">here</a>.</p>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li><a href="https://magenta.tensorflow.org/js-announce" target="_blank">Magenta.js</a></li>
+  <li><a href="https://github.com/tensorflow/tfjs/blob/master/GALLERY.md" target="_blank">TensorFlow.js Gallery</a></li>
+  <li><a href="https://www.youtube.com/watch?v=GJfjKdpmN6g" target="_blank">Music and AI in the Browser with TensorFlow js and Magenta js – Tero Parviainen</a></li>
+  <li><a href="https://www.youtube.com/watch?v=HKRJuz6o2uY" target="_blank">Musical Deep Neural Networks in the Browser by Tero Parviainen</a></li>
+  <li><a href="https://www.youtube.com/watch?v=FgoVL3A6RCo" target="_blank">AI JavaScript Rocks - Asim Hussain</a></li>
+</ul>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/creating-intelligent-music-applications-in-the-browser"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function () {
+				  this.page.url = 'http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser';
+				  this.page.identifier = 'http://localhost:4000/software/creating-intelligent-music-applications-in-the-browser';
+				};
+
+				(function() {
+				  var d = document, s = d.createElement('script');
+				  s.src = 'https://gogul09.disqus.com/embed.js';
+				  s.setAttribute('data-timestamp', +new Date());
+				  (d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+
+<script type="text/javascript" src="/js/readtime.js"></script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2024 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/creating-intelligent-music-applications-in-the-browser',
+		  'title': 'Creating Intelligent Music Applications in the Browser'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+   </body>
+</html>

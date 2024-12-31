@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Using Keras Pre-trained Deep Learning models for your own dataset – Gogul Ilango </title>
+  
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+  <link rel="stylesheet" href="https://use.typekit.net/mry7nes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Using Keras Pre-trained Deep Learning models for your own dataset" />
+    <meta name="description" content="Learn how to use state-of-the-art Deep Learning neural network architectures trained on ImageNet such as VGG16, VGG19, Inception-V3, Xception, ResNet50 for your own dataset with/without GPU acceleration." />
+    <meta property="og:description" content="Learn how to use state-of-the-art Deep Learning neural network architectures trained on ImageNet such as VGG16, VGG19, Inception-V3, Xception, ResNet50 for your own dataset with/without GPU acceleration." />
+    <meta property="twitter:title" content="Using Keras Pre-trained Deep Learning models for your own dataset" />
+
+    <meta property="og:image" content="https://drive.google.com/uc?id=1edu-wUoFkrMuoemONmOvsIMpnvkAdFXY"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Using Keras Pre-trained Deep Learning models for your own dataset">
+    <meta name="twitter:description" content="Learn how to use state-of-the-art Deep Learning neural network architectures trained on ImageNet such as VGG16, VGG19, Inception-V3, Xception, ResNet50 for your own dataset with/without GPU acceleration.">
+    <meta name="twitter:image" content="https://drive.google.com/uc?id=1edu-wUoFkrMuoemONmOvsIMpnvkAdFXY">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Using Keras Pre-trained Deep Learning models for your own dataset | Gogul Ilango</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Using Keras Pre-trained Deep Learning models for your own dataset" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Learn how to use state-of-the-art Deep Learning neural network architectures trained on ImageNet such as VGG16, VGG19, Inception-V3, Xception, ResNet50 for your own dataset with/without GPU acceleration." />
+<meta property="og:description" content="Learn how to use state-of-the-art Deep Learning neural network architectures trained on ImageNet such as VGG16, VGG19, Inception-V3, Xception, ResNet50 for your own dataset with/without GPU acceleration." />
+<link rel="canonical" href="http://localhost:4000/software/flower-recognition-deep-learning" />
+<meta property="og:url" content="http://localhost:4000/software/flower-recognition-deep-learning" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1edu-wUoFkrMuoemONmOvsIMpnvkAdFXY" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-03-20T00:00:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://drive.google.com/uc?id=1edu-wUoFkrMuoemONmOvsIMpnvkAdFXY" />
+<meta property="twitter:title" content="Using Keras Pre-trained Deep Learning models for your own dataset" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2017-03-20T00:00:00+05:30","datePublished":"2017-03-20T00:00:00+05:30","description":"Learn how to use state-of-the-art Deep Learning neural network architectures trained on ImageNet such as VGG16, VGG19, Inception-V3, Xception, ResNet50 for your own dataset with/without GPU acceleration.","headline":"Using Keras Pre-trained Deep Learning models for your own dataset","image":"https://drive.google.com/uc?id=1edu-wUoFkrMuoemONmOvsIMpnvkAdFXY","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/flower-recognition-deep-learning"},"url":"http://localhost:4000/software/flower-recognition-deep-learning"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#000" />
+    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog is a personal space of Gogul Ilango who writes about technology, music production, programming and travel." href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"><span>home</span></a>
+            <a title="music" id = "nav_music" href="https://www.youtube.com/gogulilangomusic" target="_blank"><span>music</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="readtime-progress" id="readtime-progress"></div>
+
+<div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>Using Keras Pre-trained Deep Learning models for your own dataset</h1>
+		<div class="post-subheading">
+			<p>Deep Learning | 20 March 2017</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/flower-recognition-deep-learning"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/software/flower-recognition-deep-learning" data-action="share/whatsapp/share"><img class="icon-whatsapp" src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/flower-recognition-deep-learning" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-facebook" src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=Using Keras Pre-trained Deep Learning models for your own dataset&url=http://localhost:4000/software/flower-recognition-deep-learning" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img class="icon-twitter" src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/flower-recognition-deep-learning&title=Using Keras Pre-trained Deep Learning models for your own dataset&summary=Learn how to use state-of-the-art Deep Learning neural network architectures trained on ImageNet such as VGG16, VGG19, Inception-V3, Xception, ResNet50 for your own dataset with/without GPU acceleration.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-linkedin" src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/flower-recognition-deep-learning" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/flower-recognition-deep-learning" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Using Keras Pre-trained Deep Learning models for your own dataset&url=http://localhost:4000/software/flower-recognition-deep-learning" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/flower-recognition-deep-learning&title=Using Keras Pre-trained Deep Learning models for your own dataset&summary=Learn how to use state-of-the-art Deep Learning neural network architectures trained on ImageNet such as VGG16, VGG19, Inception-V3, Xception, ResNet50 for your own dataset with/without GPU acceleration.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="git-showcase">
+  <div>
+  <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
+  </div>
+
+  <div>
+  <a class="github-button" href="https://github.com/Gogul09/flower-recognition/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Gogul09/flower-recognition on GitHub">Fork</a>
+  </div>
+
+  <div>
+  <a class="github-button" href="https://github.com/Gogul09/flower-recognition" data-icon="octicon-star" data-show-count="true" aria-label="Star Gogul09/flower-recognition on GitHub">Star</a>
+  </div>  
+</div>
+
+<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#beautiful-keras">Beautiful Keras</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#feature-extraction-using-convnets">Feature Extraction using ConvNets</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#keras-pre-trained-models">Keras Pre-trained models</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#gpu-acceleration">GPU Acceleration</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#dependencies">Dependencies</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#5-simple-steps-for-deep-learning">5 simple steps for Deep Learning</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#folder-structure">Folder Structure</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#training-dataset">Training Dataset</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#deep-learning-pipeline">Deep Learning Pipeline</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#show-me-the-numbers">Show me the numbers</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#testing-on-new-images">Testing on new images</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_12" href="#issues-and-workarounds">Issues and Workarounds</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_13" href="#references">References</a></li>
+  </ul>
+</div>
+
+<p class="intro-para">
+In this blog post, we will quickly understand how to use state-of-the-art Deep Learning models in <a href="https://keras.io/" target="_blank">Keras</a> to solve a supervised image classification problem using our own dataset with/without GPU acceleration.
+</p>
+
+<p>We will be using the pre-trained Deep Neural Nets trained on the ImageNet challenge that are made publicly available in Keras. We will specifically use <a href="http://www.robots.ox.ac.uk/~vgg/data/flowers/17/" target="_blank">FLOWERS17</a> dataset from the University of Oxford.</p>
+
+<p>The pre-trained models we will consider are VGG16, VGG19, Inception-v3, Xception, ResNet50, InceptionResNetv2 and MobileNet. Instead of creating and training deep neural nets from scratch (which takes time and involves many iterations), what if we use the pre-trained weights of these deep neural net architectures (trained on ImageNet dataset) and use it for our own dataset?</p>
+
+<p>Let’s start feature extraction using Deep Convolutional Neural Networks! What we will be making at the end of this tutorial is shown below.</p>
+
+<figure>
+  <img src="/images/software/pretrained-models/out.gif" />
+  <figcaption>Figure 1. Flower Species Recognition using Pretrained Deep Learning models.</figcaption>
+</figure>
+
+<div class="note">
+  <p><b>Update (16/12/2017):</b> After installing Anaconda with Python 3.6 to work with TensorFlow in Windows 10, I found two additional pretrained models added to Keras applications module - InceptionResNetV2 and MobileNet. I have updated my code accordingly to enable these models to work for our own dataset.
+  </p>
+</div>
+
+<div class="note">
+  <p><b>Update (10/06/2018)</b>: If you use <a href="https://github.com/keras-team/keras/releases" target="_blank">Keras 2.2.0</a> version, then you will not find the <span class="coding">applications</span> module inside keras installed directory. Keras has externalized the <span class="coding">applications</span> module to a separate directory called <a href="https://github.com/keras-team/keras-applications" target="_blank">keras_applications</a> from where all the pre-trained models will now get imported. To make changes to any &lt;pre-trained_model&gt;.py file, simply go to the below directory where you will find all the pre-trained models .py files.
+  </p>
+</div>
+
+<div class="note">
+  <p><b>Update (16/12/2017):</b> You could also see the new MobileNet architecture achieves the best accuracy compared to other architectures. In addition, I found that MobileNet uses DepthwiseConvolution layers and has lesser number of parameters, reduced weights size and depth. More details about this can be found at - <a href="https://arxiv.org/pdf/1704.04861.pdf" target="_blank">MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications</a>.
+  </p>
+</div>
+
+<h3 id="beautiful-keras">Beautiful Keras</h3>
+<p><a href="https://keras.io/" target="_blank">Keras</a> is an amazing library to quickly start Deep Learning for people entering into this field. Developed by François Chollet, it offers simple understandable functions and syntax to start building Deep Neural Nets right away instead of worrying too much on the programming part. Keras is a wrapper for Deep Learning libraries namely Theano and TensorFlow. I found the documentation and GitHub repo of Keras well maintained and easy to understand. If you know some technical details regarding Deep Neural Networks, then you will find the Keras documentation as the best place to learn.</p>
+
+<h3 id="feature-extraction-using-convnets">Feature Extraction using ConvNets</h3>
+<p>Traditional machine learning approach uses feature extraction for images using Global feature descriptors such as Local Binary Patterns (LBP), Histogram of Oriented Gradients (HoG), Color Histograms etc. or Local descriptors such as SIFT, SURF, ORB etc. These are hand-crafted features that requires domain level expertise.</p>
+
+<p>But here comes Convolutional Neural Networks (CNN)! Instead of using hand-crafted features, Deep Neural Nets automatically learns these features from images in a hierarchical fashion. Lower layers learn low-level features such as Corners, Edges whereas middle layers learn color, shape etc. and higher layers learn high-level features representing the object in the image.</p>
+
+<p>Instead of making a CNN as a model to classify images, what if we use it as a Feature Extractor by taking the activations available before the last fully connected layer of the network (i.e. <em>before</em> the final softmax classifier). These activations will be acting as the feature vector for a machine learning model (classifier) which further learns to classify it. This type of approach is well suited for Image Classification problems, where instead of training a CNN from scratch (which is time-consuming and tedious), a pre-trained CNN could be used as a Feature Extractor - <a href="http://cs231n.github.io/transfer-learning/" target="_blank">Transfer Learning</a>.</p>
+
+<h3 id="keras-pre-trained-models">Keras Pre-trained Models</h3>
+<p>The Deep Neural Net architectures that won the ImageNet challenge are made publicly available in Keras including the model weights. Please check <a href="https://keras.io/applications/" target="_blank">this</a> page for more details regarding each neural network architecture. Please be aware of the input <span class="coding">image_size</span> that are given to each model as we will be transforming our input images to these sizes. Below are the pre-trained models available in Keras at the time of writing this post.</p>
+
+<ul>
+  <li>Xception</li>
+  <li>VGG16</li>
+  <li>VGG19</li>
+  <li>ResNet50</li>
+  <li>InceptionV3</li>
+  <li>InceptionResNetV2</li>
+  <li>MobileNet</li>
+</ul>
+
+<p>The <a href="https://github.com/fchollet/keras/tree/master/keras/applications" target="_blank">applications</a> module of Keras provides all the necessary functions needed to use these pre-trained models right away.</p>
+
+<p>Below is the table that shows image size, weights size, top-1 accuracy, top-5 accuracy, no.of.parameters and depth of each deep neural net architecture available in Keras.</p>
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l">Model</th>
+    <th class="tg-yw4l">Image size</th>
+    <th class="tg-yw4l">Weights size</th>
+    <th class="tg-yw4l">Top-1 accuracy</th>
+    <th class="tg-yw4l">Top-5 accuracy</th>
+    <th class="tg-yw4l">Parameters</th>
+    <th class="tg-yw4l">Depth</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Xception</td>
+    <td class="tg-yw4l">299 x 299</td>
+    <td class="tg-yw4l">88 MB</td>
+    <td class="tg-yw4l">0.790</td>
+    <td class="tg-yw4l">0.945</td>
+    <td class="tg-yw4l">22,910,480</td>
+    <td class="tg-yw4l">126</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">VGG16</td>
+    <td class="tg-yw4l">224 x 224</td>
+    <td class="tg-yw4l">528 MB</td>
+    <td class="tg-yw4l">0.715</td>
+    <td class="tg-yw4l">0.901</td>
+    <td class="tg-yw4l">138,357,544</td>
+    <td class="tg-yw4l">23</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">VGG19</td>
+    <td class="tg-yw4l">224 x 224</td>
+    <td class="tg-yw4l">549 MB</td>
+    <td class="tg-yw4l">0.727</td>
+    <td class="tg-yw4l">0.910</td>
+    <td class="tg-yw4l">143,667,240</td>
+    <td class="tg-yw4l">26</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">ResNet50</td>
+    <td class="tg-yw4l">224 x 224 </td>
+    <td class="tg-yw4l">99 MB</td>
+    <td class="tg-yw4l">0.759</td>
+    <td class="tg-yw4l">0.929</td>
+    <td class="tg-yw4l">25,636,712</td>
+    <td class="tg-yw4l">168</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">InceptionV3</td>
+    <td class="tg-yw4l">299 x 299</td>
+    <td class="tg-yw4l">92 MB</td>
+    <td class="tg-yw4l">0.788</td>
+    <td class="tg-yw4l">0.944</td>
+    <td class="tg-yw4l">23,851,784</td>
+    <td class="tg-yw4l">159</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Inception<br />ResNetV2</td>
+    <td class="tg-yw4l">299 x 299</td>
+    <td class="tg-yw4l">215 MB</td>
+    <td class="tg-yw4l" style="font-weight: bold;">0.804</td>
+    <td class="tg-yw4l" style="font-weight: bold;">0.953</td>
+    <td class="tg-yw4l">55,873,736</td>
+    <td class="tg-yw4l">572</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">MobileNet</td>
+    <td class="tg-yw4l">224 x 224</td>
+    <td class="tg-yw4l" style="font-weight: bold;">17 MB</td>
+    <td class="tg-yw4l">0.665</td>
+    <td class="tg-yw4l">0.871</td>
+    <td class="tg-yw4l" style="font-weight: bold;">4,253,864</td>
+    <td class="tg-yw4l">88</td>
+  </tr>
+</table>
+
+<div class="note" style="margin-top: 20px;"><p>
+<b>Note:</b> All the above architectures can be created using either Theano or TensorFlow except <b>Xception</b> and <b>MobileNet</b> (as they depend on Separable Convolutions and Depthwise Convolutions which is available only in TensorFlow).</p>
+</div>
+
+<h3 id="gpu-acceleration">GPU acceleration</h3>
+<p>GPUs are the beasts when it comes to Deep Learning and no wonder if you enable GPU in your computer, you can speed up feature extraction as well as training process. Steps to activate GPU acceleration to train deep neural nets in Windows 10 are provided in my <a href="https://gogul09.github.io/software/deep-learning-windows" target="_blank">blog post</a>.</p>
+
+<h3 id="dependencies">Dependencies</h3>
+<p>You will need the following Python packages to run the code provided in this tutorial.</p>
+
+<ul>
+  <li>Theano or TensorFlow</li>
+  <li>Keras</li>
+  <li>NumPy</li>
+  <li>scikit-learn</li>
+  <li>matplotlib</li>
+  <li>seaborn</li>
+  <li>h5py</li>
+</ul>
+
+<div class="note" style="margin-bottom: 0px !important">
+  <p><b>Note</b>: If you don't have an environment to do Deep Learning in Windows or Linux, please make sure you use the below two links to do that and then follow on.</p>
+  <ul style="margin-bottom: 0px !important">
+    <li><a href="https://gogul09.github.io/software/deep-learning-windows" target="_blank">Deep Learning Environment Setup (Windows)</a></li>
+    <li><a href="https://gogul09.github.io/software/deep-learning-linux" target="_blank">Deep Learning Environment Setup for (Linux)</a></li>
+  </ul>
+</div>
+
+<h3 id="5-simple-steps-for-deep-learning">5 simple steps for Deep Learning</h3>
+
+<ol>
+  <li>Prepare the training dataset with flower images and its corresponding labels.</li>
+  <li>Specify your own configurations in <span class="coding">conf.json</span> file.</li>
+  <li>Extract and store features from the last fully connected layers (or intermediate layers) of a pre-trained Deep Neural Net (CNN) using <span class="coding">extract_features.py</span>.</li>
+  <li>Train a Machine Learning model such as Logisitic Regression using these CNN extracted features and labels using <span class="coding">train.py</span>.</li>
+  <li>Evaluate the trained model on unseen data and make further optimizations if necessary.</li>
+</ol>
+
+<h3 id="folder-structure">Folder structure</h3>
+
+<div class="code-head"><span>rule</span>flower recognition</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+</pre></td><td class="rouge-code"><pre><span class="o">|--</span><span class="n">flower_recognition</span>
+<span class="o">|--|--</span><span class="n">conf</span>
+<span class="o">|--|--|--</span><span class="n">conf</span><span class="p">.</span><span class="n">json</span>
+<span class="o">|--|--</span><span class="n">dataset</span>
+<span class="o">|--|--|--</span><span class="n">train</span>
+<span class="o">|--|--|--</span><span class="n">test</span>
+<span class="o">|--|--</span><span class="n">output</span>
+<span class="o">|--|--|--</span><span class="n">flower_17</span>
+<span class="o">|--|--|--|--</span><span class="n">inceptionv3</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--</span><span class="n">vgg16</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--</span><span class="n">vgg19</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--</span><span class="n">resnet50</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--</span><span class="n">xception</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--</span><span class="n">inceptionresnetv2</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
+<span class="o">|--|--|--|--</span><span class="n">mobilenet</span>
+<span class="o">|--|--|--|--|--</span><span class="n">classifier</span><span class="p">.</span><span class="n">cPickle</span>
+<span class="o">|--|--|--|--|--</span><span class="n">labels</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">features</span><span class="p">.</span><span class="n">h5</span>
+<span class="o">|--|--|--|--|--</span><span class="n">results</span><span class="p">.</span><span class="n">txt</span>
+<span class="o">|--|--</span><span class="n">extract_features</span><span class="p">.</span><span class="n">py</span>
+<span class="o">|--|--</span><span class="n">train</span><span class="p">.</span><span class="n">py</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="training-dataset">Training dataset</h3>
+
+<p>Download the FLOWER17 dataset from <a href="http://www.robots.ox.ac.uk/~vgg/data/flowers/17/" target="_blank">this</a> website. Unzip the file and you will see all the 1360 images listed in one single folder named <strong>*.jpg</strong>. The FLOWERS17 dataset has 1360 images of 17 flower species classes with 80 images per class.</p>
+
+<p>To build our training dataset, we need to create a master folder named <strong>dataset</strong>, inside which we need to create two more folders namely <strong>train</strong> and <strong>test</strong>. Inside <strong>train</strong> folder, we need to create 17 folders corresponding to the flower species labels.</p>
+
+<p>To automate this task, I have a <a href="https://github.com/Gogul09/flower-recognition/blob/master/organize_flowers17.py" target="_blank">script</a> that takes in input path that has all the 1360 images and dumps 17 folders inside <strong>train</strong> folder. In those 17 folders, each folder will be having 80 flower images belonging to that folder name. Below is the screenshot of how to organize our training dataset as well as the output folder to store features, labels, results and classifier.</p>
+
+<figure>
+  <img src="/images/software/pretrained-models/organize-dataset.png" />
+  <figcaption>Figure 2. Organizing FLOWER17 Training Dataset</figcaption>
+</figure>
+
+<p>Script to organize training dataset is given below. Please be aware of the <span class="coding">input_path</span> and <span class="coding">output_path</span> that you give to create folders and store the images.</p>
+
+<div class="code-head"><span>code</span>organize_flowers17.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+</pre></td><td class="rouge-code"><pre><span class="c1"># organize imports
+</span><span class="kn">import</span> <span class="n">os</span>
+<span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># print start time
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] program started on - </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">))</span>
+
+<span class="c1"># get the input and output path
+</span><span class="n">input_path</span>  <span class="o">=</span> <span class="sh">"</span><span class="s">G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">machine-intelligence</span><span class="se">\\</span><span class="s">deep-learning</span><span class="se">\\</span><span class="s">flower-recognition</span><span class="se">\\</span><span class="s">17flowers</span><span class="se">\\</span><span class="s">jpg</span><span class="sh">"</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="sh">"</span><span class="s">G:</span><span class="se">\\</span><span class="s">workspace</span><span class="se">\\</span><span class="s">machine-intelligence</span><span class="se">\\</span><span class="s">deep-learning</span><span class="se">\\</span><span class="s">flower-recognition</span><span class="se">\\</span><span class="s">dataset</span><span class="se">\\</span><span class="s">train</span><span class="sh">"</span>
+
+<span class="c1"># get the class label limit
+</span><span class="n">class_limit</span> <span class="o">=</span> <span class="mi">17</span>
+
+<span class="c1"># take all the images from the dataset
+</span><span class="n">image_paths</span> <span class="o">=</span> <span class="n">glob</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="n">input_path</span> <span class="o">+</span> <span class="sh">"</span><span class="se">\\</span><span class="s">*.jpg</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># variables to keep track
+</span><span class="n">label</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">80</span>
+
+<span class="c1"># flower17 class names
+</span><span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">daffodil</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">snowdrop</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">lilyvalley</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">bluebell</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">crocus</span><span class="sh">"</span><span class="p">,</span>
+			   <span class="sh">"</span><span class="s">iris</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">tigerlily</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">tulip</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">fritillary</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">sunflower</span><span class="sh">"</span><span class="p">,</span> 
+			   <span class="sh">"</span><span class="s">daisy</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">coltsfoot</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">dandelion</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cowslip</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">buttercup</span><span class="sh">"</span><span class="p">,</span>
+			   <span class="sh">"</span><span class="s">windflower</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">pansy</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="c1"># change the current working directory
+</span><span class="n">os</span><span class="p">.</span><span class="nf">chdir</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+
+<span class="c1"># loop over the class labels
+</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">class_limit</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+	<span class="c1"># create a folder for that class
+</span>	<span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="sh">"</span><span class="s">mkdir </span><span class="sh">"</span> <span class="o">+</span> <span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
+	<span class="c1"># get the current path
+</span>	<span class="n">cur_path</span> <span class="o">=</span> <span class="n">output_path</span> <span class="o">+</span> <span class="sh">"</span><span class="se">\\</span><span class="sh">"</span> <span class="o">+</span> <span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">+</span> <span class="sh">"</span><span class="se">\\</span><span class="sh">"</span>
+	<span class="c1"># loop over the images in the dataset
+</span>	<span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">image_paths</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]:</span>
+		<span class="n">original_path</span> <span class="o">=</span> <span class="n">image_path</span>
+		<span class="n">image_path</span> <span class="o">=</span> <span class="n">image_path</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="se">\\</span><span class="sh">"</span><span class="p">)</span>
+		<span class="n">image_path</span> <span class="o">=</span> <span class="n">image_path</span><span class="p">[</span><span class="nf">len</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="sh">"</span><span class="s">copy </span><span class="sh">"</span> <span class="o">+</span> <span class="n">original_path</span> <span class="o">+</span> <span class="sh">"</span><span class="s"> </span><span class="sh">"</span> <span class="o">+</span> <span class="n">cur_path</span> <span class="o">+</span> <span class="n">image_path</span><span class="p">)</span>
+	<span class="n">i</span> <span class="o">+=</span> <span class="mi">80</span>
+	<span class="n">j</span> <span class="o">+=</span> <span class="mi">80</span>
+	<span class="n">label</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># print end time
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] program ended on - </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="deep-learning-pipeline">Deep Learning pipeline</h3>
+
+<h4 id="1-confjson">1. conf.json</h4>
+<p>This is the configuration file or the settings file we will be using to provide inputs to our system. This is just a <span class="coding">json</span> file which is a key-value pair file format to store data effectively.</p>
+
+<ul>
+  <li>The <span class="coding">model</span> key takes in any of these parameters - <span class="coding">inceptionv3</span>, <span class="coding">resnet50</span>, <span class="coding">vgg16</span>, <span class="coding">vgg19</span>, <span class="coding">xception</span>, <span class="coding">inceptionresnetv2</span> and <span class="coding">mobilenet</span>.</li>
+  <li>The <span class="coding">weights</span> key takes the value <span class="coding">imagenet</span> specifying that we intend to use weights from imagenet. You can also set this to <span class="coding">None</span> if you wish to train the network from scratch.</li>
+  <li>The <span class="coding">include_top</span> key takes the value <span class="coding">false</span> specifying that we are going to take the features from any intermediate layer of the network. You can set this to <span class="coding">true</span> if you want to extract features before the fully connected layers.</li>
+  <li>The <span class="coding">test_size</span> key takes the value in the range (0.10 - 0.90). This is to make a split between your overall data into training and testing.</li>
+  <li>The <span class="coding">seed</span> key takes any value to reproduce same results everytime you run the code.</li>
+  <li>The <span class="coding">num_classes</span> specifies the number of classes or labels considered for the image classification problem.</li>
+</ul>
+
+<div class="code-head"><span>code</span>conf.json</div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"model"</span><span class="w">           </span><span class="p">:</span><span class="w"> </span><span class="s2">"inceptionv3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"weights"</span><span class="w">         </span><span class="p">:</span><span class="w"> </span><span class="s2">"imagenet"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"include_top"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+
+  </span><span class="nl">"train_path"</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="s2">"dataset/train"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"test_path"</span><span class="w">       </span><span class="p">:</span><span class="w"> </span><span class="s2">"dataset/test"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"features_path"</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="s2">"output/flowers_17/inceptionv3/features.h5"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"labels_path"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">"output/flowers_17/inceptionv3/labels.h5"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"results"</span><span class="w">         </span><span class="p">:</span><span class="w"> </span><span class="s2">"output/flowers_17/inceptionv3/results.txt"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"classifier_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"output/flowers_17/inceptionv3/classifier.pickle"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"model_path"</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="s2">"output/flowers_17/inceptionv3/model"</span><span class="p">,</span><span class="w">
+
+  </span><span class="nl">"test_size"</span><span class="w">       </span><span class="p">:</span><span class="w"> </span><span class="mf">0.10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"seed"</span><span class="w">            </span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"num_classes"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Here, I have decided to use <span class="coding">inceptionv3</span> architecture of GoogleNet pre-trained on <span class="coding">imagenet</span> including the top layers. You can extract features from any arbitrary layer using the layer name (eg: <span class="coding">flatten</span>), by checking the <span class="coding">.py</span> file of each of the model residing inside the <span class="coding">applications</span> directory of Keras.</p>
+
+<div class="code-head"><span>path</span>New applications module (Keras 2.2.0)</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>"python_installation_directory" -&gt; "Lib" -&gt; "site-packages" -&gt; "keras_applications"
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>As we are using FLOWERS17 dataset from the University of Oxford, I have specified the <span class="coding">num_classes</span> as 17. We will have a <span class="coding">test_size</span> of 0.10, which means we use 90% of data for training and 10% for testing.</p>
+
+<figure>
+  <img src="/images/software/plants-species/flowers17_data.jpg" />
+  <figcaption>Figure 3. FLOWERS17 dataset from University of Oxford</figcaption>
+</figure>
+
+<h4 id="2-feature-extraction-using-convnets">2. Feature Extraction using ConvNets</h4>
+
+<div class="code-head"><span>code</span>extract_features.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+</pre></td><td class="rouge-code"><pre><span class="c1"># filter warnings
+</span><span class="kn">import</span> <span class="n">warnings</span>
+<span class="n">warnings</span><span class="p">.</span><span class="nf">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="sh">"</span><span class="s">ignore</span><span class="sh">"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">FutureWarning</span><span class="p">)</span>
+
+<span class="c1"># keras imports
+</span><span class="kn">from</span> <span class="n">keras.applications.vgg16</span> <span class="kn">import</span> <span class="n">VGG16</span><span class="p">,</span> <span class="n">preprocess_input</span>
+<span class="kn">from</span> <span class="n">keras.applications.vgg19</span> <span class="kn">import</span> <span class="n">VGG19</span><span class="p">,</span> <span class="n">preprocess_input</span>
+<span class="kn">from</span> <span class="n">keras.applications.xception</span> <span class="kn">import</span> <span class="n">Xception</span><span class="p">,</span> <span class="n">preprocess_input</span>
+<span class="kn">from</span> <span class="n">keras.applications.resnet50</span> <span class="kn">import</span> <span class="n">ResNet50</span><span class="p">,</span> <span class="n">preprocess_input</span>
+<span class="kn">from</span> <span class="n">keras.applications.inception_resnet_v2</span> <span class="kn">import</span> <span class="n">InceptionResNetV2</span><span class="p">,</span> <span class="n">preprocess_input</span>
+<span class="kn">from</span> <span class="n">keras.applications.mobilenet</span> <span class="kn">import</span> <span class="n">MobileNet</span><span class="p">,</span> <span class="n">preprocess_input</span>
+<span class="kn">from</span> <span class="n">keras.applications.inception_v3</span> <span class="kn">import</span> <span class="n">InceptionV3</span><span class="p">,</span> <span class="n">preprocess_input</span>
+<span class="kn">from</span> <span class="n">keras.preprocessing</span> <span class="kn">import</span> <span class="n">image</span>
+<span class="kn">from</span> <span class="n">keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="n">keras.models</span> <span class="kn">import</span> <span class="n">model_from_json</span>
+<span class="kn">from</span> <span class="n">keras.layers</span> <span class="kn">import</span> <span class="n">Input</span>
+
+<span class="c1"># other imports
+</span><span class="kn">from</span> <span class="n">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">h5py</span>
+<span class="kn">import</span> <span class="n">os</span>
+<span class="kn">import</span> <span class="n">json</span>
+<span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="n">time</span>
+
+<span class="c1"># load the user configs
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">conf/conf.json</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>    
+  <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># config variables
+</span><span class="n">model_name</span>    <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">model</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">weights</span>     <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">weights</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">include_top</span>   <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">include_top</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">train_path</span>    <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">train_path</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">features_path</span>   <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">features_path</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">labels_path</span>   <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">labels_path</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">test_size</span>     <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">test_size</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">results</span>     <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">results</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">model_path</span>    <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">model_path</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="c1"># start time
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">[STATUS] start time - {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">().</span><span class="nf">strftime</span><span class="p">(</span><span class="sh">"</span><span class="s">%Y-%m-%d %H:%M</span><span class="sh">"</span><span class="p">)))</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
+
+<span class="c1"># create the pretrained models
+# check for pretrained weight usage or not
+# check for top layers to be included or not
+</span><span class="k">if</span> <span class="n">model_name</span> <span class="o">==</span> <span class="sh">"</span><span class="s">vgg16</span><span class="sh">"</span><span class="p">:</span>
+  <span class="n">base_model</span> <span class="o">=</span> <span class="nc">VGG16</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="nc">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nf">get_layer</span><span class="p">(</span><span class="sh">'</span><span class="s">fc1</span><span class="sh">'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="sh">"</span><span class="s">vgg19</span><span class="sh">"</span><span class="p">:</span>
+  <span class="n">base_model</span> <span class="o">=</span> <span class="nc">VGG19</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="nc">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nf">get_layer</span><span class="p">(</span><span class="sh">'</span><span class="s">fc1</span><span class="sh">'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="sh">"</span><span class="s">resnet50</span><span class="sh">"</span><span class="p">:</span>
+  <span class="n">base_model</span> <span class="o">=</span> <span class="nc">ResNet50</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="nc">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nf">get_layer</span><span class="p">(</span><span class="sh">'</span><span class="s">flatten</span><span class="sh">'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="sh">"</span><span class="s">inceptionv3</span><span class="sh">"</span><span class="p">:</span>
+  <span class="n">base_model</span> <span class="o">=</span> <span class="nc">InceptionV3</span><span class="p">(</span><span class="n">include_top</span><span class="o">=</span><span class="n">include_top</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">input_tensor</span><span class="o">=</span><span class="nc">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">299</span><span class="p">,</span><span class="mi">299</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="nc">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nf">get_layer</span><span class="p">(</span><span class="sh">'</span><span class="s">custom</span><span class="sh">'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">299</span><span class="p">,</span> <span class="mi">299</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="sh">"</span><span class="s">inceptionresnetv2</span><span class="sh">"</span><span class="p">:</span>
+  <span class="n">base_model</span> <span class="o">=</span> <span class="nc">InceptionResNetV2</span><span class="p">(</span><span class="n">include_top</span><span class="o">=</span><span class="n">include_top</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">input_tensor</span><span class="o">=</span><span class="nc">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">299</span><span class="p">,</span><span class="mi">299</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="nc">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nf">get_layer</span><span class="p">(</span><span class="sh">'</span><span class="s">custom</span><span class="sh">'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">299</span><span class="p">,</span> <span class="mi">299</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="sh">"</span><span class="s">mobilenet</span><span class="sh">"</span><span class="p">:</span>
+  <span class="n">base_model</span> <span class="o">=</span> <span class="nc">MobileNet</span><span class="p">(</span><span class="n">include_top</span><span class="o">=</span><span class="n">include_top</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">input_tensor</span><span class="o">=</span><span class="nc">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="nc">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nf">get_layer</span><span class="p">(</span><span class="sh">'</span><span class="s">custom</span><span class="sh">'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="sh">"</span><span class="s">xception</span><span class="sh">"</span><span class="p">:</span>
+  <span class="n">base_model</span> <span class="o">=</span> <span class="nc">Xception</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="nc">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">base_model</span><span class="p">.</span><span class="nf">get_layer</span><span class="p">(</span><span class="sh">'</span><span class="s">avg_pool</span><span class="sh">'</span><span class="p">).</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">299</span><span class="p">,</span> <span class="mi">299</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="n">base_model</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] successfully loaded base model and model</span><span class="gp">...</span><span class="sh">"</span><span class="s">)
+
+# path to training dataset
+train_labels = os.listdir(train_path)
+
+# encode the labels
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">encoding</span> <span class="n">labels</span><span class="p">...</span><span class="sh">"</span><span class="s">)
+le = LabelEncoder()
+le.fit([tl for tl in train_labels])
+
+# variables to hold features and labels
+features = []
+labels   = []
+
+# loop over all the labels in the folder
+count = 1
+for i, label in enumerate(train_labels):
+  cur_path = train_path + </span><span class="sh">"</span><span class="o">/</span><span class="sh">"</span><span class="s"> + label
+  count = 1
+  for image_path in glob.glob(cur_path + </span><span class="sh">"</span><span class="o">/*</span><span class="p">.</span><span class="n">jpg</span><span class="sh">"</span><span class="s">):
+    img = image.load_img(image_path, target_size=image_size)
+    x = image.img_to_array(img)
+    x = np.expand_dims(x, axis=0)
+    x = preprocess_input(x)
+    feature = model.predict(x)
+    flat = feature.flatten()
+    features.append(flat)
+    labels.append(label)
+    print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">processed</span> <span class="o">-</span> <span class="sh">"</span><span class="s"> + str(count))
+    count += 1
+  print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">completed</span> <span class="n">label</span> <span class="o">-</span> <span class="sh">"</span><span class="s"> + label)
+
+# encode the labels using LabelEncoder
+le = LabelEncoder()
+le_labels = le.fit_transform(labels)
+
+# get the shape of training labels
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">STATUS</span><span class="p">]</span> <span class="n">training</span> <span class="n">labels</span><span class="p">:</span> <span class="p">{}</span><span class="sh">"</span><span class="s">.format(le_labels))
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">STATUS</span><span class="p">]</span> <span class="n">training</span> <span class="n">labels</span> <span class="n">shape</span><span class="p">:</span> <span class="p">{}</span><span class="sh">"</span><span class="s">.format(le_labels.shape))
+
+# save features and labels
+h5f_data = h5py.File(features_path, </span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="s">)
+h5f_data.create_dataset(</span><span class="sh">'</span><span class="s">dataset_1</span><span class="sh">'</span><span class="s">, data=np.array(features))
+
+h5f_label = h5py.File(labels_path, </span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="s">)
+h5f_label.create_dataset(</span><span class="sh">'</span><span class="s">dataset_1</span><span class="sh">'</span><span class="s">, data=np.array(le_labels))
+
+h5f_data.close()
+h5f_label.close()
+
+# save model and weights
+model_json = model.to_json()
+with open(model_path + str(test_size) + </span><span class="sh">"</span><span class="p">.</span><span class="n">json</span><span class="sh">"</span><span class="s">, </span><span class="sh">"</span><span class="n">w</span><span class="sh">"</span><span class="s">) as json_file:
+  json_file.write(model_json)
+
+# save weights
+model.save_weights(model_path + str(test_size) + </span><span class="sh">"</span><span class="p">.</span><span class="n">h5</span><span class="sh">"</span><span class="s">)
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">STATUS</span><span class="p">]</span> <span class="n">saved</span> <span class="n">model</span> <span class="ow">and</span> <span class="n">weights</span> <span class="n">to</span> <span class="n">disk</span><span class="p">..</span><span class="sh">"</span><span class="s">)
+
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">STATUS</span><span class="p">]</span> <span class="n">features</span> <span class="ow">and</span> <span class="n">labels</span> <span class="n">saved</span><span class="p">..</span><span class="sh">"</span><span class="s">)
+
+# end time
+end = time.time()
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">STATUS</span><span class="p">]</span> <span class="n">end</span> <span class="n">time</span> <span class="o">-</span> <span class="p">{}</span><span class="sh">"</span><span class="s">.format(datetime.datetime.now().strftime(</span><span class="sh">"</span><span class="o">%</span><span class="n">Y</span><span class="o">-%</span><span class="n">m</span><span class="o">-%</span><span class="n">d</span> <span class="o">%</span><span class="n">H</span><span class="p">:</span><span class="o">%</span><span class="n">M</span><span class="sh">"</span><span class="s">)))
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>
+    <p><strong>How to run this script?</strong><br />
+Open up a command prompt and go into the folder where you saved this file. Type <span class="coding">python extract_features.py</span>. It will extract all the features from the images in your dataset and store it in HDF5 format locally.</p>
+  </li>
+  <li>
+    <p><strong>What this script does?</strong><br />
+The pre-trained models are loaded from the <span class="coding">application</span> module of Keras library and the model is constructed based on the user specified configurations in the <span class="coding">conf.json</span> file. After that, features are extracted from the user-specified layer in the model pre-trained with ImageNet dataset. These features along with its labels are stored locally using HDF5 file format. Also, the model and the weights are saved just to show that these could also be done in Keras.</p>
+  </li>
+</ul>
+
+<p>The below table shows the <strong>feature vector size</strong> for each image for a particular deep neural net model that I used.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Feature vector size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VGG16</td>
+      <td>(1, 4096)</td>
+    </tr>
+    <tr>
+      <td>VGG19</td>
+      <td>(1, 4096)</td>
+    </tr>
+    <tr>
+      <td>InceptionV3</td>
+      <td>(1, 131072)</td>
+    </tr>
+    <tr>
+      <td>ResNet50</td>
+      <td>(1, 2048)</td>
+    </tr>
+    <tr>
+      <td>InceptionResNetV2</td>
+      <td>(1, 98304)</td>
+    </tr>
+    <tr>
+      <td>Xception</td>
+      <td>(1, 2048)</td>
+    </tr>
+    <tr>
+      <td>MobileNet</td>
+      <td>(1, 50176)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="3-training-a-machine-learning-model">3. Training a machine learning model</h4>
+
+<div class="code-head"><span>code</span>train.py</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+</pre></td><td class="rouge-code"><pre><span class="c1"># organize imports
+</span><span class="kn">from</span> <span class="n">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">from</span> <span class="n">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+<span class="kn">from</span> <span class="n">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="n">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="n">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">h5py</span>
+<span class="kn">import</span> <span class="n">os</span>
+<span class="kn">import</span> <span class="n">json</span>
+<span class="kn">import</span> <span class="n">pickle</span>
+<span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># load the user configs
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">conf/conf.json</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>    
+  <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># config variables
+</span><span class="n">test_size</span>     <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">test_size</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">seed</span>      <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">seed</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">features_path</span>   <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">features_path</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">labels_path</span>   <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">labels_path</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">results</span>     <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">results</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">classifier_path</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">classifier_path</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">train_path</span>    <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">train_path</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">num_classes</span>   <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">num_classes</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">classifier_path</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">classifier_path</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="c1"># import features and labels
+</span><span class="n">h5f_data</span>  <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="nc">File</span><span class="p">(</span><span class="n">features_path</span><span class="p">,</span> <span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">h5f_label</span> <span class="o">=</span> <span class="n">h5py</span><span class="p">.</span><span class="nc">File</span><span class="p">(</span><span class="n">labels_path</span><span class="p">,</span> <span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">features_string</span> <span class="o">=</span> <span class="n">h5f_data</span><span class="p">[</span><span class="sh">'</span><span class="s">dataset_1</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">labels_string</span>   <span class="o">=</span> <span class="n">h5f_label</span><span class="p">[</span><span class="sh">'</span><span class="s">dataset_1</span><span class="sh">'</span><span class="p">]</span>
+
+<span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">features_string</span><span class="p">)</span>
+<span class="n">labels</span>   <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">labels_string</span><span class="p">)</span>
+
+<span class="n">h5f_data</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+<span class="n">h5f_label</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+
+<span class="c1"># verify the shape of features and labels
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] features shape: {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">features</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] labels shape: {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">labels</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] training started</span><span class="gp">...</span><span class="sh">"</span><span class="s">)
+# split the training and testing data
+(trainData, testData, trainLabels, testLabels) = train_test_split(np.array(features),
+                                                                  np.array(labels),
+                                                                  test_size=test_size,
+                                                                  random_state=seed)
+
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">splitted</span> <span class="n">train</span> <span class="ow">and</span> <span class="n">test</span> <span class="n">data</span><span class="p">...</span><span class="sh">"</span><span class="s">)
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">train</span> <span class="n">data</span>  <span class="p">:</span> <span class="p">{}</span><span class="sh">"</span><span class="s">.format(trainData.shape))
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">test</span> <span class="n">data</span>   <span class="p">:</span> <span class="p">{}</span><span class="sh">"</span><span class="s">.format(testData.shape))
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">train</span> <span class="n">labels</span><span class="p">:</span> <span class="p">{}</span><span class="sh">"</span><span class="s">.format(trainLabels.shape))
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">test</span> <span class="n">labels</span> <span class="p">:</span> <span class="p">{}</span><span class="sh">"</span><span class="s">.format(testLabels.shape))
+
+# use logistic regression as the model
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">creating</span> <span class="n">model</span><span class="p">...</span><span class="sh">"</span><span class="s">)
+model = LogisticRegression(random_state=seed)
+model.fit(trainData, trainLabels)
+
+# use rank-1 and rank-5 predictions
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">evaluating</span> <span class="n">model</span><span class="p">...</span><span class="sh">"</span><span class="s">)
+f = open(results, </span><span class="sh">"</span><span class="n">w</span><span class="sh">"</span><span class="s">)
+rank_1 = 0
+rank_5 = 0
+
+# loop over test data
+for (label, features) in zip(testLabels, testData):
+  # predict the probability of each class label and
+  # take the top-5 class labels
+  predictions = model.predict_proba(np.atleast_2d(features))[0]
+  predictions = np.argsort(predictions)[::-1][:5]
+
+  # rank-1 prediction increment
+  if label == predictions[0]:
+    rank_1 += 1
+
+  # rank-5 prediction increment
+  if label in predictions:
+    rank_5 += 1
+
+# convert accuracies to percentages
+rank_1 = (rank_1 / float(len(testLabels))) * 100
+rank_5 = (rank_5 / float(len(testLabels))) * 100
+
+# write the accuracies to file
+f.write(</span><span class="sh">"</span><span class="n">Rank</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="p">{:.</span><span class="mi">2</span><span class="n">f</span><span class="p">}</span><span class="o">%</span>\<span class="n">n</span><span class="sh">"</span><span class="s">.format(rank_1))
+f.write(</span><span class="sh">"</span><span class="n">Rank</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span> <span class="p">{:.</span><span class="mi">2</span><span class="n">f</span><span class="p">}</span><span class="o">%</span>\<span class="n">n</span>\<span class="n">n</span><span class="sh">"</span><span class="s">.format(rank_5))
+
+# evaluate the model of test data
+preds = model.predict(testData)
+
+# write the classification report to file
+f.write(</span><span class="sh">"</span><span class="p">{}</span>\<span class="n">n</span><span class="sh">"</span><span class="s">.format(classification_report(testLabels, preds)))
+f.close()
+
+# dump classifier to file
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">saving</span> <span class="n">model</span><span class="p">...</span><span class="sh">"</span><span class="s">)
+pickle.dump(model, open(classifier_path, </span><span class="sh">'</span><span class="s">wb</span><span class="sh">'</span><span class="s">))
+
+# display the confusion matrix
+print(</span><span class="sh">"</span><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">confusion</span> <span class="n">matrix</span><span class="sh">"</span><span class="s">)
+
+# get the list of training lables
+labels = sorted(list(os.listdir(train_path)))
+
+# plot the confusion matrix
+cm = confusion_matrix(testLabels, preds)
+sns.heatmap(cm,
+            annot=True,
+            cmap=</span><span class="sh">"</span><span class="n">Set2</span><span class="sh">"</span><span class="s">)
+plt.show()
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>
+    <p><strong>How to run this script?</strong><br />
+Open up a command prompt and go to the folder where you saved this file. Type <span class="coding">python train.py</span>. It will train the Logistic Regression classifier with the features and labels extracted and stored locally. Finally, it prints the RANK-1 and RANK-5 accuracies of the model on unseen test data.</p>
+  </li>
+  <li>
+    <p><strong>What this script does?</strong><br />
+The features and labels extracted from your dataset are loaded. Logistic Regression model is created to train these features and labels. The trained model could then be used to predict the label of unseen images. I have added some code to visualize the confusion matrix of the trained model on unseen test data splitted using scikit-learn and seaborn.</p>
+  </li>
+</ul>
+
+<h3 id="show-me-the-numbers">Show me the numbers</h3>
+
+<p>The below tables shows the accuracies obtained for each pretrained model used to extract features from FLOWERS17 dataset using different configuration settings.</p>
+
+<h4 id="result-1">Result-1</h4>
+
+<ul>
+  <li>test_size  : 0.10</li>
+  <li>classifier : Logistic Regression</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Rank-1 accuracy</th>
+      <th>Rank-5 accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Xception</td>
+      <td>97.06%</td>
+      <td>99.26%</td>
+    </tr>
+    <tr>
+      <td>InceptionV3</td>
+      <td>96.32%</td>
+      <td>99.26%</td>
+    </tr>
+    <tr>
+      <td>VGG16</td>
+      <td>85.29%</td>
+      <td>98.53%</td>
+    </tr>
+    <tr>
+      <td>VGG19</td>
+      <td>88.24%</td>
+      <td>99.26%</td>
+    </tr>
+    <tr>
+      <td>ResNet50</td>
+      <td>56.62%</td>
+      <td>90.44%</td>
+    </tr>
+    <tr>
+      <td>MobileNet</td>
+      <td><b>98.53%</b></td>
+      <td><b>100.00%</b></td>
+    </tr>
+    <tr>
+      <td>Inception<br />ResNetV2</td>
+      <td>91.91%</td>
+      <td>98.53%</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="result-2">Result-2</h4>
+
+<ul>
+  <li>test_size  : 0.30</li>
+  <li>classifier : Logistic Regression</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Rank-1 accuracy</th>
+      <th>Rank-5 accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Xception</td>
+      <td>93.38%</td>
+      <td><b>99.75%</b></td>
+    </tr>
+    <tr>
+      <td>InceptionV3</td>
+      <td><b>96.81%</b></td>
+      <td>99.51%</td>
+    </tr>
+    <tr>
+      <td>VGG16</td>
+      <td>88.24%</td>
+      <td>99.02%</td>
+    </tr>
+    <tr>
+      <td>VGG19</td>
+      <td>88.73%</td>
+      <td>98.77%</td>
+    </tr>
+    <tr>
+      <td>ResNet50</td>
+      <td>59.80%</td>
+      <td>86.52%</td>
+    </tr>
+    <tr>
+      <td>MobileNet</td>
+      <td>96.32%</td>
+      <td><b>99.75%</b></td>
+    </tr>
+    <tr>
+      <td>Inception<br />ResNetV2</td>
+      <td>88.48%</td>
+      <td>99.51%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Notice how InceptionV3 outperforms the other Deep Neural Net architectures. This could mainly be due to the presence of 9 network-in-a-network modules codenamed as Inception modules which applies different convolutional filter sizes parallely to an input volume and concatenates the result at output. More details about this can be found in this astounding paper by C. Szegedy et al. - <a href="https://arxiv.org/abs/1409.4842" target="_blank">Going Deeper with Convolutions</a>.</p>
+
+<p>Thus, we have built our own Flower Species Recognition System using Deep Neural Nets and Keras. Our system is able to obtain much higher accuracies than state-of-the-art accuracies (which mostly used hand-crafted features for shape, color and texture representations) in this FLOWERS17 dataset. Using this procedure, you could use these pretrained models for your own image dataset and reduce the time consumed to construct a deep neural net from scratch.</p>
+
+<h3 id="testing-on-new-images">Testing on new images</h3>
+
+<p>To test on new flower images, we need to have some test images in <strong>dataset/test</strong> folder. Please use <a href="https://github.com/Gogul09/flower-recognition/blob/master/test.py" target="_blank">this</a> script to make predictions on unseen test images.</p>
+
+<hr />
+
+<h3 id="issues-and-workarounds">Issues and Workarounds <span style="font-size:12px; font-weight: 100; color: #a7a5a5;"> <br /> (Updated on 10/06/2018)</span></h3>
+
+<ul>
+  <li>
+    <p><b style="color: #cf2321">Intel MKL FATAL ERROR: Cannot load mkl_intel_thread.dll</b><br />
+When I installed Anaconda with Python 3.6 to enable TensorFlow on Windows 10, I got this error. Tried googling the error and this <a href="https://groups.google.com/a/continuum.io/forum/#!topic/anaconda/SnY1Uazkcew" target="_blank">link</a> gave me a working solution.</p>
+  </li>
+  <li>
+    <p><b style="color: #cf2321">no such layer: flatten or custom</b><br />
+This error is the common one found when trying to add <span class="coding">Flatten()</span> in any of the model’s .py file. Please update Keras to the latest version. Completely uninstall Keras and reinstall it using pip. Now, get into the similar directory shown below where you have installed Anaconda.</p>
+  </li>
+</ul>
+
+<div class="code-head"><span>path</span>Anaconda install dir</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">C</span><span class="p">:</span>\<span class="n">deeplearning</span>\<span class="n">anaconda2</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">keras</span>\<span class="n">applications</span>\
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Inside this directory, you can see all the pre-trained models <span class="coding">.py</span> file. If you use InceptionV3 as the model, then open <span class="coding">inception_v3.py</span>.</p>
+
+<p>Don’t forget to add the below code on top where imports are written.</p>
+
+<div class="code-head"><span>code</span>Add in "&lt;model&gt;.py"</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">..layers</span> <span class="kn">import</span> <span class="n">Flatten</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Next, go to the place where you can find the final <span class="coding">Dense()</span> layer. Normally, we need to perform <span class="coding">Flatten()</span> before the last fully connected layer. This is because the final <span class="coding">Dense()</span> layer has the number of classes in ImageNet challenge which is typically 1000. We could take these 1000 activations as (1, 1000) feature vector for a single image. But taking features from intermediate layers makes our classifier learn better.</p>
+
+<p>This is how I inserted <span class="coding">Flatten()</span> layer to get features from InceptionV3 model. Notice that I have set <span class="coding">include_top</span> as <span class="coding">False</span>. This gave me a feature vector of size (1, 131072).</p>
+
+<div class="code-head"><span>code</span>Add in "&lt;model&gt;.py"</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="bp">...</span>
+<span class="bp">...</span>
+<span class="k">if</span> <span class="n">include_top</span><span class="p">:</span>
+        <span class="c1"># Classification block
+</span>        <span class="n">x</span> <span class="o">=</span> <span class="nc">GlobalAveragePooling2D</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">avg_pool</span><span class="sh">'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="nc">Dense</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sh">'</span><span class="s">softmax</span><span class="sh">'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">predictions</span><span class="sh">'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pooling</span> <span class="o">==</span> <span class="sh">'</span><span class="s">avg</span><span class="sh">'</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="nc">GlobalAveragePooling2D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">pooling</span> <span class="o">==</span> <span class="sh">'</span><span class="s">max</span><span class="sh">'</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="nc">GlobalMaxPooling2D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="nc">Flatten</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sh">'</span><span class="s">custom</span><span class="sh">'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="bp">...</span>
+<span class="bp">...</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><b style="color: #cf2321">couldn’t see Dense() layer in “model_name”.py applications folder</b><br />
+This issue is seen in <a href="https://github.com/keras-team/keras/releases" target="_blank">Keras 2.2.0</a> version update. Keras has externalized the <span class="coding">applications</span> module to “<a href="https://github.com/keras-team/keras-applications" target="_blank">keras_applications</a>” from where all the pre-trained models are getting imported. To make changes to the <span class="coding">pre-trained_model.py</span> file, simply go to the below directory where you will find all the pre-trained models “.py” files.</li>
+</ul>
+
+<div class="code-head"><span>path</span>New applications module</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>"python_installation_directory" -&gt; "Lib" -&gt; "site-packages" -&gt; "keras_applications"
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<figure>
+  <img src="/images/software/pretrained-models/keras_version_update.png" />
+  <figcaption>Figure 4. Keras 2.2.0 version update</figcaption>
+</figure>
+
+<p>In case if you want to keep the previous Keras version, simply do the following two commands.</p>
+
+<div class="code-head"><span>cmd</span>Reinstall Keras</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>pip uninstall keras
+pip install keras==2.1.2
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li><a href="https://keras.io/" target="_blank">Keras - Official Documentation</a></li>
+  <li><a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html" target="_blank">Building powerful image classification models using very little data</a></li>
+  <li><a href="https://flyyufelix.github.io/2016/10/03/fine-tuning-in-keras-part1.html" target="_blank">A Comprehensive guide to Fine-tuning Deep Learning Models in Keras (Part I)</a></li>
+  <li><a href="https://flyyufelix.github.io/2016/10/08/fine-tuning-in-keras-part2.html" target="_blank">A Comprehensive guide to Fine-tuning Deep Learning Models in Keras (Part II)</a></li>
+  <li><a href="http://www.robots.ox.ac.uk/~vgg/data/flowers/17/" target="_blank">17 Category Flower Dataset</a></li>
+  <li><a href="http://www.robots.ox.ac.uk/~vgg/data/flowers/102/" target="_blank">102 Category Flower Dataset</a></li>
+</ol>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/flower-recognition-deep-learning"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function () {
+				  this.page.url = 'http://localhost:4000/software/flower-recognition-deep-learning';
+				  this.page.identifier = 'http://localhost:4000/software/flower-recognition-deep-learning';
+				};
+
+				(function() {
+				  var d = document, s = d.createElement('script');
+				  s.src = 'https://gogul09.disqus.com/embed.js';
+				  s.setAttribute('data-timestamp', +new Date());
+				  (d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+
+<script type="text/javascript" src="/js/readtime.js"></script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2024 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/flower-recognition-deep-learning',
+		  'title': 'Using Keras Pre-trained Deep Learning models for your own dataset'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+   </body>
+</html>

@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recognizing Digits using TensorFlow.js in Google Chrome – Gogul Ilango </title>
+  
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+  <link rel="stylesheet" href="https://use.typekit.net/mry7nes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Recognizing Digits using TensorFlow.js in Google Chrome" />
+    <meta name="description" content="Learn how to recognize handwritten digits based on user's drawing in Google Chrome using a Deep Neural Network (Convolutional Neural Network and Multi-Layer Perceptron)" />
+    <meta property="og:description" content="Learn how to recognize handwritten digits based on user's drawing in Google Chrome using a Deep Neural Network (Convolutional Neural Network and Multi-Layer Perceptron)" />
+    <meta property="twitter:title" content="Recognizing Digits using TensorFlow.js in Google Chrome" />
+
+    <meta property="og:image" content="https://drive.google.com/uc?id=1vXEUEoSbRw-ImdA5g1L1PAzBJQHF9PVy"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Recognizing Digits using TensorFlow.js in Google Chrome">
+    <meta name="twitter:description" content="Learn how to recognize handwritten digits based on user's drawing in Google Chrome using a Deep Neural Network (Convolutional Neural Network and Multi-Layer Perceptron)">
+    <meta name="twitter:image" content="https://drive.google.com/uc?id=1vXEUEoSbRw-ImdA5g1L1PAzBJQHF9PVy">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Recognizing Digits using TensorFlow.js in Google Chrome | Gogul Ilango</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Recognizing Digits using TensorFlow.js in Google Chrome" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Learn how to recognize handwritten digits based on user’s drawing in Google Chrome using a Deep Neural Network (Convolutional Neural Network and Multi-Layer Perceptron)" />
+<meta property="og:description" content="Learn how to recognize handwritten digits based on user’s drawing in Google Chrome using a Deep Neural Network (Convolutional Neural Network and Multi-Layer Perceptron)" />
+<link rel="canonical" href="http://localhost:4000/software/digit-recognizer-tf-js" />
+<meta property="og:url" content="http://localhost:4000/software/digit-recognizer-tf-js" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1vXEUEoSbRw-ImdA5g1L1PAzBJQHF9PVy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-31T00:00:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://drive.google.com/uc?id=1vXEUEoSbRw-ImdA5g1L1PAzBJQHF9PVy" />
+<meta property="twitter:title" content="Recognizing Digits using TensorFlow.js in Google Chrome" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2018-07-31T00:00:00+05:30","datePublished":"2018-07-31T00:00:00+05:30","description":"Learn how to recognize handwritten digits based on user’s drawing in Google Chrome using a Deep Neural Network (Convolutional Neural Network and Multi-Layer Perceptron)","headline":"Recognizing Digits using TensorFlow.js in Google Chrome","image":"https://drive.google.com/uc?id=1vXEUEoSbRw-ImdA5g1L1PAzBJQHF9PVy","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/digit-recognizer-tf-js"},"url":"http://localhost:4000/software/digit-recognizer-tf-js"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#000" />
+    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog is a personal space of Gogul Ilango who writes about technology, music production, programming and travel." href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"><span>home</span></a>
+            <a title="music" id = "nav_music" href="https://www.youtube.com/gogulilangomusic" target="_blank"><span>music</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="readtime-progress" id="readtime-progress"></div>
+
+<div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>Recognizing Digits using TensorFlow.js in Google Chrome</h1>
+		<div class="post-subheading">
+			<p>Deep Learning | 31 July 2018</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/digit-recognizer-tf-js"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/software/digit-recognizer-tf-js" data-action="share/whatsapp/share"><img class="icon-whatsapp" src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/digit-recognizer-tf-js" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-facebook" src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=Recognizing Digits using TensorFlow.js in Google Chrome&url=http://localhost:4000/software/digit-recognizer-tf-js" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img class="icon-twitter" src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/digit-recognizer-tf-js&title=Recognizing Digits using TensorFlow.js in Google Chrome&summary=Learn how to recognize handwritten digits based on user's drawing in Google Chrome using a Deep Neural Network (Convolutional Neural Network and Multi-Layer Perceptron)&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-linkedin" src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/digit-recognizer-tf-js" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/digit-recognizer-tf-js" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Recognizing Digits using TensorFlow.js in Google Chrome&url=http://localhost:4000/software/digit-recognizer-tf-js" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/digit-recognizer-tf-js&title=Recognizing Digits using TensorFlow.js in Google Chrome&summary=Learn how to recognize handwritten digits based on user's drawing in Google Chrome using a Deep Neural Network (Convolutional Neural Network and Multi-Layer Perceptron)&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="git-showcase">
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
+  </div>
+
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09/digit-recognizer-live/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Gogul09/digit-recognizer-live on GitHub">Fork</a>
+  </div>
+
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09/digit-recognizer-live" data-icon="octicon-star" data-show-count="true" aria-label="Star Gogul09/digit-recognizer-live on GitHub">Star</a>
+  </div>
+
+  <div>
+    <a href="https://www.youtube.com/watch?v=WTaXfYOhqmY" target="_blank"><img src="/images/icons/youtube-icon.png" class="youtube-showcase" /></a>
+  </div>    
+</div>
+
+<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#digit-recognizer-live-demo">Digit Recognizer using TensorFlow.js Demo</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#deep-neural-network-for-digit-recognition">Deep Neural Network for Digit Recognition</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#javaScript-handlers-for-mouse-and-touch">JavaScript handlers for Mouse and Touch</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#tensorFlow-js-handlers-for-model-related-operations">TensorFlow JS handlers for model related operations</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#simple-bar-chart-to-display-the-predictions">Simple Bar Chart to display the predictions</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#references">References</a></li>
+  </ul>
+</div>
+
+<p><strong>In this blog post, we will create a simple web application that provides a canvas (mobile + desktop + laptop + tablet ready) for the user to draw a digit and uses a deep neural network (MLP or CNN) to predict what digit the user had drawn.</strong></p>
+
+<p>As we already know the capabilities offered by <a href="https://js.tensorflow.org/" target="_blank">TensorFlow.js</a>, we will extend the ideas to create two Deep Neural Networks (MLP and CNN) in Keras Python environment to recognize digits and use TensorFlow.js to predict the user drawn digit on a canvas in a web browser. In this learning path, we will restrict the user to draw a single digit between [0, 9] and later we will extend the idea to multiple digits.</p>
+
+<p>Below is the interactive demo that you can use to draw a digit between [0, 9] and the Deep Neural Network (MLP or CNN) that is running in your browser will predict what that digit is in the form of a bar chart.</p>
+
+<div class="note">
+<p><b>Important</b>: This is a highly experimental demo for mobile and tablet devices. Please try this demo in laptop or desktop if you encounter issues in mobile and tablet devices. Also, please use Google Chrome as the browser to try this demo. Other browsers not supported as of now.
+</p>
+</div>
+
+<div class="digit-demo-container">
+  <h3 id="digit-recognizer-live-demo">Handwritten Digit Recognizer using TensorFlow.js Demo</h3>
+  <div class="flex-two" style="margin-top: 20px;">
+    <button id="clear_canvas" class="material-button-pink" onclick="clearCanvas(this.id)">Clear</button>
+    <select id="select_model">
+      <option>CNN</option>
+      <option>MLP</option>
+    </select>
+    <button id="predict_canvas" class="material-button-pink" onclick="predict(this.id)">Predict</button>
+  </div>
+  <div class="flex-two">
+    <div id="canvas_box_wrapper" class="canvas-box-wrapper">
+      <div id="canvas_box" class="canvas-box"></div>
+      <div id="canvas_output" class="canvas-output">
+        <p>You have drawn</p>
+        <img id="canvas_image" class="canvas-image" />
+      </div>
+    </div>
+    <div id="result_box">
+      <canvas id="chart_box" width="100" height="100"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+<p><b>Note</b>: To follow this tutorial, I assume you have basic knowledge of Python, HTML5, CSS3, Sass, JavaScript, jQuery and basic command line usage.
+</p>
+</div>
+
+<div class="downloads">
+  <span>Downloads</span>
+  <div><button title="Download HTML" onclick="window.open('https://github.com/Gogul09/digit-recognizer-live/blob/master/index.html', '_blank')">HTML</button></div>
+  <div><button title="Download CSS" onclick="window.open('https://github.com/Gogul09/digit-recognizer-live/blob/master/css/app.css', '_blank')">CSS</button></div>
+  <div><button title="Download JavaScript" onclick="window.open('https://github.com/Gogul09/digit-recognizer-live/tree/master/js', '_blank')">JavaScript</button></div>
+  <div><button title="Download Python" onclick="window.open('https://github.com/Gogul09/digit-recognizer-live/blob/master/mnist_mlp.py', '_blank')">Python</button></div>
+</div>
+
+<h3 id="deep-neural-network-for-digit-recognition">Deep Neural Network for Digit Recognition</h3>
+
+<p>I have already posted a tutorial a year ago on how to build Deep Neural Nets (specifically a Multi-Layer Perceptron) to recognize hand-written digits using Keras and Python <a href="https://gogul09.github.io/software/digits-recognition-mlp" target="_blank">here</a>. I highly encourage you to read that post before proceeding here.</p>
+
+<p>I assume you have familiarity in using Keras before proceeding (else please read my other tutorials on Keras <a href="https://gogul09.github.io/software/first-neural-network-keras" target="_blank">here</a> and <a href="https://gogul09.github.io/software/flower-recognition-deep-learning" target="_blank">here</a>). If you are a beginner to Keras, I strongly encourage you to visit <a href="https://keras.io/" target="_blank">Keras documentation</a> where you could find tons of information on how to use the library and learn from examples found <a href="https://github.com/keras-team/keras/tree/master/examples" target="_blank">here</a>.</p>
+
+<p>For this tutorial, we will learn to create two popular Deep Neural Networks (DNN) namely Multi-Layer Perceptron (MLP) and Convolutional Neural Network (CNN). For this digit recognition problem, MLP achieves pretty good accuracy. But we will build a CNN too and compare both these model performances live.</p>
+
+<h5 id="simple-mlp-using-keras-and-python">Simple MLP using Keras and Python</h5>
+
+<p>We will simply use a Keras MLP model using Python, dump out the model and weights in Tf.js layers format (as we did <a href="https://gogul09.github.io/software/mobile-net-tensorflow-js" target="_blank">here</a>). After that, we will load the Keras dumped model and weights in our browser and use TensorFlow.js to make predictions.</p>
+
+<p>To do this, here is the python code that fetches and loads MNIST dataset, trains a simple multi-layer perceptron with two hidden layers having 512 and 256 neurons respectively on a training data of 60000 images with labels, validates the trained model with 10000 unlabeled images and saves the model along with weights in Tf.js layers format in <span class="coding">model_save_path</span>.</p>
+
+<div class="code-head">mnist_mlp.py<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+</pre></td><td class="rouge-code"><pre><span class="c1"># organize imports
+</span><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="n">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="n">keras.layers.core</span> <span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">Dropout</span>
+<span class="kn">from</span> <span class="n">keras.datasets</span> <span class="kn">import</span> <span class="n">mnist</span>
+<span class="kn">from</span> <span class="n">keras.utils</span> <span class="kn">import</span> <span class="n">np_utils</span>
+<span class="kn">import</span> <span class="n">tensorflowjs</span> <span class="k">as</span> <span class="n">tfjs</span>
+
+<span class="c1"># fix a random seed for reproducibility
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">seed</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># user inputs
+</span><span class="n">nb_epoch</span>            <span class="o">=</span> <span class="mi">25</span>
+<span class="n">num_classes</span>         <span class="o">=</span> <span class="mi">10</span>
+<span class="n">batch_size</span>          <span class="o">=</span> <span class="mi">64</span>
+<span class="n">train_size</span>          <span class="o">=</span> <span class="mi">60000</span>
+<span class="n">test_size</span>           <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">v_length</span>            <span class="o">=</span> <span class="mi">784</span>
+<span class="n">model_save_path</span>     <span class="o">=</span> <span class="sh">"</span><span class="s">output/mlp</span><span class="sh">"</span>
+
+<span class="c1"># split the mnist data into train and test
+</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> <span class="n">trainLabels</span><span class="p">),</span> <span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">testLabels</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="p">.</span><span class="nf">load_data</span><span class="p">()</span>
+
+<span class="c1"># reshape and scale the data
+</span><span class="n">trainData</span>   <span class="o">=</span> <span class="n">trainData</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span><span class="n">train_size</span><span class="p">,</span> <span class="n">v_length</span><span class="p">)</span>
+<span class="n">testData</span>    <span class="o">=</span> <span class="n">testData</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span><span class="n">test_size</span><span class="p">,</span> <span class="n">v_length</span><span class="p">)</span>
+<span class="n">trainData</span>   <span class="o">=</span> <span class="n">trainData</span><span class="p">.</span><span class="nf">astype</span><span class="p">(</span><span class="sh">"</span><span class="s">float32</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">testData</span>    <span class="o">=</span> <span class="n">testData</span><span class="p">.</span><span class="nf">astype</span><span class="p">(</span><span class="sh">"</span><span class="s">float32</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">trainData</span>  <span class="o">/=</span> <span class="mi">255</span>
+<span class="n">testData</span>   <span class="o">/=</span> <span class="mi">255</span>
+
+<span class="c1"># convert class vectors to binary class matrices --&gt; one-hot encoding
+</span><span class="n">mTrainLabels</span>  <span class="o">=</span> <span class="n">np_utils</span><span class="p">.</span><span class="nf">to_categorical</span><span class="p">(</span><span class="n">trainLabels</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+<span class="n">mTestLabels</span>   <span class="o">=</span> <span class="n">np_utils</span><span class="p">.</span><span class="nf">to_categorical</span><span class="p">(</span><span class="n">testLabels</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+
+<span class="c1"># create the MLP model
+</span><span class="n">model</span> <span class="o">=</span> <span class="nc">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Dense</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">v_length</span><span class="p">,)))</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Activation</span><span class="p">(</span><span class="sh">"</span><span class="s">relu</span><span class="sh">"</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Dense</span><span class="p">(</span><span class="mi">256</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Activation</span><span class="p">(</span><span class="sh">"</span><span class="s">relu</span><span class="sh">"</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Activation</span><span class="p">(</span><span class="sh">"</span><span class="s">softmax</span><span class="sh">"</span><span class="p">))</span>
+
+<span class="c1"># compile the model
+</span><span class="n">model</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="sh">"</span><span class="s">categorical_crossentropy</span><span class="sh">"</span><span class="p">,</span>
+              <span class="n">optimizer</span><span class="o">=</span><span class="sh">"</span><span class="s">rmsprop</span><span class="sh">"</span><span class="p">,</span>
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">accuracy</span><span class="sh">"</span><span class="p">])</span>
+
+<span class="c1"># fit the model
+</span><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> 
+                    <span class="n">mTrainLabels</span><span class="p">,</span>
+                    <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">mTestLabels</span><span class="p">),</span>
+                    <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+                    <span class="n">nb_epoch</span><span class="o">=</span><span class="n">nb_epoch</span><span class="p">,</span>
+                    <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># evaluate the model
+</span><span class="n">scores</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">evaluate</span><span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">mTestLabels</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># print the results
+</span><span class="nf">print </span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] test score - {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nf">print </span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] test accuracy - {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="c1"># save tf.js specific files in model_save_path
+</span><span class="n">tfjs</span><span class="p">.</span><span class="n">converters</span><span class="p">.</span><span class="nf">save_keras_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">model_save_path</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>[INFO] test score - 0.16604800749952142
+[INFO] test accuracy - 0.9828
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Two important things to watch carefully here are <strong>image size</strong> and <strong>input vector size</strong> to MLP. Keras function <span class="coding">mnist.load_data()</span> loads images of size of <strong>[28, 28]</strong>. We flatten this image into a vector of size <strong>784</strong> for the MLP. We also scale the pixel values between <strong>[0, 1]</strong> for the algorithm to perform better. These are the image preprocessing operations that we will do in the front-end too using javascript.</p>
+
+<p>After training and validating the MLP, we save the model architecture and weights using <span class="coding">tensorflowjs</span> under <span class="coding">model_save_path</span>. We will upload this folder to our website from where we could easily load this Keras model in TensorFlow.js using HTTPS request to make predictions in the browser.</p>
+
+<h5 id="simple-cnn-using-keras-and-python">Simple CNN using Keras and Python</h5>
+
+<p>One caveat on using MNIST dataset from Keras is that the dataset is well cleaned, images are centered, cropped and aligned perfectly. So, there is very minimal preprocessing work required from a developer. But, the MLP model that we created above, isn’t well suited for cases like HTML5 canvas where different users have different handwriting.</p>
+
+<p>That’s why we need to create a CNN (Convolutional Neural Network) which automatically learns from 2D matrix instead of vectorizing the canvas into a 1d vector.</p>
+
+<p>Below is the python code snippet to create a simple CNN that fetches and loads MNIST dataset, trains a simple CNN with</p>
+
+<ul>
+  <li>One <span class="coding">Convolution2D()</span> layer with 32 feature maps with size [5, 5] and <span class="coding">relu</span> activation function that takes in the input canvas size of [28, 28, 1].</li>
+  <li>One <span class="coding">MaxPooling2D()</span> layer with a pool size of [2, 2].</li>
+  <li>One <span class="coding">Dropout()</span> layer with argument 0.2 (meaning randomly removes 20% of neurons to reduce overfitting).</li>
+  <li>One <span class="coding">Flatten()</span> layer that converts the 2D array to 1d vector for next layer.</li>
+  <li>One <span class="coding">Dense()</span> layer with 128 neurons activated by <span class="coding">relu</span>.</li>
+  <li>Final <span class="coding">softmax</span> activated <span class="coding">dense</span> layer with <span class="coding">num_classes</span> neurons.</li>
+</ul>
+
+<div class="code-head">mnist_cnn.py<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+</pre></td><td class="rouge-code"><pre><span class="c1"># organize imports
+</span><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="n">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="n">keras.layers.core</span> <span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Flatten</span>
+<span class="kn">from</span> <span class="n">keras.layers.convolutional</span> <span class="kn">import</span> <span class="n">Convolution2D</span><span class="p">,</span> <span class="n">MaxPooling2D</span>
+<span class="kn">from</span> <span class="n">keras.datasets</span> <span class="kn">import</span> <span class="n">mnist</span>
+<span class="kn">from</span> <span class="n">keras.utils</span> <span class="kn">import</span> <span class="n">np_utils</span>
+<span class="kn">import</span> <span class="n">tensorflowjs</span> <span class="k">as</span> <span class="n">tfjs</span>
+
+<span class="c1"># fix a random seed for reproducibility
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">seed</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># user inputs
+</span><span class="n">nb_epoch</span>            <span class="o">=</span> <span class="mi">10</span>
+<span class="n">num_classes</span>         <span class="o">=</span> <span class="mi">10</span>
+<span class="n">batch_size</span>          <span class="o">=</span> <span class="mi">200</span>
+<span class="n">train_size</span>          <span class="o">=</span> <span class="mi">60000</span>
+<span class="n">test_size</span>           <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">model_save_path</span>     <span class="o">=</span> <span class="sh">"</span><span class="s">output/cnn</span><span class="sh">"</span>
+
+<span class="c1"># split the mnist data into train and test
+</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> <span class="n">trainLabels</span><span class="p">),</span> <span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">testLabels</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="p">.</span><span class="nf">load_data</span><span class="p">()</span>
+
+<span class="c1"># reshape and scale the data
+</span><span class="n">trainData</span> <span class="o">=</span> <span class="n">trainData</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span><span class="n">trainData</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">testData</span>  <span class="o">=</span> <span class="n">testData</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span><span class="n">testData</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">trainData</span>   <span class="o">=</span> <span class="n">trainData</span><span class="p">.</span><span class="nf">astype</span><span class="p">(</span><span class="sh">"</span><span class="s">float32</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">testData</span>    <span class="o">=</span> <span class="n">testData</span><span class="p">.</span><span class="nf">astype</span><span class="p">(</span><span class="sh">"</span><span class="s">float32</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">trainData</span>  <span class="o">/=</span> <span class="mi">255</span>
+<span class="n">testData</span>   <span class="o">/=</span> <span class="mi">255</span>
+
+<span class="c1"># convert class vectors to binary class matrices --&gt; one-hot encoding
+</span><span class="n">mTrainLabels</span>  <span class="o">=</span> <span class="n">np_utils</span><span class="p">.</span><span class="nf">to_categorical</span><span class="p">(</span><span class="n">trainLabels</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+<span class="n">mTestLabels</span>   <span class="o">=</span> <span class="n">np_utils</span><span class="p">.</span><span class="nf">to_categorical</span><span class="p">(</span><span class="n">testLabels</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+
+<span class="c1"># create the CNN model
+</span><span class="n">model</span> <span class="o">=</span> <span class="nc">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Convolution2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">border_mode</span><span class="o">=</span><span class="sh">'</span><span class="s">valid</span><span class="sh">'</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="sh">'</span><span class="s">relu</span><span class="sh">'</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Flatten</span><span class="p">())</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sh">'</span><span class="s">relu</span><span class="sh">'</span><span class="p">))</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nc">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sh">'</span><span class="s">softmax</span><span class="sh">'</span><span class="p">))</span>
+
+<span class="c1"># compile model
+</span><span class="n">model</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="sh">'</span><span class="s">categorical_crossentropy</span><span class="sh">'</span><span class="p">,</span> 
+        <span class="n">optimizer</span><span class="o">=</span><span class="sh">'</span><span class="s">adam</span><span class="sh">'</span><span class="p">,</span> 
+        <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">accuracy</span><span class="sh">'</span><span class="p">])</span>
+
+<span class="c1"># fit the model
+</span><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> 
+                    <span class="n">mTrainLabels</span><span class="p">,</span>
+                    <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">mTestLabels</span><span class="p">),</span>
+                    <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+                    <span class="n">nb_epoch</span><span class="o">=</span><span class="n">nb_epoch</span><span class="p">,</span>
+                    <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># evaluate the model
+</span><span class="n">scores</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">evaluate</span><span class="p">(</span><span class="n">testData</span><span class="p">,</span> <span class="n">mTestLabels</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># print the results
+</span><span class="nf">print </span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] test score - {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nf">print </span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] test accuracy - {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="c1"># save tf.js specific files in model_save_path
+</span><span class="n">tfjs</span><span class="p">.</span><span class="n">converters</span><span class="p">.</span><span class="nf">save_keras_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">model_save_path</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>[INFO] test score - 0.03036247751080955
+[INFO] test accuracy - 0.9904
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Again, look carefully at the preprocessing steps that we do here for CNN and the input shape that we pass in to the <span class="coding">Convolution2D</span> layer. For this tutorial, we have used TensorFlow image ordering format.</p>
+
+<p>Notice how the test accuracy jumped from <strong>0.9828</strong> (MLP) to <strong>0.9904</strong> using CNN. Similar to MLP, we use <span class="coding">tensorflowjs</span> to dump the CNN model + weights to the <span class="coding">model_save_path</span> and we can load it in our server or webpage to make predictions.</p>
+
+<h3 id="javaScript-handlers-for-mouse-and-touch">JavaScript handlers for Mouse and Touch</h3>
+
+<p>Now let’s get into the front-end code for this tutorial. Before we start anything with JavaScript, we first need to load the following JS libraries for everything in this tutorial to work. We need to append these lines in the <span class="coding">head</span> tag of our HTML.</p>
+
+<div class="code-head">index.html<span>code</span></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-2.1.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>  
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"/js/app.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For the user to draw a digit using mobile or desktop or tablet or laptop, we need to create a HTML5 element called <span class="coding">canvas</span>. Inside the <span class="coding">canvas</span>, the user will draw the digit. We will feed the user drawn digit into the deep neural network that we have created to make predictions.</p>
+
+<p>Below is the HTML5 code to create the UI of our simple web app. We have two buttons namely <span class="coding">Clear</span> to clear the canvas and <span class="coding">Predict</span> to make predictions using our deep neural network model. We also have a select option to select any one of the two Deep Neural Nets that we have created (MLP or CNN).</p>
+
+<div class="code-head">index.html<span>code</span></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"digit-demo-container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3</span> <span class="na">id=</span><span class="s">"digit-recognizer-live-demo"</span><span class="nt">&gt;</span>Digit Recognizer using TensorFlow.js Demo<span class="nt">&lt;/h3&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex-two"</span> <span class="na">style=</span><span class="s">"margin-top: 20px;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"clear_canvas"</span> <span class="na">class=</span><span class="s">"material-button-pink"</span> <span class="na">onclick=</span><span class="s">"clearCanvas(this.id)"</span><span class="nt">&gt;</span>Clear<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"select_model"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;option&gt;</span>MLP<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;option&gt;</span>CNN<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"predict_canvas"</span> <span class="na">class=</span><span class="s">"material-button-pink"</span> <span class="na">onclick=</span><span class="s">"predict(this.id)"</span><span class="nt">&gt;</span>Predict<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex-two"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"canvas_box_wrapper"</span> <span class="na">class=</span><span class="s">"canvas-box-wrapper"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"canvas_box"</span> <span class="na">class=</span><span class="s">"canvas-box"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"result_box"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"chart_box"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For a smooth user experience, we will add in some style for the above created HTML5 code. Shown below is the <span class="coding">app.scss</span> code which we will convert to <span class="coding">app.css</span> using <span class="coding">sass app.scss app.css</span> command. If you are not familiar with Sass, please learn about Sass <a href="https://sass-lang.com/guide" target="_blank">here</a>.</p>
+
+<div class="code-head">app.scss<span>code</span></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+</pre></td><td class="rouge-code"><pre><span class="nc">.digit-demo-container</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#4CAF50</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">20px</span> <span class="nb">auto</span><span class="p">;</span>
+
+  <span class="err">h3</span> <span class="err">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#356937</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#295b2b</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">border-top-left-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">border-top-right-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nt">select</span> <span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="err">}</span>
+
+<span class="nc">.flex-two</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">flex-wrap</span><span class="p">:</span> <span class="n">wrap</span><span class="p">;</span>
+  <span class="err">div</span> <span class="err">{</span>
+    <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="err">@include</span> <span class="err">mobile</span> <span class="err">{</span>
+      <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="err">}</span>
+<span class="err">}</span>
+
+<span class="nc">.canvas-box-wrapper</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span> <span class="cp">!important</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="nc">.material-button-pink</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#FFD740</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="err">$</span><span class="n">font_body</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#a58e3a</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.3s</span> <span class="n">cubic-bezier</span><span class="p">(</span><span class="m">0.25</span><span class="p">,</span> <span class="m">0.8</span><span class="p">,</span> <span class="m">0.25</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span> 
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.material-button-pink</span><span class="nd">:focus</span> <span class="p">{</span>
+  <span class="nl">outline</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.material-button-pink</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">8px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.3</span><span class="p">),</span> <span class="m">0</span> <span class="m">5px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.22</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">#chart_box</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="err">@include</span> <span class="err">mobile</span> <span class="err">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="err">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Drawing inside a canvas is a little bit tricky in mobile and desktop. We need to be aware of all the jQuery handlers that are available for <span class="coding">mouse</span> and <span class="coding">touch</span>. Below are the jQuery event handlers that we will be using.</p>
+
+<h5 id="for-desktop--laptop">For Desktop &amp; Laptop</h5>
+<ul>
+  <li><span class="coding">mousedown</span></li>
+  <li><span class="coding">mousemove</span></li>
+  <li><span class="coding">mouseup</span></li>
+  <li><span class="coding">mouseleave</span></li>
+</ul>
+
+<h5 id="for-tablet--mobile">For Tablet &amp; Mobile</h5>
+<ul>
+  <li><span class="coding">touchstart</span></li>
+  <li><span class="coding">touchmove</span></li>
+  <li><span class="coding">touchend</span></li>
+  <li><span class="coding">touchleave</span></li>
+</ul>
+
+<p>Additionally, we will add two more user-defined functions namely <span class="coding">addUserGesture</span> and <span class="coding">drawOnCanvas</span> which I will be explaining shortly.</p>
+
+<p>First, we will have a <span class="coding">div</span> with id <span class="coding">canvas_box</span> inside which we will dynamically create a <span class="coding">canvas</span>. Below is the html code and JavaScript code to create a <span class="coding">canvas</span> inside which the user will draw.</p>
+
+<div class="code-head">index.html<span>code</span></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"canvas_box"</span> <span class="na">class=</span><span class="s">"canvas-box"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"clear_canvas"</span> <span class="na">class=</span><span class="s">"material-button-pink"</span> <span class="na">onclick=</span><span class="s">"clearCanvas(this.id)"</span><span class="nt">&gt;</span>Clear<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-head">app.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+</pre></td><td class="rouge-code"><pre><span class="c1">// GLOBAL variables</span>
+<span class="kd">var</span> <span class="nx">modelName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">digitrecognizermlp</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">model</span><span class="p">;</span>
+
+<span class="c1">// canvas related variables</span>
+<span class="c1">// you can change these variables</span>
+<span class="kd">var</span> <span class="nx">canvasWidth</span>             <span class="o">=</span> <span class="mi">150</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">canvasHeight</span>            <span class="o">=</span> <span class="mi">150</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">canvasStrokeStyle</span>       <span class="o">=</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">canvasLineJoin</span>          <span class="o">=</span> <span class="dl">"</span><span class="s2">round</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">canvasLineWidth</span>         <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">canvasBackgroundColor</span>   <span class="o">=</span> <span class="dl">"</span><span class="s2">black</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">canvasId</span>                <span class="o">=</span> <span class="dl">"</span><span class="s2">canvas</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// variables to hold coordinates and dragging boolean</span>
+<span class="kd">var</span> <span class="nx">clickX</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Array</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">clickY</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Array</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">clickD</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Array</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">drawing</span><span class="p">;</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">chart_box</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">chart_box</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">// Create canvas</span>
+<span class="c1">//---------------------</span>
+<span class="kd">var</span> <span class="nx">canvasBox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">canvas_box</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">canvas</span>    <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">canvas</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">canvas</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">,</span> <span class="nx">canvasWidth</span><span class="p">);</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">,</span> <span class="nx">canvasHeight</span><span class="p">);</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">,</span> <span class="nx">canvasId</span><span class="p">);</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="nx">canvasBackgroundColor</span><span class="p">;</span>
+<span class="nx">canvasBox</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">canvas</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">G_vmlCanvasManager</span> <span class="o">!=</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">canvas</span> <span class="o">=</span> <span class="nx">G_vmlCanvasManager</span><span class="p">.</span><span class="nf">initElement</span><span class="p">(</span><span class="nx">canvas</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nf">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Notice we get the context <span class="coding">ctx</span> of the canvas that we created dynamically using <span class="coding">canvas.getContext(“2d”)</span>.</p>
+
+<p>When the user draws on the canvas, we need to register the position X and Y within the browser. To do that, we make use of <span class="coding">mousedown</span> and <span class="coding">touchstart</span> functions. For mobile and tablet devices, we need to tell JavaScript to prevent the default functionality of scroll if canvas is touched using <span class="coding">e.preventDefault()</span> function.</p>
+
+<p>When the user starts drawing, we pass the X and Y values to <span class="coding">addUserGesture()</span> function and set the <span class="coding">drawing</span> flag <span class="coding">true</span>.</p>
+
+<p>Below two code snippets does these functions for both mobile and desktop devices.</p>
+
+<div class="code-head">app.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="rouge-code"><pre><span class="c1">//---------------------</span>
+<span class="c1">// MOUSE DOWN function</span>
+<span class="c1">//---------------------</span>
+<span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#canvas</span><span class="dl">"</span><span class="p">).</span><span class="nf">mousedown</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">mouseX</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageX</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">offsetLeft</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">mouseY</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageY</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">offsetTop</span><span class="p">;</span>
+
+  <span class="nx">drawing</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="nf">addUserGesture</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">);</span>
+  <span class="nf">drawOnCanvas</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">// TOUCH START function</span>
+<span class="c1">//---------------------</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">touchstart</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="o">==</span> <span class="nx">canvas</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">e</span><span class="p">.</span><span class="nf">preventDefault</span><span class="p">();</span>
+    <span class="p">}</span>
+
+  <span class="kd">var</span> <span class="nx">rect</span>  <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nf">getBoundingClientRect</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">touch</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">touches</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+  <span class="kd">var</span> <span class="nx">mouseX</span> <span class="o">=</span> <span class="nx">touch</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">-</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">left</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">mouseY</span> <span class="o">=</span> <span class="nx">touch</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">-</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">top</span><span class="p">;</span>
+
+  <span class="nx">drawing</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="nf">addUserGesture</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">);</span>
+  <span class="nf">drawOnCanvas</span><span class="p">();</span>
+
+<span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>We have asked JavaScript to just start recording the positions. But the user normally move his finger or move cursor to draw something on the canvas. To record the movement, we use <span class="coding">mousemove</span> and <span class="coding">touchmove</span> functions.</p>
+
+<p>Only if the <span class="coding">drawing</span> bool is set (i.e the user have started to draw), we record the position X, Y and send the drawing boolean to <span class="coding">addUserGesture()</span> function. Then, we call <span class="coding">drawOnCanvas()</span> function to update the user’s drawing which I will explain in a while.</p>
+
+<div class="code-head">app.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre><span class="c1">//---------------------</span>
+<span class="c1">// MOUSE MOVE function</span>
+<span class="c1">//---------------------</span>
+<span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#canvas</span><span class="dl">"</span><span class="p">).</span><span class="nf">mousemove</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">drawing</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">mouseX</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageX</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">offsetLeft</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">mouseY</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageY</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">offsetTop</span><span class="p">;</span>
+    <span class="nf">addUserGesture</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nf">drawOnCanvas</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">// TOUCH MOVE function</span>
+<span class="c1">//---------------------</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">touchmove</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="o">==</span> <span class="nx">canvas</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">e</span><span class="p">.</span><span class="nf">preventDefault</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">drawing</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">rect</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nf">getBoundingClientRect</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">touch</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">touches</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+    <span class="kd">var</span> <span class="nx">mouseX</span> <span class="o">=</span> <span class="nx">touch</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">-</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">left</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">mouseY</span> <span class="o">=</span> <span class="nx">touch</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">-</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">top</span><span class="p">;</span>
+
+    <span class="nf">addUserGesture</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="nx">mouseY</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nf">drawOnCanvas</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>During all the other cases, we simply make the <span class="coding">drawing</span> variable <span class="coding">false</span>. Below is the code snippet to do that.</p>
+
+<div class="code-head">app.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="rouge-code"><pre><span class="c1">//---------------------</span>
+<span class="c1">// MOUSE UP function</span>
+<span class="c1">//---------------------</span>
+<span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#canvas</span><span class="dl">"</span><span class="p">).</span><span class="nf">mouseup</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">drawing</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">// TOUCH END function</span>
+<span class="c1">//---------------------</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">touchend</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="o">==</span> <span class="nx">canvas</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">e</span><span class="p">.</span><span class="nf">preventDefault</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="nx">drawing</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+
+<span class="c1">//----------------------</span>
+<span class="c1">// MOUSE LEAVE function</span>
+<span class="c1">//----------------------</span>
+<span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#canvas</span><span class="dl">"</span><span class="p">).</span><span class="nf">mouseleave</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">drawing</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">// TOUCH LEAVE function</span>
+<span class="c1">//---------------------</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">touchleave</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="o">==</span> <span class="nx">canvas</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">e</span><span class="p">.</span><span class="nf">preventDefault</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="nx">drawing</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Finally, we will understand what <span class="coding">drawOnCanvas()</span> function does. First, we clear the canvas during each move or touch and then refill it with the values of X and Y using the <span class="coding">ctx</span> we obtained eariler for our canvas. We make use of canvas attributes such as <span class="coding">strokeStyle</span>, <span class="coding">lineJoin</span> and <span class="coding">lineWidth</span>, and canvas functions such as <span class="coding">beginPath()</span>, <span class="coding">moveTo()</span>, <span class="coding">lineTo()</span>, <span class="coding">closePath()</span> and <span class="coding">stroke()</span> to visualize what the user had drawn.</p>
+
+<p>To clear the canvas, we simply use <span class="coding">clearRect</span> function and pass in the width and height of the canvas, and we reinitialize the position arrays.</p>
+
+<div class="code-head">app.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+</pre></td><td class="rouge-code"><pre><span class="c1">//----------------------</span>
+<span class="c1">// ADD CLICK function</span>
+<span class="c1">//----------------------</span>
+<span class="kd">function</span> <span class="nf">addUserGesture</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">dragging</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">clickX</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+  <span class="nx">clickY</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>
+  <span class="nx">clickD</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">dragging</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//----------------------</span>
+<span class="c1">// RE DRAW function</span>
+<span class="c1">//----------------------</span>
+<span class="kd">function</span> <span class="nf">drawOnCanvas</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nf">clearRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="nx">canvasStrokeStyle</span><span class="p">;</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineJoin</span>    <span class="o">=</span> <span class="nx">canvasLineJoin</span><span class="p">;</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineWidth</span>   <span class="o">=</span> <span class="nx">canvasLineWidth</span><span class="p">;</span>
+
+  <span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">clickX</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">beginPath</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">clickD</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">ctx</span><span class="p">.</span><span class="nf">moveTo</span><span class="p">(</span><span class="nx">clickX</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nx">clickY</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">ctx</span><span class="p">.</span><span class="nf">moveTo</span><span class="p">(</span><span class="nx">clickX</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">clickY</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">lineTo</span><span class="p">(</span><span class="nx">clickX</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">clickY</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">closePath</span><span class="p">();</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">stroke</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//----------------------</span>
+<span class="c1">// CLEAR CANVAS function</span>
+<span class="c1">//----------------------</span>
+<span class="kd">function</span> <span class="nf">clearCanvas</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nf">clearRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">canvasWidth</span><span class="p">,</span> <span class="nx">canvasHeight</span><span class="p">);</span>
+  <span class="nx">clickX</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Array</span><span class="p">();</span>
+  <span class="nx">clickY</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Array</span><span class="p">();</span>
+  <span class="nx">clickD</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Array</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>That’s it! We have all the super-power javascript functions to make the user draw on a canvas in all devices such as desktop, laptop, tablet and mobile. Now, let’s move on to our deep neural network model that we dumped eariler.</p>
+
+<h3 id="tensorFlow-js-handlers-for-model-related-operations">TensorFlow.js handlers for model related operations</h3>
+
+<p>You can load the entire model folder dumped eariler into your web app or server. We write three important functions that are related to our model in JavaScript.</p>
+
+<ol>
+  <li><span class="coding">loadModel()</span> with select element handler</li>
+  <li><span class="coding">preprocessCanvas()</span></li>
+  <li><span class="coding">predict()</span></li>
+</ol>
+
+<h5 id="load-model-with-select-element-handler">Load Model with select element handler</h5>
+<p>First, we load the model trained in Keras Python environment using a simple HTTPS request and <span class="coding">tf.loadModel()</span> function. We check if the model has loaded or not by using <span class="coding">console.log()</span>. Below is the code snippet to load the trained Keras model using TensorFlow.js.</p>
+
+<div class="code-head">app.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="c1">//-----------------------</span>
+<span class="c1">// select model handler</span>
+<span class="c1">//-----------------------</span>
+<span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#select_model</span><span class="dl">"</span><span class="p">).</span><span class="nf">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">select_model</span>  <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">select_model</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">select_option</span> <span class="o">=</span> <span class="nx">select_model</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">select_model</span><span class="p">.</span><span class="nx">selectedIndex</span><span class="p">].</span><span class="nx">value</span><span class="p">;</span>
+
+    <span class="k">if </span><span class="p">(</span><span class="nx">select_option</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">MLP</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">modelName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">digitrecognizermlp</span><span class="dl">"</span><span class="p">;</span>
+
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if </span><span class="p">(</span><span class="nx">select_option</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">CNN</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">modelName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">digitrecognizercnn</span><span class="dl">"</span><span class="p">;</span>
+
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">modelName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">digitrecognizermlp</span><span class="dl">"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nf">loadModel</span><span class="p">(</span><span class="nx">modelName</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">//-------------------------------------</span>
+<span class="c1">// loader for digitrecognizermlp model</span>
+<span class="c1">//-------------------------------------</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">loadModel</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">model loading..</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="c1">// clear the model variable</span>
+  <span class="nx">model</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+  
+  <span class="c1">// load the model using a HTTPS request (where you have stored your model files)</span>
+  <span class="nx">model</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">tf</span><span class="p">.</span><span class="nf">loadLayersModel</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://gogul09.github.io/models/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">modelName</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/model.json</span><span class="dl">"</span><span class="p">);</span>
+  
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">model loaded..</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">loadModel</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="preprocess-canvas">Preprocess Canvas</h5>
+<p>After loading the model, we need to preprocess the canvas drawn by the user to feed it to the DNN (MLP or CNN) that we have trained using Keras.</p>
+
+<div class="note">
+<p><b>Warning</b>: Preprocessing the HTML5 canvas element is the crucial step in this application.</p>
+</div>
+
+<h5 id="preprocessing-for-mlp">Preprocessing for MLP</h5>
+<ol>
+  <li>We use <span class="coding">tf.browser.fromPixels()</span> and pass in the HTML5 canvas element directly without any transformations.</li>
+  <li>We resize the canvas into our MLP input image size of <strong>[28, 28]</strong> using <span class="coding">tf.resizeNearestNeighbor()</span> function.</li>
+  <li>We transform the canvas image into a grayscale image which becomes two-dimensional using <span class="coding">tf.mean(2)</span> function.</li>
+  <li>We convert all the values in the canvas to float using <span class="coding">tf.toFloat()</span> function and reshape the two-dimensional matrix into a row vector of shape <strong>[1, 784]</strong> to feed it to our MLP model using <span class="coding">tf.reshape()</span>.</li>
+  <li>Finally, we return the tensor after dividing each value in it by <strong>255.0</strong> using <span class="coding">tf.div()</span> as we did earlier during MLP model training.</li>
+</ol>
+
+<h5 id="preprocessing-for-cnn">Preprocessing for CNN</h5>
+<ol>
+  <li>We use <span class="coding">tf.browser.fromPixels()</span> and pass in the HTML5 canvas element directly without any transformations.</li>
+  <li>We resize the canvas into our CNN input image size of <strong>[28, 28]</strong> using <span class="coding">tf.resizeNearestNeighbor()</span> function.</li>
+  <li>We transform the canvas image into a grayscale image which becomes two-dimensional using <span class="coding">tf.mean(2)</span> function.</li>
+  <li>We then expand the dimensions of the grayscale image into 4 dimensions as CNN expects the input to be 4D. To do this, we use <span class="coding">tf.expandDims(2)</span> to get a 3D matrix of shape <strong>[28, 28, 1]</strong> and then we use <span class="coding">tf.expandDims()</span> to get a 4D matrix of shape <strong>[1, 28, 28, 1]</strong>.</li>
+  <li>We convert all the values in the canvas to float using <span class="coding">tf.toFloat()</span> function.</li>
+  <li>Finally, we return the tensor after dividing each value in it by <strong>255.0</strong> using <span class="coding">tf.div()</span> as we did earlier during CNN model training.</li>
+</ol>
+
+<div class="code-head">app.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+</pre></td><td class="rouge-code"><pre><span class="c1">//-----------------------------------------------</span>
+<span class="c1">// preprocess the canvas to be DNN friendly</span>
+<span class="c1">//-----------------------------------------------</span>
+<span class="kd">function</span> <span class="nf">preprocessCanvas</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span> <span class="nx">modelName</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">// if model is not available, send the tensor with expanded dimensions</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">modelName</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">No model defined..</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">}</span> 
+
+  <span class="c1">// if model is digitrecognizermlp, perform all the preprocessing</span>
+  <span class="k">else</span> <span class="k">if </span><span class="p">(</span><span class="nx">modelName</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">digitrecognizermlp</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="c1">// resize the input image to digitrecognizermlp's target size of (784, )</span>
+    <span class="kd">let</span> <span class="nx">tensor</span> <span class="o">=</span> <span class="nx">tf</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nf">fromPixels</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">resizeNearestNeighbor</span><span class="p">([</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">])</span>
+        <span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">toFloat</span><span class="p">()</span>
+        <span class="p">.</span><span class="nf">reshape</span><span class="p">([</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">784</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="nx">tensor</span><span class="p">.</span><span class="nf">div</span><span class="p">(</span><span class="mf">255.0</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// if model is digitrecognizercnn, perform all the preprocessing</span>
+  <span class="k">else</span> <span class="k">if </span><span class="p">(</span><span class="nx">modelName</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">digitrecognizercnn</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// resize the input image to digitrecognizermlp's target size of (1, 28, 28, 1)</span>
+    <span class="kd">let</span> <span class="nx">tensor</span> <span class="o">=</span> <span class="nx">tf</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nf">fromPixels</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">resizeNearestNeighbor</span><span class="p">([</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">])</span>
+        <span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">expandDims</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">expandDims</span><span class="p">()</span>
+        <span class="p">.</span><span class="nf">toFloat</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">tensor</span><span class="p">.</span><span class="nx">shape</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">tensor</span><span class="p">.</span><span class="nf">div</span><span class="p">(</span><span class="mf">255.0</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// else throw an error</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Unknown model name..</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="predict">Predict</h5>
+
+<p>Finally, we are ready to predict what the user has drawn using our loaded DNN (MLP or CNN) model with preprocessed canvas tensor available.</p>
+
+<p>We use the method <span class="coding">model.predict()</span> and pass in our canvas tensor as the argument and get the predictions using <span class="coding">data()</span>. We convert the predictions into a JavaScript array and use <span class="coding">displayChart()</span> to display the predictions in a visually pleasing format.</p>
+
+<p>Displaying the model predictions in the form of a chart is optional. By the way, the model predictions are now available in the variable <span class="coding">results</span>.</p>
+
+<div class="code-head">app.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+</pre></td><td class="rouge-code"><pre><span class="c1">//----------------------------</span>
+<span class="c1">// Bounding box for centering</span>
+<span class="c1">//----------------------------</span>
+<span class="kd">function</span> <span class="nf">boundingBox</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">minX</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="nx">clickX</span><span class="p">)</span> <span class="o">-</span> <span class="mi">20</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">maxX</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="nx">clickX</span><span class="p">)</span> <span class="o">+</span> <span class="mi">20</span><span class="p">;</span>
+  
+  <span class="kd">var</span> <span class="nx">minY</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="nx">clickY</span><span class="p">)</span> <span class="o">-</span> <span class="mi">20</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">maxY</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="nx">clickY</span><span class="p">)</span> <span class="o">+</span> <span class="mi">20</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">tempCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">canvas</span><span class="dl">"</span><span class="p">),</span>
+  <span class="nx">tCtx</span> <span class="o">=</span> <span class="nx">tempCanvas</span><span class="p">.</span><span class="nf">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="nx">tempCanvas</span><span class="p">.</span><span class="nx">width</span>  <span class="o">=</span> <span class="nx">maxX</span> <span class="o">-</span> <span class="nx">minX</span><span class="p">;</span>
+  <span class="nx">tempCanvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">maxY</span> <span class="o">-</span> <span class="nx">minY</span><span class="p">;</span>
+
+  <span class="nx">tCtx</span><span class="p">.</span><span class="nf">drawImage</span><span class="p">(</span><span class="nx">canvas</span><span class="p">,</span> <span class="nx">minX</span><span class="p">,</span> <span class="nx">minY</span><span class="p">,</span> <span class="nx">maxX</span> <span class="o">-</span> <span class="nx">minX</span><span class="p">,</span> <span class="nx">maxY</span> <span class="o">-</span> <span class="nx">minY</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">maxX</span> <span class="o">-</span> <span class="nx">minX</span><span class="p">,</span> <span class="nx">maxY</span> <span class="o">-</span> <span class="nx">minY</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">imgBox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">canvas_image</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">imgBox</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">tempCanvas</span><span class="p">.</span><span class="nf">toDataURL</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="nx">tempCanvas</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//--------------------------------------------</span>
+<span class="c1">// predict function for digit recognizer mlp</span>
+<span class="c1">//--------------------------------------------</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">predict</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="c1">// get the user drawn region alone cropped</span>
+  <span class="nx">croppedCanvas</span> <span class="o">=</span> <span class="nf">boundingBox</span><span class="p">();</span>
+
+  <span class="c1">// show the cropped image </span>
+  <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">canvas_output</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="c1">// preprocess canvas</span>
+  <span class="kd">let</span> <span class="nx">tensor</span> <span class="o">=</span> <span class="nf">preprocessCanvas</span><span class="p">(</span><span class="nx">croppedCanvas</span><span class="p">,</span> <span class="nx">modelName</span><span class="p">);</span>
+
+  <span class="c1">// make predictions on the preprocessed image tensor</span>
+  <span class="kd">let</span> <span class="nx">predictions</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">model</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="nx">tensor</span><span class="p">).</span><span class="nf">data</span><span class="p">();</span>
+
+  <span class="c1">// get the model's prediction results</span>
+  <span class="kd">let</span> <span class="nx">results</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">predictions</span><span class="p">)</span>
+
+  <span class="c1">// display the predictions in chart</span>
+  <span class="nf">displayChart</span><span class="p">(</span><span class="nx">results</span><span class="p">)</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="simple-bar-chart-to-display-the-predictions">Simple Bar Chart to display the predictions</h3>
+
+<p>This section of this tutorial is optional. It is for people like me who are obsessed with data visualization.</p>
+
+<p>You can use the below lines of code to display the predictions of our DNN (MLP or CNN) model in the form of a bar chart. I have used <a href="https://www.chartjs.org/" target="_blank">Chart.js</a> which is a open-source JavaScript charting library.</p>
+
+<div class="code-head">app.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+</pre></td><td class="rouge-code"><pre><span class="c1">//------------------------------</span>
+<span class="c1">// Chart to display predictions</span>
+<span class="c1">//------------------------------</span>
+<span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">firstTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nf">loadChart</span><span class="p">(</span><span class="nx">label</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">modelSelected</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">chart_box</span><span class="dl">'</span><span class="p">).</span><span class="nf">getContext</span><span class="p">(</span><span class="dl">'</span><span class="s1">2d</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">chart</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Chart</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="p">{</span>
+      <span class="c1">// we are in need of a bar chart</span>
+      <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span>
+
+      <span class="c1">// we feed in data dynamically using data variable</span>
+      <span class="c1">// that is passed as an argument to this function</span>
+      <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">labels</span><span class="p">:</span> <span class="nx">label</span><span class="p">,</span>
+          <span class="na">datasets</span><span class="p">:</span> <span class="p">[{</span>
+              <span class="na">label</span><span class="p">:</span> <span class="nx">modelSelected</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> prediction</span><span class="dl">"</span><span class="p">,</span>
+              <span class="na">backgroundColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#f50057</span><span class="dl">'</span><span class="p">,</span>
+              <span class="na">borderColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">rgb(255, 99, 132)</span><span class="dl">'</span><span class="p">,</span>
+              <span class="na">data</span><span class="p">:</span> <span class="nx">data</span><span class="p">,</span>
+          <span class="p">}]</span>
+      <span class="p">},</span>
+
+      <span class="c1">// you can also play around with options for the </span>
+      <span class="c1">// chart if you find time!</span>
+      <span class="na">options</span><span class="p">:</span> <span class="p">{}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">//----------------------------</span>
+<span class="c1">// display chart with updated</span>
+<span class="c1">// drawing from canvas</span>
+<span class="c1">//----------------------------</span>
+<span class="kd">function</span> <span class="nf">displayChart</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">select_model</span>  <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">select_model</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">select_option</span> <span class="o">=</span> <span class="nx">select_model</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">select_model</span><span class="p">.</span><span class="nx">selectedIndex</span><span class="p">].</span><span class="nx">value</span><span class="p">;</span>
+  
+  <span class="nx">label</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">3</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">4</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">5</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">6</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">7</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">8</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">9</span><span class="dl">"</span><span class="p">];</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">firstTime</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">loadChart</span><span class="p">(</span><span class="nx">label</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">select_option</span><span class="p">);</span>
+    <span class="nx">firstTime</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">chart</span><span class="p">.</span><span class="nf">destroy</span><span class="p">();</span>
+    <span class="nf">loadChart</span><span class="p">(</span><span class="nx">label</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">select_option</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">chart_box</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>That’s it! Finally, we have built something awesome using multiple programming languages such as JavaScript, Python, HTML5 and CSS3. It’s all possible because of two amazing deep learning libraries such as Keras and TensorFlow.js.</p>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li><a href="https://en.wikipedia.org/wiki/MNIST_database" target="_blank">MNIST Database</a></li>
+  <li><a href="https://www.tensorflow.org/versions/r1.0/get_started/mnist/beginners" target="_blank">MNIST For ML Beginners</a></li>
+  <li><a href="https://keras.io/" target="_blank">Keras Official Documentation</a></li>
+  <li><a href="https://js.tensorflow.org/" target="_blank">TensorFlow.js Official Documentation</a></li>
+  <li><a href="http://www.williammalone.com/articles/create-html5-canvas-javascript-drawing-app/" target="_blank">Create a Drawing App with HTML5 Canvas and JavaScript</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Multilayer_perceptron" target="_blank">Multi-Layer Perceptron</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Convolutional_neural_network" target="_blank">Convolutional Neural Network</a></li>
+</ol>
+
+<script src="https://unpkg.com/@tensorflow/tfjs"></script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script type="text/javascript" src="/js/digits-recognizer.js"></script>
+
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/digit-recognizer-tf-js"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function () {
+				  this.page.url = 'http://localhost:4000/software/digit-recognizer-tf-js';
+				  this.page.identifier = 'http://localhost:4000/software/digit-recognizer-tf-js';
+				};
+
+				(function() {
+				  var d = document, s = d.createElement('script');
+				  s.src = 'https://gogul09.disqus.com/embed.js';
+				  s.setAttribute('data-timestamp', +new Date());
+				  (d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+
+<script type="text/javascript" src="/js/readtime.js"></script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2024 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/digit-recognizer-tf-js',
+		  'title': 'Recognizing Digits using TensorFlow.js in Google Chrome'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+   </body>
+</html>

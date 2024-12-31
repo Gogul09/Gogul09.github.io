@@ -1,0 +1,257 @@
+.post-heading h6 {
+  color: $white;
+  background-color: $primary_500;
+  font-style: normal;
+  padding: 5px 10px;
+  font-size: 13px;
+  padding-top: 7px;
+  @include mobile {
+    padding-top: 7px;
+  }
+}
+
+.post-heading span {
+  margin-top: 10px;
+}
+
+.post-heading-wrapper {
+  background-color: var(--bgheader);
+  box-shadow: 0 8px 6px -6px var(--bgboxshadow);
+  margin-bottom: 10px !important;
+  @include mobile {
+    padding: 0px;
+    border-radius: 0px;
+    height: auto;
+    box-shadow: none;
+    margin-bottom: 0px !important;
+  }
+  .overlayer {
+    background-color: rgba(0,0,0,0.6);
+    height: 400px;
+    @include mobile {
+      height: auto;
+    }
+  }
+}
+
+.post-heading {
+    text-align: left;
+    margin: 0px auto;
+    font-weight: bold;
+    overflow: hidden;
+    @include mobile {
+      border-radius: 0px;
+      border: none;
+      padding: 0px;
+    }
+}
+
+.post-heading h1 {
+  max-width: 580px;
+  color: white !important;
+  font-size: 2.8em;
+  text-align: center;
+  word-wrap: break-word;
+  line-height: 1.3em;
+  font-family: $font_header;
+  padding: 10px 10px 0px 0px;
+  margin: 0px auto;
+  font-weight: 100;
+  letter-spacing: 0.6px;
+  @include mobile {
+    font-size: 1.2rem;
+    padding: 0px;
+    width: 100%;
+    text-align: left;
+    font-size: 25px;
+  }
+}
+
+.categories-wrapper h1 {
+  @include mobile {
+    text-align: center !important;
+  }
+}
+
+.post-subheading {
+  text-align: center !important;
+  margin: 0px auto;
+  opacity: 1;
+  color: var(--textp) !important;
+  @include mobile {
+    margin: 0;
+    text-align: left !important;
+  }
+  p {
+    color: var(--textp);
+    font-family: $font_body;
+    font-size: 1em;
+    margin-bottom: 0px !important;
+    @include mobile {
+      text-align: left !important;
+      padding-left: 1px;
+    }
+  }
+}
+
+.post-heading img {
+    height: 70px;
+    margin: 20px auto;
+    border: none;
+    @include mobile {
+      height: 50px;
+    }
+}
+
+.post-heading p {
+    text-align: center;
+    color: white;
+    font-weight: 100;
+    font-family: $font_body;
+}
+
+.page-holder ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    margin: 0 !important;
+    @include mobile {
+      justify-content: center;
+    }
+}
+
+.page-holder ul li {
+  list-style-type: none;
+  width: 60%;
+  margin: 0px auto;
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.page-holder .page-treasure:first-child {
+    margin-left: 0;
+}
+
+.page-holder .page-treasure-wrapper {
+  display: flex;
+  background-color: var(--bggem);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--bordergem);
+  flex-direction: row;
+  transition: transform .3s;
+  &:hover, &:active {
+    box-shadow: 0 0 14px rgba(0,0,0,.12);
+    transform: scale(1.025);
+    h2 {
+      color: var(--texth2);
+    }
+    p {
+      color: var(--textp);
+    }
+  }
+  @include mobile {
+    margin: 5px;
+    padding: 10px;
+  }
+}
+
+.page-treasure-image {
+  margin-right: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-treasure-image div {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.music-treasure-image div {
+  width: 125px !important;
+  height: 70px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px !important;
+}
+
+.page-holder .page-treasure h2 {
+  font-size: 15px;
+  line-height: initial;
+  color: var(--texth2);
+  padding: 0;
+  margin: 0;
+  height: initial;
+  @include mobile {
+    font-size: 12px;
+  }
+}
+
+.page-holder h3 {
+  display: inline-block;
+  color: var(--texth3);
+  padding: 5px 0px;
+  transition: color 0.1s ease 0s;
+  z-index: 1;
+  font-size: 18px;
+  margin: 0;
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+
+.page-holder {
+  padding: 20px 0;
+  @include mobile {
+    padding: 10px;
+  }
+}
+
+.post-link p {
+  margin: 6px 0 0 0;
+  padding: 0;
+  font-size: 13px;
+  color: #6b6b6b;
+  margin-bottom: 0px !important;
+  @include mobile {
+    font-size: 12px;
+  }
+}
+
+.music-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.music-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.music-links a:hover {
+    text-decoration: none !important;
+    border-bottom: 0px !important;
+}
+
+.google-play-music-icon {
+  height: 30px;
+  margin-right: 10px;
+}

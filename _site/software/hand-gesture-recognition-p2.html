@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hand Gesture Recognition using Python and OpenCV - Part 2 – Gogul Ilango </title>
+  
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+  <link rel="stylesheet" href="https://use.typekit.net/mry7nes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Hand Gesture Recognition using Python and OpenCV - Part 2" />
+    <meta name="description" content="Learn how to recognize hand gestures after applying background subtraction using OpenCV and Python." />
+    <meta property="og:description" content="Learn how to recognize hand gestures after applying background subtraction using OpenCV and Python." />
+    <meta property="twitter:title" content="Hand Gesture Recognition using Python and OpenCV - Part 2" />
+
+    <meta property="og:image" content="https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Hand Gesture Recognition using Python and OpenCV - Part 2">
+    <meta name="twitter:description" content="Learn how to recognize hand gestures after applying background subtraction using OpenCV and Python.">
+    <meta name="twitter:image" content="https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hand Gesture Recognition using Python and OpenCV - Part 2 | Gogul Ilango</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Hand Gesture Recognition using Python and OpenCV - Part 2" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Learn how to recognize hand gestures after applying background subtraction using OpenCV and Python." />
+<meta property="og:description" content="Learn how to recognize hand gestures after applying background subtraction using OpenCV and Python." />
+<link rel="canonical" href="http://localhost:4000/software/hand-gesture-recognition-p2" />
+<meta property="og:url" content="http://localhost:4000/software/hand-gesture-recognition-p2" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-25T00:00:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh" />
+<meta property="twitter:title" content="Hand Gesture Recognition using Python and OpenCV - Part 2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gogul Ilango"},"dateModified":"2017-04-25T00:00:00+05:30","datePublished":"2017-04-25T00:00:00+05:30","description":"Learn how to recognize hand gestures after applying background subtraction using OpenCV and Python.","headline":"Hand Gesture Recognition using Python and OpenCV - Part 2","image":"https://drive.google.com/uc?id=1keoqik_Zs2O56fPzB3T7lY2Juao5NyQh","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/hand-gesture-recognition-p2"},"url":"http://localhost:4000/software/hand-gesture-recognition-p2"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#000" />
+    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog is a personal space of Gogul Ilango who writes about technology, music production, programming and travel." href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"><span>home</span></a>
+            <a title="music" id = "nav_music" href="https://www.youtube.com/gogulilangomusic" target="_blank"><span>music</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="readtime-progress" id="readtime-progress"></div>
+
+<div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>Hand Gesture Recognition using Python and OpenCV - Part 2</h1>
+		<div class="post-subheading">
+			<p>Computer Vision | 25 April 2017</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/hand-gesture-recognition-p2"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/software/hand-gesture-recognition-p2" data-action="share/whatsapp/share"><img class="icon-whatsapp" src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/hand-gesture-recognition-p2" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-facebook" src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=Hand Gesture Recognition using Python and OpenCV - Part 2&url=http://localhost:4000/software/hand-gesture-recognition-p2" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img class="icon-twitter" src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/hand-gesture-recognition-p2&title=Hand Gesture Recognition using Python and OpenCV - Part 2&summary=Learn how to recognize hand gestures after applying background subtraction using OpenCV and Python.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-linkedin" src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/hand-gesture-recognition-p2" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/hand-gesture-recognition-p2" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Hand Gesture Recognition using Python and OpenCV - Part 2&url=http://localhost:4000/software/hand-gesture-recognition-p2" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/hand-gesture-recognition-p2&title=Hand Gesture Recognition using Python and OpenCV - Part 2&summary=Learn how to recognize hand gestures after applying background subtraction using OpenCV and Python.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="git-showcase">
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
+  </div>
+
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09/gesture-recognition/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Gogul09/gesture-recognition on GitHub">Fork</a>
+  </div>
+
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09/gesture-recognition" data-icon="octicon-star" data-show-count="true" aria-label="Star Gogul09/gesture-recognition on GitHub">Star</a>
+  </div>  
+</div>
+
+<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#count-my-fingers">Count My Fingers</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#four-intermediate-steps">Four Intermediate Steps</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#contours">Contours</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#bitwise-and">Bitwise AND</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#euclidean-distance">Euclidean Distance</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#convex-hull">Convex Hull</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#results">Results</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#segmenting-the-hand">Segmenting the hand</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#finding-the-count-of-fingers">Finding the count of fingers</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#summary">Summary</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#references">References</a></li>
+  </ul>
+</div>
+
+<p>This is a follow-up post of my tutorial on Hand Gesture Recognition using OpenCV and Python. Please read the first part of the tutorial <a href="https://gogul09.github.io/software/hand-gesture-recognition-p1" target="_blank">here</a> and then come back.</p>
+
+<p>In the previous tutorial, we have used Background Subtraction, Motion Detection and Thresholding to segment our hand region from a live video sequence. In this tutorial, we will take one step further to recognize the fingers as well as predict the number of fingers (count) in the live video sequence.</p>
+
+<div class="note"><p>
+<b>Note</b>: This tutorial assumes that you have knowledge in using OpenCV, Python, NumPy and some basics of Computer Vision and Image Processing. If you need to setup environment on your system, please follow the instructions posted <a href="https://gogul09.github.io/software/deep-learning-windows" target="_blank">here</a> and <a href="https://gogul09.github.io/software/deep-learning-linux" target="_blank">here</a>.</p></div>
+
+<h3 id="count-my-fingers">Count My Fingers</h3>
+<p>Having segmented the hand region from the live video sequence, we will make our system to count the fingers that are shown via a camera/webcam. We cannot use any template (provided by OpenCV) that is available to perform this, as it is indeed a challenging problem.</p>
+
+<p>The entire code from my previous tutorial (Hand Gesture Recognition-Part 1) can be seen <a href="https://github.com/Gogul09/gesture-recognition/blob/master/segment.py" target="_blank">here</a> for reference. Note that, we have used the concept of Background Subtraction, Motion Detection and Thresholding to segment the hand region from a live video sequence.</p>
+
+<p>We have obtained the segmented hand region by assuming it as the largest contour (i.e. contour with the maximum area) in the frame. If you bring in some large object inside this frame which is larger than your hand, then this algorithm fails. So, you must make sure that your hand occupies the majority of the region in the frame.</p>
+
+<p>We will use the segmented hand region which was obtained in the variable <span class="coding">hand</span>. Remember, this <span class="coding">hand</span> variable is a tuple having <span class="coding">thresholded</span> (thresholded image) and <span class="coding">segmented</span> (segmented hand region). We are going to utilize these two variables to count the fingers shown. How are we going to do that?</p>
+
+<p>There are various approaches that could be used to count the fingers, but we are going to see one such approach in this tutorial. This is a faster approach to perform hand gesture recognition as proposed by <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.454.3689&amp;rep=rep1&amp;type=pdf" target="_blank">Malima et.al</a>. The methodology to count the fingers (as proposed by Malima et.al) is shown in the figure below.</p>
+
+<figure>
+	<img src="/images/software/gesture-recognition/count_fingers.png" class="typical-image" />
+	<figcaption>Figure 1. Hand-Gesture Recognition algorithm to count the fingers</figcaption>
+</figure>
+
+<p>As you can see from the above image, there are four intermediate steps to count the fingers, given a segmented hand region. All these steps are shown with a corresponding output image (shown in the left) which we get, after performing that particular step.</p>
+
+<h3 id="four-intermediate-steps">Four Intermediate Steps</h3>
+<ol>
+  <li>Find the <a href="https://docs.opencv.org/3.4/d7/d1d/tutorial_hull.html" target="_blank">convex hull</a> of the segmented hand region (which is a contour) and compute the most extreme points in the convex hull (Extreme Top, Extreme Bottom, Extreme Left, Extreme Right).</li>
+  <li>Find the center of palm using these extremes points in the convex hull.</li>
+  <li>Using the palm’s center, construct a circle with the maximum <a href="https://en.wikipedia.org/wiki/Euclidean_distance" target="_blank">Euclidean Distance</a> (between the palm’s center and the extreme points) as radius.</li>
+  <li>Perform bitwise AND operation between the thresholded hand image (frame) and the circular ROI (mask). This reveals the finger slices, which could further be used to calcualate the number of fingers shown.</li>
+</ol>
+
+<p>Below you could see the entire function used to perform the above four steps.</p>
+
+<ul>
+  <li>Input - <span class="coding">thresholded</span> (thresholded image) and <span class="coding">segmented</span> (segmented hand region or contour)</li>
+  <li>Output - <span class="coding">count</span> (Number of fingers).</li>
+</ul>
+
+<h3 class="code-head">recognize.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+</pre></td><td class="rouge-code"><pre><span class="c1">#--------------------------------------------------------------
+# To count the number of fingers in the segmented hand region
+#--------------------------------------------------------------
+</span><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">thresholded</span><span class="p">,</span> <span class="n">segmented</span><span class="p">):</span>
+    <span class="c1"># find the convex hull of the segmented hand region
+</span>    <span class="n">chull</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">convexHull</span><span class="p">(</span><span class="n">segmented</span><span class="p">)</span>
+
+    <span class="c1"># find the most extreme points in the convex hull
+</span>    <span class="n">extreme_top</span>    <span class="o">=</span> <span class="nf">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">].</span><span class="nf">argmin</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">extreme_bottom</span> <span class="o">=</span> <span class="nf">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">].</span><span class="nf">argmax</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">extreme_left</span>   <span class="o">=</span> <span class="nf">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">].</span><span class="nf">argmin</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">extreme_right</span>  <span class="o">=</span> <span class="nf">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">].</span><span class="nf">argmax</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># find the center of the palm
+</span>    <span class="n">cX</span> <span class="o">=</span> <span class="nf">int</span><span class="p">((</span><span class="n">extreme_left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">extreme_right</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">cY</span> <span class="o">=</span> <span class="nf">int</span><span class="p">((</span><span class="n">extreme_top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">extreme_bottom</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># find the maximum euclidean distance between the center of the palm
+</span>    <span class="c1"># and the most extreme points of the convex hull
+</span>    <span class="n">distance</span> <span class="o">=</span> <span class="n">pairwise</span><span class="p">.</span><span class="nf">euclidean_distances</span><span class="p">([(</span><span class="n">cX</span><span class="p">,</span> <span class="n">cY</span><span class="p">)],</span> <span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="n">extreme_left</span><span class="p">,</span> <span class="n">extreme_right</span><span class="p">,</span> <span class="n">extreme_top</span><span class="p">,</span> <span class="n">extreme_bottom</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">maximum_distance</span> <span class="o">=</span> <span class="n">distance</span><span class="p">[</span><span class="n">distance</span><span class="p">.</span><span class="nf">argmax</span><span class="p">()]</span>
+
+    <span class="c1"># calculate the radius of the circle with 80% of the max euclidean distance obtained
+</span>    <span class="n">radius</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="n">maximum_distance</span><span class="p">)</span>
+
+    <span class="c1"># find the circumference of the circle
+</span>    <span class="n">circumference</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="p">)</span>
+
+    <span class="c1"># take out the circular region of interest which has 
+</span>    <span class="c1"># the palm and the fingers
+</span>    <span class="n">circular_roi</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">thresholded</span><span class="p">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="sh">"</span><span class="s">uint8</span><span class="sh">"</span><span class="p">)</span>
+	
+    <span class="c1"># draw the circular ROI
+</span>    <span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">circular_roi</span><span class="p">,</span> <span class="p">(</span><span class="n">cX</span><span class="p">,</span> <span class="n">cY</span><span class="p">),</span> <span class="n">radius</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># take bit-wise AND between thresholded hand using the circular ROI as the mask
+</span>    <span class="c1"># which gives the cuts obtained using mask on the thresholded hand image
+</span>    <span class="n">circular_roi</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">bitwise_and</span><span class="p">(</span><span class="n">thresholded</span><span class="p">,</span> <span class="n">thresholded</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">circular_roi</span><span class="p">)</span>
+
+    <span class="c1"># compute the contours in the circular ROI
+</span>    <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">findContours</span><span class="p">(</span><span class="n">circular_roi</span><span class="p">.</span><span class="nf">copy</span><span class="p">(),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CHAIN_APPROX_NONE</span><span class="p">)</span>
+
+    <span class="c1"># initalize the finger count
+</span>    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># loop through the contours found
+</span>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnts</span><span class="p">:</span>
+        <span class="c1"># compute the bounding box of the contour
+</span>        <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+        <span class="c1"># increment the count of fingers only if -
+</span>        <span class="c1"># 1. The contour region is not the wrist (bottom area)
+</span>        <span class="c1"># 2. The number of points along the contour does not exceed
+</span>        <span class="c1">#     25% of the circumference of the circular ROI
+</span>        <span class="nf">if </span><span class="p">((</span><span class="n">cY</span> <span class="o">+</span> <span class="p">(</span><span class="n">cY</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">))</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">))</span> <span class="ow">and</span> <span class="p">((</span><span class="n">circumference</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">count</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Each of the intermediate step requires some understanding of image processing fundamentals such as Contours, Bitwise-AND, Euclidean Distance and Convex Hull.</p>
+
+<h3 id="contours">Contours</h3>
+<p>The outline or the boundary of the object of interest. A contour is defined as the line that joins all the points along the boundary of an image that have the same intensity. <span class="coding">cv2.findContours()</span> function in OpenCV help us find contours in a binary image. If you pass a binary image to this function, it returns a list of all the contours in the image. Each of the elements in this list is a numpy array that represents the (x, y) coordinate of the boundary points of the contour (or the object).</p>
+
+<h3 id="bitwise-and">Bitwise-AND</h3>
+<p>Performs bit-wise logical AND between two objects. You could visually think of this as using a mask and extracting the regions in an image that lie under this mask alone. OpenCV provides <span class="coding">cv2.bitwise_and()</span> function to perform this operation - <a href="http://docs.opencv.org/trunk/d0/d86/tutorial_py_image_arithmetics.html" target="_blank">Bitwise AND</a>.</p>
+
+<h3 id="euclidean-distance">Euclidean Distance</h3>
+<p>This is the distance between two points given by the equation shown <a href="https://bigsnarf.files.wordpress.com/2012/03/distance.jpg" target="_blank">here</a>. Scikit-learn provides a function called <span class="coding">pairwise.euclidean_distances()</span> to calculate the Euclidean distance from <em>one point</em> to <em>multiple points</em> in a single line of code - <a href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.euclidean_distances.html" target="_blank">Pairwise Euclidean Distance</a>. After that, we take the <em>maximum</em> of all these distances using NumPy’s <span class="coding">argmax()</span> function.</p>
+
+<h3 id="convex-hull">Convex Hull</h3>
+<p>You can think of convex hull as a dynamic, stretchable envelope that wraps around the object of interest. To read more about it, please visit <a href="http://docs.opencv.org/trunk/dd/d49/tutorial_py_contour_features.html" target="_blank">this</a> link.</p>
+
+<hr />
+
+<div class="note">
+    <p>
+        <b>Update</b>: I thought of adding some more explanation to the algorithm and code. Let's understand this algorithm and code with an image (one frame) so that each step is clear for us.
+    </p>
+</div>
+
+<h3 id="segmenting-the-hand">Segmenting the hand</h3>
+
+<p>Let’s look at the following code snippet which is a python function that segments the hand region from the image (single frame).</p>
+
+<h3 class="code-head">recognize-image.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre><span class="c1">#---------------------------------------------
+# To segment the region of hand in the image
+#---------------------------------------------
+</span><span class="k">def</span> <span class="nf">segment</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">grayimage</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">75</span><span class="p">):</span>
+    <span class="c1"># threshold the image to get the foreground which is the hand
+</span>    <span class="n">thresholded</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">threshold</span><span class="p">(</span><span class="n">grayimage</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">THRESH_BINARY</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Original image shape - </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Gray image shape - </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">grayimage</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+
+    <span class="c1"># show the thresholded image
+</span>    <span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Thesholded</span><span class="sh">"</span><span class="p">,</span> <span class="n">thresholded</span><span class="p">)</span>
+
+    <span class="c1"># get the contours in the thresholded image
+</span>    <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">findContours</span><span class="p">(</span><span class="n">thresholded</span><span class="p">.</span><span class="nf">copy</span><span class="p">(),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+
+    <span class="c1"># return None, if no contours detected
+</span>    <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># analyze the contours
+</span>        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Number of Contours found = </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)))</span> 
+        <span class="n">cv2</span><span class="p">.</span><span class="nf">drawContours</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">'</span><span class="s">All Contours</span><span class="sh">'</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span> 
+        
+        <span class="c1"># based on contour area, get the maximum contour which is the hand
+</span>        <span class="n">segmented</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">cnts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">cv2</span><span class="p">.</span><span class="n">contourArea</span><span class="p">)</span>
+        <span class="n">cv2</span><span class="p">.</span><span class="nf">drawContours</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">segmented</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">'</span><span class="s">Max Contour</span><span class="sh">'</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span> 
+        
+        <span class="nf">return </span><span class="p">(</span><span class="n">thresholded</span><span class="p">,</span> <span class="n">segmented</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Line 4 initializes the function with input color image <span class="coding">image</span>, input grayscale image <span class="coding">grayimage</span> and a <span class="coding">threshold</span> variable that we can tune based on the lighting conditions of our image or video.</li>
+  <li>Line 6 thresholds the grayscale image with respect to the threshold that we have choosen. Anything above the threshold is transformed to white and anything below the threshold is transformed to black. You can read more on how to choose the threshold or what thresholding you should use <a href="https://docs.opencv.org/master/d7/d4d/tutorial_py_thresholding.html" target="_blank">here</a>.</li>
+  <li>Line 7 and 8 prints the original color image and input gray image shapes for our reference.</li>
+  <li>Line 11 displays the thresholded image.</li>
+  <li>Line 14 is where the magic happens. We pass the thresholded image <span class="coding">thresholded</span> to OpenCV’s <span class="coding">cv2.findContours()</span> function with some additional parameters that the function expects. This returns all the contours in the thresholded image. Notice how we unpack the return values.</li>
+  <li><span class="coding">cnts</span> is a list of all the contours in the thresholded image. Each element in this list is a numpy array that represents the (x, y) coordinate of the boundary points of the contour (or the object).</li>
+  <li>Line 17 checks the length of contours found, and if its 0, it simply returns nothing.</li>
+  <li>Line 21 prints the number of contours found.</li>
+  <li>Line 22 draws all the contours found in the thresholded image using OpenCV’s <span class="coding">cv2.drawContours()</span> function.</li>
+  <li>Line 23 displays all the contours present in the image.</li>
+  <li>Line 26 finds the maximum contour in the image based on key <span class="coding">cv2.contourArea</span>. Here, we assume that our hand has the largest area in the image. If some object larger than our hand is found in the image, we need to handle this line of code.</li>
+  <li>Line 27 draws the contour with maximum area which in our case is the hand.</li>
+  <li>Line 28 displays the contour with maximum area in the image.</li>
+  <li>Line 30 returns a tuple that has <span class="coding">thresholded</span> image and <span class="coding">segmented</span> contour (which is the hand).</li>
+</ul>
+
+<figure>
+    <img src="/images/software/gesture-recognition/recognize-image-segment.jpg" />
+    <figcaption>Figure 2. Thresholding and Segmenting Hand region from an image (a single frame). <br /> (a) Thresholded image (b) All Contours (c) Max Contour</figcaption>
+</figure>
+
+<h3 id="finding-the-count-of-fingers">Finding the count of fingers</h3>
+
+<p>Let’s look at the following code snippets which is inside a python function that is used to count the number of fingers in the image (single frame).</p>
+
+<p>I have splitted the code snippet into smaller pieces so that we can understand this line by line. Make sure to check the complete function <a href="https://github.com/Gogul09/gesture-recognition/blob/master/recognize-image.py" target="_blank">here</a>.</p>
+
+<p>Firstly, we pass the <span class="coding">segmented</span> contour which is a numpy array that contains all the boundary points (x,y) coordinates. To understand this, let’s print the type and shape of the <span class="coding">segmented</span> contour with first 5 boundary points inside it.</p>
+
+<h3 class="code-head">recognize-image.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Type of Contour: </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">segmented</span><span class="p">)))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Contour shape: </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">segmented</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">First 5 points in contour: </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">segmented</span><span class="p">[:</span><span class="mi">5</span><span class="p">]))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>Type of Contour: &lt;class 'numpy.ndarray'&gt;
+Contour shape: (1196, 1, 2)
+First 5 points in contour: 
+[
+ [[342   6]]
+ [[341   7]]
+ [[338   7]]
+ [[337   8]]
+ [[336   8]]
+]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The next step is to find the extreme points in this contour. How? Here is another magic function in OpenCV - <span class="coding">cv2.convexHull()</span> which returns the farthest boundary points of a contour. To understand it clearly, let’s pass in our <span class="coding">segmented</span> contour to <span class="coding">cv2.convexHull()</span> function.</p>
+
+<h3 class="code-head">recognize-image.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c1"># find the convex hull of the segmented hand region
+</span><span class="n">chull</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">convexHull</span><span class="p">(</span><span class="n">segmented</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Type of Convex hull: </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">chull</span><span class="p">)))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Length of Convex hull: </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">chull</span><span class="p">)))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Shape of Convex hull: </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">chull</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+
+<span class="n">cv2</span><span class="p">.</span><span class="nf">drawContours</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">[</span><span class="n">chull</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Convex Hull</span><span class="sh">"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>Type of Convex hull: &lt;class 'numpy.ndarray'&gt;
+Length of Convex hull: 30
+Shape of Convex hull: (30, 1, 2)
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<figure>
+    <img src="/images/software/gesture-recognition/convex-hull.jpg" class="typical-image" />
+    <figcaption>Figure 3. Convex Hull of the segmented image</figcaption>
+</figure>
+
+<p>For those of you new to python and numpy array, you can write a single line of code to find the extreme points after getting the convex hull. Concept of <span class="coding">argmin()</span> and <span class="coding">argmax()</span> is used to achieve this as shown below.</p>
+
+<h3 class="code-head">recognize-image.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nf">print</span><span class="p">(</span><span class="n">chull</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">chull</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">].</span><span class="nf">argmin</span><span class="p">())</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">].</span><span class="nf">argmin</span><span class="p">()])</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">].</span><span class="nf">argmin</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">].</span><span class="nf">argmin</span><span class="p">()][</span><span class="mi">0</span><span class="p">]))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>Type of Convex hull: &lt;class 'numpy.ndarray'&gt;
+Length of Convex hull: 30
+Shape of Convex hull: (30, 1, 2)
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Above code sample is used to find extreme right boundary point in the convex hull. To find the extreme right boundary point,</p>
+
+<ul>
+  <li>We choose the x-axis column of the convex hull using <span class="coding">chull[:, :, 0]</span> where 0 indicates the first column.</li>
+  <li>We then find the index of maximum number in x-axis column using <span class="coding">chull[:, :, 0].argmax()</span>.</li>
+  <li>We then use that max index to grab the boundary point (x, y) using <span class="coding">chull[chull[:,:,1].argmin()]<span>.</span></span></li>
+  <li>We then get the first indexed element and convert it to a tuple so that it doesn’t get changed as tuples are immutable using <span class="coding">tuple(chull[chull[:,:,1].argmin()][0])</span></li>
+</ul>
+
+<p>Similar one line of code is used to find all the extreme points of the convex hull as shown below.</p>
+
+<h3 class="code-head">recognize-image.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="c1"># find the most extreme points in the convex hull
+</span><span class="n">extreme_top</span>    <span class="o">=</span> <span class="nf">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">].</span><span class="nf">argmin</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">extreme_bottom</span> <span class="o">=</span> <span class="nf">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">].</span><span class="nf">argmax</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">extreme_left</span>   <span class="o">=</span> <span class="nf">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">].</span><span class="nf">argmin</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">extreme_right</span>  <span class="o">=</span> <span class="nf">tuple</span><span class="p">(</span><span class="n">chull</span><span class="p">[</span><span class="n">chull</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">].</span><span class="nf">argmax</span><span class="p">()][</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Extreme Top : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">extreme_top</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Extreme Bottom : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">extreme_bottom</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Extreme Left : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">extreme_left</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Extreme Right : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">extreme_right</span><span class="p">))</span>
+
+<span class="n">cv2</span><span class="p">.</span><span class="nf">drawContours</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">[</span><span class="n">chull</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">extreme_top</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">extreme_bottom</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">extreme_left</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">extreme_right</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Extreme Points in Convex Hull</span><span class="sh">"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>Extreme Top    : (342, 6)
+Extreme Bottom : (435, 548)
+Extreme Left   : (121, 160)
+Extreme Right  : (670, 322)
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<figure>
+    <img src="/images/software/gesture-recognition/extreme-points-convex-hull.jpg" class="typical-image" />
+    <figcaption>Figure 4. Extreme points in Convex Hull of the segmented image</figcaption>
+</figure>
+
+<h3 class="code-head">recognize-image.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="c1"># find the center of the palm
+</span><span class="n">cX</span> <span class="o">=</span> <span class="nf">int</span><span class="p">((</span><span class="n">extreme_left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">extreme_right</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cY</span> <span class="o">=</span> <span class="nf">int</span><span class="p">((</span><span class="n">extreme_top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">extreme_bottom</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Center point : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="nf">tuple</span><span class="p">((</span><span class="n">cX</span><span class="p">,</span><span class="n">cY</span><span class="p">))))</span>
+
+<span class="n">cv2</span><span class="p">.</span><span class="nf">drawContours</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">[</span><span class="n">chull</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">cX</span><span class="p">,</span> <span class="n">cY</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">extreme_top</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">extreme_bottom</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">extreme_left</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">extreme_right</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Extreme Points in Convex Hull</span><span class="sh">"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>Center point : (395, 277)
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<figure>
+    <img src="/images/software/gesture-recognition/extreme-points-and-center-convex-hull.jpg" class="typical-image" />
+    <figcaption>Figure 5. Center point with Extreme points in Convex Hull of the segmented image</figcaption>
+</figure>
+
+<p>Once we have the center point and extreme points, we need to find the euclidean distance from the center point to each of the extreme point. We do that in a single line of code using scikit-learn’s <span class="coding">pairwise.euclidean_distances()</span>. After this, we find the maximum distance with respect to each of the four euclidean distances and form a circumference with radius as 80% of the maximum distance.</p>
+
+<h3 class="code-head">recognize-image.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="c1"># find the maximum euclidean distance between the center of the palm
+# and the most extreme points of the convex hull
+</span><span class="n">distances</span> <span class="o">=</span> <span class="n">pairwise</span><span class="p">.</span><span class="nf">euclidean_distances</span><span class="p">([(</span><span class="n">cX</span><span class="p">,</span> <span class="n">cY</span><span class="p">)],</span> <span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="n">extreme_left</span><span class="p">,</span> <span class="n">extreme_right</span><span class="p">,</span> <span class="n">extreme_top</span><span class="p">,</span> <span class="n">extreme_bottom</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">max_distance</span> <span class="o">=</span> <span class="n">distances</span><span class="p">[</span><span class="n">distances</span><span class="p">.</span><span class="nf">argmax</span><span class="p">()]</span>
+
+<span class="c1"># calculate the radius of the circle with 80% of the max euclidean distance obtained
+</span><span class="n">radius</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="n">max_distance</span><span class="p">)</span>
+
+<span class="c1"># find the circumference of the circle
+</span><span class="n">circumference</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Euclidean Distances : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">distances</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Max Euclidean Distance : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">max_distance</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Radius : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">radius</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Circumference : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">circumference</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>Euclidean Distance : [297.93455657 278.65749586 276.13402543 273.93612394]
+Max Euclidean Distance : 297.9345565724124
+Radius : 238
+Circumference : 1495.3981031087415
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Once we have the center of the convex hull, radius and circumference using the maximum distance, we then construct a numpy array filled with zeros called <span class="coding">circular_roi</span> using the <span class="coding">thresholded</span> image’s shape. We then draw a circle in this <span class="coding">circular_roi</span> with the center of convex hull as the center and radius calculated above.</p>
+
+<p>Next magic in our pipeline is OpenCV’s <span class="coding">cv2.bitwise_and()</span> function which is a bitwise operation that you can read more about it <a href="https://docs.opencv.org/master/d0/d86/tutorial_py_image_arithmetics.html" target="_blank">here</a>.</p>
+
+<p>In simple terms, you have an image and a mask, and pass these to <span class="coding">cv2.bitwise_and()</span> function, the output will be the region where both image and mask had same intensity values. In our case, it displays the cuts in the fingers because we have used <span class="coding">thresholded</span> image and <span class="coding">circular_roi</span> as the mask.</p>
+
+<h3 class="code-head">recognize-image.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="c1"># initialize circular_roi with same shape as thresholded image
+</span><span class="n">circular_roi</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">thresholded</span><span class="p">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="sh">"</span><span class="s">uint8</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Circular ROI shape : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">circular_roi</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Thresholded</span><span class="sh">"</span><span class="p">,</span> <span class="n">thresholded</span><span class="p">)</span>
+
+<span class="c1"># draw the circular ROI with radius and center point of convex hull calculated above
+</span><span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">circular_roi</span><span class="p">,</span> <span class="p">(</span><span class="n">cX</span><span class="p">,</span> <span class="n">cY</span><span class="p">),</span> <span class="n">radius</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Circular ROI Circle</span><span class="sh">"</span><span class="p">,</span> <span class="n">circular_roi</span><span class="p">)</span>
+
+<span class="c1"># take bit-wise AND between thresholded hand using the circular ROI as the mask
+# which gives the cuts obtained using mask on the thresholded hand image
+</span><span class="n">circular_roi</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">bitwise_and</span><span class="p">(</span><span class="n">thresholded</span><span class="p">,</span> <span class="n">thresholded</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">circular_roi</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Bitwise AND</span><span class="sh">"</span><span class="p">,</span> <span class="n">circular_roi</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<figure>
+    <img src="/images/software/gesture-recognition/bitwise-and.jpg" />
+    <figcaption>Figure 6. Construct a circle with center point and radius obtained from convex hull and do bit-wise AND with thresholded image</figcaption>
+</figure>
+
+<p>Now, we have a <span class="coding">circular_roi</span> which has the finger cuts obtained from the thresholded image. To calculate the count of the fingers, we need to exclude the wrist portion in the <span class="coding">circular_roi</span> so that we focus only on the fingers.</p>
+
+<p>To achieve this, we make use of <span class="coding">cv2.findContours()</span> again to find all the contours in <span class="coding">circular_roi</span>.</p>
+
+<p>To remove the wrist, we can sort contours based on area and leave the first contour (as it will be the wrist).</p>
+
+<h3 class="code-head">recognize-image.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c1"># compute the contours in the circular ROI
+</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">findContours</span><span class="p">(</span><span class="n">circular_roi</span><span class="p">.</span><span class="nf">copy</span><span class="p">(),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CHAIN_APPROX_NONE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Number of Contours found = </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)))</span> 
+<span class="n">cv2</span><span class="p">.</span><span class="nf">drawContours</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imwrite</span><span class="p">(</span><span class="sh">"</span><span class="s">resources/count-contours.jpg</span><span class="sh">"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<figure>
+    <img src="/images/software/gesture-recognition/count-contours.jpg" class="typical-image" />
+    <figcaption>Figure 7. Contours of circular_roi to find out count</figcaption>
+</figure>
+
+<p>Once we have the contours after bitwise-and done on <span class="coding">circular_roi</span>, we can easily find the count of fingers by two approaches.</p>
+
+<h4 id="approach-1">Approach 1</h4>
+<p>By sorting the contours based on area, the first contour will obviously be the wrist. So, we can ignore it and find the length of the remaining contours which will be the count of fingers shown in the image.</p>
+
+<h3 class="code-head">recognize-image.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="n">cntsSorted</span> <span class="o">=</span> <span class="nf">sorted</span><span class="p">(</span><span class="n">cnts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">contourArea</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Count of fingers : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">cntsSorted</span><span class="p">[</span><span class="mi">1</span><span class="p">:])))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>Count of fingers : 5
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="approach-2">Approach 2</h4>
+
+<p>For each of the contour, we can find the bounding rectangle of the contour using <span class="coding">cv2.boundingRect()</span> function. This returns 4 numbers where <span class="coding">(x,y)</span> is the top-left coordinate of the rectangle and <span class="coding">(w,h)</span> is the width and height of the rectangle.</p>
+
+<p><strong>Check 1</strong>: To filter out the wrist area, we can use vertical (y) axis to check whether <span class="coding">y + h</span> of a contour is lesser than center point <span class="coding">cY</span> of the convex hull. Sometimes, the thumb of our hand is flexible i.e it can move horizontally or vertically. To compensate for this, we marginally increase the <span class="coding">cY</span> of the convex hull by a factor 0.25 i.e. we use <span class="coding">cY + (cY * 0.25)</span> to check against <span class="coding">y + h</span>. You can still tune this value based on your use case. For me, 0.25 was good to go!</p>
+
+<p><strong>Check 2</strong>: To filter out the wrist area even more, we could also use the perimeter of the circle (circumference). When we loop over the contour, we find that a single contour is a numpy array. Inside this numpy array, we have the boundary points that forms the contour. We can check whether the number of boundary points of a contour <span class="coding">c.shape[0]</span> lie within a limit. Again, I have chosen this limit as <span class="coding">circumference * 0.25</span>. You can still tune this value based on your use case. For me, 0.25 was good to go!</p>
+
+<h3 class="code-head">recognize-image.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># loop through the contours found
+</span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnts</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+    <span class="c1"># compute the bounding box of the contour
+</span>    <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+    <span class="n">cv2</span><span class="p">.</span><span class="nf">rectangle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">w</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="p">.</span><span class="nf">putText</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="sh">'</span><span class="s">C</span><span class="sh">'</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mi">1</span><span class="p">,(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="c1"># increment the count of fingers only if -
+</span>    <span class="c1"># 1. The contour region is not the wrist (bottom area)
+</span>    <span class="c1"># 2. The number of points along the contour does not exceed
+</span>    <span class="c1">#     25% of the circumference of the circular ROI
+</span>    <span class="nf">if </span><span class="p">((</span><span class="n">cY</span> <span class="o">+</span> <span class="p">(</span><span class="n">cY</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">))</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">))</span> <span class="ow">and</span> <span class="p">((</span><span class="n">circumference</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Count of fingers : </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">cntsSorted</span><span class="p">[</span><span class="mi">1</span><span class="p">:])))</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Contours of fingers with box</span><span class="sh">"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>Count of fingers : 5
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<figure>
+    <img src="/images/software/gesture-recognition/count-contours-box.jpg" class="typical-image" />
+    <figcaption>Figure 8. Contours of circular_roi with bounding rectangle</figcaption>
+</figure>
+
+<p>Figure 8 has all the intermediate steps that we have performed to build this pipeline. I have marked each of the intermediate step in different colors for clear understanding.</p>
+
+<h3 id="results">Results</h3>
+<p>You can download the entire code to perfom Hand Gesture Recognition <a href="https://github.com/Gogul09/gesture-recognition" target="_blank">here</a>. Clone this repository using</p>
+
+<h3 class="code-head">Command<span>shell</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git clone https://github.com/Gogul09/gesture-recognition.git
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>in a Terminal/Command prompt. Then, get into the folder and type</p>
+
+<h3 class="code-head">Command<span>shell</span></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>python recognize.py
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="note"><p>
+<b>Note:</b> Do not shake your webcam during the calibration period of 30 frames. If shaken during the first 30 frames, the entire algorithm will not perform as we expect.
+</p></div>
+
+<p>After that, you can bring in your hand into the bounding box, show gestures and the count of fingers will be displayed accordingly. I have included a demo of the entire pipeline below.</p>
+
+<figure>
+	<img src="/images/software/gesture-recognition/demo.gif" class="typical-image" />
+	<figcaption>Figure 2. Hand-Gesture Recognition | Counting the fingers | Demo</figcaption>
+</figure>
+
+<h3 id="summary">Summary</h3>
+<p>In this tutorial, we have learnt about recognizing hand gestures using Python and OpenCV. We have explored Background Subtraction, Thresholding, Segmentation, Contour Extraction, Convex Hull and Bitwise-AND operation on real-time video sequence. We have followed the methodology proposed by Malima et al. to quickly recognize hand gestures.</p>
+
+<p>You could extend this idea by using the count of fingers to instruct a robot to perform some task like picking up an object, go forward, move backward etc. using Arduino or Raspberry Pi platforms. I have also made a simple demo for you by using the count of fingers to control a servo motor’s rotation <a href="https://www.youtube.com/watch?v=4lCjQ84EkSk" target="_blank">here</a>.</p>
+
+<p>The entire algorithm assumes that the background is static i.e. the background does not change. If the background changes and new objects are brought into the frame, the algorithm will not perform well. Kindly let me know in the comments if there are ways to solve this limitation.</p>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li><a href="https://docs.opencv.org/3.4/d1/dc5/tutorial_background_subtraction.html" target="_blank">How to Use Background Subtraction Methods</a></li>
+  <li><a href="https://www.youtube.com/watch?v=fn07iwCrvqQ" target="_blank">Background Subtraction</a></li>
+  <li><a href="http://pyimagesearch.com/" target="_blank">Pyimagesearch - Adrian Rosebrock</a></li>
+  <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.454.3689&amp;rep=rep1&amp;type=pdf" target="_blank">A Fast Algorithm for Vision-based Hand Gesture Recognition For Robot Control</a></li>
+  <li><a href="https://www.arduino.cc/" target="_blank">Arduino</a></li>
+  <li><a href="https://www.learnopencv.com/convex-hull-using-opencv-in-python-and-c/" target="_blank">Convex Hull using OpenCV in Python and C++</a></li>
+  <li><a href="https://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/" target="_blank">Convex Hull - Set 1 (Jarvis’s Algorithm or Wrapping)</a></li>
+  <li><a href="https://brilliant.org/wiki/convex-hull/" target="_blank">Convex Hull - Brilliant</a></li>
+  <li><a href="https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html#ga014b28e56cb8854c0de4a211cb2be656" target="_blank">ConvexHull Documentation: OpenCV Docs</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Euclidean_distance" target="_blank">Euclidean Distance</a></li>
+  <li><a href="https://docs.opencv.org/trunk/d0/d86/tutorial_py_image_arithmetics.html" target="_blank">Bitwise Operations - OpenCV</a></li>
+  <li><a href="https://www.geeksforgeeks.org/find-and-draw-contours-using-opencv-python/" target="_blank">Find and Draw Contours using OpenCV - Python</a></li>
+  <li><a href="https://docs.opencv.org/master/d7/d4d/tutorial_py_thresholding.html" target="_blank">Image Thresholding</a></li>
+  <li><a href="https://docs.opencv.org/3.4/dd/d49/tutorial_py_contour_features.html" target="_blank">Contour Features</a></li>
+</ol>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/hand-gesture-recognition-p2"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function () {
+				  this.page.url = 'http://localhost:4000/software/hand-gesture-recognition-p2';
+				  this.page.identifier = 'http://localhost:4000/software/hand-gesture-recognition-p2';
+				};
+
+				(function() {
+				  var d = document, s = d.createElement('script');
+				  s.src = 'https://gogul09.disqus.com/embed.js';
+				  s.setAttribute('data-timestamp', +new Date());
+				  (d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+
+<script type="text/javascript" src="/js/readtime.js"></script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2024 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/hand-gesture-recognition-p2',
+		  'title': 'Hand Gesture Recognition using Python and OpenCV - Part 2'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+   </body>
+</html>

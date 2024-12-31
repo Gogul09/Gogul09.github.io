@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hand Gesture Recognition using Python and OpenCV - Part 1 – Gogul Ilango </title>
+  
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+  <link rel="stylesheet" href="https://use.typekit.net/mry7nes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Hand Gesture Recognition using Python and OpenCV - Part 1" />
+    <meta name="description" content="Learn how to segment hand regions from a video sequence to further recognize hand gestures using OpenCV and Python." />
+    <meta property="og:description" content="Learn how to segment hand regions from a video sequence to further recognize hand gestures using OpenCV and Python." />
+    <meta property="twitter:title" content="Hand Gesture Recognition using Python and OpenCV - Part 1" />
+
+    <meta property="og:image" content="https://drive.google.com/uc?id=1H-AAPvyD3tfEUFKuXGM4AN1mtQ4aMJhn"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Hand Gesture Recognition using Python and OpenCV - Part 1">
+    <meta name="twitter:description" content="Learn how to segment hand regions from a video sequence to further recognize hand gestures using OpenCV and Python.">
+    <meta name="twitter:image" content="https://drive.google.com/uc?id=1H-AAPvyD3tfEUFKuXGM4AN1mtQ4aMJhn">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hand Gesture Recognition using Python and OpenCV - Part 1 | Gogul Ilango</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Hand Gesture Recognition using Python and OpenCV - Part 1" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Learn how to segment hand regions from a video sequence to further recognize hand gestures using OpenCV and Python." />
+<meta property="og:description" content="Learn how to segment hand regions from a video sequence to further recognize hand gestures using OpenCV and Python." />
+<link rel="canonical" href="http://localhost:4000/software/hand-gesture-recognition-p1" />
+<meta property="og:url" content="http://localhost:4000/software/hand-gesture-recognition-p1" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1H-AAPvyD3tfEUFKuXGM4AN1mtQ4aMJhn" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-06T00:00:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://drive.google.com/uc?id=1H-AAPvyD3tfEUFKuXGM4AN1mtQ4aMJhn" />
+<meta property="twitter:title" content="Hand Gesture Recognition using Python and OpenCV - Part 1" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gogul Ilango"},"dateModified":"2017-04-06T00:00:00+05:30","datePublished":"2017-04-06T00:00:00+05:30","description":"Learn how to segment hand regions from a video sequence to further recognize hand gestures using OpenCV and Python.","headline":"Hand Gesture Recognition using Python and OpenCV - Part 1","image":"https://drive.google.com/uc?id=1H-AAPvyD3tfEUFKuXGM4AN1mtQ4aMJhn","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/hand-gesture-recognition-p1"},"url":"http://localhost:4000/software/hand-gesture-recognition-p1"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#000" />
+    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog is a personal space of Gogul Ilango who writes about technology, music production, programming and travel." href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"><span>home</span></a>
+            <a title="music" id = "nav_music" href="https://www.youtube.com/gogulilangomusic" target="_blank"><span>music</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="readtime-progress" id="readtime-progress"></div>
+
+<div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>Hand Gesture Recognition using Python and OpenCV - Part 1</h1>
+		<div class="post-subheading">
+			<p>Computer Vision | 06 April 2017</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/hand-gesture-recognition-p1"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/software/hand-gesture-recognition-p1" data-action="share/whatsapp/share"><img class="icon-whatsapp" src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/hand-gesture-recognition-p1" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-facebook" src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=Hand Gesture Recognition using Python and OpenCV - Part 1&url=http://localhost:4000/software/hand-gesture-recognition-p1" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img class="icon-twitter" src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/hand-gesture-recognition-p1&title=Hand Gesture Recognition using Python and OpenCV - Part 1&summary=Learn how to segment hand regions from a video sequence to further recognize hand gestures using OpenCV and Python.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-linkedin" src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/hand-gesture-recognition-p1" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/hand-gesture-recognition-p1" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Hand Gesture Recognition using Python and OpenCV - Part 1&url=http://localhost:4000/software/hand-gesture-recognition-p1" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/hand-gesture-recognition-p1&title=Hand Gesture Recognition using Python and OpenCV - Part 1&summary=Learn how to segment hand regions from a video sequence to further recognize hand gestures using OpenCV and Python.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="git-showcase">
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
+  </div>
+
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09/gesture-recognition/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Gogul09/gesture-recognition on GitHub">Fork</a>
+  </div>
+
+  <div>
+    <a class="github-button" href="https://github.com/Gogul09/gesture-recognition" data-icon="octicon-star" data-show-count="true" aria-label="Star Gogul09/gesture-recognition on GitHub">Star</a>
+  </div>  
+</div>
+
+<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#prerequisites">Prerequisites</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#introduction">Introduction</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#problem-statement">Problem statement</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#segment-the-hand-region">Segment the Hand region</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#background-subtraction">Background Subtraction</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#motion-detection-and-thresholding">Motion Detection and Thresholding</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#contour-extraction">Contour Extraction</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_8" href="#implementation">Implementation</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_9" href="#executing-code">Executing code</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_10" href="#summary">Summary</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_11" href="#references">References</a></li>
+  </ul>
+</div>
+
+<p>When I first started to experiment with OpenCV, all I found was codes that explain some image processing concept such as Canny Edge Detection, Thresholding, Grabcut Segmentation etc. I thought of doing an end-to-end project which could use all these elements to build an intelligent system. I started using Python and OpenCV after learning some basics from Adrian’s <a href="http://www.pyimagesearch.com/" target="_blank">pyimagesearch</a> website. After my <a href="http://www.sathieshkumar.com/" target="_blank">professor</a> bought a Robotic Arm, I decided to do Hand Gesture Recognition. You can look at the <a href="https://www.youtube.com/watch?v=4lCjQ84EkSk" target="_blank">video</a> of our project here.</p>
+
+<p>Hand gesture recognition is a cool project to start for a Computer Vision enthusiast as it involves an intuitive step-by-step procedure which could be easily understood, so that you could build more complex stuff on top of these concepts.</p>
+
+<div class="code-head">Objectives<span>goals</span></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>How to approach a Computer Vision problem step-by-step?
+What is Background Subtraction?
+What is Motion Detection?
+What is Thresholding?
+What are Contours?
+How to implement the above concepts in code using OpenCV and Python?
+How to segment hand-region effectively from a real-time video sequence?
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<p>I assume that you are familiar with basics of Python, NumPy and OpenCV as they are the prerequisites for this tutorial. If you want to quickly understand core concepts in Python and NumPy, check out my posts <a href="https://gogul09.github.io/software/python-learning-notes" target="_blank">here</a> and <a href="https://gogul09.github.io/software/numpy-learning-notes" target="_blank">here</a>. In addition to these, you must be familiar with Image basics (such as pixels, dimensions etc) and some basic operations with images such as Thresholding and Segmentation.</p>
+
+<h3 id="introduction">Introduction</h3>
+<p>Gesture recognition has been a very interesting problem in Computer Vision community for a long time. This is particularly due to the fact that segmentation of foreground object from a cluttered background is a challenging problem in real-time. The most obvious reason is because of the semantic gap involved when a human looks at an image and a computer looking at the same image. Humans can easily figure out what’s in an image but for a computer, images are just 3-dimensional matrices. It is because of this, computer vision problems remains a challenge. Look at the image below.</p>
+
+<figure>
+    <img src="/images/software/gesture-recognition/semantic-segmentation.png" />
+    <figcaption>Figure 1. Semantic Segmentation</figcaption>
+</figure>
+
+<p>This image describes the <a href="https://paperswithcode.com/task/semantic-segmentation" target="_blank">semantic segmentation</a> problem where the objective is to find different regions in an image and tag its corresponding labels. In this case, “sky”, “person”, “tree” and “grass”. A quick Google search will give you the necessary links to learn more about this research topic. As this is a very difficult problem to solve, we will restrict our focus to <em>nicely</em> segment one foreground object from a live video sequence.</p>
+
+<h3 id="problem-statement">Problem statement</h3>
+<p>We are going to recognize hand gestures from a video sequence. To recognize these gestures from a live video sequence, we first need to take out the hand region alone removing all the unwanted portions in the video sequence. After segmenting the hand region, we then count the fingers shown in the video sequence to instruct a robot based on the finger count. Thus, the entire problem could be solved using 2 simple steps -</p>
+
+<ol>
+  <li>Find and segment the hand region from the video sequence.</li>
+  <li>Count the number of fingers from the segmented hand region in the video sequence.</li>
+</ol>
+
+<p>How are we going to achieve this? To understand hand-gesture recognition in depth, I have decided to make this tutorial into two parts based on the above two steps.</p>
+
+<p>The first part will be discussed in this tutorial with code. Let’s get started!</p>
+
+<h3 id="segment-the-hand-region">Segment the Hand region</h3>
+<p>The first step in hand gesture recognition is obviously to find the hand region by eliminating all the other unwanted portions in the video sequence. This might seem to be frightening at first. But don’t worry. It will be a lot easier using Python and OpenCV!</p>
+
+<div class="note">
+<p><b>Note:</b> Video sequence is just a collection of frames or collection of images that runs with respect to time.</p>
+</div>
+
+<p>Before getting into further details, let us understand how could we possibly figure out the hand region.</p>
+
+<h3 id="background-subtraction">Background Subtraction</h3>
+<p>First, we need an efficient method to separate foreground from background. To do this, we use the concept of running averages. We make our system to look over a particular scene for 30 frames. During this period, we compute the running average over the current frame and the previous frames. By doing this, we essentially tell our system that -</p>
+
+<div class="note">
+<p>Ok robot! The video sequence that you stared at (running average of those 30 frames) is the <b>background</b>.</p>
+</div>
+
+<p>After figuring out the background, we bring in our hand and make the system understand that our hand is a new entry into the background, which means it becomes the foreground object. But how are we going to take out this foreground alone? The answer is Background Subtraction.</p>
+
+<p>Look at the image below which describes how Background Subtraction works. If you want to write code using C++, please look at <a href="http://docs.opencv.org/trunk/d1/dc5/tutorial_background_subtraction.html" target="_blank">this</a> excellent resource. If you want to code using Python, read on.</p>
+
+<figure>
+    <img src="/images/software/gesture-recognition/background-subtraction.png" />
+    <figcaption>Figure 2. Background Subtraction</figcaption>
+</figure>
+
+<p>After figuring out the background model using running averages, we use the current frame which holds the foreground object (hand in our case) in addition to the background. We calculate the absolute difference between the background model (updated over time) and the current frame (which has our hand) to obtain a difference image that holds the newly added foreground object (which is our hand). This is what Background Subtraction is all about.</p>
+
+<h3 id="motion-detection-and-thresholding">Motion Detection and Thresholding</h3>
+<p>To detect the hand region from this difference image, we need to threshold the difference image, so that only our hand region becomes visible and all the other unwanted regions are painted as black. This is what Motion Detection is all about.</p>
+
+<div class="note">
+    <p><b>Note:</b> Thresholding is the assigment of pixel intensities to 0's and 1's based a particular threshold level so that our object of interest alone is captured from an image.</p>
+</div>
+
+<h3 id="contour-extraction">Contour Extraction</h3>
+<p>After thresholding the difference image, we find contours in the resulting image. The contour with the <em>largest area</em> is assumed to be our hand.</p>
+
+<div class="note">
+    <p><b>Note:</b> Contour is the outline or boundary of an object located in an image.</p>
+</div>
+
+<p>So, our first step to find the hand region from a video sequence involves three simple steps.</p>
+<ol>
+  <li>Background Subtraction</li>
+  <li>Motion Detection and Thresholding</li>
+  <li>Contour Extraction</li>
+</ol>
+
+<h3 id="implementation">Implementation</h3>
+
+<h3 class="code-head">segment.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1"># organize imports
+</span><span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">imutils</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># global variables
+</span><span class="n">bg</span> <span class="o">=</span> <span class="bp">None</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>First, we import all the essential packages to work with and initialize the background model. In case, if you don’t have these packages installed in your computer, I have posts to install all these packages in <a href="https://gogul09.github.io/software/deep-learning-linux" target="_blank">Ubuntu</a> and <a href="https://gogul09.github.io/software/deep-learning-windows" target="_blank">Windows</a>.</p>
+
+<h3 class="code-head">segment.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="c1">#--------------------------------------------------
+# To find the running average over the background
+#--------------------------------------------------
+</span><span class="k">def</span> <span class="nf">run_avg</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">aWeight</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">bg</span>
+    <span class="c1"># initialize the background
+</span>    <span class="k">if</span> <span class="n">bg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">bg</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="nf">copy</span><span class="p">().</span><span class="nf">astype</span><span class="p">(</span><span class="sh">"</span><span class="s">float</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1"># compute weighted average, accumulate it and update the background
+</span>    <span class="n">cv2</span><span class="p">.</span><span class="nf">accumulateWeighted</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">bg</span><span class="p">,</span> <span class="n">aWeight</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Next, we have our function that is used to compute the <span class="coding">running average</span> between the background model and the current frame. This function takes in two arguments - <span class="coding">current frame</span> and <span class="coding">aWeight</span>, which is like a threshold to perform running average over images. If the background model is <span class="coding">None</span> (i.e if it is the first frame), then initialize it with the current frame. Then, compute the running average over the background model and the current frame using <span class="coding">cv2.accumulateWeighted()</span> function. Running average is calculated using the formula given below -</p>
+
+\[dst(x,y) = (1-a).dst(x,y) + a.src(x,y)\]
+
+<ul>
+  <li>\( src(x,y) \) - Source image or input image (1 or 3 channel, 8-bit or 32-bit floating point)</li>
+  <li>\( dst(x,y) \) - Destination image or output image (same channel as source image, 32-bit or 64-bit floating point)</li>
+  <li>\( a \) - Weight of the source image (input image)</li>
+</ul>
+
+<p>To learn more about what is happening behind this function, visit <a href="http://docs.opencv.org/3.0-beta/modules/imgproc/doc/motion_analysis_and_object_tracking.html" target="_blank">this</a> link.</p>
+
+<h3 class="code-head">segment.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="c1">#---------------------------------------------
+# To segment the region of hand in the image
+#---------------------------------------------
+</span><span class="k">def</span> <span class="nf">segment</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">bg</span>
+    <span class="c1"># find the absolute difference between background and current frame
+</span>    <span class="n">diff</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">absdiff</span><span class="p">(</span><span class="n">bg</span><span class="p">.</span><span class="nf">astype</span><span class="p">(</span><span class="sh">"</span><span class="s">uint8</span><span class="sh">"</span><span class="p">),</span> <span class="n">image</span><span class="p">)</span>
+
+    <span class="c1"># threshold the diff image so that we get the foreground
+</span>    <span class="n">thresholded</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">threshold</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">THRESH_BINARY</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># get the contours in the thresholded image
+</span>    <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">cnts</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">findContours</span><span class="p">(</span><span class="n">thresholded</span><span class="p">.</span><span class="nf">copy</span><span class="p">(),</span> <span class="n">cv2</span><span class="p">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+
+    <span class="c1"># return None, if no contours detected
+</span>    <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># based on contour area, get the maximum contour which is the hand
+</span>        <span class="n">segmented</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">cnts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">cv2</span><span class="p">.</span><span class="n">contourArea</span><span class="p">)</span>
+        <span class="nf">return </span><span class="p">(</span><span class="n">thresholded</span><span class="p">,</span> <span class="n">segmented</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Our next function is used to segment the hand region from the video sequence. This function takes in two parameters - <span class="coding">current frame</span> and <span class="coding">threshold</span> used for thresholding the difference image.</p>
+
+<p>First, we find the absolute difference between the background model and the current frame using <span class="coding">cv2.absdiff()</span> function.</p>
+
+<p>Next, we threshold the difference image to reveal only the hand region. Finally, we perform contour extraction over the thresholded image and take the contour with the largest area (which is our hand).</p>
+
+<p>We return the thresholded image as well as the segmented image as a tuple. The math behind thresholding is pretty simple. If \( x(n) \) represents the pixel intensity of an input image at a particular pixel coordinate, then \( threshold \) decides how nicely we are going to segment/threshold the image into a binary image.</p>
+
+\[x(n) =
+\begin{cases}
+1,  &amp; \text{if $n$ &gt;= $threshold$} \\
+0, &amp; \text{if $n$ &lt; $threshold$}
+\end{cases}\]
+
+<h3 class="code-head">segment.py<span>code</span></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+</pre></td><td class="rouge-code"><pre><span class="c1">#-----------------
+# MAIN FUNCTION
+#-----------------
+</span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="c1"># initialize weight for running average
+</span>    <span class="n">aWeight</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+    <span class="c1"># get the reference to the webcam
+</span>    <span class="n">camera</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nc">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># region of interest (ROI) coordinates
+</span>    <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">590</span>
+
+    <span class="c1"># initialize num of frames
+</span>    <span class="n">num_frames</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># keep looping, until interrupted
+</span>    <span class="nf">while</span><span class="p">(</span><span class="bp">True</span><span class="p">):</span>
+        <span class="c1"># get the current frame
+</span>        <span class="p">(</span><span class="n">grabbed</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span> <span class="o">=</span> <span class="n">camera</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+
+        <span class="c1"># resize the frame
+</span>        <span class="n">frame</span> <span class="o">=</span> <span class="n">imutils</span><span class="p">.</span><span class="nf">resize</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">)</span>
+
+        <span class="c1"># flip the frame so that it is not the mirror view
+</span>        <span class="n">frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">flip</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># clone the frame
+</span>        <span class="n">clone</span> <span class="o">=</span> <span class="n">frame</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
+
+        <span class="c1"># get the height and width of the frame
+</span>        <span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span> <span class="o">=</span> <span class="n">frame</span><span class="p">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+
+        <span class="c1"># get the ROI
+</span>        <span class="n">roi</span> <span class="o">=</span> <span class="n">frame</span><span class="p">[</span><span class="n">top</span><span class="p">:</span><span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span><span class="n">left</span><span class="p">]</span>
+
+        <span class="c1"># convert the roi to grayscale and blur it
+</span>        <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">roi</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+        <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nc">GaussianBlur</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># to get the background, keep looking till a threshold is reached
+</span>        <span class="c1"># so that our running average model gets calibrated
+</span>        <span class="k">if</span> <span class="n">num_frames</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+            <span class="nf">run_avg</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">aWeight</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># segment the hand region
+</span>            <span class="n">hand</span> <span class="o">=</span> <span class="nf">segment</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
+
+            <span class="c1"># check whether hand region is segmented
+</span>            <span class="k">if</span> <span class="n">hand</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="c1"># if yes, unpack the thresholded image and
+</span>                <span class="c1"># segmented region
+</span>                <span class="p">(</span><span class="n">thresholded</span><span class="p">,</span> <span class="n">segmented</span><span class="p">)</span> <span class="o">=</span> <span class="n">hand</span>
+
+                <span class="c1"># draw the segmented region and display the frame
+</span>                <span class="n">cv2</span><span class="p">.</span><span class="nf">drawContours</span><span class="p">(</span><span class="n">clone</span><span class="p">,</span> <span class="p">[</span><span class="n">segmented</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">)],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+                <span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Thesholded</span><span class="sh">"</span><span class="p">,</span> <span class="n">thresholded</span><span class="p">)</span>
+
+        <span class="c1"># draw the segmented hand
+</span>        <span class="n">cv2</span><span class="p">.</span><span class="nf">rectangle</span><span class="p">(</span><span class="n">clone</span><span class="p">,</span> <span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">),</span> <span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># increment the number of frames
+</span>        <span class="n">num_frames</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># display the frame with segmented hand
+</span>        <span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">"</span><span class="s">Video Feed</span><span class="sh">"</span><span class="p">,</span> <span class="n">clone</span><span class="p">)</span>
+
+        <span class="c1"># observe the keypress by the user
+</span>        <span class="n">keypress</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+
+        <span class="c1"># if the user pressed "q", then stop looping
+</span>        <span class="k">if</span> <span class="n">keypress</span> <span class="o">==</span> <span class="nf">ord</span><span class="p">(</span><span class="sh">"</span><span class="s">q</span><span class="sh">"</span><span class="p">):</span>
+            <span class="k">break</span>
+
+<span class="c1"># free up memory
+</span><span class="n">camera</span><span class="p">.</span><span class="nf">release</span><span class="p">()</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">destroyAllWindows</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The above code sample is the <span class="coding">main</span> function of our program. We initialize the <span class="coding">aWeight</span> to 0.5. As shown eariler in the running average equation, this threshold means that if you set a lower value for this variable, running average will be performed over larger amount of previous frames and vice-versa. We take a reference to our webcam using <span class="coding">cv2.VideoCapture(0)</span>, which means that we get the default webcam instance in our computer.</p>
+
+<p>Instead of recognizing gestures from the overall video sequence, we will try to minimize the recognizing zone (or the area), where the system has to look for hand region. To highlight this region, we use <span class="coding">cv2.rectangle()</span> function which needs top, right, bottom and left pixel coordinates.</p>
+
+<p>To keep track of frame count, we initialize a variable <span class="coding">num_frames</span>. Then, we start an infinite loop and read the frame from our webcam using <span class="coding">camera.read()</span> function. We then resize the input frame to a fixed width of 700 pixels maintaining the aspect ratio using <span class="coding">imutils</span> library and flip the frame to avoid mirror view.</p>
+
+<p>Next, we take out only the region of interest (i.e the recognizing zone), using simple NumPy slicing. We then convert this ROI into grayscale image and use gaussian blur to minimize the high frequency components in the image. Until we get past <span class="coding">30 frames</span>, we keep on adding the input frame to our <span class="coding">run_avg</span> function and update our background model. Please note that, during this step, it is mandatory to keep your camera without any motion. Or else, the entire algorithm fails.</p>
+
+<p>After updating the background model, the current input frame is passed into the <span class="coding">segment</span> function and the <span class="coding">thresholded</span> image and <span class="coding">segmented</span> image are returned. The segmented contour is drawn over the frame using <span class="coding">cv2.drawContours()</span> and the thresholded output is shown using <span class="coding">cv2.imshow()</span>.</p>
+
+<p>Finally, we display the segmented hand region in the current frame and wait for a <span class="coding">keypress</span> to exit the program. Notice that we maintain <span class="coding">bg</span> variable as a global variable here. This is important and must be taken care of.</p>
+
+<h3 id="executing-code">Executing code</h3>
+
+<p>Copy all the code given above and put it in a single file named <span class="coding">segment.py</span>. Or else, visit <a href="https://github.com/Gogul09/gesture-recognition/blob/master/part1.py" target="_blank">my GitHub link</a> to download this code and save it in your computer. Then, open up a <span class="coding">Terminal</span> or a <span class="coding">Command prompt</span> and type <span class="coding">python segment.py</span>.</p>
+
+<p>Note: Remember to update the background model by keeping the camera static without any motion. After 5-6 seconds, show your hand in the recognizing zone to reveal your hand region alone. Below you can see how our system segments the hand region from the live video sequence effectively.</p>
+
+<figure>
+    <img src="/images/software/gesture-recognition/gesture-recognition-find-hand.png" class="typical-image" />
+    <figcaption>Figure 3. Segmenting hand region in a real-time video sequence</figcaption>
+</figure>
+
+<h3 id="summary">Summary</h3>
+
+<p>In this tutorial, we have learnt about Background Subtraction, Motion Detection, Thresholding and Contour Extraction to nicely segment hand region from a real-time video sequence using OpenCV and Python. In the next part of the tutorial, we will extend this simple technique to make our system (intelligent enough) to recognize hand gestures by counting the fingers shown in the video sequence. Using this, you could build an intelligent robot that performs some operations based on your gesture commands.</p>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li><a href="https://docs.opencv.org/3.4/d1/dc5/tutorial_background_subtraction.html" target="_blank">How to Use Background Subtraction Methods</a></li>
+  <li><a href="https://www.youtube.com/watch?v=fn07iwCrvqQ" target="_blank">Background Subtraction</a></li>
+  <li><a href="http://pyimagesearch.com/" target="_blank">Pyimagesearch - Adrian Rosebrock</a></li>
+</ol>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/hand-gesture-recognition-p1"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function () {
+				  this.page.url = 'http://localhost:4000/software/hand-gesture-recognition-p1';
+				  this.page.identifier = 'http://localhost:4000/software/hand-gesture-recognition-p1';
+				};
+
+				(function() {
+				  var d = document, s = d.createElement('script');
+				  s.src = 'https://gogul09.disqus.com/embed.js';
+				  s.setAttribute('data-timestamp', +new Date());
+				  (d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+
+<script type="text/javascript" src="/js/readtime.js"></script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2024 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/hand-gesture-recognition-p1',
+		  'title': 'Hand Gesture Recognition using Python and OpenCV - Part 1'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+   </body>
+</html>

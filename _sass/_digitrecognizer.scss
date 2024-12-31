@@ -1,0 +1,92 @@
+.digit-demo-container {
+  background-color: #ca3737;
+  border-radius: 5px;
+  margin: 20px auto;
+
+  h3 {
+    width: 100%;
+    font-size: 15px;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    margin: 0px;
+    border-bottom: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  select {
+    margin-top: 0px;
+    height: 30px;
+    font-size: 12px;
+  }
+}
+
+.flex-two {
+  display: flex;
+  flex-wrap: wrap;
+  div {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    @include mobile {
+      padding: 5px;
+    }
+  }
+}
+
+.canvas-box-wrapper {
+  display: block !important;
+
+}
+
+.material-button-pink {
+  background-color: #FFD740;
+  height: 30px;
+  color: black;
+  display: block;
+  font-family: $font_body;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #a58e3a;
+  font-size: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+  margin: 0px auto;
+  border-radius: 5px;
+}
+
+.material-button-pink:focus {
+  outline: none;
+}
+
+.material-button-pink:hover {
+  box-shadow: 0 1px 8px rgba(0,0,0,0.3), 0 5px 10px rgba(0,0,0,0.22);
+}
+
+#chart_box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  @include mobile {
+    padding: 5px;
+  }
+}
+
+.canvas-image {
+  height: 35px;
+  width: 35px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.canvas-output {
+  display: none;
+  p {
+    color: white;
+    margin: 0 !important;
+  }
+}

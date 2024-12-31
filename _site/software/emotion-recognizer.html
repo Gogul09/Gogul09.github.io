@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emotion Recognizer – Gogul Ilango </title>
+
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+  <link rel="stylesheet" href="https://use.typekit.net/mry7nes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Emotion Recognizer" />
+    <meta name="description" content="An interactive demo that uses deep learning to predict emotion after learning live in the browser using Google's Tensorflow.js" />
+    <meta property="og:description" content="An interactive demo that uses deep learning to predict emotion after learning live in the browser using Google's Tensorflow.js" />
+    <meta property="twitter:title" content="Emotion Recognizer" />
+
+    <meta property="og:image" content="https://drive.google.com/uc?id=1XyjJNykHALeJE_tZp81i86BqQgHkm5K_"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Emotion Recognizer">
+    <meta name="twitter:description" content="An interactive demo that uses deep learning to predict emotion after learning live in the browser using Google's Tensorflow.js">
+    <meta name="twitter:image" content="https://drive.google.com/uc?id=1XyjJNykHALeJE_tZp81i86BqQgHkm5K_">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Emotion Recognizer | Gogul Ilango</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Emotion Recognizer" />
+<meta name="author" content="Gogul Ilango" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An interactive demo that uses deep learning to predict emotion after learning live in the browser using Google’s Tensorflow.js" />
+<meta property="og:description" content="An interactive demo that uses deep learning to predict emotion after learning live in the browser using Google’s Tensorflow.js" />
+<link rel="canonical" href="http://localhost:4000/software/emotion-recognizer" />
+<meta property="og:url" content="http://localhost:4000/software/emotion-recognizer" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1XyjJNykHALeJE_tZp81i86BqQgHkm5K_" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-11T00:00:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://drive.google.com/uc?id=1XyjJNykHALeJE_tZp81i86BqQgHkm5K_" />
+<meta property="twitter:title" content="Emotion Recognizer" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gogul Ilango"},"dateModified":"2018-08-11T00:00:00+05:30","datePublished":"2018-08-11T00:00:00+05:30","description":"An interactive demo that uses deep learning to predict emotion after learning live in the browser using Google’s Tensorflow.js","headline":"Emotion Recognizer","image":"https://drive.google.com/uc?id=1XyjJNykHALeJE_tZp81i86BqQgHkm5K_","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/emotion-recognizer"},"url":"http://localhost:4000/software/emotion-recognizer"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="theme-color" content="#000" />
+    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog is a personal space of Gogul Ilango who writes about technology, music production, programming and travel." href="/feed.xml" />
+  </head>
+
+  <body style="background-color: #252525; overflow: hidden; background-image: url(/images/live-demo/deepdrum/bg.png);">
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"><span>home</span></a>
+            <a title="music" id = "nav_music" href="https://www.youtube.com/gogulilangomusic" target="_blank"><span>music</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <!--
+<div id="mobile-tablet-warning" class="mobile-tablet-warning">
+  <h3>Oops!</h3>
+  <p>This demo is highly experimental in mobile and tablet devices. If you are still crazy in trying out this demo, I suggest you to use a laptop or a desktop. Thanks for your understanding! You're cute 😊</p>
+  <a href="https://www.youtube.com/watch?v=WBi_PZ66z5E&feature=youtu.be" target="_blank">YouTube Video Link</a><br><br>
+  <a href="https://github.com/Gogul09/emotion-recognizer" target="_blank">GitHub Code Link</a>
+</div>
+-->
+
+<div class="emotion-container" id="emotion-container">
+  <header class="emotion-header">
+    <h3 onclick="showEmotionDescription()">Emotion Recognizer</h3>
+    <p id="emotion-description">This is a simple implementation of emotion recognition using two deep neural networks (extractor and classifier).<br />You can follow the instructions <a href="https://www.youtube.com/watch?v=WBi_PZ66z5E" target="_blank">here</a> to get this working. Made with <a href="https://github.com/Gogul09/emotion-recognizer" target="_blank">TensorFlow.js</a> and ❤️</p>
+  </header>
+  <div class="emotion-wrapper">
+    <div class="emotion-player emotion-flex">  
+      <div class="emotion-kit">
+        <div id="emotion-laugh" class="emotion-kit-comps">
+          <img id="emoticon-laugh" src="/images/live-demo/emotion/laugh.gif" />
+        </div>
+        <div id="emotion-excited" class="emotion-kit-comps">
+          <img id="emoticon-excited" src="/images/live-demo/emotion/excited.gif" />
+        </div>
+        <div id="emotion-sad" class="emotion-kit-comps">
+          <img id="emoticon-sad" src="/images/live-demo/emotion/sad.gif" />
+        </div>
+        <div id="emotion-angry" class="emotion-kit-comps">
+          <img id="emoticon-angry" src="/images/live-demo/emotion/angry.gif" />
+        </div>
+        <div id="emotion-sleep" class="emotion-kit-comps">
+          <img id="emoticon-sleep" src="/images/live-demo/emotion/sleep.gif" />
+        </div>
+      </div>
+      <div class="emotion-live-cam">
+        <div>
+          <video id="main-stream-video" width="200px" height="200px"></video>
+        </div>
+      </div>
+    </div>
+    <!--- Controller starts here -->
+    <div class="emotion-controller emotion-flex" id="emotion-controller">
+      <!--- Tuner starts here -->
+      <div class="emotion-tuner" id="emotion-tuner">
+        <!--- Learning Rate starts here -->
+        <div class="emotion-dropdown">
+          <div class="emotion-dropdown-cell">
+          <label>Learning Rate</label>
+          <select id="emotion-learning-rate">
+            <option>0.00001</option>
+            <option selected="">0.0001</option>
+            <option>0.001</option>
+            <option>0.003</option>
+          </select>
+        </div>
+        </div>
+        <!--- Learning Rate ends here -->
+        <!--- Batch Size starts here -->
+        <div class="emotion-dropdown">
+          <div class="emotion-dropdown-cell">
+          <label>Batch Size</label>
+          <select id="emotion-batch-size">
+            <option>0.05</option>
+            <option selected="">0.4</option>
+            <option>0.1</option>
+            <option>1</option>
+          </select>
+        </div>
+        </div>
+        <!--- Batch Size ends here -->
+        <!--- Epochs starts here -->
+        <div class="emotion-dropdown">
+          <div class="emotion-dropdown-cell">
+          <label>Epochs</label>
+          <select id="emotion-epochs">
+            <option>10</option>
+            <option selected="">20</option>
+            <option>40</option>
+          </select>
+        </div>
+        </div>
+        <!--- Epochs ends here -->
+        <!--- Hidden Units starts here -->
+        <div class="emotion-dropdown">
+          <div class="emotion-dropdown-cell">
+          <label>Hidden Units</label>
+          <select id="emotion-hidden-units">
+            <option>10</option>
+            <option selected="">100</option>
+            <option>200</option>
+          </select>
+        </div>
+        </div>
+        <!--- Hidden Units ends here -->
+      </div>
+      <!--- Tuner ends here -->
+      <!--- Buttons starts here -->
+      <div class="emotion-buttons">
+        <button onclick="startWebcam()">Start</button>
+        <button onclick="train()">Train</button>
+        <button onclick="predictPlay()">Play</button>
+        <button onclick="stopWebcam()">Stop</button>
+      </div>
+      <!--- Buttons ends here -->
+      <!--- User acquire starts here -->
+      <div class="emotion-acquire">
+        <div class="emotion-acquire-outer">
+          <div class="emotion-acquire-inner" id="sample-laugh" onclick="captureSample(this.id, 0)">
+            <div class="emotion-acquire-cam">
+              <img id="image-laugh" />
+            </div>
+            <p>Add 🤣</p>
+          </div>
+          <p id="count-laugh">0 samples</p>
+        </div>
+        <div class="emotion-acquire-outer">
+          <div class="emotion-acquire-inner" id="sample-excited" onclick="captureSample(this.id, 1)">
+            <div class="emotion-acquire-cam">
+              <img id="image-excited" />
+            </div>
+            <p>Add 😲</p>
+          </div>
+          <p id="count-excited">0 samples</p>
+        </div>
+        <div class="emotion-acquire-outer">
+          <div class="emotion-acquire-inner" id="sample-sad" onclick="captureSample(this.id, 2)">
+            <div class="emotion-acquire-cam">
+              <img id="image-sad" />
+            </div>
+            <p>Add 😰</p>
+          </div>
+          <p id="count-sad">0 samples</p>
+        </div>
+        <div class="emotion-acquire-outer">
+          <div class="emotion-acquire-inner" id="sample-angry" onclick="captureSample(this.id, 3)">
+            <div class="emotion-acquire-cam">
+              <img id="image-angry" />
+            </div>
+            <p>Add 😡</p>
+          </div>
+          <p id="count-angry">0 samples</p>
+        </div>
+        <div class="emotion-acquire-outer">
+          <div class="emotion-acquire-inner" id="sample-sleep" onclick="captureSample(this.id, 4)">
+            <div class="emotion-acquire-cam">
+              <img id="image-sleep" />
+            </div>
+            <p>Add 😴</p>
+          </div>
+          <p id="count-sleep">0 samples</p>
+        </div>
+      </div>
+      <!--- User acquire ends here -->
+    </div>
+    <!--- Controller ends here -->
+  </div>
+</div>
+
+<script src="https://unpkg.com/@tensorflow/tfjs"></script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script type="text/javascript" src="/js/emotion-recognizer.js"></script>
+
+
+    </div>
+
+    <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+    <script src="/js/custom.js"></script>
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/emotion-recognizer',
+		  'title': 'Emotion Recognizer'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+  </body>
+  </html>

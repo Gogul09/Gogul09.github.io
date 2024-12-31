@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome – Gogul Ilango </title>
+  
+  <link rel="shortcut icon" type="image/png" href="/images/favicon_gi.png"/>
+  <link rel="stylesheet" href="https://use.typekit.net/mry7nes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta property="og:title" content="Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome" />
+    <meta name="description" content="Learn how to perform image classification (recognition) using Keras MobileNet and TensorFlow.js." />
+    <meta property="og:description" content="Learn how to perform image classification (recognition) using Keras MobileNet and TensorFlow.js." />
+    <meta property="twitter:title" content="Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome" />
+
+    <meta property="og:image" content="https://drive.google.com/uc?id=1AUebpO4EK4JJSSchFFYiMZlFDoa1LLoy"/>
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+
+    <meta name="twitter:title" content="Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome">
+    <meta name="twitter:description" content="Learn how to perform image classification (recognition) using Keras MobileNet and TensorFlow.js.">
+    <meta name="twitter:image" content="https://drive.google.com/uc?id=1AUebpO4EK4JJSSchFFYiMZlFDoa1LLoy">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome | Gogul Ilango</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Learn how to perform image classification (recognition) using Keras MobileNet and TensorFlow.js." />
+<meta property="og:description" content="Learn how to perform image classification (recognition) using Keras MobileNet and TensorFlow.js." />
+<link rel="canonical" href="http://localhost:4000/software/mobile-net-tensorflow-js" />
+<meta property="og:url" content="http://localhost:4000/software/mobile-net-tensorflow-js" />
+<meta property="og:site_name" content="Gogul Ilango" />
+<meta property="og:image" content="https://drive.google.com/uc?id=1AUebpO4EK4JJSSchFFYiMZlFDoa1LLoy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-27T00:00:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://drive.google.com/uc?id=1AUebpO4EK4JJSSchFFYiMZlFDoa1LLoy" />
+<meta property="twitter:title" content="Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2018-07-27T00:00:00+05:30","datePublished":"2018-07-27T00:00:00+05:30","description":"Learn how to perform image classification (recognition) using Keras MobileNet and TensorFlow.js.","headline":"Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome","image":"https://drive.google.com/uc?id=1AUebpO4EK4JJSSchFFYiMZlFDoa1LLoy","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/mobile-net-tensorflow-js"},"url":"http://localhost:4000/software/mobile-net-tensorflow-js"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <meta name="theme-color" content="#000" />
+    <link id="main-style-sheet" rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Gogul Ilango - This blog is a personal space of Gogul Ilango who writes about technology, music production, programming and travel." href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="outer-wrapping">
+      <div class="inner-container">
+          <div class="topnav header-right" id="top_navigator">
+            <a title="home" id = "nav_home" href="/"><span>home</span></a>
+            <a title="music" id = "nav_music" href="https://www.youtube.com/gogulilangomusic" target="_blank"><span>music</span></a>
+            <a title="theme" id = "nav_theme" class = "nav_theme" onclick="switchTheme(1)"><span>theme</span></a>
+            <a href = "javascript:void(0);" style="font-size:14px;" class="icon" onclick="top_navigation()">&#9776;</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div class="readtime-progress" id="readtime-progress"></div>
+
+<div class="post-heading post-heading-wrapper post-image">
+	<div class="grad-post">
+		<h1>Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome</h1>
+		<div class="post-subheading">
+			<p>Deep Learning | 27 July 2018</p>
+			<p><a href="#show_comments" id="comment-count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/mobile-net-tensorflow-js"></a></p>
+		</div>
+		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="share-it-box">
+<div id="share-box"> 
+		<a href="whatsapp://send?text=http://localhost:4000/software/mobile-net-tensorflow-js" data-action="share/whatsapp/share"><img class="icon-whatsapp" src="/images/icons/whatsapp.png"/></a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/mobile-net-tensorflow-js" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-facebook" src="/images/icons/facebook.png"/></a>
+       
+        <a href="https://twitter.com/intent/tweet?text=Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome&url=http://localhost:4000/software/mobile-net-tensorflow-js" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img class="icon-twitter" src="/images/icons/twitter.png"/></a>
+
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/mobile-net-tensorflow-js&title=Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome&summary=Learn how to perform image classification (recognition) using Keras MobileNet and TensorFlow.js.&source=webjeda" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><img class="icon-linkedin" src="/images/icons/linkedin.png"/></a>                               
+</div>
+</div>
+	</div>
+</div>
+
+<div class="containing">
+	<div class="wrapping">
+
+		<!--<div class="share-box">
+	<button class="top-share-fab" id="top-share-fab" onclick="showShareBox(this.id)"></button>
+	<div id="top-share-box" class="top-share-box">
+		<h5>Share</h5>
+		<ul>
+			<li class="whatsapp-white"><a href="whatsapp://send?text=http://localhost:4000/software/mobile-net-tensorflow-js" data-action="share/whatsapp/share">WhatsApp</a></li>
+			<li class="facebook-white"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/software/mobile-net-tensorflow-js" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >Facebook</a></li>
+			<li class="twitter-white"><a href="https://twitter.com/intent/tweet?text=Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome&url=http://localhost:4000/software/mobile-net-tensorflow-js" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Twitter</a></li>
+			<li class="linkedin-white"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/software/mobile-net-tensorflow-js&title=Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome&summary=Learn how to perform image classification (recognition) using Keras MobileNet and TensorFlow.js.&source=webjeda" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >LinkedIn</a></li>
+		</ul>
+	</div>
+</div>-->
+
+		<div class="post-cover">
+			<div class="carbon_advertisement">
+				<div class="carbon_advertisement_wrapper">
+					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I623I&placement=gogul09githubio" id="_carbonads_js"></script>
+				</div>
+			</div>
+			<article class="post">
+				<div class="entry">
+					<div class="git-showcase">
+  <div>
+  <a class="github-button" href="https://github.com/Gogul09" data-show-count="true" aria-label="Follow @Gogul09 on GitHub">Follow @Gogul09</a>
+  </div>
+
+  <div>
+  <a class="github-button" href="https://github.com/Gogul09/mobile-net-projects/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Gogul09/mobile-net-projects on GitHub">Fork</a>
+  </div>
+
+  <div>
+  <a class="github-button" href="https://github.com/Gogul09/mobile-net-projects" data-icon="octicon-star" data-show-count="true" aria-label="Star Gogul09/mobile-net-projects on GitHub">Star</a>
+  </div>  
+</div>
+
+<div class="sidebar_tracker" id="sidebar_tracker">
+  <button onclick="closeSidebar('sidebar_tracker_content')">X</button>
+  <p onclick="showSidebar('sidebar_tracker_content')">Contents</p>
+  <ul id="sidebar_tracker_content">
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_1" href="#basic-mobilenet-in-python">Basic MobileNet in Python</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_2" href="#convert-keras-model-into-tf-js-layers-format">Convert Keras model into Tf JS layers format</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_3" href="#keras-model-into-tensorflow-js">Keras model into TensorFlow JS</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_4" href="#load-keras-model-into-tf-js">1. Load Keras model into TF.js</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_5" href="#upload-image-from-disk">2. Upload image from disk</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_6" href="#predict-using-mobilenet-model">3. Predict using MobileNet model</a></li>
+    <li><a class="sidebar_links" onclick="handleSideBarLinks(this.id)" id="link_7" href="#references">References</a></li>
+  </ul>
+</div>
+
+<p><strong>In this blog post, we will understand how to perform image classification using Keras MobileNet, deploy it in Google Chrome using TensorFlow.js and use it to make live predictions in the browser.</strong></p>
+
+<p>Being a Python developer with knowledge on Web Development is surely going to help you in the field of Artificial Intelligence in the long run. Because we now have the awesome capabilities of Keras and TensorFlow in a web browser using <a href="https://js.tensorflow.org/" target="_blank">TensorFlow.js</a>.</p>
+
+<p>The interactive demo of what we will be making at the end of the tutorial is shown below. You can play around with the buttons provided to make predictions on an image.</p>
+
+<ol>
+  <li>Click <b>Load Model</b> to load MobileNet model in your browser.</li>
+  <li>Loading image -
+    <ul style="margin-bottom: 0px !important;">  
+      <li>Click <b>Demo Image</b> to import a random image that belongs to an ImageNet category.</li>
+      <li>Click <b>Upload Image</b> if you want to import an image from your disk.</li>
+    </ul>
+  </li>
+  <li>Click <b>Predict</b> to make predictions on the image loaded in the browser.</li>
+</ol>
+
+<div class="demo-container">
+  <h3>Keras MobileNet + TensorFlow.js Demo</h3>
+  <div class="demo-wrapper">
+    <div>
+      <button id="load-button" class="input-button" onclick="loadModel()">Load Model</button>
+      <button id="demo-image-button" class="input-button" onclick="loadDemoImage()">Demo Image</button>
+      <label for="select-file-image" class="input-button">
+          Upload Image
+      </label>
+      <input id="select-file-image" type="file" style="display: none;" />
+      <div id="progress-box" style="display: none; width: 100% !important;">
+        <img src="/images/software/mobile-net-tensorflow-js/loading.gif" id="demo-load" width="100px" />
+        <p style="color: white;">Loading mobilenet model..</p>
+      </div>
+    </div>
+    <div>
+      <button id="predict-button" class="input-button predict-button">Predict</button>
+    </div>
+  </div>
+  <div class="demo-output">
+    <div class="out-box" id="select-file-box" style="display: none;">
+      <img id="test-image" />
+    </div>
+    <div class="out-box" id="predict-box" style="display: none;">
+      <p id="prediction"></p>
+      <br />
+      <p><b style="color: #c2c2c2 !important; font-style: italic; font-weight: 100; font-size: 11px;">Top-5 Predictions</b></p>
+      <ul id="predict-list">
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+<p><b>Note:</b> The above demo uses state-of-the-art Keras MobileNet that's trained on ImageNet with <b>1000 categories</b>. If you upload an image that doesn't belong to any of the 1000 ImageNet categories, then the prediction <b>might not</b> be accurate!</p>
+</div>
+
+<div class="downloads">
+  <span>Downloads</span>
+  <div><button title="Download HTML" onclick="window.open('https://github.com/Gogul09/mobile-net-projects/blob/master/index.html', '_blank')">HTML</button></div>
+  <div><button title="Download CSS" onclick="window.open('https://github.com/Gogul09/mobile-net-projects/blob/master/app.css', '_blank')">CSS</button></div>
+  <div><button title="Download JavaScript" onclick="window.open('https://github.com/Gogul09/mobile-net-projects/blob/master/mobile-net.js', '_blank')">JavaScript</button></div>
+  <div><button title="Download Python" onclick="window.open('https://github.com/Gogul09/mobile-net-projects/blob/master/basic-mobile-net.py', '_blank')">Python</button></div>
+</div>
+
+<h3 id="basic-mobilenet-in-python">Basic MobileNet in Python</h3>
+
+<p>In Keras, MobileNet resides in the <span class="coding">applications</span> module. Keras offers out of the box image classification using MobileNet if the category you want to predict is available in the <a href="https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a" target="_blank">ImageNet categories</a>. If the category doesn’t exist in ImageNet categories, there is a method called fine-tuning that tunes MobileNet for your dataset and classes which we will discuss in another tutorial.</p>
+
+<p>MobileNet offers tons of advantages than other state-of-the-art convolutional neural networks such as VGG16, VGG19, ResNet50, InceptionV3 and Xception.</p>
+<ul>
+  <li>MobileNets are light weight deep neural networks best suited for mobile and embedded vision applications.</li>
+  <li>MobileNets are based on a streamlined architecture that uses depthwise separable convolutions.</li>
+  <li>MobileNet uses two simple global hyperparameters that efficiently trades off between accuracy and latency.</li>
+  <li>MobileNet could be used in object detection, finegrain classification, face recognition, large-scale geo localization etc.</li>
+</ul>
+
+<p>Following are the advantages of using MobileNet over other state-of-the-art deep learning models.</p>
+<ul>
+  <li>Reduced network size - <strong>17MB</strong>.</li>
+  <li>Reduced number of parameters - <strong>4.2 million</strong>.</li>
+  <li>Faster in performance and are useful for mobile applications.</li>
+  <li>Small, low-latency convolutional neural network.</li>
+</ul>
+
+<p>Advantages always come up with some disadvantages and with MobileNet, it’s the accuracy. Yes! Eventhough MobileNet has reduced size, reduced parameters and performs faster, it is less accurate than other state-of-the-art networks as discussed in <a href="https://arxiv.org/pdf/1704.04861.pdf" target="_blank">this</a> paper. But don’t worry. There is only a slight reduction in accuracy when compared to other networks.</p>
+
+<p>In this tutorial, we will follow the steps shown in Figure 1 to make Keras MobileNet available in a web browser using TensorFlow.js.</p>
+
+<figure>
+  <img src="/images/software/mobile-net-tensorflow-js/concept.png" class="typical-image" />
+  <figcaption>Figure 1. Keras MobileNet in Google Chrome using TensorFlow.js</figcaption>
+</figure>
+
+<p>First, we will write a simple python script to make predictions on a test image using Keras MobileNet.</p>
+
+<p>Before sending an image into MobileNet, we need to process the image using 4 simple steps. And to do that, you don’t need OpenCV. Keras provides all the necessary functions under <span class="coding">keras.preprocessing</span> module, and with some basic numpy functions, you are ready to go!</p>
+
+<ol>
+  <li>Load the image and convert it to MobileNet’s input size (224, 224) using <span class="coding">load_img()</span> function.</li>
+  <li>Convert the image into a numpy array using <span class="coding">img_to_array()</span>.</li>
+  <li>Expand the dimensions of the numpy array using <span class="coding">np.expand_dims()</span>.</li>
+  <li>Preprocess the image by rescaling all the values to the range [-1, 1] using <span class="coding">mobilenet.preprocess_input()</span>.</li>
+</ol>
+
+<div class="code-head">basic-mobile-net.py<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre></td><td class="rouge-code"><pre><span class="c1"># organize imports
+</span><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="n">keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="n">keras.preprocessing</span> <span class="kn">import</span> <span class="n">image</span>
+<span class="kn">from</span> <span class="n">keras.applications</span> <span class="kn">import</span> <span class="n">imagenet_utils</span><span class="p">,</span> <span class="n">mobilenet</span>
+<span class="kn">import</span> <span class="n">tensorflowjs</span> <span class="k">as</span> <span class="n">tfjs</span>
+
+<span class="c1"># process an image to be mobilenet friendly
+</span><span class="k">def</span> <span class="nf">process_image</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
+  <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="nf">load_img</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">))</span>
+  <span class="n">img_array</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="nf">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+  <span class="n">img_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">expand_dims</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">pImg</span> <span class="o">=</span> <span class="n">mobilenet</span><span class="p">.</span><span class="nf">preprocess_input</span><span class="p">(</span><span class="n">img_array</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">pImg</span>
+
+<span class="c1"># main function
+</span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+
+  <span class="c1"># path to test image
+</span>  <span class="n">test_img_path</span> <span class="o">=</span> <span class="sh">"</span><span class="s">G:</span><span class="se">\\</span><span class="s">git-repos</span><span class="se">\\</span><span class="s">mobile-net-projects</span><span class="se">\\</span><span class="s">dataset</span><span class="se">\\</span><span class="s">test</span><span class="se">\\</span><span class="s">test_image_1.jpg</span><span class="sh">"</span>
+
+  <span class="c1"># process the test image
+</span>  <span class="n">pImg</span> <span class="o">=</span> <span class="nf">process_image</span><span class="p">(</span><span class="n">test_img_path</span><span class="p">)</span>
+
+  <span class="c1"># define the mobilenet model
+</span>  <span class="n">mobilenet</span> <span class="o">=</span> <span class="n">mobilenet</span><span class="p">.</span><span class="nc">MobileNet</span><span class="p">()</span>
+
+  <span class="c1"># make predictions on test image using mobilenet
+</span>  <span class="n">prediction</span> <span class="o">=</span> <span class="n">mobilenet</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">pImg</span><span class="p">)</span>
+
+  <span class="c1"># obtain the top-5 predictions
+</span>  <span class="n">results</span> <span class="o">=</span> <span class="n">imagenet_utils</span><span class="p">.</span><span class="nf">decode_predictions</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+  <span class="c1"># convert the mobilenet model into tf.js model
+</span>  <span class="n">save_path</span> <span class="o">=</span> <span class="sh">"</span><span class="s">output</span><span class="se">\\</span><span class="s">mobilenet</span><span class="sh">"</span>
+  <span class="n">tfjs</span><span class="p">.</span><span class="n">converters</span><span class="p">.</span><span class="nf">save_keras_model</span><span class="p">(</span><span class="n">mobilenet</span><span class="p">,</span> <span class="n">save_path</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] saved tf.js mobilenet model to disk..</span><span class="sh">"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext code-out highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>[[('n01806143', 'peacock', 0.9998889), 
+  ('n01806567', 'quail', 3.463593e-05), 
+  ('n02018795', 'bustard', 2.7573227e-05), 
+  ('n01847000', 'drake', 1.1352683e-05), 
+  ('n01795545', 'black_grouse', 1.0532762e-05)]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Lines 2-5 imports all the necessary functions to work with.</li>
+  <li>Lines 8-13 is the special definition we use to process an image so that it becomes MobileNet friendly.</li>
+  <li>Line 19 defines the test image path.</li>
+  <li>Line 22 preprocesses the test image.</li>
+  <li>Line 25 instantiates the MobileNet model.</li>
+  <li>Line 28 makes predictions on the test image using MobileNet model.</li>
+  <li>Line 31 gives the top-5 predictions of the test image.</li>
+  <li>Line 32 prints out the top-5 predictions of the test image.</li>
+  <li>Lines 36-38 converts <a href="#convert-keras-model-into-tf-js-layers-format">keras mobilenet model into tf.js layers format</a> at <span class="coding">save_path</span>.</li>
+</ul>
+
+<p>Please make sure you change the <span class="coding">test_img_path</span> in line 19 to test an image from your disk. Figure 2 (shown below) is the test image that I have chosen and the MobileNet model accurately predicted it as a <span class="coding">peacock</span> with a probability of 99.99%. Pretty cool! 😍</p>
+
+<figure>
+  <img src="/images/software/mobile-net-tensorflow-js/test_image_1.jpg" class="typical-image" />
+  <figcaption>Figure 2. Input test image for MobileNet</figcaption>
+</figure>
+
+<p>Cool! Everything works perfectly in our Python environment. Now, we will use this pretrained mobile net model in a web browser.</p>
+
+<h3 id="convert-keras-model-into-tf-js-layers-format">Convert Keras model into Tf.js layers format</h3>
+
+<p>Before deploying a keras model in web, we need to convert the Keras mobilenet python model into tf.js layers format (which we already did in lines 36-38).</p>
+
+<p>To deploy a Keras model in web, we need a package called <span class="coding">tensorflowjs</span>. Run the below command to get it.</p>
+
+<div class="code-head">install tensorflowjs<span>cmd</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">tensorflowjs</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>After installing it, you can either run the command as a standalone one or you can integrate it in your python script as shown below (which I prefer).</p>
+
+<div class="code-head">1. keras to tf.js layers format<span>cmd</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">tensorflowjs_converter</span> <span class="o">--</span><span class="n">input_format</span> <span class="n">keras</span> \
+                       <span class="n">path_to_keras_model</span><span class="p">.</span><span class="n">h5</span> \
+                       <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">tfjs_target_dir</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-head">2. inside python script<span>code</span></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">tensorflowjs</span> <span class="k">as</span> <span class="n">tfjs</span>
+
+<span class="k">def</span> <span class="nf">train</span><span class="p">(...):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="nc">Sequential</span><span class="p">()</span> <span class="c1"># for example
+</span>    <span class="bp">...</span>
+    <span class="n">model</span><span class="p">.</span><span class="nf">compile</span><span class="p">(...)</span>
+    <span class="n">model</span><span class="p">.</span><span class="nf">fit</span><span class="p">(...)</span>
+    <span class="n">tfjs</span><span class="p">.</span><span class="n">converters</span><span class="p">.</span><span class="nf">save_keras_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tfjs_target_path</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <span class="coding">tfjs_target_path</span> or <span class="coding">save_path</span> (in our case) is a folder that contains <span class="coding">model.json</span> and a set of sharded weight binary files. If you take a look into <span class="coding">model.json</span> file, you will see the model architecture or graph (a description of layers and their connections) plus a manifest of the weight files.</p>
+
+<h3 id="keras-model-into-tensorflow-js">Keras model into TensorFlow JS</h3>
+
+<p>For this tutorial, I used my GitHub pages repo to hold the keras mobilenet model files. I copied the entire folder under <span class="coding">save_path</span> <a href="https://gogul09.github.io/models/mobilenet/model.json" target="_blank">here</a>.</p>
+
+<p>This is crucial for our application to work because if you host these model files in a different server, you might face <a href="https://enable-cors.org/" target="_blank">CORS issue</a> in your web app. Storing your model files in the same domain as your web app is safer and preferred way.</p>
+
+<p>Let’s get started with the sweet TensorFlow.js 😘</p>
+
+<p>You need these three javascript libraries loaded in your website.</p>
+<ol>
+  <li><span class="coding">IMAGENET_CLASSES</span> variable that has all the ImageNet categories indexed which could easily be loaded from <a href="https://github.com/tensorflow/tfjs-examples/blob/master/mobilenet/imagenet_classes.js" target="_blank">here</a>.</li>
+  <li>TensorFlow.js latest source.</li>
+  <li>jQuery to make JavaScript easier.</li>
+</ol>
+
+<div class="code-head">index.html<span>code</span></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"/js/imagenet_classes.js"</span><span class="nt">&gt;&lt;/script&gt;</span> 
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-2.1.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>  
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Once you load all the above three scripts, you can open up a new file named <span class="coding">mobile-net.js</span> that will have all the functionality needed to make Keras MobileNet model work in a web browser.</p>
+
+<p>The user interface that I made at the start of the tutorial has HTML, CSS and JavaScript code combined. We will look into model specific part instead of looking into every single line of code.</p>
+
+<h3 id="load-keras-model-into-tf-js">1. Load Keras model into TF.js</h3>
+
+<p>Firstly, you need to load the Keras pretrained model json that you have stored in your web server. To do this, you can use the below code snippet.</p>
+
+<p>The below code snippet is an <span class="coding">async</span> function that loads a keras model json using <span class="coding">tf.loadModel()</span>. In line 17, <span class="coding">await</span> means without disturbing the UI, you are asking JavaScript to load model behind the scenes. To view the status of model loading, we use a progress bar as well as <span class="coding">console.log()</span>.</p>
+
+<div class="code-head">mobile-net.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">model</span><span class="p">;</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">loadModel</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">model loading..</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="c1">// display model loading progress box</span>
+  <span class="nx">loader</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">progress-box</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">load_button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">load-button</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">loader</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="c1">// model name is "mobilenet"</span>
+  <span class="nx">modelName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">mobilenet</span><span class="dl">"</span><span class="p">;</span>
+  
+  <span class="c1">// clear the model variable</span>
+  <span class="nx">model</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+  
+  <span class="c1">// load the model using a HTTPS request (where you have stored your model files)</span>
+  <span class="nx">model</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">tf</span><span class="p">.</span><span class="nf">loadLayersModel</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://gogul09.github.io/models/mobilenet/model.json</span><span class="dl">'</span><span class="p">);</span>
+  
+  <span class="c1">// hide model loading progress box</span>
+  <span class="nx">loader</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">load_button</span><span class="p">.</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="nx">load_button</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Loaded Model</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">model loaded..</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="upload-image-from-disk">2. Upload image from disk</h3>
+
+<p>To upload an image from disk, you can use the below code snippet which makes use of HTML5 File API. I have used a button <strong>Upload Image</strong> which has a <span class="coding">change</span> handler associated with it.</p>
+
+<div class="code-head">index.html<span>code</span></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- used to get image from disk --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"select-file-image"</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="code-head">mobile-net.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="c1">// if there is a change to "Upload Image" button, </span>
+<span class="c1">// load and render the image</span>
+<span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#select-file-image</span><span class="dl">"</span><span class="p">).</span><span class="nf">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">renderImage</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="c1">// renders the image which is loaded from disk to the img tag </span>
+<span class="kd">function</span> <span class="nf">renderImage</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileReader</span><span class="p">();</span>
+  <span class="nx">reader</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">img_url</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">result</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">test-image</span><span class="dl">"</span><span class="p">).</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">img_url</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">reader</span><span class="p">.</span><span class="nf">readAsDataURL</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="predict-using-mobilenet-model">3. Predict using MobileNet model</h3>
+
+<p>To make predictions using mobilenet that’s now loaded into Tf.js environment, we need to perform two steps.</p>
+<ol>
+  <li>Preprocess the input image to be mobilenet friendly.</li>
+  <li>Make predicitons on the input image.</li>
+</ol>
+
+<h4 id="31-preprocess-the-input-image">3.1 Preprocess the input image</h4>
+<p>As I have already mentioned, input image size to mobilenet is [224, 224] as well as the features are scaled between [-1, 1]. You need to perform these two steps before making predictions using the model. To do this, we use <span class="coding">preprocessImage()</span> function that takes in two arguments <span class="coding">image</span> and <span class="coding">modelName</span>.</p>
+
+<p>The input image can easily be loaded using <span class="coding">tf.fromPixels()</span> , resized using <span class="coding">resizeNearestNeighbor()</span> and converting all the values in the image to float using <span class="coding">toFloat()</span>.</p>
+
+<p>After that, we feature scale the values in the image tensor using a scalar value of 127.5 which is the center value of image pixel range [0, 255]. For each pixel value in the image, we subtract this offset value and divide by this offset value to scale between [-1, 1]. We then expand the dimensions using <span class="coding">expandDims()</span>.</p>
+
+<div class="code-head">mobile-net.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre><span class="c1">// preprocess the image to be mobilenet friendly</span>
+<span class="kd">function</span> <span class="nf">preprocessImage</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span> <span class="nx">modelName</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">// resize the input image to mobilenet's target size of (224, 224)</span>
+  <span class="kd">let</span> <span class="nx">tensor</span> <span class="o">=</span> <span class="nx">tf</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nf">fromPixels</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">resizeNearestNeighbor</span><span class="p">([</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">])</span>
+    <span class="p">.</span><span class="nf">toFloat</span><span class="p">();</span>
+
+  <span class="c1">// if model is not available, send the tensor with expanded dimensions</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">modelName</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">tensor</span><span class="p">.</span><span class="nf">expandDims</span><span class="p">();</span>
+  <span class="p">}</span> 
+
+  <span class="c1">// if model is mobilenet, feature scale tensor image to range [-1, 1]</span>
+  <span class="k">else</span> <span class="k">if </span><span class="p">(</span><span class="nx">modelName</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">mobilenet</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">offset</span> <span class="o">=</span> <span class="nx">tf</span><span class="p">.</span><span class="nf">scalar</span><span class="p">(</span><span class="mf">127.5</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">tensor</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="nx">offset</span><span class="p">)</span>
+      <span class="p">.</span><span class="nf">div</span><span class="p">(</span><span class="nx">offset</span><span class="p">)</span>
+      <span class="p">.</span><span class="nf">expandDims</span><span class="p">();</span>
+  <span class="p">}</span> 
+
+  <span class="c1">// else throw an error</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Unknown model name..</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="32-predict-using-tfjs-model">3.2 Predict using Tf.js model</h4>
+
+<p>After preprocessing the image, I have made a handler for <strong>Predict</strong> button. Again, this is also an <span class="coding">async</span> function that uses <span class="coding">await</span> till the model make successfull predictions.</p>
+
+<p>Prediction using a Tf.js model is straightforward as Keras which uses <span class="coding">model.predict(tensor)</span>. To get the predictions, we pass it <span class="coding">data()</span> to the former.</p>
+
+<p>Results from the predictions are mapped to an array named <span class="coding">results</span> using <span class="coding">IMAGENET_CLASSES</span> that we loaded at the beginning of this tutorial. We also sort this array based on the probability that is highest using <span class="coding">sort()</span> and take only the top-5 probabilities using <span class="coding">slice()</span>.</p>
+
+<div class="code-head">mobile-net.js<span>code</span></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+</pre></td><td class="rouge-code"><pre><span class="c1">// If "Predict Button" is clicked, preprocess the image and</span>
+<span class="c1">// make predictions using mobilenet</span>
+<span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#predict-button</span><span class="dl">"</span><span class="p">).</span><span class="nf">click</span><span class="p">(</span><span class="k">async</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// check if model loaded</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">model</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please load the model first..</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="c1">// check if image loaded</span>
+  <span class="k">if </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">predict-box</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please load an image using 'Demo Image' or 'Upload Image' button..</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="c1">// html-image element can be given to tf.fromPixels</span>
+  <span class="kd">let</span> <span class="nx">image</span>  <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">test-image</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">tensor</span> <span class="o">=</span> <span class="nf">preprocessImage</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span> <span class="nx">modelName</span><span class="p">);</span>
+
+  <span class="c1">// make predictions on the preprocessed image tensor</span>
+  <span class="kd">let</span> <span class="nx">predictions</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">model</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="nx">tensor</span><span class="p">).</span><span class="nf">data</span><span class="p">();</span>
+
+  <span class="c1">// get the model's prediction results</span>
+  <span class="kd">let</span> <span class="nx">results</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">predictions</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="na">probability</span><span class="p">:</span> <span class="nx">p</span><span class="p">,</span>
+        <span class="na">className</span><span class="p">:</span> <span class="nx">IMAGENET_CLASSES</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+      <span class="p">};</span>
+    <span class="p">}).</span><span class="nf">sort</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">b</span><span class="p">.</span><span class="nx">probability</span> <span class="o">-</span> <span class="nx">a</span><span class="p">.</span><span class="nx">probability</span><span class="p">;</span>
+    <span class="p">}).</span><span class="nf">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+
+  <span class="c1">// display the top-1 prediction of the model</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">results-box</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">prediction</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">MobileNet prediction - &lt;b&gt;</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">className</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;/b&gt;</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="c1">// display top-5 predictions of the model</span>
+  <span class="kd">var</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">predict-list</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">ul</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="nx">results</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">className</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">p</span><span class="p">.</span><span class="nx">probability</span><span class="p">.</span><span class="nf">toFixed</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
+    <span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">LI</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">li</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">className</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">p</span><span class="p">.</span><span class="nx">probability</span><span class="p">.</span><span class="nf">toFixed</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+    <span class="nx">ul</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>There you go! We now have the power of state-of-the-art Keras pretrained model MobileNet in a client browser that is able to make predictions on images that belong to ImageNet category.</p>
+
+<p>Notice that the mobilenet model loads very quickly in the browser and makes predictions very fast 😎</p>
+
+<script type="text/javascript" src="/js/imagenet_classes.js"></script>
+
+<script src="https://unpkg.com/@tensorflow/tfjs"></script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script type="text/javascript" src="/js/mobile-net.js"></script>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li><a href="https://js.tensorflow.org/" target="_blank">TensorFlow.js - Official Documentation</a></li>
+  <li><a href="https://keras.io/" target="_blank">Keras - Official Documentation</a></li>
+  <li><a href="https://js.tensorflow.org/tutorials/import-keras.html" target="_blank">Importing a Keras model into TensorFlow.js</a></li>
+  <li><a href="https://www.youtube.com/watch?v=Qt3ZABW5lD0" target="_blank">Introduction to TensorFlow.js - Intelligence and Learning</a></li>
+  <li><a href="https://www.youtube.com/watch?v=D-XzAeVvMkg" target="_blank">TensorFlow.js: Tensors - Intelligence and Learning</a></li>
+  <li><a href="https://www.youtube.com/watch?v=Y_XM3Bu-4yc" target="_blank">TensorFlow.js Quick Start</a></li>
+  <li><a href="https://www.youtube.com/playlist?list=PLRqwX-V7Uu6YIeVA3dNxbR9PYj4wV31oQ" target="_blank">Session 6 - TensorFlow.js - Intelligence and Learning</a></li>
+  <li><a href="https://www.youtube.com/playlist?list=PLRqwX-V7Uu6bmMRCIoTi72aNWHo7epX4L" target="_blank">Session 7 - TensorFlow.js Color Classifier - Intelligence and Learning</a></li>
+  <li><a href="https://www.youtube.com/watch?v=Nc8kZABv-KE" target="_blank">Tensorflow.js Explained</a></li>
+  <li><a href="https://www.youtube.com/watch?v=9KqNk5keyCc" target="_blank">Webcam Tracking with Tensorflow.js</a></li>
+  <li><a href="https://www.youtube.com/watch?v=pbCExciEbrc" target="_blank">Try TensorFlow.js in your browser</a></li>
+</ol>
+
+				</div>
+				<div class="note closers">
+	<p>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</p>
+</div>
+			</article>
+			
+			<div class="show-comments" onclick="showComments()"><p id="show_comments"><span id="comment_count" class="disqus-comment-count" data-disqus-url="https://gogulilango.com/software/mobile-net-tensorflow-js"></span></p></div>
+
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function () {
+				  this.page.url = 'http://localhost:4000/software/mobile-net-tensorflow-js';
+				  this.page.identifier = 'http://localhost:4000/software/mobile-net-tensorflow-js';
+				};
+
+				(function() {
+				  var d = document, s = d.createElement('script');
+				  s.src = 'https://gogul09.disqus.com/embed.js';
+				  s.setAttribute('data-timestamp', +new Date());
+				  (d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	window.onscroll = function() {
+		sideBarScrollHandler();
+		windowScrollHandler();
+	};
+	
+	function sideBarScrollHandler() {
+		if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+			document.getElementById("sidebar_tracker").style.top = "20px";
+		} else {
+			document.getElementById("sidebar_tracker").style.top = "70px";
+		}
+	}
+	
+</script>
+
+<script type="text/javascript" src="/js/readtime.js"></script>
+    </div>
+
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <p><span>&copy; 2024 - gogul ilango | opinions are my own</span></p>
+       </footer>
+     </div>
+
+     <button onclick="topScroller()" id="btnScrollTop" title="Go to top" class="w3-animate-bottom"></button>
+
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+     <script src="https://apis.google.com/js/platform.js"></script>
+     <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script id="dsq-count-scr" src="//gogul09.disqus.com/count.js" async></script>
+     <script src="/js/custom.js"></script>
+     
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-93019594-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/software/mobile-net-tensorflow-js',
+		  'title': 'Classifying images using Keras MobileNet and TensorFlow.js in Google Chrome'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+   </body>
+</html>
