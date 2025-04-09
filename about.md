@@ -51,6 +51,7 @@ permalink: /
               <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="3fe746e4-70f9-49ce-bd8e-4481e3bafcb2" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
               <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="30d288b3-28d4-4022-bf99-047591cd4705" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
               <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="bdc65ed5-a551-4004-b0d7-b584627b5160" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+              <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="4ff7524a-39eb-4150-a593-9fbf42ad563e" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
             </div>
             <h4>Education</h4>
             <ul>
@@ -403,6 +404,13 @@ permalink: /
                 <td>Sep 2024</td>
                 <td>Cadence Design Systems</td>
                 <td><a href='https://www.credly.com/badges/30d288b3-28d4-4022-bf99-047591cd4705' target='_blank'>credly</a></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Cadence RTL-to-GDSII Flow v6.0 Exam</td>
+                <td>Apr 2025</td>
+                <td>Cadence Design Systems</td>
+                <td><a href='https://www.credly.com/badges/4ff7524a-39eb-4150-a593-9fbf42ad563e' target='_blank'>credly</a></td>
               </tr>
             </table>
           </div>
