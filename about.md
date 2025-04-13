@@ -323,90 +323,104 @@ permalink: /
               </tr>
               <tr>
                  <td>2</td>
+                 <td>R Basics - R Programming Language Introduction</td>
+                 <td>Dec 2016</td>
+                 <td>Udemy</td>
+                 <td><a href='https://www.udemy.com/certificate/UC-8FMX99M7/' target='_blank'>UC-8FMX99M7</a></td>
+              </tr>
+              <tr>
+                 <td>3</td>
                  <td>Neural Networks and Deep Learning</td>
                  <td>Dec 2017</td>
                  <td>Coursera</td>
                  <td><a href='https://www.coursera.org/account/accomplishments/verify/8WBUXEEL363X' target='_blank'>8WBUXEEL363X</a></td>
               </tr>
               <tr>
-                <td>3</td>
+                 <td>4</td>
+                 <td>VSD - Physical Design Flow</td>
+                 <td>Apr 2018</td>
+                 <td>Udemy</td>
+                 <td><a href='https://www.udemy.com/certificate/UC-76UES39T/' target='_blank'>UC-76UES39T</a></td>
+              </tr>
+              <tr>
+                <td>5</td>
                 <td>Sequence Models</td>
                 <td>Jun 2019</td>
                 <td>Coursera</td>
                 <td><a href='https://www.coursera.org/account/accomplishments/certificate/WJJGDMT2XKD4' target='_blank'>WJJGDMT2XKD4</a></td>
               </tr>
               <tr>
-                <td>4</td>
+                <td>6</td>
                 <td>Natural Language Processing in TensorFlow</td>
                 <td>Jun 2019</td>
                 <td>Coursera</td>
                 <td><a href='https://www.coursera.org/account/accomplishments/certificate/GEM478PB2SQ9' target='_blank'>GEM478PB2SQ9</a></td>
               </tr>
               <tr>
-                <td>5</td>
+                <td>7</td>
                 <td>Introduction to TensorFlow for Artificial Intelligence, Machine Learning and Deep Learning</td>
                 <td>Jun 2019</td>
                 <td>Coursera</td>
                 <td><a href='https://www.coursera.org/account/accomplishments/verify/4VDRRPKYF9EG' target='_blank'>4VDRRPKYF9EG</a></td>
               </tr>
               <tr>
-                <td>6</td>
+                <td>8</td>
                 <td>Convolutional Neural Networks in TensorFlow</td>
                 <td>Jun 2019</td>
                 <td>Coursera</td>
                 <td><a href='https://www.coursera.org/account/accomplishments/verify/XCW2KCHMWCDZ' target='_blank'>XCW2KCHMWCDZ</a></td>
               </tr>
               <tr>
-                <td>7</td>
+                <td>9</td>
                 <td>TensorFlow in Practice Specialization</td>
                 <td>Sep 2019</td>
                 <td>Coursera</td>
                 <td><a href='https://www.coursera.org/account/accomplishments/specialization/A5TFAHFYTR98' target='_blank'>A5TFAHFYTR98</a></td>
               </tr>
               <tr>
-                <td>8</td>
+                <td>10</td>
                 <td>Sequences, Time Series and Prediction</td>
                 <td>Sep 2019</td>
                 <td>Coursera</td>
                 <td><a href='https://www.coursera.org/account/accomplishments/verify/88YCMHDBRFV9' target='_blank'>88YCMHDBRFV9</a></td>
               </tr>
               <tr>
-                <td>9</td>
+                <td>11</td>
                 <td>Cadence Cerebrus Certification Program</td>
                 <td>Feb 2023</td>
                 <td>Cadence Design Systems</td>
                 <td>-</td>
               </tr>
               <tr>
-                <td>10</td>
+                <td>12</td>
                 <td>Cerebrus Intelligent Chip Explorer v22.1 Exam</td>
                 <td>May 2023</td>
                 <td>Cadence Design Systems</td>
                 <td><a href='https://www.credly.com/badges/bdc65ed5-a551-4004-b0d7-b584627b5160' target='_blank'>credly</a></td>
               </tr>
               <tr>
-                <td>11</td>
+                <td>13</td>
                 <td>Semiconductor 101 v1.0 Exam</td>
                 <td>Jan 2024</td>
                 <td>Cadence Design Systems</td>
                 <td><a href='https://www.credly.com/badges/c444e1dd-cff0-4ded-af7c-b0b069eae202' target='_blank'>credly</a></td>
               </tr>
               <tr>
-                <td>11</td>
+                <td>14</td>
                 <td>Innovus Block Implementation with Stylus Common UI v23.1 Exam</td>
                 <td>Jun 2024</td>
                 <td>Cadence Design Systems</td>
                 <td><a href='https://www.credly.com/badges/3fe746e4-70f9-49ce-bd8e-4481e3bafcb2' target='_blank'>credly</a></td>
               </tr>
               <tr>
-                <td>11</td>
+                <td>15</td>
                 <td>Innovus Hierarchical Implementation with Stylus Common UI v23.1 Exam</td>
                 <td>Sep 2024</td>
                 <td>Cadence Design Systems</td>
                 <td><a href='https://www.credly.com/badges/30d288b3-28d4-4022-bf99-047591cd4705' target='_blank'>credly</a></td>
               </tr>
               <tr>
-                <td>12</td>
+                <td>16</td>
                 <td>Cadence RTL-to-GDSII Flow v6.0 Exam</td>
                 <td>Apr 2025</td>
                 <td>Cadence Design Systems</td>
