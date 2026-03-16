@@ -45,41 +45,134 @@ permalink: /
       <div class="blog-category-box work-category-box about-category-box" id="box_summary" style="box-shadow: none !important;">
         <div>
           <div class="about_me_body">
-            <p style="margin-top: 0px !important;">Gogul Ilango <a href="https://en.wikipedia.org/wiki/Bachelor_of_Engineering" target="_blank">B.E.,</a> <a href="https://en.wikipedia.org/wiki/Master_of_Engineering" target="_blank">M.E.,</a> is an Engineer, Music Producer and Writer. Currently, I work as a Principal Software Engineer in the Cadence Cerebrus Intelligent Chip Explorer team at <a href="https://www.cadence.com/en_US/home.html" target="_blank">Cadence Design Systems</a>, Bangalore, Karnataka, India. Previously, I worked as a Senior Engineer, Hardware in System-On-Chip Physical Design and Verification team at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a>, Chennai, Tamil Nadu, India. Also, I worked as an Assistant Systems Engineer at <a href="https://www.tcs.com/" target="_blank">Tata Consultancy Services</a>, Chennai, Tamil Nadu, India.</p>
+            <p style="margin-top: 0px !important;">Gogul Ilango <a href="https://en.wikipedia.org/wiki/Bachelor_of_Engineering" target="_blank">B.E.,</a> <a href="https://en.wikipedia.org/wiki/Master_of_Engineering" target="_blank">M.E.,</a>  is an Engineer, Music Producer and Writer. Currently, I work as a Principal Software Engineer in the Cadence Cerebrus Intelligent Chip Explorer Research and Development team at <a href="https://www.cadence.com/en_US/home.html" target="_blank">Cadence Design Systems</a>, Bangalore, Karnataka, India. Previously, I worked as a Senior Engineer, Hardware in System-On-Chip Physical Design and Verification team at <a href="https://www.qualcomm.com/" target="_blank">Qualcomm</a>, Chennai, Tamil Nadu, India. Also, I worked as an Assistant Systems Engineer at <a href="https://www.tcs.com/" target="_blank">Tata Consultancy Services</a>, Chennai, Tamil Nadu, India.</p>
+            <ul>
+              <li>Gold Medalist in M.E., (VLSI Design and Embedded Systems)</li>
+              <li>ASIC Physical Design Engineer (Qualcomm - 7 tapeouts experience)</li>
+              <li>EDA Researcher and Developer (Cadence Cerebrus, Cadence Cerebrus AI Studio)</li>
+              <li>Software Programmer and Writer</li>
+              <li>Music Producer and Astrophile</li>
+            </ul>
+            <h4>🎯 Current Focus</h4>
+            <p style="margin-top: 0px !important; margin-bottom: 0px !important;">Contributing to the Research and Development of</p>
+            <ul>
+              <li><a href="https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/cerebrus-intelligent-chip-explorer.html" target="_blank">Cadence Cerebrus Intelligent Chip Explorer</a><br>Delivering Dramatically Improved PPA and Engineering Productivity with Generative AI</li>
+              <li><a href="https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/cadence-cerebrus-ai-studio.html" target="_blank">Cadence Cerebrus AI Studio</a><br>Industry's First Agentic AI Multi-Block, Multi-User SoC Design Platform</li>
+            </ul>
             <div class="credly-badges">
               <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="c444e1dd-cff0-4ded-af7c-b0b069eae202" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
               <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="3fe746e4-70f9-49ce-bd8e-4481e3bafcb2" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
               <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="30d288b3-28d4-4022-bf99-047591cd4705" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
               <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="bdc65ed5-a551-4004-b0d7-b584627b5160" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
               <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="4ff7524a-39eb-4150-a593-9fbf42ad563e" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+              <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="e9d76a0c-65c5-44c0-9cad-e89ca6328059" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+              <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="85694d32-2202-4e79-9c59-860ace62ad5b" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
             </div>
-            <h4>Education</h4>
+            <h4>🏫 Education</h4>
             <ul>
-              <li>M.E - Master of Engineering in VLSI Design & Embedded Systems, <a href="https://www.mitindia.edu/en/" target="_blank">Madras Institute of Technology</a><br>Chennai, Tamil Nadu, India | CGPA 9.96/10 | University Gold Medal</li>
-              <li>B.E - Bachelor of Engineering in Electronics & Communication Engineering, <a href="https://www.tce.edu/" target="_blank">Thiagarajar College of Engineering</a><br>Madurai, Tamil Nadu, India | CGPA 9.06/10</li>
+              <li><a href="https://en.wikipedia.org/wiki/Master_of_Engineering" target="_blank">M.E</a> - Master of Engineering in VLSI Design & Embedded Systems, <a href="https://www.mitindia.edu/en/" target="_blank">Madras Institute of Technology</a><br>Chennai, Tamil Nadu, India | CGPA 9.96/10 | University Gold Medal</li>
+              <li><a href="https://en.wikipedia.org/wiki/Bachelor_of_Engineering" target="_blank">B.E</a> - Bachelor of Engineering in Electronics & Communication Engineering, <a href="https://www.tce.edu/" target="_blank">Thiagarajar College of Engineering</a><br>Madurai, Tamil Nadu, India | CGPA 9.06/10</li>
             </ul>
-            <h4>Research Experience</h4>
+            <h4>🔎 Research Experience</h4>
             <ul>
               <li>Co-author of <a href="https://scholar.google.co.in/citations?user=pO5gZVkAAAAJ&hl=en" target="_blank">5 top-conference publications</a> (Elsevier, Springer, IEEE, Journal of Intelligent & Fuzzy Systems).</li>
               <li>Technical Reviewer of the Book - <a href="https://www.packtpub.com/product/hands-on-music-generation-with-magenta/9781838824419" target="_blank">Hands-On Music Generation with Magenta</a>.</li>
             </ul>
-            <h4>Industry Experience</h4>
+            <h4>💻 Industry Experience</h4>
             <ul>
-              <li>5.8 years of extensive industry experience in System on Chip design, implementation and verification of cutting-edge audio, IoT and networking chips under stringent schedules, with collaboration across different engineering sites and with multiple cross-functional domain responsibilities (hardware and software).</li>
-              <li>Worked on 7 successful system on chip tape-outs by delivering design implementation databases ahead of deadlines at different exit milestones with best performance, power and area (PPA) quality.</li>
-              <li>Experience in converging multi-million instances/multi-power domain designs in terms of best performance, power and area target in 28nm, 22nm, 14nm and 7nm tech nodes.</li>
-              <li>Highly proficient in designing, developing, deploying and maintaining industry-standard software and automation tools for electronic design automation.</li>
-              <li>Deep experience in Electronic Design Automation (EDA) for Digital Integrated Circuit Design of Complex System on Chip using Cadence tools (<a href="https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/synthesis/genus-synthesis-solution.html" target="_blank">Genus</a>, <a href="https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/innovus-implementation-system.html" target="_blank">Innovus</a> and <a href="https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/cerebrus-intelligent-chip-explorer.html" href="_blank">Cerebrus</a>), Synopsys tools (<a href="https://www.synopsys.com/implementation-and-signoff/physical-implementation/ic-compiler.html" target="_blank">IC Compiler II</a>, <a href="https://www.synopsys.com/implementation-and-signoff/signoff/starrc.html" target="_blank">StarRC</a>, <a href="https://www.synopsys.com/implementation-and-signoff/signoff/primetime.html" target="_blank">PrimeTime</a>, <a href="https://www.synopsys.com/implementation-and-signoff/signoff/tweaker.html" target="_blank">Tweaker</a>), Ansys tool (<a href="https://www.ansys.com/en-in/products/semiconductors/ansys-redhawk-sc" target="_blank">RedHawk</a>) and Siemens tool (<a href="https://eda.sw.siemens.com/en-US/ic/calibre-design/" target="_blank">Calibre</a>).</li>
+              <li>10+ years of proven industry-standard expertise in hardware-software product engineering, spanning cutting-edge SOC physical design (low-power/high-performance cores), static timing analysis, electronic design automation, AI tool development and full-stack web development with solid understanding of digital design fundamentals.</li>
+              <li>Owned full-chip, sub-system level and block-level implementation/signoff for 7 SOC tapeouts (Audio, IOT, networking chips), delivering superior PPA ahead of schedule under aggressive timelines with global multi-site collaboration.</li>
+              <li>Resolved complex implementation/signoff issues from 28nm to 3nm tech nodes by optimizing timing, congestion, power and area in multi-million instance designs with multiple power domains.</li>
+              <li>Designed and developed high-quality in-house EDA tools using AI and full-stack web development, improving QOR, design automation and productivity.</li>
+              <li>Mentored engineers in VLSI design, EDA scripting and AI-driven automation, fostering strong technical execution.</li>
             </ul>
-            <h4>Areas of Interest</h4>
+            <h4>🧐 Areas of Interest</h4>
             <ul>
               <li>System on Chip Design</li>
               <li>Electronic Design Automation</li>
               <li>Artificial Intelligence</li>
               <li>Full-Stack Web Development</li>
-              <li>Music Composition & Music Production</li>
             </ul>
-            <h4>Hobbies</h4>
+            <h4>🧠 Skills (Hardware Engineering)</h4>
+            <div class="box-courses mooc-courses" style="display: block;">
+              <table>
+                <tr>
+                  <td><b>Hardware Description Language</b></td>
+                  <td>Verilog, VHDL</td>
+                </tr>
+                <tr>
+                  <td><b>Scripting Languages</b></td>
+                  <td>Tcl, Python, Shell</td>
+                </tr>
+                <tr>
+                  <td><b>Cadence EDA Tools</b></td>
+                  <td>Cerebrus AI Studio, Cerebrus, Genus, Innovus, Tempus, Certus, Voltus</td>
+                </tr>
+                <tr>
+                  <td><b>Synopsys EDA Tools</b></td>
+                  <td>ICC-II, Fusion Compiler, PrimeTime, Tweaker</td>
+                </tr>
+                <tr>
+                  <td><b>Other EDA Tools</b></td>
+                  <td>Apache RedHawk, Siemens Calibre</td>
+                </tr>
+              </table>
+            </div>
+            <h4>💪 Skills (Software Engineering)</h4>
+            <div class="box-courses mooc-courses" style="display: block;">
+              <table>
+                <tr>
+                  <td><b>Operating System</b></td>
+                  <td>Linux (Ubuntu, Suse, CentOS), Windows, MacOS</td>
+                </tr>
+                <tr>
+                  <td><b>Version Control</b></td>
+                  <td>Git, GitHub</td>
+                </tr>
+                <tr>
+                  <td><b>Machine Learning</b></td>
+                  <td>Scikit-learn, XGBoost</td>
+                </tr>
+                <tr>
+                  <td><b>Deep Learning</b></td>
+                  <td>TensorFlow, Keras</td>
+                </tr>
+                <tr>
+                  <td><b>Front-End Web Development</b></td>
+                  <td>HTML5, CSS3, SASS, JavaScript, Bootstrap, Jekyll</td>
+                </tr>
+                <tr>
+                  <td><b>Back-End Web Development</b></td>
+                  <td>Django, PyMongo, Djongo</td>
+                </tr>
+                <tr>
+                  <td><b>Deployment</b></td>
+                  <td>Docker, Singularity, Kubernetes</td>
+                </tr>
+                <tr>
+                  <td><b>Databases</b></td>
+                  <td>MongoDB, MySQL, PostgreSQL</td>
+                </tr>
+              </table>
+            </div>
+            <h4>💪 Skills (Art/Music)</h4>
+            <div class="box-courses mooc-courses" style="display: block;">
+              <table>
+                <tr>
+                  <td><b>Image Editing</b></td>
+                  <td>Adobe Photoshop, Adobe Lightroom</td>
+                </tr>
+                <tr>
+                  <td><b>Video Editing</b></td>
+                  <td>Adobe Premiere Pro, Adobe After Effects, LumaFusion</td>
+                </tr>
+                <tr>
+                  <td><b>Music Production</b></td>
+                  <td>Cubase Elements 12, Native Instruments, Kontakt, Spitfire Audio</td>
+                </tr>
+              </table>
+            </div>
+            <h4>🎹 Hobbies</h4>
             <ul>
               <li><b>Music</b> - Composition, Programming, Arrangements</li>
               <li><b>Art</b> - Photography, Pencil Sketching, Water Color Painting</li>
@@ -425,6 +518,20 @@ permalink: /
                 <td>Apr 2025</td>
                 <td>Cadence Design Systems</td>
                 <td><a href='https://www.credly.com/badges/4ff7524a-39eb-4150-a593-9fbf42ad563e' target='_blank'>credly</a></td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>Basic Static Timing Analysis v3.0 Exam</td>
+                <td>Jan 2026</td>
+                <td>Cadence Design Systems</td>
+                <td><a href='https://www.credly.com/badges/e9d76a0c-65c5-44c0-9cad-e89ca6328059' target='_blank'>credly</a></td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>Innovus Low-Power Flow with Stylus Common UI v25.1 Exam</td>
+                <td>Feb 2026</td>
+                <td>Cadence Design Systems</td>
+                <td><a href='https://www.credly.com/badges/85694d32-2202-4e79-9c59-860ace62ad5b' target='_blank'>credly</a></td>
               </tr>
             </table>
           </div>

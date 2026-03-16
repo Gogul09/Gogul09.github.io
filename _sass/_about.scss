@@ -9,7 +9,7 @@
 }
 
 .about-wrapper {
-  max-width: 1000px;
+  max-width: 1039px;
   position: relative;
   top: -30px;
   @include mobile {
@@ -870,7 +870,10 @@ ul.timeline li {
   background-color: var(--bgtable) !important;
   color: var(--texttable) !important;
   border-collapse: collapse;
-  padding: 5px;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
 }
 
 .mooc-courses table tr td a {
@@ -895,6 +898,13 @@ ul.timeline li {
   text-decoration: underline;
   border: 0;
   padding: 0;
+}
+
+.mooc-courses table tr td b {
+  color: var(--texttable) !important; 
+  font-weight: 500;
+  letter-spacing: initial;
+  font-size: 13px;
 }
 
 .box-engineering p {
@@ -1073,7 +1083,7 @@ ul.timeline li {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
-  justify-content: center;
+  justify-content: start;
   @include tablet {
     justify-content: flex-start;
   }

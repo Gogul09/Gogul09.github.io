@@ -172,6 +172,8 @@ ul, ol {
   line-height: 1.625;
   font-size: 17px;
   font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
   @include mobile {
     font-size: 13px;
   }
